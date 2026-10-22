@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary-cyan: #00C4DF;
+    --color-primary-teal: #0284C7;
+    --color-accent-violet: #7C3AED;
+    --color-accent-purple: #9333EA;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #0F172A;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Crisp Clean Glassmorphism for Light Theme */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(0, 196, 223, 0.08);
+}
+
+.glass-panel-hover-light {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover-light:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(0, 196, 223, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(0, 196, 223, 0.15), 0 0 20px rgba(124, 58, 237, 0.06);
+}
+
+/* Water caustics & wave pulse */
+@keyframes waterSwell {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.05) rotate(1.5deg);
+    opacity: 1;
+  }
+}
+
+.animate-water-swell {
+  animation: waterSwell 9s ease-in-out infinite;
+}
+
+/* Subtle custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00C4DF;
+}

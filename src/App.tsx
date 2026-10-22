@@ -13,7 +13,12 @@ import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
 
 export function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  // Exibir a intro cinematográfica 16:9 apenas em Notebook / Desktop / Tablet Paisagem (>= 1024px)
+  // Em celulares (9:16 vertical), abre o site imediatamente: sem cortes de vídeo, sem consumir 4G e com conversão instantânea no WhatsApp
+  const [showIntro, setShowIntro] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.innerWidth >= 1024;
+  });
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('Comércio & Vendas 24h (R$ 297/mês)');
 

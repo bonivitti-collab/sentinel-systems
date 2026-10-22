@@ -13,11 +13,17 @@ import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
 
 export function App() {
-  // Exibir a intro cinematográfica 16:9 apenas em Notebook / Desktop / Tablet Paisagem (>= 1024px)
-  // Em celulares (9:16 vertical), abre o site imediatamente: sem cortes de vídeo, sem consumir 4G e com conversão instantânea no WhatsApp
+  // Regra de Ouro ("Melhor sem do que feio"):
+  // O vídeo 16:9 só é exibido se o dispositivo realmente comportar o formato com folga e perfeição:
+  // 1. Resolução mínima de notebook/desktop (>= 1280px)
+  // 2. Proporção de tela widescreen real (largura/altura >= 1.55, sem cortes verticais)
+  // 3. Dispositivo não-touch (descarta celulares, iPads e tablets)
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof window === 'undefined') return false;
-    return window.innerWidth >= 1024;
+    const isWideResolution = window.innerWidth >= 1280;
+    const isWidescreenRatio = window.innerWidth / window.innerHeight >= 1.55;
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 1;
+    return isWideResolution && isWidescreenRatio && !isTouchDevice;
   });
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('Comércio & Vendas 24h (R$ 297/mês)');

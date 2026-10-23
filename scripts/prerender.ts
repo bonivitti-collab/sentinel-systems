@@ -581,6 +581,91 @@ function prerenderPages(): void {
   }
 
   console.log(`[SEO] Pré-renderização concluída! ${generatedCount} páginas estáticas geradas com sucesso.`);
+
+  // --- E. PRÉ-RENDERIZAÇÃO DA HOME (dist/index.html) COM TEIA COMPLETA ---
+  const homeSemanticHtml = `
+    <header style="background:#ffffff;padding:1.25rem 1.5rem;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;">
+      <a href="/" style="font-weight:900;color:#0f172a;text-decoration:none;font-size:1.25rem;letter-spacing:-0.5px;">SENTINEL SYSTEMS</a>
+      <a href="${whatsappUrl('Olá! Vim pelo site da Sentinel Systems e gostaria de mais informações.')}" style="background:#10b981;color:#ffffff;padding:0.5rem 1.25rem;border-radius:9999px;font-weight:700;text-decoration:none;font-size:0.875rem;">WhatsApp ${PHONE_DISPLAY}</a>
+    </header>
+
+    <main style="font-family:system-ui,-apple-system,sans-serif;color:#0f172a;">
+      <section style="max-width:960px;margin:0 auto;padding:4rem 1.5rem 3rem 1.5rem;text-align:center;">
+        <span style="color:#0284c7;font-weight:700;font-size:0.875rem;text-transform:uppercase;letter-spacing:1px;">Criação de Sites Profissionais &bull; Robôs de WhatsApp &bull; Google Meu Negócio</span>
+        <h1 style="font-size:2.75rem;font-weight:900;line-height:1.2;margin:1rem 0;color:#0f172a;">
+          Fazemos o seu comércio vender mais todo dia na internet
+        </h1>
+        <p style="font-size:1.25rem;color:#475569;line-height:1.6;margin-bottom:2rem;max-width:800px;margin-left:auto;margin-right:auto;">
+          Sites rápidos de alta performance, atendimento automático 24 horas no WhatsApp e presença garantida no Google para pequenas e médias empresas.
+        </p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="${whatsappUrl('Olá! Gostaria de um orçamento para criar meu site profissional.')}" style="background:#0284c7;color:#ffffff;padding:0.875rem 1.75rem;border-radius:9999px;font-weight:700;text-decoration:none;">Falar com Especialista</a>
+          <a href="#diretorio-seo" style="background:#f1f5f9;color:#334155;padding:0.875rem 1.75rem;border-radius:9999px;font-weight:700;text-decoration:none;">Ver Todas as 36 Soluções</a>
+        </div>
+      </section>
+
+      <!-- Seção do Diretório de SEO para os crawlers -->
+      <section id="diretorio-seo" style="background:#090d16;color:#f8fafc;padding:4rem 1.5rem;border-top:1px solid #1e293b;">
+        <div style="max-width:1200px;margin:0 auto;">
+          <h2 style="font-size:2rem;font-weight:800;color:#ffffff;text-align:center;margin-bottom:0.5rem;">
+            Ecossistema de Soluções &bull; Sentinel Systems
+          </h2>
+          <p style="color:#94a3b8;text-align:center;margin-bottom:3rem;max-width:700px;margin-left:auto;margin-right:auto;">
+            Páginas dedicadas por nicho de atuação, robôs especializados de WhatsApp, cidades com atendimento prioritário e guias estratégicos de presença digital.
+          </p>
+
+          <h3 style="color:#38bdf8;font-size:1.25rem;margin:2rem 0 1rem 0;">1. Sites por Nicho Comercial</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2.5rem;">
+            ${NICHES_LIST.map((n) => `
+              <div style="background:#131b2e;padding:1.25rem;border-radius:0.75rem;border:1px solid rgba(255,255,255,0.06);">
+                <a href="/solucoes/${n.slug}" style="color:#ffffff;text-decoration:none;font-weight:700;font-size:1rem;display:block;margin-bottom:0.5rem;">${escapeHtml(n.title)} &rarr;</a>
+                <p style="color:#94a3b8;font-size:0.8125rem;margin:0;">${escapeHtml(n.headline)}</p>
+              </div>
+            `).join('')}
+          </div>
+
+          <h3 style="color:#10b981;font-size:1.25rem;margin:2rem 0 1rem 0;">2. Robôs de WhatsApp 24h</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2.5rem;">
+            ${AUTOMATION_LIST.map((a) => `
+              <div style="background:#131b2e;padding:1.25rem;border-radius:0.75rem;border:1px solid rgba(255,255,255,0.06);">
+                <a href="/automacao/${a.slug}" style="color:#ffffff;text-decoration:none;font-weight:700;font-size:1rem;display:block;margin-bottom:0.5rem;">${escapeHtml(a.title)} &rarr;</a>
+                <p style="color:#94a3b8;font-size:0.8125rem;margin:0;">${escapeHtml(a.headline)}</p>
+              </div>
+            `).join('')}
+          </div>
+
+          <h3 style="color:#38bdf8;font-size:1.25rem;margin:2rem 0 1rem 0;">3. Cidades Atendidas (Região dos Lagos & RJ)</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2.5rem;">
+            ${CITIES_LIST.map((c) => `
+              <div style="background:#131b2e;padding:1rem;border-radius:0.75rem;border:1px solid rgba(255,255,255,0.06);">
+                <a href="/cidades/${c.slug}" style="color:#38bdf8;text-decoration:none;font-weight:700;font-size:0.9375rem;display:block;margin-bottom:0.25rem;">Criação de Sites em ${escapeHtml(c.name)} &rarr;</a>
+                <p style="color:#94a3b8;font-size:0.75rem;margin:0;">${escapeHtml(c.commercialFocus)}</p>
+              </div>
+            `).join('')}
+          </div>
+
+          <h3 style="color:#a78bfa;font-size:1.25rem;margin:2rem 0 1rem 0;">4. Guias Práticos & Conhecimento Estratégico</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">
+            ${GUIDES_LIST.map((g) => `
+              <div style="background:#131b2e;padding:1.25rem;border-radius:0.75rem;border:1px solid rgba(255,255,255,0.06);">
+                <a href="/guias/${g.slug}" style="color:#ffffff;text-decoration:none;font-weight:700;font-size:0.9375rem;display:block;margin-bottom:0.5rem;">${escapeHtml(g.title)} &rarr;</a>
+                <p style="color:#94a3b8;font-size:0.8125rem;margin:0;">${escapeHtml(g.excerpt)}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    ${buildSharedFooterHtml()}
+  `;
+
+  const homePrerenderedHtml = baseHtml.replace(
+    /<div id="root"><\/div>/i,
+    `<div id="root">${homeSemanticHtml}</div>`
+  );
+  fs.writeFileSync(templatePath, homePrerenderedHtml, 'utf8');
+  console.log('[SEO] dist/index.html (Home) pré-renderizado com snapshot semântico e teia de links completa!');
 }
 
 // Execução principal

@@ -5,9 +5,11 @@ import { soundFx } from './SoundEffects';
 
 interface NavbarProps {
   onOpenContact: () => void;
+  isHome?: boolean;
+  onNavigateHome?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, isHome = true, onNavigateHome }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -23,9 +25,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
     { label: 'Como Funciona', href: '#como-funciona' },
     { label: 'Instagram vs Site', href: '#instagram-vs-site' },
     { label: 'Planos & Valores', href: '#planos' },
+    { label: 'Soluções & Cidades', href: '#diretorio-seo' },
     { label: 'Dúvidas & Garantias', href: '#duvidas-seguranca' },
     { label: 'Raio-X Grátis', href: '#raio-x' },
   ];
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    soundFx.playUiClick();
+    if (onNavigateHome) {
+      onNavigateHome();
+    } else {
+      window.history.pushState({}, '', '/');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const getLinkHref = (href: string) => {
+    return isHome ? href : `/${href}`;
+  };
 
   return (
     <header
@@ -39,8 +58,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
         <div className="flex items-center justify-between">
           {/* Official Brand Logo - Clean & Perfectly Aligned */}
           <a
-            href="#"
-            onClick={() => soundFx.playUiClick()}
+            href="/"
+            onClick={handleLogoClick}
             className="flex items-center group cursor-pointer focus:outline-none"
           >
             <SentinelLogo size="md" variant="light" />
@@ -51,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={getLinkHref(link.href)}
                 onClick={() => soundFx.playUiClick()}
                 className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-700 hover:text-cyan-700 hover:bg-white transition-all"
               >
@@ -94,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={getLinkHref(link.href)}
                 onClick={() => {
                   soundFx.playUiClick();
                   setMobileMenuOpen(false);

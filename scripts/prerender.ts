@@ -604,6 +604,16 @@ function prerenderPages(): void {
         </div>
       </section>
 
+      <!-- Case Real Verificado -->
+      <section style="max-width:960px;margin:0 auto 3rem auto;padding:2rem;background:#0f172a;color:#ffffff;border-radius:1rem;border:1px solid rgba(56,189,248,0.3);text-align:left;">
+        <span style="color:#38bdf8;font-size:0.75rem;font-weight:700;text-transform:uppercase;">Case Real Desenvolvido pela Sentinel</span>
+        <h3 style="font-size:1.375rem;font-weight:800;margin:0.5rem 0;color:#ffffff;">Grupo Vitti &bull; Engenharia &amp; Construção Costeira</h3>
+        <p style="color:#94a3b8;font-size:0.875rem;line-height:1.6;margin-bottom:1rem;">
+          Portal de alta autoridade com 39 páginas indexadas no Google, simulador de orçamentos e atuação em 7 cidades da Região dos Lagos:
+          <a href="https://vitticonstrucoes.com.br" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:700;text-decoration:underline;">vitticonstrucoes.com.br &rarr;</a>
+        </p>
+      </section>
+
       <!-- Seção do Diretório de SEO para os crawlers -->
       <section id="diretorio-seo" style="background:#090d16;color:#f8fafc;padding:4rem 1.5rem;border-top:1px solid #1e293b;">
         <div style="max-width:1200px;margin:0 auto;">

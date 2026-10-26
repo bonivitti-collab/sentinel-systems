@@ -44,9 +44,12 @@ export function App() {
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof window === 'undefined') return false;
 
-    // Se já foi exibida ou dispensada nesta sessão, NUNCA mais toca
+    // Se já foi exibida ou dispensada, NUNCA mais toca novamente
     try {
-      if (sessionStorage.getItem('sentinel_intro_seen') === 'true') {
+      if (
+        sessionStorage.getItem('sentinel_intro_seen') === 'true' ||
+        localStorage.getItem('sentinel_intro_seen') === 'true'
+      ) {
         return false;
       }
     } catch {
@@ -65,6 +68,7 @@ export function App() {
     if (shouldShow) {
       try {
         sessionStorage.setItem('sentinel_intro_seen', 'true');
+        localStorage.setItem('sentinel_intro_seen', 'true');
       } catch {
         // ignore
       }
@@ -76,6 +80,7 @@ export function App() {
   const dismissIntro = () => {
     try {
       sessionStorage.setItem('sentinel_intro_seen', 'true');
+      localStorage.setItem('sentinel_intro_seen', 'true');
     } catch {
       // ignore
     }
@@ -90,7 +95,15 @@ export function App() {
     const handlePopState = () => {
       const path = window.location.pathname.replace(/\/+$/, '') || '/';
       setCurrentPath(path);
-      window.scrollTo(0, 0);
+      if (window.location.hash) {
+        const id = window.location.hash.replace(/^#/, '');
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        window.scrollTo(0, 0);
+      }
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -100,8 +113,18 @@ export function App() {
   const navigate = (path: string) => {
     dismissIntro();
     window.history.pushState({}, '', path);
-    setCurrentPath(path.replace(/\/+$/, '') || '/');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const [rawPath, hashPart] = path.split('#');
+    const cleanPath = (rawPath || '/').replace(/\/+$/, '') || '/';
+    setCurrentPath(cleanPath);
+
+    if (hashPart) {
+      setTimeout(() => {
+        const el = document.getElementById(hashPart);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 120);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const scrollToDiagnosis = () => {
@@ -235,6 +258,7 @@ export function App() {
 
         <Footer
           onOpenContact={() => setIsContactOpen(true)}
+          onNavigate={navigate}
         />
       </div>
 

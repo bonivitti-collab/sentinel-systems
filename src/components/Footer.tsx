@@ -5,12 +5,24 @@ import { soundFx } from './SoundEffects';
 
 interface FooterProps {
   onOpenContact: () => void;
+  onNavigate?: (path: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenContact, onNavigate }) => {
   const scrollToTop = () => {
     soundFx.playUiClick();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleFooterLink = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    soundFx.playUiClick();
+    if (onNavigate) {
+      onNavigate(`/${hash}`);
+    } else {
+      const el = document.getElementById(hash.replace(/^#/, ''));
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -61,11 +73,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               O Que Fazemos
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="#como-funciona" className="hover:text-white transition-colors">Sites Rápidos que Vendem</a></li>
-              <li><a href="#como-funciona" className="hover:text-white transition-colors">Robô de Atendimento no WhatsApp</a></li>
-              <li><a href="#como-funciona" className="hover:text-white transition-colors">Otimização no Google Meu Negócio</a></li>
-              <li><a href="#planos" className="hover:text-white transition-colors">Pacotes com Manutenção Mensal</a></li>
-              <li><a href="#raio-x" className="hover:text-white transition-colors">Raio-X Grátis da Empresa</a></li>
+              <li><a href="/#como-funciona" onClick={(e) => handleFooterLink(e, '#como-funciona')} className="hover:text-white transition-colors">Sites Rápidos que Vendem</a></li>
+              <li><a href="/#como-funciona" onClick={(e) => handleFooterLink(e, '#como-funciona')} className="hover:text-white transition-colors">Robô de Atendimento no WhatsApp</a></li>
+              <li><a href="/#como-funciona" onClick={(e) => handleFooterLink(e, '#como-funciona')} className="hover:text-white transition-colors">Otimização no Google Meu Negócio</a></li>
+              <li><a href="/#planos" onClick={(e) => handleFooterLink(e, '#planos')} className="hover:text-white transition-colors">Pacotes com Manutenção Mensal</a></li>
+              <li><a href="/#raio-x" onClick={(e) => handleFooterLink(e, '#raio-x')} className="hover:text-white transition-colors">Raio-X Grátis da Empresa</a></li>
             </ul>
           </div>
 

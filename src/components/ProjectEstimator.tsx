@@ -60,7 +60,7 @@ export const ProjectEstimator: React.FC = () => {
     const text = `Olá, time da Sentinel Systems! 🌊\n\nEstive na calculadora do site oficial (sentinelsystems.com.br) e configurei uma proposta preliminar para minha empresa:\n\n*Tipo de Projeto:* ${currentType.name}\n*Cronograma:* ${timelineModifiers[timeline]?.label}\n*Recursos Selecionados:* ${selectedFeatNames || 'Nenhum'}\n*Estimativa da Calculadora:* ~R$ ${total.toLocaleString('pt-BR')}\n\nGostaria de agendar uma reunião de diagnóstico e refinar o escopo com a equipe de engenharia.`;
 
     // WhatsApp link (Sentinel Systems contact)
-    window.open(`https://wa.me/5522999999999?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/5522999726069?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (

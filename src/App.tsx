@@ -35,18 +35,52 @@ export function App() {
   const isHome = currentPath === '/';
 
   // Regra de Ouro ("Melhor sem do que feio"):
-  // O vídeo 16:9 só é exibido na Home se o dispositivo realmente comportar o formato com folga:
-  // 1. Resolução mínima de notebook/desktop (>= 1280px)
-  // 2. Proporção de tela widescreen real (largura/altura >= 1.55, sem cortes verticais)
-  // 3. Dispositivo não-touch (descarta celulares, iPads e tablets)
+  // O vídeo 16:9 só é exibido na PRIMEIRA visualização pura da Home se o dispositivo realmente comportar o formato:
+  // 1. Já assistiu ou dispensou nesta sessão de navegação? NUNCA mais toca!
+  // 2. Acessou com hash (#como-funciona, #planos, etc.) ou rota interna? NUNCA toca!
+  // 3. Resolução mínima de notebook/desktop (>= 1280px)
+  // 4. Proporção de tela widescreen real (largura/altura >= 1.55, sem cortes verticais)
+  // 5. Dispositivo não-touch (descarta celulares, iPads e tablets)
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof window === 'undefined') return false;
+
+    // Se já foi exibida ou dispensada nesta sessão, NUNCA mais toca
+    try {
+      if (sessionStorage.getItem('sentinel_intro_seen') === 'true') {
+        return false;
+      }
+    } catch {
+      // ignore
+    }
+
+    // Se não for a raiz pura sem hash, não exibe
     if (window.location.pathname !== '/' && window.location.pathname !== '') return false;
+    if (window.location.hash) return false;
+
     const isWideResolution = window.innerWidth >= 1280;
     const isWidescreenRatio = window.innerWidth / window.innerHeight >= 1.55;
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 1;
-    return isWideResolution && isWidescreenRatio && !isTouchDevice;
+    const shouldShow = isWideResolution && isWidescreenRatio && !isTouchDevice;
+
+    if (shouldShow) {
+      try {
+        sessionStorage.setItem('sentinel_intro_seen', 'true');
+      } catch {
+        // ignore
+      }
+    }
+
+    return shouldShow;
   });
+
+  const dismissIntro = () => {
+    try {
+      sessionStorage.setItem('sentinel_intro_seen', 'true');
+    } catch {
+      // ignore
+    }
+    setShowIntro(false);
+  };
 
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('Comércio & Vendas 24h (R$ 297/mês)');
@@ -64,6 +98,7 @@ export function App() {
   }, []);
 
   const navigate = (path: string) => {
+    dismissIntro();
     window.history.pushState({}, '', path);
     setCurrentPath(path.replace(/\/+$/, '') || '/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -121,7 +156,7 @@ export function App() {
     <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-cyan-200 selection:text-slate-950 font-sans">
       {/* 🎬 Official YouTube Intro Video with Audio & Smooth Fade (Home only) */}
       {showIntro && (
-        <WaterIntro onComplete={() => setShowIntro(false)} />
+        <WaterIntro onComplete={dismissIntro} />
       )}
 
       {/* Fresh Clean Coastal Caustics Canvas (Reacts to Mouse) */}
@@ -133,6 +168,8 @@ export function App() {
           onOpenContact={() => setIsContactOpen(true)}
           isHome={isHome}
           onNavigateHome={() => navigate('/')}
+          onNavigate={navigate}
+          onDismissIntro={dismissIntro}
         />
 
         <main>

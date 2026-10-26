@@ -7,9 +7,17 @@ interface NavbarProps {
   onOpenContact: () => void;
   isHome?: boolean;
   onNavigateHome?: () => void;
+  onNavigate?: (path: string) => void;
+  onDismissIntro?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, isHome = true, onNavigateHome }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onOpenContact,
+  isHome = true,
+  onNavigateHome,
+  onNavigate,
+  onDismissIntro,
+}) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(() => soundFx.getMuted());
@@ -34,12 +42,44 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, isHome = true, on
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     soundFx.playUiClick();
-    if (onNavigateHome) {
+    if (onDismissIntro) onDismissIntro();
+    if (onNavigate) {
+      onNavigate('/');
+    } else if (onNavigateHome) {
       onNavigateHome();
     } else {
       window.history.pushState({}, '', '/');
       window.dispatchEvent(new PopStateEvent('popstate'));
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    soundFx.playUiClick();
+    if (onDismissIntro) onDismissIntro();
+    setMobileMenuOpen(false);
+
+    const targetId = href.replace(/^#/, '');
+
+    if (!isHome) {
+      if (onNavigate) {
+        onNavigate('/');
+      } else if (onNavigateHome) {
+        onNavigateHome();
+      }
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
+      return;
+    }
+
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -82,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, isHome = true, on
               <a
                 key={link.label}
                 href={getLinkHref(link.href)}
-                onClick={() => soundFx.playUiClick()}
+                onClick={(e) => handleNavLinkClick(e, link.href)}
                 className="px-3 py-1.5 rounded-full text-xs font-semibold text-slate-700 hover:text-cyan-700 hover:bg-white transition-all flex items-center gap-1.5"
               >
                 <span>{link.label}</span>
@@ -151,10 +191,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, isHome = true, on
               <a
                 key={link.label}
                 href={getLinkHref(link.href)}
-                onClick={() => {
-                  soundFx.playUiClick();
-                  setMobileMenuOpen(false);
-                }}
+                onClick={(e) => handleNavLinkClick(e, link.href)}
                 className="py-3 text-sm font-semibold text-slate-800 hover:text-cyan-600 border-b border-slate-100 flex items-center justify-between"
               >
                 <span>{link.label}</span>
@@ -174,28 +211,52 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, isHome = true, on
               <div className="grid grid-cols-2 gap-2 text-xs font-semibold">
                 <a
                   href="/solucoes/sites-para-pousadas-e-hoteis"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    soundFx.playUiClick();
+                    setMobileMenuOpen(false);
+                    if (onDismissIntro) onDismissIntro();
+                    if (onNavigate) onNavigate('/solucoes/sites-para-pousadas-e-hoteis');
+                  }}
                   className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-cyan-50"
                 >
                   Pousadas & Hotéis
                 </a>
                 <a
                   href="/automacao/robo-whatsapp-para-restaurantes"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    soundFx.playUiClick();
+                    setMobileMenuOpen(false);
+                    if (onDismissIntro) onDismissIntro();
+                    if (onNavigate) onNavigate('/automacao/robo-whatsapp-para-restaurantes');
+                  }}
                   className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-emerald-50"
                 >
                   Robô Restaurantes
                 </a>
                 <a
                   href="/cidades/criacao-de-sites-em-cabo-frio"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    soundFx.playUiClick();
+                    setMobileMenuOpen(false);
+                    if (onDismissIntro) onDismissIntro();
+                    if (onNavigate) onNavigate('/cidades/criacao-de-sites-em-cabo-frio');
+                  }}
                   className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-sky-50"
                 >
                   Cabo Frio (RJ)
                 </a>
                 <a
                   href="/cidades/criacao-de-sites-em-buzios"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    soundFx.playUiClick();
+                    setMobileMenuOpen(false);
+                    if (onDismissIntro) onDismissIntro();
+                    if (onNavigate) onNavigate('/cidades/criacao-de-sites-em-buzios');
+                  }}
                   className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-sky-50"
                 >
                   Búzios (RJ)

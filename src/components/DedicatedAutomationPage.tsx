@@ -53,13 +53,13 @@ export const DedicatedAutomationPage: React.FC<DedicatedAutomationPageProps> = (
           </nav>
         </div>
 
-        <div className="bg-white rounded-3xl p-6 sm:p-12 border border-slate-200/80 shadow-xs mb-10 relative overflow-hidden">
+        <div className="bg-white rounded-3xl p-5 sm:p-12 border border-slate-200/80 shadow-xs mb-10 relative overflow-hidden">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 mb-6">
-            <Bot className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Automação & Atendimento 24/7 no WhatsApp</span>
+            <Bot className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="leading-tight">Automação & Atendimento 24/7 no WhatsApp</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+          <h1 className="text-2xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-snug sm:leading-[1.15] mb-6">
             {automation.title}
           </h1>
 

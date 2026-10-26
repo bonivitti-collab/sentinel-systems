@@ -53,7 +53,7 @@ export const DedicatedGuidePage: React.FC<DedicatedGuidePageProps> = ({ guide, o
           </nav>
         </div>
 
-        <article className="bg-white rounded-3xl p-6 sm:p-12 border border-slate-200/80 shadow-xs mb-10">
+        <article className="bg-white rounded-3xl p-5 sm:p-12 border border-slate-200/80 shadow-xs mb-10">
           <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-500 mb-6">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 font-bold">
               <BookOpen className="w-3.5 h-3.5" />

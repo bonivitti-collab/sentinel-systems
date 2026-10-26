@@ -118,7 +118,7 @@ export function App() {
   }, [matchedNiche, matchedAutomation, matchedCity, matchedGuide]);
 
   return (
-    <div className="relative min-h-screen bg-white text-slate-900 selection:bg-cyan-200 selection:text-slate-950 font-sans">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-cyan-200 selection:text-slate-950 font-sans">
       {/* 🎬 Official YouTube Intro Video with Audio & Smooth Fade (Home only) */}
       {showIntro && (
         <WaterIntro onComplete={() => setShowIntro(false)} />

@@ -90,11 +90,11 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({ onSelectPlan }) => {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch mb-14">
           {plans.map((p) => (
             <div
               key={p.id}
-              className={`p-8 rounded-3xl bg-white border ${p.color} shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative`}
+              className={`p-5 sm:p-8 rounded-3xl bg-white border ${p.color} shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative`}
             >
               {p.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-600 to-sky-600 text-white font-black text-[11px] tracking-wider uppercase shadow-md flex items-center gap-1.5">

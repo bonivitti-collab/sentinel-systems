@@ -54,13 +54,13 @@ export const DedicatedCityPage: React.FC<DedicatedCityPageProps> = ({ city, onBa
         </div>
 
         {/* Hero do Município */}
-        <div className="bg-white rounded-3xl p-6 sm:p-12 border border-slate-200/80 shadow-xs mb-10 relative overflow-hidden">
+        <div className="bg-white rounded-3xl p-5 sm:p-12 border border-slate-200/80 shadow-xs mb-10 relative overflow-hidden">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-bold text-cyan-800 mb-6">
-            <MapPin className="w-3.5 h-3.5 text-cyan-600" />
-            <span>Presença Digital Oficial em {city.name} ({city.region})</span>
+            <MapPin className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
+            <span className="leading-tight">Presença Digital Oficial em {city.name} ({city.region})</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+          <h1 className="text-2xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-snug sm:leading-[1.15] mb-6">
             {city.headline}
           </h1>
 

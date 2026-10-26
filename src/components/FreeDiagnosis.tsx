@@ -45,7 +45,7 @@ export const FreeDiagnosis: React.FC = () => {
   return (
     <section id="raio-x" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden border-t border-slate-200/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border-2 border-cyan-300 shadow-xl relative overflow-hidden">
+        <div className="p-5 sm:p-12 rounded-3xl bg-white border-2 border-cyan-300 shadow-xl relative overflow-hidden">
           {/* Top highlight pill */}
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 font-bold text-xs mb-4">
             <Sparkles className="w-3.5 h-3.5 text-cyan-600" />

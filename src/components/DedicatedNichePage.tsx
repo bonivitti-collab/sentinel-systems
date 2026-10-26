@@ -54,13 +54,13 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
         </div>
 
         {/* Hero Section of the Niche */}
-        <div className="bg-white rounded-3xl p-6 sm:p-12 border border-slate-200/80 shadow-xs mb-10 relative overflow-hidden">
+        <div className="bg-white rounded-3xl p-5 sm:p-12 border border-slate-200/80 shadow-xs mb-10 relative overflow-hidden">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-bold text-cyan-800 mb-6">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
-            <span>Solução Especializada para {niche.shortTitle}</span>
+            <Sparkles className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
+            <span className="leading-tight">Solução Especializada para {niche.shortTitle}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+          <h1 className="text-2xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-snug sm:leading-[1.15] mb-6">
             {niche.title}
           </h1>
 

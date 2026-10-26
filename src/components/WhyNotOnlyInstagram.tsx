@@ -35,7 +35,7 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
         {/* Comparativo de Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mb-16">
           {/* Card: Só Instagram */}
-          <div className="p-7 sm:p-9 rounded-3xl bg-white border border-rose-200 shadow-sm flex flex-col justify-between">
+          <div className="p-5 sm:p-9 rounded-3xl bg-white border border-rose-200 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-500 shrink-0">
@@ -44,12 +44,12 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-slate-900 text-lg">Depender Só do Instagram</h3>
+                  <h3 className="font-extrabold text-slate-900 text-base sm:text-lg">Depender Só do Instagram</h3>
                   <span className="text-xs font-semibold text-rose-600 uppercase">Atenção dividida & Vendas perdidas</span>
                 </div>
               </div>
 
-              <ul className="space-y-3.5 text-sm text-slate-700">
+              <ul className="space-y-3.5 text-xs sm:text-sm text-slate-700">
                 <li className="flex items-start gap-2.5">
                   <span className="text-rose-500 font-bold shrink-0">✕</span>
                   <span><strong>Público passivo:</strong> A pessoa entra na rede social para se distrair com vídeos, memes e amigos, não para contratar serviços ou comprar.</span>
@@ -76,7 +76,7 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
           </div>
 
           {/* Card: Estrutura Sentinel Systems */}
-          <div className="p-7 sm:p-9 rounded-3xl bg-white border-2 border-emerald-400 shadow-lg flex flex-col justify-between relative overflow-hidden">
+          <div className="p-5 sm:p-9 rounded-3xl bg-white border-2 border-emerald-400 shadow-lg flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-emerald-600 text-white font-bold text-[10px] tracking-wider uppercase px-4 py-1 rounded-bl-xl shadow-xs">
               MÁQUINA DE VENDAS 24H
             </div>
@@ -87,12 +87,12 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
                   <Globe className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-slate-900 text-lg">Estrutura Sentinel Systems</h3>
+                  <h3 className="font-extrabold text-slate-900 text-base sm:text-lg">Estrutura Sentinel Systems</h3>
                   <span className="text-xs font-semibold text-emerald-600 uppercase">Site + Google + Robô WhatsApp</span>
                 </div>
               </div>
 
-              <ul className="space-y-3.5 text-sm text-slate-700">
+              <ul className="space-y-3.5 text-xs sm:text-sm text-slate-700">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                   <span><strong>Cliente no Google tem pressa:</strong> Quem pesquisa seu produto já está com a intenção clara de compra na mão.</span>
@@ -120,17 +120,17 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
         </div>
 
         {/* 💡 CALCULADORA INTERATIVA DE PERDA DE VENDAS (NOVO RECURSO DE ALTA CONVERSÃO) */}
-        <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+        <div className="bg-slate-900 text-white rounded-3xl p-4 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950 border border-cyan-500/30 text-xs font-bold text-cyan-400 mb-4">
-              <Calculator className="w-3.5 h-3.5" />
+              <Calculator className="w-3.5 h-3.5 shrink-0" />
               <span>SIMULADOR DE IMPACTO NO SEU FATURAMENTO</span>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-3">
+            <h3 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-3">
               Quanto dinheiro você pode estar deixando na mesa?
             </h3>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
+            <p className="text-slate-400 text-xs sm:text-base leading-relaxed mb-8">
               Pesquisas mostram que <strong>mais de 35% das intenções de compra</strong> acontecem à noite ou são perdidas se o cliente não recebe resposta no WhatsApp em até 5 minutos.
             </p>
           </div>
@@ -140,8 +140,8 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between items-center text-xs sm:text-sm font-semibold mb-2">
-                  <span className="text-slate-300">Pessoas que procuram seu serviço por semana:</span>
-                  <span className="text-cyan-400 font-black text-base">{weeklyVisitors} pessoas</span>
+                  <span className="text-slate-300">Procura semanal por serviço:</span>
+                  <span className="text-cyan-400 font-black text-sm sm:text-base">{weeklyVisitors} pessoas</span>
                 </div>
                 <input
                   type="range"
@@ -160,8 +160,8 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
 
               <div>
                 <div className="flex justify-between items-center text-xs sm:text-sm font-semibold mb-2">
-                  <span className="text-slate-300">Valor médio de uma venda ou pedido (Ticket Médio):</span>
-                  <span className="text-emerald-400 font-black text-base">R$ {averageTicket}</span>
+                  <span className="text-slate-300">Ticket Médio por venda:</span>
+                  <span className="text-emerald-400 font-black text-sm sm:text-base">R$ {averageTicket}</span>
                 </div>
                 <input
                   type="range"
@@ -180,12 +180,12 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
             </div>
 
             {/* Resultado do Cálculo */}
-            <div className="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between text-center lg:text-left">
+            <div className="bg-slate-800/80 p-4 sm:p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between text-center lg:text-left">
               <div>
                 <span className="text-[11px] uppercase font-bold text-slate-400 tracking-wider block mb-1">
                   Estimativa de Vendas Perdidas por Mês
                 </span>
-                <div className="text-3xl sm:text-5xl font-black text-rose-400 tracking-tight my-2">
+                <div className="text-3xl sm:text-5xl font-black text-rose-400 tracking-tight my-2 break-words">
                   ~ R$ {estimatedLostMonthly.toLocaleString('pt-BR')}
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed">
@@ -194,7 +194,7 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
               </div>
 
               <div className="mt-6 pt-4 border-t border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div className="text-xs text-slate-300 font-medium">
+                <div className="text-xs text-slate-300 font-medium text-center sm:text-left">
                   Com a Sentinel Systems, o plano completo custa a partir de <strong className="text-emerald-400">R$ 297/mês</strong> e se paga na 1ª venda recuperada.
                 </div>
                 <button

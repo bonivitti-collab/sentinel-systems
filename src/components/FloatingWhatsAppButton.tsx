@@ -43,10 +43,10 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({ 
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end pointer-events-auto">
+    <div className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40 flex flex-col items-end pointer-events-auto max-w-[calc(100vw-2rem)]">
       {/* Mini Card Expandido (Chat Preview) */}
       {isOpen && (
-        <div className="mb-3 w-80 sm:w-96 bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden transform transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">
+        <div className="mb-3 w-[calc(100vw-2rem)] max-w-sm sm:w-96 bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden transform transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">
           {/* Header do Card */}
           <div className="bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-4 relative">
             <button

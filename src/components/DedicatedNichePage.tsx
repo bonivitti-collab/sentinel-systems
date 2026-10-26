@@ -1,31 +1,57 @@
 import React from 'react';
-import { ArrowLeft, CheckCircle2, MessageCircle, ArrowRight, ShieldCheck, Star, Sparkles } from 'lucide-react';
-import type { NicheItem } from '../data/nichesData';
+import { ArrowLeft, CheckCircle2, MessageCircle, ArrowRight, ShieldCheck, Sparkles, Compass } from 'lucide-react';
+import { NICHES_LIST, type NicheItem } from '../data/nichesData';
 import { soundFx } from './SoundEffects';
 
 interface DedicatedNichePageProps {
   niche: NicheItem;
   onBack: () => void;
   onOpenContact: (plan?: string) => void;
+  onNavigate?: (url: string) => void;
 }
 
-export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, onBack, onOpenContact }) => {
+export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, onBack, onOpenContact, onNavigate }) => {
   const whatsappUrl = `https://wa.me/5522999726069?text=${encodeURIComponent(niche.whatsappMessage)}`;
+
+  const relatedNiches = NICHES_LIST.filter((n) => n.slug !== niche.slug).slice(0, 3);
+
+  const handleLink = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    soundFx.playUiClick();
+    if (onNavigate) {
+      onNavigate(path);
+    } else {
+      window.history.pushState({}, '', path);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 pt-28 pb-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Navigation Breadcrumb / Back button */}
-        <button
-          onClick={() => {
-            soundFx.playUiClick();
-            onBack();
-          }}
-          className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-600 hover:text-cyan-700 mb-8 p-2 rounded-lg hover:bg-slate-200/60 transition-all cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Voltar para a Página Inicial</span>
-        </button>
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <button
+            onClick={() => {
+              soundFx.playUiClick();
+              onBack();
+            }}
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-600 hover:text-cyan-700 p-2 rounded-lg hover:bg-slate-200/60 transition-all cursor-pointer"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Voltar para a Página Inicial</span>
+          </button>
+
+          <nav aria-label="Breadcrumb" className="text-xs text-slate-500 font-medium">
+            <a href="/" onClick={(e) => handleLink(e, '/')} className="hover:text-cyan-600">Início</a>
+            <span className="mx-2">/</span>
+            <a href="/#diretorio-seo" onClick={(e) => handleLink(e, '/#diretorio-seo')} className="hover:text-cyan-600">Soluções</a>
+            <span className="mx-2">/</span>
+            <span className="text-slate-900 font-bold">{niche.shortTitle}</span>
+          </nav>
+        </div>
 
         {/* Hero Section of the Niche */}
         <div className="bg-white rounded-3xl p-6 sm:p-12 border border-slate-200/80 shadow-xs mb-10 relative overflow-hidden">
@@ -38,7 +64,7 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
             {niche.title}
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed mb-8 max-w-3xl">
+          <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed mb-6 max-w-3xl">
             {niche.headline}
           </p>
 
@@ -62,11 +88,11 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
             <button
               onClick={() => {
                 soundFx.playUiClick();
-                onOpenContact(`Especializado para ${niche.shortTitle}`);
+                onOpenContact(`Solução para ${niche.shortTitle}`);
               }}
               className="w-full sm:w-auto px-7 py-4 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm transition-all cursor-pointer"
             >
-              Fazer Raio-X Gratuito da Empresa
+              Consultar Planos Mensais
             </button>
           </div>
         </div>
@@ -74,11 +100,11 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
         {/* Benefits Grid */}
         <div className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            Vantagens Exclusivas para o seu Negócio
+            Vantagens Exclusivas para seu Estabelecimento
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {niche.benefits.map((b, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex items-start gap-3.5">
+              <div key={i} className="flex items-start gap-3 p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <span className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">{b}</span>
               </div>
@@ -86,17 +112,14 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
           </div>
         </div>
 
-        {/* Features / Structure */}
+        {/* Features / Modules */}
         <div className="mb-14">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            O que está incluso no seu Site e Robô de WhatsApp
+            O que está incluso na plataforma
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {niche.features.map((f, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
-                <div className="w-10 h-10 rounded-xl bg-cyan-100/70 text-cyan-700 flex items-center justify-center mb-4">
-                  <Star className="w-5 h-5 text-cyan-600" />
-                </div>
+              <div key={i} className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-cyan-300 transition-all">
                 <h3 className="text-base font-bold text-slate-900 mb-2">{f.title}</h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{f.desc}</p>
               </div>
@@ -104,13 +127,13 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
           </div>
         </div>
 
-        {/* Guarantee Banner */}
-        <div className="p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        {/* Footer Guarantee */}
+        <div className="p-8 rounded-3xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl mb-14">
           <div className="flex items-center gap-4">
-            <ShieldCheck className="w-10 h-10 text-cyan-400 shrink-0" />
+            <ShieldCheck className="w-10 h-10 text-emerald-400 shrink-0" />
             <div>
-              <h4 className="text-lg font-bold">Domínio no seu nome e suporte mensal contínuo</h4>
-              <p className="text-xs text-slate-300">Sem fidelidade forçada. Cuidamos do seu site para você cuidar das suas vendas.</p>
+              <h4 className="text-lg font-bold">Sem Contrato de Fidelidade Forçada</h4>
+              <p className="text-xs text-slate-300">Você continua porque o site gera lucro e se paga sozinho no fim do mês.</p>
             </div>
           </div>
           <a
@@ -118,12 +141,45 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => soundFx.playUiClick()}
-            className="px-6 py-3.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md shrink-0 cursor-pointer"
+            className="px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md shrink-0 cursor-pointer"
           >
             Falar com Especialista
           </a>
         </div>
+
+        {/* 🔗 NICHOS RELACIONADOS (TEIA DE NAVEGAÇÃO) */}
+        <div className="pt-4 border-t border-slate-200">
+          <div className="flex items-center gap-2 mb-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
+            <Compass className="w-4 h-4 text-cyan-600" />
+            <span>Outras Soluções Comerciais Especializadas:</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {relatedNiches.map((rn) => (
+              <a
+                key={rn.slug}
+                href={`/solucoes/${rn.slug}`}
+                onClick={(e) => handleLink(e, `/solucoes/${rn.slug}`)}
+                className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-cyan-400 hover:shadow-md transition-all group block"
+              >
+                <span className="text-[10px] font-bold uppercase text-cyan-600 block mb-1">Especialidade</span>
+                <h4 className="text-sm font-bold text-slate-900 group-hover:text-cyan-700 transition-colors line-clamp-1 mb-1">
+                  {rn.shortTitle}
+                </h4>
+                <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                  {rn.headline}
+                </p>
+                <span className="text-[11px] text-cyan-700 group-hover:text-cyan-800 mt-2 inline-flex items-center gap-1 font-semibold">
+                  <span>Conhecer detalhes</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+
       </div>
     </div>
   );
 };
+
+export default DedicatedNichePage;

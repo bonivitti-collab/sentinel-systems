@@ -12,6 +12,7 @@ import { LocalClients } from './components/LocalClients';
 import { SeoDirectorySection } from './components/SeoDirectorySection';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
+import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 
 // Dedicated Sub-Pages
 import { DedicatedNichePage } from './components/DedicatedNichePage';
@@ -140,24 +141,28 @@ export function App() {
               niche={matchedNiche}
               onBack={() => navigate('/')}
               onOpenContact={handleSelectPlan}
+              onNavigate={navigate}
             />
           ) : matchedAutomation ? (
             <DedicatedAutomationPage
               automation={matchedAutomation}
               onBack={() => navigate('/')}
               onOpenContact={handleSelectPlan}
+              onNavigate={navigate}
             />
           ) : matchedCity ? (
             <DedicatedCityPage
               city={matchedCity}
               onBack={() => navigate('/')}
               onOpenContact={handleSelectPlan}
+              onNavigate={navigate}
             />
           ) : matchedGuide ? (
             <DedicatedGuidePage
               guide={matchedGuide}
               onBack={() => navigate('/')}
               onOpenContact={handleSelectPlan}
+              onNavigate={navigate}
             />
           ) : (
             /* Home Landing Page */
@@ -195,6 +200,9 @@ export function App() {
           onOpenContact={() => setIsContactOpen(true)}
         />
       </div>
+
+      {/* 💬 Floating WhatsApp Quick Action Button (Present everywhere) */}
+      <FloatingWhatsAppButton currentPath={currentPath} />
 
       {/* Contact & WhatsApp Lead Modal */}
       <ContactModal

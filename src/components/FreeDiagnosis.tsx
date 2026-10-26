@@ -9,6 +9,30 @@ export const FreeDiagnosis: React.FC = () => {
   const [optionalId, setOptionalId] = useState(''); // Instagram or CNPJ
   const [phone, setPhone] = useState('');
 
+  const categoryChips = [
+    'Pousada / Hotel',
+    'Restaurante / Bar',
+    'Loja / Varejo',
+    'Clínica / Saúde',
+    'Oficina / Auto Center',
+    'Gráfica / Visual',
+    'Advocacia / Escritório',
+  ];
+
+  const handlePhoneChange = (val: string) => {
+    // Máscara simples para telefone brasileiro: (XX) XXXXX-XXXX
+    const raw = val.replace(/\D/g, '').slice(0, 11);
+    if (raw.length <= 2) {
+      setPhone(raw);
+    } else if (raw.length <= 6) {
+      setPhone(`(${raw.slice(0, 2)}) ${raw.slice(2)}`);
+    } else if (raw.length <= 10) {
+      setPhone(`(${raw.slice(0, 2)}) ${raw.slice(2, 6)}-${raw.slice(6)}`);
+    } else {
+      setPhone(`(${raw.slice(0, 2)}) ${raw.slice(2, 7)}-${raw.slice(7)}`);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     soundFx.playUiClick();
@@ -19,13 +43,13 @@ export const FreeDiagnosis: React.FC = () => {
   };
 
   return (
-    <section id="raio-x" className="py-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden border-t border-slate-200/80">
+    <section id="raio-x" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden border-t border-slate-200/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-8 sm:p-12 rounded-3xl bg-white border-2 border-cyan-300 shadow-xl relative overflow-hidden">
           {/* Top highlight pill */}
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 font-bold text-xs mb-4">
             <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
-            <span>ANÁLISE PERSONALIZADA E SEM COMPROMISSO</span>
+            <span>ANÁLISE MANUAL PERSONALIZADA &bull; 100% GRÁTIS</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
@@ -33,7 +57,7 @@ export const FreeDiagnosis: React.FC = () => {
           </h2>
 
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
-            Nossa equipe analisa manualmente sua presença nas buscas: se os clientes conseguem te achar no mapa, se você está perdendo vendas para a concorrência e o que precisa ser ajustado. Sem promessas falsas de pressa, com foco na precisão.
+            Nossa equipe analisa manualmente sua presença nas buscas: se os clientes conseguem te achar no Google Maps, se você está perdendo vendas para a concorrência e o que precisa ser ajustado. Sem promessas falsas de pressa, com foco na precisão.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -45,7 +69,7 @@ export const FreeDiagnosis: React.FC = () => {
                 <input
                   type="text"
                   required
-                  placeholder="Ex: Marmitaria da Esquina, Pousada Sol..."
+                  placeholder="Ex: Pousada Sol, Restaurante Central..."
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all"
@@ -60,7 +84,7 @@ export const FreeDiagnosis: React.FC = () => {
                 <input
                   type="text"
                   required
-                  placeholder="Ex: Av. Central, 120 - Centro, Cabo Frio"
+                  placeholder="Ex: Av. Central, 120 - Centro, Cabo Frio (ou sua cidade)"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all"
@@ -68,21 +92,43 @@ export const FreeDiagnosis: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase mb-1.5">
-                  O que você vende / Serviço principal *
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Ex: Marmitex para entrega, Reformas, Roupas..."
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all"
-                />
-              </div>
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase mb-1.5">
+                O que você vende / Serviço principal *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="Ex: Diárias de pousada, Marmitas e almoço, Peças de moto..."
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all mb-2"
+              />
 
+              {/* Quick Select Chips */}
+              <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                <span className="text-[11px] text-slate-500 font-semibold mr-1">Toque para preencher:</span>
+                {categoryChips.map((chip) => (
+                  <button
+                    key={chip}
+                    type="button"
+                    onClick={() => {
+                      soundFx.playUiClick();
+                      setCategory(chip);
+                    }}
+                    className={`text-[11px] px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
+                      category === chip
+                        ? 'bg-cyan-600 text-white border-cyan-600 font-bold'
+                        : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200'
+                    }`}
+                  >
+                    {chip}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
               <div>
                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1.5 flex items-center justify-between">
                   <span>Instagram ou CNPJ</span>
@@ -96,25 +142,25 @@ export const FreeDiagnosis: React.FC = () => {
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all"
                 />
               </div>
-            </div>
 
-            <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase mb-1.5">
-                Seu WhatsApp para Recebimento da Análise *
-              </label>
-              <input
-                type="tel"
-                required
-                placeholder="(22) 99999-9999"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all"
-              />
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase mb-1.5">
+                  Seu WhatsApp para Recebimento da Análise *
+                </label>
+                <input
+                  type="tel"
+                  required
+                  placeholder="(22) 99999-9999"
+                  value={phone}
+                  onChange={(e) => handlePhoneChange(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all"
+                />
+              </div>
             </div>
 
             <button
               type="submit"
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-600 via-sky-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white font-extrabold text-sm tracking-wide shadow-lg shadow-cyan-600/25 transition-all transform hover:scale-[1.01] flex items-center justify-center gap-2 cursor-pointer mt-3"
+              className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-extrabold text-sm tracking-wide shadow-lg shadow-cyan-600/25 transition-all transform hover:scale-[1.01] flex items-center justify-center gap-2 cursor-pointer mt-4"
             >
               <Search className="w-4 h-4" />
               <span>Solicitar Raio-X da Minha Empresa no WhatsApp</span>
@@ -123,13 +169,13 @@ export const FreeDiagnosis: React.FC = () => {
           </form>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-600">
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1 font-medium">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Sem custo ou compromisso
             </span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1 font-medium">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Análise personalizada por nossa equipe
             </span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1 font-medium">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Retorno direto no seu WhatsApp
             </span>
           </div>
@@ -138,4 +184,5 @@ export const FreeDiagnosis: React.FC = () => {
     </section>
   );
 };
+
 export default FreeDiagnosis;

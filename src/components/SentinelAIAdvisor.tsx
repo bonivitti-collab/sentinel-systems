@@ -1,24 +1,207 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
-  Bot, 
-  Send, 
   Sparkles, 
-  RotateCcw, 
+  CheckCircle2, 
   ArrowRight, 
   MessageCircle, 
-  X
+  RefreshCw, 
+  Search, 
+  BarChart3, 
+  Target, 
+  Utensils, 
+  Waves, 
+  Stethoscope, 
+  Briefcase, 
+  ShoppingBag,
+  SlidersHorizontal,
+  X,
+  ShieldCheck,
+  Check,
+  Zap
 } from 'lucide-react';
 import { soundFx } from './SoundEffects';
 
-interface Message {
+interface DiagnosticReport {
+  segmentId: string;
+  segmentTitle: string;
+  segmentSubtitle: string;
+  kpis: { label: string; value: string; hint: string }[];
+  marketBottleneck: {
+    title: string;
+    description: string;
+  };
+  recommendedBlueprint: {
+    title: string;
+    items: { heading: string; detail: string }[];
+  };
+  recommendedPlan: {
+    name: string;
+    price: string;
+    setup: string;
+    roiDetail: string;
+  };
+  actionMessage: string;
+}
+
+const NICHE_REPORTS: Record<string, DiagnosticReport> = {
+  restaurante: {
+    segmentId: 'restaurante',
+    segmentTitle: 'Restaurante & Gastronomia',
+    segmentSubtitle: 'Cardápio próprio sem taxas abusivas e pedidos rápidos 24h',
+    kpis: [
+      { label: 'Economia Mensal', value: 'R$ 1.800 a R$ 3.500', hint: 'Zerando comissões de 27% de apps' },
+      { label: 'Tempo de Resposta', value: '2 segundos', hint: 'Envio imediato no WhatsApp à noite' },
+      { label: 'Taxa de Recompra', value: '+45%', hint: 'Base própria de clientes e fidelidade' }
+    ],
+    marketBottleneck: {
+      title: 'Dependência de Apps e Atendimento Lento no Balcão',
+      description: 'Plataformas de terceiros cobram até 27% sobre cada prato vendido e confiscam o contato do seu cliente. Além disso, responder pedidos manualmente no WhatsApp no horário de pico gera filas, demoras e perda de clientes famintos.'
+    },
+    recommendedBlueprint: {
+      title: 'Ecossistema Recomendado Sentinel',
+      items: [
+        { heading: 'Cardápio Digital PWA Ultra-Rápido (0.4s)', detail: 'Fotos de alta resolução dos pratos, categorias e promoções sem necessidade do cliente instalar nada no celular.' },
+        { heading: 'Robô de Pedidos 24h no WhatsApp', detail: 'Ao receber "boa noite", envia o cardápio em 2 segundos e formata a comanda pronta para a cozinha com endereço, taxa e itens.' },
+        { heading: 'Google Meu Negócio & SEO Local', detail: 'Posiciona seu restaurante no topo das pesquisas "onde comer perto de mim" ou "melhor pizza da cidade".' }
+      ]
+    },
+    recommendedPlan: {
+      name: 'Combo Site + Robô 24h',
+      price: 'R$ 327/mês',
+      setup: 'Setup R$ 759 ou 12x R$ 76',
+      roiDetail: 'Paga o investimento nos primeiros 15 pedidos diretos que deixam de pagar comissão de apps.'
+    },
+    actionMessage: 'Olá! Analisei o diagnóstico da Sentinel AI para meu Restaurante/Delivery e quero implantar o ecossistema com cardápio próprio e robô de pedidos!'
+  },
+  pousada: {
+    segmentId: 'pousada',
+    segmentTitle: 'Pousadas, Hotéis & Turismo',
+    segmentSubtitle: 'Reservas diretas sem comissões de plataformas intermediárias',
+    kpis: [
+      { label: 'Comissão Paga a Terceiros', value: '0%', hint: 'Economia de 18% a 25% por reserva' },
+      { label: 'Atendimento Noturno', value: '100% Coberto', hint: 'Turistas que cotam de madrugada' },
+      { label: 'Sinal de Reserva (PIX)', value: 'Imediato', hint: 'Garante 50% antecipado no fechamento' }
+    ],
+    marketBottleneck: {
+      title: 'Comissões de 18% a 25% em OTAs e Perda de Hóspedes Noturnos',
+      description: 'Turistas costumam planejar viagens e cotar diárias tarde da noite. Sem um sistema que passe fotos das acomodações e valores na hora, eles reservam em sites terceiros que abocanham uma fatia gigantesca do seu lucro.'
+    },
+    recommendedBlueprint: {
+      title: 'Ecossistema Recomendado Sentinel',
+      items: [
+        { heading: 'Portal Visual Imersivo das Suítes', detail: 'Galeria fotográfica de alta performance, apresentação da pousada, localização privilegiada e avaliações 5 estrelas.' },
+        { heading: 'Motor de Cotação Automática no WhatsApp', detail: 'Responde na hora com opções de quartos disponíveis, tabela de diárias por temporada e link seguro para sinal via PIX.' },
+        { heading: 'Vantagem Exclusiva de Reserva Direta', detail: 'Incentivo inteligente: ofereça 10% de desconto pelo site oficial e ainda lucre 15% a mais do que pelas plataformas.' }
+      ]
+    },
+    recommendedPlan: {
+      name: 'Presença Profissional + Robô de Reservas',
+      price: 'R$ 274/mês',
+      setup: 'Setup R$ 649 ou 12x R$ 65',
+      roiDetail: 'Apenas 2 diárias diretas no mês já cobrem toda a mensalidade e geram lucro líquido extra.'
+    },
+    actionMessage: 'Olá! Vi o diagnóstico da Sentinel AI para Pousadas/Hotéis e quero receber reservas diretas pelo WhatsApp sem pagar comissão para plataformas!'
+  },
+  clinica: {
+    segmentId: 'clinica',
+    segmentTitle: 'Clínicas, Médicos & Saúde',
+    segmentSubtitle: 'Autoridade médica, agendamentos 24/7 e combate ao no-show',
+    kpis: [
+      { label: 'Redução de Faltas', value: '-50% No-Show', hint: 'Lembretes automatizados no WhatsApp' },
+      { label: 'Agendamentos Noturnos', value: '42% do Total', hint: 'Pacientes que procuram fora do horário' },
+      { label: 'Ranqueamento Google', value: '1ª Página Maps', hint: 'Destaque para sua especialidade na cidade' }
+    ],
+    marketBottleneck: {
+      title: 'Pacientes Perdidos Fora do Horário Comercial e Cadeiras Vazias',
+      description: 'Mais de 40% dos pacientes só têm tempo de procurar um médico ou dentista após o expediente. Se a secretária já encerrou, ele busca a próxima clínica no Google. Além disso, esquecimentos geram horários vagos e prejuízo.'
+    },
+    recommendedBlueprint: {
+      title: 'Ecossistema Recomendado Sentinel',
+      items: [
+        { heading: 'Site Institucional com Rigor Técnico e LGPD', detail: 'Design elegante, currículo dos especialistas, fotos da estrutura, diferenciais e convênios aceitos.' },
+        { heading: 'Triagem e Pré-Agendamento 24h no WhatsApp', detail: 'Pergunta especialidade desejada, tipo de atendimento (convênio ou particular) e direciona para os horários disponíveis.' },
+        { heading: 'Confirmação Automática de Presença', detail: 'Disparo de lembrete cordial 24h antes da consulta, permitindo remarcação antecipada e evitando salas vazias.' }
+      ]
+    },
+    recommendedPlan: {
+      name: 'Presença Profissional (Saúde & Estética)',
+      price: 'R$ 274/mês',
+      setup: 'Setup R$ 649 ou 12x R$ 65',
+      roiDetail: 'Um único paciente particular novo no mês já supera o custo do ecossistema completo.'
+    },
+    actionMessage: 'Olá! Analisei o diagnóstico da Sentinel AI para Clínicas/Saúde e quero estruturar meu site com agendamento e confirmação automática no WhatsApp!'
+  },
+  servicos: {
+    segmentId: 'servicos',
+    segmentTitle: 'Engenharia, Reformas & B2B',
+    segmentSubtitle: 'Atraia contratos corporativos e clientes de alto ticket',
+    kpis: [
+      { label: 'Valor de Contratos', value: 'R$ 10k a R$ 100k+', hint: 'Clientes corporativos exigem site sério' },
+      { label: 'Qualificação de Lead', value: '100% Filtrado', hint: 'Filtra curiosos antes do comercial falar' },
+      { label: 'SEO Google Técnico', value: 'Páginas Indexadas', hint: 'Posiciona para termos de engenharia e obras' }
+    ],
+    marketBottleneck: {
+      title: 'Aparência Amadora e Dependência Apenas de Indicação',
+      description: 'Quem vai contratar uma reforma comercial ou serviço técnico de R$ 30.000 pesquisa no Google para certificar credibilidade. Empresas que possuem apenas uma rede social perdem o contrato para concorrentes estruturados.'
+    },
+    recommendedBlueprint: {
+      title: 'Ecossistema Recomendado Sentinel',
+      items: [
+        { heading: 'Portfólio Institucional de Alto Impacto', detail: 'Apresentação de obras e serviços realizados, dados técnicos, garantias, certificações e prova social de clientes.' },
+        { heading: 'Filtro Comercial Pré-Orçamento no WhatsApp', detail: 'Coleta metragem, prazo estimado e tomador de decisão, entregando o lead pronto para o engenheiro ou gestor.' },
+        { heading: 'Posicionamento em Múltiplas Cidades', detail: 'Estrutura técnica com Schema.org que permite ranquear em diversas cidades e regiões industriais.' }
+      ]
+    },
+    recommendedPlan: {
+      name: 'Plano Pro (Expansão & Alto Ticket)',
+      price: 'R$ 274/mês',
+      setup: 'Setup R$ 649 ou 12x R$ 65',
+      roiDetail: 'Um único contrato assinado paga anos da operação digital da sua empresa.'
+    },
+    actionMessage: 'Olá! A Sentinel AI recomendou a estrutura para captação de clientes de alto padrão para minha empresa de Serviços/Engenharia. Quero uma proposta!'
+  },
+  varejo: {
+    segmentId: 'varejo',
+    segmentTitle: 'Comércio, Lojas & Varejo',
+    segmentSubtitle: 'Catálogo de produtos ágil e atendimento instantâneo',
+    kpis: [
+      { label: 'Velocidade de Carga', value: '< 0.5s Mobile', hint: 'Sem abandono por lentidão de telas' },
+      { label: 'Conversão no WhatsApp', value: '3.2x Maior', hint: 'Cliente clica no produto e cai no chat' },
+      { label: 'Catálogo Sempre Atual', value: 'Atualização Fácil', hint: 'Promoções e novidades em tempo real' }
+    ],
+    marketBottleneck: {
+      title: 'Plataformas Pesadas de E-commerce com Alto Abandono',
+      description: 'Lojas virtuais convencionais forçam o cliente a fazer cadastros longos com senhas e endereço antes de comprar. Mais de 80% das compras pelo celular são abandonadas no checkout.'
+    },
+    recommendedBlueprint: {
+      title: 'Ecossistema Recomendado Sentinel',
+      items: [
+        { heading: 'Showroom Virtual Direto para o WhatsApp', detail: 'O cliente vê o produto, clica em "Comprar no WhatsApp" e já abre o chat com foto e nome do item para fechar no PIX.' },
+        { heading: 'Google Meu Negócio & Inventário Local', detail: 'Atraia pessoas que procuram pelo produto na sua cidade com intenção imediata de compra.' },
+        { heading: 'Atendimento Rápido e Humano', detail: 'Sem carrinho abandonado: o cliente fala direto com sua equipe de vendas e fecha a compra na hora.' }
+      ]
+    },
+    recommendedPlan: {
+      name: 'Landing Comercial & Catálogo Ágil',
+      price: 'R$ 164/mês',
+      setup: 'Setup R$ 429 ou 12x R$ 43',
+      roiDetail: 'Recupere o valor do mês já na primeira semana de clientes vindos do Google.'
+    },
+    actionMessage: 'Olá! Vi o diagnóstico da Sentinel AI para Lojas/Varejo e quero criar meu catálogo rápido direcionado para o WhatsApp!'
+  }
+};
+
+interface InsightCard {
   id: string;
-  sender: 'ai' | 'user';
-  text: string;
-  time: string;
-  suggestions?: string[];
-  cta?: {
+  query: string;
+  title: string;
+  badge: string;
+  summary: string;
+  actionItems: string[];
+  roiNotice: string;
+  suggestedAction: {
     label: string;
-    actionMessage: string;
+    waText: string;
   };
 }
 
@@ -29,378 +212,463 @@ interface SentinelAIAdvisorProps {
 }
 
 export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({ 
-  onOpenContact: _onOpenContact,
   onCloseMobile 
 }) => {
-  const [messages, setMessages] = useState<Message[]>([
+  const [activeTab, setActiveTab] = useState<'niche' | 'insights'>('niche');
+  const [selectedNiche, setSelectedNiche] = useState<string>('restaurante');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [insightResults, setInsightResults] = useState<InsightCard[]>([
     {
-      id: 'welcome-1',
-      sender: 'ai',
-      text: 'Olá! Sou a **Sentinel AI**, especialista em Vendas, Marketing Online e SEO para empresas em todo o Brasil. 🚀\n\nEstou aqui gratuitamente para analisar o seu negócio e te mostrar como atrair clientes prontos para comprar no Google e fechar pedidos no WhatsApp 24h por dia.\n\n**Qual é o seu nicho ou tipo de empresa?**',
-      time: 'Agora',
-      suggestions: [
-        '🍕 Tenho um Restaurante / Delivery',
-        '🌊 Tenho uma Pousada / Hotel',
-        '🩺 Tenho uma Clínica / Consultório',
-        '📐 Sou Prestador de Serviços / Engenharia',
-        '👗 Tenho Loja / Comércio Varejista'
-      ]
+      id: 'default-insight',
+      query: 'Por que não depender apenas do Instagram?',
+      title: 'O Tripé de Vendas no Brasil: Google + Site 0.4s + WhatsApp',
+      badge: 'Estratégia Fundamental',
+      summary: 'No Instagram as pessoas entram para se entreter e o algoritmo entrega seus posts para menos de 5% da sua audiência. No Google, quem pesquisa já está com intenção de compra imediata. Ter o site próprio e o robô de WhatsApp é o que transforma essa busca em dinheiro no caixa.',
+      actionItems: [
+        'Google traz quem quer comprar hoje; Instagram constrói marca.',
+        'Site próprio elimina comissões de plataformas intermediárias.',
+        'Atendimento no WhatsApp em menos de 5 minutos fecha até 4x mais pedidos.'
+      ],
+      roiNotice: 'Empresas presentes na 1ª página do Google recebem tráfego qualificado 24 horas por dia sem precisar pagar anúncios contínuos.',
+      suggestedAction: {
+        label: 'Quero aplicar essa estratégia no meu negócio',
+        waText: 'Olá! A Sentinel AI me explicou a importância de unir Google + Site + WhatsApp. Gostaria de uma proposta!'
+      }
     }
   ]);
+  const [isProcessing, setIsProcessing] = useState(false);
 
-  const [input, setInput] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const currentReport = NICHE_REPORTS[selectedNiche] || NICHE_REPORTS.restaurante;
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages, isTyping]);
-
-  // Inteligência de Vendas e Marketing Online especializada para PMEs no Brasil
-  const generateAIResponse = (userQuery: string): Message => {
-    const q = userQuery.toLowerCase();
-    const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-    // 1. Restaurante / Gastronomia / Delivery
-    if (q.includes('restaurante') || q.includes('pizzaria') || q.includes('hamburgueria') || q.includes('delivery') || q.includes('bar') || q.includes('comida') || q.includes('lanchonete')) {
-      return {
-        id: Date.now().toString(),
-        sender: 'ai',
-        time: now,
-        text: `Excelente nicho! O maior gargalo de restaurantes e delivery no Brasil hoje é a **dependência abusiva de aplicativos que cobram 20% a 27% de comissão** e a demora para atender clientes no WhatsApp à noite.\n\n### 💡 Estratégia Recomendada para o seu Negócio:\n1. **Cardápio Digital Próprio:** Um site com fotos reais dos pratos em alta definição. O cliente abre no celular em 0.4s, sem precisar baixar apps pesados.\n2. **Robô de Pedidos no WhatsApp:** Envia o cardápio em 2 segundos quando o cliente manda "boa noite". A comanda chega impressa ou formatada no seu balcão com nome, endereço e itens.\n3. **Google Meu Negócio Local:** Quando alguém pesquisa *"onde comer perto de mim"* ou *"melhor pizza da cidade"*, você aparece no mapa com fotos e botão de WhatsApp direto.\n\n*Resultado prático:* Uma economia média de R$ 1.800 a R$ 3.500/mês em taxas de plataformas e 4x mais pedidos diretos!`,
-        suggestions: [
-          '🤖 Como seria o script do robô no WhatsApp?',
-          '🔍 Quais palavras os clientes buscam no Google?',
-          '💰 Quanto custa criar essa estrutura para meu restaurante?'
-        ],
-        cta: {
-          label: 'Quero esse ecossistema no meu restaurante',
-          actionMessage: 'Olá! A IA da Sentinel analisou meu restaurante e quero implantar o site com robô de cardápio!'
-        }
-      };
-    }
-
-    // 2. Pousadas / Hotéis / Turismo
-    if (q.includes('pousada') || q.includes('hotel') || q.includes('reserva') || q.includes('turismo') || q.includes('hospedagem') || q.includes('temporada')) {
-      return {
-        id: Date.now().toString(),
-        sender: 'ai',
-        time: now,
-        text: `O setor de hotelaria tem uma das maiores oportunidades de lucro líquido do Brasil!\n\n### 💡 Diagnóstico para Pousadas & Hotéis:\n* **O Grande Problema:** Pagar de 18% a 25% de taxa por cada hóspede que reserva em sites intermediários (Booking, Airbnb), além de perder hóspedes que mandam mensagem de madrugada e não recebem resposta.\n* **A Solução Sentinel:**\n  1. **Site com Galeria Imersiva:** Fotos deslumbrantes das suítes, café da manhã e comodidades com carregamento ultra-rápido;\n  2. **Motor de Reservas no WhatsApp 24h:** O turista pergunta o valor da diária para o feriado e o robô responde em 2 segundos com as opções, fotos da suíte e chave PIX para garantir 50% de sinal;\n  3. **Desconto de Reserva Direta:** Ao oferecer 10% de desconto reservando pelo site oficial, você ainda economiza 15% que deixaria para plataformas.\n\n*Resultado:* Mesas e suítes cheias, com o dinheiro caindo direto na sua conta bancária!`,
-        suggestions: [
-          '🤖 Ver demonstração do robô de reservas',
-          '📈 Como ranquear na frente no Google Turismo?',
-          'Qual o prazo para colocar no ar?'
-        ],
-        cta: {
-          label: 'Quero receber reservas diretas sem comissões',
-          actionMessage: 'Olá! A IA da Sentinel me mostrou como economizar comissões na minha pousada. Gostaria de uma proposta!'
-        }
-      };
-    }
-
-    // 3. Clínicas / Médicos / Dentistas / Saúde / Estética
-    if (q.includes('clínica') || q.includes('clinica') || q.includes('médic') || q.includes('medic') || q.includes('dentista') || q.includes('odonto') || q.includes('psicolog') || q.includes('estética') || q.includes('saúde') || q.includes('fisioterap')) {
-      return {
-        id: Date.now().toString(),
-        sender: 'ai',
-        time: now,
-        text: `Na área da saúde, **autoridade imediata e agilidade no agendamento** são os dois fatores que decidem se o paciente marca com você ou com a clínica ao lado.\n\n### 💡 O que sua clínica precisa para lotar a agenda:\n1. **Site Institucional de Rigor Médico:** Design limpo, apresentação do corpo clínico, especialidades, fotos do consultório e convênios aceitos.\n2. **Triagem Automática 24/7:** Mais de 40% das pessoas procuram agendar consulta após as 20h ou antes das 8h. O robô pergunta se é convênio ou particular, passa as datas disponíveis e pré-agenda na hora.\n3. **Redução de No-Show (Faltas):** Envio automático de confirmação e lembrete de consulta na véspera pelo WhatsApp, reduzindo em até 50% as faltas que deixam a sala vazia.\n4. **Google Maps 5 Estrelas:** Otimização para quem pesquisa *"dentista perto de mim"* ou *"clínica de dermatologia"* na sua região.`,
-        suggestions: [
-          '🤖 Como o robô faz a triagem de convênios?',
-          'Como funciona a proteção de dados (LGPD)?',
-          'Quero agendar uma reunião técnica'
-        ],
-        cta: {
-          label: 'Quero estruturar a presença da minha clínica',
-          actionMessage: 'Olá! A IA da Sentinel analisou minha clínica de saúde e quero estruturar meu site com agendamento automático!'
-        }
-      };
-    }
-
-    // 4. Engenharia / Reformas / Serviços Técnicos / B2B
-    if (q.includes('engenharia') || q.includes('reforma') || q.includes('construção') || q.includes('construcao') || q.includes('arquiteto') || q.includes('eletricista') || q.includes('oficina') || q.includes('serviço') || q.includes('advocacia') || q.includes('contabilidade')) {
-      return {
-        id: Date.now().toString(),
-        sender: 'ai',
-        time: now,
-        text: `Para prestadores de serviços e empresas de engenharia/consultoria, **um único contrato fechado no mês já paga o ano inteiro de infraestrutura digital.**\n\n### 💡 Estratégia para Atrair Clientes de Alto Ticket:\n1. **Eliminar a Imagem Amadora:** Um cliente que vai pagar R$ 10.000 ou R$ 80.000 por uma obra ou serviço corporativo não fecha com quem só tem um Instagram genérico. Ele pesquisa no Google para checar credibilidade.\n2. **Portfólio com Prova Social:** Fotos de projetos entregues, depoimentos reais e certificações técnicas com visual de alto nível internacional.\n3. **Filtro de Orçamentos Qualificados:** O robô coleta antecipadamente o tamanho do projeto, o prazo e o telefone do tomador de decisão, para que seu comercial gaste tempo apenas com quem tem orçamento para fechar.`,
-        suggestions: [
-          'Como o Case Grupo Vitti obteve 39 páginas no Google?',
-          'Quais termos meus clientes pesquisam?',
-          'Como funciona o suporte mensal?'
-        ],
-        cta: {
-          label: 'Quero captar contratos de alto valor',
-          actionMessage: 'Olá! A IA da Sentinel me recomendou estruturar a captação de clientes para minha empresa de serviços/engenharia!'
-        }
-      };
-    }
-
-    // 5. Instagram vs Site / Dependência de Redes
-    if (q.includes('instagram') || q.includes('feed') || q.includes('post') || q.includes('algoritmo') || q.includes('redes')) {
-      return {
-        id: Date.now().toString(),
-        sender: 'ai',
-        time: now,
-        text: `Você tocou no ponto mais crucial do marketing atual!\n\n**O Problema do Instagram:** As pessoas entram lá para se entreter, ver fotos de amigos e passar o tempo. Quando você posta, o algoritmo só entrega para 3% a 5% dos seus seguidores, a menos que você pague anúncios diários.\n\n**O Poder do Google:** Quando alguém digita no Google *"conserto de ar condicionado urgente"*, *"pousada para o fim de semana"* ou *"clínica perto de mim"*, essa pessoa **já está com a carteira na mão precisando comprar AGORA**.\n\n*Conclusão da IA:* O Instagram constrói relacionamento, mas o **Google + Robô de WhatsApp é o que traz o cliente quente para o fechamento imediato.** Ter os dois trabalhando juntos é a fórmula vencedora.`,
-        suggestions: [
-          'Como colocar minha empresa no topo do Google Maps?',
-          'Quanto custa um site rápido com a Sentinel?',
-          'Quero ver os modelos de sites'
-        ],
-        cta: {
-          label: 'Quero parar de depender só do Instagram',
-          actionMessage: 'Olá! A IA da Sentinel me explicou por que preciso estar no Google. Quero uma proposta para meu negócio!'
-        }
-      };
-    }
-
-    // 6. Palavras-chave / SEO / Google
-    if (q.includes('palavra') || q.includes('termo') || q.includes('busca') || q.includes('google') || q.includes('ranquear') || q.includes('seo') || q.includes('posicionar')) {
-      return {
-        id: Date.now().toString(),
-        sender: 'ai',
-        time: now,
-        text: `Para ranquear no topo do Google no Brasil, existem 3 regras de ouro que a Sentinel Systems aplica em todos os projetos:\n\n1. **Intenção Comercial Explícita:** Ranquear para termos como *"[Serviço] + [Sua Cidade]"* e *"[Produto] + perto de mim"*. Quem busca isso tem 85% mais probabilidade de comprar do que quem busca termos genéricos.\n2. **Velocidade de Carregamento (Core Web Vitals):** O Google pune sites que demoram mais de 2.5 segundos para abrir no celular. Nossos sites carregam em **menos de 0.8s**, garantindo nota máxima técnica.\n3. **Estrutura de Schema.org (JSON-LD):** Código invisível que ensina aos robôs do Google exatamente seu telefone, horário de funcionamento, serviços e avaliações.`,
-        suggestions: [
-          'Quero um Raio-X gratuito do meu Google atual',
-          'Como funciona a mensalidade com alterações?',
-          'Falar com especialista no WhatsApp'
-        ],
-        cta: {
-          label: 'Fazer Raio-X gratuito da minha empresa',
-          actionMessage: 'Olá! A IA da Sentinel sugeriu uma auditoria gratuita no meu Google Meu Negócio. Como podemos fazer?'
-        }
-      };
-    }
-
-    // 7. Resposta Genérica
-    return {
-      id: Date.now().toString(),
-      sender: 'ai',
-      time: now,
-      text: `Excelente pergunta! Analisando seu cenário, o segredo para crescer no Brasil hoje consiste em um tripé simples e altamente lucrativo:\n\n1. **Presença Ativa no Google:** Quando o cliente da sua cidade ou do país tiver a dor que você resolve, sua empresa deve ser a resposta oficial número 1;\n2. **Site Ultrarrápido e Mobile-First:** 80% das visitas virão pelo celular. O site precisa ser direto ao ponto, elegante e carregar em menos de 1 segundo;\n3. **Velocidade de Resposta no WhatsApp:** Se você demorar 10 minutos para responder um cliente potencial, ele já chamou e comprou no seu concorrente. O robô inteligente 24h elimina essa perda.\n\nQual é a sua maior dúvida ou objetivo hoje? Posso te sugerir a melhor estrutura para o seu segmento!`,
-      suggestions: [
-        '💡 Sugerir uma headline para o meu site',
-        '🤖 Como automatizar meu WhatsApp hoje?',
-        '💰 Ver os planos e valores da Sentinel'
-      ],
-      cta: {
-        label: 'Conversar com a diretoria técnica no WhatsApp',
-        actionMessage: `Olá! Estive conversando com a IA da Sentinel Systems sobre: "${userQuery}" e gostaria de uma orientação personalizada!`
-      }
-    };
-  };
-
-  const handleSendMessage = (textToSend?: string) => {
-    const messageText = textToSend || input;
-    if (!messageText.trim()) return;
-
+  const handleSelectNiche = (id: string) => {
     soundFx.playUiClick();
-    const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    setSelectedNiche(id);
+  };
 
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      sender: 'user',
-      text: messageText,
-      time: now
-    };
-
-    setMessages((prev) => [...prev, userMessage]);
-    setInput('');
-    setIsTyping(true);
+  const handleRunQuery = (queryText: string) => {
+    if (!queryText.trim()) return;
+    soundFx.playUiClick();
+    setIsProcessing(true);
+    setActiveTab('insights');
 
     setTimeout(() => {
-      const aiReply = generateAIResponse(messageText);
-      setMessages((prev) => [...prev, aiReply]);
-      setIsTyping(false);
-      soundFx.playUiClick();
-    }, 750);
-  };
+      const q = queryText.toLowerCase();
+      let newInsight: InsightCard;
 
-  const handleSuggestionClick = (suggestion: string) => {
-    handleSendMessage(suggestion);
-  };
-
-  const handleResetChat = () => {
-    soundFx.playUiClick();
-    setMessages([
-      {
-        id: 'welcome-reset',
-        sender: 'ai',
-        text: 'Chat reiniciado! 🔄 Me diga: qual é o seu tipo de negócio e como posso te ajudar a vender mais hoje?',
-        time: 'Agora',
-        suggestions: [
-          '🍕 Restaurante / Delivery',
-          '🌊 Pousada / Hotel',
-          '🩺 Clínica / Consultório',
-          '📐 Engenharia & Serviços',
-          'Como parar de depender só do Instagram?'
-        ]
+      if (q.includes('preço') || q.includes('valor') || q.includes('plano') || q.includes('quanto custa')) {
+        newInsight = {
+          id: Date.now().toString(),
+          query: queryText,
+          title: 'Arquitetura Transparente de Preços & Prazos',
+          badge: 'Investimento & ROI',
+          summary: 'Nossos planos foram desenhados para que o custo mensal se pague com apenas 1 a 3 vendas a mais no mês. Toda a infraestrutura inclui hospedagem de alta velocidade, certificado SSL, suporte contínuo e atualizações.',
+          actionItems: [
+            'Landing de Alta Conversão: R$ 164/mês (Setup R$ 429 ou 12x R$ 43)',
+            'Presença Profissional (Institucional): R$ 274/mês (Setup R$ 649 ou 12x R$ 65)',
+            'Automação & Robô de WhatsApp 24h: R$ 327/mês (Setup R$ 759 ou 12x R$ 76)',
+            'Entrega ágil: Colocamos seu ecossistema no ar em até 7 dias úteis.'
+          ],
+          roiNotice: 'Sem fidelidade abusiva. Você conta com suporte humano contínuo e tecnologia moderna de ponta.',
+          suggestedAction: {
+            label: 'Solicitar Proposta Comercial Detalhada',
+            waText: `Olá! Consultei os valores na Sentinel AI e quero contratar um plano para minha empresa!`
+          }
+        };
+      } else if (q.includes('google') || q.includes('seo') || q.includes('ranquear') || q.includes('topo')) {
+        newInsight = {
+          id: Date.now().toString(),
+          query: queryText,
+          title: 'Como Dominar a 1ª Página do Google e Google Maps',
+          badge: 'SEO de Alta Performance',
+          summary: 'O Google valoriza três pilares técnicos: velocidade extrema no mobile (< 1s), marcação de dados Schema.org e relevância local com avaliações reais.',
+          actionItems: [
+            'Otimizamos termos com intenção de compra (ex: "[Seu Serviço] + [Sua Cidade]").',
+            'Tempo de carregamento abaixo de 0.8s atinge nota máxima no Google PageSpeed.',
+            'Integração direta com Google Meu Negócio para receber chamadas diretas no mapa.'
+          ],
+          roiNotice: 'Estar no topo do Google elimina a necessidade de depender exclusivamente de tráfego pago constante.',
+          suggestedAction: {
+            label: 'Quero um Raio-X gratuito do meu Google',
+            waText: 'Olá! A Sentinel AI sugeriu uma auditoria gratuita no meu posicionamento no Google. Como podemos fazer?'
+          }
+        };
+      } else if (q.includes('whatsapp') || q.includes('robô') || q.includes('robo') || q.includes('automação') || q.includes('automacao')) {
+        newInsight = {
+          id: Date.now().toString(),
+          query: queryText,
+          title: 'Automação Comercial 24 Horas no WhatsApp',
+          badge: 'Conversão 24/7',
+          summary: 'O cliente moderno não espera mais de 5 minutos por uma resposta. Nosso assistente virtual atende imediatamente, tira dúvidas frequentes, envia cardápio/catálogo e direciona para o fechamento.',
+          actionItems: [
+            'Atendimento instantâneo em 2 segundos a qualquer hora do dia ou da noite.',
+            'Disparo de cardápios, PDFs, tabelas de preço e agendamento de visitas.',
+            'Triagem inteligente para sua equipe comercial gastar tempo só com quem vai comprar.'
+          ],
+          roiNotice: 'Empresas com atendimento instantâneo recuperam até 65% das vendas perdidas fora do expediente.',
+          suggestedAction: {
+            label: 'Quero ver o Robô de WhatsApp funcionando',
+            waText: 'Olá! Gostaria de uma demonstração do robô de automação para o WhatsApp da minha empresa!'
+          }
+        };
+      } else {
+        newInsight = {
+          id: Date.now().toString(),
+          query: queryText,
+          title: 'Análise Estratégica de Crescimento Digital',
+          badge: 'Auditoria Estratégica',
+          summary: `Para se destacar e vender com previsibilidade, sua empresa precisa de uma base sólida: velocidade para abrir no celular sem travar, SEO estruturado para o Google e um funil direto para o WhatsApp.`,
+          actionItems: [
+            'Estrutura com carregamento em até 0.6s no celular.',
+            'Posicionamento focado nas dores dos seus clientes.',
+            'Botão flutuante de WhatsApp com rastreamento de conversões.'
+          ],
+          roiNotice: 'Com a Sentinel Systems, cuidamos de toda a engenharia técnica para você focar no que faz de melhor: gerir seu negócio.',
+          suggestedAction: {
+            label: 'Falar com Consultor Humano no WhatsApp',
+            waText: `Olá! Consultei a Sentinel AI sobre "${queryText}" e gostaria de uma orientação personalizada!`
+          }
+        };
       }
-    ]);
+
+      setInsightResults((prev) => [newInsight, ...prev.slice(0, 3)]);
+      setIsProcessing(false);
+      setSearchQuery('');
+    }, 600);
   };
+
+  const nicheButtons = [
+    { id: 'restaurante', label: 'Restaurante', icon: Utensils },
+    { id: 'pousada', label: 'Pousadas', icon: Waves },
+    { id: 'clinica', label: 'Clínicas', icon: Stethoscope },
+    { id: 'servicos', label: 'Serviços & B2B', icon: Briefcase },
+    { id: 'varejo', label: 'Varejo & Loja', icon: ShoppingBag }
+  ];
 
   return (
     <div className="flex flex-col h-full bg-white text-slate-800 border-l border-slate-200/90 shadow-sm relative overflow-hidden font-sans">
       
-      {/* Header do Copilot - Clean White */}
-      <div className="px-4 py-3.5 bg-white border-b border-slate-100 flex items-center justify-between shrink-0">
-        <div className="flex items-center gap-2.5">
-          <div className="relative">
-            <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-cyan-400 via-sky-500 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-cyan-500/20 border border-white/60">
-              <Bot className="w-5 h-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)]" />
-            </div>
-            <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white animate-pulse" />
+      {/* 1. STUDIO HEADER (Modern Minimalist Linear Style) */}
+      <div className="p-4 bg-white border-b border-slate-100 flex items-center justify-between shrink-0">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-sm shadow-cyan-500/20">
+            <Sparkles className="w-5 h-5" />
           </div>
 
           <div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-xs text-slate-900 tracking-tight">Sentinel AI</span>
-              <span className="px-1.5 py-0.2 rounded bg-cyan-50 border border-cyan-200 text-[9px] font-bold text-cyan-800 uppercase tracking-wider">
-                Copilot
+            <div className="flex items-center gap-2">
+              <span className="font-black text-xs text-slate-900 tracking-tight">Sentinel Studio</span>
+              <span className="px-1.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-[9px] font-extrabold text-cyan-800 uppercase tracking-wider">
+                Copilot v3.0
               </span>
             </div>
-            <div className="text-[10px] text-slate-500 font-medium">
-              Estrategista de Vendas Online &bull; Gratuito
+            <div className="text-[11px] text-slate-500 flex items-center gap-1.5 mt-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Inteligência de Vendas em Tempo Real</span>
             </div>
           </div>
         </div>
 
-        <div className="flex items-center gap-1">
+        {onCloseMobile && (
           <button
-            onClick={handleResetChat}
-            title="Reiniciar conversa"
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
-            aria-label="Reiniciar chat"
+            onClick={onCloseMobile}
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer lg:hidden"
+            aria-label="Fechar painel"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <X className="w-4 h-4" />
+          </button>
+        )}
+      </div>
+
+      {/* 2. MODE SELECTOR (Segmented Studio Tabs) */}
+      <div className="px-4 pt-3 pb-2 bg-slate-50/70 border-b border-slate-100 shrink-0">
+        <div className="grid grid-cols-2 p-1 bg-slate-200/60 rounded-xl text-xs font-bold text-slate-600">
+          <button
+            onClick={() => {
+              soundFx.playUiClick();
+              setActiveTab('niche');
+            }}
+            className={`py-1.5 rounded-lg flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+              activeTab === 'niche'
+                ? 'bg-white text-slate-900 shadow-xs'
+                : 'hover:text-slate-900'
+            }`}
+          >
+            <Target className="w-3.5 h-3.5 text-cyan-600" />
+            <span>Diagnóstico por Nicho</span>
           </button>
 
-          {onCloseMobile && (
-            <button
-              onClick={onCloseMobile}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer lg:hidden"
-              aria-label="Fechar painel"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
+          <button
+            onClick={() => {
+              soundFx.playUiClick();
+              setActiveTab('insights');
+            }}
+            className={`py-1.5 rounded-lg flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+              activeTab === 'insights'
+                ? 'bg-white text-slate-900 shadow-xs'
+                : 'hover:text-slate-900'
+            }`}
+          >
+            <BarChart3 className="w-3.5 h-3.5 text-indigo-600" />
+            <span>Consultoria & Prompts</span>
+          </button>
         </div>
       </div>
 
-      {/* Live Badge */}
-      <div className="px-4 py-1.5 bg-gradient-to-r from-cyan-50/70 to-slate-50 border-b border-slate-100 flex items-center justify-between text-[10px] text-cyan-900">
-        <span className="flex items-center gap-1.5 font-semibold">
-          <Sparkles className="w-3 h-3 text-cyan-600 shrink-0" />
-          <span>Inteligência Comercial em Tempo Real</span>
-        </span>
-        <span className="text-slate-400 font-mono text-[9px]">v2.5 Brasil</span>
-      </div>
-
-      {/* Messages Stream Area */}
-      <div className="flex-1 p-3.5 overflow-y-auto space-y-3.5 scrollbar-thin scrollbar-thumb-slate-200 bg-slate-50/40">
-        {messages.map((msg) => {
-          const isAi = msg.sender === 'ai';
-          return (
-            <div key={msg.id} className={`flex flex-col ${isAi ? 'items-start' : 'items-end'}`}>
-              <div
-                className={`max-w-[92%] rounded-2xl p-3.5 text-xs leading-relaxed shadow-xs ${
-                  isAi
-                    ? 'bg-white border border-slate-200 text-slate-800'
-                    : 'bg-gradient-to-r from-cyan-600 to-sky-600 text-white font-medium shadow-md shadow-cyan-600/20'
-                }`}
-              >
-                <div className="space-y-2 whitespace-pre-line">
-                  {msg.text.split('\n\n').map((paragraph, pIdx) => (
-                    <p key={pIdx}>{paragraph}</p>
-                  ))}
-                </div>
-
-                <div className={`mt-1.5 text-[9px] flex items-center justify-end ${isAi ? 'text-slate-400' : 'text-cyan-100'}`}>
-                  <span>{msg.time}</span>
-                </div>
-
-                {msg.cta && (
-                  <div className="mt-3 pt-3 border-t border-slate-100">
-                    <a
-                      href={`https://wa.me/5522999726069?text=${encodeURIComponent(msg.cta.actionMessage)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => soundFx.playUiClick()}
-                      className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-[11px] tracking-wide flex items-center justify-center gap-1.5 shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
-                    >
-                      <MessageCircle className="w-3.5 h-3.5" />
-                      <span>{msg.cta.label}</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </a>
-                  </div>
-                )}
+      {/* 3. MAIN WORKSPACE CANVAS */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-slate-200">
+        
+        {activeTab === 'niche' ? (
+          /* TAB 1: EXECUTIVE NICHE DIAGNOSTIC DOSSIER */
+          <div className="space-y-4">
+            
+            {/* Segment Selector Tiles */}
+            <div>
+              <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
+                <SlidersHorizontal className="w-3 h-3 text-cyan-600" />
+                <span>Selecione o seu Modelo de Negócio:</span>
               </div>
 
-              {msg.suggestions && msg.suggestions.length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-1.5 max-w-[95%]">
-                  {msg.suggestions.map((sug, sIdx) => (
+              <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5">
+                {nicheButtons.map((btn) => {
+                  const Icon = btn.icon;
+                  const isSelected = selectedNiche === btn.id;
+                  return (
                     <button
-                      key={sIdx}
-                      onClick={() => handleSuggestionClick(sug)}
-                      className="px-2.5 py-1 rounded-full bg-white hover:bg-cyan-50 text-slate-700 hover:text-cyan-900 border border-slate-200 hover:border-cyan-300 text-[10px] font-semibold transition-all cursor-pointer text-left shadow-xs flex items-center gap-1"
+                      key={btn.id}
+                      onClick={() => handleSelectNiche(btn.id)}
+                      className={`p-2 rounded-xl text-center flex flex-col items-center justify-center gap-1 transition-all cursor-pointer border ${
+                        isSelected
+                          ? 'bg-slate-900 text-white border-slate-900 shadow-xs scale-102 ring-2 ring-cyan-400/30'
+                          : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
+                      }`}
                     >
-                      <span>{sug}</span>
+                      <Icon className={`w-4 h-4 ${isSelected ? 'text-cyan-400' : 'text-slate-500'}`} />
+                      <span className="text-[10px] font-bold truncate max-w-full">{btn.label}</span>
                     </button>
-                  ))}
-                </div>
-              )}
+                  );
+                })}
+              </div>
             </div>
-          );
-        })}
 
-        {isTyping && (
-          <div className="flex items-center gap-2 text-xs text-cyan-700 bg-white border border-slate-200 px-3.5 py-2 rounded-2xl w-fit shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-bounce" style={{ animationDelay: '0ms' }} />
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-bounce" style={{ animationDelay: '150ms' }} />
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-bounce" style={{ animationDelay: '300ms' }} />
-            <span className="text-[10px] text-slate-500 ml-1">Sentinel AI analisando oportunidades...</span>
+            {/* Dossier Header Card */}
+            <div className="p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-cyan-50/40 border border-slate-200 shadow-xs">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-800 text-[10px] font-extrabold uppercase tracking-wider mb-1.5">
+                <Sparkles className="w-3 h-3 text-cyan-600" />
+                <span>Dossiê de Oportunidades</span>
+              </div>
+              <h3 className="text-base font-black text-slate-900 tracking-tight">
+                {currentReport.segmentTitle}
+              </h3>
+              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                {currentReport.segmentSubtitle}
+              </p>
+            </div>
+
+            {/* KPI Metrics Dashboard Grid */}
+            <div className="grid grid-cols-3 gap-2">
+              {currentReport.kpis.map((kpi, idx) => (
+                <div key={idx} className="p-3 rounded-xl bg-white border border-slate-200 shadow-xs text-center">
+                  <div className="text-[10px] text-slate-400 font-bold uppercase truncate">{kpi.label}</div>
+                  <div className="text-sm sm:text-base font-black text-slate-900 mt-0.5 tracking-tight">{kpi.value}</div>
+                  <div className="text-[9px] text-slate-500 mt-1 leading-tight">{kpi.hint}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Critical Bottleneck Card */}
+            <div className="p-3.5 rounded-2xl bg-rose-50/60 border border-rose-200/80 shadow-xs">
+              <div className="flex items-center gap-1.5 text-xs font-black text-rose-700 mb-1">
+                <span className="w-2 h-2 rounded-full bg-rose-500 inline-block" />
+                <span>Gargalo Crítico do Mercado</span>
+              </div>
+              <div className="text-xs font-bold text-slate-900 mb-1">
+                {currentReport.marketBottleneck.title}
+              </div>
+              <p className="text-[11px] text-slate-600 leading-relaxed">
+                {currentReport.marketBottleneck.description}
+              </p>
+            </div>
+
+            {/* Recommended Blueprint Card */}
+            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+              <div className="flex items-center gap-1.5 text-xs font-black text-slate-900 uppercase tracking-wider">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <span>{currentReport.recommendedBlueprint.title}</span>
+              </div>
+
+              <div className="space-y-2.5">
+                {currentReport.recommendedBlueprint.items.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px]">
+                      {idx + 1}
+                    </div>
+                    <div>
+                      <div className="text-xs font-extrabold text-slate-900">{item.heading}</div>
+                      <div className="text-[11px] text-slate-500 leading-relaxed mt-0.5">{item.detail}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Recommended Plan & Direct Action Card */}
+            <div className="p-4 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-md space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-400">
+                  Plano Sentinel Ideal
+                </span>
+                <span className="text-xs font-black text-white">{currentReport.recommendedPlan.price}</span>
+              </div>
+
+              <div className="font-extrabold text-sm text-white">
+                {currentReport.recommendedPlan.name}
+              </div>
+
+              <div className="text-[11px] text-slate-300 leading-relaxed">
+                {currentReport.recommendedPlan.roiDetail}
+              </div>
+
+              <div className="text-[10px] text-slate-400 font-mono">
+                {currentReport.recommendedPlan.setup}
+              </div>
+
+              <a
+                href={`https://wa.me/5522999726069?text=${encodeURIComponent(currentReport.actionMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => soundFx.playUiClick()}
+                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-extrabold text-xs tracking-wide flex items-center justify-center gap-2 shadow-md shadow-emerald-500/25 transition-all cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Ativar Estrutura no WhatsApp</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+          </div>
+        ) : (
+          /* TAB 2: MODERN COMMAND BAR & STRATEGIC INSIGHT STREAM */
+          <div className="space-y-4">
+            
+            {/* Quick Prompt Pills */}
+            <div>
+              <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
+                <Zap className="w-3 h-3 text-amber-500" />
+                <span>Perguntas Frequentes & Cenários:</span>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  'Quanto custa um site e qual o prazo?',
+                  'Por que não ficar só no Instagram?',
+                  'Como ranquear na 1ª página do Google?',
+                  'Como funciona o robô de WhatsApp 24h?'
+                ].map((prompt, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handleRunQuery(prompt)}
+                    className="px-2.5 py-1.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200 text-[10px] font-semibold transition-all cursor-pointer text-left shadow-xs flex items-center gap-1.5"
+                  >
+                    <span>{prompt}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Loading Indicator */}
+            {isProcessing && (
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center gap-2.5 text-xs text-slate-600">
+                <RefreshCw className="w-4 h-4 text-cyan-600 animate-spin" />
+                <span>Sentinel AI estruturando diagnóstico estratégico...</span>
+              </div>
+            )}
+
+            {/* Generated Executive Insight Cards (No speech bubbles!) */}
+            <div className="space-y-4">
+              {insightResults.map((insight) => (
+                <div
+                  key={insight.id}
+                  className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3 transition-all"
+                >
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-200">
+                      {insight.badge}
+                    </span>
+                    <span className="text-[10px] text-slate-400 font-mono">Consulta Estratégica</span>
+                  </div>
+
+                  <h4 className="text-sm font-black text-slate-900 tracking-tight leading-snug">
+                    {insight.title}
+                  </h4>
+
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {insight.summary}
+                  </p>
+
+                  <div className="space-y-1.5 pt-1">
+                    {insight.actionItems.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-[11px] text-slate-700">
+                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-[10px] text-slate-500 font-medium leading-relaxed">
+                    💡 <strong>Impacto no Negócio:</strong> {insight.roiNotice}
+                  </div>
+
+                  <a
+                    href={`https://wa.me/5522999726069?text=${encodeURIComponent(insight.suggestedAction.waText)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => soundFx.playUiClick()}
+                    className="w-full py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs tracking-wide flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer"
+                  >
+                    <span>{insight.suggestedAction.label}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              ))}
+            </div>
+
           </div>
         )}
 
-        <div ref={messagesEndRef} />
       </div>
 
-      {/* Input bar - Clean White */}
+      {/* 4. MODERN COMMAND BAR (Estilo Raycast / Perplexity) */}
       <div className="p-3 bg-white border-t border-slate-100 shrink-0">
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            handleSendMessage();
+            handleRunQuery(searchQuery);
           }}
-          className="flex items-center gap-2"
+          className="relative flex items-center"
         >
+          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 pointer-events-none" />
           <input
             type="text"
-            placeholder="Qual é a sua dúvida ou tipo de empresa?..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-cyan-500 focus:bg-white transition-all"
+            placeholder="Pergunte à IA: 'Como atrair clientes no Google?'..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-20 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-cyan-500 focus:bg-white transition-all shadow-2xs"
           />
           <button
             type="submit"
-            disabled={!input.trim()}
-            className="w-9 h-9 rounded-xl bg-cyan-500 hover:bg-cyan-400 disabled:opacity-30 disabled:hover:bg-cyan-500 text-slate-950 font-black flex items-center justify-center transition-all cursor-pointer shrink-0 shadow-sm shadow-cyan-500/20"
-            aria-label="Enviar mensagem"
+            disabled={!searchQuery.trim()}
+            className="absolute right-1.5 px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 disabled:opacity-30 disabled:hover:bg-slate-900 text-white font-extrabold text-[10px] uppercase tracking-wider flex items-center gap-1 transition-all cursor-pointer"
           >
-            <Send className="w-4 h-4" />
+            <span>Analisar</span>
           </button>
         </form>
 
         <div className="flex items-center justify-between mt-2 text-[9px] text-slate-400 px-1 font-medium">
-          <span>IA Especialista em Vendas Online</span>
-          <span>Gratuito & Ilimitado</span>
+          <span className="flex items-center gap-1">
+            <ShieldCheck className="w-3 h-3 text-emerald-600" />
+            <span>Consultoria Estratégica Gratuita</span>
+          </span>
+          <span>Sentinel Systems Brasil</span>
         </div>
       </div>
 

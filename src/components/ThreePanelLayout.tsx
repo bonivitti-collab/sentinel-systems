@@ -3,7 +3,7 @@ import { AppSidebar } from './AppSidebar';
 import { SentinelAIAdvisor } from './SentinelAIAdvisor';
 import { SentinelLogo } from './SentinelLogo';
 import { 
-  Bot, 
+  Sparkles,
   Menu, 
   X, 
   PanelRightClose, 
@@ -107,10 +107,10 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
                 soundFx.playUiClick();
                 setIsMobileAiOpen(true);
               }}
-              className="px-3 py-1.5 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-black text-xs flex items-center gap-1.5 shadow-sm shadow-cyan-500/20 cursor-pointer"
+              className="px-3 py-1.5 rounded-full bg-slate-900 text-white font-black text-xs flex items-center gap-1.5 shadow-sm cursor-pointer"
             >
-              <Bot className="w-4 h-4 text-white" />
-              <span>IA de Vendas</span>
+              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Studio Copilot</span>
             </button>
           </div>
         </header>
@@ -143,17 +143,17 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
             <button
               onClick={handleToggleAi}
               className="p-1.5 px-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5 text-[11px] font-bold cursor-pointer"
-              title={isAiCollapsed ? 'Abrir painel da IA de Vendas' : 'Recolher painel da IA'}
+              title={isAiCollapsed ? 'Abrir painel do Studio Copilot' : 'Recolher Studio Copilot'}
             >
               {isAiCollapsed ? (
                 <>
-                  <Bot className="w-3.5 h-3.5 text-cyan-600" />
-                  <span>Abrir IA</span>
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+                  <span>Studio Copilot</span>
                   <PanelRightOpen className="w-3.5 h-3.5 text-slate-500" />
                 </>
               ) : (
                 <>
-                  <span>Recolher IA</span>
+                  <span>Recolher Studio</span>
                   <PanelRightClose className="w-3.5 h-3.5 text-slate-500" />
                 </>
               )}

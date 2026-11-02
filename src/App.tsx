@@ -297,11 +297,11 @@ export function App() {
             <LocalClients
               onOpenContact={() => setIsContactOpen(true)}
             />
+
+            {/* Diretório de Soluções e Automações (Exibido na Home para navegação completa) */}
+            <SeoDirectorySection onNavigate={navigate} />
           </>
         )}
-
-        {/* Diretório de SEO & Soluções (Teia de links em todas as visualizações) */}
-        <SeoDirectorySection onNavigate={navigate} />
 
         <Footer
           onOpenContact={() => setIsContactOpen(true)}

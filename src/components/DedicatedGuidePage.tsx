@@ -25,6 +25,10 @@ export const DedicatedGuidePage: React.FC<DedicatedGuidePageProps> = ({ guide, o
       window.history.pushState({}, '', path);
       window.dispatchEvent(new PopStateEvent('popstate'));
     }
+    const mainEl = document.getElementById('main-content-scroll');
+    if (mainEl) {
+      mainEl.scrollTop = 0;
+    }
   };
 
   return (

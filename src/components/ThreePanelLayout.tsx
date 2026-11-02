@@ -170,7 +170,7 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
         </div>
 
         {/* Scrollable Main Content Stream */}
-        <div id="main-content-scroll" ref={mainScrollRef} className="flex-1 overflow-y-auto relative scroll-smooth selection:bg-cyan-200 selection:text-slate-950 bg-white">
+        <div id="main-content-scroll" ref={mainScrollRef} className="flex-1 overflow-y-auto relative selection:bg-cyan-200 selection:text-slate-950 bg-white">
           {children}
         </div>
       </div>

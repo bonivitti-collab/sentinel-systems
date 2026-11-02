@@ -106,8 +106,13 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span className="font-semibold text-slate-700">Sentinel Hub 2.5</span>
         </div>
-        <span className="font-bold text-[10px] text-cyan-700 bg-cyan-50 border border-cyan-200 px-2 py-0.5 rounded-md">
-          ONLINE
+        <span className="font-bold text-[10px] text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md flex items-center gap-1.5 shadow-2xs">
+          <img
+            src="/pulse-heart.gif"
+            alt="Pulso Vital"
+            className="w-3.5 h-3.5 object-contain inline-block shrink-0"
+          />
+          <span>ONLINE</span>
         </span>
       </div>
 

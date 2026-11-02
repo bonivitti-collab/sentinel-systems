@@ -93,6 +93,7 @@ export function App() {
     const handlePopState = () => {
       const path = window.location.pathname.replace(/\/+$/, '') || '/';
       setCurrentPath(path);
+      const mainEl = document.getElementById('main-content-scroll');
       if (window.location.hash) {
         const id = window.location.hash.replace(/^#/, '');
         setTimeout(() => {
@@ -100,6 +101,7 @@ export function App() {
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       } else {
+        if (mainEl) mainEl.scrollTop = 0;
         window.scrollTo(0, 0);
       }
     };
@@ -115,13 +117,15 @@ export function App() {
     const cleanPath = (rawPath || '/').replace(/\/+$/, '') || '/';
     setCurrentPath(cleanPath);
 
+    const mainEl = document.getElementById('main-content-scroll');
     if (hashPart) {
       setTimeout(() => {
         const el = document.getElementById(hashPart);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 120);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (mainEl) mainEl.scrollTop = 0;
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   };
 

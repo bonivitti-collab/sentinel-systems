@@ -28,7 +28,7 @@ export const DedicatedCityPage: React.FC<DedicatedCityPageProps> = ({ city, onBa
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 pt-28 pb-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pt-8 sm:pt-12 pb-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Navigation Breadcrumb / Back button */}

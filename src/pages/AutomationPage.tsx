@@ -152,7 +152,7 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
   ];
 
   return (
-    <div className="pt-28 pb-20 bg-slate-50 text-slate-900">
+    <div className="pt-8 sm:pt-12 pb-20 bg-slate-50 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Hero */}

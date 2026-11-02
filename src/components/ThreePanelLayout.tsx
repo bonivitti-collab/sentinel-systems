@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { AppSidebar } from './AppSidebar';
 import { SentinelAIAdvisor } from './SentinelAIAdvisor';
 import { SentinelLogo } from './SentinelLogo';
@@ -31,6 +31,14 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
   const [isMobileAiOpen, setIsMobileAiOpen] = useState(false);
   const [isAiCollapsed, setIsAiCollapsed] = useState(false);
   const [isMuted, setIsMuted] = useState(() => soundFx.getMuted());
+  const mainScrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (mainScrollRef.current) {
+      mainScrollRef.current.scrollTop = 0;
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [currentPath]);
 
   const toggleSound = () => {
     const next = !isMuted;
@@ -162,7 +170,7 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
         </div>
 
         {/* Scrollable Main Content Stream */}
-        <div className="flex-1 overflow-y-auto relative scroll-smooth selection:bg-cyan-200 selection:text-slate-950 bg-white">
+        <div id="main-content-scroll" ref={mainScrollRef} className="flex-1 overflow-y-auto relative scroll-smooth selection:bg-cyan-200 selection:text-slate-950 bg-white">
           {children}
         </div>
       </div>

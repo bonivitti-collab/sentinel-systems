@@ -25,6 +25,11 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
       window.history.pushState({}, '', path);
       window.dispatchEvent(new PopStateEvent('popstate'));
     }
+    const mainEl = document.getElementById('main-content-scroll');
+    if (mainEl) {
+      mainEl.scrollTop = 0;
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const normalizedQuery = searchQuery.trim().toLowerCase();
@@ -88,19 +93,19 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
   ];
 
   return (
-    <section id="diretorio-seo" className="py-24 bg-slate-900 text-slate-100 border-t border-slate-800 relative">
+    <section id="diretorio-seo" className="py-20 bg-slate-50 text-slate-900 border-t border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Cabeçalho */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/70 border border-cyan-500/30 text-xs font-bold text-cyan-400 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-bold text-cyan-800 mb-4">
             <Compass className="w-3.5 h-3.5 text-cyan-400 animate-spin-slow" />
             <span>Ecossistema de Soluções Sentinel Systems</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
             Diretório de Soluções, Automações & Cidades
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             Navegue pelas 37 páginas especializadas da Sentinel: desde plataformas sob medida por nicho comercial e robôs de WhatsApp 24h até nossa cobertura nacional nas principais capitais do Brasil e guias práticos de vendas.
           </p>
         </div>
@@ -114,12 +119,12 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
               placeholder="Busque por nicho, cidade ou tema... (Ex: Pousada, São Paulo, Restaurante, Preço)"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-10 py-3.5 rounded-2xl bg-slate-800/90 border border-slate-700 focus:border-cyan-400 focus:bg-slate-800 focus:outline-none text-white text-sm placeholder:text-slate-400 transition-all shadow-inner"
+              className="w-full pl-12 pr-10 py-3.5 rounded-2xl bg-white border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm placeholder:text-slate-400 transition-all shadow-xs"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 rounded-full bg-slate-700 hover:bg-slate-600 text-slate-300 transition-colors"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-600 transition-colors"
                 aria-label="Limpar busca"
               >
                 <X className="w-4 h-4" />
@@ -139,8 +144,8 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
                 }}
                 className={`px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
                   searchQuery.toLowerCase() === tag.toLowerCase()
-                    ? 'bg-cyan-500 text-slate-950 border-cyan-400 font-bold'
-                    : 'bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-600 hover:text-white'
+                    ? 'bg-slate-900 text-white border-slate-900 font-bold shadow-xs'
+                    : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                 }`}
               >
                 {tag}
@@ -158,8 +163,8 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
             }}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'all'
-                ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
-                : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white'
+                ? 'bg-slate-900 text-white shadow-xs'
+                : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
             }`}
           >
             Todas as Soluções ({normalizedQuery ? totalFilteredCount : 37})
@@ -171,8 +176,8 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
             }}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'niches'
-                ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
-                : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white'
+                ? 'bg-slate-900 text-white shadow-xs'
+                : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
             }`}
           >
             Nichos Comerciais ({filteredNiches.length})
@@ -184,8 +189,8 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
             }}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'automation'
-                ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
-                : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white'
+                ? 'bg-slate-900 text-white shadow-xs'
+                : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
             }`}
           >
             Robôs WhatsApp ({filteredAutomation.length})
@@ -197,8 +202,8 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
             }}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'cities'
-                ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
-                : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white'
+                ? 'bg-slate-900 text-white shadow-xs'
+                : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
             }`}
           >
             Cidades ({filteredCities.length})
@@ -210,8 +215,8 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
             }}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               activeTab === 'guides'
-                ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
-                : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white'
+                ? 'bg-slate-900 text-white shadow-xs'
+                : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'
             }`}
           >
             Guias Práticos ({filteredGuides.length})
@@ -220,9 +225,9 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
 
         {/* Empty State */}
         {totalFilteredCount === 0 && (
-          <div className="text-center py-16 bg-slate-800/40 rounded-3xl border border-slate-700/60 max-w-xl mx-auto my-8 p-8">
+          <div className="text-center py-16 bg-white rounded-3xl border border-slate-200 max-w-xl mx-auto my-8 p-8 shadow-xs">
             <Search className="w-10 h-10 text-slate-500 mx-auto mb-3" />
-            <h3 className="text-lg font-bold text-white mb-2">Nenhum resultado encontrado</h3>
+            <h3 className="text-lg font-black text-slate-900 mb-2">Nenhum resultado encontrado</h3>
             <p className="text-slate-400 text-sm mb-6">
               Não encontramos nenhuma página com o termo "{searchQuery}". Tente outro termo ou limpe a busca.
             </p>
@@ -241,12 +246,12 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
           {/* 1. NICHOS COMERCIAIS */}
           {(activeTab === 'all' || activeTab === 'niches') && filteredNiches.length > 0 && (
             <div>
-              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-800">
+              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
                 <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
                   <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Sites e Sistemas por Nicho Comercial</h3>
+                  <h3 className="text-xl font-black text-slate-900">Sites e Sistemas por Nicho Comercial</h3>
                   <p className="text-xs sm:text-sm text-slate-400">Desenvolvimento com arquitetura sob medida para cada tipo de empresa</p>
                 </div>
               </div>
@@ -256,18 +261,18 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
                     key={niche.slug}
                     href={`/solucoes/${niche.slug}`}
                     onClick={(e) => handleLinkClick(e, `/solucoes/${niche.slug}`)}
-                    className="group bg-slate-800/50 hover:bg-slate-800 border border-slate-700/60 hover:border-cyan-400/60 rounded-2xl p-4 transition-all duration-200 flex flex-col justify-between hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-950/30"
+                    className="group bg-white hover:bg-white border border-slate-200/90 hover:border-cyan-400 rounded-2xl p-4 transition-all duration-200 flex flex-col justify-between hover:-translate-y-1 shadow-xs hover:shadow-md cursor-pointer"
                   >
                     <div>
                       <span className="text-[10px] uppercase font-bold tracking-wider text-cyan-400">Nicho Especializado</span>
-                      <h4 className="text-sm font-bold text-slate-200 group-hover:text-cyan-300 transition-colors mt-1 mb-2 line-clamp-2">
+                      <h4 className="text-sm font-black text-slate-900 group-hover:text-cyan-700 transition-colors mt-1 mb-2 line-clamp-2">
                         {niche.shortTitle}
                       </h4>
-                      <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
                         {niche.headline}
                       </p>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-400 group-hover:text-cyan-400 font-semibold">
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-cyan-600 font-bold">
                       <span>Ver solução</span>
                       <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -280,12 +285,12 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
           {/* 2. ROBÔS DE WHATSAPP & AUTOMAÇÃO */}
           {(activeTab === 'all' || activeTab === 'automation') && filteredAutomation.length > 0 && (
             <div>
-              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-800">
+              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
                 <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
                   <Bot className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Robôs de Atendimento e Automação no WhatsApp</h3>
+                  <h3 className="text-xl font-black text-slate-900">Robôs de Atendimento e Automação no WhatsApp</h3>
                   <p className="text-xs sm:text-sm text-slate-400">Atendimento 24 horas por dia sem deixar nenhum cliente sem resposta</p>
                 </div>
               </div>
@@ -295,21 +300,21 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
                     key={auto.slug}
                     href={`/automacao/${auto.slug}`}
                     onClick={(e) => handleLinkClick(e, `/automacao/${auto.slug}`)}
-                    className="group bg-slate-800/50 hover:bg-slate-800 border border-slate-700/60 hover:border-emerald-400/60 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-950/30"
+                    className="group bg-white hover:bg-white border border-slate-200/90 hover:border-emerald-400 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between hover:-translate-y-1 shadow-xs hover:shadow-md cursor-pointer"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-400">Automação 24h</span>
                         <span className="text-[10px] bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 px-2 py-0.5 rounded-full font-bold">Oficial</span>
                       </div>
-                      <h4 className="text-base font-bold text-slate-200 group-hover:text-emerald-300 transition-colors mb-2">
+                      <h4 className="text-base font-black text-slate-900 group-hover:text-emerald-700 transition-colors mb-2">
                         {auto.shortTitle}
                       </h4>
-                      <p className="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+                      <p className="text-xs text-slate-500 line-clamp-3 leading-relaxed">
                         {auto.headline}
                       </p>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-400 group-hover:text-emerald-400 font-semibold">
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-emerald-600 font-bold">
                       <span>Ver fluxo de automação</span>
                       <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -322,12 +327,12 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
           {/* 3. CIDADES ATENDIDAS */}
           {(activeTab === 'all' || activeTab === 'cities') && filteredCities.length > 0 && (
             <div>
-              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-800">
+              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
                 <div className="p-2 rounded-lg bg-sky-500/10 text-sky-400">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Cobertura Nacional: Principais Capitais & Polos do Brasil</h3>
+                  <h3 className="text-xl font-black text-slate-900">Cobertura Nacional: Principais Capitais & Polos do Brasil</h3>
                   <p className="text-xs sm:text-sm text-slate-400">Presença digital estratégica e suporte prioritário para empresas em todo o país</p>
                 </div>
               </div>
@@ -337,21 +342,21 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
                     key={city.slug}
                     href={`/cidades/${city.slug}`}
                     onClick={(e) => handleLinkClick(e, `/cidades/${city.slug}`)}
-                    className="group bg-slate-800/50 hover:bg-slate-800 border border-slate-700/60 hover:border-sky-400/60 rounded-2xl p-4 transition-all duration-200 flex flex-col justify-between hover:-translate-y-1 hover:shadow-lg hover:shadow-sky-950/30"
+                    className="group bg-white hover:bg-white border border-slate-200/90 hover:border-sky-400 rounded-2xl p-4 transition-all duration-200 flex flex-col justify-between hover:-translate-y-1 shadow-xs hover:shadow-md cursor-pointer"
                   >
                     <div>
                       <div className="flex items-center gap-1.5 text-sky-400 text-xs font-bold mb-2">
                         <MapPin className="w-3.5 h-3.5" />
                         <span>{city.name}</span>
                       </div>
-                      <h4 className="text-sm font-bold text-slate-200 group-hover:text-sky-300 transition-colors mb-2">
+                      <h4 className="text-sm font-black text-slate-900 group-hover:text-sky-700 transition-colors mb-2">
                         {city.commercialFocus}
                       </h4>
-                      <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
                         {city.headline}
                       </p>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-400 group-hover:text-sky-400 font-semibold">
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-sky-600 font-bold">
                       <span>Página da cidade</span>
                       <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -364,12 +369,12 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
           {/* 4. GUIAS & EDUCAÇÃO */}
           {(activeTab === 'all' || activeTab === 'guides') && filteredGuides.length > 0 && (
             <div>
-              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-800">
+              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-slate-200">
                 <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400">
                   <BookOpen className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Central de Guias & Conhecimento Estratégico</h3>
+                  <h3 className="text-xl font-black text-slate-900">Central de Guias & Conhecimento Estratégico</h3>
                   <p className="text-xs sm:text-sm text-slate-400">Artigos práticos sobre vendas no Google, automação e presença digital</p>
                 </div>
               </div>
@@ -379,7 +384,7 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
                     key={guide.slug}
                     href={`/guias/${guide.slug}`}
                     onClick={(e) => handleLinkClick(e, `/guias/${guide.slug}`)}
-                    className="group bg-slate-800/50 hover:bg-slate-800 border border-slate-700/60 hover:border-indigo-400/60 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-950/30"
+                    className="group bg-white hover:bg-white border border-slate-200/90 hover:border-indigo-400 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between hover:-translate-y-1 shadow-xs hover:shadow-md cursor-pointer"
                   >
                     <div>
                       <div className="flex items-center justify-between text-[11px] text-slate-400 mb-2 font-semibold">
@@ -389,11 +394,11 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
                       <h4 className="text-sm font-bold text-slate-200 group-hover:text-indigo-300 transition-colors mb-2 line-clamp-2">
                         {guide.title}
                       </h4>
-                      <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
                         {guide.excerpt}
                       </p>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-400 group-hover:text-indigo-400 font-semibold">
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 group-hover:text-indigo-600 font-bold">
                       <span>Ler guia completo</span>
                       <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                     </div>

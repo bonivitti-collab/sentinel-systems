@@ -88,9 +88,9 @@ export const GUIDES_LIST: GuideItem[] = [
     publishedDate: '2026-10-22',
     content: [
       'Infelizmente, o mercado de criação de sites é cheio de aventureiros. O dono do negócio contrata uma pessoa física que promete mundos e fundos, pede 50% de sinal e depois passa meses sem dar satisfação.',
-      'Regra 1: O domínio (o .com.br) DEVE ser registrado no seu CPF ou no seu CNPJ. Nunca aceite que o programador registre no nome dele, pois se ele brigar com você, ele pode sequestrar seu site.',
+      'Regra 1: O domínio (o .com.br) DEVE ser registrado diretamente no seu nome (CPF). Nunca aceite que o programador registre no nome dele, pois se ele brigar com você, ele pode sequestrar seu site.',
       'Regra 2: Exija contrato com prazos de entrega claros e descrição detalhada do que está incluso (hospedagem, e-mails, celular, suporte).',
-      'Regra 3: Peça nota fiscal e exija garantia formal de suporte. Na Sentinel Systems, garantimos 100% de posse ao cliente: seu domínio é seu e você nunca fica refém de ninguém.'
+      'Regra 3: Exija garantia formal e suporte por escrito. Na Sentinel Systems, garantimos 100% de posse ao cliente: seu domínio é seu e você nunca fica refém de ninguém.'
     ]
   },
   {

@@ -6,7 +6,7 @@ export const FreeDiagnosis: React.FC = () => {
   const [businessName, setBusinessName] = useState('');
   const [address, setAddress] = useState('');
   const [category, setCategory] = useState('');
-  const [optionalId, setOptionalId] = useState(''); // Instagram or CNPJ
+  const [optionalId, setOptionalId] = useState(''); // Site or Company Name
   const [phone, setPhone] = useState('');
 
   const categoryChips = [
@@ -37,7 +37,7 @@ export const FreeDiagnosis: React.FC = () => {
     e.preventDefault();
     soundFx.playUiClick();
 
-    const msg = `Olá, equipe da Sentinel Systems! 🌊 Solicito um *Raio-X Grátis de Presença no Google* para minha empresa:\n\n*Nome da Empresa:* ${businessName}\n*Endereço/Cidade/Bairro:* ${address}\n*O que Vendemos / Ramo:* ${category}\n*Instagram ou CNPJ:* ${optionalId || 'Não informado'}\n*WhatsApp para Retorno:* ${phone}\n\nPoderiam analisar como estamos aparecendo nas buscas e se estamos perdendo clientes? Aguardo o retorno da equipe. Obrigado!`;
+    const msg = `Olá, equipe da Sentinel Systems! 🌊 Solicito um *Raio-X Grátis de Presença no Google* para minha empresa:\n\n*Nome da Empresa:* ${businessName}\n*Endereço/Cidade/Bairro:* ${address}\n*O que Vendemos / Ramo:* ${category}\n*Site ou Referência:* ${optionalId || 'Não informado'}\n*WhatsApp para Retorno:* ${phone}\n\nPoderiam analisar como estamos aparecendo nas buscas e se estamos perdendo clientes? Aguardo o retorno da equipe. Obrigado!`;
 
     window.open(`https://wa.me/5522999726069?text=${encodeURIComponent(msg)}`, '_blank');
   };
@@ -131,12 +131,12 @@ export const FreeDiagnosis: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
               <div>
                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1.5 flex items-center justify-between">
-                  <span>Site Atual ou CNPJ</span>
+                  <span>Site Atual ou Nome da Empresa</span>
                   <span className="text-[10px] text-slate-500 font-normal">Opcional</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="www.suaempresa.com.br ou 00.000.000/0001-00"
+                  placeholder="www.suaempresa.com.br ou Nome da Empresa"
                   value={optionalId}
                   onChange={(e) => setOptionalId(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all"

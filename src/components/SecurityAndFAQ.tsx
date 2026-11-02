@@ -8,13 +8,13 @@ export const SecurityAndFAQ: React.FC = () => {
   const faqs = [
     {
       q: 'O site e o domínio serão meus ou fico preso à agência?',
-      a: '100% seus! Registramos o domínio no seu CPF ou CNPJ. Se um dia você quiser levar seu site para outro lugar ou cancelar, nós entregamos todos os acessos sem nenhuma burocracia, multa de resgate ou pegadinha. Você é dono do seu patrimônio digital.',
+      a: '100% seus! Registramos o domínio diretamente no seu nome (CPF). Se um dia você quiser levar seu site para outro lugar ou cancelar, nós entregamos todos os acessos sem nenhuma burocracia, multa de resgate ou pegadinha. Você é dono do seu patrimônio digital.',
       highlight: 'Você nunca fica refém da Sentinel.'
     },
     {
       q: 'Já contratei gente que cobrou caro, atrasou ou sumiu. Por que confiar na Sentinel?',
-      a: 'Infelizmente o mercado de tecnologia é cheio de aventureiros que prometem muito e desaparecem. A Sentinel Systems é uma empresa formalizada, com CNPJ ativo, contrato com prazos claros e emissão de nota fiscal. Além disso, nosso modelo é focado em suporte contínuo: nós ganhamos quando você continua com a gente vendo clientes chegarem todo mês.',
-      highlight: 'Empresa com CNPJ, contrato formal e suporte contínuo.'
+      a: 'Infelizmente o mercado de tecnologia é cheio de aventureiros que prometem muito e desaparecem. Aqui o trabalho é sério: fazemos contrato de prestação de serviços com prazos claros e direitos definidos por escrito. Além disso, nosso modelo é focado em suporte contínuo: nós ganhamos quando você continua com a gente vendo clientes chegarem todo mês.',
+      highlight: 'Contrato com prazos claros e suporte contínuo.'
     },
     {
       q: 'Não entendo termos técnicos de informática. Como vou saber se está funcionando?',
@@ -80,8 +80,8 @@ export const SecurityAndFAQ: React.FC = () => {
               <FileText className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-slate-900 text-sm mb-0.5">Contrato & Nota Fiscal</h4>
-              <p className="text-xs text-slate-600">Empresa formal com CNPJ, prazos e direitos garantidos.</p>
+              <h4 className="font-bold text-slate-900 text-sm mb-0.5">Contrato & Garantia</h4>
+              <p className="text-xs text-slate-600">Trabalho sério com prazos e direitos garantidos por escrito.</p>
             </div>
           </div>
 

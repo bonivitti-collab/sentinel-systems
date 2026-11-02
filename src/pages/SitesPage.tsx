@@ -100,20 +100,17 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
     <div className="pt-8 sm:pt-12 pb-20 bg-slate-50 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Hero Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        {/* Header Cirúrgico do Estúdio de Sites */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-100 border border-cyan-300 text-xs font-bold text-cyan-900 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-cyan-700" />
-            <span>ENGENHARIA WEB DE ALTA PERFORMANCE</span>
+            <span>ESTÚDIO DE MODELOS INTERATIVOS 3D</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
-            Criação de Sites Rápidos que{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600">
-              Colocam Dinheiro no seu Caixa
-            </span>
+            Modelos de Sites de Alta Conversão
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Esqueça sites lentos e abandonados que ninguém visita. Desenvolvemos ecossistemas comerciais de carregamento instantâneo, otimizados para a 1ª página do Google e com botão de WhatsApp pronto para fechar negócios.
+            Selecione o seu segmento abaixo e alterne entre <strong>Desktop e Celular</strong> para testar a experiência real de carregamento em 0.4s e alta conversão no WhatsApp.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <button

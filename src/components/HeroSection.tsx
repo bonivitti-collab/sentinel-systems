@@ -96,6 +96,65 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           </div>
         </div>
 
+                {/* 🚀 Os 2 Grandes Portais do Ecossistema - Conectados diretamente com os Menus da Esquerda! */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto w-full mb-12 text-left">
+          {/* Portal 1: Estúdio de Sites */}
+          <div className="p-7 rounded-3xl bg-gradient-to-br from-white to-cyan-50/40 border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 text-[10px] font-extrabold uppercase tracking-wider">
+                  Menu: Criação de Sites
+                </span>
+                <span className="text-xs font-bold text-slate-400">0.4s &bull; Edge CDN</span>
+              </div>
+              <h3 className="text-xl font-black text-slate-900 tracking-tight group-hover:text-cyan-700 transition-colors mb-2">
+                Estúdio de Sites de Alta Performance
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                Explore nossos modelos interativos com pré-visualização em <strong>Desktop e Celular</strong> (Restaurantes, Pousadas, Clínicas, Serviços e Lojas).
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                soundFx.playUiClick();
+                if (onNavigate) onNavigate('/sites');
+              }}
+              className="w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer"
+            >
+              <span>Abrir Estúdio de Sites & Planos</span>
+              <ArrowRight className="w-4 h-4 text-cyan-400" />
+            </button>
+          </div>
+
+          {/* Portal 2: Robô WhatsApp */}
+          <div className="p-7 rounded-3xl bg-gradient-to-br from-white to-emerald-50/40 border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-extrabold uppercase tracking-wider">
+                  Menu: Automação WhatsApp
+                </span>
+                <span className="text-xs font-bold text-slate-400">2s &bull; Ativo 24/7</span>
+              </div>
+              <h3 className="text-xl font-black text-slate-900 tracking-tight group-hover:text-emerald-700 transition-colors mb-2">
+                Simulador de Atendimento 24h
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                Simule um robô conversando ao vivo, respondendo dúvidas de madrugada, enviando cardápios ou diárias e fechando vendas no WhatsApp.
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                soundFx.playUiClick();
+                if (onNavigate) onNavigate('/automacao');
+              }}
+              className="w-full py-3.5 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/20 transition-all cursor-pointer"
+            >
+              <span>Abrir Simulador de WhatsApp ao Vivo</span>
+              <ArrowRight className="w-4 h-4 text-white" />
+            </button>
+          </div>
+        </div>
+
         {/* 3 Pilares Fundamentais Sentinel */}
 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-5xl mx-auto text-left">
           <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-cyan-300 hover:shadow-md transition-all">

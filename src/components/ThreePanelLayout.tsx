@@ -30,6 +30,19 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileAiOpen, setIsMobileAiOpen] = useState(false);
   const [isAiCollapsed, setIsAiCollapsed] = useState(false);
+
+  const getContextInfo = () => {
+    if (currentPath === '/') return { section: 'Início', title: 'Visão Geral & Hub', badge: 'Painel Central' };
+    if (currentPath.startsWith('/sites')) return { section: 'Criação de Sites', title: 'Modelos Interativos 3D & Planos', badge: 'Estúdio Web' };
+    if (currentPath.startsWith('/automacao')) return { section: 'Automação WhatsApp', title: 'Simulador de Atendimento 24h & Planos', badge: 'Simulador' };
+    if (currentPath.startsWith('/quem-somos')) return { section: 'Quem Somos', title: 'Manifesto Institucional & Engenharia', badge: 'Empresa' };
+    if (currentPath.startsWith('/blog')) return { section: 'Blog & Estratégia', title: 'Respostas para Vender no Google e WhatsApp', badge: '12 Artigos' };
+    if (currentPath.startsWith('/contato')) return { section: 'Fale Conosco', title: 'Canais Oficiais & Orçamentos Expressos', badge: 'Contato' };
+    if (currentPath.startsWith('/solucoes/')) return { section: 'Soluções por Nicho', title: 'Arquitetura Comercial Especializada', badge: 'Segmento' };
+    return { section: 'Sentinel Systems', title: 'Workspace Studio', badge: 'Ativo' };
+  };
+
+  const currentCtx = getContextInfo();
   const [isMuted, setIsMuted] = useState(() => soundFx.getMuted());
   const mainScrollRef = useRef<HTMLDivElement>(null);
 
@@ -125,13 +138,12 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
 
         {/* Desktop Quick Header Bar over Center Panel - Clean White */}
         <div className="hidden lg:flex items-center justify-between px-6 py-2.5 bg-white text-slate-600 border-b border-slate-200/90 shrink-0 text-xs shadow-xs">
-          <div className="flex items-center gap-3">
-            <span className="font-extrabold text-slate-900 tracking-wide">SENTINEL SYSTEMS</span>
-            <span className="text-slate-300">&bull;</span>
-            <span className="text-slate-600 font-medium">Atendimento em Todo o Brasil</span>
-            <span className="text-slate-300">&bull;</span>
-            <span className="text-cyan-700 font-mono text-[11px] bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-200">
-              Workspace Studio
+          <div className="flex items-center gap-2 text-xs">
+            <span className="font-black text-slate-900 tracking-wide">{currentCtx.section}</span>
+            <span className="text-slate-300">/</span>
+            <span className="text-slate-600 font-medium">{currentCtx.title}</span>
+            <span className="text-cyan-700 font-bold text-[10px] bg-cyan-50 px-2.5 py-0.5 rounded-full border border-cyan-200 ml-1">
+              {currentCtx.badge}
             </span>
           </div>
 

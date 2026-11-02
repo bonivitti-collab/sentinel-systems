@@ -4,7 +4,6 @@ import { MenuIcon3D } from './MenuIcon3D';
 import { 
   Volume2, 
   VolumeX, 
-  Sparkles,
   Phone
 } from 'lucide-react';
 import { soundFx } from './SoundEffects';
@@ -75,101 +74,99 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
   };
 
   return (
-    <aside className="w-72 bg-white text-slate-800 h-full flex flex-col justify-between border-r border-slate-200/90 shrink-0 shadow-sm select-none font-sans">
+    <aside className="w-72 bg-white text-slate-800 h-full flex flex-col border-r border-slate-200/90 shrink-0 shadow-sm select-none font-sans overflow-hidden">
       
-      {/* Top Header & Brand */}
-      <div>
-        <div className="p-5 border-b border-slate-100 flex items-center justify-between">
-          <a
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('/');
-            }}
-            className="flex items-center group cursor-pointer focus:outline-none"
-            aria-label="Sentinel Systems - Início"
-          >
-            <SentinelLogo size="md" variant="light" />
-          </a>
+      {/* 1. Top Header & Brand */}
+      <div className="p-4 border-b border-slate-100 flex items-center justify-between shrink-0">
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick('/');
+          }}
+          className="flex items-center group cursor-pointer focus:outline-none"
+          aria-label="Sentinel Systems - Início"
+        >
+          <SentinelLogo size="md" variant="light" />
+        </a>
 
-          <button
-            onClick={onToggleSound}
-            className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
-            title={isMuted ? 'Ativar efeitos sonoros' : 'Silenciar som'}
-            aria-label={isMuted ? 'Ativar som' : 'Desativar som'}
-          >
-            {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-cyan-600" />}
-          </button>
-        </div>
-
-        {/* System Status Pill */}
-        <div className="px-5 py-2.5 bg-slate-50/70 border-b border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="font-semibold text-slate-700">Sentinel Hub 2.5</span>
-          </div>
-          <span className="font-bold text-[10px] text-cyan-700 bg-cyan-50 border border-cyan-200 px-2 py-0.5 rounded-full">
-            ONLINE
-          </span>
-        </div>
-
-        {/* Navigation List with 3D Icons */}
-        <nav className="p-3 space-y-1.5">
-          {navItems.map((item) => {
-            const isActive = currentPath === item.path || (item.path !== '/' && currentPath.startsWith(item.path));
-
-            return (
-              <button
-                key={item.path}
-                onClick={() => handleNavClick(item.path)}
-                className={`w-full p-2.5 rounded-2xl flex items-center justify-between text-left transition-all duration-200 group cursor-pointer ${
-                  isActive
-                    ? 'bg-slate-50/90 text-slate-950 border border-cyan-400/80 shadow-xs ring-1 ring-cyan-400/20'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-transparent'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <MenuIcon3D name={item.icon3d} isActive={isActive} />
-
-                  <div>
-                    <div className="font-extrabold text-xs tracking-tight flex items-center gap-1.5 text-slate-900">
-                      <span>{item.label}</span>
-                      {item.badge && (
-                        <span
-                          className={`text-[9px] font-bold px-1.5 py-0.2 rounded border ${
-                            item.badgeColor || 'bg-cyan-50 text-cyan-700 border-cyan-200'
-                          }`}
-                        >
-                          {item.badge}
-                        </span>
-                      )}
-                    </div>
-                    <div className="text-[10px] text-slate-500 font-medium mt-0.5">
-                      {item.desc}
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className={`w-1.5 h-6 rounded-full transition-all ${
-                    isActive ? 'bg-cyan-500 shadow-sm shadow-cyan-500/50' : 'bg-transparent'
-                  }`}
-                />
-              </button>
-            );
-          })}
-        </nav>
+        <button
+          onClick={onToggleSound}
+          className="p-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
+          title={isMuted ? 'Ativar efeitos sonoros' : 'Silenciar som'}
+          aria-label={isMuted ? 'Ativar som' : 'Desativar som'}
+        >
+          {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-cyan-600" />}
+        </button>
       </div>
 
-      {/* Bottom Action Area */}
-      <div className="p-4 border-t border-slate-100 space-y-3 bg-slate-50/60">
-        <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs text-xs">
-          <div className="flex items-center gap-1.5 text-cyan-700 font-extrabold mb-1">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
-            <span>Atendimento em Todo o Brasil</span>
+      {/* 2. System Status Pill */}
+      <div className="px-4 py-2 bg-slate-50/70 border-b border-slate-100 flex items-center justify-between text-[11px] text-slate-500 shrink-0">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="font-semibold text-slate-700">Sentinel Hub 2.5</span>
+        </div>
+        <span className="font-bold text-[10px] text-cyan-700 bg-cyan-50 border border-cyan-200 px-2 py-0.5 rounded-md">
+          ONLINE
+        </span>
+      </div>
+
+      {/* 3. Navigation List with 3D Icons - Scrollable without breaking bottom */}
+      <nav className="flex-1 overflow-y-auto p-3 space-y-1 min-h-0 scrollbar-thin scrollbar-thumb-slate-200">
+        {navItems.map((item) => {
+          const isActive = currentPath === item.path || (item.path !== '/' && currentPath.startsWith(item.path));
+
+          return (
+            <button
+              key={item.path}
+              onClick={() => handleNavClick(item.path)}
+              className={`w-full p-2.5 rounded-xl flex items-center justify-between text-left transition-all duration-200 group cursor-pointer ${
+                isActive
+                  ? 'bg-slate-50/90 text-slate-950 border border-cyan-400/80 shadow-2xs ring-1 ring-cyan-400/20'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-transparent'
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <MenuIcon3D name={item.icon3d} isActive={isActive} />
+
+                <div>
+                  <div className="font-extrabold text-xs tracking-tight flex items-center gap-1.5 text-slate-900">
+                    <span>{item.label}</span>
+                    {item.badge && (
+                      <span
+                        className={`text-[9px] font-bold px-1.5 py-0.2 rounded border ${
+                          item.badgeColor || 'bg-cyan-50 text-cyan-700 border-cyan-200'
+                        }`}
+                      >
+                        {item.badge}
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-[10px] text-slate-500 font-medium mt-0.5">
+                    {item.desc}
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className={`w-1 h-5 rounded-full transition-all ${
+                  isActive ? 'bg-cyan-500 shadow-sm shadow-cyan-500/50' : 'bg-transparent'
+                }`}
+              />
+            </button>
+          );
+        })}
+      </nav>
+
+      {/* 4. Bottom Action Area (Always fully visible with comfortable padding) */}
+      <div className="p-3 pb-4 border-t border-slate-100 space-y-2.5 bg-slate-50/80 shrink-0">
+        <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs text-xs">
+          <div className="flex items-center gap-1.5 text-slate-800 font-bold mb-0.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+            <span className="text-xs">Atendimento Nacional</span>
           </div>
-          <p className="text-[11px] text-slate-500 leading-snug">
-            Criação ágil em 7 dias & suporte humano contínuo no WhatsApp.
+          <p className="text-[11px] text-slate-500 leading-tight">
+            Implantação ágil em 7 dias & suporte humano contínuo.
           </p>
         </div>
 
@@ -178,13 +175,13 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
             soundFx.playUiClick();
             onOpenContact('Orçamento via Sidebar');
           }}
-          className="w-full py-2.5 px-3.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-xs"
+          className="w-full py-2 px-3 rounded-md bg-white hover:bg-slate-50 text-slate-800 font-semibold text-xs border border-slate-200 flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-2xs"
         >
-          <Phone className="w-3.5 h-3.5 text-slate-400" />
+          <Phone className="w-3.5 h-3.5 text-slate-500" />
           <span>Central de Atendimento</span>
         </button>
 
-        <div className="text-center text-[10px] text-slate-400 font-mono pt-1">
+        <div className="text-center text-[10px] text-slate-400 font-mono">
           &copy; {new Date().getFullYear()} Sentinel Systems
         </div>
       </div>

@@ -19,7 +19,7 @@ export const GUIDES_LIST: GuideItem[] = [
     content: [
       'Todo dia vemos donos de comércios postando stories sem parar, gastando horas para criar reels que quase ninguém vê e se perguntando por que o faturamento não aumenta.',
       'O motivo é simples: o comportamento do consumidor no Instagram é passivo. A pessoa não entra na rede social para contratar um eletricista, pedir um orçamento de banner ou achar uma pousada para o fim de semana. Ela entra para se distrair.',
-      'Já no Google, a história é completamente diferente. Quando alguém digita "pousada em cabo frio para o feriado" ou "gráfica que faz banner hoje", essa pessoa tem intenção clara e urgente de compra.',
+      'Já no Google, a história é completamente diferente. Quando alguém digita "pousada para o feriado" ou "gráfica rápida que faz banner hoje", essa pessoa tem intenção clara e urgente de compra.',
       'Se você não tem um site rápido no Google, 100% desses clientes prontos para comprar caem direto no colo do seu concorrente. Ter um site próprio é ser dono do seu ponto digital sem depender do humor do algoritmo.'
     ]
   },
@@ -74,9 +74,9 @@ export const GUIDES_LIST: GuideItem[] = [
     publishedDate: '2026-10-22',
     content: [
       'SEO (Search Engine Optimization) significa otimização para motores de busca. Quando falamos em SEO Local, o objetivo é garantir que pessoas fisicamente perto de você achem seu comércio.',
-      'O Google usa o GPS do celular do usuário e o endereço IP da internet para saber onde ele está. Se a pessoa pesquisa "oficina mecânica", o Google não vai mostrar uma em São Paulo se ela estiver em Cabo Frio.',
+      'O Google usa o GPS do celular do usuário e o endereço IP da internet para saber onde ele está. Se a pessoa pesquisa "oficina mecânica", o Google prioriza empresas locais bem estruturadas e otimizadas no Google Meu Negócio daquela região.',
       'Para que o seu site seja o escolhido pelo Google, ele precisa conter metadados geográficos, tags estruturadas de LocalBusiness e textos naturais que citem os bairros e cidades onde você atende.',
-      'Na Sentinel Systems, todos os sites já nascem com geotargeting ativado e indexado nas cidades da Região dos Lagos e do Brasil.'
+      'Na Sentinel Systems, todos os sites já nascem com SEO técnico e geotargeting de alta precisão para posicionar sua empresa em qualquer cidade ou capital do Brasil.'
     ]
   },
   {

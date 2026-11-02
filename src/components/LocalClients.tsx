@@ -104,15 +104,15 @@ export const LocalClients: React.FC<LocalClientsProps> = ({ onOpenContact }) => 
                 <span>CASE REAL DESENVOLVIDO PELA SENTINEL</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-2">
-                Grupo Vitti — Engenharia & Construção Civil Costeira
+                Grupo Vitti — Engenharia & Construção Civil
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
-                Estrutura de alta autoridade com <strong>39 páginas programáticas indexadas</strong>, simulador técnico de orçamentos, cobertura para 7 cidades da Região dos Lagos e atendimento direto no WhatsApp.
+                Estrutura de alta autoridade com <strong>39 páginas programáticas indexadas</strong>, simulador técnico de orçamentos, captação contínua de clientes no Google e atendimento direto no WhatsApp.
               </p>
               <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-cyan-300">
                 <span className="px-2.5 py-1 rounded-lg bg-slate-800/90 border border-slate-700">39 Páginas no Google</span>
                 <span className="px-2.5 py-1 rounded-lg bg-slate-800/90 border border-slate-700">Simulador de Orçamentos</span>
-                <span className="px-2.5 py-1 rounded-lg bg-slate-800/90 border border-slate-700">Cobertura Regional Completa</span>
+                <span className="px-2.5 py-1 rounded-lg bg-slate-800/90 border border-slate-700">Alta Conversão & Escala</span>
               </div>
             </div>
 

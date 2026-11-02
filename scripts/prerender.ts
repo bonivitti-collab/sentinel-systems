@@ -42,7 +42,7 @@ function buildSharedFooterHtml(): string {
         Sentinel Systems &bull; Soluções Digitais, Sites Rápidos &amp; Robôs de WhatsApp
       </p>
       <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.05);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0.75rem;font-size:0.75rem;">
-        <span style="color:#38bdf8;font-weight:600;">Cidades Atendidas na Região dos Lagos:</span>
+        <span style="color:#38bdf8;font-weight:600;">Capitais & Polos Atendidos no Brasil:</span>
         ${CITIES_LIST.map((c) => `<a href="/cidades/${c.slug}" style="color:#06b6d4;text-decoration:none;font-weight:500;">${escapeHtml(c.name)}</a>`).join('<span style="color:rgba(255,255,255,0.2);">&bull;</span>')}
       </div>
       <p style="margin-top:1.25rem;color:#64748b;font-size:0.75rem;">
@@ -224,7 +224,7 @@ function prerenderPages(): void {
           },
           areaServed: {
             '@type': 'AdministrativeArea',
-            name: 'Região dos Lagos e Brasil',
+            name: 'Brasil',
           },
         },
         {
@@ -394,11 +394,11 @@ function prerenderPages(): void {
     generatedCount++;
   }
 
-  // --- C. 8 PÁGINAS DE CIDADES DA REGIÃO DOS LAGOS (/cidades/:slug) ---
+  // --- C. 8 PÁGINAS DE CAPITAIS E POLOS DO BRASIL (/cidades/:slug) ---
   for (const city of CITIES_LIST) {
     const pageUrl = `${BASE_URL}/cidades/${city.slug}`;
-    const pageTitle = `Criação de Sites em ${city.name} (RJ) | Sentinel Systems`;
-    const pageDesc = `${city.headline} Atendimento local em ${city.name} e Região dos Lagos. Sites rápidos, Google Meu Negócio e robôs de WhatsApp.`.slice(0, 160);
+    const pageTitle = `Criação de Sites em ${city.name} (${city.region.split(' - ')[1] || 'Brasil'}) | Sentinel Systems`;
+    const pageDesc = `${city.headline} Atendimento para empresas em ${city.name} e todo o Brasil. Sites rápidos, Google Meu Negócio e robôs de WhatsApp.`.slice(0, 160);
 
     const jsonLd = {
       '@context': 'https://schema.org',
@@ -416,7 +416,7 @@ function prerenderPages(): void {
             name: city.name,
             containedInPlace: {
               '@type': 'AdministrativeArea',
-              name: 'Rio de Janeiro',
+              name: city.region.split(' - ')[0] || 'Brasil',
             },
           },
         },
@@ -609,7 +609,7 @@ function prerenderPages(): void {
         <span style="color:#38bdf8;font-size:0.75rem;font-weight:700;text-transform:uppercase;">Case Real Desenvolvido pela Sentinel</span>
         <h3 style="font-size:1.375rem;font-weight:800;margin:0.5rem 0;color:#ffffff;">Grupo Vitti &bull; Engenharia &amp; Construção Costeira</h3>
         <p style="color:#94a3b8;font-size:0.875rem;line-height:1.6;margin-bottom:1rem;">
-          Portal de alta autoridade com 39 páginas indexadas no Google, simulador de orçamentos e atuação em 7 cidades da Região dos Lagos:
+          Portal de alta autoridade com 39 páginas indexadas no Google, simulador de orçamentos e captação contínua de clientes no Google:
           <a href="https://vitticonstrucoes.com.br" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:700;text-decoration:underline;">vitticonstrucoes.com.br &rarr;</a>
         </p>
       </section>
@@ -644,7 +644,7 @@ function prerenderPages(): void {
             `).join('')}
           </div>
 
-          <h3 style="color:#38bdf8;font-size:1.25rem;margin:2rem 0 1rem 0;">3. Cidades Atendidas (Região dos Lagos & RJ)</h3>
+          <h3 style="color:#38bdf8;font-size:1.25rem;margin:2rem 0 1rem 0;">3. Principais Capitais & Polos Atendidos (Cobertura Nacional)</h3>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2.5rem;">
             ${CITIES_LIST.map((c) => `
               <div style="background:#131b2e;padding:1rem;border-radius:0.75rem;border:1px solid rgba(255,255,255,0.06);">

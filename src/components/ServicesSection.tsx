@@ -74,10 +74,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
       id: 'regional',
       icon: Anchor,
       color: 'from-teal-400 to-cyan-500',
-      badge: 'REGIÃO DOS LAGOS',
+      badge: 'ALTA ESCALA BRASIL',
       title: 'Soluções Náuticas & Imobiliário de Alto Padrão',
-      shortDesc: 'Tecnologia especializada para os setores mais fortes de Búzios, Cabo Frio e Arraial.',
-      fullDesc: 'Soluções de software, totens interativos, automação de locações de temporada e controle de embarcações que elevam a experiência de clientes de alto padrão na Região dos Lagos.',
+      shortDesc: 'Tecnologia especializada para empresas, franquias e comércios em qualquer região do Brasil.',
+      fullDesc: 'Soluções de software, totens interativos, automação de locações de temporada e controle de embarcações que elevam a experiência de clientes de alto padrão em qualquer região do Brasil.',
       highlights: [
         'Sistemas para imobiliárias e corretores de luxo',
         'Gestão de marinas e locações náuticas',

@@ -84,7 +84,7 @@ export const FreeDiagnosis: React.FC = () => {
                 <input
                   type="text"
                   required
-                  placeholder="Ex: Av. Central, 120 - Centro, Cabo Frio (ou sua cidade)"
+                  placeholder="Ex: Av. Paulista, 1000 - Bela Vista, São Paulo - SP (ou sua cidade)"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all"

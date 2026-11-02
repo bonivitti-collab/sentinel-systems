@@ -135,7 +135,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                 >
                   <option value="Presença no Google (R$ 149/mês)">Presença no Google (R$ 149/mês)</option>
                   <option value="Comércio & Vendas 24h (R$ 297/mês)">Comércio & Vendas 24h (R$ 297/mês)</option>
-                  <option value="Búzios & Alta Escala (R$ 590/mês)">Búzios & Alta Escala (R$ 590/mês)</option>
+                  <option value="Alta Escala & Anúncios (R$ 590/mês)">Alta Escala & Anúncios (R$ 590/mês)</option>
                   <option value="Quero um Raio-X Grátis do meu Google">Quero um Raio-X Grátis do meu Google</option>
                   <option value="Sistema Sob Medida / Projeto Específico">Sistema Sob Medida / Projeto Específico</option>
                 </select>

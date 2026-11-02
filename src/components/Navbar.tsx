@@ -236,30 +236,30 @@ export const Navbar: React.FC<NavbarProps> = ({
                   Robô Restaurantes
                 </a>
                 <a
-                  href="/cidades/criacao-de-sites-em-cabo-frio"
+                  href="/cidades/criacao-de-sites-em-sao-paulo"
                   onClick={(e) => {
                     e.preventDefault();
                     soundFx.playUiClick();
                     setMobileMenuOpen(false);
                     if (onDismissIntro) onDismissIntro();
-                    if (onNavigate) onNavigate('/cidades/criacao-de-sites-em-cabo-frio');
+                    if (onNavigate) onNavigate('/cidades/criacao-de-sites-em-sao-paulo');
                   }}
                   className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-sky-50"
                 >
-                  Cabo Frio (RJ)
+                  São Paulo (SP)
                 </a>
                 <a
-                  href="/cidades/criacao-de-sites-em-buzios"
+                  href="/cidades/criacao-de-sites-no-rio-de-janeiro"
                   onClick={(e) => {
                     e.preventDefault();
                     soundFx.playUiClick();
                     setMobileMenuOpen(false);
                     if (onDismissIntro) onDismissIntro();
-                    if (onNavigate) onNavigate('/cidades/criacao-de-sites-em-buzios');
+                    if (onNavigate) onNavigate('/cidades/criacao-de-sites-no-rio-de-janeiro');
                   }}
                   className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-sky-50"
                 >
-                  Búzios (RJ)
+                  Rio de Janeiro (RJ)
                 </a>
               </div>
             </div>

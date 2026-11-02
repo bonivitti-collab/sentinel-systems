@@ -80,9 +80,9 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
     'Pousadas',
     'Restaurantes',
     'Clínicas',
-    'Cabo Frio',
-    'Búzios',
-    'Arraial do Cabo',
+    'São Paulo',
+    'Belo Horizonte',
+    'Curitiba',
     'Robô WhatsApp',
     'Google Meu Negócio',
   ];
@@ -101,7 +101,7 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
             Diretório de Soluções, Automações & Cidades
           </h2>
           <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-            Navegue pelas 37 páginas especializadas da Sentinel: desde plataformas sob medida por nicho comercial e robôs de WhatsApp 24h até nossa cobertura local na Região dos Lagos e guias práticos de vendas.
+            Navegue pelas 37 páginas especializadas da Sentinel: desde plataformas sob medida por nicho comercial e robôs de WhatsApp 24h até nossa cobertura nacional nas principais capitais do Brasil e guias práticos de vendas.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
             <input
               type="text"
-              placeholder="Busque por nicho, cidade ou tema... (Ex: Pousada, Búzios, Restaurante, Preço)"
+              placeholder="Busque por nicho, cidade ou tema... (Ex: Pousada, São Paulo, Restaurante, Preço)"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-10 py-3.5 rounded-2xl bg-slate-800/90 border border-slate-700 focus:border-cyan-400 focus:bg-slate-800 focus:outline-none text-white text-sm placeholder:text-slate-400 transition-all shadow-inner"
@@ -327,8 +327,8 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Cobertura Territorial: Região dos Lagos & RJ</h3>
-                  <p className="text-xs sm:text-sm text-slate-400">Atendimento presencial e suporte prioritário para comércios locais</p>
+                  <h3 className="text-xl font-bold text-white">Cobertura Nacional: Principais Capitais & Polos do Brasil</h3>
+                  <p className="text-xs sm:text-sm text-slate-400">Presença digital estratégica e suporte prioritário para empresas em todo o país</p>
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -412,7 +412,7 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
             <span>Sentinel Systems &bull; Infraestrutura de Alta Performance e SEO Programático</span>
           </div>
           <div className="text-slate-500">
-            Região dos Lagos &bull; Rio de Janeiro &bull; Atendimento em Todo o Brasil
+            Atendimento Nacional &bull; 100% Digital &bull; Cobertura em Todo o Brasil
           </div>
         </div>
 

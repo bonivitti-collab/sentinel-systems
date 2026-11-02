@@ -159,7 +159,7 @@ export const DedicatedCityPage: React.FC<DedicatedCityPageProps> = ({ city, onBa
         <div className="pt-4 border-t border-slate-200">
           <div className="flex items-center gap-2 mb-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
             <Compass className="w-4 h-4 text-cyan-600" />
-            <span>Outras Cidades Atendidas na Região dos Lagos:</span>
+            <span>Outras Capitais e Polos Comerciais Atendidos no Brasil:</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {relatedCities.map((rc) => (

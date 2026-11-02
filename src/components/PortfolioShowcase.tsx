@@ -29,10 +29,10 @@ export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onOpenCont
       }
     },
     {
-      id: 'buzios-nautical-cloud',
+      id: 'nautical-cloud',
       category: 'luxury',
       title: 'Marina Reserve - Ecossistema Náutico & Aluguel de Luxo',
-      subtitle: 'Plataforma de alta sofisticação para agendamento, telemetria de iates e conciergerie em Búzios e Angra.',
+      subtitle: 'Plataforma de alta sofisticação para agendamento, telemetria de iates e conciergerie náutica nacional.',
       metric: '+410% em reservas diretas de iates',
       tags: ['React 19', 'Tailwind CSS', 'Mapbox 3D', 'Stripe Global', 'Node.js'],
       color: 'from-purple-500/20 via-indigo-500/10 to-transparent',
@@ -43,14 +43,14 @@ export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onOpenCont
         badge: 'EXPERIÊNCIA ULTRA-LUXO',
         metricValue: '< 0.6s',
         metricLabel: 'Carregamento Global',
-        status: 'Búzios / Arraial'
+        status: 'Nacional / Brasil'
       }
     },
     {
       id: 'cabo-frio-real-estate',
       category: 'web',
       title: 'Prime Estate - Portal Imobiliário Imersivo 3D',
-      subtitle: 'Portal de alto padrão para venda de mansões e coberturas na Região dos Lagos com tours 360° fluidos.',
+      subtitle: 'Portal de alto padrão para venda de mansões e coberturas de alto padrão no Brasil com tours 360° fluidos.',
       metric: 'R$ 48M transacionados no ecossistema',
       tags: ['Next.js 15', 'Three.js / WebGL', 'PostgreSQL', 'Cloudflare Edge'],
       color: 'from-teal-500/20 via-cyan-500/10 to-transparent',

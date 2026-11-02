@@ -11,83 +11,83 @@ export interface CityItem {
 
 export const CITIES_LIST: CityItem[] = [
   {
-    slug: 'criacao-de-sites-em-cabo-frio',
-    name: 'Cabo Frio',
-    region: 'Região dos Lagos - RJ',
-    headline: 'Criação de Sites Profissionais e Google Meu Negócio em Cabo Frio',
-    description: 'A Sentinel Systems tem raízes em Cabo Frio. Desenvolvemos sites rápidos, posicionamento no Google e automação no WhatsApp para o comércio da Passagem, Centro, Praia do Forte, São Cristóvão, Jardim Esperança e toda a cidade.',
-    localKeywords: ['criação de sites cabo frio', 'agencia web cabo frio', 'google meu negocio cabo frio', 'robo whatsapp cabo frio'],
-    commercialFocus: 'Comércio local, pousadas históricas da Passagem, restaurantes, lojas de moda praia e prestadores de serviços de Cabo Frio.',
-    whatsappMessage: 'Olá! Tenho uma empresa em Cabo Frio e quero um site profissional com robô de WhatsApp.'
+    slug: 'criacao-de-sites-em-sao-paulo',
+    name: 'São Paulo',
+    region: 'São Paulo - SP',
+    headline: 'Criação de Sites de Alta Performance e Google Meu Negócio em São Paulo',
+    description: 'São Paulo é o maior polo econômico e comercial da América Latina. Desenvolvemos sites ultrarrápidos, presença forte na 1ª página do Google e automações de atendimento no WhatsApp para empresas, clínicas e comércios de todas as regiões da capital paulista.',
+    localKeywords: ['criação de sites são paulo', 'sites profissionais sp', 'google meu negocio sp', 'robo whatsapp sao paulo'],
+    commercialFocus: 'Comércios, clínicas, consultorias empresariais, prestadores de serviços, franquias e empresas de toda a capital e Grande SP.',
+    whatsappMessage: 'Olá! Tenho uma empresa em São Paulo e quero um site de alta performance com robô de WhatsApp.'
   },
   {
-    slug: 'criacao-de-sites-em-buzios',
-    name: 'Armação dos Búzios',
-    region: 'Região dos Lagos - RJ',
-    headline: 'Sites Rápidos e Automação de Reservas para o Comércio de Búzios',
-    description: 'Búzios vive de turismo e gastronomia internacional. Criamos sites elegantes para pousadas da Ferradura, Geribá, João Fernandes e restaurantes da Rua das Pedras e Porto da Barra, com robô no WhatsApp que fecha diárias na hora.',
-    localKeywords: ['criacao de sites buzios', 'site para pousada buzios', 'marketing digital buzios', 'automacao whatsapp buzios'],
-    commercialFocus: 'Pousadas de charme, hotéis boutique, restaurantes gourmet, agências de passeios e lojas da Rua das Pedras.',
-    whatsappMessage: 'Olá! Tenho um negócio em Búzios e quero criar um site de alto padrão com atendimento no WhatsApp.'
+    slug: 'criacao-de-sites-no-rio-de-janeiro',
+    name: 'Rio de Janeiro',
+    region: 'Rio de Janeiro - RJ',
+    headline: 'Criação de Sites Profissionais e Automação de Vendas no Rio de Janeiro',
+    description: 'Destaque sua empresa na capital fluminense. Criamos ecossistemas web com carregamento instantâneo, posicionamento no Google Maps e robô de WhatsApp 24 horas para captar clientes na Barra da Tijuca, Zona Sul, Centro, Zona Norte e Zona Oeste.',
+    localKeywords: ['criação de sites rj', 'agencia web rio de janeiro', 'google meu negocio rj', 'robo whatsapp rio de janeiro'],
+    commercialFocus: 'Comércios locais, clínicas de saúde, escritórios de advocacia e contabilidade, gastronomia, turismo e empresas de serviços da capital.',
+    whatsappMessage: 'Olá! Tenho um negócio no Rio de Janeiro e quero criar um site de alto padrão com atendimento no WhatsApp.'
   },
   {
-    slug: 'criacao-de-sites-em-arraial-do-cabo',
-    name: 'Arraial do Cabo',
-    region: 'Região dos Lagos - RJ',
-    headline: 'Criação de Sites para Turismo, Passeios de Barco e Pousadas em Arraial do Cabo',
-    description: 'A "Capital do Mergulho" atrai turistas o ano todo. Seu comércio precisa aparecer no topo do Google quando pesquisarem pousadas, passeios de barco e restaurantes na Praia dos Anjos, Praia Grande e Prainha.',
-    localKeywords: ['sites arraial do cabo', 'criacao de sites arraial do cabo', 'passeio de barco arraial do cabo site', 'pousadas arraial do cabo'],
-    commercialFocus: 'Operadoras de passeios náuticos, escolas de mergulho, pousadas familiares, quiosques e restaurantes de frutos do mar.',
-    whatsappMessage: 'Olá! Tenho uma empresa em Arraial do Cabo e quero um site para atrair turistas do Google.'
+    slug: 'criacao-de-sites-em-belo-horizonte',
+    name: 'Belo Horizonte',
+    region: 'Minas Gerais - MG',
+    headline: 'Desenvolvimento Web Rápido e Marketing no Google em Belo Horizonte',
+    description: 'Conquiste clientes na capital mineira com sites que carregam em menos de 1 segundo. Estruturamos seu negócio no Google Meu Negócio e conectamos um robô inteligente no WhatsApp para converter leads em Savassi, Lourdes, Pampulha, Centro e região metropolitana.',
+    localKeywords: ['criação de sites bh', 'desenvolvimento de sites belo horizonte', 'marketing digital bh', 'sites para empresas mg'],
+    commercialFocus: 'Comércio varejista, polos gastronômicos, startups, consultórios médicos, clínicas de estética e prestadores de serviços em BH.',
+    whatsappMessage: 'Olá! Sou de Belo Horizonte e quero colocar minha empresa na 1ª página do Google com a Sentinel.'
   },
   {
-    slug: 'criacao-de-sites-em-sao-pedro-da-aldeia',
-    name: 'São Pedro da Aldeia',
-    region: 'Região dos Lagos - RJ',
-    headline: 'Desenvolvimento Web e Marketing Digital em São Pedro da Aldeia',
-    description: 'Polo logístico e comercial que mais cresce na Região dos Lagos. Criamos sites para depósitos, oficinas, clínicas, pet shops e lojas de São Pedro da Aldeia para capturar clientes locais no Google.',
-    localKeywords: ['criacao de sites sao pedro da aldeia', 'marketing digital sao pedro da aldeia', 'empresas sao pedro da aldeia'],
-    commercialFocus: 'Distribuidoras, oficinas automotivas, clínicas odontológicas, lojas de materiais de construção e comércio do Centro e Nova São Pedro.',
-    whatsappMessage: 'Olá! Sou de São Pedro da Aldeia e quero colocar minha empresa na 1ª página do Google.'
+    slug: 'criacao-de-sites-em-curitiba',
+    name: 'Curitiba',
+    region: 'Paraná - PR',
+    headline: 'Criação de Sites Modernos e Presença no Google em Curitiba',
+    description: 'Curitiba é referência nacional em inovação e exigência de mercado. Desenvolvemos páginas comerciais de alta conversão com suporte contínuo para negócios em Batel, Centro Cívico, Água Verde, Portão e toda a Região Metropolitana.',
+    localKeywords: ['criação de sites curitiba', 'agencia de sites curitiba', 'google maps empresas curitiba', 'robo whatsapp pr'],
+    commercialFocus: 'Clínicas especializadas, franquias, indústrias, comércio elegante, escritórios e serviços corporativos de Curitiba.',
+    whatsappMessage: 'Olá! Tenho uma empresa em Curitiba e busco um site profissional com suporte mensal e robô 24h.'
   },
   {
-    slug: 'criacao-de-sites-em-iguaba-grande',
-    name: 'Iguaba Grande',
-    region: 'Região dos Lagos - RJ',
-    headline: 'Criação de Sites Rápidos e Visibilidade no Google em Iguaba Grande',
-    description: 'Posicione seu comércio na orla e no centro de Iguaba Grande. Sites leves com botão direto de WhatsApp para você não perder clientes para as cidades vizinhas.',
-    localKeywords: ['sites iguaba grande', 'criacao de sites iguaba grande', 'comercio iguaba grande google'],
-    commercialFocus: 'Pousadas de lagoa, restaurantes, quiosques, lojas de bairro e profissionais autônomos de Iguaba Grande.',
-    whatsappMessage: 'Olá! Tenho um comércio em Iguaba Grande e quero aumentar minhas vendas com site e WhatsApp.'
+    slug: 'criacao-de-sites-em-brasilia',
+    name: 'Brasília',
+    region: 'Distrito Federal - DF',
+    headline: 'Criação de Sites Institucionais e Automação no Distrito Federal',
+    description: 'Posicione sua marca com autoridade na capital do país. Criamos sites elegantes e robustos para empresas, consultorias e profissionais do Plano Piloto, Asa Sul, Asa Norte, Águas Claras, Taguatinga e todo o DF.',
+    localKeywords: ['criação de sites brasilia', 'marketing institucional brasilia', 'empresas brasilia google', 'desenvolvimento web df'],
+    commercialFocus: 'Escritórios corporativos, clínicas médicas, consultorias, prestadores de serviços, escolas e comércios do Distrito Federal.',
+    whatsappMessage: 'Olá! Sou de Brasília e quero modernizar a presença digital da minha empresa com a Sentinel Systems.'
   },
   {
-    slug: 'criacao-de-sites-em-araruama',
-    name: 'Araruama',
-    region: 'Região dos Lagos - RJ',
-    headline: 'Criação de Sites e Automação Comercial em Araruama',
-    description: 'Araruama é o maior município da região, com comércio forte no Centro e nos distritos. A Sentinel Systems cria seu site e cadastra sua loja no Google Meu Negócio para você ser o primeiro resultado das buscas.',
-    localKeywords: ['criacao de sites araruama', 'agencia de sites araruama', 'google meu negocio araruama'],
-    commercialFocus: 'Comércio varejista, imobiliárias, clínicas médicas, óticas, escritórios e serviços em Araruama.',
-    whatsappMessage: 'Olá! Tenho uma empresa em Araruama e quero um site profissional com suporte mensal.'
+    slug: 'criacao-de-sites-em-salvador',
+    name: 'Salvador',
+    region: 'Bahia - BA',
+    headline: 'Sites Rápidos e Robô de Vendas no WhatsApp para Salvador',
+    description: 'Aqueça suas vendas na capital baiana. Criamos sites que aparecem no topo das buscas do Google para clientes e turistas em Pituba, Barra, Caminho das Árvores, Rio Vermelho e comércio geral de Salvador e Litoral Norte.',
+    localKeywords: ['criação de sites salvador', 'desenvolvimento web bahia', 'marketing digital salvador', 'google meu negocio salvador'],
+    commercialFocus: 'Hotéis e pousadas, restaurantes, clínicas odontológicas, lojas de varejo e prestadores de serviços de Salvador.',
+    whatsappMessage: 'Olá! Tenho uma empresa em Salvador e quero aumentar minhas vendas com site e robô de WhatsApp.'
   },
   {
-    slug: 'criacao-de-sites-em-tamoios-unamar',
-    name: 'Tamoios e Unamar (Cabo Frio)',
-    region: '2º Distrito de Cabo Frio - RJ',
-    headline: 'Criação de Sites e Presença no Google para Empresas de Tamoios e Unamar',
-    description: 'O 2º Distrito de Cabo Frio tem comércio pujante ao longo da Rodovia Amaral Peixoto. Tenha um site profissional que valoriza sua marca e atrai moradores e veranistas para o seu WhatsApp.',
-    localKeywords: ['sites unamar cabo frio', 'criacao de sites tamoios', 'google meu negocio unamar', 'comercio tamoios cabo frio'],
-    commercialFocus: 'Lojas de materiais, vidraçarias, imobiliárias, padarias, oficinas e prestadores de serviços de Unamar, Samburá e Aquarius.',
-    whatsappMessage: 'Olá! Sou de Tamoios/Unamar e quero um site profissional no Google para o meu negócio.'
+    slug: 'criacao-de-sites-em-porto-alegre',
+    name: 'Porto Alegre',
+    region: 'Rio Grande do Sul - RS',
+    headline: 'Criação de Sites Profissionais e Gestão no Google em Porto Alegre',
+    description: 'Aumente o faturamento da sua empresa no Rio Grande do Sul. Desenvolvemos sites rápidos, cadastramento completo no Google e automações que atendem e qualificam clientes 24 horas por dia em Moinhos de Vento, Petrópolis, Centro e Zona Sul.',
+    localKeywords: ['criação de sites porto alegre', 'agencia web poa', 'marketing digital porto alegre', 'sites para empresas rs'],
+    commercialFocus: 'Indústrias, comércio regional, consultórios, distribuidoras e prestadores de serviços corporativos de Porto Alegre.',
+    whatsappMessage: 'Olá! Tenho uma empresa em Porto Alegre e quero um site moderno com atendimento automático.'
   },
   {
-    slug: 'criacao-de-sites-em-rio-das-ostras',
-    name: 'Rio das Ostras',
-    region: 'Região dos Lagos / Norte Fluminense - RJ',
-    headline: 'Sites Institucionais e Automação de Vendas em Rio das Ostras',
-    description: 'Atenda clientes de Costazul, Centro, Recreio e polo de serviços de Rio das Ostras com um site ultra rápido e robô que fecha pedidos e orçamentos 24 horas por dia.',
-    localKeywords: ['criacao de sites rio das ostras', 'desenvolvimento de sites rio das ostras', 'marketing rio das ostras'],
-    commercialFocus: 'Empresas de engenharia, hotéis, restaurantes de Costazul, escolas e comércio geral de Rio das Ostras.',
-    whatsappMessage: 'Olá! Tenho uma empresa em Rio das Ostras e quero um site moderno com robô no WhatsApp.'
+    slug: 'criacao-de-sites-em-goiania',
+    name: 'Goiânia',
+    region: 'Goiás - GO',
+    headline: 'Criação de Sites Comerciais e Automação de WhatsApp em Goiânia',
+    description: 'Destaque-se no vibrante mercado de Goiânia e Centro-Oeste. Criamos sites comerciais de alta velocidade para capturar clientes no Google em Setor Bueno, Marista, Oeste, Jardim Goiás e região metropolitana.',
+    localKeywords: ['criação de sites goiânia', 'marketing digital goiania', 'sites goiania go', 'robo whatsapp goiania'],
+    commercialFocus: 'Comércio atacadista e varejista, agronegócio, clínicas de estética e saúde, imobiliárias e prestadores de serviços em Goiânia.',
+    whatsappMessage: 'Olá! Tenho um negócio em Goiânia e quero colocar minha empresa na 1ª página do Google.'
   }
 ];

@@ -3,11 +3,11 @@ import { MapPin, Award, Check, Navigation, Globe2, Compass } from 'lucide-react'
 
 export const RegionalAuthority: React.FC = () => {
   const cities = [
-    { name: 'Cabo Frio', role: 'Sede & Engenharia Central', highlight: 'Pólo Tecnológico Regional' },
-    { name: 'Armação dos Búzios', role: 'Hospitalidade de Luxo & Náutica', highlight: 'Sistemas Internacionais' },
-    { name: 'Arraial do Cabo', role: 'Ecoturismo & Infraestrutura Marítima', highlight: 'Telemetria & Gestão' },
-    { name: 'São Pedro da Aldeia', role: 'Logística & Indústria Comercial', highlight: 'ERPs & Integração' },
-    { name: 'Rio de Janeiro (Capital)', role: 'Grandes Contas & Corporativo', highlight: 'Escalabilidade Nacional' },
+    { name: 'São Paulo (SP)', role: 'Polo Econômico & Financeiro', highlight: 'Grandes Contas & Escala' },
+    { name: 'Rio de Janeiro (RJ)', role: 'Corporativo & Serviços Globais', highlight: 'Presença Digital' },
+    { name: 'Belo Horizonte (MG)', role: 'Polo Tecnológico & Inovação', highlight: 'Sistemas Ágeis' },
+    { name: 'Curitiba (PR)', role: 'Indústria & Serviços Avançados', highlight: 'Automação & Conversão' },
+    { name: 'Brasília (DF)', role: 'Consultorias & Grandes Negócios', highlight: 'Autoridade Digital' },
     { name: 'Clientes Globais', role: 'EUA, Europa & América Latina', highlight: 'Projetos Remotos' },
   ];
 
@@ -22,18 +22,18 @@ export const RegionalAuthority: React.FC = () => {
           <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs font-mono text-cyan-300 mb-6">
               <Compass className="w-3.5 h-3.5 text-cyan-400" />
-              <span>// AUTORIDADE REGIONAL & GLOBAL</span>
+              <span>// AUTORIDADE TECNOLÓGICA NACIONAL & GLOBAL</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-6 leading-tight">
               A Maior Potência Tecnológica da{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400">
-                Região dos Lagos
+                Todo o Brasil
               </span>
             </h2>
 
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
-              Nascemos inspirados na força, pureza e fluidez das águas da Costa do Sol do Rio de Janeiro. Enquanto a maioria das agências locais entrega sites genéricos e lentos, a <strong className="text-white">Sentinel Systems</strong> constrói ecossistemas de software e Inteligência Artificial que competem de igual para igual com empresas do Vale do Silício.
+              Nascemos com a missão de democratizar tecnologia de nível internacional para empresas de todo o Brasil. Enquanto a maioria das agências entrega sites genéricos e lentos, a <strong className="text-white">Sentinel Systems</strong> constrói ecossistemas de software e Inteligência Artificial que competem de igual para igual com empresas do Vale do Silício.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -43,7 +43,7 @@ export const RegionalAuthority: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-white">Atendimento Presencial e Exclusivo</h3>
-                  <p className="text-xs text-slate-400">Reuniões estratégicas no seu negócio em Cabo Frio, Búzios, Arraial ou videoconferência de alta definição.</p>
+                  <p className="text-xs text-slate-400">Reuniões de estratégia online de alta definição e consultoria técnica personalizada.</p>
                 </div>
               </div>
 
@@ -74,7 +74,7 @@ export const RegionalAuthority: React.FC = () => {
               </div>
               <div>
                 <div className="text-xs font-mono text-cyan-300 font-semibold">MISSÃO OFICIAL</div>
-                <div className="text-sm text-slate-200 font-medium">Tornar a Região dos Lagos uma referência em alta tecnologia e Inteligência Artificial no Brasil.</div>
+                <div className="text-sm text-slate-200 font-medium">Tornar a Todo o Brasil uma referência em alta tecnologia e Inteligência Artificial no Brasil.</div>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export const RegionalAuthority: React.FC = () => {
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
                 <div className="flex items-center gap-2">
                   <Navigation className="w-4 h-4 text-cyan-400 animate-spin" style={{ animationDuration: '10s' }} />
-                  <span className="text-xs font-mono text-slate-300 uppercase">Radar de Cobertura Regional</span>
+                  <span className="text-xs font-mono text-slate-300 uppercase">Radar de Cobertura Nacional</span>
                 </div>
                 <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400">
                   ONLINE & ATIVO

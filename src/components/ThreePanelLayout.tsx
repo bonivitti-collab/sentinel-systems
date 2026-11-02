@@ -45,10 +45,10 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
   };
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-slate-950 font-sans text-slate-100">
+    <div className="flex h-screen w-screen overflow-hidden bg-slate-100 font-sans text-slate-900">
       
       {/* ======================================================== */}
-      {/* 1. LEFT PANEL: Desktop Sidebar (>= 1024px) */}
+      {/* 1. LEFT PANEL: Desktop Sidebar (>= 1024px) - Clean White */}
       {/* ======================================================== */}
       <div className="hidden lg:block shrink-0 h-full">
         <AppSidebar
@@ -65,15 +65,15 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
       {/* ======================================================== */}
       <div className="flex-1 flex flex-col h-full min-w-0 bg-white text-slate-900 relative overflow-hidden">
         
-        {/* Mobile Top Navbar (< 1024px) */}
-        <header className="lg:hidden h-16 bg-slate-950 text-white px-4 flex items-center justify-between border-b border-slate-800 shrink-0 z-30">
+        {/* Mobile Top Navbar (< 1024px) - Clean White */}
+        <header className="lg:hidden h-16 bg-white text-slate-900 px-4 flex items-center justify-between border-b border-slate-200 shrink-0 z-30 shadow-xs">
           <div className="flex items-center gap-2">
             <button
               onClick={() => {
                 soundFx.playUiClick();
                 setIsMobileMenuOpen(true);
               }}
-              className="p-2 rounded-xl bg-slate-900 text-slate-300 hover:text-white border border-slate-800 cursor-pointer"
+              className="p-2 rounded-xl bg-slate-50 text-slate-700 hover:text-slate-950 border border-slate-200 cursor-pointer"
               aria-label="Abrir Menu"
             >
               <Menu className="w-5 h-5" />
@@ -88,17 +88,17 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
               }}
               className="flex items-center cursor-pointer"
             >
-              <SentinelLogo size="sm" variant="dark" />
+              <SentinelLogo size="sm" variant="light" />
             </a>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={toggleSound}
-              className="p-2 rounded-xl bg-slate-900 text-slate-400 hover:text-white border border-slate-800"
+              className="p-2 rounded-xl bg-slate-50 text-slate-500 hover:text-slate-900 border border-slate-200"
               aria-label="Som"
             >
-              {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-cyan-400" />}
+              {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-cyan-600" />}
             </button>
 
             {/* Mobile AI Trigger Button */}
@@ -107,22 +107,24 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
                 soundFx.playUiClick();
                 setIsMobileAiOpen(true);
               }}
-              className="px-3 py-1.5 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-950 font-black text-xs flex items-center gap-1.5 shadow-md shadow-cyan-500/30 cursor-pointer"
+              className="px-3 py-1.5 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-black text-xs flex items-center gap-1.5 shadow-sm shadow-cyan-500/20 cursor-pointer"
             >
-              <Bot className="w-4 h-4 text-slate-950" />
+              <Bot className="w-4 h-4 text-white" />
               <span>IA de Vendas</span>
             </button>
           </div>
         </header>
 
-        {/* Desktop Quick Header Bar over Center Panel */}
-        <div className="hidden lg:flex items-center justify-between px-6 py-2.5 bg-slate-900 text-slate-300 border-b border-slate-800 shrink-0 text-xs">
+        {/* Desktop Quick Header Bar over Center Panel - Clean White */}
+        <div className="hidden lg:flex items-center justify-between px-6 py-2.5 bg-white text-slate-600 border-b border-slate-200/90 shrink-0 text-xs shadow-xs">
           <div className="flex items-center gap-3">
-            <span className="font-bold text-white tracking-wide">SENTINEL SYSTEMS</span>
-            <span className="text-slate-600">&bull;</span>
-            <span className="text-slate-400">Atendimento em Todo o Brasil</span>
-            <span className="text-slate-600">&bull;</span>
-            <span className="text-cyan-400 font-mono text-[11px]">3-Panel Studio Layout</span>
+            <span className="font-extrabold text-slate-900 tracking-wide">SENTINEL SYSTEMS</span>
+            <span className="text-slate-300">&bull;</span>
+            <span className="text-slate-600 font-medium">Atendimento em Todo o Brasil</span>
+            <span className="text-slate-300">&bull;</span>
+            <span className="text-cyan-700 font-mono text-[11px] bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-200">
+              Workspace Studio
+            </span>
           </div>
 
           <div className="flex items-center gap-3">
@@ -131,28 +133,28 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => soundFx.playUiClick()}
-              className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-bold transition-colors"
+              className="flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-bold transition-colors bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
               <span>WhatsApp: (22) 99972-6069</span>
             </a>
 
             {/* Collapse/Expand AI Toggle */}
             <button
               onClick={handleToggleAi}
-              className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors flex items-center gap-1 text-[11px] font-bold cursor-pointer"
+              className="p-1.5 px-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5 text-[11px] font-bold cursor-pointer"
               title={isAiCollapsed ? 'Abrir painel da IA de Vendas' : 'Recolher painel da IA'}
             >
               {isAiCollapsed ? (
                 <>
-                  <Bot className="w-3.5 h-3.5 text-cyan-400" />
+                  <Bot className="w-3.5 h-3.5 text-cyan-600" />
                   <span>Abrir IA</span>
-                  <PanelRightOpen className="w-3.5 h-3.5" />
+                  <PanelRightOpen className="w-3.5 h-3.5 text-slate-500" />
                 </>
               ) : (
                 <>
                   <span>Recolher IA</span>
-                  <PanelRightClose className="w-3.5 h-3.5" />
+                  <PanelRightClose className="w-3.5 h-3.5 text-slate-500" />
                 </>
               )}
             </button>
@@ -160,13 +162,13 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
         </div>
 
         {/* Scrollable Main Content Stream */}
-        <div className="flex-1 overflow-y-auto relative scroll-smooth selection:bg-cyan-200 selection:text-slate-950">
+        <div className="flex-1 overflow-y-auto relative scroll-smooth selection:bg-cyan-200 selection:text-slate-950 bg-white">
           {children}
         </div>
       </div>
 
       {/* ======================================================== */}
-      {/* 3. RIGHT PANEL: Sentinel AI Advisor (Desktop >= 1024px) */}
+      {/* 3. RIGHT PANEL: Sentinel AI Advisor (Desktop >= 1024px) - Clean White */}
       {/* ======================================================== */}
       {!isAiCollapsed && (
         <div className="hidden lg:block w-[380px] xl:w-[420px] shrink-0 h-full transition-all duration-300">
@@ -180,13 +182,13 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex">
           <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="relative w-80 max-w-[85%] h-full bg-slate-950 shadow-2xl z-10 flex flex-col">
+          <div className="relative w-80 max-w-[85%] h-full bg-white shadow-2xl z-10 flex flex-col">
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white bg-slate-900 rounded-xl"
+              className="absolute top-4 right-4 p-2 text-slate-500 hover:text-slate-900 bg-slate-100 rounded-xl"
               aria-label="Fechar Menu"
             >
               <X className="w-5 h-5" />
@@ -214,10 +216,10 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
       {isMobileAiOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex justify-end">
           <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity"
             onClick={() => setIsMobileAiOpen(false)}
           />
-          <div className="relative w-full max-w-md h-full bg-slate-950 shadow-2xl z-10 flex flex-col">
+          <div className="relative w-full max-w-md h-full bg-white shadow-2xl z-10 flex flex-col">
             <SentinelAIAdvisor
               onOpenContact={(plan) => {
                 setIsMobileAiOpen(false);

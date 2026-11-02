@@ -179,7 +179,7 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
       };
     }
 
-    // 7. Resposta Genérica / Abrangente para qualquer outro nicho
+    // 7. Resposta Genérica
     return {
       id: Date.now().toString(),
       sender: 'ai',
@@ -215,7 +215,6 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
     setInput('');
     setIsTyping(true);
 
-    // Efeito de processamento inteligente em tempo real (~700ms)
     setTimeout(() => {
       const aiReply = generateAIResponse(messageText);
       setMessages((prev) => [...prev, aiReply]);
@@ -248,26 +247,26 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full bg-slate-950 text-slate-100 border-l border-slate-800 shadow-2xl relative overflow-hidden font-sans">
+    <div className="flex flex-col h-full bg-white text-slate-800 border-l border-slate-200/90 shadow-sm relative overflow-hidden font-sans">
       
-      {/* Header do Copilot */}
-      <div className="px-4 py-3.5 bg-slate-900/95 border-b border-slate-800 flex items-center justify-between shrink-0 backdrop-blur-md">
+      {/* Header do Copilot - Clean White */}
+      <div className="px-4 py-3.5 bg-white border-b border-slate-100 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2.5">
           <div className="relative">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-cyan-500 via-sky-500 to-indigo-600 flex items-center justify-center text-slate-950 font-black shadow-md shadow-cyan-500/20">
-              <Bot className="w-5 h-5 text-slate-950" />
+            <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-cyan-400 via-sky-500 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-cyan-500/20 border border-white/60">
+              <Bot className="w-5 h-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)]" />
             </div>
-            <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-slate-900 animate-pulse" />
+            <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white animate-pulse" />
           </div>
 
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-xs text-white tracking-tight">Sentinel AI</span>
-              <span className="px-1.5 py-0.2 rounded bg-cyan-950 border border-cyan-500/40 text-[9px] font-bold text-cyan-400 uppercase tracking-wider">
+              <span className="font-extrabold text-xs text-slate-900 tracking-tight">Sentinel AI</span>
+              <span className="px-1.5 py-0.2 rounded bg-cyan-50 border border-cyan-200 text-[9px] font-bold text-cyan-800 uppercase tracking-wider">
                 Copilot
               </span>
             </div>
-            <div className="text-[10px] text-slate-400">
+            <div className="text-[10px] text-slate-500 font-medium">
               Estrategista de Vendas Online &bull; Gratuito
             </div>
           </div>
@@ -277,7 +276,7 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
           <button
             onClick={handleResetChat}
             title="Reiniciar conversa"
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
             aria-label="Reiniciar chat"
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -286,7 +285,7 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
           {onCloseMobile && (
             <button
               onClick={onCloseMobile}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer lg:hidden"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer lg:hidden"
               aria-label="Fechar painel"
             >
               <X className="w-4 h-4" />
@@ -296,47 +295,45 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
       </div>
 
       {/* Live Badge */}
-      <div className="px-4 py-1.5 bg-gradient-to-r from-cyan-950/60 to-slate-900 border-b border-slate-800/60 flex items-center justify-between text-[10px] text-cyan-300">
-        <span className="flex items-center gap-1.5">
-          <Sparkles className="w-3 h-3 text-cyan-400 shrink-0" />
+      <div className="px-4 py-1.5 bg-gradient-to-r from-cyan-50/70 to-slate-50 border-b border-slate-100 flex items-center justify-between text-[10px] text-cyan-900">
+        <span className="flex items-center gap-1.5 font-semibold">
+          <Sparkles className="w-3 h-3 text-cyan-600 shrink-0" />
           <span>Inteligência Comercial em Tempo Real</span>
         </span>
         <span className="text-slate-400 font-mono text-[9px]">v2.5 Brasil</span>
       </div>
 
       {/* Messages Stream Area */}
-      <div className="flex-1 p-3.5 overflow-y-auto space-y-3.5 scrollbar-thin scrollbar-thumb-slate-800">
+      <div className="flex-1 p-3.5 overflow-y-auto space-y-3.5 scrollbar-thin scrollbar-thumb-slate-200 bg-slate-50/40">
         {messages.map((msg) => {
           const isAi = msg.sender === 'ai';
           return (
             <div key={msg.id} className={`flex flex-col ${isAi ? 'items-start' : 'items-end'}`}>
               <div
-                className={`max-w-[92%] rounded-2xl p-3.5 text-xs leading-relaxed shadow-sm ${
+                className={`max-w-[92%] rounded-2xl p-3.5 text-xs leading-relaxed shadow-xs ${
                   isAi
-                    ? 'bg-slate-900 border border-slate-800 text-slate-200'
-                    : 'bg-gradient-to-r from-cyan-600 to-sky-600 text-white font-medium'
+                    ? 'bg-white border border-slate-200 text-slate-800'
+                    : 'bg-gradient-to-r from-cyan-600 to-sky-600 text-white font-medium shadow-md shadow-cyan-600/20'
                 }`}
               >
-                {/* Renderização rica de texto e Markdown simples */}
                 <div className="space-y-2 whitespace-pre-line">
                   {msg.text.split('\n\n').map((paragraph, pIdx) => (
                     <p key={pIdx}>{paragraph}</p>
                   ))}
                 </div>
 
-                <div className={`mt-1.5 text-[9px] flex items-center justify-end ${isAi ? 'text-slate-500' : 'text-cyan-100'}`}>
+                <div className={`mt-1.5 text-[9px] flex items-center justify-end ${isAi ? 'text-slate-400' : 'text-cyan-100'}`}>
                   <span>{msg.time}</span>
                 </div>
 
-                {/* Botão de Chamada para Ação contextual gerado pela IA */}
                 {msg.cta && (
-                  <div className="mt-3 pt-3 border-t border-slate-800">
+                  <div className="mt-3 pt-3 border-t border-slate-100">
                     <a
                       href={`https://wa.me/5522999726069?text=${encodeURIComponent(msg.cta.actionMessage)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => soundFx.playUiClick()}
-                      className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-[11px] tracking-wide flex items-center justify-center gap-1.5 shadow-md transition-all cursor-pointer"
+                      className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-[11px] tracking-wide flex items-center justify-center gap-1.5 shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
                     >
                       <MessageCircle className="w-3.5 h-3.5" />
                       <span>{msg.cta.label}</span>
@@ -346,14 +343,13 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
                 )}
               </div>
 
-              {/* Suggestions chips right under AI message */}
               {msg.suggestions && msg.suggestions.length > 0 && (
                 <div className="mt-2 flex flex-wrap gap-1.5 max-w-[95%]">
                   {msg.suggestions.map((sug, sIdx) => (
                     <button
                       key={sIdx}
                       onClick={() => handleSuggestionClick(sug)}
-                      className="px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-cyan-300 hover:text-white border border-slate-800 hover:border-cyan-500/50 text-[10px] font-semibold transition-all cursor-pointer text-left flex items-center gap-1"
+                      className="px-2.5 py-1 rounded-full bg-white hover:bg-cyan-50 text-slate-700 hover:text-cyan-900 border border-slate-200 hover:border-cyan-300 text-[10px] font-semibold transition-all cursor-pointer text-left shadow-xs flex items-center gap-1"
                     >
                       <span>{sug}</span>
                     </button>
@@ -364,21 +360,20 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
           );
         })}
 
-        {/* Typing indicator */}
         {isTyping && (
-          <div className="flex items-center gap-2 text-xs text-cyan-400 bg-slate-900 border border-slate-800 px-3.5 py-2 rounded-2xl w-fit">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: '0ms' }} />
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: '150ms' }} />
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: '300ms' }} />
-            <span className="text-[10px] text-slate-400 ml-1">Sentinel AI analisando oportunidades...</span>
+          <div className="flex items-center gap-2 text-xs text-cyan-700 bg-white border border-slate-200 px-3.5 py-2 rounded-2xl w-fit shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-bounce" style={{ animationDelay: '0ms' }} />
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-bounce" style={{ animationDelay: '150ms' }} />
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-bounce" style={{ animationDelay: '300ms' }} />
+            <span className="text-[10px] text-slate-500 ml-1">Sentinel AI analisando oportunidades...</span>
           </div>
         )}
 
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input bar */}
-      <div className="p-3 bg-slate-900/90 border-t border-slate-800 shrink-0">
+      {/* Input bar - Clean White */}
+      <div className="p-3 bg-white border-t border-slate-100 shrink-0">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -391,19 +386,19 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
             placeholder="Qual é a sua dúvida ou tipo de empresa?..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
+            className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-cyan-500 focus:bg-white transition-all"
           />
           <button
             type="submit"
             disabled={!input.trim()}
-            className="w-9 h-9 rounded-xl bg-cyan-500 hover:bg-cyan-400 disabled:opacity-30 disabled:hover:bg-cyan-500 text-slate-950 font-black flex items-center justify-center transition-all cursor-pointer shrink-0"
+            className="w-9 h-9 rounded-xl bg-cyan-500 hover:bg-cyan-400 disabled:opacity-30 disabled:hover:bg-cyan-500 text-slate-950 font-black flex items-center justify-center transition-all cursor-pointer shrink-0 shadow-sm shadow-cyan-500/20"
             aria-label="Enviar mensagem"
           >
             <Send className="w-4 h-4" />
           </button>
         </form>
 
-        <div className="flex items-center justify-between mt-2 text-[9px] text-slate-500 px-1">
+        <div className="flex items-center justify-between mt-2 text-[9px] text-slate-400 px-1 font-medium">
           <span>IA Especialista em Vendas Online</span>
           <span>Gratuito & Ilimitado</span>
         </div>

@@ -49,30 +49,30 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
       </div>
 
       {/* Main Showcase Panel */}
-      <div className="bg-slate-950 rounded-3xl p-4 sm:p-8 border border-slate-800 shadow-2xl text-white">
+      <div className="bg-white rounded-3xl p-4 sm:p-8 border border-slate-200/90 shadow-xl text-slate-900">
         {/* Header with info and Viewport Switcher */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800 mb-6">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-200 mb-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-[11px] font-bold text-cyan-400 mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-[11px] font-bold text-cyan-700 mb-2">
               <Sparkles className="w-3.5 h-3.5" />
               <span>{currentModel.mockBadge}</span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
               {currentModel.name}
             </h3>
-            <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mt-1">
+            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl mt-1">
               {currentModel.headline}
             </p>
           </div>
 
           {/* Device Toggle */}
-          <div className="flex items-center gap-2 bg-slate-900 p-1.5 rounded-2xl border border-slate-800 self-start lg:self-auto">
+          <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200 self-start lg:self-auto">
             <button
               onClick={() => handleViewMode('desktop')}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
                 viewMode === 'desktop'
-                  ? 'bg-cyan-500 text-slate-950 shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-white text-slate-900 shadow-sm'
+                  : 'text-slate-500 hover:text-slate-900'
               }`}
             >
               <Monitor className="w-4 h-4" />
@@ -82,8 +82,8 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
               onClick={() => handleViewMode('mobile')}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
                 viewMode === 'mobile'
-                  ? 'bg-cyan-500 text-slate-950 shadow-sm'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-white text-slate-900 shadow-sm'
+                  : 'text-slate-500 hover:text-slate-900'
               }`}
             >
               <Smartphone className="w-4 h-4" />
@@ -253,17 +253,17 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
         </div>
 
         {/* Stats Row & CTA */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-200 items-center">
           {currentModel.stats.map((st, i) => (
-            <div key={i} className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
-              <div className="text-xl sm:text-2xl font-black text-cyan-400">{st.value}</div>
-              <div className="text-xs text-slate-400 mt-0.5 font-medium">{st.label}</div>
+            <div key={i} className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+              <div className="text-xl sm:text-2xl font-black text-cyan-600">{st.value}</div>
+              <div className="text-xs text-slate-600 mt-0.5 font-medium">{st.label}</div>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-cyan-950/40 border border-cyan-500/30">
-          <div className="text-xs text-slate-300 text-center sm:text-left">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-cyan-50 border border-cyan-200">
+          <div className="text-xs text-slate-700 text-center sm:text-left">
             Gostou dessa estrutura? Criamos um site com a sua logo, suas fotos e seu WhatsApp em até <strong>7 dias</strong>.
           </div>
           <button
@@ -271,7 +271,7 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
               soundFx.playUiClick();
               onOpenContact(`Quero um site similar ao modelo: ${currentModel.name}`);
             }}
-            className="px-6 py-2.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 shrink-0 cursor-pointer"
+            className="px-6 py-2.5 rounded-full bg-slate-950 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 shrink-0 cursor-pointer"
           >
             <span>Quero este modelo para minha empresa</span>
             <ArrowRight className="w-3.5 h-3.5" />

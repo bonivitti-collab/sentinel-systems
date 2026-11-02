@@ -1,12 +1,7 @@
 import React from 'react';
 import { SentinelLogo } from './SentinelLogo';
+import { MenuIcon3D } from './MenuIcon3D';
 import { 
-  Home, 
-  Globe, 
-  MessageCircle, 
-  Users, 
-  BookOpen, 
-  Send, 
   Volume2, 
   VolumeX, 
   Sparkles,
@@ -33,41 +28,43 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
     {
       label: 'Início',
       path: '/',
-      icon: Home,
+      icon3d: 'home' as const,
       desc: 'Visão Geral & Impacto'
     },
     {
       label: 'Criação de Sites',
       path: '/sites',
-      icon: Globe,
+      icon3d: 'sites' as const,
       desc: 'Modelos & Planos de Sites',
-      badge: 'Modelos 3D'
+      badge: 'Modelos 3D',
+      badgeColor: 'bg-indigo-50 text-indigo-700 border-indigo-200'
     },
     {
       label: 'Automação WhatsApp',
       path: '/automacao',
-      icon: MessageCircle,
+      icon3d: 'whatsapp' as const,
       desc: 'Robô 24h & Simulador',
       badge: 'Robô 24h',
-      badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+      badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200'
     },
     {
       label: 'Quem Somos',
       path: '/quem-somos',
-      icon: Users,
+      icon3d: 'about' as const,
       desc: 'Manifesto & Engenharia'
     },
     {
       label: 'Blog & Estratégia',
       path: '/blog',
-      icon: BookOpen,
+      icon3d: 'blog' as const,
       desc: 'Respostas para Vender Mais',
-      badge: '12 Artigos'
+      badge: '12 Artigos',
+      badgeColor: 'bg-amber-50 text-amber-700 border-amber-200'
     },
     {
       label: 'Fale Conosco',
       path: '/contato',
-      icon: Send,
+      icon3d: 'contact' as const,
       desc: 'Orçamentos & Raio-X'
     }
   ];
@@ -78,11 +75,11 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
   };
 
   return (
-    <aside className="w-72 bg-slate-950 text-slate-100 h-full flex flex-col justify-between border-r border-slate-800 shrink-0 shadow-xl select-none font-sans">
+    <aside className="w-72 bg-white text-slate-800 h-full flex flex-col justify-between border-r border-slate-200/90 shrink-0 shadow-sm select-none font-sans">
       
       {/* Top Header & Brand */}
       <div>
-        <div className="p-5 border-b border-slate-800/80 flex items-center justify-between">
+        <div className="p-5 border-b border-slate-100 flex items-center justify-between">
           <a
             href="/"
             onClick={(e) => {
@@ -92,71 +89,62 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
             className="flex items-center group cursor-pointer focus:outline-none"
             aria-label="Sentinel Systems - Início"
           >
-            <SentinelLogo size="md" variant="dark" />
+            <SentinelLogo size="md" variant="light" />
           </a>
 
           <button
             onClick={onToggleSound}
-            className="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer"
+            className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
             title={isMuted ? 'Ativar efeitos sonoros' : 'Silenciar som'}
             aria-label={isMuted ? 'Ativar som' : 'Desativar som'}
           >
-            {isMuted ? <VolumeX className="w-4 h-4 text-slate-500" /> : <Volume2 className="w-4 h-4 text-cyan-400" />}
+            {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-cyan-600" />}
           </button>
         </div>
 
         {/* System Status Pill */}
-        <div className="px-5 py-3 bg-slate-900/40 border-b border-slate-800/50 flex items-center justify-between text-[11px] text-slate-400">
+        <div className="px-5 py-2.5 bg-slate-50/70 border-b border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-semibold text-slate-300">Sentinel Hub 2.5</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="font-semibold text-slate-700">Sentinel Hub 2.5</span>
           </div>
-          <span className="font-mono text-[10px] text-cyan-400 bg-cyan-950/70 border border-cyan-500/30 px-2 py-0.5 rounded-full">
+          <span className="font-bold text-[10px] text-cyan-700 bg-cyan-50 border border-cyan-200 px-2 py-0.5 rounded-full">
             ONLINE
           </span>
         </div>
 
-        {/* Navigation List */}
-        <nav className="p-3 space-y-1">
+        {/* Navigation List with 3D Icons */}
+        <nav className="p-3 space-y-1.5">
           {navItems.map((item) => {
-            const Icon = item.icon;
             const isActive = currentPath === item.path || (item.path !== '/' && currentPath.startsWith(item.path));
 
             return (
               <button
                 key={item.path}
                 onClick={() => handleNavClick(item.path)}
-                className={`w-full p-3 rounded-2xl flex items-center justify-between text-left transition-all duration-200 group cursor-pointer ${
+                className={`w-full p-2.5 rounded-2xl flex items-center justify-between text-left transition-all duration-200 group cursor-pointer ${
                   isActive
-                    ? 'bg-gradient-to-r from-cyan-950/80 to-slate-900 text-white border border-cyan-500/40 shadow-md shadow-cyan-950/40'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/70 border border-transparent'
+                    ? 'bg-slate-50/90 text-slate-950 border border-cyan-400/80 shadow-xs ring-1 ring-cyan-400/20'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-transparent'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div
-                    className={`w-9 h-9 rounded-xl flex items-center justify-center transition-colors ${
-                      isActive
-                        ? 'bg-cyan-500 text-slate-950 font-black shadow-sm'
-                        : 'bg-slate-900 group-hover:bg-slate-800 text-slate-400 group-hover:text-cyan-400'
-                    }`}
-                  >
-                    <Icon className="w-4 h-4" />
-                  </div>
+                  <MenuIcon3D name={item.icon3d} isActive={isActive} />
 
                   <div>
-                    <div className="font-extrabold text-xs tracking-tight flex items-center gap-1.5">
+                    <div className="font-extrabold text-xs tracking-tight flex items-center gap-1.5 text-slate-900">
                       <span>{item.label}</span>
                       {item.badge && (
                         <span
                           className={`text-[9px] font-bold px-1.5 py-0.2 rounded border ${
-                            item.badgeColor || 'bg-cyan-950 text-cyan-400 border-cyan-500/30'
+                            item.badgeColor || 'bg-cyan-50 text-cyan-700 border-cyan-200'
                           }`}
                         >
                           {item.badge}
                         </span>
                       )}
                     </div>
-                    <div className="text-[10px] text-slate-500 font-normal">
+                    <div className="text-[10px] text-slate-500 font-medium mt-0.5">
                       {item.desc}
                     </div>
                   </div>
@@ -164,7 +152,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
 
                 <div
                   className={`w-1.5 h-6 rounded-full transition-all ${
-                    isActive ? 'bg-cyan-400' : 'bg-transparent group-hover:bg-slate-800'
+                    isActive ? 'bg-cyan-500 shadow-sm shadow-cyan-500/50' : 'bg-transparent'
                   }`}
                 />
               </button>
@@ -174,13 +162,13 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
       </div>
 
       {/* Bottom Action Area */}
-      <div className="p-4 border-t border-slate-800/80 space-y-3 bg-slate-950/80">
-        <div className="p-3.5 rounded-2xl bg-gradient-to-br from-slate-900 to-cyan-950/60 border border-cyan-500/20 text-xs">
-          <div className="flex items-center gap-2 text-cyan-300 font-extrabold mb-1">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Atendimento no Brasil</span>
+      <div className="p-4 border-t border-slate-100 space-y-3 bg-slate-50/60">
+        <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs text-xs">
+          <div className="flex items-center gap-1.5 text-cyan-700 font-extrabold mb-1">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+            <span>Atendimento em Todo o Brasil</span>
           </div>
-          <p className="text-[11px] text-slate-400 leading-snug">
+          <p className="text-[11px] text-slate-500 leading-snug">
             Criação ágil em 7 dias & suporte humano contínuo no WhatsApp.
           </p>
         </div>
@@ -190,13 +178,13 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
             soundFx.playUiClick();
             onOpenContact('Orçamento via Sidebar');
           }}
-          className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-xs uppercase tracking-wider shadow-md shadow-emerald-950 flex items-center justify-center gap-2 cursor-pointer transition-all"
+          className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs uppercase tracking-wider shadow-md shadow-emerald-600/20 flex items-center justify-center gap-2 cursor-pointer transition-all"
         >
           <Phone className="w-3.5 h-3.5" />
           <span>Falar com Especialista</span>
         </button>
 
-        <div className="text-center text-[10px] text-slate-500 font-mono pt-1">
+        <div className="text-center text-[10px] text-slate-400 font-mono pt-1">
           &copy; {new Date().getFullYear()} Sentinel Systems
         </div>
       </div>

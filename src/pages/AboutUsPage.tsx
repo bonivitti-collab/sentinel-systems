@@ -56,7 +56,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenContact, onNavig
 
         {/* Hero */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-100 border border-cyan-300 text-xs font-bold text-cyan-900 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-cyan-100 border border-cyan-300 text-xs font-bold text-cyan-900 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-cyan-700" />
             <span>MANIFESTO INSTITUCIONAL SENTINEL SYSTEMS</span>
           </div>
@@ -168,7 +168,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenContact, onNavig
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
             {techBadges.map((badge, idx) => (
-              <div key={idx} className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700 text-center text-xs font-semibold text-slate-200">
+              <div key={idx} className="p-3.5 rounded-xl bg-white border border-slate-200/90 text-center text-xs font-semibold text-slate-800 shadow-xs">
                 {badge}
               </div>
             ))}
@@ -189,7 +189,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenContact, onNavig
                 soundFx.playUiClick();
                 onOpenContact('Conversar com a diretoria técnica');
               }}
-              className="px-8 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 cursor-pointer"
+              className="px-8 py-3.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs flex items-center gap-2 cursor-pointer px-5 py-2.5"
             >
               <span>Falar com a Equipe Sentinel</span>
               <ArrowRight className="w-4 h-4" />
@@ -199,7 +199,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenContact, onNavig
                 soundFx.playUiClick();
                 onNavigate('/sites');
               }}
-              className="px-6 py-3.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
+              className="px-6 py-3.5 rounded-md bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-semibold text-xs tracking-wide transition-all cursor-pointer px-4 py-2.5"
             >
               Ver Nossos Sites & Planos
             </button>

@@ -220,12 +220,12 @@ export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onOpenCont
         </div>
 
         {/* Global Challenge Callout */}
-        <div className="mt-16 p-8 rounded-3xl bg-gradient-to-r from-cyan-950/40 via-purple-950/40 to-slate-950/60 border border-cyan-500/30 text-center relative overflow-hidden">
+        <div className="mt-16 p-8 rounded-3xl bg-slate-50 border border-slate-200/90 text-center relative overflow-hidden">
           <div className="relative z-10">
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-2">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-2">
               Você tem um projeto com alto grau de exigência técnica?
             </h3>
-            <p className="text-slate-300 text-sm max-w-2xl mx-auto mb-6">
+            <p className="text-slate-600 text-sm max-w-2xl mx-auto mb-6">
               Nossa equipe de engenharia analisa sua ideia, projeta a arquitetura ideal e apresenta um protótipo funcional em tempo recorde.
             </p>
             <button
@@ -233,7 +233,7 @@ export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onOpenCont
                 soundFx.playUiClick();
                 onOpenContact();
               }}
-              className="px-8 py-3.5 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs tracking-wider uppercase shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+              className="px-5 py-2.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs cursor-pointer"
             >
               Agendar Diagnóstico Gratuito com a Engenharia
             </button>

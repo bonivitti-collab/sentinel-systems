@@ -233,7 +233,7 @@ export const SeoDirectorySection: React.FC<SeoDirectorySectionProps> = ({ onNavi
             </p>
             <button
               onClick={() => setSearchQuery('')}
-              className="px-5 py-2.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
+              className="px-4 py-2 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all cursor-pointer"
             >
               Ver Todas as 37 Soluções
             </button>

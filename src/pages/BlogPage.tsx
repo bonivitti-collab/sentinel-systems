@@ -53,7 +53,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenContact, onNavigate })
 
         {/* Hero */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-100 border border-indigo-300 text-xs font-bold text-indigo-900 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-indigo-100 border border-indigo-300 text-xs font-bold text-indigo-900 mb-4">
             <BookOpen className="w-3.5 h-3.5 text-indigo-700" />
             <span>CENTRAL DE INTELIGÊNCIA & VENDAS DIGITAIS</span>
           </div>
@@ -101,7 +101,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenContact, onNavigate })
                     soundFx.playUiClick();
                     setSelectedCategory(c.id as any);
                   }}
-                  className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                  className={`px-4 py-2 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                     active
                       ? 'bg-indigo-600 text-white shadow-sm'
                       : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
@@ -161,7 +161,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenContact, onNavigate })
                 setSearchQuery('');
                 setSelectedCategory('all');
               }}
-              className="px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-bold cursor-pointer"
+              className="px-4 py-2 rounded-md bg-slate-900 text-white text-xs font-semibold cursor-pointer"
             >
               Ver todos os artigos
             </button>
@@ -169,26 +169,26 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenContact, onNavigate })
         )}
 
         {/* Diagnosis CTA Banner */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950 text-white border border-indigo-500/30 shadow-2xl relative overflow-hidden">
+        <div className="p-8 sm:p-10 rounded-2xl bg-slate-50 border border-slate-200/90 text-slate-900 shadow-xs relative overflow-hidden">
           <div className="max-w-2xl">
-            <span className="text-[11px] font-mono font-bold text-indigo-400 uppercase tracking-wider block mb-2">
-              DIAGNÓSTICO DIGITAL GRATUITO
+            <span className="text-[11px] font-mono font-bold text-indigo-600 uppercase tracking-wider block mb-2">
+              AVALIAÇÃO DE PRESENÇA DIGITAL
             </span>
-            <h3 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
-              Quer saber por que seus concorrentes aparecem na sua frente no Google?
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
+              Auditoria de indexação e autoridade no Google
             </h3>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-              Nossa equipe faz uma auditoria completa de 10 minutos no Perfil da sua Empresa e no seu site atual, sem cobrar nada. Mostramos exatamente onde você está perdendo dinheiro.
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+              Verificamos os parâmetros técnicos do seu Perfil de Empresa e site atual para apontar melhorias de posicionamento orgânico.
             </p>
             <button
               onClick={() => {
                 soundFx.playUiClick();
-                onOpenContact('Solicitação de Raio-X Gratuito do Google');
+                onOpenContact('Solicitação de Avaliação de Presença Digital');
               }}
-              className="px-8 py-4 rounded-full bg-indigo-500 hover:bg-indigo-400 text-white font-black text-xs uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer"
+              className="px-5 py-2.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs flex items-center gap-2 cursor-pointer"
             >
-              <span>Solicitar Meu Raio-X Gratuito</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Solicitar Avaliação</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>

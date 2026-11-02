@@ -178,10 +178,10 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
             soundFx.playUiClick();
             onOpenContact('Orçamento via Sidebar');
           }}
-          className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs uppercase tracking-wider shadow-md shadow-emerald-600/20 flex items-center justify-center gap-2 cursor-pointer transition-all"
+          className="w-full py-2.5 px-3.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-xs"
         >
-          <Phone className="w-3.5 h-3.5" />
-          <span>Falar com Especialista</span>
+          <Phone className="w-3.5 h-3.5 text-slate-400" />
+          <span>Central de Atendimento</span>
         </button>
 
         <div className="text-center text-[10px] text-slate-400 font-mono pt-1">

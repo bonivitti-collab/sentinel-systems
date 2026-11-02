@@ -102,7 +102,7 @@ export const DedicatedGuidePage: React.FC<DedicatedGuidePageProps> = ({ guide, o
                   soundFx.playUiClick();
                   onOpenContact(`Leitor do Guia: ${guide.title}`);
                 }}
-                className="px-5 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shrink-0 cursor-pointer text-center"
+                className="px-4 py-2 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs shrink-0 cursor-pointer text-center"
               >
                 Ver Planos
               </button>
@@ -111,7 +111,7 @@ export const DedicatedGuidePage: React.FC<DedicatedGuidePageProps> = ({ guide, o
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => soundFx.playUiClick()}
-                className="px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shrink-0 flex items-center justify-center gap-2 cursor-pointer"
+                className="px-4 py-2 rounded-md bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs border border-slate-200 transition-all shrink-0 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp</span>

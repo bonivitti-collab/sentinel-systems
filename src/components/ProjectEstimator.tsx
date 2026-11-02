@@ -225,9 +225,9 @@ export const ProjectEstimator: React.FC = () => {
                   soundFx.playUiClick();
                   generateWhatsAppMessage();
                 }}
-                className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-black text-xs tracking-wider uppercase shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer"
               >
-                <MessageSquare className="w-4 h-4 fill-slate-950" />
+                <MessageSquare className="w-4 h-4 text-white" />
                 <span>Enviar Proposta ao WhatsApp</span>
                 <ArrowRight className="w-4 h-4" />
               </button>

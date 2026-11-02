@@ -8,7 +8,6 @@ import { PricingPlans } from './components/PricingPlans';
 import { SecurityAndFAQ } from './components/SecurityAndFAQ';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
-import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 
 // Institutional Pages
 import { SitesPage } from './pages/SitesPage';
@@ -279,8 +278,7 @@ export function App() {
         />
       </ThreePanelLayout>
 
-      {/* 💬 Floating WhatsApp Quick Action Button (Present everywhere) */}
-      <FloatingWhatsAppButton currentPath={currentPath} />
+      
 
       {/* Contact & WhatsApp Lead Modal */}
       <ContactModal

@@ -59,7 +59,7 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
 
         {/* Hero Section of the Niche */}
         <div className="bg-white rounded-3xl p-5 sm:p-12 border border-slate-200/80 shadow-xs mb-10 relative overflow-hidden">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-bold text-cyan-800 mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-cyan-50 border border-cyan-200 text-xs font-semibold text-cyan-800 mb-6">
             <Sparkles className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
             <span className="leading-tight">Solução Especializada para {niche.shortTitle}</span>
           </div>
@@ -82,7 +82,7 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => soundFx.playUiClick()}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+              className="w-full sm:w-auto px-8 py-4 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs flex items-center justify-center gap-2 px-5 py-2.5 cursor-pointer"
             >
               <MessageCircle className="w-5 h-5" />
               <span>Pedir Orçamento para {niche.shortTitle} no WhatsApp</span>
@@ -94,7 +94,7 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
                 soundFx.playUiClick();
                 onOpenContact(`Solução para ${niche.shortTitle}`);
               }}
-              className="w-full sm:w-auto px-7 py-4 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm transition-all cursor-pointer"
+              className="w-full sm:w-auto px-7 py-4 rounded-md bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-semibold text-xs transition-all px-4 py-2.5 cursor-pointer"
             >
               Consultar Planos Mensais
             </button>
@@ -145,7 +145,7 @@ export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, o
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => soundFx.playUiClick()}
-            className="px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md shrink-0 cursor-pointer"
+            className="px-6 py-3.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs px-5 py-2.5 shrink-0 cursor-pointer"
           >
             Falar com Especialista
           </a>

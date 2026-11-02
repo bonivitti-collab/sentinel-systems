@@ -502,10 +502,10 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => soundFx.playUiClick()}
-                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
+                className="w-full py-2.5 px-4 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Pedir Proposta no WhatsApp</span>
+                <span>Solicitar Estrutura Recomendada</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -588,7 +588,7 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => soundFx.playUiClick()}
-                    className="w-full py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs tracking-wide flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer"
+                    className="w-full py-2 px-3 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-xs"
                   >
                     <span>{insight.suggestedAction.label}</span>
                     <ArrowRight className="w-3.5 h-3.5" />

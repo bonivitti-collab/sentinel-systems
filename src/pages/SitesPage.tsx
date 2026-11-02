@@ -102,7 +102,7 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
         
         {/* Header Cirúrgico do Estúdio de Sites */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-100 border border-cyan-300 text-xs font-bold text-cyan-900 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-cyan-100 border border-cyan-300 text-xs font-bold text-cyan-900 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-cyan-700" />
             <span>ESTÚDIO DE MODELOS INTERATIVOS 3D</span>
           </div>
@@ -112,17 +112,7 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             Selecione o seu segmento abaixo e alterne entre <strong>Desktop e Celular</strong> para testar a experiência real de carregamento em 0.4s e alta conversão no WhatsApp.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <button
-              onClick={() => {
-                soundFx.playUiClick();
-                onOpenContact('Orçamento para Criação de Site');
-              }}
-              className="px-8 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 cursor-pointer"
-            >
-              <span>Pedir Proposta no WhatsApp</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a
               href="#modelos"
               onClick={(e) => {
@@ -130,10 +120,20 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
                 soundFx.playUiClick();
                 document.getElementById('modelos')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-6 py-3.5 rounded-full bg-white hover:bg-slate-100 text-slate-800 font-bold text-xs uppercase tracking-wider transition-all border border-slate-300 cursor-pointer"
+              className="px-5 py-2.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
             >
-              Ver Modelos no Ar
+              <span>Ver Modelos Interativos</span>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
             </a>
+            <button
+              onClick={() => {
+                soundFx.playUiClick();
+                onOpenContact('Orçamento para Criação de Site');
+              }}
+              className="px-4 py-2.5 rounded-md bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-semibold text-xs tracking-wide transition-colors cursor-pointer"
+            >
+              Consultar Condições
+            </button>
           </div>
         </div>
 
@@ -156,7 +156,7 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
         {/* Section: Showcase de Modelos Interativos */}
         <div id="modelos" className="mb-24 pt-6">
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 text-xs font-bold text-slate-800 mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-200 text-xs font-bold text-slate-800 mb-3">
               <span>EXPLORE NOSSOS PADRÕES VISUAIS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3">
@@ -173,7 +173,7 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
         {/* Section: Planos & Preços Específicos para Sites */}
         <div id="planos-sites" className="mb-24 pt-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-bold text-cyan-800 mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-cyan-50 border border-cyan-200 text-xs font-bold text-cyan-800 mb-4">
               <Star className="w-3.5 h-3.5 text-cyan-600" />
               <span>INVESTIMENTO ACESSÍVEL & TRANSPARENTE</span>
             </div>
@@ -278,7 +278,7 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
                 soundFx.playUiClick();
                 onOpenContact('Tirar dúvidas sobre criação de sites');
               }}
-              className="px-5 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-all shrink-0 cursor-pointer"
+              className="px-5 py-2.5 rounded-md bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-semibold px-4 py-2 transition-all shrink-0 cursor-pointer"
             >
               Tirar Dúvidas com Especialista
             </button>
@@ -286,37 +286,37 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
         </div>
 
         {/* Final CTA Banner */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-cyan-950 text-white border border-cyan-500/30 shadow-2xl relative overflow-hidden">
+        <div className="p-8 sm:p-10 rounded-2xl bg-slate-50 border border-slate-200/90 text-slate-900 shadow-xs relative overflow-hidden">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950 border border-cyan-400/40 text-[11px] font-bold text-cyan-400 mb-4">
-              <CheckCircle2 className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-cyan-100/70 border border-cyan-200 text-[11px] font-bold text-cyan-900 mb-4">
+              <CheckCircle2 className="w-3.5 h-3.5 text-cyan-700" />
               <span>COBERTURA EM TODO O BRASIL</span>
             </div>
-            <h3 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
-              Pronto para colocar sua empresa na 1ª página do Google?
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
+              Pronto para posicionar sua empresa com autoridade no Google?
             </h3>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-8">
-              Converse diretamente com nosso especialista pelo WhatsApp. Analisamos seus concorrentes na sua cidade gratuitamente e te enviamos uma proposta preliminar em 15 minutos.
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+              Apresentamos uma avaliação técnica dos concorrentes e as oportunidades de crescimento digital do seu negócio.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={() => {
                   soundFx.playUiClick();
-                  onOpenContact('Solicitação de Análise de Concorrentes no Google');
+                  onOpenContact('Solicitação de Análise Técnica no Google');
                 }}
-                className="px-8 py-4 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black text-xs uppercase tracking-wider transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                className="px-5 py-2.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs flex items-center gap-2 cursor-pointer"
               >
-                <span>Solicitar Análise Gratuita no WhatsApp</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Solicitar Avaliação Técnica</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
               <button
                 onClick={() => {
                   soundFx.playUiClick();
                   onNavigate('/automacao');
                 }}
-                className="px-6 py-4 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition-all border border-slate-700 cursor-pointer"
+                className="px-4 py-2.5 rounded-md bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs border border-slate-200 transition-all cursor-pointer"
               >
-                Ver Automações de WhatsApp &rarr;
+                Ver Robôs de Atendimento &rarr;
               </button>
             </div>
           </div>

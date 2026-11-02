@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, MessageCircle, Star, Sparkles, ShieldCheck, HelpCircle } from 'lucide-react';
+import { Check, ArrowRight, Star, Sparkles, ShieldCheck, HelpCircle } from 'lucide-react';
 import { soundFx } from './SoundEffects';
 
 interface PricingPlansProps {
@@ -149,14 +149,14 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({ onSelectPlan }) => {
                   soundFx.playUiClick();
                   onSelectPlan(p.name);
                 }}
-                className={`w-full py-3.5 rounded-full font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                className={`w-full py-2.5 rounded-md font-semibold text-xs tracking-wide transition-colors flex items-center justify-center gap-2 cursor-pointer ${
                   p.popular
-                    ? 'bg-gradient-to-r from-cyan-600 to-sky-600 hover:from-cyan-500 hover:to-sky-500 text-white shadow-md shadow-cyan-600/30 transform hover:scale-[1.02]'
-                    : 'bg-slate-900 hover:bg-slate-800 text-white shadow-sm'
+                    ? 'bg-slate-900 hover:bg-slate-800 text-white shadow-xs'
+                    : 'bg-white hover:bg-slate-50 text-slate-900 border border-slate-200'
                 }`}
               >
-                <MessageCircle className="w-4 h-4" />
                 <span>{p.cta}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           ))}

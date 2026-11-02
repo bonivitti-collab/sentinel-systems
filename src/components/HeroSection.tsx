@@ -39,29 +39,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           Chega de ficar refém do algoritmo do Instagram. A <strong className="text-slate-900 font-semibold">Sentinel Systems</strong> cria seu <strong className="text-slate-900 font-semibold">site rápido no Google</strong>, atrai clientes prontos para comprar e instala um <strong className="text-slate-900 font-semibold">robô inteligente no seu WhatsApp</strong> para fechar vendas 24 horas por dia.
         </p>
 
-        {/* Action Buttons - Clear, Clickable & Unmistakable */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10">
-          <a
-            href="https://wa.me/5522999726069?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20minha%20empresa!"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => soundFx.playUiClick()}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-slate-900/20 transition-all transform hover:scale-102 flex items-center justify-center gap-2.5 cursor-pointer"
-          >
-            <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Falar no WhatsApp</span>
-            <ArrowRight className="w-3.5 h-3.5 shrink-0" />
-          </a>
-
+        {/* Action Buttons - Geometric, Elegant, Discreet & Architectural */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
           <button
             onClick={() => {
               soundFx.playUiClick();
               if (onNavigate) onNavigate('/sites');
             }}
-            className="w-full sm:w-auto px-7 py-4 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 font-extrabold text-xs uppercase tracking-wider shadow-xs hover:border-cyan-500 transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
           >
-            <span>Ver Modelos de Sites</span>
-            <ArrowRight className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
+            <span>Explorar Modelos de Sites</span>
+            <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
           </button>
 
           <button
@@ -69,10 +57,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
               soundFx.playUiClick();
               if (onNavigate) onNavigate('/automacao');
             }}
-            className="w-full sm:w-auto px-7 py-4 rounded-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-900 font-extrabold text-xs uppercase tracking-wider shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-md bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-semibold text-xs tracking-wide transition-colors flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Robô WhatsApp 24h</span>
-            <ArrowRight className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span>Simulador de Automação 24h</span>
+            <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+          </button>
+
+          <button
+            onClick={() => {
+              soundFx.playUiClick();
+              if (onNavigate) onNavigate('/contato');
+            }}
+            className="w-full sm:w-auto px-4 py-2.5 rounded-md hover:bg-slate-100 text-slate-600 hover:text-slate-900 font-medium text-xs tracking-wide transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+          >
+            <span>Central de Contato</span>
           </button>
         </div>
 
@@ -119,7 +117,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                 soundFx.playUiClick();
                 if (onNavigate) onNavigate('/sites');
               }}
-              className="w-full py-3.5 px-5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer"
+              className="w-full py-2.5 px-4 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-colors cursor-pointer"
             >
               <span>Abrir Estúdio de Sites & Planos</span>
               <ArrowRight className="w-4 h-4 text-cyan-400" />
@@ -147,7 +145,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                 soundFx.playUiClick();
                 if (onNavigate) onNavigate('/automacao');
               }}
-              className="w-full py-3.5 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm shadow-emerald-600/20 transition-all cursor-pointer"
+              className="w-full py-2.5 px-4 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-colors cursor-pointer"
             >
               <span>Abrir Simulador de WhatsApp ao Vivo</span>
               <ArrowRight className="w-4 h-4 text-white" />

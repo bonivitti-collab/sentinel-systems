@@ -8,7 +8,8 @@ import {
   UtensilsCrossed, 
   Building2, 
   Sparkles,
-  HelpCircle
+  HelpCircle,
+  ArrowRight
 } from 'lucide-react';
 import { soundFx } from '../components/SoundEffects';
 
@@ -157,7 +158,7 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
 
         {/* Hero */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-xs font-bold text-emerald-900 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-emerald-100 border border-emerald-300 text-xs font-bold text-emerald-900 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
             <span>MÁQUINA AUTOMÁTICA DE ATENDIMENTO 24 HORAS</span>
           </div>
@@ -171,17 +172,7 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             Mais de <strong>67% dos clientes desistem da compra</strong> se demorarem mais de 5 minutos para receber uma resposta. Nosso robô inteligente responde em 2 segundos de madrugada, aos domingos e feriados.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <button
-              onClick={() => {
-                soundFx.playUiClick();
-                onOpenContact('Instalação de Robô de WhatsApp');
-              }}
-              className="px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 cursor-pointer"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>Instalar Robô no Meu WhatsApp</span>
-            </button>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a
               href="#simulador"
               onClick={(e) => {
@@ -189,10 +180,20 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
                 soundFx.playUiClick();
                 document.getElementById('simulador')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-6 py-3.5 rounded-full bg-white hover:bg-slate-100 text-slate-800 font-bold text-xs uppercase tracking-wider transition-all border border-slate-300 cursor-pointer"
+              className="px-5 py-2.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
             >
-              Testar Simulador ao Vivo
+              <span>Testar Simulador Interativo</span>
+              <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
             </a>
+            <button
+              onClick={() => {
+                soundFx.playUiClick();
+                onOpenContact('Instalação de Robô de WhatsApp');
+              }}
+              className="px-4 py-2.5 rounded-md bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-semibold text-xs tracking-wide transition-colors cursor-pointer"
+            >
+              Consultar Planos de Automação
+            </button>
           </div>
         </div>
 
@@ -228,7 +229,7 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
         {/* Section: Simulador Interativo de WhatsApp */}
         <div id="simulador" className="mb-24 pt-6">
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 text-xs font-bold text-slate-800 mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-200 text-xs font-bold text-slate-800 mb-3">
               <span>EXPERIMENTE NA PRÁTICA</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3">
@@ -284,7 +285,7 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
         {/* Section: Planos de Automação */}
         <div id="planos-automacao" className="mb-24 pt-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 mb-4">
               <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
               <span>INVESTIMENTO PARA O SEU ROBÔ</span>
             </div>
@@ -398,23 +399,23 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
         </div>
 
         {/* CTA Final */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-emerald-950 text-white border border-emerald-500/30 shadow-2xl relative overflow-hidden">
+        <div className="p-8 sm:p-10 rounded-2xl bg-slate-50 border border-slate-200/90 text-slate-900 shadow-xs relative overflow-hidden">
           <div className="max-w-2xl">
-            <h3 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
-              Não perca mais nenhuma venda enquanto estiver descansando.
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
+              Atendimento ágil e qualificado 24 horas por dia.
             </h3>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-8">
-              Ative hoje mesmo seu robô no WhatsApp com a Sentinel Systems. Nossa equipe configura tudo com as regras do seu negócio e coloca no ar em poucos dias.
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+              Integração completa de fluxos de triagem e agendamento com as regras operacionais do seu negócio.
             </p>
             <button
               onClick={() => {
                 soundFx.playUiClick();
-                onOpenContact('Quero ativar meu Robô de WhatsApp');
+                onOpenContact('Ativação do Robô de WhatsApp');
               }}
-              className="px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer"
+              className="px-5 py-2.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs flex items-center gap-2 cursor-pointer"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>Chamar no WhatsApp & Agendar Instalação</span>
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>Solicitar Demonstração</span>
             </button>
           </div>
         </div>

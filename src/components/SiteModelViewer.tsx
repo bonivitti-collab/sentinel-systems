@@ -35,7 +35,7 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
             <button
               key={model.id}
               onClick={() => handleSelect(model.id)}
-              className={`px-4 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-md text-xs font-medium transition-colors flex items-center gap-2 cursor-pointer ${
                 isSelected
                   ? 'bg-slate-900 text-white shadow-md scale-105 ring-2 ring-cyan-400'
                   : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
@@ -66,10 +66,10 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
           </div>
 
           {/* Device Toggle */}
-          <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200 self-start lg:self-auto">
+          <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-md border border-slate-200 self-start lg:self-auto">
             <button
               onClick={() => handleViewMode('desktop')}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-sm text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
                 viewMode === 'desktop'
                   ? 'bg-white text-slate-900 shadow-sm'
                   : 'text-slate-500 hover:text-slate-900'
@@ -80,7 +80,7 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
             </button>
             <button
               onClick={() => handleViewMode('mobile')}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-sm text-xs font-medium flex items-center gap-1.5 transition-all cursor-pointer ${
                 viewMode === 'mobile'
                   ? 'bg-white text-slate-900 shadow-sm'
                   : 'text-slate-500 hover:text-slate-900'
@@ -135,7 +135,7 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
                       soundFx.playUiClick();
                       onOpenContact(`Interesse no modelo: ${currentModel.name}`);
                     }}
-                    className="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-950 shadow-sm hover:opacity-90 transition-all cursor-pointer"
+                    className="px-3.5 py-1.5 rounded-md text-xs font-bold text-slate-950 shadow-sm hover:opacity-90 transition-all cursor-pointer"
                     style={{ backgroundColor: currentModel.palette.primary }}
                   >
                     Contato Direto
@@ -145,7 +145,7 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
                 {/* Hero Inside Mockup */}
                 <div className="max-w-2xl py-4">
                   <span
-                    className="inline-block px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider mb-4 border"
+                    className="inline-block px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider mb-4 border"
                     style={{
                       borderColor: `${currentModel.palette.primary}40`,
                       backgroundColor: `${currentModel.palette.primary}15`,
@@ -167,7 +167,7 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
                         soundFx.playUiClick();
                         onOpenContact(`Quero um modelo similar a: ${currentModel.name}`);
                       }}
-                      className="px-5 py-3 rounded-full text-xs font-extrabold text-slate-950 shadow-lg hover:scale-105 transition-all flex items-center gap-2 cursor-pointer"
+                      className="px-4 py-2.5 rounded-md text-xs font-bold text-slate-950 shadow-xs transition-all flex items-center gap-2 cursor-pointer"
                       style={{ backgroundColor: currentModel.palette.primary }}
                     >
                       <span>{currentModel.previewCtaText}</span>
@@ -271,9 +271,9 @@ export const SiteModelViewer: React.FC<SiteModelViewerProps> = ({ onSelectModel,
               soundFx.playUiClick();
               onOpenContact(`Quero um site similar ao modelo: ${currentModel.name}`);
             }}
-            className="px-6 py-2.5 rounded-full bg-slate-950 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 shrink-0 cursor-pointer"
+            className="px-5 py-2.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide transition-all shadow-xs flex items-center gap-2 shrink-0 cursor-pointer"
           >
-            <span>Quero este modelo para minha empresa</span>
+            <span>Consultar Projeto neste Modelo</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>

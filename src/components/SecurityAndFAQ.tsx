@@ -48,7 +48,7 @@ export const SecurityAndFAQ: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-xs font-bold text-emerald-800 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-900 mb-4">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             <span>TRANSPARÊNCIA, ÉTICA & SEGURANÇA</span>
           </div>
@@ -112,7 +112,7 @@ export const SecurityAndFAQ: React.FC = () => {
                   <span className="font-bold text-slate-900 text-base sm:text-lg">
                     {faq.q}
                   </span>
-                  <div className={`w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-cyan-100 text-cyan-700' : 'text-slate-500'}`}>
+                  <div className={`w-8 h-8 rounded-md bg-slate-100 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-cyan-100 text-cyan-700' : 'text-slate-500'}`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
@@ -120,7 +120,7 @@ export const SecurityAndFAQ: React.FC = () => {
                 {isOpen && (
                   <div className="px-5 sm:px-6 pb-6 pt-1 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-100 animate-fade-in">
                     <p className="mb-3">{faq.a}</p>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       <span>{faq.highlight}</span>
                     </div>

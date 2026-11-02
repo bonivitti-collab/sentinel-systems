@@ -202,9 +202,9 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
                     soundFx.playUiClick();
                     onOpenContact();
                   }}
-                  className="w-full sm:w-auto px-5 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider shrink-0 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-lg shadow-emerald-500/20"
+                  className="w-full sm:w-auto px-4 py-2 rounded-md bg-white hover:bg-slate-50 text-slate-900 font-semibold text-xs tracking-wide shrink-0 transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-xs border border-slate-200"
                 >
-                  <span>Estancar essa perda</span>
+                  <span>Ver Soluções Recomendadas</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

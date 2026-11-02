@@ -62,7 +62,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({ onSelectPlan }) => {
         'Design visual com vídeo e fotos em alta definição',
         'Robô de WhatsApp avançado com qualificação e agendamento',
         'Gestão de Anúncios no Google para trazer clientes em massa',
-        'Integração com Instagram e plataformas de reservas',
+        'Integração com WhatsApp e plataformas de reservas',
         'Consultoria mensal direta de crescimento digital',
         'Prioridade máxima no atendimento'
       ],

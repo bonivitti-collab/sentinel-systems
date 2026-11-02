@@ -61,7 +61,7 @@ export const GUIDES_LIST: GuideItem[] = [
     content: [
       'Muitos empresários já passaram pelo trauma de pagar caro para uma agência ou sobrinho criar um site, para poucos meses depois o site quebrar, sair do ar ou ninguém conseguir trocar uma foto de promoção.',
       'Um site profissional tem custos fixos: registro do domínio no Registro.br (cerca de R$ 40/ano), servidor de hospedagem rápida com certificado SSL e manutenção técnica periódica para segurança contra invasões.',
-      'O modelo de assinatura mensal da Sentinel Systems (com planos de R$ 149 a R$ 590/mês) resolve esse problema: a taxa de entrada é simbólica e acessível, e você conta com suporte contínuo todo mês para trocar fotos, cardápios e manter o robô de WhatsApp ativo.',
+      'O modelo de assinatura mensal da Sentinel Systems (com planos de R$ 164 a R$ 649/mês) resolve esse problema: a taxa de entrada é simbólica e acessível, e você conta com suporte contínuo todo mês para trocar fotos, cardápios e manter o robô de WhatsApp ativo.',
       'Você tem a tranquilidade de saber que tem uma equipe de plantão cuidando de tudo, sem contratos de fidelidade forçada.'
     ]
   },

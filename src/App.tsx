@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { WaterIntro } from './components/WaterIntro';
 import { WaterBackgroundCanvas } from './components/WaterBackgroundCanvas';
-import { Navbar } from './components/Navbar';
+import { ThreePanelLayout } from './components/ThreePanelLayout';
 import { HeroSection } from './components/HeroSection';
 import { HowItWorks } from './components/HowItWorks';
 import { WhyNotOnlyInstagram } from './components/WhyNotOnlyInstagram';
@@ -86,7 +86,7 @@ export function App() {
   };
 
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState('Comércio & Vendas 24h (R$ 297/mês)');
+  const [selectedPlan, setSelectedPlan] = useState('Comércio & Vendas 24h (R$ 327/mês)');
 
   // Roteamento leve via History API
   useEffect(() => {
@@ -201,7 +201,7 @@ export function App() {
   ]);
 
   return (
-    <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-cyan-200 selection:text-slate-950 font-sans">
+    <div className="relative h-screen w-full overflow-hidden bg-slate-950 text-slate-900 selection:bg-cyan-200 selection:text-slate-950 font-sans">
       {/* 🎬 Official YouTube Intro Video with Audio & Smooth Fade (Home only) */}
       {showIntro && (
         <WaterIntro onComplete={dismissIntro} />
@@ -210,106 +210,100 @@ export function App() {
       {/* Fresh Clean Coastal Caustics Canvas (Reacts to Mouse) */}
       <WaterBackgroundCanvas />
 
-      {/* Main Experience */}
-      <div className="relative z-10">
-        <Navbar
-          onOpenContact={() => setIsContactOpen(true)}
-          isHome={isHome}
-          onNavigateHome={() => navigate('/')}
-          onNavigate={navigate}
-          onDismissIntro={dismissIntro}
-        />
+      {/* 🚀 3-PANEL STUDIO LAYOUT (Left: Menus | Center: Content | Right: Sales AI Specialist) */}
+      <ThreePanelLayout
+        currentPath={currentPath}
+        onNavigate={navigate}
+        onOpenContact={handleSelectPlan}
+      >
+        {isSites ? (
+          <SitesPage
+            onOpenContact={handleSelectPlan}
+            onNavigate={navigate}
+          />
+        ) : isAutomationHub ? (
+          <AutomationPage
+            onOpenContact={handleSelectPlan}
+            onNavigate={navigate}
+          />
+        ) : isAbout ? (
+          <AboutUsPage
+            onOpenContact={handleSelectPlan}
+            onNavigate={navigate}
+          />
+        ) : isBlog ? (
+          <BlogPage
+            onOpenContact={handleSelectPlan}
+            onNavigate={navigate}
+          />
+        ) : isContact ? (
+          <ContactPage
+            onOpenContact={handleSelectPlan}
+          />
+        ) : matchedNiche ? (
+          <DedicatedNichePage
+            niche={matchedNiche}
+            onBack={() => navigate('/')}
+            onOpenContact={handleSelectPlan}
+            onNavigate={navigate}
+          />
+        ) : matchedAutomation ? (
+          <DedicatedAutomationPage
+            automation={matchedAutomation}
+            onBack={() => navigate('/')}
+            onOpenContact={handleSelectPlan}
+            onNavigate={navigate}
+          />
+        ) : matchedCity ? (
+          <DedicatedCityPage
+            city={matchedCity}
+            onBack={() => navigate('/')}
+            onOpenContact={handleSelectPlan}
+            onNavigate={navigate}
+          />
+        ) : matchedGuide ? (
+          <DedicatedGuidePage
+            guide={matchedGuide}
+            onBack={() => navigate('/')}
+            onOpenContact={handleSelectPlan}
+            onNavigate={navigate}
+          />
+        ) : (
+          /* Home Landing Page inside Center Panel */
+          <>
+            <HeroSection
+              onOpenContact={() => setIsContactOpen(true)}
+              onScrollToDiagnosis={scrollToDiagnosis}
+            />
 
-        <main>
-          {isSites ? (
-            <SitesPage
-              onOpenContact={handleSelectPlan}
-              onNavigate={navigate}
-            />
-          ) : isAutomationHub ? (
-            <AutomationPage
-              onOpenContact={handleSelectPlan}
-              onNavigate={navigate}
-            />
-          ) : isAbout ? (
-            <AboutUsPage
-              onOpenContact={handleSelectPlan}
-              onNavigate={navigate}
-            />
-          ) : isBlog ? (
-            <BlogPage
-              onOpenContact={handleSelectPlan}
-              onNavigate={navigate}
-            />
-          ) : isContact ? (
-            <ContactPage
-              onOpenContact={handleSelectPlan}
-            />
-          ) : matchedNiche ? (
-            <DedicatedNichePage
-              niche={matchedNiche}
-              onBack={() => navigate('/')}
-              onOpenContact={handleSelectPlan}
-              onNavigate={navigate}
-            />
-          ) : matchedAutomation ? (
-            <DedicatedAutomationPage
-              automation={matchedAutomation}
-              onBack={() => navigate('/')}
-              onOpenContact={handleSelectPlan}
-              onNavigate={navigate}
-            />
-          ) : matchedCity ? (
-            <DedicatedCityPage
-              city={matchedCity}
-              onBack={() => navigate('/')}
-              onOpenContact={handleSelectPlan}
-              onNavigate={navigate}
-            />
-          ) : matchedGuide ? (
-            <DedicatedGuidePage
-              guide={matchedGuide}
-              onBack={() => navigate('/')}
-              onOpenContact={handleSelectPlan}
-              onNavigate={navigate}
-            />
-          ) : (
-            /* Home Landing Page */
-            <>
-              <HeroSection
-                onOpenContact={() => setIsContactOpen(true)}
-                onScrollToDiagnosis={scrollToDiagnosis}
-              />
+            <HowItWorks />
 
-              <HowItWorks />
+            <WhyNotOnlyInstagram
+              onOpenContact={() => setIsContactOpen(true)}
+            />
 
-              <WhyNotOnlyInstagram
-                onOpenContact={() => setIsContactOpen(true)}
-              />
+            <PricingPlans
+              onSelectPlan={handleSelectPlan}
+            />
 
-              <PricingPlans
-                onSelectPlan={handleSelectPlan}
-              />
+            <SecurityAndFAQ />
 
-              <SecurityAndFAQ />
+            <FreeDiagnosis />
 
-              <FreeDiagnosis />
+            <LocalClients
+              onOpenContact={() => setIsContactOpen(true)}
+            />
+          </>
+        )}
 
-              <LocalClients
-                onOpenContact={() => setIsContactOpen(true)}
-              />
-            </>
-          )}
-
-          {/* Diretório de SEO & Soluções (Teia de links em todas as visualizações) */}
-          <SeoDirectorySection onNavigate={navigate} />
-        </main>
+        {/* Diretório de SEO & Soluções (Teia de links em todas as visualizações) */}
+        <SeoDirectorySection onNavigate={navigate} />
 
         <Footer
           onOpenContact={() => setIsContactOpen(true)}
           onNavigate={navigate}
         />
-      </div>
+      </ThreePanelLayout>
 
       {/* 💬 Floating WhatsApp Quick Action Button (Present everywhere) */}
       <FloatingWhatsAppButton currentPath={currentPath} />

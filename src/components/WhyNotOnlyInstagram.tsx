@@ -195,7 +195,7 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
 
               <div className="mt-6 pt-4 border-t border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="text-xs text-slate-300 font-medium text-center sm:text-left">
-                  Com a Sentinel Systems, o plano completo custa a partir de <strong className="text-emerald-400">R$ 297/mês</strong> e se paga na 1ª venda recuperada.
+                  Com a Sentinel Systems, o plano completo custa a partir de <strong className="text-emerald-400">R$ 327/mês</strong> e se paga na 1ª venda recuperada.
                 </div>
                 <button
                   onClick={() => {

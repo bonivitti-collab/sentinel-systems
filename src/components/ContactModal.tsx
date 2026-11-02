@@ -133,9 +133,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                   onChange={(e) => setPlan(e.target.value)}
                   className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:border-cyan-500 focus:bg-white focus:outline-none text-slate-900 text-sm transition-all cursor-pointer"
                 >
-                  <option value="Presença no Google (R$ 149/mês)">Presença no Google (R$ 149/mês)</option>
-                  <option value="Comércio & Vendas 24h (R$ 297/mês)">Comércio & Vendas 24h (R$ 297/mês)</option>
-                  <option value="Alta Escala & Anúncios (R$ 590/mês)">Alta Escala & Anúncios (R$ 590/mês)</option>
+                  <option value="Presença no Google (R$ 164/mês)">Presença no Google (R$ 164/mês)</option>
+                  <option value="Comércio & Vendas 24h (R$ 327/mês)">Comércio & Vendas 24h (R$ 327/mês)</option>
+                  <option value="Alta Escala & Anúncios (R$ 649/mês)">Alta Escala & Anúncios (R$ 649/mês)</option>
                   <option value="Quero um Raio-X Grátis do meu Google">Quero um Raio-X Grátis do meu Google</option>
                   <option value="Sistema Sob Medida / Projeto Específico">Sistema Sob Medida / Projeto Específico</option>
                 </select>

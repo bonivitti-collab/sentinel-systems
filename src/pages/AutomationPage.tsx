@@ -23,9 +23,9 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
       id: 'auto-essencial',
       name: 'Robô Atendimento & Triagem 24/7',
       badge: 'ENTRADA RÁPIDA',
-      daily: 'R$ 4,90/dia',
-      monthlyPrice: '149',
-      setupInfo: 'Taxa única de implantação: 12x de R$ 29 (ou R$ 290 à vista)',
+      daily: 'R$ 5,40/dia',
+      monthlyPrice: '164',
+      setupInfo: 'Taxa única de implantação: 12x de R$ 32 (ou R$ 319 à vista)',
       target: 'Prestadores de serviços, escritórios, consultórios e comércio geral',
       description: 'Nunca mais deixe um cliente esperando. O robô dá boas-vindas, informa horários, tira dúvidas frequentes e direciona para a pessoa certa.',
       features: [
@@ -43,9 +43,9 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
       id: 'auto-vendas',
       name: 'Robô Comercial & Vendas Pro',
       badge: 'O MAIS CONTRATADO',
-      daily: 'R$ 8,30/dia',
-      monthlyPrice: '249',
-      setupInfo: 'Taxa única de implantação: 12x de R$ 49 (ou R$ 490 à vista)',
+      daily: 'R$ 9,10/dia',
+      monthlyPrice: '274',
+      setupInfo: 'Taxa única de implantação: 12x de R$ 54 (ou R$ 539 à vista)',
       target: 'Restaurantes, pousadas, clínicas médicas, delivery e lojas',
       description: 'O robô fecha vendas pelo WhatsApp. Envia cardápios, faz cotação de diárias, agenda consultas ou monta orçamentos completos sem você mexer um dedo.',
       features: [
@@ -65,7 +65,7 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
       name: 'Robô com IA Generativa & CRM',
       badge: 'MÁXIMA PERSONALIZAÇÃO',
       daily: 'Consulte escopo',
-      monthlyPrice: '490',
+      monthlyPrice: '539',
       setupInfo: 'Projeto personalizado sob medida para sua operação',
       target: 'Grandes clínicas, operações de teleatendimento e franquias',
       description: 'Inteligência Artificial que conversa em linguagem natural, tira dúvidas complexas sobre produtos e se integra ao seu software de gestão/CRM.',
@@ -128,7 +128,7 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
     {
       metric: 'Custo Mensal',
       without: 'R$ 1.600 a R$ 2.500 (salário + encargos de atendente)',
-      withSentinel: 'A partir de R$ 149/mês (menos de R$ 5/dia)'
+      withSentinel: 'A partir de R$ 164/mês (menos de R$ 5,50/dia)'
     }
   ];
 

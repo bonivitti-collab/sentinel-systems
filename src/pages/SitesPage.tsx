@@ -1,6 +1,5 @@
 import React from 'react';
 import { SiteModelViewer } from '../components/SiteModelViewer';
-import { ProjectEstimator } from '../components/ProjectEstimator';
 import { Check, Star, ShieldCheck, Zap, Globe, Search, ArrowRight, MessageCircle, Sparkles, CheckCircle2 } from 'lucide-react';
 import { soundFx } from './../components/SoundEffects';
 
@@ -15,9 +14,9 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
       id: 'site-essencial',
       name: 'Site Presença Essencial',
       badge: 'IDEAL PARA PEQUENOS COMÉRCIOS',
-      daily: 'R$ 4,90/dia',
-      monthlyPrice: '149',
-      setupInfo: 'Setup facilitado em até 12x de R$ 39 (ou R$ 390 à vista)',
+      daily: 'R$ 5,40/dia',
+      monthlyPrice: '164',
+      setupInfo: 'Setup facilitado em até 12x de R$ 43 (ou R$ 429 à vista)',
       target: 'Prestadores de serviços, autônomos, pequenos comércios e negócios locais',
       description: 'Tenha um site moderno, bonito e rápido para aparecer quando alguém pesquisar pelo seu serviço na sua cidade.',
       features: [
@@ -35,9 +34,9 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
       id: 'site-pro',
       name: 'Site Comercial Pro & Google',
       badge: 'O MAIS ESCOLHIDO',
-      daily: 'R$ 8,30/dia',
-      monthlyPrice: '249',
-      setupInfo: 'Setup facilitado em até 12x de R$ 59 (ou R$ 590 à vista)',
+      daily: 'R$ 9,10/dia',
+      monthlyPrice: '274',
+      setupInfo: 'Setup facilitado em até 12x de R$ 65 (ou R$ 649 à vista)',
       target: 'Clínicas, pousadas, restaurantes, imobiliárias e empresas de médio porte',
       description: 'Estrutura completa com múltiplas páginas, catálogo ou cardápio interativo e otimização avançada de SEO para dominar o Google.',
       features: [
@@ -57,7 +56,7 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
       name: 'Portal Sob Medida & Escala',
       badge: 'EMPRESAS EM EXPANSÃO',
       daily: 'Consulte escopo',
-      monthlyPrice: '490',
+      monthlyPrice: '539',
       setupInfo: 'Projeto personalizado sob medida para sua operação',
       target: 'Franquias, distribuidoras, construtoras e operações com alta demanda',
       description: 'Sistemas web de altíssima complexidade visual e funcionalidade sob medida, com design de nível internacional.',
@@ -287,11 +286,6 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
               Tirar Dúvidas com Especialista
             </button>
           </div>
-        </div>
-
-        {/* Section: Calculadora Interativa de Projetos */}
-        <div className="mb-20">
-          <ProjectEstimator />
         </div>
 
         {/* Final CTA Banner */}

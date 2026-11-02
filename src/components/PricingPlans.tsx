@@ -13,8 +13,8 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({ onSelectPlan }) => {
       name: 'Presença no Google',
       badge: 'IDEAL PARA COMÉRCIO LOCAL',
       target: 'Pequenas lojas, oficinas, gráficas, prestadores e serviços de bairro',
-      monthlyPrice: '149',
-      setupPrice: 'R$ 390',
+      monthlyPrice: '164',
+      setupPrice: 'R$ 429',
       description: 'Tenha seu site profissional rápido e apareça na 1ª página quando alguém pesquisar seu serviço.',
       features: [
         'Site moderno ultra-rápido no celular',
@@ -33,8 +33,8 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({ onSelectPlan }) => {
       name: 'Comércio & Vendas 24h',
       badge: 'O MAIS CONTRATADO',
       target: 'Pousadas, clínicas, restaurantes, delivery e lojas com fluxo diário',
-      monthlyPrice: '297',
-      setupPrice: 'R$ 690',
+      monthlyPrice: '327',
+      setupPrice: 'R$ 759',
       description: 'O ecossistema completo para transformar o Google e o seu WhatsApp em uma máquina automática de vendas.',
       features: [
         'Tudo do plano anterior incluso',
@@ -54,7 +54,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({ onSelectPlan }) => {
       name: 'Alta Escala & Anúncios',
       badge: 'EXPANSÃO & TURISMO',
       target: 'Empresas em expansão, cafés gourmet, hotelaria e negócios de médio porte',
-      monthlyPrice: '590',
+      monthlyPrice: '649',
       setupPrice: 'Consulte escopo',
       description: 'Design sofisticado de alto padrão e campanhas de anúncios para atrair clientes em massa na sua cidade e no Brasil.',
       features: [

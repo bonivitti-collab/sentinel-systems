@@ -1,49 +1,14 @@
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, MessageCircle, Search, TrendingUp, ShieldCheck, Sparkles, Smartphone, Check, Star } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, MessageCircle, Star, Search, ShieldCheck, TrendingUp, CheckCircle2 } from 'lucide-react';
 import { soundFx } from './SoundEffects';
 
 interface HeroSectionProps {
-  onOpenContact: () => void;
-  onScrollToDiagnosis: () => void;
+  onOpenContact?: () => void;
+  onNavigate?: (path: string) => void;
+  onScrollToDiagnosis?: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenContact, onScrollToDiagnosis }) => {
-  const [activeSimulatorTab, setActiveSimulatorTab] = useState<'pousada' | 'restaurante' | 'clinica'>('pousada');
-
-  const simulatorScenarios = {
-    pousada: {
-      tag: 'Pousada ou Hotel',
-      clientName: 'Turista (Google)',
-      clientMsg: 'Boa noite! Tem suíte com hidromassagem disponível para este sábado?',
-      clientTime: '23:42',
-      botResponse: 'Olá! Temos sim 🌊! A Suíte Master Luxo está disponível. Diária com café da manhã incluso por R$ 380. Veja fotos reais e reserve direto sem taxas:',
-      botLink: 'sentinelsystems.com.br/solucoes/pousada',
-      botTime: '23:42 (Instantâneo)',
-      closingMsg: 'Turista: "Perfeito! Vou fechar a reserva agora via PIX."'
-    },
-    restaurante: {
-      tag: 'Restaurante ou Delivery',
-      clientName: 'Cliente com Fome',
-      clientMsg: 'Olá! Qual o tempo de entrega para o Centro e qual o cardápio de hoje?',
-      clientTime: '20:15',
-      botResponse: 'Boa noite! 🍕 Tempo médio de entrega para seu endereço: 28 min. Nosso cardápio digital atualizado está pronto para pedidos:',
-      botLink: 'sentinelsystems.com.br/cardapio',
-      botTime: '20:15 (Instantâneo)',
-      closingMsg: 'Cliente: "Fiz o pedido #184 pelo link, obrigado!"'
-    },
-    clinica: {
-      tag: 'Clínica ou Consultório',
-      clientName: 'Paciente (Google Maps)',
-      clientMsg: 'Oi, vocês atendem consulta particular ou convênio amanhã cedo?',
-      clientTime: '07:30',
-      botResponse: 'Bom dia! 🩺 Atendemos particular e os principais convênios. Temos 2 vagas amanhã: 09h30 ou 11h. Qual fica melhor para você?',
-      botLink: 'sentinelsystems.com.br/agendamento',
-      botTime: '07:30 (Instantâneo)',
-      closingMsg: 'Paciente: "Pode reservar para às 09h30, obrigado!"'
-    }
-  };
-
-  const activeScenario = simulatorScenarios[activeSimulatorTab];
+export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
 
   return (
     <section className="relative min-h-[92vh] pt-32 pb-20 flex flex-col items-center justify-center overflow-hidden">
@@ -74,29 +39,40 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenContact, onScrol
           Chega de ficar refém do algoritmo do Instagram. A <strong className="text-slate-900 font-semibold">Sentinel Systems</strong> cria seu <strong className="text-slate-900 font-semibold">site rápido no Google</strong>, atrai clientes prontos para comprar e instala um <strong className="text-slate-900 font-semibold">robô inteligente no seu WhatsApp</strong> para fechar vendas 24 horas por dia.
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        {/* Action Buttons - Clear, Clickable & Unmistakable */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10">
+          <a
+            href="https://wa.me/5522999726069?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20minha%20empresa!"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => soundFx.playUiClick()}
+            className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-slate-900/20 transition-all transform hover:scale-102 flex items-center justify-center gap-2.5 cursor-pointer"
+          >
+            <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>Falar no WhatsApp</span>
+            <ArrowRight className="w-3.5 h-3.5 shrink-0" />
+          </a>
+
           <button
             onClick={() => {
               soundFx.playUiClick();
-              onOpenContact();
+              if (onNavigate) onNavigate('/sites');
             }}
-            className="w-full sm:w-auto px-6 sm:px-8 py-4 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm tracking-wide shadow-xl shadow-emerald-600/25 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2.5 cursor-pointer"
+            className="w-full sm:w-auto px-7 py-4 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-900 font-extrabold text-xs uppercase tracking-wider shadow-xs hover:border-cyan-500 transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            <MessageCircle className="w-5 h-5 shrink-0" />
-            <span>Falar com Especialista no WhatsApp</span>
-            <ArrowRight className="w-4 h-4 shrink-0" />
+            <span>Ver Modelos de Sites</span>
+            <ArrowRight className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
           </button>
 
           <button
             onClick={() => {
               soundFx.playUiClick();
-              onScrollToDiagnosis();
+              if (onNavigate) onNavigate('/automacao');
             }}
-            className="w-full sm:w-auto px-6 sm:px-7 py-4 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-bold text-sm shadow-xs hover:border-cyan-400 transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-7 py-4 rounded-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-900 font-extrabold text-xs uppercase tracking-wider shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            <Search className="w-4 h-4 text-cyan-600 shrink-0" />
-            <span>Fazer Raio-X Grátis da Empresa</span>
+            <span>Robô WhatsApp 24h</span>
+            <ArrowRight className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
           </button>
         </div>
 
@@ -120,124 +96,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenContact, onScrol
           </div>
         </div>
 
-        {/* 📱 INTERACTIVE LIVE SIMULATOR WIDGET (UI/UX HIGHLIGHT) */}
-        <div className="w-full max-w-3xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-2xl p-4 sm:p-8 mb-16 text-left relative overflow-hidden">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-bold text-emerald-800 mb-1.5">
-                <Smartphone className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>SIMULAÇÃO AO VIVO: VEJA COMO SEU CLIENTE É ATENDIDO</span>
-              </div>
-              <h3 className="text-base sm:text-xl font-bold text-slate-900 leading-snug">
-                O que acontece quando um cliente chama sua empresa?
-              </h3>
-            </div>
-
-            {/* Simulator Tabs */}
-            <div className="flex flex-wrap items-center gap-1 bg-slate-100 p-1 rounded-xl w-full sm:w-auto">
-              <button
-                onClick={() => {
-                  soundFx.playUiClick();
-                  setActiveSimulatorTab('pousada');
-                }}
-                className={`flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer text-center ${
-                  activeSimulatorTab === 'pousada'
-                    ? 'bg-white text-slate-900 shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                Pousada
-              </button>
-              <button
-                onClick={() => {
-                  soundFx.playUiClick();
-                  setActiveSimulatorTab('restaurante');
-                }}
-                className={`flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer text-center ${
-                  activeSimulatorTab === 'restaurante'
-                    ? 'bg-white text-slate-900 shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                Restaurante
-              </button>
-              <button
-                onClick={() => {
-                  soundFx.playUiClick();
-                  setActiveSimulatorTab('clinica');
-                }}
-                className={`flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer text-center ${
-                  activeSimulatorTab === 'clinica'
-                    ? 'bg-white text-slate-900 shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                Clínica
-              </button>
-            </div>
-          </div>
-
-          {/* Simulated WhatsApp Chat Interface */}
-          <div className="pt-6 space-y-4">
-            {/* Mensagem do Cliente */}
-            <div className="flex items-end gap-2 max-w-[92%] sm:max-w-[85%]">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center shrink-0">
-                C
-              </div>
-              <div className="bg-slate-100 rounded-2xl rounded-bl-xs p-3 sm:p-3.5 text-xs sm:text-sm text-slate-800 shadow-xs">
-                <span className="text-[10px] font-bold text-slate-500 block mb-0.5">{activeScenario.clientName}</span>
-                <p>{activeScenario.clientMsg}</p>
-                <span className="text-[10px] text-slate-400 block text-right mt-1">{activeScenario.clientTime}</span>
-              </div>
-            </div>
-
-            {/* Resposta Instantânea do Robô Sentinel */}
-            <div className="flex items-end gap-2 max-w-[96%] sm:max-w-[90%] ml-auto justify-end">
-              <div className="bg-emerald-600 text-white rounded-2xl rounded-br-xs p-3 sm:p-4 text-xs sm:text-sm shadow-md">
-                <div className="flex items-center gap-1.5 mb-1 text-[11px] text-emerald-100 font-semibold">
-                  <Sparkles className="w-3.5 h-3.5 text-emerald-200 shrink-0" />
-                  <span>Robô Sentinel da sua Empresa</span>
-                </div>
-                <p className="leading-relaxed">{activeScenario.botResponse}</p>
-                <div className="mt-2.5 pt-2 border-t border-emerald-500/50 flex flex-wrap items-center justify-between gap-1 text-[11px] text-emerald-100 font-medium">
-                  <span className="underline break-all">{activeScenario.botLink}</span>
-                  <span className="text-[10px] opacity-80 shrink-0">{activeScenario.botTime}</span>
-                </div>
-              </div>
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-700 text-white font-bold text-xs flex items-center justify-center shrink-0">
-                SS
-              </div>
-            </div>
-
-            {/* Fechamento da Venda */}
-            <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200/80 text-xs text-emerald-900 font-semibold flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span className="leading-snug">{activeScenario.closingMsg}</span>
-              </div>
-              <span className="text-[10px] bg-emerald-200/60 px-2 py-0.5 rounded-full font-bold uppercase text-emerald-900 self-start sm:self-auto shrink-0">
-                Venda Concluída
-              </span>
-            </div>
-          </div>
-
-          <div className="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-500">
-            <span>💡 O robô funciona 24 horas por dia, 7 dias por semana, mesmo quando sua loja está fechada.</span>
-            <button
-              onClick={() => {
-                soundFx.playUiClick();
-                onOpenContact();
-              }}
-              className="text-cyan-700 hover:text-cyan-800 font-bold inline-flex items-center gap-1 cursor-pointer shrink-0"
-            >
-              <span>Quero esse robô na minha empresa</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        </div>
-
-        {/* 3 Practical Promises Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-5xl mx-auto text-left">
+        {/* 3 Pilares Fundamentais Sentinel */}
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-5xl mx-auto text-left">
           <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-cyan-300 hover:shadow-md transition-all">
             <div className="w-11 h-11 rounded-xl bg-cyan-100/70 text-cyan-700 flex items-center justify-center mb-4">
               <Search className="w-5 h-5" />

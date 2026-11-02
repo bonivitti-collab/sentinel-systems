@@ -3,13 +3,9 @@ import { WaterIntro } from './components/WaterIntro';
 import { WaterBackgroundCanvas } from './components/WaterBackgroundCanvas';
 import { ThreePanelLayout } from './components/ThreePanelLayout';
 import { HeroSection } from './components/HeroSection';
-import { HowItWorks } from './components/HowItWorks';
 import { WhyNotOnlyInstagram } from './components/WhyNotOnlyInstagram';
 import { PricingPlans } from './components/PricingPlans';
 import { SecurityAndFAQ } from './components/SecurityAndFAQ';
-import { FreeDiagnosis } from './components/FreeDiagnosis';
-import { LocalClients } from './components/LocalClients';
-import { SeoDirectorySection } from './components/SeoDirectorySection';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
 import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
@@ -39,8 +35,7 @@ export function App() {
     return window.location.pathname.replace(/\/+$/, '') || '/';
   });
 
-  const isHome = currentPath === '/';
-
+  
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof window === 'undefined') return false;
 
@@ -129,21 +124,7 @@ export function App() {
     }
   };
 
-  const scrollToDiagnosis = () => {
-    if (!isHome) {
-      navigate('/');
-      setTimeout(() => {
-        const el = document.getElementById('raio-x');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-      return;
-    }
-    const el = document.getElementById('raio-x');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+  
   const handleSelectPlan = (planName?: string) => {
     if (planName) setSelectedPlan(planName);
     setIsContactOpen(true);
@@ -273,14 +254,12 @@ export function App() {
             onNavigate={navigate}
           />
         ) : (
-          /* Home Landing Page inside Center Panel */
+          /* Home Landing Page inside Center Panel - Clean, Minimalist & Focused */
           <>
             <HeroSection
               onOpenContact={() => setIsContactOpen(true)}
-              onScrollToDiagnosis={scrollToDiagnosis}
+              onNavigate={navigate}
             />
-
-            <HowItWorks />
 
             <WhyNotOnlyInstagram
               onOpenContact={() => setIsContactOpen(true)}
@@ -291,15 +270,6 @@ export function App() {
             />
 
             <SecurityAndFAQ />
-
-            <FreeDiagnosis />
-
-            <LocalClients
-              onOpenContact={() => setIsContactOpen(true)}
-            />
-
-            {/* Diretório de Soluções e Automações (Exibido na Home para navegação completa) */}
-            <SeoDirectorySection onNavigate={navigate} />
           </>
         )}
 

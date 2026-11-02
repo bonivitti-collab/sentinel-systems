@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Sparkles, 
-  CheckCircle2, 
+   
   ArrowRight, 
   MessageCircle, 
   RefreshCw, 
@@ -475,61 +475,26 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
               ))}
             </div>
 
-            {/* Critical Bottleneck Card */}
-            <div className="p-3.5 rounded-2xl bg-rose-50/60 border border-rose-200/80 shadow-xs">
-              <div className="flex items-center gap-1.5 text-xs font-black text-rose-700 mb-1">
-                <span className="w-2 h-2 rounded-full bg-rose-500 inline-block" />
-                <span>Gargalo Crítico do Mercado</span>
-              </div>
-              <div className="text-xs font-bold text-slate-900 mb-1">
-                {currentReport.marketBottleneck.title}
-              </div>
-              <p className="text-[11px] text-slate-600 leading-relaxed">
-                {currentReport.marketBottleneck.description}
-              </p>
-            </div>
-
-            {/* Recommended Blueprint Card */}
-            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
-              <div className="flex items-center gap-1.5 text-xs font-black text-slate-900 uppercase tracking-wider">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>{currentReport.recommendedBlueprint.title}</span>
+            {/* Solução & Plano Recomendado - Menos é Mais (Direto e Fácil de Ler) */}
+            <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-3.5">
+              <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-full border border-cyan-200">
+                  Estrutura Recomendada
+                </span>
+                <span className="text-xs font-black text-slate-900">{currentReport.recommendedPlan.price}</span>
               </div>
 
-              <div className="space-y-2.5">
+              <div className="space-y-2">
                 {currentReport.recommendedBlueprint.items.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
-                    <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px]">
-                      {idx + 1}
-                    </div>
-                    <div>
-                      <div className="text-xs font-extrabold text-slate-900">{item.heading}</div>
-                      <div className="text-[11px] text-slate-500 leading-relaxed mt-0.5">{item.detail}</div>
-                    </div>
+                  <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span className="font-semibold text-slate-900">{item.heading}</span>
                   </div>
                 ))}
               </div>
-            </div>
 
-            {/* Recommended Plan & Direct Action Card */}
-            <div className="p-4 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-md space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-400">
-                  Plano Sentinel Ideal
-                </span>
-                <span className="text-xs font-black text-white">{currentReport.recommendedPlan.price}</span>
-              </div>
-
-              <div className="font-extrabold text-sm text-white">
-                {currentReport.recommendedPlan.name}
-              </div>
-
-              <div className="text-[11px] text-slate-300 leading-relaxed">
-                {currentReport.recommendedPlan.roiDetail}
-              </div>
-
-              <div className="text-[10px] text-slate-400 font-mono">
-                {currentReport.recommendedPlan.setup}
+              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-[11px] text-slate-500 font-medium">
+                ⚡ <strong>Entrega:</strong> No ar em até 7 dias úteis com suporte contínuo no WhatsApp.
               </div>
 
               <a
@@ -537,10 +502,10 @@ export const SentinelAIAdvisor: React.FC<SentinelAIAdvisorProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => soundFx.playUiClick()}
-                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-extrabold text-xs tracking-wide flex items-center justify-center gap-2 shadow-md shadow-emerald-500/25 transition-all cursor-pointer"
+                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Ativar Estrutura no WhatsApp</span>
+                <span>Pedir Proposta no WhatsApp</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SentinelLogo } from './SentinelLogo';
-import { ArrowUp, CheckCircle2, Mail, Phone, MessageCircle } from 'lucide-react';
+import { ArrowUp, CheckCircle2, Mail, MessageCircle } from 'lucide-react';
 import { soundFx } from './SoundEffects';
 
 interface FooterProps {
@@ -8,20 +8,20 @@ interface FooterProps {
   onNavigate?: (path: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenContact, onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenContact: _onOpenContact, onNavigate }) => {
   const scrollToTop = () => {
     soundFx.playUiClick();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleFooterLink = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+  const handleLink = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault();
     soundFx.playUiClick();
     if (onNavigate) {
-      onNavigate(`/${hash}`);
+      onNavigate(path);
     } else {
-      const el = document.getElementById(hash.replace(/^#/, ''));
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState({}, '', path);
+      window.dispatchEvent(new PopStateEvent('popstate'));
     }
   };
 
@@ -31,11 +31,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact, onNavigate }) => 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
           {/* Brand info */}
           <div className="space-y-4">
-            {/* Dark Variant with White Text for Dark Backgrounds */}
             <SentinelLogo size="md" variant="dark" />
 
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm pt-2">
-              Soluções digitais práticas que colocam empresas e comércios na frente de clientes prontos para comprar, em qualquer lugar do Brasil.
+              Infraestrutura digital, criação de sites ultrarrápidos e robôs inteligentes de atendimento no WhatsApp para empresas de todo o Brasil.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -70,14 +69,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact, onNavigate }) => 
           {/* Solutions Column */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
-              O Que Fazemos
+              Navegação Institucional
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="/#como-funciona" onClick={(e) => handleFooterLink(e, '#como-funciona')} className="hover:text-white transition-colors">Sites Rápidos que Vendem</a></li>
-              <li><a href="/#como-funciona" onClick={(e) => handleFooterLink(e, '#como-funciona')} className="hover:text-white transition-colors">Robô de Atendimento no WhatsApp</a></li>
-              <li><a href="/#como-funciona" onClick={(e) => handleFooterLink(e, '#como-funciona')} className="hover:text-white transition-colors">Otimização no Google Meu Negócio</a></li>
-              <li><a href="/#planos" onClick={(e) => handleFooterLink(e, '#planos')} className="hover:text-white transition-colors">Pacotes com Manutenção Mensal</a></li>
-              <li><a href="/#raio-x" onClick={(e) => handleFooterLink(e, '#raio-x')} className="hover:text-white transition-colors">Raio-X Grátis da Empresa</a></li>
+            <ul className="space-y-2.5 text-xs text-slate-400">
+              <li><a href="/sites" onClick={(e) => handleLink(e, '/sites')} className="hover:text-cyan-400 transition-colors">Criação de Sites Profissionais</a></li>
+              <li><a href="/automacao" onClick={(e) => handleLink(e, '/automacao')} className="hover:text-emerald-400 transition-colors">Robôs de Atendimento no WhatsApp</a></li>
+              <li><a href="/quem-somos" onClick={(e) => handleLink(e, '/quem-somos')} className="hover:text-white transition-colors">Quem Somos & Engenharia</a></li>
+              <li><a href="/blog" onClick={(e) => handleLink(e, '/blog')} className="hover:text-white transition-colors">Blog & Estratégias de Vendas</a></li>
+              <li><a href="/contato" onClick={(e) => handleLink(e, '/contato')} className="hover:text-white transition-colors">Fale Conosco & Orçamentos</a></li>
             </ul>
           </div>
 
@@ -86,9 +85,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact, onNavigate }) => 
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
               Garantias Sentinel
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-400">
               <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> <span>Domínio 100% no seu nome</span></li>
-              <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> <span>Empresa formalizada com CNPJ</span></li>
+              <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> <span>Hospedagem em Nuvem Edge Global</span></li>
               <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> <span>Sem multas de fidelidade</span></li>
               <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> <span>Alterações mensais inclusas</span></li>
             </ul>
@@ -97,59 +96,54 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact, onNavigate }) => 
           {/* Contact Direct */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
-              Canais Oficiais
+              Atendimento Comercial
             </h4>
-            <div className="space-y-2.5 text-xs text-slate-400">
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-cyan-400" />
-                <a href="https://wa.me/5522999726069" target="_blank" rel="noreferrer" className="text-white hover:text-cyan-400 font-medium">
-                  (22) 99972-6069
-                </a>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-cyan-400" />
-                <a href="mailto:sentinelsystemsai@gmail.com" className="text-slate-300 hover:text-white">
-                  sentinelsystemsai@gmail.com
-                </a>
-              </div>
-
-              <div>
-                <span className="block text-[11px] text-slate-500">Instagram:</span>
-                <a href="https://www.instagram.com/sentinelsystems.ai/" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">
-                  @sentinelsystems.ai
-                </a>
-              </div>
-
-              <button
-                onClick={() => {
-                  soundFx.playUiClick();
-                  onOpenContact();
-                }}
-                className="w-full mt-3 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-sky-600 hover:from-cyan-500 hover:to-sky-500 text-white font-bold text-xs tracking-wider uppercase transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+            <div className="space-y-3 text-xs text-slate-400">
+              <a
+                href="https://wa.me/5522999726069?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20minha%20empresa!"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => soundFx.playUiClick()}
+                className="flex items-center gap-2 hover:text-emerald-400 transition-colors"
               >
-                <MessageCircle className="w-3.5 h-3.5" />
-                <span>Chamar no WhatsApp</span>
-              </button>
+                <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>(22) 99972-6069 (WhatsApp)</span>
+              </a>
+
+              <a
+                href="mailto:sentinelsystemsai@gmail.com"
+                className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
+              >
+                <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span>sentinelsystemsai@gmail.com</span>
+              </a>
+
+              <p className="text-[11px] text-slate-500 pt-2 border-t border-slate-800">
+                Atendimento digital para empresas e comércios em todos os estados do Brasil.
+              </p>
             </div>
           </div>
         </div>
 
+        {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            <span>© {new Date().getFullYear()} Sentinel Systems • Soluções Digitais & Inteligência em Todo o Brasil.</span>
+            &copy; {new Date().getFullYear()} Sentinel Systems. Todos os direitos reservados.
           </div>
 
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors cursor-pointer"
-          >
-            <span>Voltar ao topo</span>
-            <ArrowUp className="w-3.5 h-3.5" />
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={scrollToTop}
+              className="p-2 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all flex items-center gap-1 text-[11px] cursor-pointer"
+            >
+              <ArrowUp className="w-3.5 h-3.5" />
+              <span>Voltar ao topo</span>
+            </button>
+          </div>
         </div>
       </div>
     </footer>
   );
 };
+
 export default Footer;

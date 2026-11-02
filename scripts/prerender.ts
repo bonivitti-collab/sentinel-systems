@@ -62,6 +62,36 @@ function generateSitemap(): void {
       changefreq: 'weekly',
       priority: '1.0',
     },
+    {
+      loc: `${BASE_URL}/sites`,
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.95',
+    },
+    {
+      loc: `${BASE_URL}/automacao`,
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.95',
+    },
+    {
+      loc: `${BASE_URL}/quem-somos`,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.85',
+    },
+    {
+      loc: `${BASE_URL}/blog`,
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: '0.9',
+    },
+    {
+      loc: `${BASE_URL}/contato`,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: '0.85',
+    },
     ...NICHES_LIST.map((niche) => ({
       loc: `${BASE_URL}/solucoes/${niche.slug}`,
       lastmod: today,

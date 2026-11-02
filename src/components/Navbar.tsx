@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SentinelLogo } from './SentinelLogo';
-import { Menu, X, ArrowUpRight, MessageCircle, Volume2, VolumeX } from 'lucide-react';
+import { Menu, X, MessageCircle, Volume2, VolumeX } from 'lucide-react';
 import { soundFx } from './SoundEffects';
 
 interface NavbarProps {
@@ -31,12 +31,12 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, []);
 
   const navLinks = [
-    { label: 'Como Funciona', href: '#como-funciona' },
-    { label: 'Instagram vs Site', href: '#instagram-vs-site' },
-    { label: 'Planos & Valores', href: '#planos' },
-    { label: 'Soluções & Cidades', href: '#diretorio-seo', badge: '37 Páginas' },
-    { label: 'Dúvidas & Garantias', href: '#duvidas-seguranca' },
-    { label: 'Raio-X Grátis', href: '#raio-x' },
+    { label: 'Início', href: '/' },
+    { label: 'Criação de Sites', href: '/sites' },
+    { label: 'Automação WhatsApp', href: '/automacao', badge: 'Robô 24h' },
+    { label: 'Quem Somos', href: '/quem-somos' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contato', href: '/contato' },
   ];
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -60,26 +60,30 @@ export const Navbar: React.FC<NavbarProps> = ({
     if (onDismissIntro) onDismissIntro();
     setMobileMenuOpen(false);
 
-    const targetId = href.replace(/^#/, '');
-
-    if (!isHome) {
-      if (onNavigate) {
-        onNavigate('/');
-      } else if (onNavigateHome) {
-        onNavigateHome();
-      }
-      setTimeout(() => {
-        const el = document.getElementById(targetId);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      const targetId = href.replace(/^#/, '');
+      if (!isHome) {
+        if (onNavigate) {
+          onNavigate('/');
+        } else if (onNavigateHome) {
+          onNavigateHome();
         }
-      }, 150);
+        setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+        return;
+      }
+      const el = document.getElementById(targetId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
       return;
     }
 
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (onNavigate) {
+      onNavigate(href);
+    } else {
+      window.history.pushState({}, '', href);
+      window.dispatchEvent(new PopStateEvent('popstate'));
     }
   };
 
@@ -92,10 +96,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     }
   };
 
-  const getLinkHref = (href: string) => {
-    return isHome ? href : `/${href}`;
-  };
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Official Brand Logo - Clean & Perfectly Aligned */}
+          {/* Brand Logo */}
           <a
             href="/"
             onClick={handleLogoClick}
@@ -117,17 +117,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           </a>
 
           {/* Center Navigation Links (Desktop) */}
-          <nav className="hidden xl:flex items-center gap-1 px-4 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90 backdrop-blur-md shadow-xs">
+          <nav className="hidden lg:flex items-center gap-1 px-4 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90 backdrop-blur-md shadow-xs">
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={getLinkHref(link.href)}
+                href={link.href}
                 onClick={(e) => handleNavLinkClick(e, link.href)}
-                className="px-3 py-1.5 rounded-full text-xs font-semibold text-slate-700 hover:text-cyan-700 hover:bg-white transition-all flex items-center gap-1.5"
+                className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-700 hover:text-cyan-700 hover:bg-white transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 <span>{link.label}</span>
                 {link.badge && (
-                  <span className="text-[10px] bg-cyan-100 text-cyan-800 px-1.5 py-0.2 rounded-full font-bold">
+                  <span className="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded-full font-bold">
                     {link.badge}
                   </span>
                 )}
@@ -153,116 +153,56 @@ export const Navbar: React.FC<NavbarProps> = ({
                 soundFx.playUiClick();
                 onOpenContact();
               }}
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-600 to-sky-600 hover:from-cyan-500 hover:to-sky-500 text-white font-bold text-xs tracking-wide shadow-md shadow-cyan-600/20 transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2 cursor-pointer"
+              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all flex items-center gap-2 cursor-pointer"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <MessageCircle className="w-3.5 h-3.5" />
-              <span>Falar no WhatsApp</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <MessageCircle className="w-4 h-4" />
+              <span>Pedir Orçamento</span>
             </button>
           </div>
 
-          {/* Mobile Actions (Sound + Hamburger) */}
-          <div className="xl:hidden flex items-center gap-2">
+          {/* Mobile Menu Hamburger */}
+          <div className="flex sm:hidden items-center gap-2">
             <button
               onClick={toggleSound}
-              className="p-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-600"
-              aria-label="Alternar som"
+              className="p-2 rounded-full bg-slate-100 border border-slate-200 text-slate-600"
+              aria-label="Som"
             >
-              {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-cyan-700" />}
+              {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-cyan-700" />}
             </button>
 
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 cursor-pointer"
-              aria-label="Abrir menu de navegação"
+              onClick={() => {
+                soundFx.playUiClick();
+                setMobileMenuOpen(!mobileMenuOpen);
+              }}
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
+              aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white/98 border-b border-slate-200 px-6 py-6 backdrop-blur-2xl transition-all shadow-2xl animate-in slide-in-from-top-2">
+        <div className="lg:hidden bg-white/98 backdrop-blur-2xl border-b border-slate-200 px-4 pt-4 pb-6 shadow-xl animate-fade-in">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={getLinkHref(link.href)}
+                href={link.href}
                 onClick={(e) => handleNavLinkClick(e, link.href)}
-                className="py-3 text-sm font-semibold text-slate-800 hover:text-cyan-600 border-b border-slate-100 flex items-center justify-between"
+                className="px-4 py-3 rounded-2xl text-sm font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-700 transition-colors flex items-center justify-between"
               >
                 <span>{link.label}</span>
                 {link.badge && (
-                  <span className="text-[10px] bg-cyan-100 text-cyan-800 px-2 py-0.5 rounded-full font-bold">
+                  <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">
                     {link.badge}
                   </span>
                 )}
               </a>
             ))}
-
-            {/* Quick shortcuts for the 37 solutions */}
-            <div className="pt-4 pb-2">
-              <span className="text-[11px] uppercase font-bold text-slate-400 tracking-wider block mb-2">
-                Atalhos Rápidos de Soluções
-              </span>
-              <div className="grid grid-cols-2 gap-2 text-xs font-semibold">
-                <a
-                  href="/solucoes/sites-para-pousadas-e-hoteis"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    soundFx.playUiClick();
-                    setMobileMenuOpen(false);
-                    if (onDismissIntro) onDismissIntro();
-                    if (onNavigate) onNavigate('/solucoes/sites-para-pousadas-e-hoteis');
-                  }}
-                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-cyan-50"
-                >
-                  Pousadas & Hotéis
-                </a>
-                <a
-                  href="/automacao/robo-whatsapp-para-restaurantes"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    soundFx.playUiClick();
-                    setMobileMenuOpen(false);
-                    if (onDismissIntro) onDismissIntro();
-                    if (onNavigate) onNavigate('/automacao/robo-whatsapp-para-restaurantes');
-                  }}
-                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-emerald-50"
-                >
-                  Robô Restaurantes
-                </a>
-                <a
-                  href="/cidades/criacao-de-sites-em-sao-paulo"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    soundFx.playUiClick();
-                    setMobileMenuOpen(false);
-                    if (onDismissIntro) onDismissIntro();
-                    if (onNavigate) onNavigate('/cidades/criacao-de-sites-em-sao-paulo');
-                  }}
-                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-sky-50"
-                >
-                  São Paulo (SP)
-                </a>
-                <a
-                  href="/cidades/criacao-de-sites-no-rio-de-janeiro"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    soundFx.playUiClick();
-                    setMobileMenuOpen(false);
-                    if (onDismissIntro) onDismissIntro();
-                    if (onNavigate) onNavigate('/cidades/criacao-de-sites-no-rio-de-janeiro');
-                  }}
-                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-sky-50"
-                >
-                  Rio de Janeiro (RJ)
-                </a>
-              </div>
-            </div>
 
             <div className="pt-3">
               <button

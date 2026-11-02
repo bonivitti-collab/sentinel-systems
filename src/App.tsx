@@ -14,6 +14,13 @@ import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
 import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 
+// Institutional Pages
+import { SitesPage } from './pages/SitesPage';
+import { AutomationPage } from './pages/AutomationPage';
+import { AboutUsPage } from './pages/AboutUsPage';
+import { BlogPage } from './pages/BlogPage';
+import { ContactPage } from './pages/ContactPage';
+
 // Dedicated Sub-Pages
 import { DedicatedNichePage } from './components/DedicatedNichePage';
 import { DedicatedAutomationPage } from './components/DedicatedAutomationPage';
@@ -34,17 +41,9 @@ export function App() {
 
   const isHome = currentPath === '/';
 
-  // Regra de Ouro ("Melhor sem do que feio"):
-  // O vídeo 16:9 só é exibido na PRIMEIRA visualização pura da Home se o dispositivo realmente comportar o formato:
-  // 1. Já assistiu ou dispensou nesta sessão de navegação? NUNCA mais toca!
-  // 2. Acessou com hash (#como-funciona, #planos, etc.) ou rota interna? NUNCA toca!
-  // 3. Resolução mínima de notebook/desktop (>= 1280px)
-  // 4. Proporção de tela widescreen real (largura/altura >= 1.55, sem cortes verticais)
-  // 5. Dispositivo não-touch (descarta celulares, iPads e tablets)
   const [showIntro, setShowIntro] = useState(() => {
     if (typeof window === 'undefined') return false;
 
-    // Se já foi exibida ou dispensada, NUNCA mais toca novamente
     try {
       if (
         sessionStorage.getItem('sentinel_intro_seen') === 'true' ||
@@ -56,7 +55,6 @@ export function App() {
       // ignore
     }
 
-    // Se não for a raiz pura sem hash, não exibe
     if (window.location.pathname !== '/' && window.location.pathname !== '') return false;
     if (window.location.hash) return false;
 
@@ -147,7 +145,14 @@ export function App() {
     setIsContactOpen(true);
   };
 
-  // Identificação da Rota Atual
+  // Identificação das Novas Rotas Institucionais
+  const isSites = currentPath === '/sites';
+  const isAutomationHub = currentPath === '/automacao';
+  const isAbout = currentPath === '/quem-somos';
+  const isBlog = currentPath === '/blog';
+  const isContact = currentPath === '/contato';
+
+  // Sub-Rotas Especializadas (SEO)
   const nicheMatch = currentPath.match(/^\/solucoes\/([^/]+)$/);
   const matchedNiche = nicheMatch ? NICHES_LIST.find((n) => n.slug === nicheMatch[1]) : null;
 
@@ -162,18 +167,38 @@ export function App() {
 
   // Atualização dinâmica de Título e Metatags no cliente
   useEffect(() => {
-    if (matchedNiche) {
+    if (isSites) {
+      document.title = 'Criação de Sites de Alta Performance & Google | Sentinel Systems';
+    } else if (isAutomationHub) {
+      document.title = 'Robô de Atendimento WhatsApp 24h para Empresas | Sentinel Systems';
+    } else if (isAbout) {
+      document.title = 'Quem Somos & Padrão de Engenharia de Software | Sentinel Systems';
+    } else if (isBlog) {
+      document.title = 'Blog Sentinel: Estratégias Reais de Vendas no Google e WhatsApp';
+    } else if (isContact) {
+      document.title = 'Fale Conosco & Orçamentos Expressos | Sentinel Systems';
+    } else if (matchedNiche) {
       document.title = `${matchedNiche.title} | Sentinel Systems`;
     } else if (matchedAutomation) {
       document.title = `${matchedAutomation.title} | Robô WhatsApp Sentinel Systems`;
     } else if (matchedCity) {
-      document.title = `Criação de Sites em ${matchedCity.name} (RJ) | Sentinel Systems`;
+      document.title = `Criação de Sites em ${matchedCity.name} (${matchedCity.region.split(' - ')[1] || 'Brasil'}) | Sentinel Systems`;
     } else if (matchedGuide) {
       document.title = `${matchedGuide.title} | Sentinel Systems`;
     } else {
       document.title = 'Sentinel Systems | Criação de Sites Rápidos e Robôs de WhatsApp';
     }
-  }, [matchedNiche, matchedAutomation, matchedCity, matchedGuide]);
+  }, [
+    isSites,
+    isAutomationHub,
+    isAbout,
+    isBlog,
+    isContact,
+    matchedNiche,
+    matchedAutomation,
+    matchedCity,
+    matchedGuide
+  ]);
 
   return (
     <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-white text-slate-900 selection:bg-cyan-200 selection:text-slate-950 font-sans">
@@ -196,7 +221,31 @@ export function App() {
         />
 
         <main>
-          {matchedNiche ? (
+          {isSites ? (
+            <SitesPage
+              onOpenContact={handleSelectPlan}
+              onNavigate={navigate}
+            />
+          ) : isAutomationHub ? (
+            <AutomationPage
+              onOpenContact={handleSelectPlan}
+              onNavigate={navigate}
+            />
+          ) : isAbout ? (
+            <AboutUsPage
+              onOpenContact={handleSelectPlan}
+              onNavigate={navigate}
+            />
+          ) : isBlog ? (
+            <BlogPage
+              onOpenContact={handleSelectPlan}
+              onNavigate={navigate}
+            />
+          ) : isContact ? (
+            <ContactPage
+              onOpenContact={handleSelectPlan}
+            />
+          ) : matchedNiche ? (
             <DedicatedNichePage
               niche={matchedNiche}
               onBack={() => navigate('/')}

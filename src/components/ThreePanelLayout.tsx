@@ -1,13 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { AppSidebar } from './AppSidebar';
-import { SentinelAIAdvisor } from './SentinelAIAdvisor';
 import { SentinelLogo } from './SentinelLogo';
 import { 
-  Sparkles,
   Menu, 
   X, 
-  PanelRightClose, 
-  PanelRightOpen, 
   Volume2, 
   VolumeX, 
   MessageCircle
@@ -28,8 +24,6 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
   onOpenContact,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileAiOpen, setIsMobileAiOpen] = useState(false);
-  const [isAiCollapsed, setIsAiCollapsed] = useState(false);
 
   const getContextInfo = () => {
     if (currentPath === '/') return { section: 'Início', title: 'Visão Geral & Hub', badge: 'Painel Central' };
@@ -60,17 +54,10 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
     if (!next) soundFx.playUiClick();
   };
 
-  const handleToggleAi = () => {
-    soundFx.playUiClick();
-    setIsAiCollapsed(!isAiCollapsed);
-  };
-
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-slate-100 font-sans text-slate-900">
       
-      {/* ======================================================== */}
-      {/* 1. LEFT PANEL: Desktop Sidebar (>= 1024px) - Clean White */}
-      {/* ======================================================== */}
+      {/* 1. LEFT PANEL: Desktop Sidebar */}
       <div className="hidden lg:block shrink-0 h-full">
         <AppSidebar
           currentPath={currentPath}
@@ -81,12 +68,10 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
         />
       </div>
 
-      {/* ======================================================== */}
-      {/* 2. CENTER PANEL: Main Interactive Content Canvas */}
-      {/* ======================================================== */}
+      {/* 2. MAIN PANEL: Canvas ocupando toda a largura restante */}
       <div className="flex-1 flex flex-col h-full min-w-0 bg-white text-slate-900 relative overflow-hidden">
         
-        {/* Mobile Top Navbar (< 1024px) - Clean White */}
+        {/* Mobile Header */}
         <header className="lg:hidden h-16 bg-white text-slate-900 px-4 flex items-center justify-between border-b border-slate-200 shrink-0 z-30 shadow-xs">
           <div className="flex items-center gap-2">
             <button
@@ -121,22 +106,10 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
             >
               {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-cyan-600" />}
             </button>
-
-            {/* Mobile AI Trigger Button */}
-            <button
-              onClick={() => {
-                soundFx.playUiClick();
-                setIsMobileAiOpen(true);
-              }}
-              className="px-3 py-1.5 rounded-md bg-slate-900 text-white font-semibold text-xs flex items-center gap-1.5 shadow-xs cursor-pointer"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Assistente IA</span>
-            </button>
           </div>
         </header>
 
-        {/* Desktop Quick Header Bar over Center Panel - Clean White */}
+        {/* Desktop Quick Header */}
         <div className="hidden lg:flex items-center justify-between px-6 py-2.5 bg-white text-slate-600 border-b border-slate-200/90 shrink-0 text-xs shadow-xs">
           <div className="flex items-center gap-2 text-xs">
             <span className="font-black text-slate-900 tracking-wide">{currentCtx.section}</span>
@@ -158,26 +131,6 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
               <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
               <span>WhatsApp: (22) 99972-6069</span>
             </a>
-
-            {/* Collapse/Expand AI Toggle */}
-            <button
-              onClick={handleToggleAi}
-              className="p-1.5 px-2.5 rounded-md bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 transition-colors flex items-center gap-1.5 text-[11px] font-bold cursor-pointer"
-              title={isAiCollapsed ? 'Abrir Assistente IA' : 'Recolher Assistente IA'}
-            >
-              {isAiCollapsed ? (
-                <>
-                  <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
-                  <span>Assistente IA</span>
-                  <PanelRightOpen className="w-3.5 h-3.5 text-slate-500" />
-                </>
-              ) : (
-                <>
-                  <span>Recolher IA</span>
-                  <PanelRightClose className="w-3.5 h-3.5 text-slate-500" />
-                </>
-              )}
-            </button>
           </div>
         </div>
 
@@ -187,18 +140,7 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
         </div>
       </div>
 
-      {/* ======================================================== */}
-      {/* 3. RIGHT PANEL: Sentinel AI Advisor (Desktop >= 1024px) - Clean White */}
-      {/* ======================================================== */}
-      {!isAiCollapsed && (
-        <div className="hidden lg:block w-[380px] xl:w-[420px] shrink-0 h-full transition-all duration-300">
-          <SentinelAIAdvisor onOpenContact={onOpenContact} />
-        </div>
-      )}
-
-      {/* ======================================================== */}
-      {/* MOBILE DRAWER: Left Navigation Sidebar */}
-      {/* ======================================================== */}
+      {/* MOBILE DRAWER: Menu Lateral */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex">
           <div
@@ -225,27 +167,6 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
               }}
               isMuted={isMuted}
               onToggleSound={toggleSound}
-            />
-          </div>
-        </div>
-      )}
-
-      {/* ======================================================== */}
-      {/* MOBILE DRAWER: Right Sentinel AI Advisor */}
-      {/* ======================================================== */}
-      {isMobileAiOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden flex justify-end">
-          <div
-            className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity"
-            onClick={() => setIsMobileAiOpen(false)}
-          />
-          <div className="relative w-full max-w-md h-full bg-white shadow-2xl z-10 flex flex-col">
-            <SentinelAIAdvisor
-              onOpenContact={(plan) => {
-                setIsMobileAiOpen(false);
-                onOpenContact(plan);
-              }}
-              onCloseMobile={() => setIsMobileAiOpen(false)}
             />
           </div>
         </div>

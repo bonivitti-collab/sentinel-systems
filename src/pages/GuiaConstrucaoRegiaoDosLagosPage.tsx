@@ -1,24 +1,31 @@
 import { useId, type MouseEvent } from 'react';
 import { SentinelLogo } from '../components/SentinelLogo';
 import {
-  GUIA_CONSTRUCAO_ANNEXES,
   GUIA_CONSTRUCAO_AUDIENCE,
+  GUIA_CONSTRUCAO_BYLINE,
   GUIA_CONSTRUCAO_CHAPTER_NOTE,
   GUIA_CONSTRUCAO_CHAPTERS,
+  GUIA_CONSTRUCAO_CONTRACT_NOTE,
+  GUIA_CONSTRUCAO_COVER_ALT,
   GUIA_CONSTRUCAO_COVER_CAPTION,
+  GUIA_CONSTRUCAO_COVER_HEIGHT,
+  GUIA_CONSTRUCAO_COVER_SRC,
+  GUIA_CONSTRUCAO_COVER_WIDTH,
+  GUIA_CONSTRUCAO_EDITION,
   GUIA_CONSTRUCAO_EYEBROW,
   GUIA_CONSTRUCAO_FAQ,
+  GUIA_CONSTRUCAO_FILES,
+  GUIA_CONSTRUCAO_FILES_NOTE,
   GUIA_CONSTRUCAO_FUTURE_BUTTON_NOTE,
-  GUIA_CONSTRUCAO_INCLUDES,
   GUIA_CONSTRUCAO_INTRO,
   GUIA_CONSTRUCAO_JOURNEY_NOTE,
   GUIA_CONSTRUCAO_LEDE,
   GUIA_CONSTRUCAO_LIMITS,
   GUIA_CONSTRUCAO_NAME,
-  GUIA_CONSTRUCAO_PENDING_NOTE,
   GUIA_CONSTRUCAO_PRICE_NOTE,
   GUIA_CONSTRUCAO_PURCHASE_NOTE,
-  GUIA_CONSTRUCAO_SIGNATURE,
+  GUIA_CONSTRUCAO_REVIEW_NOTE,
+  GUIA_CONSTRUCAO_SPREADSHEET_NOTE,
   GUIA_CONSTRUCAO_STEPS,
   GUIA_PAGE_LINKS,
   GUIA_SITE_EMAIL,
@@ -97,52 +104,35 @@ export function GuiaConstrucaoRegiaoDosLagosPage() {
           role="status"
           className="rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-950"
         >
-          Página em preparação. A compra está desativada, mesmo com o conteúdo do guia já descrito.
+          Página em preparação. A edição 2026 está descrita aqui, mas a compra segue desativada. O checkout ainda não foi cadastrado e a entrega ainda não foi verificada.
         </p>
 
         <header className="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-xs sm:p-8 lg:p-10">
-          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_17.5rem]">
+          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
             <div className="min-w-0">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-800">
                 {GUIA_CONSTRUCAO_EYEBROW}
               </p>
               <h1 className="mt-3 text-[1.75rem] font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl">
                 {GUIA_CONSTRUCAO_NAME}
+                <span className="mt-2 block text-lg font-semibold text-slate-600 sm:text-2xl">{GUIA_CONSTRUCAO_EDITION}</span>
               </h1>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-700 sm:text-lg">
                 {GUIA_CONSTRUCAO_LEDE}
               </p>
               <p className="mt-3 text-sm font-semibold text-slate-900 sm:text-base">
-                {GUIA_CONSTRUCAO_SIGNATURE}
+                {GUIA_CONSTRUCAO_BYLINE}
               </p>
             </div>
 
-            <figure className="mx-auto w-full max-w-[17.5rem] min-w-0 lg:row-span-2">
-              <div
-                aria-hidden="true"
-                className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 text-white shadow-lg"
-              >
-                <div className="absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-cyan-800 via-cyan-950 to-transparent" />
-                <div className="absolute inset-x-6 bottom-[34%] h-px bg-cyan-200/80" />
-                <div className="absolute inset-x-10 bottom-[30%] h-px bg-cyan-100/40" />
-                <div className="relative flex h-full flex-col justify-between p-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-100">
-                    Composição ilustrativa
-                  </p>
-                  <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-100">
-                      Guia digital
-                    </p>
-                    <p className="mt-3 text-[1.65rem] font-extrabold leading-[1.15] tracking-tight">
-                      Guia para Construir na Região dos Lagos
-                    </p>
-                  </div>
-                  <p className="text-[11px] font-medium leading-relaxed text-cyan-50">
-                    Sentinel Systems
-                    <span className="mt-1 block text-cyan-100/90">Produto educativo</span>
-                  </p>
-                </div>
-              </div>
+            <figure className="mx-auto w-full max-w-[18rem] min-w-0 lg:row-span-2">
+              <img
+                src={GUIA_CONSTRUCAO_COVER_SRC}
+                alt={GUIA_CONSTRUCAO_COVER_ALT}
+                width={GUIA_CONSTRUCAO_COVER_WIDTH}
+                height={GUIA_CONSTRUCAO_COVER_HEIGHT}
+                className="h-auto w-full rounded-2xl border border-slate-200 shadow-lg"
+              />
               <figcaption className="mt-3 text-xs leading-relaxed text-slate-600">
                 {GUIA_CONSTRUCAO_COVER_CAPTION}
               </figcaption>
@@ -150,7 +140,7 @@ export function GuiaConstrucaoRegiaoDosLagosPage() {
 
             <div className="min-w-0">
               <p className="max-w-2xl rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-700">
-                Material educativo. Não substitui projeto, análise do terreno, aprovações locais nem acompanhamento de profissional habilitado.
+                Material educativo. Não substitui projeto, análise do terreno, exigências locais nem acompanhamento de profissional habilitado.
               </p>
               <div className="mt-6">
                 <PurchaseControl describedBy={heroNoteId} />
@@ -205,27 +195,25 @@ export function GuiaConstrucaoRegiaoDosLagosPage() {
             <h2 id="o-que-voce-recebe" tabIndex={-1} className="scroll-mt-6 text-xl font-extrabold tracking-tight text-slate-950 outline-none sm:text-2xl">
               O que você recebe
             </h2>
-            <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-relaxed text-slate-800 sm:text-base">
-              {GUIA_CONSTRUCAO_INCLUDES.map((item) => (
-                <li key={item}>{item}</li>
+            <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm leading-relaxed text-slate-800 sm:text-base">
+              {GUIA_CONSTRUCAO_FILES.map((file) => (
+                <li key={file.name} className="pl-1">
+                  <span className="font-semibold text-slate-950">{file.name}</span>
+                  <span className="text-slate-700"> — {file.detail}</span>
+                </li>
               ))}
-            </ul>
-            <h3 className="mt-8 text-base font-bold text-slate-950">Capítulos</h3>
+            </ol>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-700">{GUIA_CONSTRUCAO_FILES_NOTE}</p>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700">{GUIA_CONSTRUCAO_SPREADSHEET_NOTE}</p>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700">{GUIA_CONSTRUCAO_CONTRACT_NOTE}</p>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700">{GUIA_CONSTRUCAO_REVIEW_NOTE}</p>
+            <h3 className="mt-8 text-base font-bold text-slate-950">Capítulos do guia</h3>
             <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-slate-800 sm:text-base">
               {GUIA_CONSTRUCAO_CHAPTERS.map((chapter) => (
                 <li key={chapter} className="pl-1">{chapter}</li>
               ))}
             </ol>
-            <h3 className="mt-8 text-base font-bold text-slate-950">Anexos</h3>
-            <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-slate-800 sm:text-base">
-              {GUIA_CONSTRUCAO_ANNEXES.map((annex) => (
-                <li key={annex} className="pl-1">{annex}</li>
-              ))}
-            </ol>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-700">{GUIA_CONSTRUCAO_CHAPTER_NOTE}</p>
-            <p className="mt-3 max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-700">
-              {GUIA_CONSTRUCAO_PENDING_NOTE}
-            </p>
           </section>
 
           <section aria-labelledby="como-acessar" className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-8">
@@ -308,7 +296,7 @@ export function GuiaConstrucaoRegiaoDosLagosPage() {
               Identificação
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700 sm:text-base">
-              {GUIA_CONSTRUCAO_SIGNATURE} Este guia é distinto dos serviços de site e de automação deste mesmo site.
+              {GUIA_CONSTRUCAO_BYLINE} Este guia é distinto dos serviços de site e de automação deste mesmo site.
             </p>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700">
               O suporte deste material usa os canais já publicados da Sentinel Systems. O reembolso segue a configuração do produto na Kiwify, sem prazo publicado nesta página.

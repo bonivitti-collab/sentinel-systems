@@ -8,11 +8,15 @@ export const GUIA_CONSTRUCAO_PATH = '/produtos/guia-construcao-regiao-dos-lagos'
 
 export const GUIA_CONSTRUCAO_NAME = 'Guia para Construir na Região dos Lagos';
 
+export const GUIA_CONSTRUCAO_EDITION = 'Edição 2026';
+
+export const GUIA_CONSTRUCAO_AUTHOR = 'Danillo Boni Vitti';
+
 export const GUIA_CONSTRUCAO_TITLE =
-  'Guia para Construir na Região dos Lagos | Sentinel Systems';
+  'Guia para Construir na Região dos Lagos, edição 2026 | Sentinel Systems';
 
 export const GUIA_CONSTRUCAO_DESCRIPTION =
-  'Guia digital educativo em PDF para quem está planejando construir em Unamar e na Região dos Lagos. Material introdutório; não substitui projeto nem acompanhamento de profissional habilitado.';
+  'Edição 2026 do guia educativo para quem está planejando construir em Unamar e na Região dos Lagos. Organiza perguntas e documentação; não substitui projeto nem profissional habilitado.';
 
 export const GUIA_CONSTRUCAO_URL =
   'https://sentinelsystems.com.br/produtos/guia-construcao-regiao-dos-lagos';
@@ -24,8 +28,8 @@ export const GUIA_CONSTRUCAO_EYEBROW = 'Guia digital • Região dos Lagos';
 export const GUIA_CONSTRUCAO_LEDE =
   'Uma leitura educativa para quem está planejando construir em Unamar e na Região dos Lagos.';
 
-export const GUIA_CONSTRUCAO_SIGNATURE =
-  'Um produto educativo da Sentinel Systems.';
+export const GUIA_CONSTRUCAO_BYLINE =
+  'Autoria de Danillo Boni Vitti. Um produto educativo da Sentinel Systems.';
 
 export const GUIA_CONSTRUCAO_INTRO =
   'Construir começa com perguntas. Este guia organiza assuntos, perguntas e documentação para quem quer se preparar antes de conversar com os profissionais envolvidos em uma obra na região.';
@@ -35,11 +39,28 @@ export const GUIA_CONSTRUCAO_AUDIENCE = [
   'Para quem busca uma leitura introdutória antes de conversar com os profissionais envolvidos.',
 ] as const;
 
-export const GUIA_CONSTRUCAO_INCLUDES = [
-  'Um guia digital em PDF, com cerca de 21,7 mil palavras, para leitura no celular, tablet ou computador com leitor de PDF.',
-  'Nove capítulos, com checklists nesses capítulos, e três anexos.',
-  'O PDF não fica nesta página, nem em pasta pública do site. A hospedagem prevista do arquivo é a área de membros da Kiwify.',
+export const GUIA_CONSTRUCAO_FILES = [
+  { name: 'Guia em PDF, formato A4', detail: '55 páginas' },
+  { name: 'Guia em PDF para celular', detail: '138 páginas' },
+  { name: 'Checklists em PDF', detail: '27 páginas' },
+  { name: 'Modelo educativo de contrato de empreitada, em DOCX', detail: '6 páginas' },
+  { name: 'Cronograma, em DOCX', detail: '2 páginas' },
+  { name: 'Pauta de especificações do litoral, em DOCX', detail: '3 páginas' },
+  { name: 'Registro de vistoria, em DOCX', detail: '2 páginas' },
+  { name: 'Planilha, em XLSX', detail: '5 abas' },
 ] as const;
+
+export const GUIA_CONSTRUCAO_FILES_NOTE =
+  'Estes oito arquivos compõem a edição 2026. Nenhum deles está disponível para download nesta página. O checkout ainda não foi cadastrado e a entrega ainda não foi verificada.';
+
+export const GUIA_CONSTRUCAO_SPREADSHEET_NOTE =
+  'A planilha tem 121 fórmulas, testadas internamente. Esse teste não é promessa de resultado financeiro.';
+
+export const GUIA_CONSTRUCAO_CONTRACT_NOTE =
+  'O modelo de contrato de empreitada é educativo. Ele precisa ser adaptado ao caso. Não é parecer de advogado.';
+
+export const GUIA_CONSTRUCAO_REVIEW_NOTE =
+  'A edição passou por revisão editorial e gramatical e por checagem de fontes. Não houve revisão de engenheiro nem de advogado.';
 
 export const GUIA_CONSTRUCAO_CHAPTERS = [
   'A realidade de construir no litoral',
@@ -53,20 +74,11 @@ export const GUIA_CONSTRUCAO_CHAPTERS = [
   'Recebimento, habite-se e averbação',
 ] as const;
 
-export const GUIA_CONSTRUCAO_ANNEXES = [
-  'Modelo educativo de contrato',
-  'Onde verificar órgãos e informações',
-  'Glossário',
-] as const;
-
 export const GUIA_CONSTRUCAO_CHAPTER_NOTE =
-  'Os capítulos incluem checklists. O modelo educativo de contrato está entre os anexos do próprio guia. Isso organiza perguntas e documentação. Não é diagnóstico, projeto nem consultoria.';
-
-export const GUIA_CONSTRUCAO_PENDING_NOTE =
-  'Ainda não entram como material já entregue: a planilha complementar, que está em correção, e os arquivos separados do contrato em DOCX e dos checklists, que seguem em produção.';
+  'O guia em PDF reúne estes nove capítulos. Ele também trata de onde verificar órgãos e informações e de um glossário. O material organiza perguntas e documentação. Não é diagnóstico, projeto nem consultoria.';
 
 export const GUIA_CONSTRUCAO_JOURNEY_NOTE =
-  'Percurso previsto. Ainda não foi testado nesta preparação. Pagamento pendente não equivale a compra aprovada e não libera o arquivo.';
+  'Percurso previsto. O checkout ainda não foi cadastrado e este caminho ainda não foi verificado. Pagamento pendente não equivale a compra concluída e não libera os arquivos.';
 
 export const GUIA_CONSTRUCAO_STEPS = [
   {
@@ -78,23 +90,24 @@ export const GUIA_CONSTRUCAO_STEPS = [
     text: 'Quando a venda for aberta, a compra acontece no checkout da Kiwify, no link específico deste guia.',
   },
   {
-    title: 'Pagamento aprovado',
-    text: 'A Kiwify processa o pagamento. Um pagamento pendente não libera o PDF.',
+    title: 'Pagamento confirmado',
+    text: 'A Kiwify processa o pagamento. Um pagamento pendente não libera os arquivos.',
   },
   {
     title: 'Área de membros',
-    text: 'Depois da aprovação, o acesso previsto é a própria área de membros da Kiwify, com o módulo do guia.',
+    text: 'Depois que a Kiwify confirma o pagamento, o acesso previsto é a própria área de membros, com o módulo do guia.',
   },
   {
-    title: 'Download do PDF',
-    text: 'No conteúdo desse módulo, a entrega prevista é o PDF em anexo. O texto exato do e-mail e qualquer prazo automático não estão confirmados aqui.',
+    title: 'Download dos arquivos',
+    text: 'No conteúdo desse módulo, a entrega prevista são os oito arquivos da edição. O texto exato do e-mail e qualquer prazo automático não estão confirmados aqui.',
   },
 ] as const;
 
 export const GUIA_CONSTRUCAO_LIMITS = [
   'Não substitui projeto, análise específica do terreno, verificação das exigências locais ou acompanhamento de profissional habilitado.',
   'Normas da ABNT e o enquadramento legal dependem de cada caso e do profissional responsável.',
-  'Não garante aprovação, economia, certificado ou resultado de obra. O modelo de contrato do anexo é educativo.',
+  'Não promete economia nem resultado de obra. Não houve revisão de engenheiro nem de advogado.',
+  'O modelo de contrato de empreitada é educativo e precisa ser adaptado ao caso. Não é parecer de advogado.',
   'A compra não inclui execução de obra nem consultoria individual.',
   'A Sentinel Systems assina este material como produto educativo. Não é uma construtora e esta página não oferece responsabilidade técnica.',
 ] as const;
@@ -116,17 +129,22 @@ export const GUIA_CONSTRUCAO_FAQ = [
   {
     question: 'Como vou receber?',
     answer:
-      'Pela área de membros da Kiwify, depois da aprovação do pagamento, com opção de baixar o PDF. Esse percurso ainda será validado antes da publicação.',
+      'Quando a venda estiver aberta, o caminho previsto é a área de membros da Kiwify, depois que o pagamento for confirmado, com os arquivos para baixar. Esse caminho ainda não foi cadastrado nem verificado.',
   },
   {
-    question: 'O guia garante aprovação ou economia?',
+    question: 'O guia promete economia ou resultado de obra?',
     answer:
-      'Não. Ele organiza perguntas e documentação. Aprovação, normas da ABNT e enquadramento legal dependem do caso e do profissional responsável.',
+      'Não. Ele organiza perguntas e documentação. Normas da ABNT e o enquadramento legal dependem do caso e do profissional responsável.',
   },
   {
-    question: 'A planilha e os arquivos separados já vêm com o guia?',
+    question: 'O que compõe a edição 2026?',
     answer:
-      'Não. A planilha complementar está em correção. O arquivo DOCX do contrato e os checklists em arquivos separados seguem em produção. O que esta página descreve como conteúdo do PDF são os nove capítulos, os checklists desses capítulos e os três anexos.',
+      'Oito arquivos: o guia em PDF no formato A4, com 55 páginas; o guia em PDF para celular, com 138 páginas; os checklists em PDF, com 27 páginas; o modelo educativo de contrato de empreitada em DOCX, com 6 páginas; o cronograma em DOCX, com 2 páginas; a pauta de especificações do litoral em DOCX, com 3 páginas; o registro de vistoria em DOCX, com 2 páginas; e a planilha em XLSX, com 5 abas. Eles não estão disponíveis para download nesta página.',
+  },
+  {
+    question: 'Houve revisão de engenheiro ou de advogado?',
+    answer:
+      'Não. A edição passou por revisão editorial e gramatical e por checagem de fontes. O contrato educativo precisa ser adaptado ao caso. Não é um parecer.',
   },
   {
     question: 'Como obtenho suporte ou peço reembolso?',
@@ -145,10 +163,18 @@ export const GUIA_CONSTRUCAO_FUTURE_BUTTON =
   'Ver opções de pagamento na Kiwify';
 
 export const GUIA_CONSTRUCAO_FUTURE_BUTTON_NOTE =
-  'Depois da aprovação, o botão previsto passa a se chamar “Ver opções de pagamento na Kiwify” e só então recebe o link conferido deste guia.';
+  'Quando a venda for aberta, o botão previsto passa a se chamar “Ver opções de pagamento na Kiwify” e só então recebe o link conferido deste guia.';
 
-export const GUIA_CONSTRUCAO_COVER_CAPTION =
-  'Composição tipográfica feita em HTML para representar o guia. Não é a capa final do PDF, que continua em auditoria.';
+export const GUIA_CONSTRUCAO_COVER_SRC = '/produtos/guia-construcao-regiao-dos-lagos/capa.png';
+
+export const GUIA_CONSTRUCAO_COVER_WIDTH = 1653;
+
+export const GUIA_CONSTRUCAO_COVER_HEIGHT = 2339;
+
+export const GUIA_CONSTRUCAO_COVER_ALT =
+  'Capa da edição 2026 do Guia para Construir na Região dos Lagos, produto educativo da Sentinel Systems.';
+
+export const GUIA_CONSTRUCAO_COVER_CAPTION = 'Capa da edição 2026.';
 
 export const GUIA_PAGE_LINKS = [
   { href: '#para-quem-e', label: 'Para quem é' },
@@ -189,6 +215,10 @@ export const guiaConstrucaoJsonLd = {
       inLanguage: 'pt-BR',
       learningResourceType: 'Guia digital',
       isAccessibleForFree: false,
+      author: {
+        '@type': 'Person',
+        name: GUIA_CONSTRUCAO_AUTHOR,
+      },
       provider: {
         '@type': 'Organization',
         name: 'Sentinel Systems',

@@ -6,27 +6,34 @@ import { AUTOMATION_LIST } from '../src/data/automationData.ts';
 import { CITIES_LIST } from '../src/data/citiesData.ts';
 import { GUIDES_LIST } from '../src/data/guidesData.ts';
 import {
-  GUIA_CONSTRUCAO_ANNEXES,
   GUIA_CONSTRUCAO_AUDIENCE,
+  GUIA_CONSTRUCAO_BYLINE,
   GUIA_CONSTRUCAO_CHAPTER_NOTE,
   GUIA_CONSTRUCAO_CHAPTERS,
+  GUIA_CONSTRUCAO_CONTRACT_NOTE,
+  GUIA_CONSTRUCAO_COVER_ALT,
   GUIA_CONSTRUCAO_COVER_CAPTION,
+  GUIA_CONSTRUCAO_COVER_HEIGHT,
+  GUIA_CONSTRUCAO_COVER_SRC,
+  GUIA_CONSTRUCAO_COVER_WIDTH,
+  GUIA_CONSTRUCAO_EDITION,
   GUIA_CONSTRUCAO_DESCRIPTION,
   GUIA_CONSTRUCAO_EYEBROW,
   GUIA_CONSTRUCAO_FAQ,
+  GUIA_CONSTRUCAO_FILES,
+  GUIA_CONSTRUCAO_FILES_NOTE,
   GUIA_CONSTRUCAO_FUTURE_BUTTON_NOTE,
-  GUIA_CONSTRUCAO_INCLUDES,
   GUIA_CONSTRUCAO_INTRO,
   GUIA_CONSTRUCAO_JOURNEY_NOTE,
   GUIA_CONSTRUCAO_LEDE,
   GUIA_CONSTRUCAO_LIMITS,
   GUIA_CONSTRUCAO_NAME,
   GUIA_CONSTRUCAO_PATH,
-  GUIA_CONSTRUCAO_PENDING_NOTE,
+  GUIA_CONSTRUCAO_REVIEW_NOTE,
+  GUIA_CONSTRUCAO_SPREADSHEET_NOTE,
   GUIA_CONSTRUCAO_PRICE_NOTE,
   GUIA_CONSTRUCAO_PURCHASE_NOTE,
   GUIA_CONSTRUCAO_ROBOTS,
-  GUIA_CONSTRUCAO_SIGNATURE,
   GUIA_CONSTRUCAO_STEPS,
   GUIA_CONSTRUCAO_TITLE,
   GUIA_CONSTRUCAO_URL,
@@ -651,21 +658,17 @@ function prerenderPages(): void {
   // --- E. GUIA EDUCATIVO EM PREPARAÇÃO (fora do sitemap e da home) ---
   const guiaBodyHtml = `
     <main style="max-width:760px;margin:0 auto;padding:2rem 1.25rem 3rem;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.6;">
-      <p style="background:#fffbeb;border:1px solid #fcd34d;border-radius:1rem;padding:0.875rem 1rem;color:#451a03;">Página em preparação. A compra está desativada, mesmo com o conteúdo do guia já descrito.</p>
+      <p style="background:#fffbeb;border:1px solid #fcd34d;border-radius:1rem;padding:0.875rem 1rem;color:#451a03;">Página em preparação. A edição 2026 está descrita aqui, mas a compra segue desativada. O checkout ainda não foi cadastrado e a entrega ainda não foi verificada.</p>
       <p style="margin-top:1.5rem;color:#155e75;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">${escapeHtml(GUIA_CONSTRUCAO_EYEBROW)}</p>
-      <h1 style="font-size:2rem;line-height:1.2;margin:0.5rem 0;">${escapeHtml(GUIA_CONSTRUCAO_NAME)}</h1>
+      <h1 style="font-size:2rem;line-height:1.2;margin:0.5rem 0;">${escapeHtml(GUIA_CONSTRUCAO_NAME)} <span style="display:block;font-size:1.125rem;color:#475569;">${escapeHtml(GUIA_CONSTRUCAO_EDITION)}</span></h1>
       <p>${escapeHtml(GUIA_CONSTRUCAO_LEDE)}</p>
-      <p><strong>${escapeHtml(GUIA_CONSTRUCAO_SIGNATURE)}</strong></p>
-      <p>Material educativo. Não substitui projeto, análise do terreno, aprovações locais nem acompanhamento de profissional habilitado.</p>
+      <p><strong>${escapeHtml(GUIA_CONSTRUCAO_BYLINE)}</strong></p>
+      <p>Material educativo. Não substitui projeto, análise do terreno, exigências locais nem acompanhamento de profissional habilitado.</p>
       <p><button type="button" disabled>Em preparação</button></p>
       <p>${escapeHtml(GUIA_CONSTRUCAO_PURCHASE_NOTE)}</p>
       <p>${escapeHtml(GUIA_CONSTRUCAO_PRICE_NOTE)}</p>
       <figure style="max-width:280px;margin:1.5rem 0;">
-        <div style="border:1px solid #0f172a;border-radius:1rem;background:#020617;color:#ffffff;padding:1.25rem;">
-          <p style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:#cffafe;">Composição ilustrativa</p>
-          <p style="font-size:1.35rem;font-weight:800;line-height:1.2;">${escapeHtml(GUIA_CONSTRUCAO_NAME)}</p>
-          <p style="font-size:0.8rem;color:#ecfeff;">Sentinel Systems · produto educativo</p>
-        </div>
+        <img src="${GUIA_CONSTRUCAO_COVER_SRC}" alt="${escapeHtml(GUIA_CONSTRUCAO_COVER_ALT)}" width="${GUIA_CONSTRUCAO_COVER_WIDTH}" height="${GUIA_CONSTRUCAO_COVER_HEIGHT}" style="width:100%;height:auto;border-radius:1rem;border:1px solid #e2e8f0;" />
         <figcaption style="font-size:0.8rem;color:#475569;">${escapeHtml(GUIA_CONSTRUCAO_COVER_CAPTION)}</figcaption>
       </figure>
       <h2>Apresentação</h2>
@@ -673,13 +676,14 @@ function prerenderPages(): void {
       <h2>Para quem é</h2>
       <ul>${GUIA_CONSTRUCAO_AUDIENCE.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
       <h2>O que você recebe</h2>
-      <ul>${GUIA_CONSTRUCAO_INCLUDES.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
-      <h3>Capítulos</h3>
+      <ol>${GUIA_CONSTRUCAO_FILES.map((item) => `<li><strong>${escapeHtml(item.name)}</strong> — ${escapeHtml(item.detail)}</li>`).join('')}</ol>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_FILES_NOTE)}</p>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_SPREADSHEET_NOTE)}</p>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_CONTRACT_NOTE)}</p>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_REVIEW_NOTE)}</p>
+      <h3>Capítulos do guia</h3>
       <ol>${GUIA_CONSTRUCAO_CHAPTERS.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
-      <h3>Anexos</h3>
-      <ol>${GUIA_CONSTRUCAO_ANNEXES.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
       <p>${escapeHtml(GUIA_CONSTRUCAO_CHAPTER_NOTE)}</p>
-      <p>${escapeHtml(GUIA_CONSTRUCAO_PENDING_NOTE)}</p>
       <h2>Como acessar</h2>
       <p>${escapeHtml(GUIA_CONSTRUCAO_JOURNEY_NOTE)}</p>
       <ol>${GUIA_CONSTRUCAO_STEPS.map((step) => `<li><strong>${escapeHtml(step.title)}.</strong> ${escapeHtml(step.text)}</li>`).join('')}</ol>
@@ -692,7 +696,7 @@ function prerenderPages(): void {
       <p><button type="button" disabled>Em preparação</button></p>
       <p>${escapeHtml(GUIA_CONSTRUCAO_FUTURE_BUTTON_NOTE)}</p>
       <h2>Identificação</h2>
-      <p>${escapeHtml(GUIA_CONSTRUCAO_SIGNATURE)} Este guia é distinto dos serviços de site e de automação deste mesmo site.</p>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_BYLINE)} Este guia é distinto dos serviços de site e de automação deste mesmo site.</p>
       <p>O suporte deste material usa os canais já publicados da Sentinel Systems. O reembolso segue a configuração do produto na Kiwify, sem prazo publicado nesta página.</p>
       <p><a href="${GUIA_SITE_WHATSAPP_HREF}">WhatsApp ${escapeHtml(GUIA_SITE_WHATSAPP_LABEL)}</a></p>
       <p><a href="mailto:${GUIA_SITE_EMAIL}">${escapeHtml(GUIA_SITE_EMAIL)}</a></p>
@@ -839,15 +843,35 @@ function assertGuiaPreparation(): void {
     /R\$/,
     /"@type": "Offer"/,
     /priceCurrency/,
-    /vitti/i,
-    /engenheir/i,
+    /vitticonstrucoes/i,
+    /grupo vitti/i,
+    /vitti constru/i,
+    /vitti engenh/i,
+    /certificado/i,
+    /aprovado/i,
     /depoimento/i,
     /bônus/i,
     /bonus/i,
     /href="[^"]*\.pdf/i,
+    /href="[^"]*\.docx/i,
+    /href="[^"]*\.xlsx/i,
     /href="[^"]*kiwify/i,
     /href="[^"]*checkout/i,
   ];
+  if (!html.includes('Danillo Boni Vitti')) {
+    throw new Error('A página do guia precisa identificar a autoria.');
+  }
+  if (!html.includes(GUIA_CONSTRUCAO_COVER_SRC)) {
+    throw new Error('A página do guia precisa usar a capa autorizada.');
+  }
+  const coverOnDisk = path.join(distDir, 'produtos', 'guia-construcao-regiao-dos-lagos', 'capa.png');
+  if (!fs.existsSync(coverOnDisk)) {
+    throw new Error('A capa autorizada não foi publicada no build.');
+  }
+  const productFiles = fs.readdirSync(path.dirname(coverOnDisk));
+  if (productFiles.some((name) => /\.(pdf|docx|xlsx)$/i.test(name))) {
+    throw new Error('Arquivo pago não pode entrar na pasta pública do guia.');
+  }
   for (const pattern of banned) {
     if (pattern.test(html)) {
       throw new Error(`A página do guia contém conteúdo fora da preparação: ${pattern}`);

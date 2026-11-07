@@ -19,15 +19,18 @@ export const SentinelLogo: React.FC<SentinelLogoProps> = ({
   };
 
   const currentHeight = sizeMap[size];
-  const logoSrc = variant === 'dark' ? '/logo-dark.png' : '/logo-light.png';
+  const logoSrc = variant === 'dark' ? '/logo-dark.webp' : '/logo-light.webp';
 
   return (
     <div className={`inline-flex items-center select-none ${className}`}>
       {/* Official 3D Hexagonal Logo with Pixel-Perfect Alignment */}
       <img
         src={logoSrc}
-        alt="Sentinel Systems"
-        className={`${currentHeight} w-auto object-contain transition-transform duration-300 hover:scale-[1.02]`}
+        alt="Logotipo da Sentinel Systems"
+        width={220}
+        height={106}
+        decoding="async"
+        className={`${currentHeight} w-auto max-w-[46vw] sm:max-w-none object-contain`}
       />
     </div>
   );

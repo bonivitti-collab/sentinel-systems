@@ -1,227 +1,156 @@
-import React, { useState, useEffect } from 'react';
-import { SentinelLogo } from './SentinelLogo';
-import { Menu, X, MessageCircle, Volume2, VolumeX } from 'lucide-react';
+import { useEffect, useState, type MouseEvent } from 'react';
+import { Menu, MessageCircle, Volume2, VolumeX, X } from 'lucide-react';
+import { NAV_LINKS, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
+import { SentinelLogo } from './SentinelLogo';
 
 interface NavbarProps {
-  onOpenContact: () => void;
-  isHome?: boolean;
-  onNavigateHome?: () => void;
-  onNavigate?: (path: string) => void;
-  onDismissIntro?: () => void;
+  currentPath: string;
+  onNavigate: (path: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({
-  onOpenContact,
-  isHome = true,
-  onNavigateHome,
-  onNavigate,
-  onDismissIntro,
-}) => {
+export function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMuted, setIsMuted] = useState(() => soundFx.getMuted());
+  const [isMuted, setIsMuted] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 25);
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 25);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'Início', href: '/' },
-    { label: 'Criação de Sites', href: '/sites' },
-    { label: 'Automação WhatsApp', href: '/automacao', badge: 'Robô 24h' },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Contato', href: '/contato' },
-  ];
-
-  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    soundFx.playUiClick();
-    if (onDismissIntro) onDismissIntro();
-    if (onNavigate) {
-      onNavigate('/');
-    } else if (onNavigateHome) {
-      onNavigateHome();
-    } else {
-      window.history.pushState({}, '', '/');
-      window.dispatchEvent(new PopStateEvent('popstate'));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    soundFx.playUiClick();
-    if (onDismissIntro) onDismissIntro();
+  useEffect(() => {
     setMobileMenuOpen(false);
+  }, [currentPath]);
 
-    if (href.startsWith('#')) {
-      const targetId = href.replace(/^#/, '');
-      if (!isHome) {
-        if (onNavigate) {
-          onNavigate('/');
-        } else if (onNavigateHome) {
-          onNavigateHome();
-        }
-        setTimeout(() => {
-          const el = document.getElementById(targetId);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 150);
-        return;
-      }
-      const el = document.getElementById(targetId);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-      return;
-    }
-
-    if (onNavigate) {
-      onNavigate(href);
-    } else {
-      window.history.pushState({}, '', href);
-      window.dispatchEvent(new PopStateEvent('popstate'));
-    }
+  const go = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
+    soundFx.playUiClick();
+    setMobileMenuOpen(false);
+    onNavigate(href);
   };
 
   const toggleSound = () => {
     const nextMuted = !isMuted;
     soundFx.setMuted(nextMuted);
     setIsMuted(nextMuted);
-    if (!nextMuted) {
-      soundFx.playUiClick();
-    }
+    if (!nextMuted) soundFx.playUiClick();
   };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'py-2.5 bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-xs'
-          : 'py-4 bg-transparent'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-xs'
+          : 'bg-white/80 backdrop-blur-md border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Brand Logo */}
+        <div className="flex items-center justify-between gap-3 min-h-16 py-2">
           <a
             href="/"
-            onClick={handleLogoClick}
-            className="flex items-center group cursor-pointer focus:outline-none"
-            aria-label="Sentinel Systems - Início"
+            onClick={(event) => go(event, '/')}
+            className="flex items-center min-w-0 shrink"
+            aria-label="Sentinel Systems — início"
           >
-            <SentinelLogo size="md" variant="light" />
+            <SentinelLogo size="sm" variant="light" />
           </a>
 
-          {/* Center Navigation Links (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-1 px-4 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90 backdrop-blur-md shadow-xs">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavLinkClick(e, link.href)}
-                className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-700 hover:text-cyan-700 hover:bg-white transition-all flex items-center gap-1.5 cursor-pointer"
-              >
-                <span>{link.label}</span>
-                {link.badge && (
-                  <span className="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded-full font-bold">
-                    {link.badge}
-                  </span>
-                )}
-              </a>
-            ))}
+          <nav className="hidden lg:flex items-center gap-1 px-2 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90" aria-label="Principal">
+            {NAV_LINKS.map((link) => {
+              const active = link.href === currentPath;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  onClick={(event) => go(event, link.href)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                    active ? 'bg-white text-cyan-800 shadow-xs' : 'text-slate-700 hover:text-cyan-700 hover:bg-white'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
 
-          {/* Right Action: Sound Toggle & WhatsApp CTA */}
-          <div className="hidden sm:flex items-center gap-2.5">
-            {/* Audio Feedback Toggle */}
+          <div className="flex items-center gap-2 shrink-0">
             <button
+              type="button"
               onClick={toggleSound}
-              className="p-2.5 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-600 hover:text-slate-900 transition-all cursor-pointer"
-              title={isMuted ? 'Ativar efeitos sonoros da interface' : 'Silenciar efeitos sonoros'}
+              className="p-2 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-600 cursor-pointer"
               aria-label={isMuted ? 'Ativar som' : 'Desativar som'}
             >
               {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-cyan-700" />}
             </button>
 
-            {/* Direct WhatsApp Call */}
-            <button
-              onClick={() => {
-                soundFx.playUiClick();
-                onOpenContact();
-              }}
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all flex items-center gap-2 cursor-pointer"
+            <a
+              href={whatsappHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => soundFx.playUiClick()}
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Pedir Orçamento</span>
-            </button>
-          </div>
-
-          {/* Mobile Menu Hamburger */}
-          <div className="flex sm:hidden items-center gap-2">
-            <button
-              onClick={toggleSound}
-              className="p-2 rounded-full bg-slate-100 border border-slate-200 text-slate-600"
-              aria-label="Som"
-            >
-              {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-cyan-700" />}
-            </button>
+              <span>Aparecer no Google</span>
+            </a>
 
             <button
+              type="button"
+              className="lg:hidden p-2 rounded-xl bg-slate-100 text-slate-700 cursor-pointer"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="menu-mobile"
               onClick={() => {
                 soundFx.playUiClick();
-                setMobileMenuOpen(!mobileMenuOpen);
+                setMobileMenuOpen((open) => !open);
               }}
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
-              aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <span className="sr-only">{mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}</span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-2xl border-b border-slate-200 px-4 pt-4 pb-6 shadow-xl animate-fade-in">
+        <nav
+          id="menu-mobile"
+          className="lg:hidden max-h-[calc(100dvh-4.5rem)] overflow-y-auto bg-white border-b border-slate-200 px-4 pt-2 pb-4 shadow-xl"
+          aria-label="Menu móvel"
+        >
           <div className="flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavLinkClick(e, link.href)}
-                className="px-4 py-3 rounded-2xl text-sm font-semibold text-slate-800 hover:bg-cyan-50 hover:text-cyan-700 transition-colors flex items-center justify-between"
-              >
-                <span>{link.label}</span>
-                {link.badge && (
-                  <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">
-                    {link.badge}
-                  </span>
-                )}
-              </a>
-            ))}
-
-            <div className="pt-3">
-              <button
-                onClick={() => {
-                  soundFx.playUiClick();
-                  setMobileMenuOpen(false);
-                  onOpenContact();
-                }}
-                className="w-full py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>Conversar no WhatsApp Agora</span>
-              </button>
-            </div>
+            {NAV_LINKS.map((link) => {
+              const active = link.href === currentPath;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  onClick={(event) => go(event, link.href)}
+                  className={`px-4 py-3 rounded-2xl text-sm font-semibold ${
+                    active ? 'bg-cyan-50 text-cyan-800' : 'text-slate-800 hover:bg-cyan-50 hover:text-cyan-700'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+            <a
+              href={whatsappHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 px-4 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wider text-center"
+            >
+              Quero aparecer no Google
+            </a>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );
-};
+}
 
 export default Navbar;

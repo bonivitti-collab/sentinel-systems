@@ -20,11 +20,33 @@
       "destination": "/guias/:slug/index.html"
     },
     {
+      "source": "/produtos/guia-construcao-regiao-dos-lagos",
+      "destination": "/produtos/guia-construcao-regiao-dos-lagos/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/produtos/guia-construcao-regiao-dos-lagos",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/produtos/guia-construcao-regiao-dos-lagos/index.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/assets/(.*)",
       "headers": [

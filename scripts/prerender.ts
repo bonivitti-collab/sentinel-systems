@@ -5,6 +5,36 @@ import { NICHES_LIST } from '../src/data/nichesData.ts';
 import { AUTOMATION_LIST } from '../src/data/automationData.ts';
 import { CITIES_LIST } from '../src/data/citiesData.ts';
 import { GUIDES_LIST } from '../src/data/guidesData.ts';
+import {
+  GUIA_CONSTRUCAO_ANNEXES,
+  GUIA_CONSTRUCAO_AUDIENCE,
+  GUIA_CONSTRUCAO_CHAPTER_NOTE,
+  GUIA_CONSTRUCAO_CHAPTERS,
+  GUIA_CONSTRUCAO_COVER_CAPTION,
+  GUIA_CONSTRUCAO_DESCRIPTION,
+  GUIA_CONSTRUCAO_EYEBROW,
+  GUIA_CONSTRUCAO_FAQ,
+  GUIA_CONSTRUCAO_FUTURE_BUTTON_NOTE,
+  GUIA_CONSTRUCAO_INCLUDES,
+  GUIA_CONSTRUCAO_INTRO,
+  GUIA_CONSTRUCAO_JOURNEY_NOTE,
+  GUIA_CONSTRUCAO_LEDE,
+  GUIA_CONSTRUCAO_LIMITS,
+  GUIA_CONSTRUCAO_NAME,
+  GUIA_CONSTRUCAO_PATH,
+  GUIA_CONSTRUCAO_PENDING_NOTE,
+  GUIA_CONSTRUCAO_PRICE_NOTE,
+  GUIA_CONSTRUCAO_PURCHASE_NOTE,
+  GUIA_CONSTRUCAO_ROBOTS,
+  GUIA_CONSTRUCAO_SIGNATURE,
+  GUIA_CONSTRUCAO_STEPS,
+  GUIA_CONSTRUCAO_TITLE,
+  GUIA_CONSTRUCAO_URL,
+  GUIA_SITE_EMAIL,
+  GUIA_SITE_WHATSAPP_HREF,
+  GUIA_SITE_WHATSAPP_LABEL,
+  guiaConstrucaoJsonLd,
+} from '../src/data/guiaConstrucaoRegiaoDosLagos.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -165,6 +195,7 @@ function prerenderPages(): void {
       canonical: string;
       jsonLd: object;
       bodyHtml: string;
+      robots?: string;
     }
   ): string {
     let html = original;
@@ -187,6 +218,13 @@ function prerenderPages(): void {
       /<link\s+rel="canonical"\s+href=".*?"\s*\/?>/i,
       `<link rel="canonical" href="${meta.canonical}" />`
     );
+
+    if (meta.robots) {
+      html = html.replace(
+        /<meta\s+name="robots"\s+content=".*?"\s*\/?>/i,
+        `<meta name="robots" content="${escapeHtml(meta.robots)}" />`
+      );
+    }
 
     // OpenGraph
     html = html.replace(
@@ -610,6 +648,72 @@ function prerenderPages(): void {
     generatedCount++;
   }
 
+  // --- E. GUIA EDUCATIVO EM PREPARAÇÃO (fora do sitemap e da home) ---
+  const guiaBodyHtml = `
+    <main style="max-width:760px;margin:0 auto;padding:2rem 1.25rem 3rem;font-family:system-ui,-apple-system,sans-serif;color:#0f172a;line-height:1.6;">
+      <p style="background:#fffbeb;border:1px solid #fcd34d;border-radius:1rem;padding:0.875rem 1rem;color:#451a03;">Página em preparação. A compra está desativada, mesmo com o conteúdo do guia já descrito.</p>
+      <p style="margin-top:1.5rem;color:#155e75;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">${escapeHtml(GUIA_CONSTRUCAO_EYEBROW)}</p>
+      <h1 style="font-size:2rem;line-height:1.2;margin:0.5rem 0;">${escapeHtml(GUIA_CONSTRUCAO_NAME)}</h1>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_LEDE)}</p>
+      <p><strong>${escapeHtml(GUIA_CONSTRUCAO_SIGNATURE)}</strong></p>
+      <p>Material educativo. Não substitui projeto, análise do terreno, aprovações locais nem acompanhamento de profissional habilitado.</p>
+      <p><button type="button" disabled>Em preparação</button></p>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_PURCHASE_NOTE)}</p>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_PRICE_NOTE)}</p>
+      <figure style="max-width:280px;margin:1.5rem 0;">
+        <div style="border:1px solid #0f172a;border-radius:1rem;background:#020617;color:#ffffff;padding:1.25rem;">
+          <p style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:#cffafe;">Composição ilustrativa</p>
+          <p style="font-size:1.35rem;font-weight:800;line-height:1.2;">${escapeHtml(GUIA_CONSTRUCAO_NAME)}</p>
+          <p style="font-size:0.8rem;color:#ecfeff;">Sentinel Systems · produto educativo</p>
+        </div>
+        <figcaption style="font-size:0.8rem;color:#475569;">${escapeHtml(GUIA_CONSTRUCAO_COVER_CAPTION)}</figcaption>
+      </figure>
+      <h2>Apresentação</h2>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_INTRO)}</p>
+      <h2>Para quem é</h2>
+      <ul>${GUIA_CONSTRUCAO_AUDIENCE.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+      <h2>O que você recebe</h2>
+      <ul>${GUIA_CONSTRUCAO_INCLUDES.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+      <h3>Capítulos</h3>
+      <ol>${GUIA_CONSTRUCAO_CHAPTERS.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
+      <h3>Anexos</h3>
+      <ol>${GUIA_CONSTRUCAO_ANNEXES.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_CHAPTER_NOTE)}</p>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_PENDING_NOTE)}</p>
+      <h2>Como acessar</h2>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_JOURNEY_NOTE)}</p>
+      <ol>${GUIA_CONSTRUCAO_STEPS.map((step) => `<li><strong>${escapeHtml(step.title)}.</strong> ${escapeHtml(step.text)}</li>`).join('')}</ol>
+      <h2>Importante</h2>
+      <ul>${GUIA_CONSTRUCAO_LIMITS.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+      <h2>Perguntas frequentes</h2>
+      ${GUIA_CONSTRUCAO_FAQ.map((item) => `<h3>${escapeHtml(item.question)}</h3><p>${escapeHtml(item.answer)}</p>`).join('')}
+      <h2>Compra</h2>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_PRICE_NOTE)} Nenhum checkout está ligado a esta versão.</p>
+      <p><button type="button" disabled>Em preparação</button></p>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_FUTURE_BUTTON_NOTE)}</p>
+      <h2>Identificação</h2>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_SIGNATURE)} O guia é um produto educativo da Sentinel Systems, distinto dos serviços de site e de automação deste mesmo site.</p>
+      <p>O suporte deste material usa os canais já publicados da Sentinel Systems. O reembolso segue a configuração do produto na Kiwify, sem prazo publicado nesta página.</p>
+      <p><a href="${GUIA_SITE_WHATSAPP_HREF}">WhatsApp ${escapeHtml(GUIA_SITE_WHATSAPP_LABEL)}</a></p>
+      <p><a href="mailto:${GUIA_SITE_EMAIL}">${escapeHtml(GUIA_SITE_EMAIL)}</a></p>
+      <p><a href="/">Voltar ao início do site</a></p>
+    </main>
+  `;
+
+  const guiaHtml = customizeHtml(baseHtml, {
+    title: GUIA_CONSTRUCAO_TITLE,
+    description: GUIA_CONSTRUCAO_DESCRIPTION,
+    canonical: GUIA_CONSTRUCAO_URL,
+    jsonLd: guiaConstrucaoJsonLd,
+    bodyHtml: guiaBodyHtml,
+    robots: GUIA_CONSTRUCAO_ROBOTS,
+  });
+
+  const guiaDir = path.join(distDir, 'produtos', 'guia-construcao-regiao-dos-lagos');
+  fs.mkdirSync(guiaDir, { recursive: true });
+  fs.writeFileSync(path.join(guiaDir, 'index.html'), guiaHtml, 'utf8');
+  generatedCount++;
+
   console.log(`[SEO] Pré-renderização concluída! ${generatedCount} páginas estáticas geradas com sucesso.`);
 
   // --- E. PRÉ-RENDERIZAÇÃO DA HOME (dist/index.html) COM TEIA COMPLETA ---
@@ -708,10 +812,54 @@ function prerenderPages(): void {
   console.log('[SEO] dist/index.html (Home) pré-renderizado com snapshot semântico e teia de links completa!');
 }
 
+function assertGuiaPreparation(): void {
+  const pagePath = path.join(distDir, 'produtos', 'guia-construcao-regiao-dos-lagos', 'index.html');
+  const html = fs.readFileSync(pagePath, 'utf8');
+  const sitemap = fs.readFileSync(path.join(distDir, 'sitemap.xml'), 'utf8');
+  const home = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
+  const publicSitemap = fs.readFileSync(path.join(publicDir, 'sitemap.xml'), 'utf8');
+
+  if (!html.includes('name="robots" content="noindex, nofollow"')) {
+    throw new Error('A página do guia precisa responder noindex, nofollow.');
+  }
+  if (!html.includes(GUIA_CONSTRUCAO_NAME) || !html.includes('Em preparação')) {
+    throw new Error('A página do guia não contém o nome ou o estado de preparação.');
+  }
+  if (html.includes(GUIA_CONSTRUCAO_PATH) && sitemap.includes(GUIA_CONSTRUCAO_PATH)) {
+    throw new Error('O sitemap não pode publicar a rota em preparação.');
+  }
+  if (sitemap.includes('guia-construcao-regiao-dos-lagos') || publicSitemap.includes('guia-construcao-regiao-dos-lagos')) {
+    throw new Error('O sitemap não pode publicar a rota em preparação.');
+  }
+  if (home.includes('guia-construcao-regiao-dos-lagos')) {
+    throw new Error('A home pré-renderizada não pode apontar para o guia em preparação.');
+  }
+
+  const banned: RegExp[] = [
+    /R\$/,
+    /"@type": "Offer"/,
+    /priceCurrency/,
+    /vitti/i,
+    /engenheir/i,
+    /depoimento/i,
+    /bônus/i,
+    /bonus/i,
+    /href="[^"]*\.pdf/i,
+    /href="[^"]*kiwify/i,
+    /href="[^"]*checkout/i,
+  ];
+  for (const pattern of banned) {
+    if (pattern.test(html)) {
+      throw new Error(`A página do guia contém conteúdo fora da preparação: ${pattern}`);
+    }
+  }
+}
+
 // Execução principal
 try {
   generateSitemap();
   prerenderPages();
+  assertGuiaPreparation();
 } catch (error) {
   console.error('[SEO] Erro ao executar scripts de pré-renderização:', error);
   process.exit(1);

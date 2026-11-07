@@ -6,9 +6,11 @@ import { soundFx } from './SoundEffects';
 interface FooterProps {
   onOpenContact: () => void;
   onNavigate?: (path: string) => void;
+  variant?: 'site' | 'educativo';
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenContact: _onOpenContact, onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenContact: _onOpenContact, onNavigate, variant = 'site' }) => {
+  const isEducationalProduct = variant === 'educativo';
   const scrollToTop = () => {
     soundFx.playUiClick();
     const mainEl = document.getElementById('main-content-scroll');
@@ -47,7 +49,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact: _onOpenContact, o
             </div>
 
             <p className="text-slate-500 text-xs sm:text-sm leading-relaxed max-w-sm">
-              Infraestrutura digital, criação de sites ultrarrápidos e robôs inteligentes de atendimento no WhatsApp para empresas de todo o Brasil.
+              {isEducationalProduct
+                ? 'Um produto educativo da Sentinel Systems. Este guia não é obra, projeto nem consultoria individual.'
+                : 'Infraestrutura digital, criação de sites ultrarrápidos e robôs inteligentes de atendimento no WhatsApp para empresas de todo o Brasil.'}
             </p>
 
             <div className="pt-3">
@@ -99,27 +103,50 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact: _onOpenContact, o
           <div className="lg:col-span-3 flex flex-col justify-start">
             <div className="h-7 flex items-center mb-4">
               <h4 className="text-xs font-black text-slate-900 uppercase tracking-wider">
-                Garantias Sentinel
+                {isEducationalProduct ? 'Este material' : 'Garantias Sentinel'}
               </h4>
             </div>
 
             <ul className="space-y-2.5 text-xs text-slate-600">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span>Domínio 100% no seu nome (CPF)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span>Hospedagem em Nuvem Edge Global</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span>Sem multas de fidelidade</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                <span>Alterações mensais inclusas</span>
-              </li>
+              {isEducationalProduct ? (
+                <>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Leitura educativa em PDF</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Não substitui profissional habilitado</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Compra desativada nesta versão</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Suporte: e-mail e WhatsApp do site</span>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Domínio 100% no seu nome (CPF)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Hospedagem em Nuvem Edge Global</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Sem multas de fidelidade</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>Alterações mensais inclusas</span>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
@@ -127,7 +154,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact: _onOpenContact, o
           <div className="lg:col-span-3 flex flex-col justify-start">
             <div className="h-7 flex items-center mb-4">
               <h4 className="text-xs font-black text-slate-900 uppercase tracking-wider">
-                Atendimento Comercial
+                {isEducationalProduct ? 'Canais do site' : 'Atendimento Comercial'}
               </h4>
             </div>
 
@@ -152,7 +179,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact: _onOpenContact, o
               </a>
 
               <p className="text-[11px] text-slate-400 pt-2 border-t border-slate-100 leading-snug">
-                Atendimento digital para empresas e comércios em todos os estados do Brasil.
+                {isEducationalProduct
+                  ? 'Canais já publicados no site da Sentinel Systems. Não descrevem, sozinhos, o reembolso deste guia.'
+                  : 'Atendimento digital para empresas e comércios em todos os estados do Brasil.'}
               </p>
             </div>
           </div>

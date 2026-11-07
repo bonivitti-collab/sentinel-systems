@@ -32,6 +32,9 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
     if (currentPath.startsWith('/quem-somos')) return { section: 'Quem Somos', title: 'Manifesto Institucional & Engenharia', badge: 'Empresa' };
     if (currentPath.startsWith('/blog')) return { section: 'Blog & Estratégia', title: 'Respostas para Vender no Google e WhatsApp', badge: '12 Artigos' };
     if (currentPath.startsWith('/contato')) return { section: 'Fale Conosco', title: 'Canais Oficiais & Orçamentos Expressos', badge: 'Contato' };
+    if (currentPath.startsWith('/produtos/guia-construcao-regiao-dos-lagos')) {
+      return { section: 'Guia digital', title: 'Região dos Lagos', badge: 'Em preparação' };
+    }
     if (currentPath.startsWith('/solucoes/')) return { section: 'Soluções por Nicho', title: 'Arquitetura Comercial Especializada', badge: 'Segmento' };
     return { section: 'Sentinel Systems', title: 'Workspace Studio', badge: 'Ativo' };
   };

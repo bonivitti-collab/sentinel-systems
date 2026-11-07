@@ -1,291 +1,120 @@
-import { useState, useEffect } from 'react';
-import { WaterIntro } from './components/WaterIntro';
-import { WaterBackgroundCanvas } from './components/WaterBackgroundCanvas';
-import { ThreePanelLayout } from './components/ThreePanelLayout';
-import { HeroSection } from './components/HeroSection';
-import { WhyNotOnlyInstagram } from './components/WhyNotOnlyInstagram';
-import { PricingPlans } from './components/PricingPlans';
-import { SecurityAndFAQ } from './components/SecurityAndFAQ';
+import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
-import { ContactModal } from './components/ContactModal';
-
-// Institutional Pages
-import { SitesPage } from './pages/SitesPage';
-import { AutomationPage } from './pages/AutomationPage';
-import { AboutUsPage } from './pages/AboutUsPage';
-import { BlogPage } from './pages/BlogPage';
+import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
+import { Navbar } from './components/Navbar';
+import { NAV_LINKS, pageByPath } from './data/companySite';
+import { applySeo } from './lib/seo';
+import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { FaqPage } from './pages/FaqPage';
+import { HomePage } from './pages/HomePage';
+import { NotFoundPage } from './pages/NotFoundPage';
+import { ProductsPage } from './pages/ProductsPage';
+import { ServicesPage } from './pages/ServicesPage';
 
-// Dedicated Sub-Pages
-import { DedicatedNichePage } from './components/DedicatedNichePage';
-import { DedicatedAutomationPage } from './components/DedicatedAutomationPage';
-import { DedicatedCityPage } from './components/DedicatedCityPage';
-import { DedicatedGuidePage } from './components/DedicatedGuidePage';
+const LEGACY: Record<string, string> = {
+  '/quem-somos': '/sobre',
+  '/sites': '/servicos',
+  '/automacao': '/servicos',
+  '/blog': '/faq',
+};
 
-// Data Lists
-import { NICHES_LIST } from './data/nichesData';
-import { AUTOMATION_LIST } from './data/automationData';
-import { CITIES_LIST } from './data/citiesData';
-import { GUIDES_LIST } from './data/guidesData';
+export function normalizePath(pathname: string): string {
+  const clean = pathname.replace(/\/+$/, '') || '/';
+  if (LEGACY[clean]) return LEGACY[clean];
+  if (clean.startsWith('/solucoes/')) return '/servicos';
+  if (clean.startsWith('/automacao/')) return '/servicos';
+  if (clean.startsWith('/cidades/')) return '/';
+  if (clean.startsWith('/guias/')) return '/faq';
+  return clean;
+}
 
-export function App() {
-  const [currentPath, setCurrentPath] = useState(() => {
-    if (typeof window === 'undefined') return '/';
-    return window.location.pathname.replace(/\/+$/, '') || '/';
-  });
-
-  
-  const [showIntro, setShowIntro] = useState(() => {
-    if (typeof window === 'undefined') return false;
-
-    try {
-      if (
-        sessionStorage.getItem('sentinel_intro_seen') === 'true' ||
-        localStorage.getItem('sentinel_intro_seen') === 'true'
-      ) {
-        return false;
-      }
-    } catch {
-      // ignore
-    }
-
-    if (window.location.pathname !== '/' && window.location.pathname !== '') return false;
-    if (window.location.hash) return false;
-
-    const isWideResolution = window.innerWidth >= 1280;
-    const isWidescreenRatio = window.innerWidth / window.innerHeight >= 1.55;
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 1;
-    const shouldShow = isWideResolution && isWidescreenRatio && !isTouchDevice;
-
-    if (shouldShow) {
-      try {
-        sessionStorage.setItem('sentinel_intro_seen', 'true');
-        localStorage.setItem('sentinel_intro_seen', 'true');
-      } catch {
-        // ignore
-      }
-    }
-
-    return shouldShow;
-  });
-
-  const dismissIntro = () => {
-    try {
-      sessionStorage.setItem('sentinel_intro_seen', 'true');
-      localStorage.setItem('sentinel_intro_seen', 'true');
-    } catch {
-      // ignore
-    }
-    setShowIntro(false);
+function readLocation(): { path: string; hash: string } {
+  if (typeof window === 'undefined') return { path: '/', hash: '' };
+  return {
+    path: normalizePath(window.location.pathname),
+    hash: window.location.hash.replace(/^#/, ''),
   };
+}
 
-  const [isContactOpen, setIsContactOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState('Comércio & Vendas 24h (R$ 327/mês)');
+export function App({ url }: { url?: string }) {
+  const [currentPath, setCurrentPath] = useState(() => (url ? normalizePath(url) : readLocation().path));
 
-  // Roteamento leve via History API
   useEffect(() => {
-    const handlePopState = () => {
-      const path = window.location.pathname.replace(/\/+$/, '') || '/';
-      setCurrentPath(path);
-      const mainEl = document.getElementById('main-content-scroll');
-      if (window.location.hash) {
-        const id = window.location.hash.replace(/^#/, '');
-        setTimeout(() => {
-          const el = document.getElementById(id);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else {
-        if (mainEl) mainEl.scrollTop = 0;
-        window.scrollTo(0, 0);
+    const page = pageByPath(currentPath);
+    if (page) applySeo(page);
+  }, [currentPath]);
+
+  useEffect(() => {
+    const onPop = () => {
+      const next = readLocation();
+      setCurrentPath(next.path);
+      if (next.hash) {
+        window.setTimeout(() => document.getElementById(next.hash)?.scrollIntoView(), 0);
       }
     };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+    window.addEventListener('popstate', onPop);
+    const initial = readLocation();
+    if (initial.hash) {
+      window.setTimeout(() => document.getElementById(initial.hash)?.scrollIntoView(), 50);
+    }
+    if (normalizePath(window.location.pathname) !== window.location.pathname.replace(/\/+$/, '')) {
+      const next = normalizePath(window.location.pathname);
+      window.history.replaceState({}, '', next);
+    }
+    return () => window.removeEventListener('popstate', onPop);
   }, []);
 
-  const navigate = (path: string) => {
-    dismissIntro();
-    window.history.pushState({}, '', path);
-    const [rawPath, hashPart] = path.split('#');
-    const cleanPath = (rawPath || '/').replace(/\/+$/, '') || '/';
-    setCurrentPath(cleanPath);
-
-    const mainEl = document.getElementById('main-content-scroll');
+  const navigate = (target: string) => {
+    const [rawPath, hashPart] = target.split('#');
+    const path = normalizePath(rawPath || '/');
+    const nextUrl = hashPart ? `${path}#${hashPart}` : path;
+    window.history.pushState({}, '', nextUrl);
+    setCurrentPath(path);
     if (hashPart) {
-      setTimeout(() => {
-        const el = document.getElementById(hashPart);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 120);
+      window.setTimeout(() => {
+        document.getElementById(hashPart)?.scrollIntoView({ behavior: 'smooth' });
+      }, 60);
     } else {
-      if (mainEl) mainEl.scrollTop = 0;
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
   };
 
-  
-  const handleSelectPlan = (planName?: string) => {
-    if (planName) setSelectedPlan(planName);
-    setIsContactOpen(true);
-  };
-
-  // Identificação das Novas Rotas Institucionais
-  const isSites = currentPath === '/sites';
-  const isAutomationHub = currentPath === '/automacao';
-  const isAbout = currentPath === '/quem-somos';
-  const isBlog = currentPath === '/blog';
-  const isContact = currentPath === '/contato';
-
-  // Sub-Rotas Especializadas (SEO)
-  const nicheMatch = currentPath.match(/^\/solucoes\/([^/]+)$/);
-  const matchedNiche = nicheMatch ? NICHES_LIST.find((n) => n.slug === nicheMatch[1]) : null;
-
-  const autoMatch = currentPath.match(/^\/automacao\/([^/]+)$/);
-  const matchedAutomation = autoMatch ? AUTOMATION_LIST.find((a) => a.slug === autoMatch[1]) : null;
-
-  const cityMatch = currentPath.match(/^\/cidades\/([^/]+)$/);
-  const matchedCity = cityMatch ? CITIES_LIST.find((c) => c.slug === cityMatch[1]) : null;
-
-  const guideMatch = currentPath.match(/^\/guias\/([^/]+)$/);
-  const matchedGuide = guideMatch ? GUIDES_LIST.find((g) => g.slug === guideMatch[1]) : null;
-
-  // Atualização dinâmica de Título e Metatags no cliente
-  useEffect(() => {
-    if (isSites) {
-      document.title = 'Criação de Sites de Alta Performance & Google | Sentinel Systems';
-    } else if (isAutomationHub) {
-      document.title = 'Robô de Atendimento WhatsApp 24h para Empresas | Sentinel Systems';
-    } else if (isAbout) {
-      document.title = 'Quem Somos & Padrão de Engenharia de Software | Sentinel Systems';
-    } else if (isBlog) {
-      document.title = 'Blog Sentinel: Estratégias Reais de Vendas no Google e WhatsApp';
-    } else if (isContact) {
-      document.title = 'Fale Conosco & Orçamentos Expressos | Sentinel Systems';
-    } else if (matchedNiche) {
-      document.title = `${matchedNiche.title} | Sentinel Systems`;
-    } else if (matchedAutomation) {
-      document.title = `${matchedAutomation.title} | Robô WhatsApp Sentinel Systems`;
-    } else if (matchedCity) {
-      document.title = `Criação de Sites em ${matchedCity.name} (${matchedCity.region.split(' - ')[1] || 'Brasil'}) | Sentinel Systems`;
-    } else if (matchedGuide) {
-      document.title = `${matchedGuide.title} | Sentinel Systems`;
-    } else {
-      document.title = 'Sentinel Systems | Criação de Sites Rápidos e Robôs de WhatsApp';
-    }
-  }, [
-    isSites,
-    isAutomationHub,
-    isAbout,
-    isBlog,
-    isContact,
-    matchedNiche,
-    matchedAutomation,
-    matchedCity,
-    matchedGuide
-  ]);
+  let content = <NotFoundPage onNavigate={navigate} />;
+  if (currentPath === '/') content = <HomePage onNavigate={navigate} />;
+  else if (currentPath === '/sobre') content = <AboutPage onNavigate={navigate} />;
+  else if (currentPath === '/servicos') content = <ServicesPage />;
+  else if (currentPath === '/produtos') content = <ProductsPage />;
+  else if (currentPath === '/faq') content = <FaqPage />;
+  else if (currentPath === '/contato') content = <ContactPage />;
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-slate-950 text-slate-900 selection:bg-cyan-200 selection:text-slate-950 font-sans">
-      {/* 🎬 Official YouTube Intro Video with Audio & Smooth Fade (Home only) */}
-      {showIntro && (
-        <WaterIntro onComplete={dismissIntro} />
-      )}
-
-      {/* Fresh Clean Coastal Caustics Canvas (Reacts to Mouse) */}
-      <WaterBackgroundCanvas />
-
-      {/* 🚀 3-PANEL STUDIO LAYOUT (Left: Menus | Center: Content | Right: Sales AI Specialist) */}
-      <ThreePanelLayout
-        currentPath={currentPath}
-        onNavigate={navigate}
-        onOpenContact={handleSelectPlan}
-      >
-        {isSites ? (
-          <SitesPage
-            onOpenContact={handleSelectPlan}
-            onNavigate={navigate}
-          />
-        ) : isAutomationHub ? (
-          <AutomationPage
-            onOpenContact={handleSelectPlan}
-            onNavigate={navigate}
-          />
-        ) : isAbout ? (
-          <AboutUsPage
-            onOpenContact={handleSelectPlan}
-            onNavigate={navigate}
-          />
-        ) : isBlog ? (
-          <BlogPage
-            onOpenContact={handleSelectPlan}
-            onNavigate={navigate}
-          />
-        ) : isContact ? (
-          <ContactPage
-            onOpenContact={handleSelectPlan}
-          />
-        ) : matchedNiche ? (
-          <DedicatedNichePage
-            niche={matchedNiche}
-            onBack={() => navigate('/')}
-            onOpenContact={handleSelectPlan}
-            onNavigate={navigate}
-          />
-        ) : matchedAutomation ? (
-          <DedicatedAutomationPage
-            automation={matchedAutomation}
-            onBack={() => navigate('/')}
-            onOpenContact={handleSelectPlan}
-            onNavigate={navigate}
-          />
-        ) : matchedCity ? (
-          <DedicatedCityPage
-            city={matchedCity}
-            onBack={() => navigate('/')}
-            onOpenContact={handleSelectPlan}
-            onNavigate={navigate}
-          />
-        ) : matchedGuide ? (
-          <DedicatedGuidePage
-            guide={matchedGuide}
-            onBack={() => navigate('/')}
-            onOpenContact={handleSelectPlan}
-            onNavigate={navigate}
-          />
-        ) : (
-          /* Home Landing Page inside Center Panel - Clean, Minimalist & Focused */
-          <>
-            <HeroSection
-              onOpenContact={() => setIsContactOpen(true)}
-              onNavigate={navigate}
-            />
-
-            <WhyNotOnlyInstagram
-              onOpenContact={() => setIsContactOpen(true)}
-            />
-
-            <PricingPlans
-              onSelectPlan={handleSelectPlan}
-            />
-
-            <SecurityAndFAQ />
-          </>
-        )}
-
-        <Footer
-          onOpenContact={() => setIsContactOpen(true)}
-          onNavigate={navigate}
-        />
-      </ThreePanelLayout>
-
-      
-
-      {/* Contact & WhatsApp Lead Modal */}
-      <ContactModal
-        isOpen={isContactOpen}
-        onClose={() => setIsContactOpen(false)}
-        initialPlan={selectedPlan}
-      />
+    <div className="min-h-screen bg-white text-slate-900 font-sans overflow-x-hidden">
+      <Navbar currentPath={currentPath} onNavigate={navigate} />
+      <main id="conteudo">{content}</main>
+      <nav aria-label="Outras páginas" className="border-t border-slate-200 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <h2 className="text-sm font-extrabold text-slate-900 mb-3">Mapa do site</h2>
+          <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-2">
+            {NAV_LINKS.filter((link) => link.href !== currentPath).map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    navigate(link.href);
+                  }}
+                  className="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-sm font-semibold text-slate-700 hover:text-cyan-800"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+      <Footer onNavigate={navigate} />
+      <FloatingWhatsAppButton currentPath={currentPath} />
     </div>
   );
 }

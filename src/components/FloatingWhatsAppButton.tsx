@@ -31,7 +31,7 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({ 
     if (currentPath.includes('/guias/')) {
       return 'Olá! Li um dos guias da Sentinel Systems e gostaria de conversar com um especialista.';
     }
-    return 'Olá! Vim pelo site da Sentinel Systems e gostaria de saber mais sobre a criação de sites e robôs de WhatsApp.';
+    return 'Olá! Vim pelo site da Sentinel Systems e quero aparecer no Google para receber mais contatos de clientes.';
   };
 
   const handleOpenWhatsApp = () => {
@@ -70,7 +70,7 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({ 
                 <h4 className="font-bold text-sm text-white leading-tight">Sentinel Systems</h4>
                 <div className="flex items-center gap-1.5 text-[11px] text-emerald-100 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
-                  <span>Online agora &bull; Resposta rápida</span>
+                  <span>WhatsApp da Sentinel</span>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({ 
             <div className="bg-white p-3 rounded-2xl rounded-tl-sm border border-slate-200 shadow-xs leading-relaxed text-slate-700">
               <p className="font-semibold text-slate-900 mb-1">Olá! Seja bem-vindo à Sentinel 👋</p>
               <p>
-                Tem dúvidas sobre como criar o site da sua empresa ou colocar um robô no seu WhatsApp? Fale diretamente com nossa equipe técnica.
+                Quer aparecer no Google e receber mais ligações e mensagens? Fale com a Sentinel pelo WhatsApp.
               </p>
               <div className="mt-2 text-[10px] text-slate-400 flex items-center gap-1 justify-end">
                 <Clock className="w-3 h-3" />
@@ -91,7 +91,7 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({ 
 
             <div className="flex items-center gap-1 text-[11px] text-slate-500 font-medium px-1">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Sem compromisso &bull; Orçamento no mesmo dia</span>
+              <span>Conversa sem compromisso</span>
             </div>
           </div>
 

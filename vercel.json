@@ -2,61 +2,43 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.sentinelsystems.com.br" }],
+      "destination": "https://sentinelsystems.com.br/:path*",
+      "permanent": true
+    },
+    { "source": "/quem-somos", "destination": "/sobre", "permanent": true },
+    { "source": "/sites", "destination": "/servicos", "permanent": true },
+    { "source": "/automacao", "destination": "/servicos", "permanent": true },
+    { "source": "/automacao/:slug", "destination": "/servicos", "permanent": true },
+    { "source": "/blog", "destination": "/faq", "permanent": true },
+    { "source": "/solucoes/:slug", "destination": "/servicos", "permanent": true },
+    { "source": "/cidades/:slug", "destination": "/", "permanent": true },
+    { "source": "/guias/:slug", "destination": "/faq", "permanent": true }
+  ],
   "rewrites": [
-    {
-      "source": "/solucoes/:slug",
-      "destination": "/solucoes/:slug/index.html"
-    },
-    {
-      "source": "/automacao/:slug",
-      "destination": "/automacao/:slug/index.html"
-    },
-    {
-      "source": "/cidades/:slug",
-      "destination": "/cidades/:slug/index.html"
-    },
-    {
-      "source": "/guias/:slug",
-      "destination": "/guias/:slug/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/sobre", "destination": "/sobre/index.html" },
+    { "source": "/servicos", "destination": "/servicos/index.html" },
+    { "source": "/produtos", "destination": "/produtos/index.html" },
+    { "source": "/faq", "destination": "/faq/index.html" },
+    { "source": "/contato", "destination": "/contato/index.html" }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
-        }
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
       ]
     }
   ]

@@ -692,7 +692,7 @@ function prerenderPages(): void {
       <p><button type="button" disabled>Em preparação</button></p>
       <p>${escapeHtml(GUIA_CONSTRUCAO_FUTURE_BUTTON_NOTE)}</p>
       <h2>Identificação</h2>
-      <p>${escapeHtml(GUIA_CONSTRUCAO_SIGNATURE)} O guia é um produto educativo da Sentinel Systems, distinto dos serviços de site e de automação deste mesmo site.</p>
+      <p>${escapeHtml(GUIA_CONSTRUCAO_SIGNATURE)} Este guia é distinto dos serviços de site e de automação deste mesmo site.</p>
       <p>O suporte deste material usa os canais já publicados da Sentinel Systems. O reembolso segue a configuração do produto na Kiwify, sem prazo publicado nesta página.</p>
       <p><a href="${GUIA_SITE_WHATSAPP_HREF}">WhatsApp ${escapeHtml(GUIA_SITE_WHATSAPP_LABEL)}</a></p>
       <p><a href="mailto:${GUIA_SITE_EMAIL}">${escapeHtml(GUIA_SITE_EMAIL)}</a></p>

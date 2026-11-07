@@ -308,7 +308,7 @@ export function GuiaConstrucaoRegiaoDosLagosPage() {
               Identificação
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700 sm:text-base">
-              {GUIA_CONSTRUCAO_SIGNATURE} O guia é um produto educativo da Sentinel Systems, distinto dos serviços de site e de automação deste mesmo site.
+              {GUIA_CONSTRUCAO_SIGNATURE} Este guia é distinto dos serviços de site e de automação deste mesmo site.
             </p>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700">
               O suporte deste material usa os canais já publicados da Sentinel Systems. O reembolso segue a configuração do produto na Kiwify, sem prazo publicado nesta página.

@@ -176,6 +176,7 @@ export const PRODUCTS = [
     name: 'MiraLocal',
     href: 'https://miralocal.sentinelsystems.com.br',
     price: 'R$ 39/mês',
+    priceAmount: '39',
     priceNote: 'Plano publicado no MiraLocal, com 50 buscas por mês.',
     description:
       'Diagnóstico de presença no Google para lojas locais: busca a loja, mostra a nota e o que está errado no site, e gera um PDF com a sua marca para enviar no WhatsApp.',
@@ -184,6 +185,7 @@ export const PRODUCTS = [
     name: 'Cota Casa',
     href: 'https://cotacasa.com.br',
     price: 'R$ 29,90/mês',
+    priceAmount: '29.90',
     priceNote: 'Plano publicado no Cota Casa.',
     description:
       'Orçamento de obra por etapa com tabelas CUB e a norma da ABNT, cotação de materiais pronta para o WhatsApp e acompanhamento do orçado e do realizado.',
@@ -191,8 +193,9 @@ export const PRODUCTS = [
   {
     name: 'RDO Zap',
     href: 'https://rdozap.sentinelsystems.com.br',
-    price: 'R$ 27',
-    priceNote: 'Pagamento único, publicado no RDO Zap.',
+    price: 'R$ 27/mês',
+    priceAmount: '27',
+    priceNote: 'Plano mensal publicado no RDO Zap.',
     description:
       'Transforma o export da conversa do grupo de WhatsApp da obra em Relatório Diário de Obra, no próprio navegador.',
   },
@@ -410,8 +413,19 @@ export function jsonLdFor(path: string): Record<string, unknown> {
             '@type': 'Offer',
             url: product.href,
             priceCurrency: 'BRL',
-            price: product.name === 'Cota Casa' ? '29.90' : product.name === 'MiraLocal' ? '39' : '27',
+            price: product.priceAmount,
             availability: 'https://schema.org/InStock',
+            priceSpecification: {
+              '@type': 'UnitPriceSpecification',
+              price: product.priceAmount,
+              priceCurrency: 'BRL',
+              unitText: 'mês',
+              referenceQuantity: {
+                '@type': 'QuantitativeValue',
+                value: '1',
+                unitCode: 'MON',
+              },
+            },
           },
         },
       })),

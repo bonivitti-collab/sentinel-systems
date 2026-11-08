@@ -1,7 +1,7 @@
-import { ArrowRight, Camera, MapPin, MessageCircle, Phone, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Camera, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { FaqList } from '../components/site/FaqList';
 import { PageHero } from '../components/site/PageHero';
-import { HOME_FAQ, SERVICES, SITE, whatsappHref } from '../data/companySite';
+import { HOME_FAQ, SITE, whatsappHref } from '../data/companySite';
 import { soundFx } from '../components/SoundEffects';
 
 interface HomePageProps {
@@ -46,6 +46,25 @@ const PREP_STEPS = [
   },
 ] as const;
 
+const PACKAGE_ITEMS = [
+  {
+    title: 'Uma página no celular',
+    text: 'Até cinco seções, feitas para abrir no telefone e mostrar o seu comércio com clareza.',
+  },
+  {
+    title: 'Serviço, lugar e WhatsApp',
+    text: 'O que você faz, onde atende e um botão para chamar. Os textos saem do material que você enviar.',
+  },
+  {
+    title: 'Uma rodada de ajustes',
+    text: 'Os pedidos de ajuste entram juntos, numa rodada só, para a página fechar do jeito combinado.',
+  },
+  {
+    title: 'Perfil no Google',
+    text: 'Configuração básica do Perfil da Empresa, se o negócio for elegível. O perfil é gratuito. O valor paga o trabalho. A verificação depende do Google.',
+  },
+] as const;
+
 const CHANNELS = [
   {
     title: 'Instagram',
@@ -74,22 +93,31 @@ export function HomePage({ onNavigate }: HomePageProps) {
     <>
       <PageHero
         path="/"
-        eyebrow="Negócio local no Brasil"
+        eyebrow="Para o microcomércio local"
         title={
           <>
-            Quem chega à cidade precisa{' '}
+            Site essencial e perfil no Google{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600">
-              encontrar o seu negócio.
+              para o seu comércio.
             </span>
           </>
         }
-        description="Um site claro e uma presença bem cuidada no Google ajudam quem procura um serviço na região a conhecer a sua empresa, conferir as informações e falar com você pelo WhatsApp."
+        description="Uma página no celular para apresentar seus serviços, mostrar onde você fica e facilitar o contato no WhatsApp, com a configuração básica do Perfil da Empresa no Google. O Instagram continua útil. Este pacote ajuda o negócio a ser encontrado."
       >
-        <div className="mt-6 max-w-3xl rounded-2xl border border-slate-200 bg-white/80 px-4 py-4 sm:px-5">
-          <p className="text-sm sm:text-base font-semibold text-slate-800 leading-relaxed">
-            Quando novos moradores e visitantes procuram serviços, surgem novas chances de atendimento. Se o cliente não encontra o seu negócio, pode escolher quem aparece.
+        <div className="mt-6 max-w-xl rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5 sm:p-6">
+          <p className="text-xs font-bold uppercase tracking-wider text-cyan-700">Criação parcelada</p>
+          <p className="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">12 parcelas de R$ 50</p>
+          <p className="mt-1 text-base font-bold text-slate-800">Total de R$ 600</p>
+          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+            É o parcelamento da criação, não uma mensalidade para sempre. O primeiro pagamento é na contratação. Os outros 11 são mensais. Não há mensalidade obrigatória de acompanhamento.
+          </p>
+          <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+            Inclui um domínio .com.br, se o nome estiver disponível, e a hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome.
           </p>
         </div>
+        <p className="mt-3 max-w-xl text-xs sm:text-sm text-slate-500 leading-relaxed">
+          Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção e não renova sozinha. Sem esse combinado, a hospedagem não continua de graça. Você pode levar o site e o domínio.
+        </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6">
           <a
             href={whatsappHref()}
@@ -99,14 +127,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
             className="w-full sm:w-auto px-5 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs uppercase tracking-wider shadow-sm flex items-center justify-center gap-2"
           >
             <MessageCircle className="w-4 h-4" />
-            Quero uma proposta no WhatsApp
+            Quero esse site no WhatsApp
           </a>
           <button
             type="button"
-            onClick={() => go('/servicos')}
+            onClick={() => go('/#oferta')}
             className="w-full sm:w-auto px-5 py-3 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 cursor-pointer"
           >
-            Ver os serviços
+            Ver o que entra
             <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
           </button>
         </div>
@@ -285,42 +313,37 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      <section className="py-16">
+      <section id="oferta" className="py-16 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-10">
-            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Serviços</p>
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">O pacote</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-              O que entra no trabalho
+              O que entra nos R$ 600
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              O site, o Google e a segurança dessa presença são o trabalho da Sentinel para serviço, localização e contato ficarem coerentes.
+              Um pacote só, com começo e fim. Não é acompanhamento mensal obrigatório, e não promete a primeira posição no Google.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {SERVICES.map((service) => {
-              const Icon = service.id === 'google' ? MapPin : service.id === 'seguranca' ? ShieldCheck : Phone;
-              return (
-                <article
-                  key={service.id}
-                  className="p-6 rounded-3xl bg-gradient-to-br from-white to-cyan-50/40 border border-slate-200/90 shadow-xs flex flex-col"
-                >
-                  <div className="w-11 h-11 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-lg font-extrabold text-slate-900 mb-2">{service.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1">{service.summary}</p>
-                  <button
-                    type="button"
-                    onClick={() => go(`/servicos#${service.id}`)}
-                    className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-cyan-800 cursor-pointer"
-                  >
-                    Por que isso importa
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </article>
-              );
-            })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {PACKAGE_ITEMS.map((item) => (
+              <article key={item.title} className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+                <h3 className="text-lg font-extrabold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
+              </article>
+            ))}
           </div>
+        </div>
+      </section>
+
+      <section className="pb-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Além deste pacote</p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
+            Outras soluções sob consulta
+          </h2>
+          <p className="text-slate-600 leading-relaxed">
+            Robô de WhatsApp, loja virtual, segurança da presença e o que o seu caso pedir fora desta página. Esses assuntos não têm preço publicado aqui. A conversa segue no mesmo WhatsApp.
+          </p>
         </div>
       </section>
 
@@ -332,7 +355,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               O que costuma travar a decisão
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              Instagram, pressa no Google, esperar o movimento ou saber o que cabe no orçamento. O restante está nas{' '}
+              O valor, a renovação e o que o Google não promete. O restante está nas{' '}
               <a href="/faq" onClick={(event) => { event.preventDefault(); go('/faq'); }} className="font-semibold text-cyan-800">perguntas frequentes</a>.
             </p>
           </div>
@@ -347,7 +370,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Se fizer sentido, a gente segue no WhatsApp
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
-              Você conta como o negócio atende hoje. A Sentinel entende a necessidade e manda uma proposta por escrito. Preço e prazo ficam nessa proposta.
+              O site essencial está publicado aqui: 12 parcelas de R$ 50, total de R$ 600. O primeiro pagamento é na contratação. Se for este o caso, a conversa segue no WhatsApp.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
@@ -358,7 +381,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 className="w-full sm:w-auto px-5 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4" />
-                Quero uma proposta no WhatsApp
+                Quero esse site no WhatsApp
               </a>
               <button
                 type="button"

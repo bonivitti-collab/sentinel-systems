@@ -49,17 +49,17 @@ const PREP_STEPS = [
 const CHANNELS = [
   {
     title: 'Instagram',
-    text: 'Apresenta o trabalho e ajuda a criar relação com quem já acompanha você. Não concentra, sozinho, serviço, horário, endereço e WhatsApp.',
+    text: 'Mostra o trabalho para quem acompanha e pode gerar conversa. No perfil profissional dá para exibir categoria, contato, endereço e um caminho para o WhatsApp. Atenção no feed não é, por si, um pedido de orçamento.',
     icon: Camera,
   },
   {
     title: 'Google e Maps',
-    text: 'Ajudam quem busca um serviço na região a ver nome, endereço, horário e caminho. Não são o único jeito de conhecer a empresa.',
+    text: 'Ajudam quem busca um serviço na região a ver nome, endereço, horário e caminho. O perfil é outra superfície, diferente do site, e precisa ser configurado e atualizado.',
     icon: MapPin,
   },
   {
     title: 'Site',
-    text: 'Reúne o que você faz, as informações e o contato. A pessoa tira a dúvida e, se quiser, pede o orçamento no WhatsApp.',
+    text: 'Organiza serviços, informações e contato para a pessoa decidir. Precisa ser divulgado e cuidado. Sozinho, não cria o perfil no Google nem garante visita.',
     icon: Phone,
   },
 ] as const;
@@ -147,6 +147,49 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       <section className="py-16 bg-slate-50 border-y border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Os caminhos</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Seu negócio não precisa depender só do Instagram
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              Publicar e receber atenção não é o mesmo que um pedido de orçamento. Quem usa o feed como estratégia dedica tempo a conteúdo recorrente. O alcance depende do que a plataforma mostra, e isso não está garantido.
+            </p>
+            <p className="mt-3 text-slate-600 text-base leading-relaxed">
+              Nem todo mundo começa no mesmo lugar. Numa mesma decisão, ela pode abrir o Instagram e ele o Google. Alguns clientes descobrem pelo feed. Outros buscam o serviço no Google e no Maps, com a localização e as informações do perfil.
+            </p>
+            <p className="mt-3 text-slate-600 text-base leading-relaxed">
+              Imagine alguém planejando comprar moda praia em Cabo Frio. A busca pode começar no Instagram, no Google ou no Maps. A loja precisa apresentar claramente o que vende, onde fica e como falar com você.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <article className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+              <h3 className="text-lg font-extrabold text-slate-900 mb-2">Seguidores e curtidas</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Mostram atenção. Não são clientes e não fecham a venda. Sem olhar a conta de verdade, isso não é um diagnóstico.
+              </p>
+            </article>
+            <article className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+              <h3 className="text-lg font-extrabold text-slate-900 mb-2">Postar e informar</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Postar todo dia pede tempo e não garante alcance nem intenção de compra. O que ajuda a decidir é o que você vende, onde fica e como chamar.
+              </p>
+            </article>
+            <article className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+              <h3 className="text-lg font-extrabold text-slate-900 mb-2">Um canal e vários</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Existir no Instagram não resolve sozinho o caminho até o orçamento. Instagram, Google, Maps, site e WhatsApp entram em momentos diferentes.
+              </p>
+            </article>
+          </div>
+          <p className="mt-4 max-w-3xl text-sm text-slate-600 leading-relaxed">
+            O site organiza essa apresentação. Ele precisa ser divulgado, atualizado e encontrado. Deixá-lo no ar não traz o cliente sozinho, não cria o perfil no Google e não garante posição no mapa. Visibilidade ajuda. A contratação também depende da oferta, do preço e do atendimento.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-8">
             <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">A escolha</p>

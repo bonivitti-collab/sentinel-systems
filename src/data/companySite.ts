@@ -173,11 +173,11 @@ export const HOME_FAQ = [
 export const FAQ = [
   {
     q: 'Já tenho Instagram. Por que preciso de um site?',
-    a: 'O Instagram apresenta o trabalho e ajuda a criar relação com quem já segue você. Ele continua útil. Só não concentra, numa página só, os serviços, o horário, o endereço e um caminho claro para o WhatsApp. O Google e o Maps ajudam quem está procurando um serviço na região. O site reúne as informações para a pessoa conferir e chamar. Um completa o outro.',
+    a: 'O Instagram funciona e pode gerar contato. No perfil profissional dá para mostrar categoria, contato, endereço e um caminho para o WhatsApp, além do trabalho no feed. Seguidores e curtidas não são clientes, e postar todo dia não garante alcance nem um pedido de orçamento: o que aparece depende da plataforma. Outra pessoa pode procurar o serviço no Google e no Maps. O site organiza a decisão, mas também precisa ser divulgado e atualizado. Instagram, Google, Maps, site e WhatsApp se completam.',
   },
   {
     q: 'O site vai aparecer em primeiro no Google?',
-    a: 'Não. Não há como prometer o primeiro lugar, nem um resultado rápido. Ter um site não garante posição no Google. A Sentinel deixa o site e o Perfil da Empresa claros e coerentes, para quem procura na região conseguir te conhecer. A posição muda com o tempo e depende de fatores que ninguém controla por completo.',
+    a: 'Não. O site não cria o perfil no Google nem no Maps, e nenhum dos dois garante a primeira posição ou aparecer ao lado de quem pesquisa. O perfil é outra superfície: precisa ser configurado e atualizado, e nem toda empresa entra do mesmo jeito. A Sentinel organiza site e perfil para quem procura na região. A posição muda com o tempo.',
   },
   {
     q: 'Vale esperar o movimento melhorar?',

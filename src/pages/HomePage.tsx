@@ -211,10 +211,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="max-w-3xl mb-8">
             <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">A escolha</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-              Se a outra opção está mais clara, o cliente pode ir nela
+              Se o seu concorrente facilita a escolha, o cliente pode escolher ele.
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              Não é um concorrente seu, nem uma posição no Google. É o que pode acontecer quando alguém compara duas opções na região e uma responde o que a outra deixa em aberto.
+              Enquanto seu negócio deixa dúvidas sobre serviços, horários ou como entrar em contato, outra empresa pode apresentar tudo com clareza. Você não precisa esperar perder uma oportunidade para organizar sua presença digital.
             </p>
           </div>
           <p className="text-sm font-bold text-slate-900 mb-1">Um cliente procurando um serviço na região encontra duas opções.</p>

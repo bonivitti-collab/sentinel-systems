@@ -268,7 +268,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Começar antes do movimento aumentar dá tempo para esse preparo. A indexação, a posição no Google e o resultado não têm data prometida.
             </p>
             <p>
-              Preparar antes não garante como a empresa vai aparecer na temporada. O que esse tempo permite é corrigir serviço, localização e contato sem a pressa do movimento.
+              Começar antes da temporada dá tempo de apresentar melhor seus serviços, organizar sua presença no Google e facilitar o contato. Assim, quando o movimento aumentar, seu negócio estará mais preparado para receber quem procura o que você oferece.
             </p>
             <p>
               A temporada deixa a situação clara. O mesmo cuidado da {SITE.name} vale para outros negócios locais no Brasil: site, Perfil da Empresa no Google e segurança dessa presença.

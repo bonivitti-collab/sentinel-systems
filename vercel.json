@@ -21,7 +21,6 @@
   "rewrites": [
     { "source": "/sobre", "destination": "/sobre/index.html" },
     { "source": "/servicos", "destination": "/servicos/index.html" },
-    { "source": "/produtos", "destination": "/produtos/index.html" },
     { "source": "/faq", "destination": "/faq/index.html" },
     { "source": "/contato", "destination": "/contato/index.html" }
   ],

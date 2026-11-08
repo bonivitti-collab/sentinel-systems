@@ -1,6 +1,6 @@
 import { type MouseEvent } from 'react';
 import { ArrowUp, Mail, MessageCircle } from 'lucide-react';
-import { NAV_LINKS, PRODUCTS, SERVICES, SITE, whatsappHref } from '../data/companySite';
+import { NAV_LINKS, SERVICES, SITE, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
 import { SentinelLogo } from './SentinelLogo';
 
@@ -81,13 +81,6 @@ export function Footer({ onNavigate }: FooterProps) {
               <li className="text-xs text-slate-500 leading-relaxed">
                 Atendimento digital para negócios no Brasil.
               </li>
-              {PRODUCTS.map((product) => (
-                <li key={product.name}>
-                  <a href={product.href} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-700">
-                    {product.name}
-                  </a>
-                </li>
-              ))}
             </ul>
           </div>
         </div>

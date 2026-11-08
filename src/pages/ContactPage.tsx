@@ -8,7 +8,6 @@ const INTERESTS = [
   'Ser encontrado no Google e no Maps',
   'Site rápido que recebe o cliente',
   'Segurança e blindagem digital',
-  'Produtos (MiraLocal, Cota Casa ou RDO Zap)',
   'Ainda não sei — quero conversar',
 ];
 

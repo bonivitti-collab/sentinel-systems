@@ -5,7 +5,7 @@ export const SITE = {
   phoneWa: '5522999726069',
   email: 'sentinelsystemsai@gmail.com',
   whatsappText:
-    'Olá! Vim pelo site da Sentinel Systems. Quero o site essencial com a configuração básica do Perfil da Empresa no Google, em 12 parcelas de R$ 50.',
+    'Olá! Vim pelo site da Sentinel Systems. Quero o site essencial com a configuração básica do Perfil da Empresa no Google. Vi as 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
 } as const;
 
 export function whatsappHref(text: string = SITE.whatsappText): string {
@@ -174,15 +174,15 @@ export const HOME_FAQ = [
 export const FAQ = [
   {
     q: 'O que entra nos R$ 600?',
-    a: 'Você recebe uma página do seu negócio, pronta para o celular, com até cinco seções. Nela ficam seus serviços, a localização e o botão de WhatsApp.\n\nOs textos saem do material que você enviar, e há uma rodada de ajustes. Também configuramos o básico do Perfil da Empresa no Google, se o seu negócio for elegível. O perfil é gratuito: os R$ 600 pagam esse trabalho. A verificação depende do Google.\n\nO domínio .com.br entra se o nome estiver disponível, com hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome. Não prometemos posição no Google, nem que seus clientes encontrem você ou comprem.',
+    a: 'Você recebe uma página do seu negócio, pronta para o celular, com até cinco seções. Nela ficam seus serviços, a localização e o botão de WhatsApp.\n\nOs textos saem do material que você enviar, e há uma rodada de ajustes. Também configuramos o básico do Perfil da Empresa no Google, se o seu negócio for elegível. O perfil é gratuito: o valor do pacote paga esse trabalho. Nas 12 parcelas, o total é R$ 600. À vista, são R$ 540 na contratação, com 10% de desconto. Esse desconto vale só nesta primeira contratação, não na renovação nem em outros serviços. A verificação depende do Google.\n\nO domínio .com.br entra se o nome estiver disponível, com hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome. Não prometemos posição no Google, nem que seus clientes encontrem você ou comprem.',
   },
   {
     q: 'Isso é uma mensalidade?',
-    a: 'Não. Você paga a criação em 12 parcelas de R$ 50, no total de R$ 600. O primeiro pagamento é na contratação. Os outros 11 são mensais.\n\nNão há mensalidade obrigatória de acompanhamento.',
+    a: 'Não. A criação pode ser paga em 12 parcelas de R$ 50, no total de R$ 600, ou à vista por R$ 540 na contratação, com 10% de desconto. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. À vista, o valor integral é na contratação. O desconto vale só nesta primeira contratação do pacote, não na renovação nem em outros serviços.\n\nNão há mensalidade obrigatória de acompanhamento.',
   },
   {
     q: 'E depois dos 12 meses?',
-    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção e não renova sozinha.\n\nSe você não renovar, a hospedagem não continua de graça. O domínio continua no seu nome. Se quiser levar o site, os acessos são entregues, sem taxa de resgate.',
+    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. O desconto de 10% da primeira contratação não se aplica a esta renovação. Não inclui manutenção e não renova sozinha.\n\nSe você não renovar, a hospedagem não continua de graça. O domínio continua no seu nome. Se quiser levar o site, os acessos são entregues, sem taxa de resgate.',
   },
   {
     q: 'Já tenho Instagram. Preciso do site mesmo assim?',
@@ -198,7 +198,7 @@ export const FAQ = [
   },
   {
     q: 'Como começamos?',
-    a: 'A conversa começa no WhatsApp. Para o site essencial, o valor publicado é de 12 parcelas de R$ 50 e o primeiro pagamento é na contratação. O que ficar fora desse pacote é conversado à parte, sem preço avulso nesta página. Se não fizer sentido, nada começa.',
+    a: 'A conversa começa no WhatsApp. Para o site essencial, o valor publicado é de 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista na contratação, com 10% de desconto. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. À vista, o valor integral é na contratação. O desconto vale só nesta primeira contratação do pacote. O que ficar fora desse pacote é conversado à parte, sem preço avulso nesta página. Se não fizer sentido, nada começa.',
   },
   {
     q: 'A Sentinel vende um site ou o resultado no Google?',
@@ -238,7 +238,7 @@ export const FAQ = [
   },
   {
     q: 'Quanto custa?',
-    a: 'O site essencial com a configuração básica do Perfil da Empresa no Google custa 12 parcelas de R$ 50, no total de R$ 600. É o parcelamento da criação. Outras soluções ficam sob consulta e não têm preço publicado aqui.',
+    a: 'O site essencial com a configuração básica do Perfil da Empresa no Google custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista, com 10% de desconto. O desconto vale só nesta primeira contratação do pacote, não na renovação de R$ 180 nem em outros serviços. Outras soluções ficam sob consulta e não têm preço publicado aqui.',
   },
   {
     q: 'Vocês atendem a minha cidade?',

@@ -355,17 +355,18 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5 sm:p-6">
-            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700">Criação parcelada</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700">Valor da criação</p>
             <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">12 parcelas de R$ 50</h2>
             <p className="mt-1 text-base font-bold text-slate-800">Total de R$ 600</p>
+            <p className="mt-1 text-base font-bold text-slate-800">ou R$ 540 à vista, com 10% de desconto</p>
             <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-              É o parcelamento da criação, não uma mensalidade para sempre. O primeiro pagamento é na contratação. Os outros 11 são mensais. Não há mensalidade obrigatória de acompanhamento.
+              É o parcelamento da criação, não uma mensalidade para sempre. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. À vista, os R$ 540 são pagos por inteiro na contratação. O desconto de 10% vale só nesta primeira contratação do pacote, não na renovação nem em outros serviços. Não há mensalidade obrigatória de acompanhamento.
             </p>
             <p className="mt-2 text-sm text-slate-600 leading-relaxed">
               Inclui um domínio .com.br, se o nome estiver disponível, e a hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome.
             </p>
             <p className="mt-3 text-xs sm:text-sm text-slate-500 leading-relaxed">
-              Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção e não renova sozinha. Sem esse combinado, a hospedagem não continua de graça. Você pode levar o site e o domínio.
+              Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. Esse valor não tem o desconto de 10%. Não inclui manutenção e não renova sozinha. Sem esse combinado, a hospedagem não continua de graça. Você pode levar o site e o domínio.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6">
               <a

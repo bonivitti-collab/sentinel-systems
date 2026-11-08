@@ -8,6 +8,44 @@ interface HomePageProps {
   onNavigate: (path: string) => void;
 }
 
+const OBSTACLES = [
+  {
+    title: 'Horário',
+    text: 'A pessoa quer saber se chama agora, se espera até amanhã ou se o atendimento é só em alguns dias.',
+  },
+  {
+    title: 'Onde atende',
+    text: 'Pode ser perto, em casa, com entrega ou com ida até o cliente. Sem isso, ela não sabe se você resolve o caso dela.',
+  },
+  {
+    title: 'Serviço',
+    text: 'O que entra, o que fica de fora e para quem é. Uma frase bonita não substitui essa resposta.',
+  },
+  {
+    title: 'Preço, quando cabe',
+    text: 'Se o valor pode ser dito, a dúvida não precisa esperar a conversa. Se depende do caso, explique como o orçamento é pedido.',
+  },
+  {
+    title: 'WhatsApp',
+    text: 'Quem já decidiu falar precisa ver o próximo passo. O contato escondido devolve a pessoa para a comparação.',
+  },
+] as const;
+
+const PREP_STEPS = [
+  {
+    title: 'Informação consistente',
+    text: 'Serviço, endereço, horário e WhatsApp iguais no site e no perfil do Google. O que muda de um lugar para o outro gera dúvida.',
+  },
+  {
+    title: 'Teste no celular',
+    text: 'Alguém abre a página no telefone, entende o que você faz e consegue chamar. Se travar aqui, trava na hora em que a pessoa decide.',
+  },
+  {
+    title: 'Ajuste com calma',
+    text: 'O que ficou confuso se corrige antes do movimento aumentar. Na correria, o ajuste vira pressa.',
+  },
+] as const;
+
 const CHANNELS = [
   {
     title: 'Instagram',
@@ -82,7 +120,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Quem visita nem sempre conhece o comércio local
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              Em cidade de temporada, chega gente que não tem o lugar de sempre. Ela pode procurar na hora. “Salão perto de mim”, “restaurante em [nome da cidade]” e “serviço aberto agora” são exemplos de intenção, não uma pesquisa.
+              Em cidade de temporada, chega gente que ainda não conhece o comércio local. Uma pessoa pode procurar e comparar na hora, por exemplo “salão perto de mim”, “restaurante em [nome da cidade]” ou “serviço aberto agora”. Nem toda visita começa assim.
+            </p>
+            <p className="mt-3 text-slate-600 text-base leading-relaxed">
+              Quem está comparando pode olhar mais de uma opção antes de chamar. O Instagram, o Google e o site entram em momentos diferentes, e um não faz o trabalho do outro.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -102,27 +143,98 @@ export function HomePage({ onNavigate }: HomePageProps) {
               );
             })}
           </div>
-          <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-3xl">
-            Cuidar do site e do perfil não garante o primeiro lugar no Google, nem um efeito de um dia para o outro.
-          </p>
         </div>
       </section>
 
       <section className="py-16 bg-slate-50 border-y border-slate-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-6">
-            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Para além da temporada</p>
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">A escolha</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-              O mesmo cuidado para outros negócios locais
+              Se a outra opção está mais clara, o cliente pode ir nela
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              A cidade de temporada deixa a situação clara. O serviço da {SITE.name} não fica preso a ela: site, Perfil da Empresa no Google e segurança dessa presença, para negócios locais no Brasil.
+              Não é um concorrente seu, nem uma posição no Google. É o que pode acontecer quando alguém compara duas opções na região e uma responde o que a outra deixa em aberto.
+            </p>
+          </div>
+          <p className="text-sm font-bold text-slate-900 mb-1">Um cliente procurando um serviço na região encontra duas opções.</p>
+          <p className="text-sm text-slate-500 mb-4">Exemplo ilustrativo, não um caso real.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <article className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+              <h3 className="text-lg font-extrabold text-slate-900 mb-2">A opção fácil de entender</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Dá para ver o que é oferecido, a localização, o horário e um contato. A pessoa sabe se aquele lugar resolve o que ela procura e como chamar.
+              </p>
+            </article>
+            <article className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+              <h3 className="text-lg font-extrabold text-slate-900 mb-2">A opção que deixa dúvida</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                O nome aparece, mas faltam o serviço, o horário, onde atende ou um jeito simples de chamar. A comparação fica mais difícil, e a pessoa pode seguir na outra.
+              </p>
+            </article>
+          </div>
+          <p className="mt-4 max-w-3xl text-sm text-slate-600 leading-relaxed">
+            Se a sua empresa é a que deixa a dúvida, o cliente pode escolher a outra. Pode, não é uma sentença. Isso também não exige que a outra esteja em primeiro lugar.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Antes do contato</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              A pessoa trava em dúvidas práticas
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              O visual ajuda a confiança, mas não responde sozinho. Antes de chamar, ela tenta tirar estas dúvidas.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {OBSTACLES.map((item) => (
+              <article key={item.title} className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+                <h3 className="text-lg font-extrabold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-slate-50 border-y border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">O tempo do preparo</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Prepare seu negócio antes da próxima temporada.
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              Montar o site, configurar o perfil no Google e deixar as informações coerentes pede planejamento. Testar no celular, ver se o contato funciona e ajustar o que ficou confuso também.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {PREP_STEPS.map((step) => (
+              <article key={step.title} className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+                <h3 className="text-lg font-extrabold text-slate-900 mb-2">{step.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{step.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="max-w-3xl mt-6 space-y-3 text-slate-600 text-base leading-relaxed">
+            <p>
+              Começar antes do movimento aumentar dá tempo para esse preparo. A indexação, a posição no Google e o resultado não têm data prometida.
+            </p>
+            <p>
+              Preparar antes não garante como a empresa vai aparecer na temporada. O que esse tempo permite é corrigir serviço, localização e contato sem a pressa do movimento.
+            </p>
+            <p>
+              A temporada deixa a situação clara. O mesmo cuidado da {SITE.name} vale para outros negócios locais no Brasil: site, Perfil da Empresa no Google e segurança dessa presença.
             </p>
           </div>
           <button
             type="button"
             onClick={() => go('/sobre')}
-            className="inline-flex items-center gap-2 text-sm font-bold text-cyan-800 hover:text-cyan-950 cursor-pointer"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyan-800 hover:text-cyan-950 cursor-pointer"
           >
             Conhecer a empresa
             <ArrowRight className="w-4 h-4" />
@@ -138,7 +250,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               O que entra no trabalho
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              Três frentes que a Sentinel já oferece. Nenhuma é um plano novo.
+              O site, o Google e a segurança dessa presença são o trabalho da Sentinel para serviço, localização e contato ficarem coerentes.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -177,7 +289,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               O que costuma travar a decisão
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              Três respostas diretas. O restante está nas{' '}
+              Instagram, pressa no Google, esperar o movimento ou saber o que cabe no orçamento. O restante está nas{' '}
               <a href="/faq" onClick={(event) => { event.preventDefault(); go('/faq'); }} className="font-semibold text-cyan-800">perguntas frequentes</a>.
             </p>
           </div>

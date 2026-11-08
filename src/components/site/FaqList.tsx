@@ -2,10 +2,12 @@ import { ChevronDown } from 'lucide-react';
 import { FAQ } from '../../data/companySite';
 import { soundFx } from '../SoundEffects';
 
-export function FaqList() {
+export function FaqList({ questions }: { questions?: readonly string[] }) {
+  const items = questions ? FAQ.filter((item) => questions.includes(item.q)) : FAQ;
+
   return (
     <div className="space-y-3">
-      {FAQ.map((item, idx) => (
+      {items.map((item, idx) => (
         <details
           key={item.q}
           open={idx === 0}

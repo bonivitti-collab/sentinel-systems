@@ -12,11 +12,11 @@ interface HomePageProps {
 const OBSTACLES = [
   {
     title: 'Horário',
-    text: 'A pessoa quer saber se chama agora, se espera até amanhã ou se o atendimento é só em alguns dias.',
+    text: 'O cliente quer saber se chama agora, se espera até amanhã ou se o atendimento é só em alguns dias.',
   },
   {
     title: 'Onde atende',
-    text: 'Pode ser perto, em casa, com entrega ou com ida até o cliente. Sem isso, ela não sabe se você resolve o caso dela.',
+    text: 'Pode ser perto, em casa, com entrega ou com ida até o cliente. Sem isso, ele não sabe se você resolve o caso dele.',
   },
   {
     title: 'Serviço',
@@ -28,7 +28,7 @@ const OBSTACLES = [
   },
   {
     title: 'WhatsApp',
-    text: 'Quem já decidiu falar precisa ver o próximo passo. O contato escondido devolve a pessoa para a comparação.',
+    text: 'Quem já decidiu falar precisa ver o próximo passo. O contato escondido devolve o cliente para a comparação.',
   },
 ] as const;
 
@@ -245,10 +245,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="max-w-3xl mb-8">
             <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Antes do contato</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-              A pessoa trava em dúvidas práticas
+              O cliente trava em dúvidas práticas
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              O visual ajuda a confiança, mas não responde sozinho. Antes de chamar, ela tenta tirar estas dúvidas.
+              O visual ajuda a confiança, mas não responde sozinho. Antes de chamar, ele tenta tirar estas dúvidas.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

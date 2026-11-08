@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brasa &amp; Folha · modelo demonstrativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="logo" href="index.html">Brasa &amp; Folha</a>
+        <nav class="desktop" aria-label="Seções">
+          <a href="cardapio.html">Cardápio</a>
+          <a href="casa.html">A casa</a>
+          <a href="contato.html">Contato</a>
+          <span class="pill">Modelo demonstrativo</span>
+          <a class="btn" href="reserva.html">Reservar</a>
+        </nav>
+        <div class="mobile-end">
+          <a class="btn" href="reserva.html">Reservar</a>
+          <details class="drawer">
+            <summary>Menu</summary>
+            <nav class="sheet" aria-label="Seções">
+              <a href="cardapio.html">Cardápio</a>
+              <a href="casa.html">A casa</a>
+              <a href="reserva.html">Reservar</a>
+              <a href="contato.html">Contato</a>
+              <span class="pill">Modelo demonstrativo</span>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+    <main id="conteudo">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="wrap" style="width:auto;margin:0">
+            <p class="kicker">Restaurante</p>
+            <h1>A mesa está posta.</h1>
+            <p class="lead">O cardápio traz o prato e o preço. A reserva se faz por aqui, sem procurar o telefone.</p>
+            <div class="row">
+              <a class="btn" href="reserva.html">Reservar mesa</a>
+              <a class="btn light" href="cardapio.html">Ver o cardápio</a>
+            </div>
+            <p class="hours">Almoço e jantar, de quarta a domingo. Segunda e terça fechado. Horário de exemplo.</p>
+          </div>
+        </div>
+        <img class="hero-photo" src="img/mesa.jpg" width="1600" height="1067" alt="Mesa posta com um prato sendo servido, pão e taças. Fotografia ilustrativa deste modelo." />
+      </section>
+      <section class="wrap page" aria-labelledby="hoje">
+        <p class="kicker" id="hoje">Hoje na casa</p>
+        <h2 style="font-size:42px;margin:8px 0 0">Três pratos para decidir.</h2>
+        <div class="menu">
+          <article class="dish">
+            <img src="img/massa.jpg" width="1200" height="1200" alt="Penne ao molho vermelho com carne e queijo. Fotografia ilustrativa." />
+            <div>
+              <h2>Penne ao molho vermelho</h2>
+              <p>Massa, molho de tomate, carne moída, pimenta e queijo.</p>
+            </div>
+            <div class="price">R$ 46</div>
+          </article>
+          <article class="dish">
+            <img src="img/salada.jpg" width="900" height="900" alt="Tigela com folhas, tomate, milho, ovo e tofu. Fotografia ilustrativa." />
+            <div>
+              <h2>Tigela da horta</h2>
+              <p>Folhas, tomate, milho, pepino, edamame, ovo e tofu grelhado.</p>
+            </div>
+            <div class="price">R$ 39</div>
+          </article>
+          <article class="dish">
+            <img src="img/pratos.jpg" width="1200" height="800" alt="Três tigelas com carnes, folhas e molho sobre a mesa. Fotografia ilustrativa." />
+            <div>
+              <h2>Travessa para a mesa</h2>
+              <p>Três tigelas para dividir: carne fatiada, cubos dourados e tiras na grelha.</p>
+            </div>
+            <div class="price">R$ 96</div>
+          </article>
+        </div>
+        <p class="row"><a class="btn" href="cardapio.html">Abrir o cardápio completo</a></p>
+      </section>
+    </main>
+    <footer class="site">
+      <div class="wrap foot">
+        <div>
+          <strong>Brasa &amp; Folha</strong>
+          <p>Restaurante fictício. Nenhum contato desta página é real. A reserva não marca mesa e não pede dados pessoais.</p>
+        </div>
+        <nav aria-label="No rodapé">
+          <a href="index.html">Início</a>
+          <a href="cardapio.html">Cardápio</a>
+          <a href="casa.html">A casa</a>
+          <a href="reserva.html">Reservar</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </footer>
+    <dialog id="demo-dialog">
+      <h2 id="demo-title"></h2>
+      <p id="demo-text"></p>
+      <button class="btn" type="button" onclick="closeDemo()">Fechar demonstração</button>
+    </dialog>
+    <script src="../demo.js"></script>
+  </body>
+</html>

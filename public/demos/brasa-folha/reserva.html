@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reservar · Brasa &amp; Folha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="logo" href="index.html">Brasa &amp; Folha</a>
+        <nav class="desktop" aria-label="Seções">
+          <a href="cardapio.html">Cardápio</a>
+          <a href="casa.html">A casa</a>
+          <a href="contato.html">Contato</a>
+          <span class="pill">Modelo demonstrativo</span>
+          <a class="btn" href="reserva.html" aria-current="page">Reservar</a>
+        </nav>
+        <div class="mobile-end">
+          <a class="btn" href="reserva.html" aria-current="page">Reservar</a>
+          <details class="drawer">
+            <summary>Menu</summary>
+            <nav class="sheet" aria-label="Seções">
+              <a href="cardapio.html">Cardápio</a>
+              <a href="casa.html">A casa</a>
+              <a href="reserva.html" aria-current="page">Reservar</a>
+              <a href="contato.html">Contato</a>
+              <span class="pill">Modelo demonstrativo</span>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+    <main id="conteudo" class="wrap page" data-flow>
+      <p class="kicker">Reserva de exemplo</p>
+      <h1>Separe uma mesa nesta tela.</h1>
+      <p class="lead">Escolha quantas pessoas, o dia e a hora. A confirmação fica só aqui. Nenhum nome é pedido e nenhuma mesa é reservada.</p>
+      <div data-flow-setup>
+        <fieldset data-group data-label="Pessoas">
+          <legend>Pessoas</legend>
+          <div class="choices">
+            <button type="button" class="choice" data-choice data-value="2 pessoas" aria-pressed="false"><b>2</b><span>uma mesa</span></button>
+            <button type="button" class="choice" data-choice data-value="3 pessoas" aria-pressed="false"><b>3</b><span>uma mesa</span></button>
+            <button type="button" class="choice" data-choice data-value="4 pessoas" aria-pressed="false"><b>4</b><span>uma mesa</span></button>
+          </div>
+        </fieldset>
+        <fieldset data-group data-label="Dia">
+          <legend>Dia de exemplo</legend>
+          <div class="choices">
+            <button type="button" class="choice" data-choice data-value="sexta 14" aria-pressed="false"><b>Sexta 14</b><span>almoço e jantar</span></button>
+            <button type="button" class="choice" data-choice data-value="sábado 15" aria-pressed="false"><b>Sábado 15</b><span>almoço e jantar</span></button>
+            <button type="button" class="choice" data-choice data-value="domingo 16" aria-pressed="false"><b>Domingo 16</b><span>almoço</span></button>
+          </div>
+        </fieldset>
+        <fieldset data-group data-label="Hora">
+          <legend>Hora de exemplo</legend>
+          <div class="choices">
+            <button type="button" class="choice" data-choice data-value="12h30" aria-pressed="false"><b>12h30</b><span>almoço</span></button>
+            <button type="button" class="choice" data-choice data-value="13h" aria-pressed="false"><b>13h</b><span>almoço</span></button>
+            <button type="button" class="choice" data-choice data-value="19h" aria-pressed="false"><b>19h</b><span>jantar</span></button>
+            <button type="button" class="choice" data-choice data-value="19h30" aria-pressed="false"><b>19h30</b><span>jantar</span></button>
+            <button type="button" class="choice" disabled><b>20h30</b><span>exemplo ocupado</span></button>
+          </div>
+        </fieldset>
+        <p class="status" data-flow-status role="status"></p>
+        <button type="button" class="btn" data-flow-confirm>Ver a confirmação de exemplo</button>
+      </div>
+      <div class="result panel" data-flow-result hidden>
+        <p class="kicker">Fim da demonstração</p>
+        <h2>Nenhuma mesa foi reservada.</h2>
+        <p data-flow-summary></p>
+        <p>Esta tela mostra o que a pessoa veria ao concluir. Nada foi enviado, nenhum telefone foi pedido, e a mesa não existe.</p>
+        <p class="row"><button type="button" class="btn light" data-flow-reset>Escolher de novo</button></p>
+      </div>
+    </main>
+    <footer class="site">
+      <div class="wrap foot">
+        <div>
+          <strong>Brasa &amp; Folha</strong>
+          <p>Restaurante fictício. Nenhum contato desta página é real. A reserva não marca mesa e não pede dados pessoais.</p>
+        </div>
+        <nav aria-label="No rodapé">
+          <a href="index.html">Início</a>
+          <a href="cardapio.html">Cardápio</a>
+          <a href="casa.html">A casa</a>
+          <a href="reserva.html">Reservar</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </footer>
+    <dialog id="demo-dialog">
+      <h2 id="demo-title"></h2>
+      <p id="demo-text"></p>
+      <button class="btn" type="button" onclick="closeDemo()">Fechar demonstração</button>
+    </dialog>
+    <script src="../demo.js"></script>
+  </body>
+</html>

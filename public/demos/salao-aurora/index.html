@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Salão Aurora · modelo demonstrativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="logo" href="index.html">Aurora</a>
+        <nav class="desktop" aria-label="Seções">
+          <a href="servicos.html">Serviços</a>
+          <a href="espaco.html">O espaço</a>
+          <a href="contato.html">Contato</a>
+          <span class="pill">Modelo demonstrativo</span>
+          <a class="btn" href="agenda.html">Agendar</a>
+        </nav>
+        <div class="mobile-end">
+          <a class="btn" href="agenda.html">Agendar</a>
+          <details class="drawer">
+            <summary>Menu</summary>
+            <nav class="sheet" aria-label="Seções">
+              <a href="servicos.html">Serviços</a>
+              <a href="espaco.html">O espaço</a>
+              <a href="agenda.html">Agendar</a>
+              <a href="contato.html">Contato</a>
+              <span class="pill">Modelo demonstrativo</span>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+    <main id="conteudo">
+      <section class="wrap hero">
+        <div>
+          <p class="kicker">Cabeleireiro</p>
+          <h1>O salão com hora marcada.</h1>
+          <p class="lead">Corte, coloração e tratamento, com o tempo de cadeira e o valor ao lado de cada serviço. O horário se pede por aqui.</p>
+          <div class="row">
+            <a class="btn" href="agenda.html">Agendar horário</a>
+            <a class="btn light" href="servicos.html">Ver serviços</a>
+          </div>
+          <p class="hours">Terça a sábado, da manhã ao fim da tarde. Segunda e domingo fechado. Horário de exemplo.</p>
+        </div>
+        <img class="hero-photo" src="img/atendimento.jpg" width="1600" height="1068" alt="Profissional finalizando o cabelo de uma cliente. Fotografia ilustrativa deste modelo." />
+      </section>
+      <section class="band" aria-labelledby="servicos-titulo">
+        <div class="wrap">
+          <p class="kicker" id="servicos-titulo">Serviços</p>
+          <div class="trio" style="margin-top:14px">
+            <article class="card">
+              <img src="img/salao.jpg" width="1400" height="1050" alt="Sala do salão com cadeiras, espelhos e bancada. Fotografia ilustrativa." />
+              <div>
+                <h2>Corte</h2>
+                <p>Formato, lavagem e finalização. A duração de exemplo é de uma hora.</p>
+                <span class="price">R$ 90 de exemplo</span>
+              </div>
+            </article>
+            <article class="card">
+              <img src="img/cor.jpg" width="900" height="601" alt="Cabelo longo com mechas claras. Fotografia ilustrativa do serviço de cor." />
+              <div>
+                <h2>Coloração</h2>
+                <p>Raiz, tom ou mechas. O tempo muda com o comprimento do cabelo.</p>
+                <span class="price">A partir de R$ 180</span>
+              </div>
+            </article>
+            <article class="card">
+              <img src="img/atendimento.jpg" width="1600" height="1068" alt="Escova e secador durante um atendimento. Fotografia ilustrativa." />
+              <div>
+                <h2>Tratamento</h2>
+                <p>Hidratação para cabelo ressecado. Quarenta e cinco minutos de exemplo.</p>
+                <span class="price">R$ 70 de exemplo</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="wrap split">
+        <img src="img/salao.jpg" width="1400" height="1050" alt="Cadeiras voltadas para a janela e prateleira de produtos. Fotografia ilustrativa do espaço." />
+        <div>
+          <p class="kicker">O espaço</p>
+          <h2>Uma cadeira, um horário.</h2>
+          <p class="lead">A visita de exemplo começa com uma conversa sobre o corte e termina no horário combinado. A fotografia mostra a sala usada neste modelo.</p>
+          <p class="row"><a class="btn light" href="espaco.html">Conhecer o espaço</a></p>
+        </div>
+      </section>
+      <section class="wrap steps" aria-label="Como o visitante chega ao horário">
+        <article>
+          <strong>1. O serviço</strong>
+          <p class="lead">A pessoa vê o que entra na visita e o valor de exemplo.</p>
+        </article>
+        <article>
+          <strong>2. O horário</strong>
+          <p class="lead">Ela escolhe um dia e uma hora nesta demonstração.</p>
+        </article>
+        <article>
+          <strong>3. A tela</strong>
+          <p class="lead">A confirmação fica só na página. Nenhum horário real é marcado.</p>
+        </article>
+      </section>
+    </main>
+    <footer class="site">
+      <div class="wrap foot">
+        <div>
+          <strong>Salão Aurora</strong>
+          <p>Negócio fictício. Nenhum contato desta página é real. O agendamento não marca horário e não pede dados pessoais.</p>
+        </div>
+        <nav aria-label="No rodapé">
+          <a href="index.html">Início</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="espaco.html">O espaço</a>
+          <a href="agenda.html">Agendar</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </footer>
+    <dialog id="demo-dialog">
+      <h2 id="demo-title"></h2>
+      <p id="demo-text"></p>
+      <button class="btn" type="button" onclick="closeDemo()">Fechar demonstração</button>
+    </dialog>
+    <script src="../demo.js"></script>
+  </body>
+</html>

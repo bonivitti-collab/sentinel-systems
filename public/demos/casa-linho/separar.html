@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Separar peça · Casa Linho</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="logo" href="index.html">Casa Linho</a>
+        <nav class="desktop" aria-label="Seções">
+          <a href="catalogo.html">Catálogo</a>
+          <a href="visita.html">Visita</a>
+          <a href="contato.html">Contato</a>
+          <span class="pill">Modelo demonstrativo</span>
+          <a class="btn" href="separar.html" aria-current="page">Separar peça</a>
+        </nav>
+        <div class="mobile-end">
+          <a class="btn" href="separar.html" aria-current="page">Separar</a>
+          <details class="drawer">
+            <summary>Menu</summary>
+            <nav class="sheet" aria-label="Seções">
+              <a href="catalogo.html">Catálogo</a>
+              <a href="visita.html">Visita</a>
+              <a href="separar.html" aria-current="page">Separar peça</a>
+              <a href="contato.html">Contato</a>
+              <span class="pill">Modelo demonstrativo</span>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+    <main id="conteudo" class="wrap page" data-flow>
+      <p class="kicker">Retirada de exemplo</p>
+      <h1>Separe a peça nesta tela.</h1>
+      <p class="lead">Escolha a peça e um dia de retirada. A confirmação fica só aqui. Nenhum estoque é reservado e nenhum dado pessoal é pedido.</p>
+      <div data-flow-setup>
+        <fieldset data-group data-label="Peça">
+          <legend>Peça</legend>
+          <div class="choices">
+            <button type="button" class="choice" data-choice data-id="terracota" data-value="Cama terracota" aria-pressed="false"><b>Cama terracota</b><span>R$ 480 de exemplo</span></button>
+            <button type="button" class="choice" data-choice data-id="clara" data-value="Cama clara" aria-pressed="false"><b>Cama clara</b><span>R$ 390 de exemplo</span></button>
+            <button type="button" class="choice" data-choice data-id="mantas" data-value="Manta" aria-pressed="false"><b>Manta</b><span>R$ 220 de exemplo</span></button>
+          </div>
+        </fieldset>
+        <fieldset data-group data-label="Retirada">
+          <legend>Dia de retirada</legend>
+          <div class="choices">
+            <button type="button" class="choice" data-choice data-value="quinta 13" aria-pressed="false"><b>Quinta 13</b><span>tarde</span></button>
+            <button type="button" class="choice" data-choice data-value="sexta 14" aria-pressed="false"><b>Sexta 14</b><span>manhã</span></button>
+            <button type="button" class="choice" data-choice data-value="sábado 15" aria-pressed="false"><b>Sábado 15</b><span>manhã</span></button>
+            <button type="button" class="choice" disabled><b>Domingo</b><span>exemplo fechado</span></button>
+          </div>
+        </fieldset>
+        <p class="status" data-flow-status role="status"></p>
+        <button type="button" class="btn" data-flow-confirm>Ver a confirmação de exemplo</button>
+      </div>
+      <div class="result panel" data-flow-result hidden>
+        <p class="kicker">Fim da demonstração</p>
+        <h2>Nenhuma peça foi separada.</h2>
+        <p data-flow-summary></p>
+        <p>Esta tela mostra o que a pessoa veria ao concluir. Nada foi enviado, nenhum nome foi pedido, e a peça continua só no catálogo de exemplo.</p>
+        <p class="row"><button type="button" class="btn light" data-flow-reset>Escolher de novo</button></p>
+      </div>
+    </main>
+    <footer class="site">
+      <div class="wrap foot">
+        <div>
+          <strong>Casa Linho</strong>
+          <p>Loja fictícia. Nenhum contato desta página é real. Separar uma peça não reserva estoque e não pede dados pessoais.</p>
+        </div>
+        <nav aria-label="No rodapé">
+          <a href="index.html">Início</a>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="terracota.html">Cama terracota</a>
+          <a href="clara.html">Cama clara</a>
+          <a href="mantas.html">Mantas</a>
+          <a href="visita.html">Visita</a>
+          <a href="separar.html">Separar peça</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </footer>
+    <dialog id="demo-dialog"><h2 id="demo-title"></h2><p id="demo-text"></p><button class="btn" type="button" onclick="closeDemo()">Fechar demonstração</button></dialog>
+    <script src="../demo.js"></script>
+  </body>
+</html>

@@ -4,16 +4,19 @@ import { soundFx } from './SoundEffects';
 const MODELS = [
   {
     src: '/modelos/salao-aurora.webp',
+    href: '/demos/salao-aurora/index.html',
     name: 'Salão Aurora',
     kind: 'Cabeleireiro',
   },
   {
     src: '/modelos/brasa-folha.webp',
+    href: '/demos/brasa-folha/index.html',
     name: 'Brasa & Folha',
     kind: 'Restaurante',
   },
   {
     src: '/modelos/casa-linho.webp',
+    href: '/demos/casa-linho/index.html',
     name: 'Casa Linho',
     kind: 'Loja',
   },
@@ -103,7 +106,7 @@ export function SiteModelCarousel() {
             Modelos demonstrativos criados pela Sentinel
           </h2>
           <p className="text-slate-600 leading-relaxed">
-            Negócios fictícios, para imaginar a página no computador. Não são clientes nem projetos entregues. Os modelos são o Salão Aurora, o restaurante Brasa &amp; Folha e a loja Casa Linho.
+            Três negócios fictícios, com páginas para percorrer no computador e no celular. Não são clientes nem projetos entregues. O recorte é a primeira tela de cada modelo, no computador.
           </p>
         </div>
 
@@ -133,7 +136,7 @@ export function SiteModelCarousel() {
           >
             <img
               src={MODELS[showIncoming ? from : index].src}
-              alt=""
+              alt={showIncoming ? '' : `Primeira tela do modelo ${current.name}, no computador.`}
               width={1280}
               height={720}
               draggable={false}
@@ -154,10 +157,13 @@ export function SiteModelCarousel() {
           </div>
 
           <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-slate-700" aria-live="polite">
-              <span className="font-extrabold text-slate-900">{current.name}</span>
-              <span className="text-slate-500"> · {current.kind} · modelo {index + 1} de {MODELS.length}</span>
-            </p>
+            <div>
+              <p className="text-sm text-slate-700" aria-live="polite">
+                <span className="font-extrabold text-slate-900">{current.name}</span>
+                <span className="text-slate-500"> · {current.kind} · modelo {index + 1} de {MODELS.length}</span>
+              </p>
+              <a href={current.href} className="mt-1 inline-flex text-sm font-bold text-cyan-800">Abrir este modelo</a>
+            </div>
             <div className="flex items-center gap-2">
               <button
                 type="button"

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contato · Salão Aurora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="logo" href="index.html">Aurora</a>
+        <nav class="desktop" aria-label="Seções">
+          <a href="servicos.html">Serviços</a>
+          <a href="espaco.html">O espaço</a>
+          <a href="contato.html" aria-current="page">Contato</a>
+          <span class="pill">Modelo demonstrativo</span>
+          <a class="btn" href="agenda.html">Agendar</a>
+        </nav>
+        <div class="mobile-end">
+          <a class="btn" href="agenda.html">Agendar</a>
+          <details class="drawer">
+            <summary>Menu</summary>
+            <nav class="sheet" aria-label="Seções">
+              <a href="servicos.html">Serviços</a>
+              <a href="espaco.html">O espaço</a>
+              <a href="agenda.html">Agendar</a>
+              <a href="contato.html" aria-current="page">Contato</a>
+              <span class="pill">Modelo demonstrativo</span>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+    <main id="conteudo" class="wrap page">
+      <p class="kicker">Contato de exemplo</p>
+      <h1>Onde a página leva a pessoa.</h1>
+      <p class="lead">Os dados abaixo são fictícios, para mostrar o caminho até o contato. Não ligue e não envie mensagem.</p>
+      <div class="contact">
+        <article class="panel">
+          <h2>Salão</h2>
+          <p>Rua do Espelho, 18 — endereço fictício.</p>
+          <p style="margin-top:10px">Terça a sexta, 9h às 19h. Sábado, 9h às 17h. Horário de exemplo.</p>
+        </article>
+        <article class="panel">
+          <h2>Telefone de exemplo</h2>
+          <p>(00) 4000-0180. Este número não existe. O botão abre uma explicação nesta página.</p>
+          <p class="row">
+            <button type="button" class="btn" data-demo data-demo-title="Telefone de exemplo" data-demo-text="O número (00) 4000-0180 é fictício. Este botão não liga, não abre WhatsApp e não envia mensagem.">Ver o telefone de exemplo</button>
+          </p>
+          <p class="row"><a class="btn light" href="agenda.html">Ir para o agendamento de exemplo</a></p>
+        </article>
+      </div>
+    </main>
+    <footer class="site">
+      <div class="wrap foot">
+        <div>
+          <strong>Salão Aurora</strong>
+          <p>Negócio fictício. Nenhum contato desta página é real. O agendamento não marca horário e não pede dados pessoais.</p>
+        </div>
+        <nav aria-label="No rodapé">
+          <a href="index.html">Início</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="espaco.html">O espaço</a>
+          <a href="agenda.html">Agendar</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </footer>
+    <dialog id="demo-dialog">
+      <h2 id="demo-title"></h2>
+      <p id="demo-text"></p>
+      <button class="btn" type="button" onclick="closeDemo()">Fechar demonstração</button>
+    </dialog>
+    <script src="../demo.js"></script>
+  </body>
+</html>

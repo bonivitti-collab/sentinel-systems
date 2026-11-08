@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Casa Linho · modelo demonstrativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="logo" href="index.html">Casa Linho</a>
+        <nav class="desktop" aria-label="Seções">
+          <a href="catalogo.html">Catálogo</a>
+          <a href="visita.html">Visita</a>
+          <a href="contato.html">Contato</a>
+          <span class="pill">Modelo demonstrativo</span>
+          <a class="btn" href="separar.html">Separar peça</a>
+        </nav>
+        <div class="mobile-end">
+          <a class="btn" href="separar.html">Separar</a>
+          <details class="drawer">
+            <summary>Menu</summary>
+            <nav class="sheet" aria-label="Seções">
+              <a href="catalogo.html">Catálogo</a>
+              <a href="visita.html">Visita</a>
+              <a href="separar.html">Separar peça</a>
+              <a href="contato.html">Contato</a>
+              <span class="pill">Modelo demonstrativo</span>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+    <main id="conteudo">
+      <section class="wrap hero">
+        <img class="hero-photo" src="img/terracota.jpg" width="1200" height="1099" alt="Cama com roupa de cama terracota, almofadas e criado-mudo. Fotografia ilustrativa deste modelo." />
+        <div>
+          <p class="kicker">Loja</p>
+          <h1>Peças de casa, fáceis de escolher.</h1>
+          <p class="lead">Cama, roupa de cama e manta, com o valor ao lado. A retirada se separa por aqui.</p>
+          <ul class="picks">
+            <li>
+              <a href="terracota.html">
+                <img src="img/terracota.jpg" width="1200" height="1099" alt="" />
+                <span><b>Cama terracota</b><small>Jogo de cama em linho</small></span>
+                <em>R$ 480</em>
+              </a>
+            </li>
+            <li>
+              <a href="clara.html">
+                <img src="img/branco.jpg" width="1200" height="800" alt="" />
+                <span><b>Cama clara</b><small>Roupa de cama e almofadas</small></span>
+                <em>R$ 390</em>
+              </a>
+            </li>
+            <li>
+              <a href="mantas.html">
+                <img src="img/mantas.jpg" width="1200" height="1348" alt="" />
+                <span><b>Mantas</b><small>Tricô em várias cores</small></span>
+                <em>R$ 220</em>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="site">
+      <div class="wrap foot">
+        <div>
+          <strong>Casa Linho</strong>
+          <p>Loja fictícia. Nenhum contato desta página é real. Separar uma peça não reserva estoque e não pede dados pessoais.</p>
+        </div>
+        <nav aria-label="No rodapé">
+          <a href="index.html">Início</a>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="terracota.html">Cama terracota</a>
+          <a href="clara.html">Cama clara</a>
+          <a href="mantas.html">Mantas</a>
+          <a href="visita.html">Visita</a>
+          <a href="separar.html">Separar peça</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </footer>
+    <dialog id="demo-dialog">
+      <h2 id="demo-title"></h2>
+      <p id="demo-text"></p>
+      <button class="btn" type="button" onclick="closeDemo()">Fechar demonstração</button>
+    </dialog>
+    <script src="../demo.js"></script>
+  </body>
+</html>

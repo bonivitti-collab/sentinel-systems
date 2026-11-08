@@ -79,7 +79,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 </a>
               </li>
               <li className="text-xs text-slate-500 leading-relaxed">
-                Atendimento online em todo o Brasil, com base na Região dos Lagos.
+                Atendimento digital para negócios no Brasil.
               </li>
             </ul>
           </div>

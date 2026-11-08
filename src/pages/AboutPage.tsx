@@ -36,7 +36,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 A Sentinel existe para organizar essa presença. Construímos o site rápido que recebe o clique e os produtos digitais da própria empresa. No serviço para o comércio, o centro é o resultado: ser encontrado e ser chamado.
               </p>
               <p>
-                O trabalho é online, para pequenos negócios de todo o Brasil, com base na Região dos Lagos. A conversa segue no WhatsApp e no e-mail que já estão neste site.
+                O trabalho é remoto, para negócios no Brasil, no WhatsApp e no e-mail que já estão neste site.
               </p>
             </div>
           </article>

@@ -109,13 +109,9 @@ export function SiteModelCarousel() {
     <section className="pb-16" aria-labelledby="modelos-titulo">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Modelos</p>
-          <h2 id="modelos-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-            Modelos demonstrativos criados pela Sentinel
+          <h2 id="modelos-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Veja como pode ficar o site do seu negócio
           </h2>
-          <p className="text-slate-600 leading-relaxed">
-            Negócios fictícios, para percorrer no computador e no celular. Não são clientes nem projetos entregues. O recorte é a primeira tela de cada modelo, no computador.
-          </p>
         </div>
 
         <section

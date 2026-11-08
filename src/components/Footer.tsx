@@ -24,7 +24,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <SentinelLogo size="sm" variant="light" />
             </a>
             <p className="mt-4 text-sm text-slate-500 leading-relaxed max-w-sm">
-              Criação de site rápido e cuidado com o Google Meu Negócio para o pequeno negócio aparecer no Google e no Maps, no Brasil.
+              Criação de site e cuidado com o Google Meu Negócio para negócios locais no Brasil.
             </p>
           </div>
 

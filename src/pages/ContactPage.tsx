@@ -28,7 +28,7 @@ export function ContactPage() {
       `Empresa: ${company || 'não informada'}.`,
       `Cidade: ${city || 'não informada'}.`,
       `Quero conversar sobre: ${interest}.`,
-      details ? `Detalhes: ${details}` : 'Quero ser encontrado no Google e receber mais contatos de clientes.',
+      details ? `Detalhes: ${details}` : 'Quero conversar sobre o meu negócio e pedir uma proposta.',
     ].join('\n');
     window.open(whatsappHref(text), '_blank', 'noopener,noreferrer');
   };

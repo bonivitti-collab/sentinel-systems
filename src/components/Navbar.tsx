@@ -95,7 +95,7 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
               className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Aparecer no Google</span>
+              <span>Pedir proposta</span>
             </a>
 
             <button
@@ -144,7 +144,7 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
               rel="noopener noreferrer"
               className="mt-1 px-4 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wider text-center"
             >
-              Quero aparecer no Google
+              Quero uma proposta
             </a>
           </div>
         </nav>

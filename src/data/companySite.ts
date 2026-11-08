@@ -5,7 +5,7 @@ export const SITE = {
   phoneWa: '5522999726069',
   email: 'sentinelsystemsai@gmail.com',
   whatsappText:
-    'Olá! Vim pelo site da Sentinel Systems. Quero ser encontrado no Google e receber mais contatos de clientes.',
+    'Olá! Vim pelo site da Sentinel Systems. Quero conversar sobre o meu negócio e pedir uma proposta.',
 } as const;
 
 export function whatsappHref(text: string = SITE.whatsappText): string {
@@ -27,9 +27,9 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Criação de site e Google Meu Negócio | Sentinel Systems',
+    title: 'Site e Google Meu Negócio para o negócio local | Sentinel Systems',
     description:
-      'Criação de site rápido e Perfil da Empresa no Google para o negócio local aparecer no Google e no Maps e receber ligações e WhatsApp. Atendimento no Brasil.',
+      'Site claro e presença cuidada no Google para quem procura um serviço na região. A Sentinel atende negócios locais no Brasil. A proposta é combinada no WhatsApp.',
   },
   sobre: {
     key: 'sobre',
@@ -163,14 +163,32 @@ export const SERVICES = [
   },
 ] as const;
 
+export const HOME_FAQ = [
+  'Já tenho Instagram. Por que preciso de um site?',
+  'O site vai aparecer em primeiro no Google?',
+  'Como começamos?',
+] as const;
+
 export const FAQ = [
   {
+    q: 'Já tenho Instagram. Por que preciso de um site?',
+    a: 'O Instagram apresenta o trabalho e ajuda a criar relação com quem já segue você. Ele continua útil. Só não concentra, numa página só, os serviços, o horário, o endereço e um caminho claro para o WhatsApp. O Google e o Maps ajudam quem está procurando um serviço na região. O site reúne as informações para a pessoa conferir e chamar. Um completa o outro.',
+  },
+  {
+    q: 'O site vai aparecer em primeiro no Google?',
+    a: 'Não. Não há como prometer o primeiro lugar, nem um resultado rápido. Ter um site não garante posição no Google. A Sentinel deixa o site e o Perfil da Empresa claros e coerentes, para quem procura na região conseguir te conhecer. A posição muda com o tempo e depende de fatores que ninguém controla por completo.',
+  },
+  {
+    q: 'Como começamos?',
+    a: 'Pelo WhatsApp que já está neste site. Você conta o que o negócio faz e como as pessoas chegam hoje. A Sentinel entende a necessidade e apresenta uma proposta por escrito, antes de começar. O preço e o prazo são os dessa proposta. Não há tabela nem prazo único publicados aqui.',
+  },
+  {
     q: 'A Sentinel vende um site ou o resultado no Google?',
-    a: 'O resultado que importa é a empresa ser encontrada no Google e no Maps, e a pessoa ligar, chamar no WhatsApp ou ir até o endereço. O site rápido, o Perfil da Empresa, as avaliações, o SEO local e a segurança são os meios para isso. Não vendemos uma página solta.',
+    a: 'A Sentinel faz o site, o cuidado do Perfil da Empresa e a segurança dessa presença. A intenção é a pessoa da região te conhecer e ter um jeito simples de chamar. Isso não é garantia de primeira posição, nem de venda.',
   },
   {
     q: 'O que a Sentinel Systems faz?',
-    a: 'É uma empresa que constrói produtos digitais e sites rápidos para pequenos negócios, e cuida da presença que faz o cliente local achar a empresa.',
+    a: 'Faz sites e cuida do Perfil da Empresa no Google para pequenos negócios locais. O intuito é deixar a empresa fácil de entender para quem procura um serviço na região.',
   },
   {
     q: 'O que entra na gestão do Google?',
@@ -178,7 +196,7 @@ export const FAQ = [
   },
   {
     q: 'Por que o perfil, o mapa e as avaliações importam para um negócio local?',
-    a: 'Quem precisa de um comércio ou serviço por perto pesquisa no Google e abre o mapa. Antes de ligar, a pessoa olha a distância, as fotos, o horário e o que outros clientes escreveram. Se isso não está cuidado, ela escolhe outro.',
+    a: 'Quem precisa de um comércio ou serviço por perto pode pesquisar no Google e abrir o mapa. Antes de ligar, a pessoa olha a distância, as fotos, o horário e o que outros clientes escreveram. Se isso não está cuidado, ela pode seguir para quem está mais fácil de entender.',
   },
   {
     q: 'Para que serve o site, se o objetivo é ser encontrado?',
@@ -374,17 +392,3 @@ export function jsonLdFor(path: string): Record<string, unknown> {
   };
 }
 
-export const OUTCOMES = [
-  {
-    title: 'Ser encontrado',
-    text: 'Aparecer quando alguém pesquisa o seu serviço no Google e olha o mapa perto de onde você atende.',
-  },
-  {
-    title: 'Ser chamado',
-    text: 'A pessoa que te achou tem telefone e WhatsApp na hora, no perfil e na página, sem caçar o contato.',
-  },
-  {
-    title: 'Chegar até você',
-    text: 'Endereço, horário e fotos ajudam quem decidiu sair de casa ou pedir para saber que chegou no lugar certo.',
-  },
-] as const;

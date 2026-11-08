@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, X, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
+import { SITE, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
 
 interface FloatingWhatsAppButtonProps {
@@ -31,14 +32,12 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({ 
     if (currentPath.includes('/guias/')) {
       return 'Olá! Li um dos guias da Sentinel Systems e gostaria de conversar com um especialista.';
     }
-    return 'Olá! Vim pelo site da Sentinel Systems e quero aparecer no Google para receber mais contatos de clientes.';
+    return SITE.whatsappText;
   };
 
   const handleOpenWhatsApp = () => {
     soundFx.playUiClick();
-    const msg = getCustomMessage();
-    const url = `https://wa.me/5522999726069?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
+    window.open(whatsappHref(getCustomMessage()), '_blank', 'noopener,noreferrer');
     setIsOpen(false);
   };
 
@@ -81,11 +80,11 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({ 
             <div className="bg-white p-3 rounded-2xl rounded-tl-sm border border-slate-200 shadow-xs leading-relaxed text-slate-700">
               <p className="font-semibold text-slate-900 mb-1">Olá! Seja bem-vindo à Sentinel 👋</p>
               <p>
-                Quer aparecer no Google e receber mais ligações e mensagens? Fale com a Sentinel pelo WhatsApp.
+                Se quiser continuar, a conversa é no WhatsApp. Dá para pedir a proposta com calma.
               </p>
               <div className="mt-2 text-[10px] text-slate-400 flex items-center gap-1 justify-end">
                 <Clock className="w-3 h-3" />
-                <span>Atendimento prioritário</span>
+                <span>Sem compromisso</span>
               </div>
             </div>
 

@@ -1,4 +1,5 @@
 import { ArrowRight, Camera, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { SiteModelCarousel } from '../components/SiteModelCarousel';
 import { FaqList } from '../components/site/FaqList';
 import { PageHero } from '../components/site/PageHero';
 import { HOME_FAQ, SITE, whatsappHref } from '../data/companySite';
@@ -323,6 +324,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
+
+      <SiteModelCarousel />
 
       <section className="pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

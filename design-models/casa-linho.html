@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Casa Linho</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1280px; height: 720px; overflow: hidden; }
+      body {
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        background: #f7f3ee;
+        color: #243044;
+      }
+      .chrome {
+        height: 44px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 18px;
+        background: #fff;
+        border-bottom: 1px solid #ece4da;
+      }
+      .dot { width: 10px; height: 10px; border-radius: 50%; background: #e4d5c8; }
+      .url {
+        margin-left: 10px;
+        background: #f7f3ee;
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 13px;
+        color: #8b93a1;
+      }
+      .page { height: 676px; padding: 28px 48px 24px; display: grid; grid-template-rows: auto auto 1fr auto; }
+      header { display: flex; justify-content: space-between; align-items: center; }
+      .mark { font-family: Georgia, "Iowan Old Style", serif; font-size: 32px; }
+      .btn { background: #243044; color: white; border-radius: 999px; padding: 12px 18px; font-size: 14px; }
+      h1 { font-family: Georgia, serif; font-weight: 500; font-size: 54px; line-height: 1; margin: 28px 0 8px; }
+      .lead { margin: 0 0 22px; color: #5c6573; font-size: 18px; }
+      .grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 18px; }
+      .card { background: #fff; border-radius: 24px; overflow: hidden; border: 1px solid #ece4da; display: flex; flex-direction: column; }
+      .swatch { height: 210px; }
+      .a { background: linear-gradient(160deg, #f2e2d2, #c98462); }
+      .b { background: linear-gradient(160deg, #e7eef2, #8aa0b4); }
+      .c { background: linear-gradient(160deg, #efe8cf, #b9a36a); }
+      .meta { padding: 16px 18px 18px; }
+      .meta b { display: block; font-size: 18px; margin-bottom: 4px; }
+      .meta span { color: #5c6573; font-size: 14px; }
+      footer { display: flex; justify-content: space-between; color: #8b93a1; font-size: 14px; padding-top: 16px; }
+    </style>
+  </head>
+  <body>
+    <div class="chrome">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="url">casalinho.exemplo</span>
+    </div>
+    <div class="page">
+      <header>
+        <div class="mark">Casa Linho</div>
+        <div class="btn">Pedir pelo WhatsApp</div>
+      </header>
+      <div>
+        <h1>Peças de casa, fáceis de escolher.</h1>
+        <p class="lead">Três linhas na vitrine. A pessoa vê o tecido, o uso e chama para combinar a retirada.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="swatch a"></div><div class="meta"><b>Linho cru</b><span>Toalha e caminho de mesa</span></div></article>
+        <article class="card"><div class="swatch b"></div><div class="meta"><b>Azul sereno</b><span>Capa de almofada</span></div></article>
+        <article class="card"><div class="swatch c"></div><div class="meta"><b>Areia</b><span>Avental de cozinha</span></div></article>
+      </div>
+      <footer>
+        <span>Casa Linho · loja fictícia</span>
+        <span>Modelo demonstrativo</span>
+      </footer>
+    </div>
+  </body>
+</html>

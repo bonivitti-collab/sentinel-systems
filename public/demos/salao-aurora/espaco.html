@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>O espaço · Salão Aurora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="logo" href="index.html">Aurora</a>
+        <nav class="desktop" aria-label="Seções">
+          <a href="servicos.html">Serviços</a>
+          <a href="espaco.html" aria-current="page">O espaço</a>
+          <a href="contato.html">Contato</a>
+          <span class="pill">Modelo demonstrativo</span>
+          <a class="btn" href="agenda.html">Agendar</a>
+        </nav>
+        <div class="mobile-end">
+          <a class="btn" href="agenda.html">Agendar</a>
+          <details class="drawer">
+            <summary>Menu</summary>
+            <nav class="sheet" aria-label="Seções">
+              <a href="servicos.html">Serviços</a>
+              <a href="espaco.html" aria-current="page">O espaço</a>
+              <a href="agenda.html">Agendar</a>
+              <a href="contato.html">Contato</a>
+              <span class="pill">Modelo demonstrativo</span>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+    <main id="conteudo" class="wrap page">
+      <p class="kicker">O espaço</p>
+      <h1>Cadeiras na janela.</h1>
+      <div class="split" style="padding-top:18px">
+        <img src="img/salao.jpg" width="1400" height="1050" alt="Sala ampla com cadeiras, espelhos e prateleira de produtos. Fotografia ilustrativa." />
+        <div>
+          <p class="lead">A fotografia mostra a sala de atendimento deste modelo: bancada, espelho e cadeira. Ela ilustra o site e não apresenta uma equipe real.</p>
+          <div class="list" style="margin-top:18px">
+            <article class="note">
+              <h2>Chegada</h2>
+              <p>A pessoa chega no horário de exemplo. A conversa começa pelo corte que ela quer.</p>
+            </article>
+            <article class="note">
+              <h2>Durante</h2>
+              <p>O serviço escolhido na página é o que segue na cadeira, com a duração mostrada.</p>
+            </article>
+            <article class="note">
+              <h2>Saída</h2>
+              <p>A visita termina no horário combinado. Não há pacote escondido neste modelo.</p>
+            </article>
+          </div>
+          <p class="row"><a class="btn" href="agenda.html">Agendar horário</a></p>
+        </div>
+      </div>
+    </main>
+    <footer class="site">
+      <div class="wrap foot">
+        <div>
+          <strong>Salão Aurora</strong>
+          <p>Negócio fictício. Nenhum contato desta página é real. O agendamento não marca horário e não pede dados pessoais.</p>
+        </div>
+        <nav aria-label="No rodapé">
+          <a href="index.html">Início</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="espaco.html">O espaço</a>
+          <a href="agenda.html">Agendar</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </footer>
+    <dialog id="demo-dialog">
+      <h2 id="demo-title"></h2>
+      <p id="demo-text"></p>
+      <button class="btn" type="button" onclick="closeDemo()">Fechar demonstração</button>
+    </dialog>
+    <script src="../demo.js"></script>
+  </body>
+</html>

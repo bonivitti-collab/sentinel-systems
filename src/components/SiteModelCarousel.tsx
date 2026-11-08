@@ -3,17 +3,20 @@ import { soundFx } from './SoundEffects';
 
 const MODELS = [
   {
-    src: '/modelos/salao-aurora.webp',
+    src: '/modelos/salao-aurora-t461.webp',
+    href: '/demos/salao-aurora/index.html',
     name: 'Salão Aurora',
     kind: 'Cabeleireiro',
   },
   {
-    src: '/modelos/brasa-folha.webp',
+    src: '/modelos/brasa-folha-t461.webp',
+    href: '/demos/brasa-folha/index.html',
     name: 'Brasa & Folha',
     kind: 'Restaurante',
   },
   {
-    src: '/modelos/casa-linho.webp',
+    src: '/modelos/casa-linho-t461.webp',
+    href: '/demos/casa-linho/index.html',
     name: 'Casa Linho',
     kind: 'Loja',
   },
@@ -21,6 +24,7 @@ const MODELS = [
 
 export function SiteModelCarousel() {
   const [index, setIndex] = useState(0);
+  const [held, setHeld] = useState(false);
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [from, setFrom] = useState(0);
@@ -29,7 +33,7 @@ export function SiteModelCarousel() {
   const [phase, setPhase] = useState<'idle' | 'from' | 'to'>('idle');
   const lock = useRef(false);
   const drag = useRef<{ x: number } | null>(null);
-  const regionRef = useRef<HTMLElement>(null);
+  const dragged = useRef(false);
 
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -63,10 +67,10 @@ export function SiteModelCarousel() {
   }
 
   useEffect(() => {
-    if (paused || reduced) return;
+    if (paused || held || reduced) return;
     const id = window.setInterval(() => go(index + 1, 1, true), 6500);
     return () => window.clearInterval(id);
-  }, [paused, reduced, index]);
+  }, [paused, held, reduced, index]);
 
   function slideStyle(position: 'current' | 'incoming') {
     const incoming = position === 'incoming';
@@ -81,17 +85,24 @@ export function SiteModelCarousel() {
 
   function onPointerDown(event: PointerEvent<HTMLDivElement>) {
     drag.current = { x: event.clientX };
+    dragged.current = false;
   }
 
   function onPointerUp(event: PointerEvent<HTMLDivElement>) {
     if (!drag.current) return;
     const delta = event.clientX - drag.current.x;
     drag.current = null;
-    if (delta > 40) go(index + 1, 1);
-    else if (delta < -40) go(index - 1, -1);
+    if (delta > 40) {
+      dragged.current = true;
+      go(index + 1, 1);
+    } else if (delta < -40) {
+      dragged.current = true;
+      go(index - 1, -1);
+    }
   }
 
-  const current = MODELS[index];
+  const shown = phase === 'to' ? to : index;
+  const model = MODELS[shown];
   const showIncoming = phase !== 'idle';
 
   return (
@@ -103,16 +114,14 @@ export function SiteModelCarousel() {
             Modelos demonstrativos criados pela Sentinel
           </h2>
           <p className="text-slate-600 leading-relaxed">
-            Negócios fictícios, para imaginar a página no computador. Não são clientes nem projetos entregues. Os modelos são o Salão Aurora, o restaurante Brasa &amp; Folha e a loja Casa Linho.
+            Negócios fictícios, para percorrer no computador e no celular. Não são clientes nem projetos entregues. O recorte é a primeira tela de cada modelo, no computador.
           </p>
         </div>
 
         <section
-          ref={regionRef}
           className="outline-none"
           aria-roledescription="carrossel"
           aria-label="Modelos demonstrativos de sites"
-          tabIndex={0}
           onKeyDown={(event) => {
             if (event.key === 'ArrowRight') {
               event.preventDefault();
@@ -122,6 +131,10 @@ export function SiteModelCarousel() {
               go(index - 1, -1);
             }
           }}
+          onFocus={() => setHeld(true)}
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setHeld(false);
+          }}
         >
           <div
             className="relative aspect-video overflow-hidden rounded-3xl bg-slate-100 border border-slate-200/90 touch-pan-y"
@@ -130,58 +143,51 @@ export function SiteModelCarousel() {
             onPointerCancel={() => {
               drag.current = null;
             }}
+            onMouseEnter={() => setHeld(true)}
+            onMouseLeave={() => setHeld(false)}
           >
-            <img
-              src={MODELS[showIncoming ? from : index].src}
-              alt=""
-              width={1280}
-              height={720}
-              draggable={false}
-              className="absolute inset-0 h-full w-full object-contain select-none"
-              style={showIncoming ? slideStyle('current') : undefined}
-            />
-            {showIncoming && (
+            <a
+              href={model.href}
+              aria-label={`Abrir o modelo ${model.name}, ${model.kind}`}
+              className="absolute inset-0 cursor-pointer"
+              onClick={(event) => {
+                if (!dragged.current) return;
+                event.preventDefault();
+                dragged.current = false;
+              }}
+            >
               <img
-                src={MODELS[to].src}
+                src={MODELS[showIncoming ? from : index].src}
                 alt=""
                 width={1280}
                 height={720}
                 draggable={false}
                 className="absolute inset-0 h-full w-full object-contain select-none"
-                style={slideStyle('incoming')}
+                style={showIncoming ? slideStyle('current') : undefined}
               />
-            )}
-          </div>
-
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-slate-700" aria-live="polite">
-              <span className="font-extrabold text-slate-900">{current.name}</span>
-              <span className="text-slate-500"> · {current.kind} · modelo {index + 1} de {MODELS.length}</span>
+              {showIncoming && (
+                <img
+                  src={MODELS[to].src}
+                  alt=""
+                  width={1280}
+                  height={720}
+                  draggable={false}
+                  className="absolute inset-0 h-full w-full object-contain select-none"
+                  style={slideStyle('incoming')}
+                />
+              )}
+            </a>
+            <p className="sr-only" aria-live="polite">
+              {model.name}, {model.kind}, modelo {shown + 1} de {MODELS.length}
             </p>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => go(index - 1, -1)}
-                className="px-3 py-2 rounded-md bg-white border border-slate-200 text-sm font-semibold text-slate-800 cursor-pointer"
-              >
-                Anterior
-              </button>
-              <button
-                type="button"
-                onClick={() => go(index + 1, 1)}
-                className="px-3 py-2 rounded-md bg-white border border-slate-200 text-sm font-semibold text-slate-800 cursor-pointer"
-              >
-                Próximo
-              </button>
-              <button
-                type="button"
-                aria-pressed={paused || reduced}
-                onClick={() => setPaused((value) => !value)}
-                className="px-3 py-2 rounded-md bg-slate-900 text-white text-sm font-semibold cursor-pointer"
-              >
-                {paused || reduced ? 'Retomar' : 'Pausar'}
-              </button>
-            </div>
+            <button
+              type="button"
+              aria-pressed={paused || reduced}
+              onClick={() => setPaused((value) => !value)}
+              className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-10 focus:rounded-full focus:bg-slate-900 focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+            >
+              {paused || reduced ? 'Retomar modelos' : 'Pausar modelos'}
+            </button>
           </div>
         </section>
       </div>

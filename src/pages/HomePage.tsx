@@ -104,20 +104,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
         }
         description="Uma página no celular para apresentar seus serviços, mostrar onde você fica e facilitar o contato no WhatsApp, com a configuração básica do Perfil da Empresa no Google. O Instagram continua útil. Este pacote ajuda o negócio a ser encontrado."
       >
-        <div className="mt-6 max-w-xl rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5 sm:p-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-cyan-700">Criação parcelada</p>
-          <p className="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">12 parcelas de R$ 50</p>
-          <p className="mt-1 text-base font-bold text-slate-800">Total de R$ 600</p>
-          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-            É o parcelamento da criação, não uma mensalidade para sempre. O primeiro pagamento é na contratação. Os outros 11 são mensais. Não há mensalidade obrigatória de acompanhamento.
-          </p>
-          <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-            Inclui um domínio .com.br, se o nome estiver disponível, e a hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome.
-          </p>
-        </div>
-        <p className="mt-3 max-w-xl text-xs sm:text-sm text-slate-500 leading-relaxed">
-          Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção e não renova sozinha. Sem esse combinado, a hospedagem não continua de graça. Você pode levar o site e o domínio.
-        </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6">
           <a
             href={whatsappHref()}
@@ -318,7 +304,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="max-w-3xl mb-8">
             <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">O pacote</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-              O que entra nos R$ 600
+              O que você recebe
             </h2>
             <p className="text-slate-600 leading-relaxed">
               Um pacote só, com começo e fim. Não é acompanhamento mensal obrigatório, e não promete a primeira posição no Google.
@@ -347,6 +333,44 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-xl rounded-3xl bg-white border border-slate-200/90 shadow-xs p-5 sm:p-6">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700">Criação parcelada</p>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">12 parcelas de R$ 50</h2>
+            <p className="mt-1 text-base font-bold text-slate-800">Total de R$ 600</p>
+            <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+              É o parcelamento da criação, não uma mensalidade para sempre. O primeiro pagamento é na contratação. Os outros 11 são mensais. Não há mensalidade obrigatória de acompanhamento.
+            </p>
+            <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+              Inclui um domínio .com.br, se o nome estiver disponível, e a hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome.
+            </p>
+            <p className="mt-3 text-xs sm:text-sm text-slate-500 leading-relaxed">
+              Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção e não renova sozinha. Sem esse combinado, a hospedagem não continua de graça. Você pode levar o site e o domínio.
+            </p>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6">
+              <a
+                href={whatsappHref()}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => soundFx.playUiClick()}
+                className="w-full sm:w-auto px-5 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs uppercase tracking-wider shadow-sm flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Quero esse site no WhatsApp
+              </a>
+              <button
+                type="button"
+                onClick={() => go('/contato')}
+                className="w-full sm:w-auto px-5 py-3 rounded-md bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs tracking-wide cursor-pointer"
+              >
+                Ver e-mail e contato
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-slate-50 border-y border-slate-200">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
@@ -360,38 +384,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </p>
           </div>
           <FaqList questions={HOME_FAQ} />
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-slate-900 text-white px-6 py-10 sm:px-10 sm:py-12">
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3">
-              Se fizer sentido, a gente segue no WhatsApp
-            </h2>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
-              O site essencial está publicado aqui: 12 parcelas de R$ 50, total de R$ 600. O primeiro pagamento é na contratação. Se for este o caso, a conversa segue no WhatsApp.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={whatsappHref()}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => soundFx.playUiClick()}
-                className="w-full sm:w-auto px-5 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Quero esse site no WhatsApp
-              </a>
-              <button
-                type="button"
-                onClick={() => go('/contato')}
-                className="w-full sm:w-auto px-5 py-3 rounded-md bg-white text-slate-900 font-semibold text-xs tracking-wide cursor-pointer"
-              >
-                Ver e-mail e contato
-              </button>
-            </div>
-          </div>
         </div>
       </section>
     </>

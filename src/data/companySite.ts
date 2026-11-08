@@ -27,9 +27,9 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Site essencial e perfil no Google | 12x R$ 50 | Sentinel',
+    title: 'Site essencial e perfil no Google para o comércio local | Sentinel',
     description:
-      'Página no celular e configuração básica do Perfil da Empresa no Google para o comércio local. Criação em 12 parcelas de R$ 50, total R$ 600. Domínio .com.br e hospedagem por 12 meses.',
+      'Página no celular e configuração básica do Perfil da Empresa no Google para o comércio local apresentar serviços, ser encontrado e facilitar o contato.',
   },
   sobre: {
     key: 'sobre',

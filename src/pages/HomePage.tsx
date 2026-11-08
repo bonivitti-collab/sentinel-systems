@@ -374,13 +374,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="py-16 bg-slate-50 border-y border-slate-200">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Dúvidas antes de fechar</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-              O que costuma travar a decisão
+              Perguntas sobre a contratação
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              O valor, a renovação e o que o Google não promete. O restante está nas{' '}
-              <a href="/faq" onClick={(event) => { event.preventDefault(); go('/faq'); }} className="font-semibold text-cyan-800">perguntas frequentes</a>.
+              Veja o que está incluído no seu site, como funciona o pagamento e quais são as condições de renovação.
             </p>
           </div>
           <FaqList questions={HOME_FAQ} />

@@ -167,30 +167,30 @@ export const HOME_FAQ = [
   'O que entra nos R$ 600?',
   'Isso é uma mensalidade?',
   'E depois dos 12 meses?',
-  'O site vai aparecer em primeiro no Google?',
-  'Já tenho Instagram. Por que preciso de um site?',
+  'O site do meu negócio vai aparecer em primeiro no Google?',
+  'Já tenho Instagram. Preciso do site mesmo assim?',
 ] as const;
 
 export const FAQ = [
   {
     q: 'O que entra nos R$ 600?',
-    a: 'Uma página adaptada ao celular, com até cinco seções, serviços, localização e botão de WhatsApp. Os textos saem do material que você enviar. Entra uma rodada de ajustes, junta. Também entra a configuração básica do Perfil da Empresa no Google, se o negócio for elegível. O perfil em si é gratuito: o valor paga o trabalho. A verificação depende do Google. Não há garantia de posição, de clientes ou de vendas. O domínio .com.br, quando o nome está disponível, e a hospedagem por 12 meses a partir da publicação também entram. O domínio fica no seu nome.',
+    a: 'Você recebe uma página do seu negócio, pronta para o celular, com até cinco seções. Nela ficam seus serviços, a localização e o botão de WhatsApp.\n\nOs textos saem do material que você enviar, e há uma rodada de ajustes. Também configuramos o básico do Perfil da Empresa no Google, se o seu negócio for elegível. O perfil é gratuito: os R$ 600 pagam esse trabalho. A verificação depende do Google.\n\nO domínio .com.br entra se o nome estiver disponível, com hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome. Não prometemos posição no Google, nem que seus clientes encontrem você ou comprem.',
   },
   {
     q: 'Isso é uma mensalidade?',
-    a: 'Não. São 12 parcelas de R$ 50 da criação, no total de R$ 600. O primeiro pagamento é na contratação. Os outros 11 são mensais. Não há mensalidade obrigatória de acompanhamento.',
+    a: 'Não. Você paga a criação em 12 parcelas de R$ 50, no total de R$ 600. O primeiro pagamento é na contratação. Os outros 11 são mensais.\n\nNão há mensalidade obrigatória de acompanhamento.',
   },
   {
     q: 'E depois dos 12 meses?',
-    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção e não renova sozinha. Sem esse combinado, a hospedagem não continua de graça. O domínio continua no seu nome. Se quiser levar o site para outro lugar, os acessos são entregues, sem taxa de resgate.',
+    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção e não renova sozinha.\n\nSe você não renovar, a hospedagem não continua de graça. O domínio continua no seu nome. Se quiser levar o site, os acessos são entregues, sem taxa de resgate.',
   },
   {
-    q: 'Já tenho Instagram. Por que preciso de um site?',
-    a: 'O Instagram funciona e pode gerar contato. No perfil profissional dá para mostrar categoria, contato, endereço e um caminho para o WhatsApp, além do trabalho no feed. Seguidores e curtidas não são clientes, e postar todo dia não garante alcance nem um pedido de orçamento: o que aparece depende da plataforma. Outra pessoa pode procurar o serviço no Google e no Maps. O site organiza a decisão, mas também precisa ser divulgado e atualizado. Instagram, Google, Maps, site e WhatsApp se completam.',
+    q: 'Já tenho Instagram. Preciso do site mesmo assim?',
+    a: 'O Instagram pode continuar com o seu negócio. O site é a página com seus serviços, a localização e o WhatsApp, para quem chega pelo Google ou por um link que você divulga.\n\nOs dois se completam. Este pacote não substitui o seu Instagram.',
   },
   {
-    q: 'O site vai aparecer em primeiro no Google?',
-    a: 'Não. O site não cria o perfil no Google nem no Maps, e nenhum dos dois garante a primeira posição ou aparecer ao lado de quem pesquisa. O perfil é outra superfície: precisa ser configurado e atualizado, e nem toda empresa entra do mesmo jeito. A Sentinel organiza site e perfil para quem procura na região. A posição muda com o tempo.',
+    q: 'O site do meu negócio vai aparecer em primeiro no Google?',
+    a: 'Não. O site não cria o perfil no Google nem no Maps, e não garante a primeira posição nem que seus clientes vejam você ao lado no mapa.\n\nO perfil é gratuito e é outra página. A configuração básica entra se o seu negócio for elegível. A verificação depende do Google, e a posição muda com o tempo.',
   },
   {
     q: 'Vale esperar o movimento melhorar?',

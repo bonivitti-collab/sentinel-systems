@@ -22,7 +22,7 @@ export function FaqList({ questions }: { questions?: readonly string[] }) {
               <ChevronDown className="w-5 h-5 text-cyan-700 shrink-0 mt-0.5 transition-transform group-open:rotate-180" />
             </span>
           </summary>
-          <div className="px-4 sm:px-5 pb-4 text-sm text-slate-600 leading-relaxed">{item.a}</div>
+          <div className="px-4 sm:px-5 pb-4 text-sm text-slate-600 leading-relaxed whitespace-pre-line">{item.a}</div>
         </details>
       ))}
     </div>

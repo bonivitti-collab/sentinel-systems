@@ -166,6 +166,7 @@ export const SERVICES = [
 export const HOME_FAQ = [
   'Já tenho Instagram. Por que preciso de um site?',
   'O site vai aparecer em primeiro no Google?',
+  'Vale esperar o movimento melhorar?',
   'Como começamos?',
 ] as const;
 
@@ -179,8 +180,12 @@ export const FAQ = [
     a: 'Não. Não há como prometer o primeiro lugar, nem um resultado rápido. Ter um site não garante posição no Google. A Sentinel deixa o site e o Perfil da Empresa claros e coerentes, para quem procura na região conseguir te conhecer. A posição muda com o tempo e depende de fatores que ninguém controla por completo.',
   },
   {
+    q: 'Vale esperar o movimento melhorar?',
+    a: 'Planejar antes do movimento aumentar permite organizar serviços, informações e contato com calma. O primeiro passo é entender o que faz sentido para o momento e o orçamento do seu negócio. A proposta não empurra a execução se não couber agora.',
+  },
+  {
     q: 'Como começamos?',
-    a: 'Pelo WhatsApp que já está neste site. Você conta o que o negócio faz e como as pessoas chegam hoje. A Sentinel entende a necessidade e apresenta uma proposta por escrito, antes de começar. O preço e o prazo são os dessa proposta. Não há tabela nem prazo único publicados aqui.',
+    a: 'A conversa começa no WhatsApp. Você conta o que o negócio faz, como as pessoas chegam hoje e o que cabe no orçamento. A Sentinel entende a necessidade antes de propor o trabalho. A proposta vem por escrito, com preço e prazo. Se não fizer sentido, nada começa.',
   },
   {
     q: 'A Sentinel vende um site ou o resultado no Google?',

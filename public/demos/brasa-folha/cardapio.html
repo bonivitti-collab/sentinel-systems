@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cardápio · Brasa &amp; Folha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="logo" href="index.html">Brasa &amp; Folha</a>
+        <nav class="desktop" aria-label="Seções">
+          <a href="cardapio.html" aria-current="page">Cardápio</a>
+          <a href="casa.html">A casa</a>
+          <a href="contato.html">Contato</a>
+          <span class="pill">Modelo demonstrativo</span>
+          <a class="btn" href="reserva.html">Reservar</a>
+        </nav>
+        <div class="mobile-end">
+          <a class="btn" href="reserva.html">Reservar</a>
+          <details class="drawer">
+            <summary>Menu</summary>
+            <nav class="sheet" aria-label="Seções">
+              <a href="cardapio.html" aria-current="page">Cardápio</a>
+              <a href="casa.html">A casa</a>
+              <a href="reserva.html">Reservar</a>
+              <a href="contato.html">Contato</a>
+              <span class="pill">Modelo demonstrativo</span>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+    <main id="conteudo" class="wrap page">
+      <p class="kicker">Cardápio de exemplo</p>
+      <h1>O que sai da cozinha.</h1>
+      <p class="lead">Preços de exemplo, para a pessoa comparar antes de sentar. Não é o cardápio de um restaurante real.</p>
+      <div class="menu">
+        <article class="dish">
+          <img src="img/massa.jpg" width="1200" height="1200" alt="Penne ao molho vermelho. Fotografia ilustrativa." />
+          <div>
+            <h2>Penne ao molho vermelho</h2>
+            <p>Massa, molho de tomate, carne moída, pimenta-do-reino e queijo ralado. Porção individual de exemplo.</p>
+          </div>
+          <div class="price">R$ 46</div>
+        </article>
+        <article class="dish">
+          <img src="img/salada.jpg" width="900" height="900" alt="Tigela colorida com folhas, milho, tomate, ovo e tofu. Fotografia ilustrativa." />
+          <div>
+            <h2>Tigela da horta</h2>
+            <p>Alface, repolho roxo, tomate, milho, pepino, edamame, ovo cozido e tofu grelhado.</p>
+          </div>
+          <div class="price">R$ 39</div>
+        </article>
+        <article class="dish">
+          <img src="img/pratos.jpg" width="1200" height="800" alt="Três tigelas para dividir, com carne, molho e folhas. Fotografia ilustrativa." />
+          <div>
+            <h2>Travessa para a mesa</h2>
+            <p>Três tigelas para duas pessoas neste exemplo: carne fatiada, cubos dourados e tiras na grelha, com folhas e molho.</p>
+          </div>
+          <div class="price">R$ 96</div>
+        </article>
+      </div>
+      <h2 style="margin-top:36px">Bebidas de exemplo</h2>
+      <div class="drinks">
+        <span>Água · R$ 6</span>
+        <span>Suco · R$ 12</span>
+        <span>Refrigerante · R$ 8</span>
+      </div>
+      <p class="row"><a class="btn" href="reserva.html">Reservar uma mesa de exemplo</a></p>
+    </main>
+    <footer class="site">
+      <div class="wrap foot">
+        <div>
+          <strong>Brasa &amp; Folha</strong>
+          <p>Restaurante fictício. Nenhum contato desta página é real. A reserva não marca mesa e não pede dados pessoais.</p>
+        </div>
+        <nav aria-label="No rodapé">
+          <a href="index.html">Início</a>
+          <a href="cardapio.html">Cardápio</a>
+          <a href="casa.html">A casa</a>
+          <a href="reserva.html">Reservar</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+    </footer>
+    <dialog id="demo-dialog">
+      <h2 id="demo-title"></h2>
+      <p id="demo-text"></p>
+      <button class="btn" type="button" onclick="closeDemo()">Fechar demonstração</button>
+    </dialog>
+    <script src="../demo.js"></script>
+  </body>
+</html>

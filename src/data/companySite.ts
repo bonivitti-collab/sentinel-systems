@@ -5,7 +5,7 @@ export const SITE = {
   phoneWa: '5522999726069',
   email: 'sentinelsystemsai@gmail.com',
   whatsappText:
-    'Olá! Vim pelo site da Sentinel Systems. Quero conversar sobre o meu negócio e pedir uma proposta.',
+    'Olá! Vim pelo site da Sentinel Systems. Quero o site essencial com a configuração básica do Perfil da Empresa no Google, em 12 parcelas de R$ 50.',
 } as const;
 
 export function whatsappHref(text: string = SITE.whatsappText): string {
@@ -27,9 +27,9 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Site e Google Meu Negócio para o negócio local | Sentinel Systems',
+    title: 'Site essencial e perfil no Google | 12x R$ 50 | Sentinel',
     description:
-      'Site claro e presença cuidada no Google para quem procura um serviço na região. A Sentinel atende negócios locais no Brasil. A proposta é combinada no WhatsApp.',
+      'Página no celular e configuração básica do Perfil da Empresa no Google para o comércio local. Criação em 12 parcelas de R$ 50, total R$ 600. Domínio .com.br e hospedagem por 12 meses.',
   },
   sobre: {
     key: 'sobre',
@@ -164,13 +164,26 @@ export const SERVICES = [
 ] as const;
 
 export const HOME_FAQ = [
-  'Já tenho Instagram. Por que preciso de um site?',
+  'O que entra nos R$ 600?',
+  'Isso é uma mensalidade?',
+  'E depois dos 12 meses?',
   'O site vai aparecer em primeiro no Google?',
-  'Vale esperar o movimento melhorar?',
-  'Como começamos?',
+  'Já tenho Instagram. Por que preciso de um site?',
 ] as const;
 
 export const FAQ = [
+  {
+    q: 'O que entra nos R$ 600?',
+    a: 'Uma página adaptada ao celular, com até cinco seções, serviços, localização e botão de WhatsApp. Os textos saem do material que você enviar. Entra uma rodada de ajustes, junta. Também entra a configuração básica do Perfil da Empresa no Google, se o negócio for elegível. O perfil em si é gratuito: o valor paga o trabalho. A verificação depende do Google. Não há garantia de posição, de clientes ou de vendas. O domínio .com.br, quando o nome está disponível, e a hospedagem por 12 meses a partir da publicação também entram. O domínio fica no seu nome.',
+  },
+  {
+    q: 'Isso é uma mensalidade?',
+    a: 'Não. São 12 parcelas de R$ 50 da criação, no total de R$ 600. O primeiro pagamento é na contratação. Os outros 11 são mensais. Não há mensalidade obrigatória de acompanhamento.',
+  },
+  {
+    q: 'E depois dos 12 meses?',
+    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção e não renova sozinha. Sem esse combinado, a hospedagem não continua de graça. O domínio continua no seu nome. Se quiser levar o site para outro lugar, os acessos são entregues, sem taxa de resgate.',
+  },
   {
     q: 'Já tenho Instagram. Por que preciso de um site?',
     a: 'O Instagram funciona e pode gerar contato. No perfil profissional dá para mostrar categoria, contato, endereço e um caminho para o WhatsApp, além do trabalho no feed. Seguidores e curtidas não são clientes, e postar todo dia não garante alcance nem um pedido de orçamento: o que aparece depende da plataforma. Outra pessoa pode procurar o serviço no Google e no Maps. O site organiza a decisão, mas também precisa ser divulgado e atualizado. Instagram, Google, Maps, site e WhatsApp se completam.',
@@ -185,7 +198,7 @@ export const FAQ = [
   },
   {
     q: 'Como começamos?',
-    a: 'A conversa começa no WhatsApp. Você conta o que o negócio faz, como as pessoas chegam hoje e o que cabe no orçamento. A Sentinel entende a necessidade antes de propor o trabalho. A proposta vem por escrito, com preço e prazo. Se não fizer sentido, nada começa.',
+    a: 'A conversa começa no WhatsApp. Para o site essencial, o valor publicado é de 12 parcelas de R$ 50 e o primeiro pagamento é na contratação. O que ficar fora desse pacote é conversado à parte, sem preço avulso nesta página. Se não fizer sentido, nada começa.',
   },
   {
     q: 'A Sentinel vende um site ou o resultado no Google?',
@@ -213,7 +226,7 @@ export const FAQ = [
   },
   {
     q: 'O domínio e o site ficam no meu nome?',
-    a: 'Sim. O domínio é registrado no nome do cliente. Se um dia você quiser levar o site para outro lugar ou encerrar o trabalho, os acessos são entregues, sem taxa de resgate.',
+    a: 'Sim. O domínio é registrado no nome do cliente. A hospedagem incluída no pacote vale por 12 meses a partir da publicação e não continua de graça depois disso. Se um dia você quiser levar o site para outro lugar ou encerrar o trabalho, os acessos são entregues, sem taxa de resgate.',
   },
   {
     q: 'Como eu contrato?',
@@ -225,7 +238,7 @@ export const FAQ = [
   },
   {
     q: 'Quanto custa?',
-    a: 'Não há tabela de preços dos serviços neste site. O valor é apresentado na proposta, depois de entender o negócio.',
+    a: 'O site essencial com a configuração básica do Perfil da Empresa no Google custa 12 parcelas de R$ 50, no total de R$ 600. É o parcelamento da criação. Outras soluções ficam sob consulta e não têm preço publicado aqui.',
   },
   {
     q: 'Vocês atendem a minha cidade?',

@@ -9,7 +9,6 @@ import { ContactPage } from './pages/ContactPage';
 import { FaqPage } from './pages/FaqPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { ProductsPage } from './pages/ProductsPage';
 import { ServicesPage } from './pages/ServicesPage';
 
 const LEGACY: Record<string, string> = {
@@ -84,7 +83,6 @@ export function App({ url }: { url?: string }) {
   if (currentPath === '/') content = <HomePage onNavigate={navigate} />;
   else if (currentPath === '/sobre') content = <AboutPage onNavigate={navigate} />;
   else if (currentPath === '/servicos') content = <ServicesPage />;
-  else if (currentPath === '/produtos') content = <ProductsPage />;
   else if (currentPath === '/faq') content = <FaqPage />;
   else if (currentPath === '/contato') content = <ContactPage />;
 

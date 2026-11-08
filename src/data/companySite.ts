@@ -12,7 +12,7 @@ export function whatsappHref(text: string = SITE.whatsappText): string {
   return `https://wa.me/${SITE.phoneWa}?text=${encodeURIComponent(text)}`;
 }
 
-export type PageKey = 'home' | 'sobre' | 'servicos' | 'produtos' | 'faq' | 'contato';
+export type PageKey = 'home' | 'sobre' | 'servicos' | 'faq' | 'contato';
 
 export interface PageMeta {
   key: PageKey;
@@ -46,14 +46,6 @@ export const PAGES: Record<PageKey, PageMeta> = {
     title: 'Criação de site, Google Meu Negócio e segurança | Sentinel',
     description:
       'Criação de site que converte, Google Meu Negócio, Maps, avaliações, fotos, posts, SEO local e blindagem digital para aparecer no Google. Serviço no Brasil.',
-  },
-  produtos: {
-    key: 'produtos',
-    path: '/produtos',
-    label: 'Produtos',
-    title: 'MiraLocal, Cota Casa e RDO Zap | Sentinel Systems',
-    description:
-      'Produtos da Sentinel Systems: MiraLocal, diagnóstico de presença no Google para lojas locais; Cota Casa, orçamento de obra; RDO Zap, relatório diário pelo WhatsApp.',
   },
   faq: {
     key: 'faq',
@@ -171,36 +163,6 @@ export const SERVICES = [
   },
 ] as const;
 
-export const PRODUCTS = [
-  {
-    name: 'MiraLocal',
-    href: 'https://miralocal.sentinelsystems.com.br',
-    price: 'R$ 39/mês',
-    priceAmount: '39',
-    priceNote: 'Plano publicado no MiraLocal, com 50 buscas por mês.',
-    description:
-      'Diagnóstico de presença no Google para lojas locais: busca a loja, mostra a nota e o que está errado no site, e gera um PDF com a sua marca para enviar no WhatsApp.',
-  },
-  {
-    name: 'Cota Casa',
-    href: 'https://cotacasa.com.br',
-    price: 'R$ 29,90/mês',
-    priceAmount: '29.90',
-    priceNote: 'Plano publicado no Cota Casa.',
-    description:
-      'Orçamento de obra por etapa com tabelas CUB e a norma da ABNT, cotação de materiais pronta para o WhatsApp e acompanhamento do orçado e do realizado.',
-  },
-  {
-    name: 'RDO Zap',
-    href: 'https://rdozap.sentinelsystems.com.br',
-    price: 'R$ 27/mês',
-    priceAmount: '27',
-    priceNote: 'Plano mensal publicado no RDO Zap.',
-    description:
-      'Transforma o export da conversa do grupo de WhatsApp da obra em Relatório Diário de Obra, no próprio navegador.',
-  },
-] as const;
-
 export const FAQ = [
   {
     q: 'A Sentinel vende um site ou o resultado no Google?',
@@ -240,7 +202,7 @@ export const FAQ = [
   },
   {
     q: 'Quanto custa?',
-    a: 'Não há tabela de preços dos serviços neste site. O valor é apresentado na proposta, depois de entender o negócio. MiraLocal, Cota Casa e RDO Zap mostram o próprio preço na página de cada produto.',
+    a: 'Não há tabela de preços dos serviços neste site. O valor é apresentado na proposta, depois de entender o negócio.',
   },
   {
     q: 'Vocês atendem a minha cidade?',
@@ -249,10 +211,6 @@ export const FAQ = [
   {
     q: 'Preciso entender de tecnologia?',
     a: 'Não. A conversa é sobre como o cliente procura, liga, chama e chega. A parte técnica fica com a Sentinel.',
-  },
-  {
-    q: 'MiraLocal, Cota Casa e RDO Zap são o serviço de presença no Google?',
-    a: 'Não. São produtos da própria empresa, cada um no seu site. O MiraLocal faz diagnóstico de presença no Google de lojas locais. O Cota Casa organiza orçamento e cotação de obra. O RDO Zap transforma a conversa do grupo de WhatsApp da obra em Relatório Diário de Obra. O trabalho de presença no Google do seu negócio é outro combinado, feito pela conversa de contato.',
   },
   {
     q: 'Este site pede login do Google?',
@@ -391,42 +349,6 @@ export function jsonLdFor(path: string): Record<string, unknown> {
           url: `${canonicalUrl('/servicos')}#${service.id}`,
           areaServed: { '@type': 'Country', name: 'Brasil' },
           provider: { '@id': ORGANIZATION_ID },
-        },
-      })),
-    });
-  }
-
-  if (page.path === '/produtos') {
-    graph.push({
-      '@type': 'ItemList',
-      name: 'Produtos da Sentinel Systems',
-      itemListElement: PRODUCTS.map((product, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        item: {
-          '@type': 'Product',
-          name: product.name,
-          description: product.description,
-          brand: { '@type': 'Brand', name: SITE.name },
-          url: product.href,
-          offers: {
-            '@type': 'Offer',
-            url: product.href,
-            priceCurrency: 'BRL',
-            price: product.priceAmount,
-            availability: 'https://schema.org/InStock',
-            priceSpecification: {
-              '@type': 'UnitPriceSpecification',
-              price: product.priceAmount,
-              priceCurrency: 'BRL',
-              unitText: 'mês',
-              referenceQuantity: {
-                '@type': 'QuantitativeValue',
-                value: '1',
-                unitCode: 'MON',
-              },
-            },
-          },
         },
       })),
     });

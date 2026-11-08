@@ -1,6 +1,6 @@
 import { ArrowRight, MapPin, MessageCircle, Phone, ShieldCheck } from 'lucide-react';
 import { PageHero } from '../components/site/PageHero';
-import { OUTCOMES, PRODUCTS, SERVICES, SITE, whatsappHref } from '../data/companySite';
+import { OUTCOMES, SERVICES, SITE, whatsappHref } from '../data/companySite';
 import { soundFx } from '../components/SoundEffects';
 
 interface HomePageProps {
@@ -65,8 +65,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
           <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-3xl">
             Veja a <a href="/sobre" onClick={(event) => { event.preventDefault(); go('/sobre'); }} className="font-semibold text-cyan-800">empresa</a>, a{' '}
-            <a href="/servicos" onClick={(event) => { event.preventDefault(); go('/servicos'); }} className="font-semibold text-cyan-800">criação de site e o Perfil da Empresa</a>, os{' '}
-            <a href="/produtos" onClick={(event) => { event.preventDefault(); go('/produtos'); }} className="font-semibold text-cyan-800">produtos</a> e as{' '}
+            <a href="/servicos" onClick={(event) => { event.preventDefault(); go('/servicos'); }} className="font-semibold text-cyan-800">criação de site e o Perfil da Empresa</a> e as{' '}
             <a href="/faq" onClick={(event) => { event.preventDefault(); go('/faq'); }} className="font-semibold text-cyan-800">perguntas frequentes</a>.
           </p>
         </div>
@@ -129,36 +128,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </article>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-slate-50 border-y border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-            <div className="max-w-3xl">
-              <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Produtos</p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                Produtos da própria Sentinel
-              </h2>
-            </div>
-            <button
-              type="button"
-              onClick={() => go('/produtos')}
-              className="inline-flex items-center gap-2 text-sm font-bold text-cyan-800 cursor-pointer"
-            >
-              Ver os três
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {PRODUCTS.map((product) => (
-              <article key={product.name} className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs flex flex-col">
-                <h3 className="text-lg font-extrabold text-slate-900">{product.name}</h3>
-                <p className="text-xs font-bold text-cyan-800 mt-1 mb-3">{product.price}</p>
-                <p className="text-sm text-slate-600 leading-relaxed flex-1">{product.description}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>

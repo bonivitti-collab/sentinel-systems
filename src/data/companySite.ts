@@ -27,9 +27,9 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Site essencial e perfil no Google para o comércio local | Sentinel',
+    title: 'Site essencial e perfil no Google para pequenos negócios | Sentinel',
     description:
-      'Página no celular e configuração básica do Perfil da Empresa no Google para o comércio local apresentar serviços, ser encontrado e facilitar o contato.',
+      'Atendimento online em todo o Brasil, com base na Região dos Lagos. Página no celular e configuração básica do Perfil da Empresa no Google para o pequeno negócio apresentar serviços e facilitar o contato.',
   },
   sobre: {
     key: 'sobre',
@@ -242,7 +242,7 @@ export const FAQ = [
   },
   {
     q: 'Vocês atendem a minha cidade?',
-    a: 'O atendimento é digital, à distância, para negócios no Brasil. A conversa e o acompanhamento usam o WhatsApp e o e-mail que já estão neste site.',
+    a: 'O atendimento é online, para pequenos negócios de todo o Brasil. A base da Sentinel é a Região dos Lagos, em Tamoios, Unamar e Cabo Frio, e isso não limita quem está em outra cidade. A conversa usa o WhatsApp e o e-mail deste site.',
   },
   {
     q: 'Preciso entender de tecnologia?',
@@ -290,10 +290,10 @@ function organizationNode() {
     image: `${SITE.url}/og-image.jpg`,
     email: SITE.email,
     telephone: '+55-22-99972-6069',
-    areaServed: {
-      '@type': 'Country',
-      name: 'Brasil',
-    },
+    areaServed: [
+      { '@type': 'Country', name: 'Brasil' },
+      { '@type': 'AdministrativeArea', name: 'Região dos Lagos' },
+    ],
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'BR',

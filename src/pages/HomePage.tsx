@@ -93,7 +93,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     <>
       <PageHero
         path="/"
-        eyebrow="Para o microcomércio local"
+        eyebrow="Para pequenos negócios"
         title={
           <>
             Site essencial e perfil no Google{' '}
@@ -104,6 +104,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
         }
         description="Uma página no celular para apresentar seus serviços, mostrar onde você fica e facilitar o contato no WhatsApp, com a configuração básica do Perfil da Empresa no Google. O Instagram continua útil. Este pacote ajuda o negócio a ser encontrado."
       >
+        <p className="mt-4 max-w-3xl text-sm sm:text-base font-semibold text-slate-800 leading-relaxed">
+          Atendimento online em todo o Brasil, com base na Região dos Lagos.
+        </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6">
           <a
             href={whatsappHref()}
@@ -125,6 +128,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </button>
         </div>
       </PageHero>
+
+      <section className="pb-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Onde a gente atende</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+            Todo o Brasil, com base na Região dos Lagos
+          </h2>
+          <p className="text-slate-600 text-base leading-relaxed">
+            A conversa é online, para o pequeno negócio de qualquer cidade. A base da Sentinel fica na Região dos Lagos, em Tamoios, Unamar e Cabo Frio.
+          </p>
+          <p className="mt-3 text-slate-600 text-base leading-relaxed">
+            Isso não fecha o atendimento na região. Quem procura criação de site em outro estado contrata o mesmo trabalho, pelo mesmo WhatsApp.
+          </p>
+        </div>
+      </section>
 
       <section className="pb-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

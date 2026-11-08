@@ -346,8 +346,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
             Outras soluções sob consulta
           </h2>
           <p className="text-slate-600 leading-relaxed">
-            Robô de WhatsApp, loja virtual, segurança da presença e o que o seu caso pedir fora desta página. Esses assuntos não têm preço publicado aqui. A conversa segue no mesmo WhatsApp.
+            Também trabalhamos com cardápio digital, automação de WhatsApp, ferramentas de IA, lojas virtuais e segurança da presença. Conte o que seu negócio precisa: orçamento sob consulta.
           </p>
+          <p className="mt-4 text-slate-800 font-semibold leading-relaxed">
+            Quer conversar sobre como o digital pode ajudar seu negócio a vender mais?
+          </p>
+          <a
+            href={whatsappHref('Olá! Quero agendar uma conversa sobre como o digital pode ajudar meu negócio. Podemos combinar um horário?')}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => soundFx.playUiClick()}
+            className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-cyan-800 hover:text-cyan-950"
+          >
+            Agendar uma conversa pelo WhatsApp
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </section>
 

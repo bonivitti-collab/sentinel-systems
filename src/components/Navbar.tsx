@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import { Menu, MessageCircle, Volume2, VolumeX, X } from 'lucide-react';
-import { NAV_LINKS, whatsappHref } from '../data/companySite';
+import { GUIAS_LINK, NAV_LINKS, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
 import { SentinelLogo } from './SentinelLogo';
 
@@ -24,6 +24,10 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [currentPath]);
+
+  const links = [...NAV_LINKS, GUIAS_LINK];
+  const isActive = (href: string) =>
+    href === '/guias' ? currentPath === '/guias' || currentPath.startsWith('/guias/') : href === currentPath;
 
   const go = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();
@@ -59,8 +63,8 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
           </a>
 
           <nav className="hidden lg:flex items-center gap-1 px-2 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90" aria-label="Principal">
-            {NAV_LINKS.map((link) => {
-              const active = link.href === currentPath;
+            {links.map((link) => {
+              const active = isActive(link.href);
               return (
                 <a
                   key={link.href}
@@ -122,8 +126,8 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
           aria-label="Menu móvel"
         >
           <div className="flex flex-col gap-2">
-            {NAV_LINKS.map((link) => {
-              const active = link.href === currentPath;
+            {links.map((link) => {
+              const active = isActive(link.href);
               return (
                 <a
                   key={link.href}

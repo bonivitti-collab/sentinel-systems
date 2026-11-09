@@ -18,6 +18,7 @@ export function applySeo(page: PageMeta) {
   setMeta('meta[name="twitter:title"]', 'content', page.title);
   setMeta('meta[name="twitter:description"]', 'content', page.description);
   setMeta('meta[name="twitter:url"]', 'content', canonical);
+  setMeta('meta[property="og:type"]', 'content', page.ogType ?? 'website');
   const script = document.getElementById('seo-jsonld');
   if (script) script.textContent = JSON.stringify(jsonLdFor(page.path));
 }

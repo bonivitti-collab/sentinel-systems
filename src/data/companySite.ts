@@ -1,3 +1,5 @@
+import { GUIDES_INDEX, PUBLISHED_GUIDES, publishedGuideByPath } from './publishedGuides';
+
 export const SITE = {
   name: 'Sentinel Systems',
   url: 'https://sentinelsystems.com.br',
@@ -15,11 +17,12 @@ export function whatsappHref(text: string = SITE.whatsappText): string {
 export type PageKey = 'home' | 'sobre' | 'servicos' | 'faq' | 'contato';
 
 export interface PageMeta {
-  key: PageKey;
+  key: string;
   path: string;
   label: string;
   title: string;
   description: string;
+  ogType?: 'website' | 'article';
 }
 
 export const PAGES: Record<PageKey, PageMeta> = {
@@ -69,6 +72,8 @@ export const NAV_LINKS = (Object.values(PAGES) as PageMeta[]).map((page) => ({
   href: page.path,
   label: page.label,
 }));
+
+export const GUIAS_LINK = { href: '/guias', label: 'Guias' } as const;
 
 export const SERVICES = [
   {
@@ -274,8 +279,30 @@ export function canonicalUrl(path: string): string {
   return `${SITE.url}${path}`;
 }
 
+export function indexablePages(): PageMeta[] {
+  return [
+    ...(Object.values(PAGES) as PageMeta[]),
+    {
+      key: 'guias',
+      path: GUIDES_INDEX.path,
+      label: GUIDES_INDEX.label,
+      title: GUIDES_INDEX.title,
+      description: GUIDES_INDEX.description,
+      ogType: 'website',
+    },
+    ...PUBLISHED_GUIDES.map((guide) => ({
+      key: guide.slug,
+      path: guide.slug,
+      label: GUIDES_INDEX.label,
+      title: guide.title,
+      description: guide.description,
+      ogType: 'article' as const,
+    })),
+  ];
+}
+
 export function pageByPath(path: string): PageMeta | undefined {
-  return (Object.values(PAGES) as PageMeta[]).find((page) => page.path === path);
+  return indexablePages().find((page) => page.path === path);
 }
 
 const ORGANIZATION_ID = `${SITE.url}/#organization`;
@@ -315,7 +342,98 @@ function organizationNode() {
   };
 }
 
+function visibleAnswer(answer: string): string {
+  return answer
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\*\*([\s\S]+?)\*\*/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+}
+
+function websiteNode() {
+  return {
+    '@type': 'WebSite',
+    '@id': `${SITE.url}/#website`,
+    url: SITE.url,
+    name: SITE.name,
+    inLanguage: 'pt-BR',
+    publisher: { '@id': ORGANIZATION_ID },
+  };
+}
+
+function guideArticleJsonLd(guide: (typeof PUBLISHED_GUIDES)[number]): Record<string, unknown> {
+  const url = canonicalUrl(guide.slug);
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      websiteNode(),
+      organizationNode(),
+      {
+        '@type': 'Article',
+        '@id': `${url}#article`,
+        headline: guide.h1,
+        description: guide.description,
+        datePublished: '2026-11-09',
+        inLanguage: 'pt-BR',
+        image: `${SITE.url}/og-image.jpg`,
+        mainEntityOfPage: url,
+        author: { '@id': ORGANIZATION_ID },
+        publisher: { '@id': ORGANIZATION_ID },
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: guide.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: visibleAnswer(item.answer),
+          },
+        })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Início', item: canonicalUrl('/') },
+          { '@type': 'ListItem', position: 2, name: 'Guias', item: canonicalUrl('/guias') },
+          { '@type': 'ListItem', position: 3, name: guide.h1, item: url },
+        ],
+      },
+    ],
+  };
+}
+
+function guidesIndexJsonLd(): Record<string, unknown> {
+  const url = canonicalUrl(GUIDES_INDEX.path);
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      websiteNode(),
+      organizationNode(),
+      {
+        '@type': 'WebPage',
+        '@id': `${url}#webpage`,
+        url,
+        name: GUIDES_INDEX.title,
+        description: GUIDES_INDEX.description,
+        inLanguage: 'pt-BR',
+        isPartOf: { '@id': `${SITE.url}/#website` },
+        about: { '@id': ORGANIZATION_ID },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Início', item: canonicalUrl('/') },
+          { '@type': 'ListItem', position: 2, name: 'Guias', item: url },
+        ],
+      },
+    ],
+  };
+}
+
 export function jsonLdFor(path: string): Record<string, unknown> {
+  if (path === GUIDES_INDEX.path) return guidesIndexJsonLd();
+  const published = publishedGuideByPath(path);
+  if (published) return guideArticleJsonLd(published);
   const known = pageByPath(path);
   if (!known) {
     return {

@@ -22,14 +22,19 @@
     { "source": "/automacao/:slug", "destination": "/servicos", "permanent": true },
     { "source": "/blog", "destination": "/faq", "permanent": true },
     { "source": "/solucoes/:slug", "destination": "/servicos", "permanent": true },
-    { "source": "/cidades/:slug", "destination": "/", "permanent": true },
-    { "source": "/guias/:slug", "destination": "/faq", "permanent": true }
+    { "source": "/cidades/:slug", "destination": "/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/sobre", "destination": "/sobre/index.html" },
     { "source": "/servicos", "destination": "/servicos/index.html" },
     { "source": "/faq", "destination": "/faq/index.html" },
-    { "source": "/contato", "destination": "/contato/index.html" }
+    { "source": "/contato", "destination": "/contato/index.html" },
+    { "source": "/guias", "destination": "/guias/index.html" },
+    { "source": "/guias/como-colocar-meu-negocio-no-google", "destination": "/guias/como-colocar-meu-negocio-no-google/index.html" },
+    { "source": "/guias/vale-a-pena-ter-site-pequeno-negocio", "destination": "/guias/vale-a-pena-ter-site-pequeno-negocio/index.html" },
+    { "source": "/guias/como-vender-mais-pelo-whatsapp", "destination": "/guias/como-vender-mais-pelo-whatsapp/index.html" },
+    { "source": "/guias/quanto-custa-fazer-um-site", "destination": "/guias/quanto-custa-fazer-um-site/index.html" },
+    { "source": "/guias/instagram-nao-traz-cliente", "destination": "/guias/instagram-nao-traz-cliente/index.html" }
   ],
   "headers": [
     {

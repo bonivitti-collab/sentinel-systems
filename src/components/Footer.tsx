@@ -1,6 +1,6 @@
 import { type MouseEvent } from 'react';
 import { ArrowUp, Mail, MessageCircle } from 'lucide-react';
-import { NAV_LINKS, SERVICES, SITE, whatsappHref } from '../data/companySite';
+import { GUIAS_LINK, NAV_LINKS, SERVICES, SITE, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
 import { SentinelLogo } from './SentinelLogo';
 
@@ -31,7 +31,7 @@ export function Footer({ onNavigate }: FooterProps) {
           <div className="lg:col-span-2">
             <h2 className="text-xs font-black text-slate-900 uppercase tracking-wider mb-4">Páginas</h2>
             <ul className="space-y-2.5 text-sm">
-              {NAV_LINKS.map((link) => (
+              {[...NAV_LINKS, GUIAS_LINK].map((link) => (
                 <li key={link.href}>
                   <a href={link.href} onClick={(event) => go(event, link.href)} className="hover:text-cyan-700">
                     {link.label}

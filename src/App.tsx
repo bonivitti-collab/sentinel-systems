@@ -4,9 +4,12 @@ import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 import { Navbar } from './components/Navbar';
 import { NAV_LINKS, pageByPath } from './data/companySite';
 import { applySeo } from './lib/seo';
+import { publishedGuideByPath } from './data/publishedGuides';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { FaqPage } from './pages/FaqPage';
+import { GuideArticlePage } from './pages/GuideArticlePage';
+import { GuidesIndexPage } from './pages/GuidesIndexPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -24,7 +27,6 @@ export function normalizePath(pathname: string): string {
   if (clean.startsWith('/solucoes/')) return '/servicos';
   if (clean.startsWith('/automacao/')) return '/servicos';
   if (clean.startsWith('/cidades/')) return '/';
-  if (clean.startsWith('/guias/')) return '/faq';
   return clean;
 }
 
@@ -79,12 +81,15 @@ export function App({ url }: { url?: string }) {
     }
   };
 
+  const guide = publishedGuideByPath(currentPath);
   let content = <NotFoundPage onNavigate={navigate} />;
   if (currentPath === '/') content = <HomePage onNavigate={navigate} />;
   else if (currentPath === '/sobre') content = <AboutPage onNavigate={navigate} />;
   else if (currentPath === '/servicos') content = <ServicesPage />;
   else if (currentPath === '/faq') content = <FaqPage />;
   else if (currentPath === '/contato') content = <ContactPage />;
+  else if (currentPath === '/guias') content = <GuidesIndexPage onNavigate={navigate} />;
+  else if (guide) content = <GuideArticlePage guide={guide} onNavigate={navigate} />;
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans overflow-x-hidden">

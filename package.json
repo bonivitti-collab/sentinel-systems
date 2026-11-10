@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && tsx --tsconfig tsconfig.app.json scripts/prerender.tsx",
+    "build": "tsc -b && vite build && tsx --tsconfig tsconfig.app.json scripts/prerender.tsx && tsx --tsconfig tsconfig.app.json scripts/build-diagnosticos.ts",
     "lint": "oxlint",
     "preview": "vite preview"
   },

@@ -34,7 +34,8 @@
     { "source": "/guias/vale-a-pena-ter-site-pequeno-negocio", "destination": "/guias/vale-a-pena-ter-site-pequeno-negocio/index.html" },
     { "source": "/guias/como-vender-mais-pelo-whatsapp", "destination": "/guias/como-vender-mais-pelo-whatsapp/index.html" },
     { "source": "/guias/quanto-custa-fazer-um-site", "destination": "/guias/quanto-custa-fazer-um-site/index.html" },
-    { "source": "/guias/instagram-nao-traz-cliente", "destination": "/guias/instagram-nao-traz-cliente/index.html" }
+    { "source": "/guias/instagram-nao-traz-cliente", "destination": "/guias/instagram-nao-traz-cliente/index.html" },
+    { "source": "/d/:slug", "destination": "/d/:slug/index.html" }
   ],
   "headers": [
     {
@@ -45,6 +46,12 @@
     },
     {
       "source": "/demos/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/d/(.*)",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
       ]

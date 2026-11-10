@@ -286,6 +286,64 @@ export const DIAGNOSTICOS: Diagnostico[] = [
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
+  {
+    slug: 'odontoeasy-nova-friburgo',
+    nome: 'Odontoeasy',
+    ctaDe: 'da Odontoeasy',
+    cidade: 'Nova Friburgo',
+    tipo: 'site_fraco',
+    descricao:
+      'Diagnóstico personalizado da Odontoeasy, em Nova Friburgo, com o que aparece no Google e no site hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems. Olhei só o que qualquer pessoa vê hoje no Google e no site de vocês, do jeito que um paciente novo faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 10 de novembro de 2026, no horário de Brasília, com informações públicas do Google e dos sites.',
+    googleFatos: [
+      'O perfil da unidade do Cadima Shopping existe como OdontoEasy | Dentista | Implante Dentário | Centro | Nova Friburgo - RJ, na Rua Moisés Amélio, 17, Loja 506, último andar, ao lado do cinema, CEP 28613-210.',
+      'A nota é 5,0, com 253 avaliações.',
+      'Há 73 fotos no perfil.',
+      'O horário está visível: de segunda a sexta, das 9h às 19h; sábado, das 9h às 14h; fechado no domingo.',
+      'O telefone do perfil é (22) 99911-9504.',
+      'O campo de site aponta para odontoeasyclinica.com.br, e não para odontoeasy.com.',
+    ],
+    siteFatos: [
+      'Além da página apontada pelo Google, existe o site <strong>odontoeasy.com</strong>, com as três unidades: Cadima Shopping, Centro (Praça Getúlio Vargas, 193) e Banquete (Estrada do Rosário).',
+      'A página que o Google abre, <strong>odontoeasyclinica.com.br</strong>, é uma página de captura com destaque para implantes e um formulário de nome e WhatsApp.',
+      'Na página de agendar avaliação do odontoeasy.com, o número (22) 99898-9504 aparece escrito certo, mas o link do WhatsApp vai para um número sem o DDD 22.',
+      'O horário de sábado da unidade do Cadima aparece como 14h na página inicial e no Fale Conosco, e como 15h na página /home/.',
+      'No odontoeasy.com há botão de WhatsApp, formulário para agendar e links para o Instagram <strong>@odontoeasyfriburgo</strong> e para a página no Facebook.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Um só caminho quando a pessoa pesquisa “dentista em Nova Friburgo”',
+        paragrafos: [
+          'Vocês já têm uma nota alta e muitas avaliações no Google, o que é difícil de conseguir. O que pode atrapalhar é o destino: quem encontra o perfil é levado para odontoeasyclinica.com.br, enquanto o site com as três unidades, os tratamentos e o agendamento é o odontoeasy.com.',
+          'Uma página clara, apontada no Google, deixa endereço, horário, as unidades e um jeito de agendar no mesmo lugar. Isso não promete o primeiro lugar no mapa. Só evita que o paciente novo bata em duas portas diferentes.',
+        ],
+      },
+      {
+        titulo: 'O WhatsApp de agendar precisa abrir certo, de um toque só',
+        paragrafos: [
+          'Na página de agendar do odontoeasy.com, o número (22) 99898-9504 está escrito com o 22, mas o link do WhatsApp abre sem o DDD. Quem toca para marcar pode cair num número incompleto e desistir.',
+          'Um botão por unidade, com o número certo, deixa o próximo passo fácil para quem já decidiu chamar.',
+        ],
+      },
+      {
+        titulo: 'Horário e unidades, fáceis de conferir no celular',
+        paragrafos: [
+          'As três unidades e os horários já estão no site. O que pode gerar dúvida é o sábado da unidade do Cadima: em uma página aparece até 14h e, em outra, até 15h.',
+          'Numa página organizada, cada unidade fica com o endereço, o horário certo e o WhatsApp correspondente, para a pessoa escolher onde ir sem precisar perguntar o básico.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página nova resolve',
+    paginaResolveTitulo: 'O cuidado de vocês continua. O caminho até a agenda fica mais claro.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando os tratamentos, as três unidades, o horário e um botão de WhatsApp que já abre a conversa certa.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível, para o site e o telefone ficarem alinhados com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
 ];
 
 export function diagnosticoBySlug(slug: string): Diagnostico | undefined {

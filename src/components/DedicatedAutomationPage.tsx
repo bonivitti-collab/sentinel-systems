@@ -11,7 +11,7 @@ interface DedicatedAutomationPageProps {
 }
 
 export const DedicatedAutomationPage: React.FC<DedicatedAutomationPageProps> = ({ automation, onBack, onOpenContact, onNavigate }) => {
-  const whatsappUrl = `https://wa.me/5522999726069?text=${encodeURIComponent(automation.whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/5522998434956?text=${encodeURIComponent(automation.whatsappMessage)}`;
 
   const relatedAutomations = AUTOMATION_LIST.filter((a) => a.slug !== automation.slug).slice(0, 3);
 

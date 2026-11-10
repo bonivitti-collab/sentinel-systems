@@ -11,7 +11,7 @@ interface DedicatedCityPageProps {
 }
 
 export const DedicatedCityPage: React.FC<DedicatedCityPageProps> = ({ city, onBack, onOpenContact, onNavigate }) => {
-  const whatsappUrl = `https://wa.me/5522999726069?text=${encodeURIComponent(city.whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/5522998434956?text=${encodeURIComponent(city.whatsappMessage)}`;
 
   const relatedCities = CITIES_LIST.filter((c) => c.slug !== city.slug).slice(0, 3);
 

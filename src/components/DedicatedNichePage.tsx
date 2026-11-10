@@ -11,7 +11,7 @@ interface DedicatedNichePageProps {
 }
 
 export const DedicatedNichePage: React.FC<DedicatedNichePageProps> = ({ niche, onBack, onOpenContact, onNavigate }) => {
-  const whatsappUrl = `https://wa.me/5522999726069?text=${encodeURIComponent(niche.whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/5522998434956?text=${encodeURIComponent(niche.whatsappMessage)}`;
 
   const relatedNiches = NICHES_LIST.filter((n) => n.slug !== niche.slug).slice(0, 3);
 

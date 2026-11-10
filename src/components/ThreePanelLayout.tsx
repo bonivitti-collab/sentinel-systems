@@ -122,14 +122,14 @@ export const ThreePanelLayout: React.FC<ThreePanelLayoutProps> = ({
 
           <div className="flex items-center gap-3">
             <a
-              href="https://wa.me/5522999726069?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20minha%20empresa!"
+              href="https://wa.me/5522998434956?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20minha%20empresa!"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => soundFx.playUiClick()}
               className="flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-bold transition-colors bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200"
             >
               <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
-              <span>WhatsApp: (22) 99972-6069</span>
+              <span>WhatsApp: (22) 99843-4956</span>
             </a>
           </div>
         </div>

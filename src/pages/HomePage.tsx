@@ -1,4 +1,5 @@
 import { ArrowRight, Camera, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { FerramentasSection } from '../components/FerramentasSection';
 import { SiteModelCarousel } from '../components/SiteModelCarousel';
 import { FaqList } from '../components/site/FaqList';
 import { PageHero } from '../components/site/PageHero';
@@ -390,6 +391,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
+
+      <FerramentasSection />
 
       <section className="py-16 bg-slate-50 border-y border-slate-200">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

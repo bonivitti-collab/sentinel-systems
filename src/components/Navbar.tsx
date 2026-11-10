@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import { Menu, MessageCircle, Volume2, VolumeX, X } from 'lucide-react';
-import { GUIAS_LINK, NAV_LINKS, whatsappHref } from '../data/companySite';
+import { MENU_LINKS, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
 import { SentinelLogo } from './SentinelLogo';
 
@@ -25,7 +25,7 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
     setMobileMenuOpen(false);
   }, [currentPath]);
 
-  const links = [...NAV_LINKS, GUIAS_LINK];
+  const links = MENU_LINKS;
   const isActive = (href: string) =>
     href === '/guias' ? currentPath === '/guias' || currentPath.startsWith('/guias/') : href === currentPath;
 

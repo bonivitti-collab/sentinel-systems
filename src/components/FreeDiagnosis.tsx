@@ -39,7 +39,7 @@ export const FreeDiagnosis: React.FC = () => {
 
     const msg = `Olá, equipe da Sentinel Systems! 🌊 Solicito um *Raio-X Grátis de Presença no Google* para minha empresa:\n\n*Nome da Empresa:* ${businessName}\n*Endereço/Cidade/Bairro:* ${address}\n*O que Vendemos / Ramo:* ${category}\n*Site ou Referência:* ${optionalId || 'Não informado'}\n*WhatsApp para Retorno:* ${phone}\n\nPoderiam analisar como estamos aparecendo nas buscas e se estamos perdendo clientes? Aguardo o retorno da equipe. Obrigado!`;
 
-    window.open(`https://wa.me/5522999726069?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/5522998434956?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   return (

@@ -3,8 +3,8 @@ import { GUIDES_INDEX, PUBLISHED_GUIDES, publishedGuideByPath } from './publishe
 export const SITE = {
   name: 'Sentinel Systems',
   url: 'https://sentinelsystems.com.br',
-  phoneDisplay: '(22) 99972-6069',
-  phoneWa: '5522999726069',
+  phoneDisplay: '(22) 99843-4956',
+  phoneWa: '5522998434956',
   email: 'sentinelsystemsai@gmail.com',
   whatsappText:
     'Olá! Vim pelo site da Sentinel Systems. Quero o site essencial com a configuração básica do Perfil da Empresa no Google. Vi as 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
@@ -64,7 +64,7 @@ export const PAGES: Record<PageKey, PageMeta> = {
     label: 'Contato',
     title: 'Contato | Criação de site e Perfil da Empresa | Sentinel',
     description:
-      'Fale com a Sentinel Systems sobre criação de site e aparecer no Google. WhatsApp (22) 99972-6069 e e-mail sentinelsystemsai@gmail.com. Atendimento no Brasil.',
+      'Fale com a Sentinel Systems sobre criação de site e aparecer no Google. WhatsApp (22) 99843-4956 e e-mail sentinelsystemsai@gmail.com. Atendimento no Brasil.',
   },
 };
 
@@ -235,7 +235,7 @@ export const FAQ = [
   },
   {
     q: 'Como eu contrato?',
-    a: 'A conversa começa pelo WhatsApp (22) 99972-6069 ou pelo e-mail sentinelsystemsai@gmail.com. Você conta como o cliente chega hoje. A Sentinel devolve o que faz sentido fazer, e o combinado segue por escrito antes de começar.',
+    a: 'A conversa começa pelo WhatsApp (22) 99843-4956 ou pelo e-mail sentinelsystemsai@gmail.com. Você conta como o cliente chega hoje. A Sentinel devolve o que faz sentido fazer, e o combinado segue por escrito antes de começar.',
   },
   {
     q: 'Qual é o prazo?',
@@ -316,7 +316,7 @@ function organizationNode() {
     logo: `${SITE.url}/icon-512.png`,
     image: `${SITE.url}/og-image.jpg`,
     email: SITE.email,
-    telephone: '+55-22-99972-6069',
+    telephone: '+55-22-99843-4956',
     areaServed: {
       '@type': 'Country',
       name: 'Brasil',

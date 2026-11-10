@@ -28,7 +28,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
 
     const formattedMessage = `Olá, equipe da Sentinel Systems! 🌊 Vim pelo site (sentinelsystems.com.br):\n\n*Meu Nome:* ${name}\n*Minha Empresa:* ${company || 'Não informada'}\n*WhatsApp:* ${phone}\n*Interesse no Pacote:* ${plan}\n*Mensagem:* ${message || 'Gostaria de tirar umas dúvidas e começar'}\n\nPodemos conversar? Obrigado!`;
 
-    const whatsappUrl = `https://wa.me/5522999726069?text=${encodeURIComponent(formattedMessage)}`;
+    const whatsappUrl = `https://wa.me/5522998434956?text=${encodeURIComponent(formattedMessage)}`;
     window.open(whatsappUrl, '_blank');
 
     setSubmitted(true);

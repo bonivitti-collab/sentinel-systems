@@ -11,7 +11,7 @@ interface DedicatedGuidePageProps {
 }
 
 export const DedicatedGuidePage: React.FC<DedicatedGuidePageProps> = ({ guide, onBack, onOpenContact, onNavigate }) => {
-  const whatsappUrl = `https://wa.me/5522999726069?text=${encodeURIComponent(`Olá! Li o guia "${guide.title}" no site da Sentinel e gostaria de tirar uma dúvida.`)}`;
+  const whatsappUrl = `https://wa.me/5522998434956?text=${encodeURIComponent(`Olá! Li o guia "${guide.title}" no site da Sentinel e gostaria de tirar uma dúvida.`)}`;
 
   const relatedGuides = GUIDES_LIST.filter((g) => g.slug !== guide.slug).slice(0, 3);
 

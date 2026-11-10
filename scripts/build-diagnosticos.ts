@@ -295,9 +295,16 @@ function rich(value: string): string {
   return escapeHtml(value).replace(/&lt;strong&gt;/g, '<strong>').replace(/&lt;\/strong&gt;/g, '</strong>');
 }
 
+function nomeComArtigo(diag: Diagnostico): string {
+  return diag.ctaDe ?? `da ${diag.nome}`;
+}
+
+function artigo(diag: Diagnostico): string {
+  return nomeComArtigo(diag).split(' ')[0] ?? 'da';
+}
+
 function ctaHref(diag: Diagnostico): string {
-  const label = diag.ctaDe ?? `da ${diag.nome}`;
-  const text = `Oi, Danillo! Vi o diagnóstico ${label} e quero conversar.`;
+  const text = `Oi, Danillo! Vi o diagnóstico ${nomeComArtigo(diag)} e quero conversar.`;
   return `https://wa.me/${SITE.phoneWa}?text=${encodeURIComponent(text)}`;
 }
 
@@ -320,7 +327,7 @@ const ICON_IG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
 const ICON_SITE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
 
 function render(diag: Diagnostico): string {
-  const title = `Diagnóstico da ${diag.nome} · Sentinel Systems`;
+  const title = `Diagnóstico ${nomeComArtigo(diag)} · Sentinel Systems`;
   const cards: string[] = [];
   if (diag.googleFatos.length > 0) {
     cards.push(sectionCard('No Google', ICON_PIN, diag.googleFatos));
@@ -376,7 +383,7 @@ ${CSS}
   <div class="hero">
     <div class="wrap">
       <p class="kicker"><span class="dot" aria-hidden="true"></span> Diagnóstico personalizado · sem custo</p>
-      <h1>Diagnóstico da <span>${escapeHtml(diag.nome)}</span></h1>
+      <h1>Diagnóstico ${escapeHtml(artigo(diag))} <span>${escapeHtml(diag.nome)}</span></h1>
       <p class="lead">${escapeHtml(diag.lead)}</p>
       <p class="note">${escapeHtml(diag.notaConsulta)}</p>
     </div>
@@ -449,7 +456,7 @@ function assertPage(diag: Diagnostico, html: string): void {
   if (html.includes('Exemplo para aprovação') || html.includes('ainda não publicado')) {
     throw new Error(`kicker de exemplo ainda em ${diag.slug}`);
   }
-  if (!html.includes(`Diagnóstico da <span>${escapeHtml(diag.nome)}</span>`)) {
+  if (!html.includes(`Diagnóstico ${escapeHtml(artigo(diag))} <span>${escapeHtml(diag.nome)}</span>`)) {
     throw new Error(`título ausente em ${diag.slug}`);
   }
   if (!html.includes(`wa.me/${SITE.phoneWa}`)) {

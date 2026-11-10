@@ -75,6 +75,18 @@ export const NAV_LINKS = (Object.values(PAGES) as PageMeta[]).map((page) => ({
 
 export const GUIAS_LINK = { href: '/guias', label: 'Guias' } as const;
 
+export const FERRAMENTAS_LINK = { href: '/#ferramentas', label: 'Ferramentas' } as const;
+
+export const MENU_LINKS = [
+  NAV_LINKS[0],
+  NAV_LINKS[1],
+  NAV_LINKS[2],
+  FERRAMENTAS_LINK,
+  NAV_LINKS[3],
+  NAV_LINKS[4],
+  GUIAS_LINK,
+];
+
 export const SERVICES = [
   {
     id: 'sites',

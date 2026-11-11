@@ -802,6 +802,266 @@ export const DIAGNOSTICOS: Diagnostico[] = [
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
+  {
+    slug: 'lourencos-pizza-macae',
+    nome: "Lourenço's pizza",
+    ctaDe: "da Lourenço's",
+    cidade: 'Macaé',
+    tipo: 'instagram',
+    descricao:
+      "Diagnóstico personalizado da Lourenço's pizza, em Macaé, com o que aparece no Google e no Instagram.",
+    lead: "Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui pertinho de Macaé. Com a temporada de verão chegando, olhei só o que qualquer pessoa vê hoje no Google e no Instagram de vocês. Segue o que eu encontrei, com calma e sem enrolação.",
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do Instagram.',
+    googleFatos: [
+      "O perfil existe como Lourenço's pizza, na R. Juno, 62, em Granja dos Cavaleiros, Macaé - RJ, CEP 27930-680.",
+      'A nota é 4,9, com 967 avaliações na listagem consultada. Outra listagem pública, no mesmo dia, mostrava 1.016 avaliações com a mesma nota; por isso o texto fala em mais de 960 avaliações.',
+      'O horário está visível: fechado na segunda; de terça a domingo, das 19h às 23h.',
+      'O telefone do perfil é um número de celular.',
+      'O campo de site aponta para uma página de pedido na plataforma saipos.com, e não para uma página própria.',
+    ],
+    instagramFatos: [
+      'O perfil público é <strong>@pizzaria_lourenco</strong>, conforme a listagem do Restaurant Guru consultada no mesmo dia.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “pizzaria em Macaé”',
+        paragrafos: [
+          'Com a temporada de verão chegando, muita gente de fora pesquisa no Google antes de escolher onde jantar. Uma nota 4,9 com mais de 960 avaliações é difícil de conseguir. O Instagram existe, mas o link que o Google mostra é uma página de pedido, e nem toda busca termina ali.',
+          'Uma página sua ajuda a mostrar o que vocês servem, o endereço, o horário e um jeito simples de chamar quando a pessoa está comparando opções. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Horário, endereço e um jeito de chamar, num só lugar',
+        paragrafos: [
+          'O perfil no Google já tem nota, endereço e horário. Quem toca em “Site”, porém, cai numa plataforma de pedido, e não numa página com essas informações à vista.',
+          'Uma página com mapa, horário e o que entra no cardápio tira essas dúvidas antes da pessoa precisar perguntar.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para quem chega pelo Google',
+        paragrafos: [
+          'O celular já aparece no perfil. Muita gente prefere um toque e já abrir a conversa. Uma página com um botão simples deixa esse passo à mão, inclusive para quem está na cidade só na temporada.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'the-place-lanches-bar-cabo-frio',
+    nome: 'The Place Lanches & Bar',
+    ctaDe: 'do The Place',
+    cidade: 'Cabo Frio',
+    tipo: 'instagram',
+    descricao:
+      'Diagnóstico personalizado do The Place Lanches & Bar, em Cabo Frio, com o que aparece no Google e no Instagram.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui pertinho de Cabo Frio. Com a temporada de verão chegando, olhei só o que qualquer pessoa vê hoje no Google e no Instagram de vocês. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do Instagram.',
+    googleFatos: [
+      'O perfil existe como The Place Lanches & Bar, na R. Finlândia, 110, em Jardim Caiçara, Cabo Frio - RJ, CEP 28910-260.',
+      'A nota é 4,7, com 246 avaliações na listagem consultada. Outra listagem pública, no mesmo dia, mostrava 248 avaliações com a mesma nota; por isso o texto fala em mais de 240 avaliações.',
+      'O horário está visível: fechado na segunda; de terça a domingo, das 18h às 23h.',
+      'O telefone do perfil é um número de celular.',
+      'O perfil não tem link de site nem de Instagram.',
+    ],
+    instagramFatos: [
+      'O perfil público é <strong>@theplacecf</strong>, conforme a listagem do Restaurant Guru consultada no mesmo dia. Esse endereço não aparece no perfil do Google.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “hamburgueria em Cabo Frio”',
+        paragrafos: [
+          'Com a temporada de verão chegando, muita gente de fora pesquisa no celular antes de escolher onde lanchar. Uma nota 4,7 com mais de 240 avaliações é difícil de conseguir. O Instagram existe, mas quem encontra vocês no Google não vê esse link nem uma página própria.',
+          'Uma página sua ajuda a mostrar o que vocês servem, o endereço, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Um caminho que não depende só da ficha do Google',
+        paragrafos: [
+          'Hoje, quem pesquisa o The Place no Google fica só com a ficha: nome, nota, endereço e telefone. Para ver o que vocês servem, a pessoa precisa caçar o Instagram por conta própria ou ligar.',
+          'Uma página com fotos, o que sai da cozinha e o horário reduz essa volta.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para quem chega pelo Google',
+        paragrafos: [
+          'O celular já está no perfil. Um botão que já abre a conversa deixa o próximo passo à mão, sobretudo para quem está na cidade só na temporada e prefere chamar pelo WhatsApp.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página e, se fizer sentido, o Instagram alinhado. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'rota-22-hamburgueria-rio-das-ostras',
+    nome: 'Rota 22 Hamburgueria',
+    ctaDe: 'da Rota 22',
+    cidade: 'Rio das Ostras',
+    tipo: 'instagram',
+    descricao:
+      'Diagnóstico personalizado da Rota 22 Hamburgueria, em Rio das Ostras, com o que aparece no Google e no Instagram.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui pertinho de Rio das Ostras. Com a temporada de verão chegando, olhei só o que qualquer pessoa vê hoje no Google e no Instagram de vocês. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do Instagram.',
+    googleFatos: [
+      'O perfil existe como Rota 22 Hamburgueria, na Rodovia Amaral Peixoto, 4961, 3º andar — rooftop, em Rio das Ostras - RJ, CEP 28893-076.',
+      'A nota é 4,9, com 561 avaliações.',
+      'O horário está visível: fechado na segunda e na terça; de quarta a domingo, das 18h às 23h.',
+      'O telefone do perfil é um número de celular.',
+      'O campo de site aponta para uma página de pedido na plataforma goomer.app. Há também um link para o Facebook. Não há uma página própria.',
+    ],
+    instagramFatos: [
+      'O perfil público é <strong>@rota22hamburgueria</strong>. Esse endereço não aparece como site no perfil do Google.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “hamburgueria em Rio das Ostras”',
+        paragrafos: [
+          'Com a temporada de verão chegando, muita gente de fora pesquisa no celular onde comer, inclusive quem ainda não conhece o rooftop na Amaral Peixoto. Uma nota 4,9 com 561 avaliações é difícil de conseguir. O Instagram existe, mas o link que o Google mostra é uma página de pedido.',
+          'Uma página sua ajuda a apresentar a casa, o endereço, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Mostrar o rooftop sem depender só do pedido online',
+        paragrafos: [
+          'Quem toca em “Site” no perfil cai numa plataforma de pedido. Para muita gente, sobretudo turista, isso não explica a vista, o endereço no terceiro andar nem como chegar.',
+          'Uma página com fotos do espaço, o horário e o mapa deixa isso claro antes da pessoa precisar perguntar.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para quem chega pelo Google',
+        paragrafos: [
+          'O celular já está no perfil. Um botão que já abre a conversa, para reserva ou pedido, deixa o próximo passo à mão.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia não é trocar o Instagram nem a página de pedido. É ter uma página no celular, com até cinco seções, mostrando a casa, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'vicoli-pizzeria-macae',
+    nome: 'Vicoli Pizzeria',
+    ctaDe: 'da Vicoli',
+    cidade: 'Macaé',
+    tipo: 'instagram',
+    descricao:
+      'Diagnóstico personalizado da Vicoli Pizzeria, em Macaé, com o que aparece no Google e no Instagram.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui pertinho de Macaé. Com a temporada de verão chegando, olhei só o que qualquer pessoa vê hoje no Google e no Instagram de vocês. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do Instagram.',
+    googleFatos: [
+      'O perfil existe como Vicoli Pizzeria, na Galeria Praiana, R. Mal. Floriano Peixoto, 121, loja 1, em Cavaleiros, Macaé - RJ, CEP 27920-200.',
+      'A nota é 4,7, com 463 avaliações.',
+      'O horário está visível: fechado na segunda; de terça a domingo, das 17h30 às 23h.',
+      'O telefone do perfil é um número de celular.',
+      'O campo de site aponta para o Instagram, e não para uma página própria. Há também um link de cardápio na plataforma jotaja.',
+    ],
+    instagramFatos: [
+      'O perfil público é <strong>@vicoli_macae</strong>.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “pizzaria em Macaé”',
+        paragrafos: [
+          'Com a temporada de verão chegando, muita gente de fora pesquisa no celular antes de escolher onde jantar. Uma nota 4,7 com 463 avaliações é difícil de conseguir. O Instagram de vocês está no ar, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
+          'Uma página sua ajuda a mostrar o que vocês servem, o endereço na Galeria Praiana, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Endereço, horário e o que vocês servem, sem abrir outro aplicativo',
+        paragrafos: [
+          'Quem encontra vocês no Google hoje é levado ao Instagram ou a uma página de pedido. Para muita gente, sobretudo quem é de fora, isso pede um aplicativo a mais e nem sempre fica claro o horário e como chegar à loja 1 da galeria.',
+          'Uma página com endereço, mapa, horário e o que vocês servem reduz essa volta.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para quem chega pelo Google',
+        paragrafos: [
+          'O celular já está no perfil. Um botão que já abre a conversa deixa o próximo passo à mão, inclusive para reserva no verão, quando a casa costuma encher.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'fornare-pizzeria-macae',
+    nome: 'Fornare Pizzeria',
+    ctaDe: 'da Fornare',
+    cidade: 'Macaé',
+    tipo: 'instagram',
+    descricao:
+      'Diagnóstico personalizado da Fornare Pizzeria, em Macaé, com o que aparece no Google e no Instagram.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui pertinho de Macaé. Com a temporada de verão chegando, olhei só o que qualquer pessoa vê hoje no Google e no Instagram de vocês. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do Instagram.',
+    googleFatos: [
+      'O perfil existe como Fornare Pizzeria (Macaé), na Av. Atlântica, 580, em Macaé - RJ, CEP 27920-325.',
+      'A nota é 4,8, com 88 avaliações.',
+      'O horário está visível: fechado na segunda; de terça a domingo, das 18h às 23h30.',
+      'O telefone do perfil é um número de celular.',
+      'O campo de site aponta para o Instagram, e não para uma página própria. Há também um link para o Facebook.',
+    ],
+    instagramFatos: [
+      'O perfil público é <strong>@fornarepizzeria</strong>.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “pizzaria em Macaé”',
+        paragrafos: [
+          'Com a temporada de verão chegando, a Avenida Atlântica recebe muita gente de fora, e boa parte pesquisa no celular antes de sair. Uma nota 4,8 é difícil de conseguir. O Instagram de vocês está no ar, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
+          'Uma página sua ajuda a mostrar o que vocês servem, o endereço na orla, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Horário e endereço à vista, sem rolar o feed',
+        paragrafos: [
+          'Quem toca em “Site” no perfil é levado ao Instagram. Para quem está na orla e só quer saber se está aberto, onde fica e como chamar, isso pede outro aplicativo.',
+          'Uma página com horário, mapa e um resumo do que vocês servem resolve isso de uma vez.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para quem chega pelo Google',
+        paragrafos: [
+          'O celular já está no perfil. Um botão que já abre a conversa deixa o próximo passo à mão, sobretudo no verão, quando a orla está mais cheia.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
 ];
 
 export function diagnosticoBySlug(slug: string): Diagnostico | undefined {

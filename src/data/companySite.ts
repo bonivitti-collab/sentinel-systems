@@ -19,6 +19,30 @@ export const VIDEOS_WHATSAPP_TEXT =
 
 export const NEUTRAL_WHATSAPP_TEXT = 'Olá! Vim pelo site da Sentinel e quero conversar.';
 
+export const EXAMPLE_VIDEOS = [
+  {
+    id: 'restaurante',
+    label: 'Restaurante',
+    description: 'Cena ilustrativa feita com IA para mostrar um restaurante no Instagram e no Status.',
+    src: '/videos/exemplo-restaurante.mp4',
+    poster: '/videos/exemplo-restaurante.jpg',
+  },
+  {
+    id: 'loja',
+    label: 'Loja',
+    description: 'Cena ilustrativa feita com IA para mostrar uma loja no Instagram e no Status.',
+    src: '/videos/exemplo-boutique.mp4',
+    poster: '/videos/exemplo-boutique.jpg',
+  },
+  {
+    id: 'pousada',
+    label: 'Pousada',
+    description: 'Cena ilustrativa feita com IA para mostrar uma pousada no Instagram e no Status.',
+    src: '/videos/exemplo-pousada.mp4',
+    poster: '/videos/exemplo-pousada.jpg',
+  },
+] as const;
+
 export type PageKey = 'home' | 'sites' | 'videos' | 'ferramentas' | 'sobre' | 'servicos' | 'faq' | 'contato';
 
 export interface PageMeta {
@@ -597,6 +621,20 @@ export function jsonLdFor(path: string): Record<string, unknown> {
         ];
       }
       graph.push(service);
+    }
+  }
+
+  if (page.path === '/videos') {
+    for (const video of EXAMPLE_VIDEOS) {
+      graph.push({
+        '@type': 'VideoObject',
+        name: `Exemplo de vídeo para ${video.label.toLowerCase()}`,
+        description: video.description,
+        thumbnailUrl: `${SITE.url}${video.poster}`,
+        contentUrl: `${SITE.url}${video.src}`,
+        uploadDate: '2026-11-11',
+        duration: 'PT20S',
+      });
     }
   }
 

@@ -1,6 +1,7 @@
+import { useEffect, useRef, useState } from 'react';
 import { Check, MessageCircle, Minus } from 'lucide-react';
 import { PageHero } from '../components/site/PageHero';
-import { VIDEOS_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
+import { EXAMPLE_VIDEOS, VIDEOS_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
 import { soundFx } from '../components/SoundEffects';
 
 const STEPS = [
@@ -54,18 +55,68 @@ const EXCLUDED_ITEMS = [
   'promessa de vendas',
 ] as const;
 
-/**
- * Para publicar um exemplo de verdade:
- * 1. Salve o arquivo em public/videos/ (vertical, proporção 9:16, mp4).
- * 2. Preencha src, por exemplo src: '/videos/exemplo-1.mp4'.
- * 3. Se quiser uma imagem de capa, preencha poster, por exemplo poster: '/videos/exemplo-1.jpg'.
- * Enquanto src estiver vazio, o espaço mostra "Em breve". Não use vídeo de outro negócio.
- */
-const EXAMPLE_VIDEOS: { id: string; label: string; src?: string; poster?: string }[] = [
-  { id: 'exemplo-1', label: 'Exemplo 1' },
-  { id: 'exemplo-2', label: 'Exemplo 2' },
-  { id: 'exemplo-3', label: 'Exemplo 3' },
-];
+function ExampleVideoPlayer({
+  src,
+  poster,
+  label,
+}: {
+  src: string;
+  poster: string;
+  label: string;
+}) {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const box = boxRef.current;
+    const video = videoRef.current;
+    if (!box || !video) return;
+    video.muted = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setReady(true);
+          const play = () => {
+            video.play().catch(() => {});
+          };
+          if (video.readyState >= 2) play();
+          else video.addEventListener('loadeddata', play, { once: true });
+        } else {
+          video.pause();
+        }
+      },
+      { rootMargin: '120px 0px', threshold: 0.2 },
+    );
+    observer.observe(box);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <figure className="min-w-0">
+      <div ref={boxRef} className="aspect-[9/16] w-full">
+        <video
+          ref={videoRef}
+          src={ready ? src : undefined}
+          poster={poster}
+          muted
+          playsInline
+          loop
+          controls
+          preload={ready ? 'metadata' : 'none'}
+          width={540}
+          height={960}
+          className="block h-full w-full rounded-3xl bg-slate-900 object-cover"
+          aria-label={label}
+        />
+      </div>
+      <figcaption className="mt-3 text-sm leading-relaxed text-slate-600">
+        <span className="block font-extrabold text-slate-900">{label}</span>
+        Cena ilustrativa feita com IA
+      </figcaption>
+    </figure>
+  );
+}
 
 const VIDEO_PACKAGES = [
   {
@@ -214,32 +265,12 @@ export function VideosPage() {
               Exemplos de vídeos
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              Espaço reservado para vídeos verticais, no formato do celular, para Instagram e Status. Entram aqui quando estiverem prontos. Não há exemplo publicado ainda.
+              Três exemplos no formato do celular, para o Instagram e o Status. São cenas ilustrativas feitas com IA. O som começa desligado.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {EXAMPLE_VIDEOS.map((video) => (
-              <article key={video.id} className="min-w-0">
-                {video.src ? (
-                  <video
-                    controls
-                    playsInline
-                    preload="metadata"
-                    poster={video.poster}
-                    className="aspect-[9/16] w-full max-w-full rounded-3xl bg-slate-900 object-cover"
-                  >
-                    <source src={video.src} type="video/mp4" />
-                  </video>
-                ) : (
-                  <div className="aspect-[9/16] w-full max-w-full rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center text-center px-6">
-                    <p className="text-xs font-bold uppercase tracking-wider text-cyan-700">Em breve</p>
-                    <p className="mt-2 text-base font-extrabold text-slate-900">{video.label}</p>
-                    <p className="mt-2 text-sm text-slate-500 leading-relaxed">
-                      Vídeo vertical para Instagram e Status
-                    </p>
-                  </div>
-                )}
-              </article>
+              <ExampleVideoPlayer key={video.id} src={video.src} poster={video.poster} label={video.label} />
             ))}
           </div>
         </div>

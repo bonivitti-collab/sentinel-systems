@@ -344,6 +344,464 @@ export const DIAGNOSTICOS: Diagnostico[] = [
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
+  {
+    slug: 'club-fashion-multimarcas-sao-pedro-da-aldeia',
+    nome: 'Club Fashion Multimarcas',
+    ctaDe: 'da Club Fashion',
+    cidade: 'São Pedro da Aldeia',
+    tipo: 'instagram',
+    descricao:
+      'Diagnóstico personalizado da Club Fashion Multimarcas, em São Pedro da Aldeia, com o que aparece no Google e no Instagram.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui pertinho de São Pedro. Com a temporada de verão chegando, olhei só o que qualquer pessoa vê hoje no Google e no Instagram de vocês. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do Instagram.',
+    googleFatos: [
+      'O perfil existe como Club Fashion Multimarcas, na Av. São Pedro, em São Pedro da Aldeia - RJ.',
+      'A nota é 4,6, com 45 avaliações.',
+      'O horário está visível: de segunda a sexta, das 9h às 19h; sábado, das 9h às 18h; fechado no domingo.',
+      'O telefone do perfil é um número de celular.',
+      'O campo de site aponta para o Instagram, e não para uma página própria.',
+    ],
+    instagramFatos: [
+      'O perfil público é <strong>@clubfashionmulti</strong>.',
+      'Na consulta, o perfil exibia cerca de 42 mil seguidores e mais de 5.800 publicações.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “loja de roupa em São Pedro da Aldeia”',
+        paragrafos: [
+          'Com a temporada de verão chegando, a cidade recebe muita gente de fora, e boa parte pesquisa no Google antes de sair de casa. O Instagram de vocês é forte, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
+          'Uma página de vocês ajuda a mostrar as marcas, o endereço, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Novidades da temporada sem depender só do feed',
+        paragrafos: [
+          'Com milhares de publicações, o que chegou de novo pode ficar escondido no meio do feed para quem chega agora. Uma página com as coleções do verão e as marcas da loja deixa isso à vista em poucos segundos.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para quem chega pelo Google',
+        paragrafos: [
+          'O telefone já aparece no perfil. Muita gente prefere um toque que já abre a conversa para perguntar tamanho, cor ou se a peça ainda está na loja. Numa página, esse botão fica sempre à vista.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a loja, as marcas, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: site e informações alinhadas com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'oticas-agatha-sao-pedro-da-aldeia',
+    nome: 'Óticas Agatha',
+    ctaDe: 'da Óticas Agatha',
+    cidade: 'São Pedro da Aldeia',
+    tipo: 'instagram',
+    descricao:
+      'Diagnóstico personalizado da Óticas Agatha, em São Pedro da Aldeia, com o que aparece no Google e no Instagram.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui pertinho de São Pedro. Com a temporada de verão chegando, olhei só o que qualquer pessoa vê hoje no Google e no Instagram de vocês. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do Instagram.',
+    googleFatos: [
+      'O perfil existe como Óticas Agatha, em São Pedro da Aldeia - RJ.',
+      'A nota é 5,0, com 43 avaliações.',
+      'O horário está visível: de segunda a sexta, das 9h às 17h30; sábado, das 9h às 12h30; fechado no domingo.',
+      'O telefone do perfil é um número de celular.',
+      'O campo de site aponta para o Instagram, e não para uma página própria.',
+      'Na listagem pública consultada, o endereço aparece só como “São Pedro da Aldeia, RJ”, sem o nome da rua.',
+    ],
+    instagramFatos: [
+      'O perfil público é <strong>@oticasagatha</strong>.',
+      'Na consulta, o perfil exibia cerca de 2.700 seguidores e 92 publicações.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “ótica em São Pedro da Aldeia”',
+        paragrafos: [
+          'No verão, muita gente que está na região precisa de óculos de sol, de um ajuste ou de um conserto rápido, e pesquisa no celular. A nota máxima de vocês é difícil de conseguir. O que falta é uma página própria no lugar do link do Instagram.',
+          'Uma página ajuda a mostrar os serviços, as armações e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Endereço fácil de encontrar para quem não conhece a cidade',
+        paragrafos: [
+          'Na listagem consultada, o endereço aparece só com o nome da cidade. Para quem está de passagem, isso obriga a perguntar onde fica antes de ir.',
+          'Uma página com rua, ponto de referência, mapa e horário tira essa dúvida na hora.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para quem chega pelo Google',
+        paragrafos: [
+          'O telefone já aparece no perfil. Muita gente prefere um toque que já abre a conversa para perguntar preço, prazo ou se dá para passar hoje. Numa página, esse botão fica sempre à vista.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: endereço mais claro e site alinhado com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'paparico-pet-shop-cabo-frio',
+    nome: 'Paparico Pet Shop',
+    ctaDe: 'do Paparico Pet Shop',
+    cidade: 'Cabo Frio',
+    tipo: 'site_fraco',
+    descricao:
+      'Diagnóstico personalizado do Paparico Pet Shop, em Cabo Frio, com o que aparece no Google e no link de site hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui em Cabo Frio. Com a temporada de verão chegando, procurei vocês no Google do jeito que um cliente novo faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do link de site do perfil.',
+    googleFatos: [
+      'O perfil existe como Paparico Pet Shop, na R. Antônio Feliciano de Almeida, em Cabo Frio - RJ.',
+      'A nota é 4,7, com 65 avaliações.',
+      'O horário está visível: fechado na segunda; de terça a sexta, das 9h às 18h; sábado, das 9h às 13h; fechado no domingo.',
+      'O telefone do perfil é um número de celular.',
+    ],
+    siteFatos: [
+      'O campo de site do perfil traz um link curto (<strong>goo.gl</strong>) que leva a um endereço do Google Sites.',
+      'Ao abrir esse link sem estar logado, aparece uma tela de login do Google, e não o site do pet shop.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'O link de site precisa abrir o site',
+        paragrafos: [
+          'Quem toca em “Site” no perfil de vocês cai numa tela pedindo login do Google. A maioria das pessoas desiste ali, sem ver serviços, preços ou como agendar.',
+          'Uma página aberta, que carrega direto no celular, resolve isso e aproveita as boas avaliações que vocês já têm.',
+        ],
+      },
+      {
+        titulo: 'Banho e tosa fáceis de agendar na temporada',
+        paragrafos: [
+          'No verão, muita família vem para Cabo Frio com o cachorro e procura banho e tosa no celular. Uma página com os serviços, o horário e um botão de WhatsApp deixa o agendamento a um toque.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Horário e endereço claros para quem é de fora',
+        paragrafos: [
+          'O horário já está no perfil, inclusive o fechamento na segunda. Numa página, isso fica junto com o mapa e o que vocês oferecem, para a pessoa não precisar perguntar o básico.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página nova resolve',
+    paginaResolveTitulo: 'O cuidado com os pets continua. O caminho até a agenda fica mais claro.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site passando a abrir a página certa. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'caramelo-racoes-pet-shop-cabo-frio',
+    nome: 'Caramelo Rações e Pet Shop',
+    ctaDe: 'da Caramelo Rações e Pet Shop',
+    cidade: 'Cabo Frio',
+    tipo: 'site_fraco',
+    descricao:
+      'Diagnóstico personalizado da Caramelo Rações e Pet Shop, em Cabo Frio, com o que aparece no Google e no link de site hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui em Cabo Frio. Com a temporada de verão chegando, procurei vocês no Google do jeito que um cliente novo faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do link de site do perfil.',
+    googleFatos: [
+      'O perfil existe como CARAMELO Rações e Pet Shop, na Av. América Central, em Cabo Frio - RJ.',
+      'A nota é 4,9, com 35 avaliações.',
+      'O horário está visível: de segunda a sexta, das 9h às 19h; sábado, das 9h às 16h; fechado no domingo.',
+      'O telefone do perfil é um número de celular.',
+    ],
+    siteFatos: [
+      'O campo de site do perfil aponta para <strong>caramelo-racoes-e-pet-shop.negocio.site</strong>.',
+      'Ao abrir esse endereço, aparece uma página de erro 404 (página não encontrada).',
+      'Os sites com final .negocio.site eram criados pelo próprio Perfil da Empresa no Google, e o Google desativou esse tipo de site em 2024.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Trocar um link que hoje dá erro',
+        paragrafos: [
+          'Quem toca em “Site” no perfil de vocês cai numa página de erro. Para quem ainda não conhece a loja, isso pode passar a impressão de que o negócio parou, mesmo com nota 4,9.',
+          'Uma página que abre de verdade no celular, com o que vocês vendem e como pedir, resolve isso.',
+        ],
+      },
+      {
+        titulo: 'Pedido de ração e entrega a um toque',
+        paragrafos: [
+          'Na temporada, chega muita gente com pet que esqueceu a ração ou precisa de um acessório e pesquisa no celular. Uma página com as marcas, a entrega e um botão de WhatsApp deixa o pedido fácil.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Horário e endereço claros para quem é de fora',
+        paragrafos: [
+          'O horário já está no perfil. Numa página, ele fica junto com o mapa e o WhatsApp, para a pessoa não precisar perguntar o básico.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página nova resolve',
+    paginaResolveTitulo: 'O bom atendimento continua. O link do Google volta a levar a algum lugar.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês vendem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site passando a abrir a página nova. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'stalefish-board-shop-saquarema',
+    nome: 'StaleFish Board Shop',
+    ctaDe: 'da StaleFish Board Shop',
+    cidade: 'Saquarema',
+    tipo: 'sem_site',
+    descricao:
+      'Diagnóstico personalizado da StaleFish Board Shop, em Saquarema, com o que aparece no Google hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, procurei vocês no Google do jeito que um cliente novo faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google.',
+    googleFatos: [
+      'O perfil existe como StaleFish Board Shop, na Av. Oceânica, em Itaúna, Saquarema - RJ.',
+      'A nota é 4,8, com 41 avaliações.',
+      'O horário está visível: fechado na segunda; de terça a sábado, das 10h às 17h; domingo, das 10h às 16h.',
+      'O telefone do perfil é um número de celular.',
+      'O único link do perfil é a página no Facebook. Não há site nem Instagram no perfil.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “surf shop em Itaúna”',
+        paragrafos: [
+          'No verão, Itaúna recebe muito surfista e turista que chega sem algum equipamento e pesquisa no celular onde comprar. Vocês já têm nota alta, o que é difícil de conseguir. O que falta é uma página que mostre o que tem na loja.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Mostrar o que vocês vendem sem depender do Facebook',
+        paragrafos: [
+          'Hoje o perfil leva só ao Facebook, que nem todo mundo usa. Uma página com pranchas, acessórios e o que mais vocês trabalham ajuda a pessoa a decidir ir até a loja.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para perguntar antes de ir',
+        paragrafos: [
+          'O telefone já está no perfil. Um botão que já abre a conversa ajuda quem quer saber se tem a peça antes de sair da praia.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'A loja continua a mesma. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'pousada-catavento-saquarema',
+    nome: 'Pousada Catavento',
+    ctaDe: 'da Pousada Catavento',
+    cidade: 'Saquarema',
+    tipo: 'site_fraco',
+    descricao:
+      'Diagnóstico personalizado da Pousada Catavento, em Saquarema, com o que aparece no Google e no site hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, abri o site de vocês no celular, do jeito que um hóspede faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do site.',
+    googleFatos: [
+      'O perfil existe como Pousada Catavento, na R. dos Tatuís, em Itaúna, Saquarema - RJ.',
+      'A nota é 4,7, com 430 avaliações.',
+      'O perfil lista café da manhã, piscina, estacionamento, bar e espaço para crianças.',
+      'O campo de site aponta para pousadacataventosaquarema.com.br.',
+    ],
+    siteFatos: [
+      'A página inicial diz que os pacotes para o Réveillon e o Carnaval “já estão no ar”.',
+      'A página de pacotes ainda mostra o <strong>Réveillon 2025/26</strong> e o <strong>Carnaval 2026</strong>, ou seja, a temporada que já passou.',
+      'O WhatsApp aparece escrito como “Cel / WhatsApp: (22) 9-9961-4858”, mas o link abre a ligação de telefone, e não a conversa no WhatsApp.',
+      'O rodapé mostra “Copyright © 2012 Pousada Catavento”.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Pacotes da temporada que vem, não da que passou',
+        paragrafos: [
+          'Agora é a época em que muita gente fecha Réveillon e Carnaval. Quem entra no site vê o aviso de pacotes no ar, mas encontra os de 2025/26. Pode achar que ainda não há data aberta e ir procurar outra pousada.',
+          'Atualizar os pacotes para 2026/27, com um botão para pedir a reserva, aproveita esse movimento.',
+        ],
+      },
+      {
+        titulo: 'Um toque para abrir o WhatsApp, não o discador',
+        paragrafos: [
+          'O número de WhatsApp já está no site, o que é ótimo. Hoje, ao tocar, o celular abre uma ligação. Um botão que já abre a conversa, com uma mensagem pronta pedindo datas, deixa o pedido de reserva mais fácil.',
+        ],
+      },
+      {
+        titulo: 'Mostrar o que vocês têm de melhor logo de cara',
+        paragrafos: [
+          'Piscina, parquinho, salão de jogos e café da manhã são diferenciais fortes para famílias. Numa página organizada, isso aparece junto com as fotos, o mapa e as datas da temporada.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página nova resolve',
+    paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os pacotes da temporada, onde fica e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível, para o site e o telefone ficarem alinhados com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'pousada-rio-das-ostras-cidade-praiana',
+    nome: 'Pousada Rio das Ostras',
+    ctaDe: 'da Pousada Rio das Ostras',
+    cidade: 'Rio das Ostras',
+    tipo: 'sem_site',
+    descricao:
+      'Diagnóstico personalizado da Pousada Rio das Ostras, em Rio das Ostras, com o que aparece no Google hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui pertinho de Rio das Ostras. Com a temporada de verão chegando, procurei vocês no Google do jeito que um hóspede faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google.',
+    googleFatos: [
+      'O perfil existe como Pousada Rio das Ostras, na R. Espírito Santo, em Cidade Praiana, Rio das Ostras - RJ.',
+      'A nota é 4,5, com 94 avaliações.',
+      'O telefone do perfil é um número de celular.',
+      'O perfil não tem link de site, Instagram nem Facebook.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando o turista pesquisa “pousada em Rio das Ostras”',
+        paragrafos: [
+          'Com a temporada de verão chegando, muita gente pesquisa pousada no celular e compara pelas fotos e pelo que está incluso. Vocês já têm muitas avaliações, o que é difícil de conseguir. O que falta é um lugar para a pessoa ver os quartos e chamar.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Deixar claro o que está incluso',
+        paragrafos: [
+          'Sem site, quem pesquisa depende só do que aparece nos aplicativos de reserva. Uma página com os quartos, o que está incluso e as regras da casa evita surpresa na chegada e pergunta repetida no WhatsApp.',
+        ],
+      },
+      {
+        titulo: 'Reserva direto com vocês, por WhatsApp',
+        paragrafos: [
+          'O celular já está no perfil. Uma página com um botão que já abre a conversa, com uma mensagem pronta pedindo datas, ajuda o hóspede a falar direto com a pousada.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O atendimento de vocês continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando os quartos, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'pousada-recanto-de-praia-seca-araruama',
+    nome: 'Pousada Recanto de Praia Seca',
+    ctaDe: 'da Pousada Recanto de Praia Seca',
+    cidade: 'Araruama',
+    tipo: 'sem_site',
+    descricao:
+      'Diagnóstico personalizado da Pousada Recanto de Praia Seca, em Araruama, com o que aparece no Google hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, procurei vocês no Google do jeito que um hóspede faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google.',
+    googleFatos: [
+      'O perfil existe como POUSADA RECANTO DE PRAIA SECA, na R. Trópicos, em Praia Seca, Araruama - RJ.',
+      'A nota é 4,7, com 152 avaliações.',
+      'O telefone do perfil é um número de celular.',
+      'O perfil não tem link de site, Instagram nem Facebook.',
+      'Avaliações de 2025 elogiam o café da manhã, a limpeza e a piscina.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando o turista pesquisa “pousada em Praia Seca”',
+        paragrafos: [
+          'Com a temporada de verão chegando, muita família pesquisa pousada no celular antes de reservar. Uma nota 4,7 com mais de 150 avaliações é difícil de conseguir. O que falta é um lugar para a pessoa ver os quartos, a piscina e chamar.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Fotos e o que está incluso, num lugar só',
+        paragrafos: [
+          'Sem nenhum link no perfil, quem quer saber mais precisa ligar ou caçar a pousada em aplicativos de reserva. Uma página com fotos, café da manhã, piscina e como chegar resolve isso de uma vez.',
+        ],
+      },
+      {
+        titulo: 'Reserva direto com vocês, por WhatsApp',
+        paragrafos: [
+          'O celular já está no perfil. Um botão que já abre a conversa, com uma mensagem pronta pedindo datas, deixa o próximo passo à mão.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O cuidado de vocês continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'pousada-recanto-verde-e-mar-araruama',
+    nome: 'Pousada Recanto Verde e Mar',
+    ctaDe: 'da Pousada Recanto Verde e Mar',
+    cidade: 'Araruama',
+    tipo: 'sem_site',
+    descricao:
+      'Diagnóstico personalizado da Pousada Recanto Verde e Mar, em Araruama, com o que aparece no Google hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, procurei vocês no Google do jeito que um hóspede faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 11 de novembro de 2026, no horário de Brasília, com informações públicas do Google.',
+    googleFatos: [
+      'O perfil existe como Pousada Recanto Verde e Mar, em Araruama - RJ.',
+      'A nota é 4,4, com 122 avaliações.',
+      'O perfil lista café da manhã, piscina, estacionamento, ar-condicionado e aceita pets.',
+      'O telefone do perfil é um número de celular.',
+      'O único link do perfil é a página no Facebook. Não há site nem Instagram no perfil.',
+      'O endereço aparece como “RUA 40, Araruama, RJ”, sem número nem bairro.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando o turista pesquisa “pousada em Araruama”',
+        paragrafos: [
+          'Com a temporada de verão chegando, muita gente pesquisa pousada no celular, inclusive quem vem para o kitesurf. Vocês já têm muitas avaliações, o que é difícil de conseguir. O que falta é uma página que mostre a pousada sem depender do Facebook.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Endereço fácil de achar para quem chega pela primeira vez',
+        paragrafos: [
+          'Do jeito que está no Google, o endereço é só “RUA 40”, sem número nem bairro. Quem chega de noite ou de fora pode se perder.',
+          'Uma página com endereço completo, ponto de referência e mapa tira essa dúvida antes da viagem.',
+        ],
+      },
+      {
+        titulo: 'Pet e piscina à vista, com reserva por WhatsApp',
+        paragrafos: [
+          'Aceitar pets e ter piscina são diferenciais fortes no verão. Numa página, isso aparece logo de cara, com um botão de WhatsApp que já abre a conversa pedindo datas.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O acolhimento de vocês continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: endereço mais claro e o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
 ];
 
 export function diagnosticoBySlug(slug: string): Diagnostico | undefined {

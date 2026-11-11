@@ -562,7 +562,7 @@ export function jsonLdFor(path: string): Record<string, unknown> {
     ];
     const visible = page.path === '/' ? offerings : offerings.filter((item) => item.path === page.path);
     for (const item of visible) {
-      graph.push({
+      const service: Record<string, unknown> = {
         '@type': 'Service',
         '@id': `${canonicalUrl(item.path)}#servico`,
         name: item.name,
@@ -570,7 +570,33 @@ export function jsonLdFor(path: string): Record<string, unknown> {
         url: canonicalUrl(item.path),
         areaServed: { '@type': 'Country', name: 'Brasil' },
         provider: { '@id': ORGANIZATION_ID },
-      });
+      };
+      if (page.path === '/videos' && item.key === 'videos') {
+        service.offers = [
+          {
+            '@type': 'Offer',
+            name: 'Avulso',
+            price: '397',
+            priceCurrency: 'BRL',
+            description: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do briefing.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Mensal Básico',
+            price: '997',
+            priceCurrency: 'BRL',
+            description: '4 vídeos com 1 revisão cada.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Mensal Completo',
+            price: '1797',
+            priceCurrency: 'BRL',
+            description: '8 vídeos com 1 revisão cada.',
+          },
+        ];
+      }
+      graph.push(service);
     }
   }
 

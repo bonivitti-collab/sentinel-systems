@@ -37,14 +37,22 @@ const BENEFITS = [
   },
 ] as const;
 
-/**
- * Troque cada frase quando a oferta estiver definida.
- * Enquanto o texto for "Item a definir", a página mostra que a lista ainda não fechou.
- */
-const INCLUDED_ITEMS = ['Item a definir', 'Item a definir', 'Item a definir'] as const;
+const INCLUDED_ITEMS = [
+  'criação a partir das fotos enviadas pelo WhatsApp',
+  'edição com música e texto',
+  'pessoas ilustrativas',
+  'aviso de cena feita com IA',
+  'arquivo pronto pra postar',
+] as const;
 
-/** Mesma regra de INCLUDED_ITEMS: substitua cada linha pelo que realmente fica de fora. */
-const EXCLUDED_ITEMS = ['Item a definir', 'Item a definir', 'Item a definir'] as const;
+const EXCLUDED_ITEMS = [
+  'filmagem no local',
+  'locução',
+  'anúncios pagos',
+  'publicação no perfil do cliente',
+  'revisões ilimitadas',
+  'promessa de vendas',
+] as const;
 
 /**
  * Para publicar um exemplo de verdade:
@@ -59,14 +67,31 @@ const EXAMPLE_VIDEOS: { id: string; label: string; src?: string; poster?: string
   { id: 'exemplo-3', label: 'Exemplo 3' },
 ];
 
-/**
- * Quando um pacote existir de verdade, troque o título.
- * Não coloque preço, quantidade de vídeos nem duração aqui antes de estar combinado.
- */
 const VIDEO_PACKAGES = [
-  { id: 'pacote-1', title: 'Pacote em breve' },
-  { id: 'pacote-2', title: 'Pacote em breve' },
-  { id: 'pacote-3', title: 'Pacote em breve' },
+  {
+    id: 'avulso',
+    name: 'Avulso',
+    price: 'R$ 397',
+    detail: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do briefing.',
+    message: 'Olá! Vim pelo site da Sentinel e quero o pacote Avulso de vídeos.',
+    highlight: false,
+  },
+  {
+    id: 'mensal-basico',
+    name: 'Mensal Básico',
+    price: 'R$ 997/mês',
+    detail: '4 vídeos com 1 revisão cada.',
+    message: 'Olá! Vim pelo site da Sentinel e quero o pacote Mensal Básico de vídeos.',
+    highlight: true,
+  },
+  {
+    id: 'mensal-completo',
+    name: 'Mensal Completo',
+    price: 'R$ 1.797/mês',
+    detail: '8 vídeos com 1 revisão cada.',
+    message: 'Olá! Vim pelo site da Sentinel e quero o pacote Mensal Completo de vídeos.',
+    highlight: false,
+  },
 ] as const;
 
 function WhatsAppCta({ label }: { label: string }) {
@@ -150,16 +175,12 @@ export function VideosPage() {
       <section className="py-16" aria-labelledby="incluso-titulo">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-8">
-            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Ainda vamos fechar a lista</p>
-            <h2 id="incluso-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+            <h2 id="incluso-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               O que está incluso / o que não está
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
-              Cada linha abaixo é um espaço reservado. Onde está escrito “Item a definir”, o detalhe ainda não foi fechado.
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <article className="min-w-0 p-6 rounded-3xl bg-white border border-dashed border-slate-300">
+            <article className="min-w-0 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
               <h3 className="text-lg font-extrabold text-slate-900 mb-4">O que está incluso</h3>
               <ul className="space-y-3">
                 {INCLUDED_ITEMS.map((item, index) => (
@@ -170,7 +191,7 @@ export function VideosPage() {
                 ))}
               </ul>
             </article>
-            <article className="min-w-0 p-6 rounded-3xl bg-white border border-dashed border-slate-300">
+            <article className="min-w-0 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
               <h3 className="text-lg font-extrabold text-slate-900 mb-4">O que não está</h3>
               <ul className="space-y-3">
                 {EXCLUDED_ITEMS.map((item, index) => (
@@ -227,27 +248,39 @@ export function VideosPage() {
       <section className="py-16" aria-labelledby="pacotes-titulo">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-8">
-            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Pacotes</p>
             <h2 id="pacotes-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
-              Os pacotes ainda não estão abertos
+              Pacotes
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
-              Quando estiverem definidos, aparecem nestes cartões. Por enquanto não há valor nem tamanho combinado. A conversa é no WhatsApp.
+            <p className="text-slate-800 font-semibold leading-relaxed">
+              No máximo metade dos vídeos do mês com pessoas (2 no Básico, 4 no Completo).
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {VIDEO_PACKAGES.map((pack) => (
               <article
                 key={pack.id}
-                className="min-w-0 p-6 rounded-3xl bg-white border border-dashed border-slate-300 flex flex-col"
+                className={`min-w-0 p-6 rounded-3xl bg-white border flex flex-col ${
+                  pack.highlight ? 'border-cyan-400 ring-2 ring-cyan-400/30 shadow-md' : 'border-slate-200/90 shadow-xs'
+                }`}
               >
-                <p className="self-start text-xs font-bold uppercase tracking-wider text-cyan-800 bg-cyan-50 border border-cyan-200 rounded-full px-3 py-1">
-                  Em breve
-                </p>
-                <h3 className="mt-4 text-lg font-extrabold text-slate-900">{pack.title}</h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  Os detalhes deste pacote entram aqui quando estiverem definidos.
-                </p>
+                {pack.highlight && (
+                  <p className="self-start max-w-full text-xs font-bold text-cyan-900 bg-cyan-50 border border-cyan-200 rounded-full px-3 py-1 leading-snug">
+                    Mensalidade a partir de R$ 997
+                  </p>
+                )}
+                <h3 className={`text-lg font-extrabold text-slate-900 ${pack.highlight ? 'mt-4' : ''}`}>{pack.name}</h3>
+                <p className="mt-2 text-2xl font-extrabold text-slate-900 tracking-tight break-words">{pack.price}</p>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{pack.detail}</p>
+                <a
+                  href={whatsappHref(pack.message)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => soundFx.playUiClick()}
+                  className="mt-auto pt-5 w-full max-w-full px-4 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide text-center inline-flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                  Quero o {pack.name}
+                </a>
               </article>
             ))}
           </div>

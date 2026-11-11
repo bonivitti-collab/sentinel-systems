@@ -1,14 +1,17 @@
 import { type MouseEvent } from 'react';
 import { ArrowUp, Mail, MessageCircle } from 'lucide-react';
-import { FOOTER_LINKS, SERVICES, SITE, whatsappHref } from '../data/companySite';
+import { FOOTER_LINKS, NEUTRAL_WHATSAPP_TEXT, SERVICES, SITE, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
 import { SentinelLogo } from './SentinelLogo';
 
 interface FooterProps {
+  currentPath: string;
   onNavigate: (path: string) => void;
 }
 
-export function Footer({ onNavigate }: FooterProps) {
+export function Footer({ currentPath, onNavigate }: FooterProps) {
+  const footerWhatsapp =
+    currentPath === '/sites' ? whatsappHref() : whatsappHref(NEUTRAL_WHATSAPP_TEXT);
   const go = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();
     soundFx.playUiClick();
@@ -63,7 +66,7 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href={whatsappHref()}
+                  href={footerWhatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 font-semibold text-slate-800 hover:text-emerald-700"

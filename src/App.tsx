@@ -139,7 +139,7 @@ export function App({ url }: { url?: string }) {
           </ul>
         </div>
       </nav>
-      <Footer onNavigate={navigate} />
+      <Footer currentPath={currentPath} onNavigate={navigate} />
       <FloatingWhatsAppButton currentPath={currentPath} />
     </div>
   );

@@ -17,6 +17,8 @@ export function whatsappHref(text: string = SITE.whatsappText): string {
 export const VIDEOS_WHATSAPP_TEXT =
   'Olá! Vim pelo site da Sentinel Systems. Quero vídeos prontos para o Instagram e o Status do WhatsApp. Posso enviar as fotos do meu negócio?';
 
+export const NEUTRAL_WHATSAPP_TEXT = 'Olá! Vim pelo site da Sentinel e quero conversar.';
+
 export type PageKey = 'home' | 'sites' | 'videos' | 'ferramentas' | 'sobre' | 'servicos' | 'faq' | 'contato';
 
 export interface PageMeta {

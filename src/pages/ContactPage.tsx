@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { Clock, Mail, MapPin, MessageCircle, Send } from 'lucide-react';
 import { PageHero } from '../components/site/PageHero';
-import { SITE, whatsappHref } from '../data/companySite';
+import { NEUTRAL_WHATSAPP_TEXT, SITE, whatsappHref } from '../data/companySite';
 import { soundFx } from '../components/SoundEffects';
 
 const INTERESTS = [
@@ -61,7 +61,7 @@ export function ContactPage() {
                 <div className="min-w-0">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">WhatsApp</p>
                   <a
-                    href={whatsappHref()}
+                    href={whatsappHref(NEUTRAL_WHATSAPP_TEXT)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base font-black text-slate-900 hover:text-emerald-700 break-words"

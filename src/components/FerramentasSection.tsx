@@ -45,7 +45,7 @@ export function FerramentasSection() {
                 className="block w-full max-w-full aspect-square object-cover"
               />
               <div className="p-4">
-                <h3 className="text-base font-bold text-slate-900">{item.name}</h3>
+                <h2 className="text-base font-bold text-slate-900">{item.name}</h2>
                 <p className="mt-1 text-sm text-slate-600 leading-relaxed">{item.benefit}</p>
                 <p className="mt-3 text-sm font-semibold text-slate-800">{item.price}</p>
                 <a

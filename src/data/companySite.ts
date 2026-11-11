@@ -35,25 +35,25 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Sentinel Systems | Site, vídeos e ferramentas para o seu negócio',
+    title: 'Criar site e aparecer no Google | Sentinel Systems',
     description:
-      'Escolha um caminho: site e Google para ser encontrado, vídeos prontos para divulgar no Instagram e no Status, ou ferramentas para o dia a dia. Atendimento no Brasil pelo WhatsApp.',
+      'Site para pequeno negócio e Perfil da Empresa no Google, com vídeos para Instagram e Status e ferramentas do dia a dia. Para vender mais e ser encontrado no Brasil.',
   },
   sites: {
     key: 'sites',
     path: '/sites',
     label: 'Sites e Google',
-    title: 'Site essencial e perfil no Google para pequenos negócios | Sentinel',
+    title: 'Criar site para empresa e aparecer no Google | Sentinel',
     description:
-      'Página no celular e configuração básica do Perfil da Empresa no Google para pequenos negócios. Atendemos todo o Brasil. Atendimento online pelo WhatsApp.',
+      'Site para pequeno negócio no celular e configuração do Perfil da Empresa no Google. 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista. Atendimento no Brasil.',
   },
   videos: {
     key: 'videos',
     path: '/videos',
     label: 'Vídeos com IA',
-    title: 'Vídeos prontos para Instagram e Status do WhatsApp | Sentinel',
+    title: 'Vídeo com IA para Instagram e Status | Sentinel',
     description:
-      'Mande as fotos do seu negócio pelo WhatsApp e receba vídeos prontos para o Instagram e o Status. Sem gravar, sem editar e sem perder o tempo do atendimento.',
+      'Vídeo para restaurante, pousada ou loja: mande as fotos pelo WhatsApp e receba vídeos prontos para o Instagram e o Status, sem filmar e sem editar.',
   },
   ferramentas: {
     key: 'ferramentas',
@@ -61,7 +61,7 @@ export const PAGES: Record<PageKey, PageMeta> = {
     label: 'Ferramentas',
     title: 'Ferramentas: Valor Hora Real e CotaCasa | Sentinel',
     description:
-      'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 37 cada. Para saber quanto cobrar pela hora e quanto a obra deve custar.',
+      'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 37 cada. Saiba quanto cobrar pela hora e quanto a obra deve custar.',
   },
   sobre: {
     key: 'sobre',
@@ -105,6 +105,7 @@ export const NAV_LINKS = (Object.values(PAGES) as PageMeta[]).map((page) => ({
 export const GUIAS_LINK = { href: '/guias', label: 'Guias' } as const;
 
 export const MENU_LINKS = [
+  { href: '/', label: 'Início' },
   { href: '/sites', label: 'Sites e Google' },
   { href: '/videos', label: 'Vídeos com IA' },
   { href: '/ferramentas', label: 'Ferramentas' },
@@ -119,7 +120,7 @@ export const FOOTER_LINKS = [
   GUIAS_LINK,
 ] as const;
 
-export const SITEMAP_LINKS = [{ href: '/', label: 'Início' }, ...FOOTER_LINKS] as const;
+export const SITEMAP_LINKS = FOOTER_LINKS;
 
 export const SERVICES = [
   {
@@ -534,6 +535,44 @@ export function jsonLdFor(path: string): Record<string, unknown> {
       ],
     },
   ];
+
+  if (page.path === '/' || page.path === '/sites' || page.path === '/videos' || page.path === '/ferramentas') {
+    const offerings = [
+      {
+        key: 'sites',
+        name: 'Site e Perfil da Empresa no Google',
+        path: '/sites',
+        description:
+          'Criação de site para empresa e para pequeno negócio, com página no celular e configuração básica do Perfil da Empresa no Google. A criação custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista. A renovação opcional, só domínio e hospedagem, é R$ 180 por ano.',
+      },
+      {
+        key: 'videos',
+        name: 'Vídeos com IA para Instagram e Status',
+        path: '/videos',
+        description:
+          'Vídeo com IA para restaurante, pousada ou loja, feito a partir das fotos enviadas pelo WhatsApp, pronto para o Instagram e o Status.',
+      },
+      {
+        key: 'ferramentas',
+        name: 'Ferramentas Valor Hora Real e CotaCasa',
+        path: '/ferramentas',
+        description:
+          'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 37 cada, para saber quanto cobrar pela hora e quanto a obra deve custar.',
+      },
+    ];
+    const visible = page.path === '/' ? offerings : offerings.filter((item) => item.path === page.path);
+    for (const item of visible) {
+      graph.push({
+        '@type': 'Service',
+        '@id': `${canonicalUrl(item.path)}#servico`,
+        name: item.name,
+        description: item.description,
+        url: canonicalUrl(item.path),
+        areaServed: { '@type': 'Country', name: 'Brasil' },
+        provider: { '@id': ORGANIZATION_ID },
+      });
+    }
+  }
 
   if (page.path === '/servicos') {
     graph.push({

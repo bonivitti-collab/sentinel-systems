@@ -98,7 +98,7 @@ export function VideosPage() {
             </span>
           </>
         }
-        description="Você manda as fotos do seu negócio pelo WhatsApp e recebe os vídeos prontos para postar. Sem gravar, sem editar e sem perder o tempo do atendimento."
+        description="Você manda as fotos do seu negócio pelo WhatsApp e recebe os vídeos prontos para postar. Serve para restaurante, pousada ou loja. Sem gravar, sem editar e sem perder o tempo do atendimento."
       >
         <div className="mt-6">
           <WhatsAppCta label="Quero esses vídeos no WhatsApp" />

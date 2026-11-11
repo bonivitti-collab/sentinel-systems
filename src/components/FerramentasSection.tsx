@@ -24,9 +24,9 @@ export function FerramentasSection() {
     <section id="ferramentas" className="pb-16 scroll-mt-24" aria-labelledby="ferramentas-titulo">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-xl mb-4">
-          <h2 id="ferramentas-titulo" className="text-xl font-bold text-slate-700 tracking-tight">
+          <h1 id="ferramentas-titulo" className="text-xl font-bold text-slate-700 tracking-tight">
             Ferramentas
-          </h2>
+          </h1>
           <p className="mt-1 text-sm text-slate-500 leading-relaxed">Duas planilhas prontas, por R$ 37 cada.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">

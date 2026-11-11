@@ -56,10 +56,10 @@ function assertGuideSources(): void {
 }
 
 function writeSitemap(): void {
-  const today = '2026-11-09';
+  const today = '2026-11-11';
   const pages = indexablePages();
-  if (pages.length !== 11) {
-    throw new Error(`sitemap deveria listar 11 URLs e listou ${pages.length}`);
+  if (pages.length !== 14) {
+    throw new Error(`sitemap deveria listar 14 URLs e listou ${pages.length}`);
   }
   const urls = pages.map((page) => ({
     loc: canonicalUrl(page.path),

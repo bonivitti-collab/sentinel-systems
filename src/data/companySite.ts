@@ -14,7 +14,10 @@ export function whatsappHref(text: string = SITE.whatsappText): string {
   return `https://wa.me/${SITE.phoneWa}?text=${encodeURIComponent(text)}`;
 }
 
-export type PageKey = 'home' | 'sobre' | 'servicos' | 'faq' | 'contato';
+export const VIDEOS_WHATSAPP_TEXT =
+  'Olá! Vim pelo site da Sentinel Systems. Quero vídeos prontos para o Instagram e o Status do WhatsApp. Posso enviar as fotos do meu negócio?';
+
+export type PageKey = 'home' | 'sites' | 'videos' | 'ferramentas' | 'sobre' | 'servicos' | 'faq' | 'contato';
 
 export interface PageMeta {
   key: string;
@@ -30,9 +33,33 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
+    title: 'Sentinel Systems | Site, vídeos e ferramentas para o seu negócio',
+    description:
+      'Escolha um caminho: site e Google para ser encontrado, vídeos prontos para divulgar no Instagram e no Status, ou ferramentas para o dia a dia. Atendimento no Brasil pelo WhatsApp.',
+  },
+  sites: {
+    key: 'sites',
+    path: '/sites',
+    label: 'Sites e Google',
     title: 'Site essencial e perfil no Google para pequenos negócios | Sentinel',
     description:
       'Página no celular e configuração básica do Perfil da Empresa no Google para pequenos negócios. Atendemos todo o Brasil. Atendimento online pelo WhatsApp.',
+  },
+  videos: {
+    key: 'videos',
+    path: '/videos',
+    label: 'Vídeos com IA',
+    title: 'Vídeos prontos para Instagram e Status do WhatsApp | Sentinel',
+    description:
+      'Mande as fotos do seu negócio pelo WhatsApp e receba vídeos prontos para o Instagram e o Status. Sem gravar, sem editar e sem perder o tempo do atendimento.',
+  },
+  ferramentas: {
+    key: 'ferramentas',
+    path: '/ferramentas',
+    label: 'Ferramentas',
+    title: 'Ferramentas: Valor Hora Real e CotaCasa | Sentinel',
+    description:
+      'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 37 cada. Para saber quanto cobrar pela hora e quanto a obra deve custar.',
   },
   sobre: {
     key: 'sobre',
@@ -75,17 +102,22 @@ export const NAV_LINKS = (Object.values(PAGES) as PageMeta[]).map((page) => ({
 
 export const GUIAS_LINK = { href: '/guias', label: 'Guias' } as const;
 
-export const FERRAMENTAS_LINK = { href: '/#ferramentas', label: 'Ferramentas' } as const;
-
 export const MENU_LINKS = [
-  NAV_LINKS[0],
-  NAV_LINKS[1],
-  NAV_LINKS[2],
-  FERRAMENTAS_LINK,
-  NAV_LINKS[3],
-  NAV_LINKS[4],
+  { href: '/sites', label: 'Sites e Google' },
+  { href: '/videos', label: 'Vídeos com IA' },
+  { href: '/ferramentas', label: 'Ferramentas' },
+] as const;
+
+export const FOOTER_LINKS = [
+  ...MENU_LINKS,
+  { href: '/servicos', label: 'Serviços' },
+  { href: '/sobre', label: 'Sobre' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/contato', label: 'Contato' },
   GUIAS_LINK,
-];
+] as const;
+
+export const SITEMAP_LINKS = [{ href: '/', label: 'Início' }, ...FOOTER_LINKS] as const;
 
 export const SERVICES = [
   {

@@ -17,7 +17,6 @@
     },
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/quem-somos", "destination": "/sobre", "permanent": true },
-    { "source": "/sites", "destination": "/servicos", "permanent": true },
     { "source": "/automacao", "destination": "/servicos", "permanent": true },
     { "source": "/automacao/:slug", "destination": "/servicos", "permanent": true },
     { "source": "/blog", "destination": "/faq", "permanent": true },
@@ -25,6 +24,9 @@
     { "source": "/cidades/:slug", "destination": "/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/sites", "destination": "/sites/index.html" },
+    { "source": "/videos", "destination": "/videos/index.html" },
+    { "source": "/ferramentas", "destination": "/ferramentas/index.html" },
     { "source": "/sobre", "destination": "/sobre/index.html" },
     { "source": "/servicos", "destination": "/servicos/index.html" },
     { "source": "/faq", "destination": "/faq/index.html" },

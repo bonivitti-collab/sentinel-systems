@@ -1,5 +1,5 @@
 import { PageHero } from '../components/site/PageHero';
-import { NAV_LINKS } from '../data/companySite';
+import { SITEMAP_LINKS } from '../data/companySite';
 import { soundFx } from '../components/SoundEffects';
 
 interface NotFoundPageProps {
@@ -17,7 +17,7 @@ export function NotFoundPage({ onNavigate }: NotFoundPageProps) {
       />
       <section className="pb-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-2">
-          {NAV_LINKS.map((link) => (
+          {SITEMAP_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}

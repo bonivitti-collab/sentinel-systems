@@ -1,0 +1,261 @@
+import { Check, MessageCircle, Minus } from 'lucide-react';
+import { PageHero } from '../components/site/PageHero';
+import { VIDEOS_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
+import { soundFx } from '../components/SoundEffects';
+
+const STEPS = [
+  {
+    title: 'Você manda as fotos pelo WhatsApp.',
+    text: 'Manda as fotos do seu espaço, do jeito que ele é. Sem câmera na mão e sem parar o atendimento.',
+  },
+  {
+    title: 'A gente cria os vídeos.',
+    text: 'Os vídeos saem das suas fotos, com cenas ilustrativas para mostrar o lugar de verdade.',
+  },
+  {
+    title: 'Você aprova e posta.',
+    text: 'Você vê, aprova e publica no Instagram e no Status do WhatsApp.',
+  },
+] as const;
+
+const BENEFITS = [
+  {
+    title: 'Sem gravar',
+    text: 'Você não precisa parar o movimento para filmar o salão, a loja ou o atendimento.',
+  },
+  {
+    title: 'Sem editar',
+    text: 'O vídeo chega pronto para o Instagram e para o Status. Você não mexe em programa de edição.',
+  },
+  {
+    title: 'Sem perder tempo',
+    text: 'Manda as fotos pelo WhatsApp e segue no trabalho. O tempo fica com o cliente, não com a filmagem.',
+  },
+  {
+    title: 'Perfil sempre ativo',
+    text: 'Tem o que postar para o perfil não ficar parado entre um atendimento e outro.',
+  },
+] as const;
+
+/**
+ * Troque cada frase quando a oferta estiver definida.
+ * Enquanto o texto for "Item a definir", a página mostra que a lista ainda não fechou.
+ */
+const INCLUDED_ITEMS = ['Item a definir', 'Item a definir', 'Item a definir'] as const;
+
+/** Mesma regra de INCLUDED_ITEMS: substitua cada linha pelo que realmente fica de fora. */
+const EXCLUDED_ITEMS = ['Item a definir', 'Item a definir', 'Item a definir'] as const;
+
+/**
+ * Para publicar um exemplo de verdade:
+ * 1. Salve o arquivo em public/videos/ (vertical, proporção 9:16, mp4).
+ * 2. Preencha src, por exemplo src: '/videos/exemplo-1.mp4'.
+ * 3. Se quiser uma imagem de capa, preencha poster, por exemplo poster: '/videos/exemplo-1.jpg'.
+ * Enquanto src estiver vazio, o espaço mostra "Em breve". Não use vídeo de outro negócio.
+ */
+const EXAMPLE_VIDEOS: { id: string; label: string; src?: string; poster?: string }[] = [
+  { id: 'exemplo-1', label: 'Exemplo 1' },
+  { id: 'exemplo-2', label: 'Exemplo 2' },
+  { id: 'exemplo-3', label: 'Exemplo 3' },
+];
+
+/**
+ * Quando um pacote existir de verdade, troque o título.
+ * Não coloque preço, quantidade de vídeos nem duração aqui antes de estar combinado.
+ */
+const VIDEO_PACKAGES = [
+  { id: 'pacote-1', title: 'Pacote em breve' },
+  { id: 'pacote-2', title: 'Pacote em breve' },
+  { id: 'pacote-3', title: 'Pacote em breve' },
+] as const;
+
+function WhatsAppCta({ label }: { label: string }) {
+  return (
+    <a
+      href={whatsappHref(VIDEOS_WHATSAPP_TEXT)}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => soundFx.playUiClick()}
+      className="w-full sm:w-auto px-5 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs uppercase tracking-wider shadow-sm inline-flex items-center justify-center gap-2"
+    >
+      <MessageCircle className="w-4 h-4" aria-hidden="true" />
+      {label}
+    </a>
+  );
+}
+
+export function VideosPage() {
+  return (
+    <>
+      <PageHero
+        path="/videos"
+        eyebrow="Vídeos para divulgação"
+        title={
+          <>
+            Vídeos prontos para o Instagram e o Status,{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-600">
+              sem você filmar.
+            </span>
+          </>
+        }
+        description="Você manda as fotos do seu negócio pelo WhatsApp e recebe os vídeos prontos para postar. Sem gravar, sem editar e sem perder o tempo do atendimento."
+      >
+        <div className="mt-6">
+          <WhatsAppCta label="Quero esses vídeos no WhatsApp" />
+        </div>
+      </PageHero>
+
+      <section className="pb-16" aria-labelledby="como-funciona-titulo">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">O caminho</p>
+            <h2 id="como-funciona-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Como funciona
+            </h2>
+          </div>
+          <ol className="grid grid-cols-1 md:grid-cols-3 gap-4 list-none p-0 m-0">
+            {STEPS.map((step, index) => (
+              <li key={step.title} className="min-w-0 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+                <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Passo {index + 1}</p>
+                <h3 className="text-lg font-extrabold text-slate-900 mb-2">{step.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="py-16 bg-slate-50 border-y border-slate-200" aria-labelledby="beneficios-titulo">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Para quem atende no dia a dia</p>
+            <h2 id="beneficios-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Feito para quem não tem tempo de virar produtor de vídeo
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              As cenas são ilustrativas e partem das fotos do seu espaço, para mostrar o lugar de verdade sem você precisar aparecer filmando.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {BENEFITS.map((item) => (
+              <article key={item.title} className="min-w-0 p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
+                <h3 className="text-lg font-extrabold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16" aria-labelledby="incluso-titulo">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Ainda vamos fechar a lista</p>
+            <h2 id="incluso-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              O que está incluso / o que não está
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              Cada linha abaixo é um espaço reservado. Onde está escrito “Item a definir”, o detalhe ainda não foi fechado.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <article className="min-w-0 p-6 rounded-3xl bg-white border border-dashed border-slate-300">
+              <h3 className="text-lg font-extrabold text-slate-900 mb-4">O que está incluso</h3>
+              <ul className="space-y-3">
+                {INCLUDED_ITEMS.map((item, index) => (
+                  <li key={`incluso-${index}`} className="flex items-start gap-2.5 text-sm text-slate-700">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+            <article className="min-w-0 p-6 rounded-3xl bg-white border border-dashed border-slate-300">
+              <h3 className="text-lg font-extrabold text-slate-900 mb-4">O que não está</h3>
+              <ul className="space-y-3">
+                {EXCLUDED_ITEMS.map((item, index) => (
+                  <li key={`fora-${index}`} className="flex items-start gap-2.5 text-sm text-slate-700">
+                    <Minus className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-slate-50 border-y border-slate-200" aria-labelledby="exemplos-titulo">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Para ver o formato</p>
+            <h2 id="exemplos-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Exemplos de vídeos
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              Espaço reservado para vídeos verticais, no formato do celular, para Instagram e Status. Entram aqui quando estiverem prontos. Não há exemplo publicado ainda.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {EXAMPLE_VIDEOS.map((video) => (
+              <article key={video.id} className="min-w-0">
+                {video.src ? (
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={video.poster}
+                    className="aspect-[9/16] w-full max-w-full rounded-3xl bg-slate-900 object-cover"
+                  >
+                    <source src={video.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <div className="aspect-[9/16] w-full max-w-full rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center text-center px-6">
+                    <p className="text-xs font-bold uppercase tracking-wider text-cyan-700">Em breve</p>
+                    <p className="mt-2 text-base font-extrabold text-slate-900">{video.label}</p>
+                    <p className="mt-2 text-sm text-slate-500 leading-relaxed">
+                      Vídeo vertical para Instagram e Status
+                    </p>
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16" aria-labelledby="pacotes-titulo">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Pacotes</p>
+            <h2 id="pacotes-titulo" className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Os pacotes ainda não estão abertos
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              Quando estiverem definidos, aparecem nestes cartões. Por enquanto não há valor nem tamanho combinado. A conversa é no WhatsApp.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {VIDEO_PACKAGES.map((pack) => (
+              <article
+                key={pack.id}
+                className="min-w-0 p-6 rounded-3xl bg-white border border-dashed border-slate-300 flex flex-col"
+              >
+                <p className="self-start text-xs font-bold uppercase tracking-wider text-cyan-800 bg-cyan-50 border border-cyan-200 rounded-full px-3 py-1">
+                  Em breve
+                </p>
+                <h3 className="mt-4 text-lg font-extrabold text-slate-900">{pack.title}</h3>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  Os detalhes deste pacote entram aqui quando estiverem definidos.
+                </p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8">
+            <WhatsAppCta label="Falar no WhatsApp" />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

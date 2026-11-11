@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, X, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
-import { SITE, whatsappHref } from '../data/companySite';
+import { SITE, VIDEOS_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
 
 interface FloatingWhatsAppButtonProps {
@@ -32,6 +32,7 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({ 
     if (currentPath.includes('/guias/')) {
       return 'Olá! Li um dos guias da Sentinel Systems e gostaria de conversar com um especialista.';
     }
+    if (currentPath === '/videos') return VIDEOS_WHATSAPP_TEXT;
     return SITE.whatsappText;
   };
 

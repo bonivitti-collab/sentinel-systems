@@ -56,10 +56,10 @@ function assertGuideSources(): void {
 }
 
 function writeSitemap(): void {
-  const today = '2026-11-09';
+  const today = '2026-11-11';
   const pages = indexablePages();
-  if (pages.length !== 11) {
-    throw new Error(`sitemap deveria listar 11 URLs e listou ${pages.length}`);
+  if (pages.length !== 14) {
+    throw new Error(`sitemap deveria listar 14 URLs e listou ${pages.length}`);
   }
   const urls = pages.map((page) => ({
     loc: canonicalUrl(page.path),
@@ -109,8 +109,15 @@ function prerenderPages(): void {
       fs.mkdirSync(dir, { recursive: true });
       fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
     }
-    if (/"Product"|"Offer"|itemtype=["'][^"']*Product/.test(html)) {
-      throw new Error(`Product/Offer em ${page.path}`);
+    if (/"Product"|itemtype=["'][^"']*Product/.test(html)) {
+      throw new Error(`Product em ${page.path}`);
+    }
+    const hasOffer = /"Offer"/.test(html);
+    if (page.path === '/videos' && !hasOffer) {
+      throw new Error('Offer ausente em /videos');
+    }
+    if (page.path !== '/videos' && hasOffer) {
+      throw new Error(`Offer em ${page.path}`);
     }
     if (page.path.startsWith('/guias')) {
       if (!html.includes(`<title>${page.title}</title>`)) throw new Error(`title em ${page.path}`);

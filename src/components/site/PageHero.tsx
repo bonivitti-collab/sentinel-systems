@@ -19,7 +19,23 @@ export function PageHero({ path, eyebrow, title, description, children }: PageHe
           <nav aria-label="Trilha de navegação" className="text-xs text-slate-500 mb-4">
             <a href="/" className="font-semibold text-cyan-800 hover:text-cyan-950">Início</a>
             <span aria-hidden="true"> / </span>
-            <span className="text-slate-700">{path === '/sobre' ? 'Sobre' : path === '/servicos' ? 'Serviços' : path === '/faq' ? 'FAQ' : path === '/contato' ? 'Contato' : 'Página'}</span>
+            <span className="text-slate-700">
+              {path === '/sobre'
+                ? 'Sobre'
+                : path === '/servicos'
+                  ? 'Serviços'
+                  : path === '/faq'
+                    ? 'FAQ'
+                    : path === '/contato'
+                      ? 'Contato'
+                      : path === '/sites'
+                        ? 'Sites e Google'
+                        : path === '/videos'
+                          ? 'Vídeos com IA'
+                          : path === '/ferramentas'
+                            ? 'Ferramentas'
+                            : 'Página'}
+            </span>
           </nav>
         )}
         <div className="inline-flex items-center gap-2 max-w-full px-4 py-2 rounded-full bg-cyan-50/90 border border-cyan-200/80 text-xs sm:text-sm font-semibold text-cyan-900 mb-6 shadow-xs">

@@ -2,23 +2,30 @@ import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
 import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 import { Navbar } from './components/Navbar';
-import { NAV_LINKS, pageByPath } from './data/companySite';
+import { pageByPath, SITEMAP_LINKS } from './data/companySite';
 import { applySeo } from './lib/seo';
 import { publishedGuideByPath } from './data/publishedGuides';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { FaqPage } from './pages/FaqPage';
+import { FerramentasPage } from './pages/FerramentasPage';
 import { GuideArticlePage } from './pages/GuideArticlePage';
 import { GuidesIndexPage } from './pages/GuidesIndexPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ServicesPage } from './pages/ServicesPage';
+import { SitesLandingPage } from './pages/SitesLandingPage';
+import { VideosPage } from './pages/VideosPage';
 
 const LEGACY: Record<string, string> = {
   '/quem-somos': '/sobre',
-  '/sites': '/servicos',
   '/automacao': '/servicos',
   '/blog': '/faq',
+};
+
+const HOME_ANCHORS: Record<string, string> = {
+  ferramentas: '/ferramentas',
+  oferta: '/sites#oferta',
 };
 
 export function normalizePath(pathname: string): string {
@@ -30,16 +37,35 @@ export function normalizePath(pathname: string): string {
   return clean;
 }
 
-function readLocation(): { path: string; hash: string } {
-  if (typeof window === 'undefined') return { path: '/', hash: '' };
+function resolveLocation(pathname: string, hash: string): { path: string; hash: string; url: string } {
+  const path = normalizePath(pathname);
+  const cleanHash = hash.replace(/^#/, '');
+  const moved = path === '/' ? HOME_ANCHORS[cleanHash] : undefined;
+  if (moved) {
+    const [movedPath, movedHash = ''] = moved.split('#');
+    const nextPath = normalizePath(movedPath || '/');
+    return {
+      path: nextPath,
+      hash: movedHash,
+      url: movedHash ? `${nextPath}#${movedHash}` : nextPath,
+    };
+  }
   return {
-    path: normalizePath(window.location.pathname),
-    hash: window.location.hash.replace(/^#/, ''),
+    path,
+    hash: cleanHash,
+    url: cleanHash ? `${path}#${cleanHash}` : path,
   };
 }
 
+function readLocation(): { path: string; hash: string; url: string } {
+  if (typeof window === 'undefined') return { path: '/', hash: '', url: '/' };
+  return resolveLocation(window.location.pathname, window.location.hash);
+}
+
 export function App({ url }: { url?: string }) {
-  const [currentPath, setCurrentPath] = useState(() => (url ? normalizePath(url) : readLocation().path));
+  const [currentPath, setCurrentPath] = useState(() =>
+    url ? normalizePath(url) : normalizePath(typeof window === 'undefined' ? '/' : window.location.pathname),
+  );
 
   useEffect(() => {
     const page = pageByPath(currentPath);
@@ -47,34 +73,28 @@ export function App({ url }: { url?: string }) {
   }, [currentPath]);
 
   useEffect(() => {
-    const onPop = () => {
+    const applyAddress = () => {
       const next = readLocation();
+      const actual = `${window.location.pathname.replace(/\/+$/, '') || '/'}${window.location.hash}`;
+      if (next.url !== actual) window.history.replaceState({}, '', next.url);
       setCurrentPath(next.path);
       if (next.hash) {
-        window.setTimeout(() => document.getElementById(next.hash)?.scrollIntoView(), 0);
+        window.setTimeout(() => document.getElementById(next.hash)?.scrollIntoView(), 50);
       }
     };
-    window.addEventListener('popstate', onPop);
-    const initial = readLocation();
-    if (initial.hash) {
-      window.setTimeout(() => document.getElementById(initial.hash)?.scrollIntoView(), 50);
-    }
-    if (normalizePath(window.location.pathname) !== window.location.pathname.replace(/\/+$/, '')) {
-      const next = normalizePath(window.location.pathname);
-      window.history.replaceState({}, '', next);
-    }
-    return () => window.removeEventListener('popstate', onPop);
+    applyAddress();
+    window.addEventListener('popstate', applyAddress);
+    return () => window.removeEventListener('popstate', applyAddress);
   }, []);
 
   const navigate = (target: string) => {
-    const [rawPath, hashPart] = target.split('#');
-    const path = normalizePath(rawPath || '/');
-    const nextUrl = hashPart ? `${path}#${hashPart}` : path;
-    window.history.pushState({}, '', nextUrl);
-    setCurrentPath(path);
-    if (hashPart) {
+    const [rawPath, hashPart = ''] = target.split('#');
+    const next = resolveLocation(rawPath || window.location.pathname, hashPart);
+    window.history.pushState({}, '', next.url);
+    setCurrentPath(next.path);
+    if (next.hash) {
       window.setTimeout(() => {
-        document.getElementById(hashPart)?.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById(next.hash)?.scrollIntoView({ behavior: 'smooth' });
       }, 60);
     } else {
       window.scrollTo({ top: 0, behavior: 'auto' });
@@ -84,6 +104,9 @@ export function App({ url }: { url?: string }) {
   const guide = publishedGuideByPath(currentPath);
   let content = <NotFoundPage onNavigate={navigate} />;
   if (currentPath === '/') content = <HomePage onNavigate={navigate} />;
+  else if (currentPath === '/sites') content = <SitesLandingPage onNavigate={navigate} />;
+  else if (currentPath === '/videos') content = <VideosPage />;
+  else if (currentPath === '/ferramentas') content = <FerramentasPage />;
   else if (currentPath === '/sobre') content = <AboutPage onNavigate={navigate} />;
   else if (currentPath === '/servicos') content = <ServicesPage />;
   else if (currentPath === '/faq') content = <FaqPage />;
@@ -99,7 +122,7 @@ export function App({ url }: { url?: string }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h2 className="text-sm font-extrabold text-slate-900 mb-3">Mapa do site</h2>
           <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-2">
-            {NAV_LINKS.filter((link) => link.href !== currentPath).map((link) => (
+            {SITEMAP_LINKS.filter((link) => link.href !== currentPath).map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
@@ -116,7 +139,7 @@ export function App({ url }: { url?: string }) {
           </ul>
         </div>
       </nav>
-      <Footer onNavigate={navigate} />
+      <Footer currentPath={currentPath} onNavigate={navigate} />
       <FloatingWhatsAppButton currentPath={currentPath} />
     </div>
   );

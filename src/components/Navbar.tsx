@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import { Menu, MessageCircle, Volume2, VolumeX, X } from 'lucide-react';
-import { MENU_LINKS, whatsappHref } from '../data/companySite';
+import { MENU_LINKS, NEUTRAL_WHATSAPP_TEXT, VIDEOS_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
 import { SentinelLogo } from './SentinelLogo';
 
@@ -26,6 +26,12 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
   }, [currentPath]);
 
   const links = MENU_LINKS;
+  const whatsappUrl =
+    currentPath === '/sites'
+      ? whatsappHref()
+      : currentPath === '/videos'
+        ? whatsappHref(VIDEOS_WHATSAPP_TEXT)
+        : whatsappHref(NEUTRAL_WHATSAPP_TEXT);
   const isActive = (href: string) =>
     href === '/guias' ? currentPath === '/guias' || currentPath.startsWith('/guias/') : href === currentPath;
 
@@ -92,14 +98,14 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
             </button>
 
             <a
-              href={whatsappHref()}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => soundFx.playUiClick()}
               className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Pedir proposta</span>
+              <span>WhatsApp</span>
             </a>
 
             <button
@@ -143,12 +149,12 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
               );
             })}
             <a
-              href={whatsappHref()}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-1 px-4 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wider text-center"
             >
-              Quero uma proposta
+              WhatsApp
             </a>
           </div>
         </nav>

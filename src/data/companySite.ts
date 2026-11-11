@@ -14,7 +14,36 @@ export function whatsappHref(text: string = SITE.whatsappText): string {
   return `https://wa.me/${SITE.phoneWa}?text=${encodeURIComponent(text)}`;
 }
 
-export type PageKey = 'home' | 'sobre' | 'servicos' | 'faq' | 'contato';
+export const VIDEOS_WHATSAPP_TEXT =
+  'Olá! Vim pelo site da Sentinel Systems. Quero vídeos prontos para o Instagram e o Status do WhatsApp. Posso enviar as fotos do meu negócio?';
+
+export const NEUTRAL_WHATSAPP_TEXT = 'Olá! Vim pelo site da Sentinel e quero conversar.';
+
+export const EXAMPLE_VIDEOS = [
+  {
+    id: 'restaurante',
+    label: 'Restaurante',
+    description: 'Cena ilustrativa feita com IA para mostrar um restaurante no Instagram e no Status.',
+    src: '/videos/exemplo-restaurante.mp4',
+    poster: '/videos/exemplo-restaurante.jpg',
+  },
+  {
+    id: 'loja',
+    label: 'Loja',
+    description: 'Cena ilustrativa feita com IA para mostrar uma loja no Instagram e no Status.',
+    src: '/videos/exemplo-boutique.mp4',
+    poster: '/videos/exemplo-boutique.jpg',
+  },
+  {
+    id: 'pousada',
+    label: 'Pousada',
+    description: 'Cena ilustrativa feita com IA para mostrar uma pousada no Instagram e no Status.',
+    src: '/videos/exemplo-pousada.mp4',
+    poster: '/videos/exemplo-pousada.jpg',
+  },
+] as const;
+
+export type PageKey = 'home' | 'sites' | 'videos' | 'ferramentas' | 'sobre' | 'servicos' | 'faq' | 'contato';
 
 export interface PageMeta {
   key: string;
@@ -30,9 +59,33 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Site essencial e perfil no Google para pequenos negócios | Sentinel',
+    title: 'Criar site e aparecer no Google | Sentinel Systems',
     description:
-      'Página no celular e configuração básica do Perfil da Empresa no Google para pequenos negócios. Atendemos todo o Brasil. Atendimento online pelo WhatsApp.',
+      'Site para pequeno negócio e Perfil da Empresa no Google, com vídeos para Instagram e Status e ferramentas do dia a dia. Para vender mais e ser encontrado no Brasil.',
+  },
+  sites: {
+    key: 'sites',
+    path: '/sites',
+    label: 'Sites e Google',
+    title: 'Criar site para empresa e aparecer no Google | Sentinel',
+    description:
+      'Site para pequeno negócio no celular e configuração do Perfil da Empresa no Google. 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista. Atendimento no Brasil.',
+  },
+  videos: {
+    key: 'videos',
+    path: '/videos',
+    label: 'Vídeos com IA',
+    title: 'Vídeo com IA para Instagram e Status | Sentinel',
+    description:
+      'Vídeo para restaurante, pousada ou loja: mande as fotos pelo WhatsApp e receba vídeos prontos para o Instagram e o Status, sem filmar e sem editar.',
+  },
+  ferramentas: {
+    key: 'ferramentas',
+    path: '/ferramentas',
+    label: 'Ferramentas',
+    title: 'Ferramentas: Valor Hora Real e CotaCasa | Sentinel',
+    description:
+      'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 37 cada. Saiba quanto cobrar pela hora e quanto a obra deve custar.',
   },
   sobre: {
     key: 'sobre',
@@ -75,17 +128,23 @@ export const NAV_LINKS = (Object.values(PAGES) as PageMeta[]).map((page) => ({
 
 export const GUIAS_LINK = { href: '/guias', label: 'Guias' } as const;
 
-export const FERRAMENTAS_LINK = { href: '/#ferramentas', label: 'Ferramentas' } as const;
-
 export const MENU_LINKS = [
-  NAV_LINKS[0],
-  NAV_LINKS[1],
-  NAV_LINKS[2],
-  FERRAMENTAS_LINK,
-  NAV_LINKS[3],
-  NAV_LINKS[4],
+  { href: '/', label: 'Início' },
+  { href: '/sites', label: 'Sites e Google' },
+  { href: '/videos', label: 'Vídeos com IA' },
+  { href: '/ferramentas', label: 'Ferramentas' },
+] as const;
+
+export const FOOTER_LINKS = [
+  ...MENU_LINKS,
+  { href: '/servicos', label: 'Serviços' },
+  { href: '/sobre', label: 'Sobre' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/contato', label: 'Contato' },
   GUIAS_LINK,
-];
+] as const;
+
+export const SITEMAP_LINKS = FOOTER_LINKS;
 
 export const SERVICES = [
   {
@@ -500,6 +559,84 @@ export function jsonLdFor(path: string): Record<string, unknown> {
       ],
     },
   ];
+
+  if (page.path === '/' || page.path === '/sites' || page.path === '/videos' || page.path === '/ferramentas') {
+    const offerings = [
+      {
+        key: 'sites',
+        name: 'Site e Perfil da Empresa no Google',
+        path: '/sites',
+        description:
+          'Criação de site para empresa e para pequeno negócio, com página no celular e configuração básica do Perfil da Empresa no Google. A criação custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista. A renovação opcional, só domínio e hospedagem, é R$ 180 por ano.',
+      },
+      {
+        key: 'videos',
+        name: 'Vídeos com IA para Instagram e Status',
+        path: '/videos',
+        description:
+          'Vídeo com IA para restaurante, pousada ou loja, feito a partir das fotos enviadas pelo WhatsApp, pronto para o Instagram e o Status.',
+      },
+      {
+        key: 'ferramentas',
+        name: 'Ferramentas Valor Hora Real e CotaCasa',
+        path: '/ferramentas',
+        description:
+          'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 37 cada, para saber quanto cobrar pela hora e quanto a obra deve custar.',
+      },
+    ];
+    const visible = page.path === '/' ? offerings : offerings.filter((item) => item.path === page.path);
+    for (const item of visible) {
+      const service: Record<string, unknown> = {
+        '@type': 'Service',
+        '@id': `${canonicalUrl(item.path)}#servico`,
+        name: item.name,
+        description: item.description,
+        url: canonicalUrl(item.path),
+        areaServed: { '@type': 'Country', name: 'Brasil' },
+        provider: { '@id': ORGANIZATION_ID },
+      };
+      if (page.path === '/videos' && item.key === 'videos') {
+        service.offers = [
+          {
+            '@type': 'Offer',
+            name: 'Avulso',
+            price: '397',
+            priceCurrency: 'BRL',
+            description: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do briefing.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Mensal Básico',
+            price: '997',
+            priceCurrency: 'BRL',
+            description: '4 vídeos com 1 revisão cada.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Mensal Completo',
+            price: '1797',
+            priceCurrency: 'BRL',
+            description: '8 vídeos com 1 revisão cada.',
+          },
+        ];
+      }
+      graph.push(service);
+    }
+  }
+
+  if (page.path === '/videos') {
+    for (const video of EXAMPLE_VIDEOS) {
+      graph.push({
+        '@type': 'VideoObject',
+        name: `Exemplo de vídeo para ${video.label.toLowerCase()}`,
+        description: video.description,
+        thumbnailUrl: `${SITE.url}${video.poster}`,
+        contentUrl: `${SITE.url}${video.src}`,
+        uploadDate: '2026-11-11',
+        duration: 'PT20S',
+      });
+    }
+  }
 
   if (page.path === '/servicos') {
     graph.push({

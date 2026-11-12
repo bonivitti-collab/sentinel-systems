@@ -1062,6 +1062,350 @@ export const DIAGNOSTICOS: Diagnostico[] = [
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
+  {
+    slug: 'pet-shop-best-friend-araruama',
+    nome: 'Pet Shop Best Friend',
+    ctaDe: 'do Pet Shop Best Friend',
+    cidade: 'Araruama',
+    tipo: 'sem_site',
+    descricao:
+      'Diagnóstico personalizado do Pet Shop Best Friend, em Araruama, com o que aparece no Google hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, procurei vocês no Google do jeito que um cliente novo faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 12 de novembro de 2026, no horário de Brasília, com informações públicas do Google.',
+    googleFatos: [
+      'O perfil existe como Pet Shop Best Friend, na Av. Araruama, 1205, no Parque Hotel, em Araruama - RJ.',
+      'A nota é 4,8, com 428 avaliações.',
+      'O horário está visível: de segunda a sexta, das 8h às 19h; sábado, das 8h às 18h; fechado no domingo.',
+      'O telefone do perfil é um número de celular.',
+      'O perfil não tem nenhum link: nem site, nem Instagram, nem Facebook.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “pet shop em Araruama”',
+        paragrafos: [
+          'No verão, muita família vem para Araruama com o cachorro ou o gato e, quando falta ração ou remédio, pesquisa no celular. Com mais de 400 avaliações e nota 4,8, vocês já têm o que é mais difícil de conseguir. O que falta é um lugar para a pessoa ver o que a loja oferece.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Mostrar medicamentos, rações e marcas antes da visita',
+        paragrafos: [
+          'Os clientes elogiam a variedade de medicamentos e o esforço para conseguir o que falta. Uma página com as linhas de produtos e as marcas que vocês trabalham ajuda quem é de fora a decidir ir até a loja.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para perguntar se tem o produto',
+        paragrafos: [
+          'O celular já está no perfil. Um botão que já abre a conversa ajuda quem quer saber se tem aquele remédio ou ração antes de sair de casa.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'A loja continua a mesma. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'pousada-cantinho-da-armacao-buzios',
+    nome: 'Pousada Cantinho da Armação',
+    ctaDe: 'da Pousada Cantinho da Armação',
+    cidade: 'Armação dos Búzios',
+    tipo: 'sem_site',
+    descricao:
+      'Diagnóstico personalizado da Pousada Cantinho da Armação, em Búzios, com o que aparece no Google hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, procurei vocês no Google do jeito que um hóspede faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 12 de novembro de 2026, no horário de Brasília, com informações públicas do Google.',
+    googleFatos: [
+      'O perfil existe como Pousada Cantinho da Armação, na Travessa Santana, na Praia dos Ossos, em Búzios - RJ.',
+      'A nota é 4,6, com 141 avaliações.',
+      'O perfil lista Wi-Fi, ar-condicionado, acesso à praia, restaurante e transfer do aeroporto.',
+      'O telefone do perfil é um número de celular.',
+      'O perfil não tem nenhum link: nem site, nem Instagram, nem Facebook.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Ver os quartos e a vista antes de chamar',
+        paragrafos: [
+          'Quem compara pousadas em Búzios quer ver fotos dos quartos, da varanda e do café da manhã antes de pedir preço. Hoje o perfil no Google não leva a lugar nenhum, nem ao Instagram de vocês, então a pessoa precisa procurar por conta própria.',
+          'Uma página com fotos, tipos de quarto e o que está incluso resolve isso em poucos segundos.',
+        ],
+      },
+      {
+        titulo: 'A Praia dos Ossos como ponto forte',
+        paragrafos: [
+          'Os hóspedes elogiam o atendimento e o barulho do mar a poucos metros. Uma página que mostra a localização no mapa e o que dá para fazer a pé ajuda a fechar a reserva de quem está em dúvida.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para pedir datas',
+        paragrafos: [
+          'O celular já está no perfil. Um botão que já abre a conversa, com uma mensagem pronta pedindo datas e número de pessoas, deixa o pedido de reserva mais fácil.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'pousada-eu-amo-arraial-arraial-do-cabo',
+    nome: 'Pousada Eu Amo Arraial',
+    ctaDe: 'da Pousada Eu Amo Arraial',
+    cidade: 'Arraial do Cabo',
+    tipo: 'sem_site',
+    descricao:
+      'Diagnóstico personalizado da Pousada Eu Amo Arraial, em Arraial do Cabo, com o que aparece no Google hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, procurei vocês no Google do jeito que um hóspede faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 12 de novembro de 2026, no horário de Brasília, com informações públicas do Google.',
+    googleFatos: [
+      'O perfil existe como Pousada Eu amo Arraial, na R. Washington Luís, 60, em Arraial do Cabo - RJ.',
+      'A nota é 4,3, com 201 avaliações.',
+      'O perfil lista Wi-Fi, café da manhã, ar-condicionado e hidromassagem.',
+      'O telefone do perfil é um número de celular.',
+      'Os links do perfil são o WhatsApp e o Facebook. Não há site no perfil.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Ver os quartos e a estrutura antes de chamar',
+        paragrafos: [
+          'Quem compara pousadas em Arraial quer ver fotos dos quartos, da piscina e do café da manhã antes de pedir preço. Hoje o perfil leva direto ao WhatsApp ou ao Facebook, sem uma página que mostre a pousada.',
+          'Uma página com fotos, tipos de quarto e o que está incluso deixa a decisão mais rápida.',
+        ],
+      },
+      {
+        titulo: 'A localização como argumento',
+        paragrafos: [
+          'Hóspedes contam que a pousada fica a poucos minutos a pé da Praia Grande e da Praia dos Anjos, com mercado e farmácia perto. Uma página com o mapa e essas distâncias responde a pergunta mais comum antes mesmo de ela chegar no WhatsApp.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'O WhatsApp de vocês com mensagem pronta',
+        paragrafos: [
+          'O WhatsApp já está no perfil, o que é ótimo. Numa página, o botão pode abrir a conversa já pedindo datas e número de pessoas, o que poupa tempo dos dois lados.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'le-twins-arraial-do-cabo',
+    nome: 'Le Twins',
+    ctaDe: 'do Le Twins',
+    cidade: 'Arraial do Cabo',
+    tipo: 'sem_site',
+    descricao:
+      'Diagnóstico personalizado do Le Twins, em Arraial do Cabo, com o que aparece no Google hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, procurei vocês no Google do jeito que um turista com fome faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 12 de novembro de 2026, no horário de Brasília, com informações públicas do Google.',
+    googleFatos: [
+      'O perfil existe como Le Twins, na Av. Roberto Silveira, 19, na Praia dos Anjos, em Arraial do Cabo - RJ.',
+      'A nota é 4,9, com 396 avaliações.',
+      'O horário está visível: fechado na segunda; de terça a domingo, das 18h às 23h30.',
+      'O telefone do perfil é um número de celular.',
+      'Os links do perfil são o cardápio no Goomer e o Facebook. Não há site nem Instagram no perfil.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “hambúrguer em Arraial do Cabo”',
+        paragrafos: [
+          'No verão, muito turista sai do passeio de barco e pesquisa no celular onde comer. Nota 4,9 com quase 400 avaliações é muito difícil de conseguir. O que falta é uma página que mostre o ambiente, os lanches e o horário de um jeito simples.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'O Instagram de vocês no caminho do Google',
+        paragrafos: [
+          'O Instagram da casa existe, mas não aparece no perfil do Google. Quem chega pela busca vê só o cardápio e o Facebook. Uma página com fotos dos lanches e o link do Instagram junta tudo num lugar só.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para reservar ou pedir',
+        paragrafos: [
+          'O celular já está no perfil. Um botão que já abre a conversa ajuda quem quer saber se tem fila ou se dá para pedir para viagem.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O cardápio continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando a casa, os lanches, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'hay-lanches-arraial-do-cabo',
+    nome: 'Hay Lanches',
+    ctaDe: 'do Hay Lanches',
+    cidade: 'Arraial do Cabo',
+    tipo: 'sem_site',
+    descricao:
+      'Diagnóstico personalizado do Hay Lanches, em Arraial do Cabo, com o que aparece no Google hoje.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, procurei vocês no Google do jeito que um turista com fome faria. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 12 de novembro de 2026, no horário de Brasília, com informações públicas do Google.',
+    googleFatos: [
+      'O perfil existe como Hay Lanches, na Av. Getúlio Vargas, 84, no Centro de Arraial do Cabo - RJ.',
+      'A nota é 4,6, com 381 avaliações.',
+      'O horário está visível: segunda, das 15h à meia-noite; de terça a quinta, das 17h à meia-noite; de sexta a domingo, das 17h à 1h.',
+      'O telefone do perfil é um número de celular.',
+      'O único link do perfil é a página no Facebook. Não há site, cardápio nem Instagram no perfil.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Cardápio à vista para quem pesquisa “lanche em Arraial do Cabo”',
+        paragrafos: [
+          'No verão, muita gente pesquisa no celular onde comer à noite e escolhe pelo que consegue ver. Vocês já têm nota alta e clientes elogiando os combos e a entrega rápida. O que falta é o cardápio no caminho de quem chega pelo Google.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Mostrar os lanches sem depender do Facebook',
+        paragrafos: [
+          'Hoje o perfil leva só ao Facebook, que muito turista nem abre. Uma página com fotos dos combos, preços e horário ajuda a pessoa a decidir na hora.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para pedir',
+        paragrafos: [
+          'O celular já está no perfil. Um botão que já abre a conversa, com o pedido começando pronto, facilita para quem está na pousada e quer receber o lanche.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'A lanchonete continua a mesma. O pedido fica mais perto.',
+    paginaResolve: [
+      'A ideia é uma página no celular, com até cinco seções, mostrando os lanches, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'sanduba-arraial-do-cabo',
+    nome: 'Sanduba',
+    ctaDe: 'do Sanduba',
+    cidade: 'Arraial do Cabo',
+    tipo: 'instagram',
+    descricao:
+      'Diagnóstico personalizado do Sanduba, em Arraial do Cabo, com o que aparece no Google e no Instagram.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui na Região dos Lagos. Com a temporada de verão chegando, olhei só o que qualquer pessoa vê hoje no Google e no Instagram de vocês. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 12 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do Instagram.',
+    googleFatos: [
+      'O perfil existe como Sanduba, na Av. Governador Leonel de Moura Brizola, em Arraial do Cabo - RJ.',
+      'A nota é 4,4, com 748 avaliações.',
+      'O horário está visível: todos os dias, das 19h à meia-noite.',
+      'O telefone do perfil é um número de celular.',
+      'O campo de site aponta para o Instagram, e não para uma página própria.',
+    ],
+    instagramFatos: [
+      'O perfil público é <strong>@hamburgueria_sanduba</strong>.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “hamburgueria em Arraial do Cabo”',
+        paragrafos: [
+          'Quase 750 avaliações é muita coisa, e mostra que muita gente já passou por aí. No verão, o turista pesquisa no celular e quer ver rápido o cardápio, o preço e se dá para levar as crianças. O Instagram é ótimo, mas nem toda busca termina no feed.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'O diferencial da carne moída na casa à vista',
+        paragrafos: [
+          'Clientes destacam que vocês moem a própria carne e que o ambiente é bom para família. Uma página com isso logo no começo, junto com fotos e o cardápio, ajuda a decidir entre vocês e o vizinho.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para quem chega pelo Google',
+        paragrafos: [
+          'O telefone já aparece no perfil. Um toque que já abre a conversa ajuda quem quer saber se tem espera ou pedir para viagem.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: site e informações alinhadas com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
+  {
+    slug: 'mar-azul-sao-pedro-da-aldeia',
+    nome: 'Mar Azul',
+    ctaDe: 'do Mar Azul',
+    cidade: 'São Pedro da Aldeia',
+    tipo: 'instagram',
+    descricao:
+      'Diagnóstico personalizado do restaurante e pizzaria Mar Azul, em São Pedro da Aldeia, com o que aparece no Google e no Instagram.',
+    lead: 'Olá, sou o Danillo, da Sentinel Systems, de Unamar, aqui pertinho de São Pedro. Com a temporada de verão chegando, olhei só o que qualquer pessoa vê hoje no Google e no Instagram de vocês. Segue o que eu encontrei, com calma e sem enrolação.',
+    notaConsulta:
+      'Consulta feita em 12 de novembro de 2026, no horário de Brasília, com informações públicas do Google e do Instagram.',
+    googleFatos: [
+      'O perfil existe como Mar Azul, restaurante e pizzaria na Av. São Pedro, 93, no Centro de São Pedro da Aldeia - RJ.',
+      'A nota é 4,5, com 141 avaliações.',
+      'O horário está visível: fechado na segunda; de terça a domingo, das 18h à meia-noite.',
+      'O telefone do perfil é um número de celular.',
+      'O campo de site aponta para o Instagram, e não para uma página própria.',
+    ],
+    instagramFatos: [
+      'O perfil público é <strong>@___mar_azul___</strong>.',
+    ],
+    oportunidadesTitulo: 'O que pode ficar mais fácil para quem procura vocês',
+    oportunidades: [
+      {
+        titulo: 'Aparecer com clareza quando alguém pesquisa “restaurante em São Pedro da Aldeia”',
+        paragrafos: [
+          'No verão, muita gente de fora procura onde jantar no celular. Clientes contam que frequentam a casa desde criança e elogiam o preço justo e o chope gelado. Essa história merece aparecer para quem ainda não conhece.',
+          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+        ],
+      },
+      {
+        titulo: 'Cardápio e preços sem precisar rolar o feed',
+        paragrafos: [
+          'Quem chega pelo Google cai direto no Instagram e precisa procurar o cardápio entre as publicações. Uma página com pratos, pizzas e faixas de preço responde isso em segundos.',
+        ],
+      },
+      {
+        titulo: 'Um botão de WhatsApp para reservar mesa ou pedir',
+        paragrafos: [
+          'O celular já está no perfil. Um toque que já abre a conversa ajuda quem quer reservar para a família ou pedir uma pizza para viagem.',
+        ],
+      },
+    ],
+    paginaResolveKicker: 'O que uma página resolve',
+    paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
+    paginaResolve: [
+      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: site e informações alinhadas com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
+    ],
+  },
 ];
 
 export function diagnosticoBySlug(slug: string): Diagnostico | undefined {

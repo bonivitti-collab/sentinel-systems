@@ -119,7 +119,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {FERRAMENTAS.map((item) => (
               <li key={item.id} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xs">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-500">{item.kind}</p>
-                <h3 className="mt-1 text-lg font-extrabold text-slate-900">{item.name}</h3>
+                <h3 className="mt-1 text-lg font-extrabold text-slate-900">
+                  <a href={item.landingPath} onClick={(event) => go(event, item.landingPath)} className="hover:text-cyan-800">
+                    {item.name}
+                  </a>
+                </h3>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.benefit}</p>
                 <p className="mt-3 text-sm font-semibold text-slate-800">{item.priceLabel}</p>
               </li>

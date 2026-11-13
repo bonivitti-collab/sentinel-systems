@@ -19,18 +19,24 @@ export function FerramentasSection() {
               key={item.id}
               className="min-w-0 overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/70 flex flex-col"
             >
-              <img
-                src={item.image}
-                alt={item.alt}
-                width={600}
-                height={600}
-                loading="lazy"
-                decoding="async"
-                className="block w-full max-w-full aspect-square object-cover"
-              />
+              <a href={item.landingPath}>
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  width={600}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  className="block w-full max-w-full aspect-square object-cover"
+                />
+              </a>
               <div className="p-4 flex flex-col flex-1">
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{item.kind}</p>
-                <h2 className="mt-1 text-base font-bold text-slate-900">{item.name}</h2>
+                <h2 className="mt-1 text-base font-bold text-slate-900">
+                  <a href={item.landingPath} className="hover:text-cyan-800">
+                    {item.name}
+                  </a>
+                </h2>
                 <p className="mt-1 text-sm text-slate-600 leading-relaxed">{item.benefit}</p>
                 <p className="mt-3 text-sm font-semibold text-slate-800">{item.priceLabel}</p>
                 <a

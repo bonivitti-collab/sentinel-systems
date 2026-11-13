@@ -8,6 +8,8 @@ export interface Ferramenta {
   href: string;
   image: string;
   alt: string;
+  /** Rota da landing. O endereço público é o subdomínio em productLandings. */
+  landingPath: '/valorhora' | '/cotacasa';
 }
 
 /** Novas planilhas entram neste array. O card e o JSON-LD leem daqui. */
@@ -22,6 +24,7 @@ export const FERRAMENTAS: Ferramenta[] = [
     href: 'https://pay.kiwify.com.br/2ydXBfN',
     image: '/ferramentas/valor-hora-real.webp',
     alt: 'Capa da planilha Valor Hora Real, para calcular o preço da hora de freelancer e MEI',
+    landingPath: '/valorhora',
   },
   {
     id: 'cotacasa',
@@ -33,6 +36,7 @@ export const FERRAMENTAS: Ferramenta[] = [
     href: 'https://pay.kiwify.com.br/1Nf3zMM',
     image: '/ferramentas/cotacasa.webp',
     alt: 'Capa do CotaCasa, planilha para estimar e acompanhar o custo da obra',
+    landingPath: '/cotacasa',
   },
 ];
 

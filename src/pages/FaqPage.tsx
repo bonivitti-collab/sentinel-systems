@@ -18,7 +18,7 @@ export function FaqPage() {
             </span>
           </>
         }
-        description="Serviço, prazo e como começar. Onde não existe um número publicado, a resposta diz isso com clareza, em vez de inventar preço ou prazo. O detalhe de cada frente está em Serviços."
+        description="Serviço, prazo e como começar. Veja o que entra no site e, se faltar alguma coisa, chama no WhatsApp que a gente monta junto."
       />
 
       <section className="pb-16">

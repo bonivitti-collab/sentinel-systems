@@ -1,5 +1,6 @@
 import { FERRAMENTAS, ferramentasResumo } from './ferramentas';
 import { VIDEO_PACKAGES } from './offers';
+import { productByPath, productCanonical, productJsonLd, productOgImageUrl, PRODUCT_LANDINGS } from './productLandings';
 import { GUIDES_INDEX, PUBLISHED_GUIDES, publishedGuideByPath } from './publishedGuides';
 
 export const SITE = {
@@ -48,7 +49,7 @@ export const EXAMPLE_VIDEOS = [
   },
 ] as const;
 
-export type PageKey = 'home' | 'ferramentas' | 'valorhora' | 'cotacasa';
+export type PageKey = 'home' | 'ferramentas';
 
 export interface PageMeta {
   key: string;
@@ -57,6 +58,8 @@ export interface PageMeta {
   title: string;
   description: string;
   ogType?: 'website' | 'article';
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 
 export const PAGES: Record<PageKey, PageMeta> = {
@@ -74,20 +77,6 @@ export const PAGES: Record<PageKey, PageMeta> = {
     label: 'Ferramentas',
     title: 'Ferramentas: Valor Hora Real e CotaCasa | Sentinel',
     description: `${ferramentasResumo()} Saiba quanto cobrar pela hora e quanto a obra deve custar.`,
-  },
-  valorhora: {
-    key: 'valorhora',
-    path: '/valorhora',
-    label: 'Valor Hora Real',
-    title: 'Valor Hora Real | Planilha por R$ 9,90 | Sentinel',
-    description: 'Saiba quanto cobrar pela sua hora, como freelancer ou MEI. Planilha Valor Hora Real por R$ 9,90.',
-  },
-  cotacasa: {
-    key: 'cotacasa',
-    path: '/cotacasa',
-    label: 'CotaCasa',
-    title: 'CotaCasa | Planilha por R$ 9,90 | Sentinel',
-    description: 'Saiba quanto a obra deve custar antes de fechar com alguém. Planilha CotaCasa por R$ 9,90.',
   },
 };
 
@@ -328,6 +317,8 @@ export const HOW_IT_WORKS = [
 ] as const;
 
 export function canonicalUrl(path: string): string {
+  const product = productByPath(path);
+  if (product) return productCanonical(product);
   if (path === '/') return `${SITE.url}/`;
   return `${SITE.url}${path}`;
 }
@@ -350,6 +341,16 @@ export function indexablePages(): PageMeta[] {
       title: guide.title,
       description: guide.description,
       ogType: 'article' as const,
+    })),
+    ...PRODUCT_LANDINGS.map((product) => ({
+      key: product.id,
+      path: product.path,
+      label: product.metaTitle,
+      title: product.metaTitle,
+      description: product.metaDescription,
+      ogType: 'website' as const,
+      ogImage: productOgImageUrl(product),
+      ogImageAlt: product.ogAlt,
     })),
   ];
 }
@@ -484,6 +485,8 @@ function guidesIndexJsonLd(): Record<string, unknown> {
 }
 
 export function jsonLdFor(path: string): Record<string, unknown> {
+  const product = productByPath(path);
+  if (product) return productJsonLd(product);
   if (path === GUIDES_INDEX.path) return guidesIndexJsonLd();
   const published = publishedGuideByPath(path);
   if (published) return guideArticleJsonLd(published);
@@ -542,7 +545,7 @@ export function jsonLdFor(path: string): Record<string, unknown> {
     },
   ];
 
-  if (page.path === '/' || page.path === '/ferramentas' || page.path === '/valorhora' || page.path === '/cotacasa') {
+  if (page.path === '/' || page.path === '/ferramentas') {
     const siteService: Record<string, unknown> = {
       '@type': 'Service',
       '@id': `${canonicalUrl('/')}#site`,
@@ -631,19 +634,16 @@ export function jsonLdFor(path: string): Record<string, unknown> {
         })),
       });
     }
-    if (page.path === '/ferramentas' || page.path === '/valorhora' || page.path === '/cotacasa') {
-      const tools = page.path === '/ferramentas'
-        ? FERRAMENTAS
-        : FERRAMENTAS.filter((item) => (page.path === '/valorhora' ? item.id === 'valor-hora-real' : item.id === 'cotacasa'));
+    if (page.path === '/ferramentas') {
       graph.push({
         '@type': 'Service',
         '@id': `${url}#servico`,
-        name: page.path === '/ferramentas' ? 'Ferramentas Valor Hora Real e CotaCasa' : page.label,
+        name: 'Ferramentas Valor Hora Real e CotaCasa',
         description: page.description,
         url,
         areaServed: { '@type': 'Country', name: 'Brasil' },
         provider: { '@id': ORGANIZATION_ID },
-        offers: tools.map((ferramenta) => ({
+        offers: FERRAMENTAS.map((ferramenta) => ({
           '@type': 'Offer',
           name: ferramenta.name,
           price: ferramenta.priceAmount,

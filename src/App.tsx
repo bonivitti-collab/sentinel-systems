@@ -5,12 +5,13 @@ import { Navbar } from './components/Navbar';
 import { pageByPath } from './data/companySite';
 import { applySeo } from './lib/seo';
 import { publishedGuideByPath } from './data/publishedGuides';
+import { productByPath, productPathForHost } from './data/productLandings';
 import { FerramentasPage } from './pages/FerramentasPage';
 import { GuideArticlePage } from './pages/GuideArticlePage';
 import { GuidesIndexPage } from './pages/GuidesIndexPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { ToolPage } from './pages/ToolPage';
+import { ProductLandingPage } from './pages/ProductLandingPage';
 
 const REDIRECTS: Record<string, string> = {
   '/quem-somos': '/',
@@ -67,13 +68,22 @@ function resolveLocation(pathname: string, hash: string): { path: string; hash: 
 
 function readLocation(): { path: string; hash: string; url: string } {
   if (typeof window === 'undefined') return { path: '/', hash: '', url: '/' };
+  const fromHost = productPathForHost(window.location.hostname, window.location.pathname);
+  if (fromHost) {
+    const path = window.location.pathname.replace(/\/+$/, '') || '/';
+    return { path: fromHost, hash: '', url: `${path}${window.location.hash}` };
+  }
   return resolveLocation(window.location.pathname, window.location.hash);
 }
 
+function initialPath(url?: string): string {
+  if (url) return normalizePath(url);
+  if (typeof window === 'undefined') return '/';
+  return productPathForHost(window.location.hostname, window.location.pathname) ?? normalizePath(window.location.pathname);
+}
+
 export function App({ url }: { url?: string }) {
-  const [currentPath, setCurrentPath] = useState(() =>
-    url ? normalizePath(url) : normalizePath(typeof window === 'undefined' ? '/' : window.location.pathname),
-  );
+  const [currentPath, setCurrentPath] = useState(() => initialPath(url));
 
   useEffect(() => {
     const page = pageByPath(currentPath);
@@ -109,12 +119,13 @@ export function App({ url }: { url?: string }) {
     }
   };
 
+  const product = productByPath(currentPath);
+  if (product) return <ProductLandingPage product={product} />;
+
   const guide = publishedGuideByPath(currentPath);
   let content = <NotFoundPage onNavigate={navigate} />;
   if (currentPath === '/') content = <HomePage onNavigate={navigate} />;
   else if (currentPath === '/ferramentas') content = <FerramentasPage />;
-  else if (currentPath === '/valorhora') content = <ToolPage id="valor-hora-real" />;
-  else if (currentPath === '/cotacasa') content = <ToolPage id="cotacasa" />;
   else if (currentPath === '/guias') content = <GuidesIndexPage onNavigate={navigate} />;
   else if (guide) content = <GuideArticlePage guide={guide} onNavigate={navigate} />;
 

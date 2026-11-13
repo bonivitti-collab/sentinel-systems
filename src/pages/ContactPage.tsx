@@ -48,7 +48,7 @@ export function ContactPage() {
             </span>
           </>
         }
-        description="Os canais são os que este site já usa: WhatsApp e e-mail. O formulário só monta a mensagem e abre o WhatsApp. Nada é enviado para outro lugar."
+        description="Chama no WhatsApp ou manda um e-mail. O formulário abre a conversa pronta para você contar o que o seu negócio precisa."
       />
 
       <section className="pb-20">
@@ -91,7 +91,7 @@ export function ContactPage() {
                   <Clock className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Horário já publicado</p>
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Horário de atendimento</p>
                   <p className="text-sm text-slate-700 font-semibold">Segunda a sexta: 08h às 19h</p>
                   <p className="text-sm text-slate-700 font-semibold">Sábado: 09h às 14h</p>
                 </div>

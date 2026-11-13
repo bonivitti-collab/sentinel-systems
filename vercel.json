@@ -18,26 +18,14 @@
     {
       "source": "/",
       "has": [{ "type": "host", "value": "valorhora.sentinelsystems.com.br" }],
-      "destination": "https://sentinelsystems.com.br/valorhora",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "valorhora.sentinelsystems.com.br" }],
-      "destination": "https://sentinelsystems.com.br/valorhora",
-      "permanent": true
+      "destination": "/valorhora",
+      "permanent": false
     },
     {
       "source": "/",
       "has": [{ "type": "host", "value": "cotacasa.sentinelsystems.com.br" }],
-      "destination": "https://sentinelsystems.com.br/cotacasa",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "cotacasa.sentinelsystems.com.br" }],
-      "destination": "https://sentinelsystems.com.br/cotacasa",
-      "permanent": true
+      "destination": "/cotacasa",
+      "permanent": false
     },
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/quem-somos", "destination": "/", "permanent": true },

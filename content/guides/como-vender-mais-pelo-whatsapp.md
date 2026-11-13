@@ -155,7 +155,7 @@ Para quem recebe muitas mensagens, automações e assistentes ajudam a não deix
 
 ## Quer que o cliente chegue no seu WhatsApp já sabendo o que quer?
 
-Um site claro, com seus serviços, região e botão de WhatsApp, faz o cliente chegar na conversa com menos dúvidas. A Sentinel Systems faz o site, o Perfil da Empresa no Google, o caminho até o WhatsApp, a gestão do Instagram e vídeos com IA para o pequeno negócio.
+Um site claro, com seus serviços, região e botão de WhatsApp, faz o cliente chegar na conversa com menos dúvidas. É isso que a Sentinel Systems faz: site profissional para pequenos negócios e autônomos, para mais gente te achar e chamar.
 
 Veja [o que a gente faz](/#servicos) ou [chame no WhatsApp](/#contato). Atendimento online, para todo o Brasil.
 

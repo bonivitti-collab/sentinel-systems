@@ -6,6 +6,7 @@ import { renderToString } from 'react-dom/server';
 import { App } from '../src/App.tsx';
 import { canonicalUrl, indexablePages, jsonLdFor, SITE, type PageMeta } from '../src/data/companySite.ts';
 import { PUBLISHED_GUIDES } from '../src/data/publishedGuides.ts';
+import { ferramentaOf, productByPath, productCanonical, productOgImageUrl } from '../src/data/productLandings.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
@@ -36,6 +37,13 @@ function applyTemplate(template: string, page: PageMeta, body: string, robots: s
   html = html.replace(/(<meta\s+name="twitter:url"\s+content=")[^"]*(")/, `$1${canonical}$2`);
   html = html.replace(/(<meta\s+name="twitter:title"\s+content=")[^"]*(")/, `$1${escapeAttr(page.title)}$2`);
   html = html.replace(/(<meta\s+name="twitter:description"\s+content=")[^"]*(")/, `$1${escapeAttr(page.description)}$2`);
+  if (page.ogImage) {
+    html = html.replace(/(<meta\s+property="og:image"\s+content=")[^"]*(")/, `$1${escapeAttr(page.ogImage)}$2`);
+    html = html.replace(/(<meta\s+name="twitter:image"\s+content=")[^"]*(")/, `$1${escapeAttr(page.ogImage)}$2`);
+  }
+  if (page.ogImageAlt) {
+    html = html.replace(/(<meta\s+property="og:image:alt"\s+content=")[^"]*(")/, `$1${escapeAttr(page.ogImageAlt)}$2`);
+  }
   const json = JSON.stringify(jsonLdFor(page.path));
   html = html.replace(
     /<script type="application\/ld\+json" id="seo-jsonld">[\s\S]*?<\/script>/,
@@ -56,13 +64,13 @@ function assertGuideSources(): void {
 }
 
 function writeSitemap(): void {
-  const today = '2026-11-13';
   const pages = indexablePages();
   if (pages.length !== 10) {
     throw new Error(`sitemap deveria listar 10 URLs e listou ${pages.length}: ${pages.map((page) => page.path).join(', ')}`);
   }
   const urls = pages.map((page) => ({
     loc: canonicalUrl(page.path),
+    lastmod: productByPath(page.path) ? '2026-11-13' : '2026-11-11',
     priority: page.path === '/' ? '1.0' : '0.8',
   }));
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -71,7 +79,7 @@ ${urls
   .map(
     (url) => `  <url>
     <loc>${url.loc}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${url.lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${url.priority}</priority>
   </url>`,
@@ -109,11 +117,14 @@ function prerenderPages(): void {
       fs.mkdirSync(dir, { recursive: true });
       fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
     }
-    if (/"Product"|itemtype=["'][^"']*Product/.test(html)) {
+    const product = productByPath(page.path);
+    if (product) {
+      assertProductPage(html, product);
+    } else if (/"Product"|itemtype=["'][^"']*Product/.test(html)) {
       throw new Error(`Product em ${page.path}`);
     }
     const hasOffer = /"Offer"/.test(html);
-    const offerPages = page.path === '/' || page.path === '/ferramentas' || page.path === '/valorhora' || page.path === '/cotacasa';
+    const offerPages = page.path === '/' || page.path === '/ferramentas' || Boolean(product);
     if (offerPages && !hasOffer) {
       throw new Error(`Offer ausente em ${page.path}`);
     }
@@ -152,6 +163,41 @@ function prerenderPages(): void {
     'utf8',
   );
   console.log('[SEO] 404.html prerenderizado com noindex.');
+}
+
+function assertProductPage(html: string, product: NonNullable<ReturnType<typeof productByPath>>): void {
+  const item = ferramentaOf(product);
+  const canonical = productCanonical(product);
+  const image = productOgImageUrl(product);
+  const required = [
+    `<title>${escapeAttr(product.metaTitle)}</title>`,
+    `rel="canonical" href="${canonical}"`,
+    'property="og:type" content="website"',
+    `property="og:url" content="${canonical}"`,
+    `property="og:title" content="${escapeAttr(product.metaTitle)}"`,
+    `property="og:description" content="${escapeAttr(product.metaDescription)}"`,
+    `property="og:image" content="${image}"`,
+    'property="og:image:width" content="1200"',
+    'property="og:image:height" content="630"',
+    `property="og:image:alt" content="${escapeAttr(product.ogAlt)}"`,
+    'property="og:locale" content="pt_BR"',
+    'name="twitter:card" content="summary_large_image"',
+    `name="twitter:title" content="${escapeAttr(product.metaTitle)}"`,
+    `name="twitter:description" content="${escapeAttr(product.metaDescription)}"`,
+    `name="twitter:image" content="${image}"`,
+    '"@type":"Product"',
+    '"@type":"Offer"',
+    `"price":"${item.priceAmount}"`,
+    '"priceCurrency":"BRL"',
+    `"url":"${item.href}"`,
+    `Comprar por ${item.priceLabel}`,
+    item.name,
+  ];
+  for (const snippet of required) {
+    if (!html.includes(snippet)) throw new Error(`${product.path} sem ${snippet}`);
+  }
+  if (/engenheir/i.test(html)) throw new Error(`${product.path} cita engenheiro`);
+  if (/vagas limitadas|últimas unidades|contador/i.test(html)) throw new Error(`${product.path} usa escassez`);
 }
 
 assertGuideSources();

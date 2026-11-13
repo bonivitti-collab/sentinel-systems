@@ -21,7 +21,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             </span>
           </>
         }
-        description="A Sentinel Systems constrói produtos digitais e faz criação de site para pequenos negócios no Brasil. O Google Meu Negócio e a segurança entram para a pessoa te achar, chamar e chegar."
+        description="A Sentinel Systems faz o marketing do pequeno negócio no Brasil. Site, Perfil da Empresa no Google, WhatsApp e redes são o meio para a pessoa te achar, ligar e chamar."
       />
 
       <section className="pb-16">
@@ -33,7 +33,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 Pequenos negócios vivem de quem entra em contato: uma ligação, uma mensagem no WhatsApp, uma pessoa na porta. Hoje essa decisão começa no Google. A pessoa pesquisa o serviço, abre o mapa, olha fotos e avaliações e só então escolhe com quem falar.
               </p>
               <p>
-                A Sentinel existe para organizar essa presença. Construímos o site rápido que recebe o clique e os produtos digitais da própria empresa. No serviço para o comércio, o centro é o resultado: ser encontrado e ser chamado.
+                A Sentinel existe para organizar essa presença. O site, o perfil no Google, o WhatsApp e as redes são o meio. No serviço para o comércio, o centro é o resultado: ser encontrado, receber ligação e ser chamado.
               </p>
               <p>
                 O trabalho é remoto, para negócios no Brasil, no WhatsApp e no e-mail que já estão neste site.

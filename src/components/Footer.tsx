@@ -27,7 +27,7 @@ export function Footer({ currentPath, onNavigate }: FooterProps) {
               <SentinelLogo size="sm" variant="light" />
             </a>
             <p className="mt-4 text-sm text-slate-500 leading-relaxed max-w-sm">
-              Criação de site e cuidado com o Google Meu Negócio para negócios locais no Brasil.
+              Marketing para o pequeno negócio no Brasil: site, Perfil da Empresa no Google, WhatsApp e redes, para o cliente te achar e chamar.
             </p>
           </div>
 

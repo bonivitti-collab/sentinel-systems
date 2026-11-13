@@ -27,8 +27,8 @@ export function FaqPage() {
           <div className="mt-8 p-6 rounded-3xl bg-slate-50 border border-slate-200">
             <h2 className="font-extrabold text-slate-900 mb-2">Não achou a sua pergunta?</h2>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              Manda no WhatsApp. A conversa é com a Sentinel, no número que já está no site. O que entra na{' '}
-              <a href="/servicos" className="font-semibold text-cyan-800">criação de site e no Google Meu Negócio</a>{' '}
+              Manda no WhatsApp. A conversa é com a Sentinel, no número que já está no site. O que entra em{' '}
+              <a href="/servicos" className="font-semibold text-cyan-800">site, Google, WhatsApp e redes</a>{' '}
               está na página de serviços.
             </p>
             <a

@@ -1,6 +1,12 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import { Menu, MessageCircle, Volume2, VolumeX, X } from 'lucide-react';
-import { MENU_LINKS, NEUTRAL_WHATSAPP_TEXT, VIDEOS_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
+import {
+  MENU_LINKS,
+  NEUTRAL_WHATSAPP_TEXT,
+  SERVICES_WHATSAPP_TEXT,
+  VIDEOS_WHATSAPP_TEXT,
+  whatsappHref,
+} from '../data/companySite';
 import { soundFx } from './SoundEffects';
 import { SentinelLogo } from './SentinelLogo';
 
@@ -31,7 +37,9 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
       ? whatsappHref()
       : currentPath === '/videos'
         ? whatsappHref(VIDEOS_WHATSAPP_TEXT)
-        : whatsappHref(NEUTRAL_WHATSAPP_TEXT);
+        : currentPath === '/servicos' || currentPath === '/'
+          ? whatsappHref(SERVICES_WHATSAPP_TEXT)
+          : whatsappHref(NEUTRAL_WHATSAPP_TEXT);
   const isActive = (href: string) =>
     href === '/guias' ? currentPath === '/guias' || currentPath.startsWith('/guias/') : href === currentPath;
 

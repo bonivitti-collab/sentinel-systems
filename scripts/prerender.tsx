@@ -113,7 +113,7 @@ function prerenderPages(): void {
       throw new Error(`Product em ${page.path}`);
     }
     const hasOffer = /"Offer"/.test(html);
-    const offerPages = page.path === '/videos' || page.path === '/ferramentas';
+    const offerPages = page.path === '/videos' || page.path === '/ferramentas' || page.path === '/sites';
     if (offerPages && !hasOffer) {
       throw new Error(`Offer ausente em ${page.path}`);
     }

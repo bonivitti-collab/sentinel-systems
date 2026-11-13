@@ -6,8 +6,10 @@ import { soundFx } from '../components/SoundEffects';
 
 const INTERESTS = [
   'Ser encontrado no Google e no Maps',
-  'Site rápido que recebe o cliente',
-  'Segurança e blindagem digital',
+  'Site para o cliente ligar e chamar',
+  'Mais mensagens no WhatsApp',
+  'Redes sociais',
+  'Planilhas',
   'Ainda não sei — quero conversar',
 ];
 

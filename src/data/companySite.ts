@@ -1,4 +1,5 @@
 import { FERRAMENTAS, ferramentasResumo } from './ferramentas';
+import { productByPath, productCanonical, productJsonLd, productOgImageUrl, PRODUCT_LANDINGS } from './productLandings';
 import { GUIDES_INDEX, PUBLISHED_GUIDES, publishedGuideByPath } from './publishedGuides';
 
 export const SITE = {
@@ -56,6 +57,8 @@ export interface PageMeta {
   title: string;
   description: string;
   ogType?: 'website' | 'article';
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 
 export const PAGES: Record<PageKey, PageMeta> = {
@@ -420,6 +423,8 @@ export const HOW_IT_WORKS = [
 ] as const;
 
 export function canonicalUrl(path: string): string {
+  const product = productByPath(path);
+  if (product) return productCanonical(product);
   if (path === '/') return `${SITE.url}/`;
   return `${SITE.url}${path}`;
 }
@@ -442,6 +447,16 @@ export function indexablePages(): PageMeta[] {
       title: guide.title,
       description: guide.description,
       ogType: 'article' as const,
+    })),
+    ...PRODUCT_LANDINGS.map((product) => ({
+      key: product.id,
+      path: product.path,
+      label: product.metaTitle,
+      title: product.metaTitle,
+      description: product.metaDescription,
+      ogType: 'website' as const,
+      ogImage: productOgImageUrl(product),
+      ogImageAlt: product.ogAlt,
     })),
   ];
 }
@@ -576,6 +591,8 @@ function guidesIndexJsonLd(): Record<string, unknown> {
 }
 
 export function jsonLdFor(path: string): Record<string, unknown> {
+  const product = productByPath(path);
+  if (product) return productJsonLd(product);
   if (path === GUIDES_INDEX.path) return guidesIndexJsonLd();
   const published = publishedGuideByPath(path);
   if (published) return guideArticleJsonLd(published);

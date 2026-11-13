@@ -32,7 +32,7 @@
     { "source": "/sobre", "destination": "/", "permanent": true },
     { "source": "/automacao", "destination": "/#servicos", "permanent": true },
     { "source": "/automacao/:slug", "destination": "/#servicos", "permanent": true },
-    { "source": "/blog", "destination": "/#perguntas", "permanent": true },
+    { "source": "/blog", "destination": "/guias", "permanent": true },
     { "source": "/solucoes/:slug", "destination": "/#servicos", "permanent": true },
     { "source": "/cidades/:slug", "destination": "/", "permanent": true },
     { "source": "/servicos", "destination": "/#servicos", "permanent": true },

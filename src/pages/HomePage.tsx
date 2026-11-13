@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
-import { ArrowUpRight, Check, Globe, MapPin, MessageCircle, Minus, Video } from 'lucide-react';
+import { Check, Globe, MapPin, MessageCircle, Minus, Video } from 'lucide-react';
 import {
   EXAMPLE_VIDEOS,
   FAQ,
@@ -36,14 +36,14 @@ const SERVICES = [
   },
   {
     title: 'Google Meu Negócio',
-    text: 'Perfil da Empresa no Google: nome, mapa, horário, fotos e telefone para quem pesquisa o serviço na sua região.',
-    price: 'Entra no site',
+    text: 'A gente configura o Perfil da Empresa no Google junto com o seu site: nome, mapa, horário e fotos. O perfil no Google é gratuito.',
+    price: 'Vem junto com o site',
     icon: MapPin,
   },
   {
     title: 'Atendimento no WhatsApp',
-    text: 'O número fica à vista no site e no perfil. Quem já decidiu falar chama na hora.',
-    price: 'Entra no site',
+    text: 'O botão de WhatsApp vai no site e no perfil do Google, para o cliente chamar na hora. Se você quiser um atendimento mais completo, a gente combina o valor na conversa.',
+    price: 'Vem junto com o site',
     icon: MessageCircle,
   },
   {
@@ -70,10 +70,10 @@ const SITE_EXAMPLES = [
   },
   {
     name: 'Casa Linho',
-    kind: 'Boutique',
+    kind: 'Loja',
     href: '/demos/casa-linho/index.html',
     src: '/modelos/casa-linho-t461.webp',
-    alt: 'Exemplo de site para boutique, com catálogo de peças',
+    alt: 'Exemplo de site para loja, com catálogo de peças',
   },
   {
     name: 'Salão Aurora',
@@ -135,7 +135,7 @@ function ExampleVideo({ src, poster, label }: { src: string; poster: string; lab
   const [play, setPlay] = useState(false);
   return (
     <figure className="min-w-0">
-      <div className="overflow-hidden rounded-2xl bg-slate-950 aspect-[9/16]">
+      <div className="overflow-hidden rounded-2xl bg-slate-950 aspect-[3/4]">
         {play ? (
           <video
             src={src}
@@ -184,7 +184,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="bg-[#f7f6f3] text-slate-950">
       <section className="border-b border-slate-200/80 bg-white">
-        <div className={`${SHELL} grid items-end gap-10 pb-16 pt-28 sm:pb-24 sm:pt-32 lg:grid-cols-12`}>
+        <div className={`${SHELL} grid items-end gap-8 pb-8 pt-24 sm:pb-16 sm:pt-32 lg:grid-cols-12`}>
           <div className="lg:col-span-7">
             <p className="text-sm font-bold text-[#0e7490]">Para o comércio da sua cidade</p>
             <h1 className="mt-4 max-w-4xl text-[clamp(2.4rem,7vw,4.6rem)] font-extrabold leading-[1.02] tracking-[-0.045em]">
@@ -204,8 +204,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </a>
             </div>
             <p className="mt-5 text-sm font-semibold text-slate-500">{SITE.phoneDisplay}</p>
+            <p className="mt-3 max-w-md text-base font-bold leading-snug text-slate-800">
+              Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista
+            </p>
           </div>
-          <aside className="rounded-[28px] border border-slate-200 bg-[#f7f6f3] p-6 sm:p-8 lg:col-span-5">
+          <aside className="hidden rounded-[28px] border border-slate-200 bg-[#f7f6f3] p-6 sm:p-8 lg:col-span-5 lg:block">
             <p className="text-sm font-bold text-[#0e7490]">O resultado</p>
             <ul className="mt-4 space-y-4">
               {['Seu nome no Google, com mapa e horário', 'Uma página que abre no celular', 'WhatsApp visível na hora de chamar'].map((item) => (
@@ -215,18 +218,20 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm text-slate-500">Site em 12x de R$ 50</p>
+            <p className="mt-6 text-base font-bold leading-snug text-slate-800">
+              Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista
+            </p>
           </aside>
         </div>
       </section>
 
-      <section id="servicos" className="scroll-mt-24 py-16 sm:py-24" aria-labelledby="servicos-titulo">
+      <section id="servicos" className="scroll-mt-24 py-8 sm:py-20" aria-labelledby="servicos-titulo">
         <div className={SHELL}>
           <p className="text-sm font-bold text-[#0e7490]">O que fazemos</p>
           <h2 id="servicos-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em]">
-            Cinco jeitos de o cliente te achar e chamar
+            Cinco jeitos de o cliente te encontrar e chamar
           </h2>
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-6">
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-6">
             {SERVICES.map((service, index) => {
               const Icon = service.icon;
               const span = index < 3 ? 'xl:col-span-2' : 'xl:col-span-3';
@@ -234,14 +239,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
               return (
                 <article
                   key={service.title}
-                  className={`flex min-w-0 flex-col rounded-[20px] border border-slate-200 bg-white p-6 ${span} ${wide}`}
+                  className={`flex min-w-0 flex-col rounded-[20px] border border-slate-200 bg-white p-4 sm:p-5 ${span} ${wide}`}
                 >
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ecfeff] text-[#0e7490]">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
-                  <h3 className="mt-5 text-xl font-extrabold tracking-tight">{service.title}</h3>
+                  <h3 className="mt-4 text-lg font-extrabold tracking-tight">{service.title}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{service.text}</p>
-                  <p className="mt-5 text-sm font-bold text-slate-950">{service.price}</p>
+                  <p className="mt-4 text-sm font-bold text-slate-950">{service.price}</p>
                 </article>
               );
             })}
@@ -249,57 +254,52 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      <section id="exemplos" className="scroll-mt-24 border-y border-slate-200 bg-white py-16 sm:py-24" aria-labelledby="exemplos-titulo">
+      <section id="exemplos" className="scroll-mt-24 border-y border-slate-200 bg-white py-6 sm:py-16" aria-labelledby="exemplos-titulo">
         <div className={SHELL}>
           <p className="text-sm font-bold text-[#0e7490]">Exemplos</p>
-          <h2 id="exemplos-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em]">
+          <h2 id="exemplos-titulo" className="mt-2 max-w-2xl text-[clamp(1.6rem,4vw,2.4rem)] font-extrabold leading-tight tracking-[-0.035em]">
             Veja o site no celular e o vídeo pronto para postar
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
-            Restaurante, boutique, salão e pousada. Abra cada exemplo.
-          </p>
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2">
             {SITE_EXAMPLES.map((example) => (
               <a
                 key={example.href}
                 href={example.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group min-w-0 overflow-hidden rounded-[20px] border border-slate-200 bg-[#f7f6f3]"
+                className="flex w-[148px] shrink-0 snap-start flex-col"
               >
-                <img
-                  src={example.src}
-                  alt={example.alt}
-                  width={1280}
-                  height={720}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-[16/10] w-full object-cover object-center"
-                />
-                <span className="flex min-h-16 items-center justify-between gap-3 px-4 py-3">
-                  <span>
-                    <span className="block text-xs font-bold uppercase tracking-wide text-[#0e7490]">{example.kind}</span>
-                    <span className="block text-base font-extrabold text-slate-950">{example.name}</span>
-                  </span>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 text-slate-400 group-hover:text-slate-950" aria-hidden="true" />
+                <span className="relative block rounded-[1.7rem] border-[7px] border-slate-950 bg-slate-950">
+                  <span className="absolute left-1/2 top-1.5 z-10 h-1.5 w-10 -translate-x-1/2 rounded-full bg-slate-700" aria-hidden="true" />
+                  <img
+                    src={example.src}
+                    alt={example.alt}
+                    width={1280}
+                    height={720}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[9/16] w-full rounded-[1.2rem] object-cover object-center"
+                  />
                 </span>
+                <span className="mt-2 text-sm font-extrabold text-slate-950">{example.name}</span>
+                <span className="text-xs font-bold text-[#0e7490]">{example.kind}</span>
               </a>
             ))}
           </div>
 
-          <h3 className="mt-14 text-xl font-extrabold tracking-tight">Vídeos de exemplo</h3>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
-            Restaurante, boutique e pousada. O som começa desligado.
-          </p>
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:max-w-3xl">
+          <h3 className="mt-6 text-lg font-extrabold tracking-tight">Vídeos de exemplo</h3>
+          <p className="mt-1 text-sm leading-relaxed text-slate-600">Toque para ver. O vídeo começa sem som.</p>
+          <div className="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1">
             {EXAMPLE_VIDEOS.map((video) => (
-              <ExampleVideo key={video.id} src={video.src} poster={video.poster} label={video.label} />
+                <div key={video.id} className="w-[42%] max-w-[170px] shrink-0 snap-start">
+                <ExampleVideo src={video.src} poster={video.poster} label={video.label === 'Loja' ? 'Loja' : video.label} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="precos" className="scroll-mt-24 py-16 sm:py-24" aria-labelledby="precos-titulo">
+      <section id="precos" className="scroll-mt-24 py-10 sm:py-20" aria-labelledby="precos-titulo">
         <div className={SHELL}>
           <p className="text-sm font-bold text-[#0e7490]">Preços</p>
           <h2 id="precos-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em]">
@@ -323,14 +323,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   Renovação opcional de R$ 180 por ano, só domínio e hospedagem.
                 </p>
                 <div className="mt-8">
-                  <WaLink href={whatsappHref()} tone="light">
+                  <WaLink href={whatsappHref('Quero o site em 12x de R$ 50 (total de R$ 600) ou R$ 540 à vista.')} tone="light">
                     Quero esse site
                   </WaLink>
                 </div>
               </div>
               <div className="grid gap-8 px-6 py-8 sm:px-8 lg:col-span-7 lg:grid-cols-2">
                 <div>
-                  <h3 className="text-sm font-extrabold uppercase tracking-wide text-slate-500">Entra</h3>
+                  <h3 className="text-sm font-extrabold uppercase tracking-wide text-slate-500">O que você recebe</h3>
                   <ul className="mt-4 space-y-3">
                     {SITE_INCLUDED.map((item) => (
                       <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-slate-700">
@@ -341,7 +341,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-sm font-extrabold uppercase tracking-wide text-slate-500">Não entra</h3>
+                  <h3 className="text-sm font-extrabold uppercase tracking-wide text-slate-500">O que não está incluído</h3>
                   <ul className="mt-4 space-y-3">
                     {SITE_EXCLUDED.map((item) => (
                       <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-slate-700">
@@ -357,9 +357,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <article className="mt-4 rounded-[28px] border border-slate-200 bg-white p-6 sm:p-8">
             <h3 className="text-2xl font-extrabold tracking-tight">Vídeos com IA</h3>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
-              No máximo metade dos vídeos do mês com pessoas (2 no Básico, 4 no Completo).
-            </p>
             <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
               {VIDEO_PACKAGES.map((pack) => (
                 <div key={pack.id} className="flex min-w-0 flex-col rounded-[20px] border border-slate-200 bg-[#f7f6f3] p-5">
@@ -372,11 +369,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     rel="noopener noreferrer"
                     className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl bg-slate-950 px-4 text-sm font-bold text-white"
                   >
-                    Quero o {pack.name}
+                    {pack.id === 'avulso' ? 'Quero 1 vídeo' : `Quero o ${pack.name}`}
                   </a>
                 </div>
               ))}
             </div>
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-slate-600">
+              Nos planos mensais, no máximo metade dos vídeos pode mostrar pessoas (2 no Básico e 4 no Completo).
+            </p>
             <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>
                 <h4 className="text-sm font-extrabold text-slate-950">Todo vídeo inclui</h4>
@@ -405,7 +405,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
             <article className="rounded-[20px] border border-slate-200 bg-white p-6">
-              <h3 className="text-lg font-extrabold">Gestão de Instagram</h3>
+              <h3 className="text-lg font-extrabold">Cuidamos do seu Instagram</h3>
               <p className="mt-3 text-2xl font-extrabold tracking-tight">Orçamento pelo WhatsApp</p>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 Conta o que você precisa e a gente monta junto um plano que cabe no seu bolso.
@@ -421,9 +421,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </article>
             <article className="rounded-[20px] border border-slate-200 bg-white p-6">
               <h3 className="text-lg font-extrabold">Google Meu Negócio</h3>
-              <p className="mt-3 text-2xl font-extrabold tracking-tight">Entra no site</p>
+              <p className="mt-3 text-2xl font-extrabold tracking-tight">Vem junto com o site</p>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A configuração básica do Perfil da Empresa entra na criação do site, quando o seu negócio pode ter perfil. O perfil no Google é gratuito.
+                A gente configura o Perfil da Empresa no Google junto com o seu site: nome, mapa, horário e fotos. O perfil no Google é gratuito.
               </p>
               <a
                 href={whatsappHref('Olá! Vim pelo site da Sentinel. Quero conversar sobre o Perfil da Empresa no Google.')}
@@ -436,9 +436,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </article>
             <article className="rounded-[20px] border border-slate-200 bg-white p-6">
               <h3 className="text-lg font-extrabold">WhatsApp</h3>
-              <p className="mt-3 text-2xl font-extrabold tracking-tight">Entra no site</p>
+              <p className="mt-3 text-2xl font-extrabold tracking-tight">Vem junto com o site</p>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                O botão fica no site e no perfil. Para um atendimento feito do seu jeito, o caminho é orçamento pelo WhatsApp.
+                O botão de WhatsApp vai no site e no perfil do Google, para o cliente chamar na hora. Se você quiser um atendimento mais completo, a gente combina o valor na conversa.
               </p>
               <a
                 href={whatsappHref('Olá! Vim pelo site da Sentinel. Quero conversar sobre o WhatsApp do meu negócio.')}

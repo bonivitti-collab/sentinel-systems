@@ -122,6 +122,6 @@ Não é preciso CNPJ para ter um site. O Registro.br permite registrar domínio 
 
 A Sentinel Systems faz sites profissionais e rápidos para pequenos negócios e autônomos: uma página clara no celular, com seus serviços, onde você atende e o botão de WhatsApp. O valor é R$ 600 em 12x de R$ 50, ou R$ 540 à vista (10% de desconto na primeira contratação). A renovação depois de um ano é opcional, por R$ 180/ano.
 
-Veja o que entra em [preços](/#precos) ou [chame no WhatsApp](/#contato). Atendemos todo o Brasil, online.
+[Veja o que está incluído em Preços.](/#precos) ou [chame no WhatsApp](/#contato). Atendemos todo o Brasil, online.
 
 👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522998434956)** — (22) 99843-4956

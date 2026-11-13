@@ -17,7 +17,7 @@ const REDIRECTS: Record<string, string> = {
   '/quem-somos': '/',
   '/sobre': '/',
   '/automacao': '/#servicos',
-  '/blog': '/#perguntas',
+  '/blog': '/guias',
   '/servicos': '/#servicos',
   '/sites': '/#precos',
   '/videos': '/#precos',
@@ -120,7 +120,16 @@ export function App({ url }: { url?: string }) {
   };
 
   const product = productByPath(currentPath);
-  if (product) return <ProductLandingPage product={product} />;
+  if (product) {
+    return (
+      <div className="min-h-screen overflow-x-hidden bg-[#f7f6f3] font-sans text-slate-950">
+        <Navbar currentPath={currentPath} onNavigate={navigate} />
+        <div className="pt-16">
+          <ProductLandingPage product={product} />
+        </div>
+      </div>
+    );
+  }
 
   const guide = publishedGuideByPath(currentPath);
   let content = <NotFoundPage onNavigate={navigate} />;

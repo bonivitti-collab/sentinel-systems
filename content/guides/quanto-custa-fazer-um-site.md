@@ -126,6 +126,6 @@ A Sentinel Systems faz site profissional para pequenos negócios e autônomos, c
 
 O parcelamento é da criação, não uma mensalidade sem fim. A renovação não é automática. Pelas faixas publicadas acima, o valor fica dentro da faixa de "site simples" do mercado.
 
-O que entra no site está em [preços](/#precos). Se quiser tirar dúvidas antes, [chame no WhatsApp](/#contato). Atendimento online, para todo o Brasil.
+[Veja o que está incluído em Preços.](/#precos) Se quiser tirar dúvidas antes, [chame no WhatsApp](/#contato). Atendimento online, para todo o Brasil.
 
 👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522998434956)** — (22) 99843-4956

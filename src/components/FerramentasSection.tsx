@@ -1,5 +1,9 @@
 import { FERRAMENTAS } from '../data/ferramentas';
-import { NEUTRAL_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
+
+const LANDING: Record<string, string> = {
+  'valor-hora-real': 'https://valorhora.sentinelsystems.com.br',
+  cotacasa: 'https://cotacasa.sentinelsystems.com.br',
+};
 
 export function FerramentasSection() {
   return (
@@ -15,39 +19,33 @@ export function FerramentasSection() {
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {FERRAMENTAS.map((item) => (
             <article key={item.id} id={item.id} className="overflow-hidden rounded-[20px] border border-slate-200 bg-white">
-              <img
-                src={item.image}
-                alt={item.alt}
-                width={600}
-                height={600}
-                loading="lazy"
-                decoding="async"
-                className="aspect-square w-full object-cover"
-              />
+              <a href={LANDING[item.id]}>
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  width={600}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-square w-full object-cover"
+                />
+              </a>
               <div className="p-5">
-                <h2 className="text-xl font-extrabold text-slate-950">{item.name}</h2>
+                <h2 className="text-xl font-extrabold text-slate-950">
+                  <a href={LANDING[item.id]}>{item.name}</a>
+                </h2>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.benefit}</p>
                 <p className="mt-4 text-lg font-extrabold text-slate-950">{item.priceLabel}</p>
                 <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={LANDING[item.id]}
                   className="mt-4 inline-flex min-h-12 items-center justify-center rounded-2xl bg-slate-950 px-5 text-sm font-bold text-white"
                 >
-                  Comprar {item.name}
+                  Ver {item.name}
                 </a>
               </div>
             </article>
           ))}
         </div>
-        <a
-          href={whatsappHref(NEUTRAL_WHATSAPP_TEXT)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-flex min-h-12 items-center text-sm font-bold text-[#0e7490]"
-        >
-          Prefere falar do seu negócio? Chame no WhatsApp
-        </a>
       </div>
     </section>
   );

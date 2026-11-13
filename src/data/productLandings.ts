@@ -27,7 +27,7 @@ export interface ProductLanding {
 }
 
 const RECEBE =
-  'O pagamento é na Kiwify, pelo botão Comprar por R$ 9,90. A entrega do arquivo é automática, pela Kiwify. A planilha abre no Google Planilhas e no Excel.';
+  'Você compra pelo botão e recebe a planilha na hora, no seu e-mail. Ela abre no Google Planilhas e no Excel.';
 
 export const PRODUCT_LANDINGS: ProductLanding[] = [
   {
@@ -40,31 +40,31 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       'Planilha para saber quanto cobrar pela hora, como freelancer ou MEI. Google Planilhas e Excel. R$ 9,90.',
     ogFile: 'og-valorhora.png',
     ogAlt: 'Planilha Valor Hora Real por R$ 9,90, da Sentinel Systems',
-    coverLine: 'Planilha de precificação para freelancer e MEI.',
+    coverLine: '',
     includes: [
       {
         title: 'Preço mínimo, ideal e premium',
-        text: 'A capa da planilha descreve esses três preços da hora.',
+        text: 'Você vê o preço mínimo, o ideal e o premium da sua hora.',
       },
       {
         title: 'Orçamento pronto',
-        text: 'Também está na capa, junto com o simulador de desconto.',
+        text: 'Tem um orçamento pronto na planilha.',
       },
       {
         title: 'Simulador de desconto',
-        text: 'A capa cita o simulador para ver o preço com desconto.',
+        text: 'Tem um simulador para ver o preço com desconto.',
       },
       {
         title: 'Fórmulas protegidas',
-        text: 'A capa informa que as fórmulas vêm protegidas.',
+        text: 'As fórmulas vêm protegidas.',
       },
       {
         title: 'Guia em PDF',
-        text: 'A capa inclui um guia em PDF junto com a planilha.',
+        text: 'Vem com um guia em PDF.',
       },
       {
         title: 'Google Planilhas e Excel',
-        text: 'A capa diz que a planilha é para Google Sheets e Excel, e que funciona no celular.',
+        text: 'Abre no Google Planilhas e no Excel, inclusive no celular.',
       },
     ],
     receive: RECEBE,
@@ -79,11 +79,11 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         q: 'O que vem na planilha?',
-        a: 'A capa descreve preço mínimo, ideal e premium, orçamento pronto, simulador de desconto, fórmulas protegidas e um guia em PDF.',
+        a: 'Você vê o preço mínimo, o ideal e o premium da sua hora. Tem orçamento pronto, um simulador para ver o preço com desconto, fórmulas protegidas e um guia em PDF.',
       },
       {
         q: 'Funciona no celular?',
-        a: 'Sim. A capa da planilha informa que funciona no celular.',
+        a: 'Sim, você pode usar no celular.',
       },
     ],
   },
@@ -105,23 +105,23 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         title: 'Cotação',
-        text: 'A capa descreve comparar orçamentos.',
+        text: 'Compare orçamentos lado a lado.',
       },
       {
         title: 'Orçado e realizado',
-        text: 'A capa descreve acompanhar cada pagamento.',
+        text: 'Acompanhe cada pagamento, o que foi orçado e o que foi feito.',
       },
       {
         title: 'Preços SINAPI dos 27 estados',
-        text: 'Está escrito na capa da planilha.',
+        text: 'Inclui preços SINAPI dos 27 estados.',
       },
       {
         title: 'Guia em PDF',
-        text: 'A capa inclui um guia em PDF junto com a planilha.',
+        text: 'Vem com um guia em PDF.',
       },
       {
         title: 'Google Planilhas e Excel',
-        text: 'A capa diz que a planilha é para Google Planilhas e Excel, e que funciona no celular.',
+        text: 'Abre no Google Planilhas e no Excel, inclusive no celular.',
       },
     ],
     receive: RECEBE,
@@ -136,11 +136,11 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         q: 'O que dá para acompanhar?',
-        a: 'Orçamento da obra por etapas, cotação e orçado x realizado. A capa também cita a comparação de orçamentos, o acompanhamento de cada pagamento e preços SINAPI dos 27 estados.',
+        a: 'Orçamento da obra por etapas, cotação e orçado x realizado. Compare orçamentos lado a lado, acompanhe cada pagamento e veja preços SINAPI dos 27 estados.',
       },
       {
         q: 'Funciona no celular?',
-        a: 'Sim. A capa da planilha informa que funciona no celular.',
+        a: 'Sim, você pode usar no celular.',
       },
     ],
   },

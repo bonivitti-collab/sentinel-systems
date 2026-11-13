@@ -179,7 +179,7 @@ export const SERVICES: SentinelService[] = [
       label: 'Ver o pacote do site',
       headline: 'Entra na oferta do site',
       detail:
-        'A configuração básica do Perfil da Empresa entra na criação do site, quando o negócio pode ter perfil. O perfil é gratuito. O valor paga esse trabalho. A verificação depende do Google.',
+        'Se o Google aceitar o perfil do seu tipo de negócio, a gente faz essa configuração junto. O perfil é gratuito. O valor paga esse trabalho. A verificação depende do Google.',
     },
     whatsappLabel: 'Conversar sobre o perfil',
     whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre o Perfil da Empresa no Google.',
@@ -277,34 +277,34 @@ export const HOME_FAQ = [
 export const FAQ = [
   {
     q: 'O que entra nos R$ 600?',
-    a: 'Uma página no celular, com até cinco seções: serviços, localização e botão de WhatsApp. Os textos saem do material que você enviar, com uma rodada de ajustes. Também entra a configuração básica do Perfil da Empresa no Google, quando o seu negócio pode ter perfil. O perfil é gratuito. O domínio .com.br entra se o nome estiver disponível, no seu nome, com hospedagem por 12 meses. Nas 12 parcelas, o total é R$ 600. À vista, são R$ 540, com 10% só nesta primeira contratação.',
+    a: 'Uma página no celular, com serviços, localização e WhatsApp. Se o Google aceitar o perfil do seu tipo de negócio, a gente faz essa configuração junto.',
   },
   {
     q: 'Isso é uma mensalidade?',
-    a: 'Não. A criação pode ser paga em 12 parcelas de R$ 50, no total de R$ 600, ou à vista por R$ 540. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. Não há mensalidade obrigatória de acompanhamento.',
+    a: 'Não. São 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista.',
   },
   {
     q: 'E depois dos 12 meses?',
-    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção, e a renovação não é automática. O desconto de 10% não entra nessa renovação. O domínio continua no seu nome.',
+    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção, e a renovação não é automática.',
   },
   {
     q: 'O site do meu negócio vai aparecer em primeiro no Google?',
-    a: 'Não. Ninguém garante a primeira posição, nem que o cliente veja você ao lado no mapa. A configuração básica do perfil entra quando o seu negócio pode ter perfil. A verificação depende do Google, e a posição muda com o tempo.',
+    a: 'Não. Ninguém garante a primeira posição. Se o Google aceitar o perfil do seu tipo de negócio, a gente faz essa configuração junto.',
   },
   {
     q: 'Já tenho Instagram. Preciso do site mesmo assim?',
-    a: 'O Instagram pode continuar. O site é a página com seus serviços, a localização e o WhatsApp, para quem chega pelo Google ou por um link. Os dois se completam.',
+    a: 'O Instagram continua. O site é a página com serviços, localização e WhatsApp para quem chega pelo Google.',
   },
   {
     q: 'Como eu contrato?',
-    a: 'A conversa começa no WhatsApp (22) 99843-4956. Você conta como o cliente chega hoje. O combinado segue por escrito antes de começar. Atendemos todo o Brasil.',
+    a: 'Chame no WhatsApp (22) 99843-4956. O combinado segue por escrito antes de começar.',
   },
 ] as const;
 
 export const HOW_IT_WORKS = [
   {
     title: 'Você conta como o cliente chega hoje',
-    text: 'O que vende, em que cidade, se as pessoas ligam, chamam no WhatsApp ou aparecem na porta. Sem briefing técnico.',
+    text: 'O que vende, em que cidade, se as pessoas ligam, chamam no WhatsApp ou aparecem na porta.',
   },
   {
     title: 'A gente organiza os meios',

@@ -78,7 +78,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: endereço mais claro e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -130,7 +130,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a pousada, onde fica, o que está incluso e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: site, endereço e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -183,7 +183,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'As casas continuam as mesmas. A página acompanha a temporada de agora.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando as casas, a localização, o que está incluso e um botão para chamar no WhatsApp, com informações da temporada atual.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil, para o site e os dados ficarem alinhados. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -232,7 +232,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O movimento de vocês continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: endereço mais claro e o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -282,7 +282,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil, para o site e as informações ficarem alinhados com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -340,7 +340,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O cuidado de vocês continua. O caminho até a agenda fica mais claro.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando os tratamentos, as três unidades, o horário e um botão de WhatsApp que já abre a conversa certa.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil, para o site e o telefone ficarem alinhados com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -392,7 +392,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a loja, as marcas, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: site e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -446,7 +446,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: endereço mais claro e site alinhado com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -498,7 +498,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O cuidado com os pets continua. O caminho até a agenda fica mais claro.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site passando a abrir a página certa. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -551,7 +551,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O bom atendimento continua. O link do Google volta a levar a algum lugar.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês vendem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site passando a abrir a página nova. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -599,7 +599,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A loja continua a mesma. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -653,7 +653,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os pacotes da temporada, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil, para o site e o telefone ficarem alinhados com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -700,7 +700,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O atendimento de vocês continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando os quartos, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -748,7 +748,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O cuidado de vocês continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -798,7 +798,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O acolhimento de vocês continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: endereço mais claro e o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -850,7 +850,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -902,7 +902,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página e, se fizer sentido, o Instagram alinhado. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -954,7 +954,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram nem a página de pedido. É ter uma página no celular, com até cinco seções, mostrando a casa, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1006,7 +1006,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1058,7 +1058,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1106,7 +1106,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A loja continua a mesma. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1155,7 +1155,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1204,7 +1204,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1252,7 +1252,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O cardápio continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a casa, os lanches, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1300,7 +1300,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A lanchonete continua a mesma. O pedido fica mais perto.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando os lanches, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1351,7 +1351,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: site e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1402,7 +1402,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: site e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
+      'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },

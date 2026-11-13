@@ -6,7 +6,7 @@ export const VIDEO_PACKAGES = [
     name: 'Avulso',
     price: 'R$ 397',
     priceAmount: '397',
-    detail: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do briefing.',
+    detail: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do que você quiser no vídeo.',
     message: 'Olá! Vim pelo site da Sentinel e quero o pacote Avulso de vídeos.',
   },
   {
@@ -30,18 +30,18 @@ export const VIDEO_PACKAGES = [
 export const VIDEO_INCLUDED = [
   'criação a partir das fotos enviadas pelo WhatsApp',
   'edição com música e texto',
-  'pessoas ilustrativas',
-  'aviso de cena feita com IA',
-  'arquivo pronto pra postar',
+  'pessoas feitas com IA',
+  'o vídeo leva um aviso de que foi feito com IA',
+  'arquivo pronto para postar',
 ] as const;
 
 export const VIDEO_EXCLUDED = [
   'filmagem no local',
   'locução',
   'anúncios pagos',
-  'publicação no perfil do cliente',
+  'a gente não publica no seu Instagram',
   'revisões ilimitadas',
-  'promessa de vendas',
+  'não prometemos que o vídeo vai trazer vendas',
 ] as const;
 
 export const SITE_INCLUDED = [
@@ -49,13 +49,13 @@ export const SITE_INCLUDED = [
   'Serviços, localização e botão de WhatsApp',
   'Textos a partir do material que você enviar',
   'Uma rodada de ajustes',
-  'Configuração básica do Perfil da Empresa no Google, quando o seu negócio pode ter perfil',
+  'Se o Google aceitar o perfil do seu tipo de negócio, a gente faz essa configuração junto.',
   'Domínio .com.br, se o nome estiver disponível, no seu nome',
   'Hospedagem por 12 meses a partir da publicação',
 ] as const;
 
 export const SITE_EXCLUDED = [
-  'Não inclui manutenção, e a renovação não é automática.',
+  'Manutenção do site depois da entrega, e a renovação não é feita sozinha.',
   'O desconto de 10% vale só nesta primeira contratação, não na renovação nem nos outros serviços.',
   'Não há mensalidade obrigatória de acompanhamento.',
   'Não há garantia de primeira posição no Google.',

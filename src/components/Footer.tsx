@@ -85,13 +85,19 @@ export function Footer({ onNavigate }: FooterProps) {
                 Planilhas
               </a>
             </li>
-            {FERRAMENTAS.map((item) => (
-              <li key={item.id}>
-                <a href={item.href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center text-sm text-slate-700">
-                  {item.name} · {item.priceLabel}
-                </a>
-              </li>
-            ))}
+            {FERRAMENTAS.map((item) => {
+              const landing =
+                item.id === 'valor-hora-real'
+                  ? 'https://valorhora.sentinelsystems.com.br'
+                  : 'https://cotacasa.sentinelsystems.com.br';
+              return (
+                <li key={item.id}>
+                  <a href={landing} className="inline-flex min-h-10 items-center text-sm text-slate-700">
+                    {item.name} · {item.priceLabel}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

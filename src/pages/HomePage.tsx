@@ -147,7 +147,7 @@ function ExampleVideo({ src, poster, label }: { src: string; poster: string; lab
             loop
             preload="metadata"
             className="h-full w-full object-cover"
-            aria-label={`Vídeo de exemplo para ${label}`}
+            aria-label={`Vídeo feito com IA para ${label}`}
           />
         ) : (
           <button
@@ -287,7 +287,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             ))}
           </div>
 
-          <h3 className="mt-6 text-lg font-extrabold tracking-tight">Vídeos de exemplo</h3>
+          <h3 className="mt-6 text-lg font-extrabold tracking-tight">Vídeos que a gente já fez com IA</h3>
           <p className="mt-1 text-sm leading-relaxed text-slate-600">Toque para ver. O vídeo começa sem som.</p>
           <div className="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1">
             {EXAMPLE_VIDEOS.map((video) => (

@@ -648,7 +648,10 @@ export function jsonLdFor(path: string): Record<string, unknown> {
           name: ferramenta.name,
           price: ferramenta.priceAmount,
           priceCurrency: 'BRL',
-          url: ferramenta.href,
+          url:
+            ferramenta.id === 'valor-hora-real'
+              ? 'https://valorhora.sentinelsystems.com.br'
+              : 'https://cotacasa.sentinelsystems.com.br',
           description: `${ferramenta.kind}. ${ferramenta.benefit}`,
         })),
       });

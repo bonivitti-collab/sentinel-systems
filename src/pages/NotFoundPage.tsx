@@ -12,8 +12,8 @@ export function NotFoundPage({ onNavigate }: NotFoundPageProps) {
       <PageHero
         path="/404"
         eyebrow="Página não encontrada"
-        title="Esse endereço não faz parte do site."
-        description="Use o menu para voltar. As páginas da Sentinel estão aqui embaixo."
+        title="Não encontramos essa página."
+        description="Volte pelo menu e veja como a gente ajuda o seu negócio a ser encontrado no Google, receber ligação e mensagem no WhatsApp."
       />
       <section className="pb-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-2">

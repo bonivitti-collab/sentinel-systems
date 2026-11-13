@@ -71,7 +71,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
 
             {service.price && (
               <div className="mt-6 max-w-xl rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs">
-                <p className="text-xs font-bold uppercase tracking-wider text-cyan-700">Oferta publicada</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-cyan-700">O valor</p>
                 <p className="mt-2 text-2xl font-extrabold text-slate-900 tracking-tight">{service.price.headline}</p>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">{service.price.detail}</p>
                 <a

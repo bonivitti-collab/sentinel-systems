@@ -150,7 +150,7 @@ function prerenderPages(): void {
     path: '/404',
     label: 'Página não encontrada',
     title: 'Página não encontrada | Sentinel Systems',
-    description: 'Este endereço não faz parte do site da Sentinel Systems.',
+    description: 'Não encontramos essa página. Veja como a Sentinel ajuda o seu negócio a ser encontrado no Google.',
   };
   const notFoundBody = renderToString(
     <StrictMode>

@@ -62,7 +62,7 @@ const PACKAGE_ITEMS = [
   },
   {
     title: 'Perfil no Google',
-    text: 'Configuração básica do Perfil da Empresa, se o negócio for elegível. O perfil é gratuito. O valor paga o trabalho. A verificação depende do Google.',
+    text: 'Configuração básica do Perfil da Empresa, quando o Google permite. O perfil é gratuito. O valor paga o trabalho de deixar nome, horário e telefone prontos. A conferência final é do Google.',
   },
 ] as const;
 
@@ -74,12 +74,12 @@ const CHANNELS = [
   },
   {
     title: 'Google e Maps',
-    text: 'Ajudam quem busca um serviço na região a ver nome, endereço, horário e caminho. O perfil é outra superfície, diferente do site, e precisa ser configurado e atualizado.',
+    text: 'Ajudam quem busca um serviço na região a ver nome, endereço, horário e o caminho até você. Perfil atualizado faz a pessoa confiar e chamar.',
     icon: MapPin,
   },
   {
     title: 'Site',
-    text: 'Organiza serviços, informações e contato para a pessoa decidir. Precisa ser divulgado e cuidado. Sozinho, não cria o perfil no Google nem garante visita.',
+    text: 'Organiza serviços, informações e contato para a pessoa decidir e chamar no WhatsApp. Junto com o perfil no Google, fica mais fácil ser encontrado.',
     icon: Phone,
   },
 ] as const;
@@ -141,7 +141,7 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
               Em cidade de temporada, chega gente que ainda não conhece o comércio local. Uma pessoa pode procurar e comparar na hora, por exemplo “salão perto de mim”, “restaurante em [nome da cidade]” ou “serviço aberto agora”. Nem toda visita começa assim.
             </p>
             <p className="mt-3 text-slate-600 text-base leading-relaxed">
-              Quem está comparando pode olhar mais de uma opção antes de chamar. O Instagram, o Google e o site entram em momentos diferentes, e um não faz o trabalho do outro.
+              Quem está comparando pode olhar mais de uma opção antes de chamar. O Instagram, o Google e o site entram em momentos diferentes, e juntos deixam o caminho até você mais claro.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -172,10 +172,10 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
               Seu negócio não precisa depender só do Instagram
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              Publicar e receber atenção não é o mesmo que um pedido de orçamento. Quem usa o feed como estratégia dedica tempo a conteúdo recorrente. O alcance depende do que a plataforma mostra, e isso não está garantido.
+              O Instagram mostra o trabalho para quem já acompanha. Quem pesquisa o serviço no Google e no Maps também precisa te achar, com lugar, horário e um jeito de chamar.
             </p>
             <p className="mt-3 text-slate-600 text-base leading-relaxed">
-              Nem todo mundo começa no mesmo lugar. Numa mesma decisão, ela pode abrir o Instagram e ele o Google. Alguns clientes descobrem pelo feed. Outros buscam o serviço no Google e no Maps, com a localização e as informações do perfil.
+              Nem todo mundo começa no mesmo lugar. Na mesma decisão, uma pessoa pode abrir o Instagram e outra, o Google. Alguns clientes descobrem pelo feed. Outros buscam o serviço no Google e no Maps, com a localização e as informações do perfil.
             </p>
             <p className="mt-3 text-slate-600 text-base leading-relaxed">
               Imagine alguém planejando comprar moda praia em Cabo Frio. A busca pode começar no Instagram, no Google ou no Maps. A loja precisa apresentar claramente o que vende, onde fica e como falar com você.
@@ -185,24 +185,24 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
             <article className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
               <h3 className="text-lg font-extrabold text-slate-900 mb-2">Seguidores e curtidas</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Mostram atenção. Não são clientes e não fecham a venda. Sem olhar a conta de verdade, isso não é um diagnóstico.
+                Curtida mostra atenção. Cliente é quem chama, pede orçamento e chega até você. O que ajuda a vender é o caminho claro do perfil até o WhatsApp.
               </p>
             </article>
             <article className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
               <h3 className="text-lg font-extrabold text-slate-900 mb-2">Postar e informar</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Postar todo dia pede tempo e não garante alcance nem intenção de compra. O que ajuda a decidir é o que você vende, onde fica e como chamar.
+                O que ajuda a pessoa a decidir é o que você vende, onde fica e como chamar. Isso pode estar no feed e também na busca.
               </p>
             </article>
             <article className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs">
               <h3 className="text-lg font-extrabold text-slate-900 mb-2">Um canal e vários</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Existir no Instagram não resolve sozinho o caminho até o orçamento. Instagram, Google, Maps, site e WhatsApp entram em momentos diferentes.
+                Instagram, Google, Maps, site e WhatsApp entram em momentos diferentes. Juntos, eles levam mais gente de quem está olhando para quem pede orçamento.
               </p>
             </article>
           </div>
           <p className="mt-4 max-w-3xl text-sm text-slate-600 leading-relaxed">
-            O site organiza essa apresentação. Ele precisa ser divulgado, atualizado e encontrado. Deixá-lo no ar não traz o cliente sozinho, não cria o perfil no Google e não garante posição no mapa. Visibilidade ajuda. A contratação também depende da oferta, do preço e do atendimento.
+            O site organiza serviço, lugar e contato, e precisa ser divulgado. Junto com o perfil no Google, o Maps e o WhatsApp, ele ajuda a pessoa a entender o que você faz e chamar. A decisão também passa pelo que você oferece, pelo preço e pelo atendimento.
           </p>
         </div>
       </section>
@@ -235,7 +235,7 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
             </article>
           </div>
           <p className="mt-4 max-w-3xl text-sm text-slate-600 leading-relaxed">
-            Se a sua empresa é a que deixa a dúvida, o cliente pode escolher a outra. Pode, não é uma sentença. Isso também não exige que a outra esteja em primeiro lugar.
+            Se a sua empresa é a que deixa a dúvida, o cliente pode seguir para quem deixou tudo mais claro.
           </p>
         </div>
       </section>
@@ -283,7 +283,7 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
           </div>
           <div className="max-w-3xl mt-6 space-y-3 text-slate-600 text-base leading-relaxed">
             <p>
-              Começar antes do movimento aumentar dá tempo para esse preparo. A indexação, a posição no Google e o resultado não têm data prometida.
+              Começar antes do movimento aumentar dá tempo para esse preparo. Cada negócio tem o seu ritmo no Google. O que dá para adiantar é deixar serviço, contato e perfil prontos para quem procura.
             </p>
             <p>
               Começar antes da temporada dá tempo de apresentar melhor seus serviços, organizar sua presença no Google e facilitar o contato. Assim, quando o movimento aumentar, seu negócio estará mais preparado para receber quem procura o que você oferece.
@@ -311,7 +311,7 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
               O que você recebe
             </h2>
             <p className="text-slate-600 leading-relaxed">
-              Um pacote só, com começo e fim. Não é acompanhamento mensal obrigatório, e não promete a primeira posição no Google.
+              Um pacote para colocar o site no ar e o perfil básico no Google. A criação não vira mensalidade para sempre. O objetivo é a pessoa te achar, ligar e chamar.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -334,7 +334,7 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
             WhatsApp, redes e vídeos
           </h2>
           <p className="text-slate-600 leading-relaxed">
-            WhatsApp e redes, quando não têm preço nesta página, se conversam por aqui. Os vídeos para o Instagram e o Status têm pacotes publicados na página de vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.
+            WhatsApp e redes a gente monta junto, na conversa. Os vídeos para o Instagram e o Status têm pacotes na página de vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.
           </p>
           <p className="mt-4 text-slate-800 font-semibold leading-relaxed">
             Quer conversar sobre como o digital pode ajudar seu negócio a vender mais?
@@ -366,7 +366,7 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
               Inclui um domínio .com.br, se o nome estiver disponível, e a hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome.
             </p>
             <p className="mt-3 text-xs sm:text-sm text-slate-500 leading-relaxed">
-              Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. Esse valor não tem o desconto de 10%. Não inclui manutenção e não renova sozinha. Sem esse combinado, a hospedagem não continua de graça. Você pode levar o site e o domínio.
+              Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. Esse valor não tem o desconto de 10%. Não inclui manutenção, e a renovação não é automática. Sem esse combinado, a hospedagem não continua de graça. Você pode levar o site e o domínio.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6">
               <a

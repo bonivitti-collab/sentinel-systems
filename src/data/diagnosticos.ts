@@ -57,7 +57,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza na busca “pizzaria em Cabo Frio”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente que está na cidade, inclusive turista, pesquisa no Google antes de escolher onde jantar. O Instagram de vocês está forte, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
-          'Uma página sua ajuda a apresentar o rodízio, o horário e um jeito de chamar quando a pessoa está comparando opções. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página sua ajuda a apresentar o rodízio, o horário e um jeito de chamar quando a pessoa está comparando opções. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -78,7 +78,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: endereço mais claro e informações alinhadas com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: endereço mais claro e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -109,7 +109,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando o turista pesquisa “pousada em Arraial do Cabo”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente pesquisa pousada no celular antes de reservar, inclusive quem vem de fora. O Instagram de vocês apresenta a casa, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
-          'Uma página sua ajuda a mostrar a piscina, o café, a localização e um jeito simples de chamar no WhatsApp quando a pessoa está comparando opções. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página sua ajuda a mostrar a piscina, o café, a localização e um jeito simples de chamar no WhatsApp quando a pessoa está comparando opções. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -130,7 +130,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a pousada, onde fica, o que está incluso e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: site, endereço e informações alinhadas com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: site, endereço e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -183,7 +183,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'As casas continuam as mesmas. A página acompanha a temporada de agora.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando as casas, a localização, o que está incluso e um botão para chamar no WhatsApp, com informações da temporada atual.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível, para o site e os dados ficarem alinhados. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil, para o site e os dados ficarem alinhados. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -232,7 +232,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O movimento de vocês continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: endereço mais claro e o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: endereço mais claro e o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -262,7 +262,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza na busca “pizzaria em Cabo Frio”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente pesquisa no Google onde jantar, inclusive quem veio passar uns dias. Vocês já têm uma nota alta e muitas avaliações. O Instagram apresenta o que vocês fazem, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
-          'Uma página sua ajuda a apresentar as pizzas e as esfihas, o horário e um jeito de chamar quando a pessoa está comparando opções. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página sua ajuda a apresentar as pizzas e as esfihas, o horário e um jeito de chamar quando a pessoa está comparando opções. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -282,7 +282,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível, para o site e as informações ficarem alinhados com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil, para o site e as informações ficarem alinhados com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -318,7 +318,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Um só caminho quando a pessoa pesquisa “dentista em Nova Friburgo”',
         paragrafos: [
           'Vocês já têm uma nota alta e muitas avaliações no Google, o que é difícil de conseguir. O que pode atrapalhar é o destino: quem encontra o perfil é levado para odontoeasyclinica.com.br, enquanto o site com as três unidades, os tratamentos e o agendamento é o odontoeasy.com.',
-          'Uma página clara, apontada no Google, deixa endereço, horário, as unidades e um jeito de agendar no mesmo lugar. Isso não promete o primeiro lugar no mapa. Só evita que o paciente novo bata em duas portas diferentes.',
+          'Uma página clara, apontada no Google, deixa endereço, horário, as unidades e um jeito de agendar no mesmo lugar. Assim, o paciente novo encontra o endereço certo e um jeito de agendar, sem bater em duas portas diferentes.',
         ],
       },
       {
@@ -340,7 +340,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O cuidado de vocês continua. O caminho até a agenda fica mais claro.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando os tratamentos, as três unidades, o horário e um botão de WhatsApp que já abre a conversa certa.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível, para o site e o telefone ficarem alinhados com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil, para o site e o telefone ficarem alinhados com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -372,7 +372,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “loja de roupa em São Pedro da Aldeia”',
         paragrafos: [
           'Com a temporada de verão chegando, a cidade recebe muita gente de fora, e boa parte pesquisa no Google antes de sair de casa. O Instagram de vocês é forte, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
-          'Uma página de vocês ajuda a mostrar as marcas, o endereço, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página de vocês ajuda a mostrar as marcas, o endereço, o horário e um jeito simples de chamar. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -392,7 +392,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a loja, as marcas, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: site e informações alinhadas com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: site e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -425,7 +425,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “ótica em São Pedro da Aldeia”',
         paragrafos: [
           'No verão, muita gente que está na região precisa de óculos de sol, de um ajuste ou de um conserto rápido, e pesquisa no celular. A nota máxima de vocês é difícil de conseguir. O que falta é uma página própria no lugar do link do Instagram.',
-          'Uma página ajuda a mostrar os serviços, as armações e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página ajuda a mostrar os serviços, as armações e um jeito simples de chamar. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -446,7 +446,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: endereço mais claro e site alinhado com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: endereço mais claro e site alinhado com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -484,7 +484,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Banho e tosa fáceis de agendar na temporada',
         paragrafos: [
           'No verão, muita família vem para Cabo Frio com o cachorro e procura banho e tosa no celular. Uma página com os serviços, o horário e um botão de WhatsApp deixa o agendamento a um toque.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -498,7 +498,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O cuidado com os pets continua. O caminho até a agenda fica mais claro.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site passando a abrir a página certa. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site passando a abrir a página certa. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -537,7 +537,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Pedido de ração e entrega a um toque',
         paragrafos: [
           'Na temporada, chega muita gente com pet que esqueceu a ração ou precisa de um acessório e pesquisa no celular. Uma página com as marcas, a entrega e um botão de WhatsApp deixa o pedido fácil.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -551,7 +551,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O bom atendimento continua. O link do Google volta a levar a algum lugar.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês vendem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site passando a abrir a página nova. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site passando a abrir a página nova. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -579,7 +579,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “surf shop em Itaúna”',
         paragrafos: [
           'No verão, Itaúna recebe muito surfista e turista que chega sem algum equipamento e pesquisa no celular onde comprar. Vocês já têm nota alta, o que é difícil de conseguir. O que falta é uma página que mostre o que tem na loja.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -599,7 +599,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A loja continua a mesma. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -645,7 +645,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Mostrar o que vocês têm de melhor logo de cara',
         paragrafos: [
           'Piscina, parquinho, salão de jogos e café da manhã são diferenciais fortes para famílias. Numa página organizada, isso aparece junto com as fotos, o mapa e as datas da temporada.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
     ],
@@ -653,7 +653,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os pacotes da temporada, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível, para o site e o telefone ficarem alinhados com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil, para o site e o telefone ficarem alinhados com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -680,7 +680,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando o turista pesquisa “pousada em Rio das Ostras”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente pesquisa pousada no celular e compara pelas fotos e pelo que está incluso. Vocês já têm muitas avaliações, o que é difícil de conseguir. O que falta é um lugar para a pessoa ver os quartos e chamar.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -700,7 +700,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O atendimento de vocês continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando os quartos, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -728,7 +728,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando o turista pesquisa “pousada em Praia Seca”',
         paragrafos: [
           'Com a temporada de verão chegando, muita família pesquisa pousada no celular antes de reservar. Uma nota 4,7 com mais de 150 avaliações é difícil de conseguir. O que falta é um lugar para a pessoa ver os quartos, a piscina e chamar.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -748,7 +748,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O cuidado de vocês continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -777,7 +777,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando o turista pesquisa “pousada em Araruama”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente pesquisa pousada no celular, inclusive quem vem para o kitesurf. Vocês já têm muitas avaliações, o que é difícil de conseguir. O que falta é uma página que mostre a pousada sem depender do Facebook.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -798,7 +798,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O acolhimento de vocês continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: endereço mais claro e o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: endereço mais claro e o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -829,7 +829,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “pizzaria em Macaé”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente de fora pesquisa no Google antes de escolher onde jantar. Uma nota 4,9 com mais de 960 avaliações é difícil de conseguir. O Instagram existe, mas o link que o Google mostra é uma página de pedido, e nem toda busca termina ali.',
-          'Uma página sua ajuda a mostrar o que vocês servem, o endereço, o horário e um jeito simples de chamar quando a pessoa está comparando opções. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página sua ajuda a mostrar o que vocês servem, o endereço, o horário e um jeito simples de chamar quando a pessoa está comparando opções. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -850,7 +850,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -881,7 +881,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “hamburgueria em Cabo Frio”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente de fora pesquisa no celular antes de escolher onde lanchar. Uma nota 4,7 com mais de 240 avaliações é difícil de conseguir. O Instagram existe, mas quem encontra vocês no Google não vê esse link nem uma página própria.',
-          'Uma página sua ajuda a mostrar o que vocês servem, o endereço, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página sua ajuda a mostrar o que vocês servem, o endereço, o horário e um jeito simples de chamar. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -902,7 +902,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página e, se fizer sentido, o Instagram alinhado. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página e, se fizer sentido, o Instagram alinhado. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -933,7 +933,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “hamburgueria em Rio das Ostras”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente de fora pesquisa no celular onde comer, inclusive quem ainda não conhece o rooftop na Amaral Peixoto. Uma nota 4,9 com 561 avaliações é difícil de conseguir. O Instagram existe, mas o link que o Google mostra é uma página de pedido.',
-          'Uma página sua ajuda a apresentar a casa, o endereço, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página sua ajuda a apresentar a casa, o endereço, o horário e um jeito simples de chamar. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -954,7 +954,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram nem a página de pedido. É ter uma página no celular, com até cinco seções, mostrando a casa, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -985,7 +985,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “pizzaria em Macaé”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente de fora pesquisa no celular antes de escolher onde jantar. Uma nota 4,7 com 463 avaliações é difícil de conseguir. O Instagram de vocês está no ar, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
-          'Uma página sua ajuda a mostrar o que vocês servem, o endereço na Galeria Praiana, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página sua ajuda a mostrar o que vocês servem, o endereço na Galeria Praiana, o horário e um jeito simples de chamar. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -1006,7 +1006,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1037,7 +1037,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “pizzaria em Macaé”',
         paragrafos: [
           'Com a temporada de verão chegando, a Avenida Atlântica recebe muita gente de fora, e boa parte pesquisa no celular antes de sair. Uma nota 4,8 é difícil de conseguir. O Instagram de vocês está no ar, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
-          'Uma página sua ajuda a mostrar o que vocês servem, o endereço na orla, o horário e um jeito simples de chamar. Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Uma página sua ajuda a mostrar o que vocês servem, o endereço na orla, o horário e um jeito simples de chamar. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -1058,7 +1058,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1086,7 +1086,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “pet shop em Araruama”',
         paragrafos: [
           'No verão, muita família vem para Araruama com o cachorro ou o gato e, quando falta ração ou remédio, pesquisa no celular. Com mais de 400 avaliações e nota 4,8, vocês já têm o que é mais difícil de conseguir. O que falta é um lugar para a pessoa ver o que a loja oferece.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -1106,7 +1106,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A loja continua a mesma. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1141,7 +1141,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'A Praia dos Ossos como ponto forte',
         paragrafos: [
           'Os hóspedes elogiam o atendimento e o barulho do mar a poucos metros. Uma página que mostra a localização no mapa e o que dá para fazer a pé ajuda a fechar a reserva de quem está em dúvida.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -1155,7 +1155,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1190,7 +1190,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'A localização como argumento',
         paragrafos: [
           'Hóspedes contam que a pousada fica a poucos minutos a pé da Praia Grande e da Praia dos Anjos, com mercado e farmácia perto. Uma página com o mapa e essas distâncias responde a pergunta mais comum antes mesmo de ela chegar no WhatsApp.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -1204,7 +1204,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1232,7 +1232,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “hambúrguer em Arraial do Cabo”',
         paragrafos: [
           'No verão, muito turista sai do passeio de barco e pesquisa no celular onde comer. Nota 4,9 com quase 400 avaliações é muito difícil de conseguir. O que falta é uma página que mostre o ambiente, os lanches e o horário de um jeito simples.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -1252,7 +1252,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O cardápio continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando a casa, os lanches, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1280,7 +1280,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Cardápio à vista para quem pesquisa “lanche em Arraial do Cabo”',
         paragrafos: [
           'No verão, muita gente pesquisa no celular onde comer à noite e escolhe pelo que consegue ver. Vocês já têm nota alta e clientes elogiando os combos e a entrega rápida. O que falta é o cardápio no caminho de quem chega pelo Google.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -1300,7 +1300,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'A lanchonete continua a mesma. O pedido fica mais perto.',
     paginaResolve: [
       'A ideia é uma página no celular, com até cinco seções, mostrando os lanches, onde ficam, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: o campo de site apontando para a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: o campo de site apontando para a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1331,7 +1331,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “hamburgueria em Arraial do Cabo”',
         paragrafos: [
           'Quase 750 avaliações é muita coisa, e mostra que muita gente já passou por aí. No verão, o turista pesquisa no celular e quer ver rápido o cardápio, o preço e se dá para levar as crianças. O Instagram é ótimo, mas nem toda busca termina no feed.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -1351,7 +1351,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: site e informações alinhadas com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: site e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },
@@ -1382,7 +1382,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza quando alguém pesquisa “restaurante em São Pedro da Aldeia”',
         paragrafos: [
           'No verão, muita gente de fora procura onde jantar no celular. Clientes contam que frequentam a casa desde criança e elogiam o preço justo e o chope gelado. Essa história merece aparecer para quem ainda não conhece.',
-          'Isso não promete o primeiro lugar no Google. Só deixa a informação no caminho de quem já está procurando.',
+          'Assim, quem já está procurando encontra a informação e um jeito de chamar.',
         ],
       },
       {
@@ -1402,7 +1402,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
       'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
-      'Também entra a configuração básica do perfil no Google, se o negócio for elegível: site e informações alinhadas com a página. O perfil do Google é gratuito. O valor paga esse trabalho. A verificação depende do Google, e ninguém garante posição no mapa.',
+      'Também entra a configuração básica do perfil no Google, quando o Google permite configurar o perfil: site e informações alinhadas com a página. O perfil no Google é gratuito. O valor do pacote paga o trabalho de deixar nome, contato e caminho prontos para quem pesquisa. A conferência final é do Google.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
   },

@@ -130,7 +130,7 @@ Pode ser distância, um perfil mais completo ou mais avaliações. Complete tudo
 
 ## Quer ajuda para organizar isso?
 
-Se você prefere não perder tempo com cadastro, telas e configurações, a Sentinel Systems faz um site profissional pensado para o celular, com seus serviços, onde você atende e o botão de WhatsApp, e ajuda na configuração básica do Perfil da Empresa, quando o negócio é elegível (a verificação depende do Google). Não prometemos primeira posição: prometemos deixar sua presença clara e organizada.
+Se você prefere não perder tempo com cadastro, telas e configurações, a Sentinel Systems faz um site profissional pensado para o celular, com seus serviços, onde você atende e o botão de WhatsApp, e ajuda na configuração básica do Perfil da Empresa quando o Google permite. A conferência final é do Google. O que a gente entrega é a presença clara: serviço, lugar e um jeito de chamar.
 
 Veja os detalhes em [nossos serviços](/servicos) ou fale com a gente pela página de [contato](/contato). O atendimento é online, para todo o Brasil.
 

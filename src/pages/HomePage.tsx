@@ -61,7 +61,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               O marketing do pequeno negócio
             </h2>
             <p className="mt-3 max-w-3xl text-base text-slate-600 leading-relaxed">
-              Quatro meios para o mesmo fim: ser encontrado no Google, receber ligação, receber mensagem e atender quem chega. O preço aparece só onde já está publicado.
+              Quatro caminhos para o mesmo fim: ser encontrado no Google, receber ligação, receber mensagem e atender quem chega. Cada um abre um jeito de conquistar mais clientes.
             </p>
             <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
               {SERVICES.map((service) => (
@@ -109,10 +109,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="max-w-3xl mb-6">
             <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Ferramentas</p>
             <h2 id="ferramentas-home-titulo" className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Planilhas prontas, à parte do serviço
+              Planilhas para a conta do dia a dia
             </h2>
             <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-              Não fazem o marketing do negócio. Servem para a conta do dia a dia. O preço está em cada planilha.
+              Para saber quanto cobrar e quanto a obra deve custar. Cada planilha sai por R$ 9,90.
             </p>
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">

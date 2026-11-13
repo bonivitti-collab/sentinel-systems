@@ -123,7 +123,7 @@ const VIDEO_PACKAGES = [
     id: 'avulso',
     name: 'Avulso',
     price: 'R$ 397',
-    detail: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do briefing.',
+    detail: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do que você contar sobre o negócio.',
     message: 'Olá! Vim pelo site da Sentinel e quero o pacote Avulso de vídeos.',
     highlight: false,
   },

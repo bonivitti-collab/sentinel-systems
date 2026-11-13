@@ -157,7 +157,7 @@ export function productByPath(path: string): ProductLanding | undefined {
 }
 
 export function productCanonical(product: ProductLanding): string {
-  return `https://${product.host}/`;
+  return `https://${product.host}${product.path}`;
 }
 
 export function productOgImageUrl(product: ProductLanding): string {

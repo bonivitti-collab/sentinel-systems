@@ -1,23 +1,5 @@
+import { FERRAMENTAS } from '../data/ferramentas';
 import { soundFx } from './SoundEffects';
-
-const FERRAMENTAS = [
-  {
-    name: 'Valor Hora Real',
-    benefit: 'Saiba quanto cobrar pela sua hora, como freelancer ou MEI.',
-    price: 'R$ 9,90',
-    href: 'https://pay.kiwify.com.br/2ydXBfN',
-    image: '/ferramentas/valor-hora-real.webp',
-    alt: 'Capa da planilha Valor Hora Real, para calcular o preço da hora de freelancer e MEI',
-  },
-  {
-    name: 'CotaCasa',
-    benefit: 'O controle da sua obra na sua mão: saiba quanto ela deve custar antes de fechar com alguém.',
-    price: 'R$ 9,90',
-    href: 'https://pay.kiwify.com.br/1Nf3zMM',
-    image: '/ferramentas/cotacasa.webp',
-    alt: 'Capa do CotaCasa, planilha para estimar e acompanhar o custo da obra',
-  },
-] as const;
 
 export function FerramentasSection() {
   return (
@@ -27,13 +9,15 @@ export function FerramentasSection() {
           <h1 id="ferramentas-titulo" className="text-xl font-bold text-slate-700 tracking-tight">
             Ferramentas
           </h1>
-          <p className="mt-1 text-sm text-slate-500 leading-relaxed">Duas planilhas prontas, por R$ 9,90 cada.</p>
+          <p className="mt-1 text-sm text-slate-500 leading-relaxed">
+            Planilhas prontas. O preço de cada uma está no card.
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl items-start">
           {FERRAMENTAS.map((item) => (
             <article
-              key={item.name}
-              className="min-w-0 overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/70"
+              key={item.id}
+              className="min-w-0 overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/70 flex flex-col"
             >
               <img
                 src={item.image}
@@ -44,16 +28,17 @@ export function FerramentasSection() {
                 decoding="async"
                 className="block w-full max-w-full aspect-square object-cover"
               />
-              <div className="p-4">
-                <h2 className="text-base font-bold text-slate-900">{item.name}</h2>
+              <div className="p-4 flex flex-col flex-1">
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{item.kind}</p>
+                <h2 className="mt-1 text-base font-bold text-slate-900">{item.name}</h2>
                 <p className="mt-1 text-sm text-slate-600 leading-relaxed">{item.benefit}</p>
-                <p className="mt-3 text-sm font-semibold text-slate-800">{item.price}</p>
+                <p className="mt-3 text-sm font-semibold text-slate-800">{item.priceLabel}</p>
                 <a
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => soundFx.playUiClick()}
-                  className="mt-3 inline-flex max-w-full items-center justify-center px-4 py-2 rounded-full border border-slate-300 bg-white text-xs font-semibold text-slate-700 hover:border-slate-400 hover:text-slate-900"
+                  className="mt-3 inline-flex max-w-full items-center justify-center self-start px-4 py-2 rounded-full border border-slate-300 bg-white text-xs font-semibold text-slate-700 hover:border-slate-400 hover:text-slate-900"
                 >
                   Comprar
                   <span className="sr-only"> {item.name}</span>
@@ -61,6 +46,12 @@ export function FerramentasSection() {
               </div>
             </article>
           ))}
+          <article className="min-w-0 self-start rounded-2xl border border-dashed border-slate-300 bg-white p-4">
+            <h2 className="text-base font-bold text-slate-700">Em breve, novas ferramentas</h2>
+            <p className="mt-2 text-sm text-slate-500 leading-relaxed">
+              Quando uma planilha nova estiver pronta, ela entra nesta lista.
+            </p>
+          </article>
         </div>
       </div>
     </section>

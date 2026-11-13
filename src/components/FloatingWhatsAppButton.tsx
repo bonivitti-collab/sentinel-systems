@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, X, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
-import { NEUTRAL_WHATSAPP_TEXT, SITE, VIDEOS_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
+import { NEUTRAL_WHATSAPP_TEXT, SERVICES_WHATSAPP_TEXT, SITE, VIDEOS_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
 import { soundFx } from './SoundEffects';
 
 interface FloatingWhatsAppButtonProps {
@@ -21,19 +21,11 @@ export const FloatingWhatsAppButton: React.FC<FloatingWhatsAppButtonProps> = ({ 
 
   const getCustomMessage = () => {
     if (currentPath === '/sites') return SITE.whatsappText;
-    if (currentPath.includes('/solucoes/')) {
-      return 'Olá! Estava vendo uma das soluções especializadas no site da Sentinel e gostaria de tirar dúvidas e solicitar um orçamento.';
-    }
-    if (currentPath.includes('/automacao/')) {
-      return 'Olá! Gostaria de ver uma demonstração do Robô de WhatsApp 24h para minha empresa.';
-    }
-    if (currentPath.includes('/cidades/')) {
-      return 'Olá! Gostaria de saber como a Sentinel Systems pode atender minha empresa na minha cidade.';
-    }
-    if (currentPath.includes('/guias/')) {
-      return 'Olá! Li um dos guias da Sentinel Systems e gostaria de conversar com um especialista.';
-    }
     if (currentPath === '/videos') return VIDEOS_WHATSAPP_TEXT;
+    if (currentPath === '/' || currentPath === '/servicos') return SERVICES_WHATSAPP_TEXT;
+    if (currentPath.includes('/guias/')) {
+      return 'Olá! Li um dos guias da Sentinel Systems e gostaria de conversar.';
+    }
     return NEUTRAL_WHATSAPP_TEXT;
   };
 

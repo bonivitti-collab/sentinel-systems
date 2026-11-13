@@ -108,7 +108,7 @@ export function App({ url }: { url?: string }) {
   else if (currentPath === '/videos') content = <VideosPage />;
   else if (currentPath === '/ferramentas') content = <FerramentasPage />;
   else if (currentPath === '/sobre') content = <AboutPage onNavigate={navigate} />;
-  else if (currentPath === '/servicos') content = <ServicesPage />;
+  else if (currentPath === '/servicos') content = <ServicesPage onNavigate={navigate} />;
   else if (currentPath === '/faq') content = <FaqPage />;
   else if (currentPath === '/contato') content = <ContactPage />;
   else if (currentPath === '/guias') content = <GuidesIndexPage onNavigate={navigate} />;

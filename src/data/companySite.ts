@@ -1,3 +1,4 @@
+import { FERRAMENTAS, ferramentasResumo } from './ferramentas';
 import { GUIDES_INDEX, PUBLISHED_GUIDES, publishedGuideByPath } from './publishedGuides';
 
 export const SITE = {
@@ -16,6 +17,9 @@ export function whatsappHref(text: string = SITE.whatsappText): string {
 
 export const VIDEOS_WHATSAPP_TEXT =
   'Olá! Vim pelo site da Sentinel Systems. Quero vídeos prontos para o Instagram e o Status do WhatsApp. Posso enviar as fotos do meu negócio?';
+
+export const SERVICES_WHATSAPP_TEXT =
+  'Olá! Vim pelo site da Sentinel. Quero conversar sobre site, Google, WhatsApp e redes para o meu negócio.';
 
 export const NEUTRAL_WHATSAPP_TEXT = 'Olá! Vim pelo site da Sentinel e quero conversar.';
 
@@ -59,9 +63,9 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Criar site e aparecer no Google | Sentinel Systems',
+    title: 'Ser encontrado no Google | Sentinel Systems',
     description:
-      'Site para pequeno negócio e Perfil da Empresa no Google, com vídeos para Instagram e Status e ferramentas do dia a dia. Para vender mais e ser encontrado no Brasil.',
+      'Marketing para o pequeno negócio: site, Perfil da Empresa no Google, WhatsApp e redes. O site sai em 12 parcelas de R$ 50, total de R$ 600. Planilhas a R$ 9,90.',
   },
   sites: {
     key: 'sites',
@@ -84,24 +88,23 @@ export const PAGES: Record<PageKey, PageMeta> = {
     path: '/ferramentas',
     label: 'Ferramentas',
     title: 'Ferramentas: Valor Hora Real e CotaCasa | Sentinel',
-    description:
-      'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 9,90 cada. Saiba quanto cobrar pela hora e quanto a obra deve custar.',
+    description: `${ferramentasResumo()} Saiba quanto cobrar pela hora e quanto a obra deve custar.`,
   },
   sobre: {
     key: 'sobre',
     path: '/sobre',
     label: 'Sobre',
-    title: 'Sobre a Sentinel | Criação de site no Brasil',
+    title: 'Sobre a Sentinel | Marketing para o pequeno negócio',
     description:
-      'A Sentinel Systems cria produtos digitais e faz criação de site para pequenos negócios no Brasil, com a missão de fazer o cliente aparecer no Google.',
+      'A Sentinel Systems faz o marketing do pequeno negócio no Brasil: site, Perfil da Empresa no Google, WhatsApp e redes, para o cliente aparecer e chamar.',
   },
   servicos: {
     key: 'servicos',
     path: '/servicos',
     label: 'Serviços',
-    title: 'Criação de site, Google Meu Negócio e segurança | Sentinel',
+    title: 'Serviços Sentinel para o pequeno negócio | Sentinel',
     description:
-      'Criação de site que converte, Google Meu Negócio, Maps, avaliações, fotos, posts, SEO local e blindagem digital para aparecer no Google. Serviço no Brasil.',
+      'Site, Perfil da Empresa no Google, WhatsApp e redes para o cliente te achar, ligar e chamar. O site sai em 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
   },
   faq: {
     key: 'faq',
@@ -109,7 +112,7 @@ export const PAGES: Record<PageKey, PageMeta> = {
     label: 'FAQ',
     title: 'Perguntas sobre criação de site e Google Meu Negócio',
     description:
-      'Dúvidas sobre criação de site, Perfil da Empresa no Google, prazo, contratação e segurança. O preço do serviço é combinado na conversa, não numa tabela inventada.',
+      'Dúvidas sobre site, Perfil da Empresa no Google, WhatsApp, redes, prazo e contratação. Onde não há preço publicado, a resposta não inventa um.',
   },
   contato: {
     key: 'contato',
@@ -130,6 +133,7 @@ export const GUIAS_LINK = { href: '/guias', label: 'Guias' } as const;
 
 export const MENU_LINKS = [
   { href: '/', label: 'Início' },
+  { href: '/servicos', label: 'Serviços' },
   { href: '/sites', label: 'Sites e Google' },
   { href: '/videos', label: 'Vídeos com IA' },
   { href: '/ferramentas', label: 'Ferramentas' },
@@ -137,7 +141,6 @@ export const MENU_LINKS = [
 
 export const FOOTER_LINKS = [
   ...MENU_LINKS,
-  { href: '/servicos', label: 'Serviços' },
   { href: '/sobre', label: 'Sobre' },
   { href: '/faq', label: 'FAQ' },
   { href: '/contato', label: 'Contato' },
@@ -146,98 +149,169 @@ export const FOOTER_LINKS = [
 
 export const SITEMAP_LINKS = FOOTER_LINKS;
 
-export const SERVICES = [
+export interface ServicePoint {
+  title: string;
+  text: string;
+}
+
+export interface ServiceOfferLink {
+  href: string;
+  label: string;
+  headline: string;
+  detail: string;
+}
+
+export interface SentinelService {
+  id: string;
+  title: string;
+  eyebrow: string;
+  result: string;
+  summary: string;
+  why: string;
+  points: ServicePoint[];
+  card: string;
+  price: ServiceOfferLink | null;
+  related: ServiceOfferLink | null;
+  whatsappLabel: string;
+  whatsappMessage: string;
+}
+
+export const SERVICES: SentinelService[] = [
   {
     id: 'sites',
-    title: 'Criação de sites rápidos',
+    title: 'Site',
     eyebrow: 'O meio',
+    result: 'Quem já te achou entende o que você faz e chama, em vez de voltar para a busca.',
     summary:
       'A página que abre no celular quando alguém já te achou e quer saber se liga, chama no WhatsApp ou vai até você.',
-    why: 'Ser encontrado não basta se o clique seguinte se perde. No celular, a página precisa abrir rápido e deixar óbvio o que a empresa faz, onde fica e como falar com ela. Um site lento ou confuso devolve a pessoa para a busca.',
+    why: 'Ser encontrado não basta se o clique seguinte se perde. No celular, a página precisa abrir e deixar óbvio o que a empresa faz, onde fica e como falar com ela. Um site confuso devolve a pessoa para a busca.',
+    card: '12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
+    price: {
+      href: '/sites#oferta',
+      label: 'Ver a oferta do site',
+      headline: '12 parcelas de R$ 50',
+      detail:
+        'Total de R$ 600, ou R$ 540 à vista, com 10% de desconto nesta primeira contratação do pacote. Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. O que entra em cada valor está na página do site.',
+    },
+    related: null,
+    whatsappLabel: 'Quero esse site no WhatsApp',
+    whatsappMessage: SITE.whatsappText,
     points: [
       {
-        title: 'Abre rápido no celular',
-        text: 'A maior parte de quem pesquisa um negócio local está no telefone. A página tem de aparecer logo, sem a pessoa desistir enquanto espera.',
+        title: 'Abre no celular',
+        text: 'A maior parte de quem pesquisa um negócio local está no telefone. A página tem de aparecer e deixar o próximo passo visível.',
       },
       {
         title: 'Diz o que a empresa faz',
         text: 'Serviço, cidade, horário e diferenciais em linguagem de cliente, para a pessoa reconhecer que encontrou o lugar certo.',
       },
       {
-        title: 'Converte a visita em contato',
-        text: 'Telefone, WhatsApp e endereço ficam visíveis. O site existe para a pessoa dar o próximo passo, não para enfeitar.',
+        title: 'Leva ao contato',
+        text: 'Telefone, WhatsApp e endereço ficam visíveis. O site existe para a pessoa ligar, chamar ou ir até você.',
       },
     ],
   },
   {
     id: 'google',
-    title: 'Gestão do Google',
-    eyebrow: 'Onde o cliente procura',
+    title: 'Perfil da Empresa no Google',
+    eyebrow: 'O meio',
+    result: 'Quem pesquisa o serviço na região vê o nome, o mapa, o horário e um jeito de ligar.',
     summary:
-      'Google Meu Negócio (Perfil da Empresa), Maps, avaliações, fotos, posts, SEO local e o site que recebe quem clica.',
+      'Perfil da Empresa no Google, Maps, avaliações, fotos, posts e o texto da busca local. É a ficha que aparece antes do clique no site.',
     why: 'Negócio local é escolhido na busca e no mapa. A pessoa olha o nome, a distância, as fotos, as avaliações e se dá para chamar agora. Se isso está vazio, desatualizado ou diferente do site, ela segue para o próximo resultado.',
+    card: 'A configuração básica entra no pacote do site. Não há preço separado.',
+    price: null,
+    related: {
+      href: '/sites#oferta',
+      label: 'Ver o pacote do site',
+      headline: 'Entra na oferta do site',
+      detail:
+        'A configuração básica do Perfil da Empresa entra no pacote do site, se o negócio for elegível. O perfil é gratuito. O valor do pacote paga esse trabalho. A verificação depende do Google. Não publicamos um preço só para o perfil.',
+    },
+    whatsappLabel: 'Conversar sobre o perfil',
+    whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre o Perfil da Empresa no Google.',
     points: [
       {
         title: 'Perfil da Empresa no Google',
-        text: 'Nome, categoria, endereço, horário, telefone e WhatsApp do jeito que o cliente procura. É a ficha que aparece antes mesmo de existir um clique no site.',
+        text: 'Nome, categoria, endereço, horário, telefone e WhatsApp do jeito que o cliente procura.',
       },
       {
         title: 'Google Maps',
-        text: 'Quem busca “perto de mim” decide no mapa. O ponto certo, a área atendida e o caminho até a porta fazem a pessoa sair de casa ou desistir.',
+        text: 'Quem busca por perto decide no mapa. O ponto certo e o caminho até a porta fazem a pessoa sair de casa ou desistir.',
       },
       {
-        title: 'Avaliações',
-        text: 'A nota e os comentários são a prova social que o cliente lê antes de ligar. A gestão inclui acompanhar o que está público e responder com educação.',
+        title: 'Avaliações, fotos e posts',
+        text: 'A nota, os comentários e a foto de fachada são o que a pessoa lê antes de ligar. Posts mantêm horário e novidade visíveis.',
       },
       {
-        title: 'Fotos e posts',
-        text: 'Foto de fachada, de produto e de serviço mostra que o negócio existe de verdade. Posts mantêm o perfil vivo com novidade, horário e o que está disponível.',
-      },
-      {
-        title: 'SEO local',
-        text: 'Organizar nome, cidade, serviço e texto para a busca da região, no perfil e no site, para a empresa aparecer quando alguém pesquisa o que ela faz por perto.',
-      },
-      {
-        title: 'Site rápido que converte',
-        text: 'Quando a pessoa sai do perfil e abre o site, a página confirma o que o Google mostrou e oferece um caminho direto para ligar, chamar ou ir até o endereço.',
+        title: 'Busca da região',
+        text: 'Nome, cidade e serviço organizados no perfil e no site, para a empresa aparecer quando alguém pesquisa o que ela faz por perto. Isso não é promessa de primeira posição.',
       },
     ],
   },
   {
-    id: 'seguranca',
-    title: 'Segurança e blindagem digital',
-    eyebrow: 'Para a presença não cair',
+    id: 'whatsapp',
+    title: 'WhatsApp',
+    eyebrow: 'O meio',
+    result: 'Mais mensagens de quem já decidiu falar com o negócio.',
     summary:
-      'Proteção do site, das contas, do domínio, cópias de segurança, SSL e práticas simples de acesso.',
-    why: 'De nada adianta ser encontrado se o site sai do ar, o domínio vence no nome de outra pessoa ou a conta do Google é invadida. A blindagem existe para o cliente continuar achando a empresa amanhã.',
+      'O número e o botão ficam visíveis no site e no perfil, no momento em que a pessoa quer chamar. Não há um preço publicado só para isso.',
+    why: 'O cliente local muitas vezes não compra na página. Ele chama. Se o WhatsApp está escondido, a visita volta para a comparação.',
+    card: 'Sem preço publicado. A conversa é no WhatsApp.',
+    price: null,
+    related: null,
+    whatsappLabel: 'Conversar no WhatsApp',
+    whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre o WhatsApp do meu negócio.',
     points: [
       {
-        title: 'Proteção do site',
-        text: 'Atualização, acesso restrito e cuidado com o que fica público, para reduzir invasão e página derrubada.',
+        title: 'Botão no site',
+        text: 'No pacote do site, o WhatsApp fica junto do serviço e do lugar. A pessoa que já decidiu falar não precisa procurar o número.',
       },
       {
-        title: 'Contas',
-        text: 'E-mail, hospedagem, Perfil da Empresa e domínio com dono identificado e verificação em duas etapas, para ninguém recuperar a senha no seu lugar.',
+        title: 'Número no perfil',
+        text: 'Na configuração básica do Perfil da Empresa, o telefone e o WhatsApp entram na ficha que o Google mostra.',
       },
       {
-        title: 'Domínio',
-        text: 'O domínio fica no nome do cliente, com renovação acompanhada. Assim o endereço da empresa não se perde nem fica preso a um terceiro.',
-      },
-      {
-        title: 'Backups',
-        text: 'Cópias do site para voltar atrás se algo quebrar, for apagado ou for alterado sem querer.',
-      },
-      {
-        title: 'SSL',
-        text: 'Cadeado de segurança no endereço. O navegador deixa de avisar que a página é insegura, e o cliente não desiste na hora de chamar.',
-      },
-      {
-        title: 'Boas práticas',
-        text: 'Senha própria, quem tem acesso e o que fazer se um celular ou e-mail for perdido. Linguagem simples, sem manual de informática.',
+        title: 'Sem preço avulso',
+        text: 'Não há valor publicado para um trabalho só de WhatsApp. O que ficar fora do pacote do site se conversa por aqui, sem preço inventado.',
       },
     ],
   },
-] as const;
+  {
+    id: 'redes',
+    title: 'Redes sociais',
+    eyebrow: 'O meio',
+    result: 'Quem ainda não pesquisou no Google também vê o trabalho e chama.',
+    summary:
+      'Instagram e Status do WhatsApp mostram o negócio para quem acompanha. Cuidar das redes não tem preço nesta página.',
+    why: 'O feed alcança quem já acompanha. A busca alcança quem tem um problema agora. Os dois momentos são diferentes, e um não faz o trabalho do outro.',
+    card: 'Sem preço para cuidar das redes. Vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.',
+    price: null,
+    related: {
+      href: '/videos',
+      label: 'Ver os pacotes de vídeo',
+      headline: 'Vídeos para o Instagram e o Status',
+      detail:
+        'Avulso R$ 397. Mensal Básico R$ 997/mês. Mensal Completo R$ 1.797/mês. São os pacotes de vídeo já publicados. Não são um plano de gestão das redes.',
+    },
+    whatsappLabel: 'Conversar sobre as redes',
+    whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre as redes do meu negócio.',
+    points: [
+      {
+        title: 'Instagram',
+        text: 'Mostra o trabalho para quem acompanha. No perfil, categoria, contato e um caminho para o WhatsApp ajudam a pessoa a sair do feed e chamar.',
+      },
+      {
+        title: 'Status do WhatsApp',
+        text: 'Quem já conversa com o negócio vê novidade sem precisar pesquisar. O Status não substitui o site nem o perfil no Google.',
+      },
+      {
+        title: 'Sem preço de gestão',
+        text: 'Cuidar do perfil no dia a dia não tem valor publicado. Os vídeos prontos são outra oferta, com os preços da página de vídeos.',
+      },
+    ],
+  },
+];
 
 export const HOME_FAQ = [
   'O que entra nos R$ 600?',
@@ -278,11 +352,11 @@ export const FAQ = [
   },
   {
     q: 'A Sentinel vende um site ou o resultado no Google?',
-    a: 'A Sentinel faz o site, o cuidado do Perfil da Empresa e a segurança dessa presença. A intenção é a pessoa da região te conhecer e ter um jeito simples de chamar. Isso não é garantia de primeira posição, nem de venda.',
+    a: 'A Sentinel organiza o site, o Perfil da Empresa, o caminho até o WhatsApp e a presença nas redes. A intenção é a pessoa da região te encontrar, ligar e chamar. Isso não é garantia de primeira posição, nem de venda.',
   },
   {
     q: 'O que a Sentinel Systems faz?',
-    a: 'Faz sites e cuida do Perfil da Empresa no Google para pequenos negócios locais. O intuito é deixar a empresa fácil de entender para quem procura um serviço na região.',
+    a: 'Faz o marketing do pequeno negócio local: site, Perfil da Empresa no Google, WhatsApp e redes. O intuito é a pessoa te achar e ter um jeito simples de chamar. Também há planilhas prontas, à parte, por R$ 9,90 cada.',
   },
   {
     q: 'O que entra na gestão do Google?',
@@ -297,8 +371,8 @@ export const FAQ = [
     a: 'O site é a página que abre quando a pessoa quer saber mais. Ele precisa carregar rápido no celular e deixar claro o que a empresa faz, onde fica e como chamar. Sem isso, a visita que veio do Google se perde.',
   },
   {
-    q: 'O que é segurança e blindagem digital?',
-    a: 'É proteger o que faz a empresa continuar encontrável: o site, as contas, o domínio, as cópias de segurança e o cadeado SSL, com práticas simples de acesso. Se a conta cai ou o domínio se perde, o cliente que ia te achar não chega.',
+    q: 'Vocês cuidam do WhatsApp e das redes?',
+    a: 'O pacote do site deixa o botão de WhatsApp visível, junto com o serviço e o lugar. Não há um preço publicado só para o WhatsApp nem para cuidar das redes. Essa conversa é no WhatsApp da Sentinel. Os vídeos para o Instagram e o Status têm pacotes próprios: R$ 397, R$ 997 por mês e R$ 1.797 por mês.',
   },
   {
     q: 'O domínio e o site ficam no meu nome?',
@@ -337,7 +411,7 @@ export const HOW_IT_WORKS = [
   },
   {
     title: 'A gente organiza os meios',
-    text: 'Perfil da Empresa, mapa, avaliações, fotos, posts, SEO local, site rápido e a proteção do domínio, das contas e do site.',
+    text: 'Site no celular, Perfil da Empresa, caminho até o WhatsApp e o que faz sentido nas redes. O que tem preço publicado continua o mesmo. O resto se conversa.',
   },
   {
     title: 'O contato continua no WhatsApp',
@@ -580,8 +654,7 @@ export function jsonLdFor(path: string): Record<string, unknown> {
         key: 'ferramentas',
         name: 'Ferramentas Valor Hora Real e CotaCasa',
         path: '/ferramentas',
-        description:
-          'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 9,90 cada, para saber quanto cobrar pela hora e quanto a obra deve custar.',
+        description: ferramentasResumo(),
       },
     ];
     const visible = page.path === '/' ? offerings : offerings.filter((item) => item.path === page.path);
@@ -620,23 +693,40 @@ export function jsonLdFor(path: string): Record<string, unknown> {
           },
         ];
       }
-      if (page.path === '/ferramentas' && item.key === 'ferramentas') {
+      if (page.path === '/sites' && item.key === 'sites') {
         service.offers = [
           {
             '@type': 'Offer',
-            name: 'Valor Hora Real',
-            price: '9.90',
+            name: 'Criação parcelada',
+            price: '600',
             priceCurrency: 'BRL',
-            description: 'Planilha para saber quanto cobrar pela hora, como freelancer ou MEI.',
+            description: '12 parcelas de R$ 50. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais.',
           },
           {
             '@type': 'Offer',
-            name: 'CotaCasa',
-            price: '9.90',
+            name: 'Criação à vista',
+            price: '540',
             priceCurrency: 'BRL',
-            description: 'Planilha para estimar e acompanhar o custo da obra.',
+            description: 'R$ 540 à vista na contratação, com 10% de desconto nesta primeira contratação do pacote.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Renovação anual opcional',
+            price: '180',
+            priceCurrency: 'BRL',
+            description: 'R$ 180 por ano, só domínio e hospedagem, depois de 12 meses. Não inclui manutenção e não renova sozinha.',
           },
         ];
+      }
+      if (page.path === '/ferramentas' && item.key === 'ferramentas') {
+        service.offers = FERRAMENTAS.map((ferramenta) => ({
+          '@type': 'Offer',
+          name: ferramenta.name,
+          price: ferramenta.priceAmount,
+          priceCurrency: 'BRL',
+          url: ferramenta.href,
+          description: `${ferramenta.kind}. ${ferramenta.benefit}`,
+        }));
       }
       graph.push(service);
     }

@@ -289,7 +289,7 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
               Começar antes da temporada dá tempo de apresentar melhor seus serviços, organizar sua presença no Google e facilitar o contato. Assim, quando o movimento aumentar, seu negócio estará mais preparado para receber quem procura o que você oferece.
             </p>
             <p>
-              A temporada deixa a situação clara. O mesmo cuidado da {SITE.name} vale para outros negócios locais no Brasil: site, Perfil da Empresa no Google e segurança dessa presença.
+              A temporada deixa a situação clara. O mesmo cuidado da {SITE.name} vale para outros negócios locais no Brasil: site, Perfil da Empresa no Google, WhatsApp e redes.
             </p>
           </div>
           <button
@@ -331,10 +331,10 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-2">Além deste pacote</p>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
-            Outras soluções sob consulta
+            WhatsApp, redes e vídeos
           </h2>
           <p className="text-slate-600 leading-relaxed">
-            Também trabalhamos com cardápio digital, automação de WhatsApp, ferramentas de IA, lojas virtuais e segurança da presença. Conte o que seu negócio precisa: orçamento sob consulta.
+            WhatsApp e redes, quando não têm preço nesta página, se conversam por aqui. Os vídeos para o Instagram e o Status têm pacotes publicados na página de vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.
           </p>
           <p className="mt-4 text-slate-800 font-semibold leading-relaxed">
             Quer conversar sobre como o digital pode ajudar seu negócio a vender mais?

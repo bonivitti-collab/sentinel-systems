@@ -85,7 +85,7 @@ export const PAGES: Record<PageKey, PageMeta> = {
     label: 'Ferramentas',
     title: 'Ferramentas: Valor Hora Real e CotaCasa | Sentinel',
     description:
-      'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 37 cada. Saiba quanto cobrar pela hora e quanto a obra deve custar.',
+      'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 9,90 cada. Saiba quanto cobrar pela hora e quanto a obra deve custar.',
   },
   sobre: {
     key: 'sobre',
@@ -581,7 +581,7 @@ export function jsonLdFor(path: string): Record<string, unknown> {
         name: 'Ferramentas Valor Hora Real e CotaCasa',
         path: '/ferramentas',
         description:
-          'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 37 cada, para saber quanto cobrar pela hora e quanto a obra deve custar.',
+          'Valor Hora Real e CotaCasa, duas planilhas prontas por R$ 9,90 cada, para saber quanto cobrar pela hora e quanto a obra deve custar.',
       },
     ];
     const visible = page.path === '/' ? offerings : offerings.filter((item) => item.path === page.path);
@@ -617,6 +617,24 @@ export function jsonLdFor(path: string): Record<string, unknown> {
             price: '1797',
             priceCurrency: 'BRL',
             description: '8 vídeos com 1 revisão cada.',
+          },
+        ];
+      }
+      if (page.path === '/ferramentas' && item.key === 'ferramentas') {
+        service.offers = [
+          {
+            '@type': 'Offer',
+            name: 'Valor Hora Real',
+            price: '9.90',
+            priceCurrency: 'BRL',
+            description: 'Planilha para saber quanto cobrar pela hora, como freelancer ou MEI.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'CotaCasa',
+            price: '9.90',
+            priceCurrency: 'BRL',
+            description: 'Planilha para estimar e acompanhar o custo da obra.',
           },
         ];
       }

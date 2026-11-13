@@ -424,11 +424,11 @@ ${resolveParas}
       <div class="price-block">
         <p class="section-kicker">Investimento</p>
         <h2>Quanto custa</h2>
-        <p class="price">12x de R$&nbsp;50</p>
-        <p class="alt">ou R$&nbsp;540 à vista, com 10% de desconto nesta primeira contratação.</p>
+        <p class="price">12x de R$&nbsp;50 (total de R$&nbsp;600) ou R$&nbsp;540 à vista</p>
+        <p class="alt">com 10% de desconto nesta primeira contratação.</p>
         <p>É o parcelamento da criação, não uma mensalidade para sempre. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. À vista, os R$&nbsp;540 são pagos por inteiro na contratação.</p>
         <p>Inclui um domínio .com.br, se o nome estiver disponível, e a hospedagem por 12 meses a partir da publicação. O domínio fica no nome de vocês.</p>
-        <p>Depois de 12 meses, renovar é opcional: R$&nbsp;180 por ano, só domínio e hospedagem. Esse valor não tem o desconto de 10%. Não inclui manutenção e não renova sozinha.</p>
+        <p>Depois de 12 meses, renovar é opcional: R$&nbsp;180 por ano, só domínio e hospedagem. Esse valor não tem o desconto de 10%. Não inclui manutenção, e a renovação não é automática.</p>
       </div>
       <a class="cta" href="${escapeHtml(ctaHref(diag))}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>

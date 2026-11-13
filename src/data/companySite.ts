@@ -185,7 +185,7 @@ export const SERVICES: SentinelService[] = [
     summary:
       'A página que abre no celular quando alguém já te achou e quer saber se liga, chama no WhatsApp ou vai até você.',
     why: 'Ser encontrado não basta se o clique seguinte se perde. No celular, a página precisa abrir e deixar óbvio o que a empresa faz, onde fica e como falar com ela. Um site confuso devolve a pessoa para a busca.',
-    card: '12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
+    card: '12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista, com 10% de desconto nesta primeira contratação. Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem.',
     price: {
       href: '/sites#oferta',
       label: 'Ver o pacote do site',
@@ -332,7 +332,7 @@ export const FAQ = [
   },
   {
     q: 'E depois dos 12 meses?',
-    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. O desconto de 10% da primeira contratação não se aplica a esta renovação. Não inclui manutenção e não renova sozinha.\n\nSe você não renovar, a hospedagem não continua de graça. O domínio continua no seu nome. Se quiser levar o site, os acessos são entregues, sem taxa de resgate.',
+    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. O desconto de 10% da primeira contratação não se aplica a esta renovação. Não inclui manutenção, e a renovação não é automática.\n\nSe você não renovar, a hospedagem não continua de graça. O domínio continua no seu nome. Se quiser levar o site, os acessos são entregues, sem taxa de resgate.',
   },
   {
     q: 'Já tenho Instagram. Preciso do site mesmo assim?',
@@ -411,7 +411,7 @@ export const HOW_IT_WORKS = [
   },
   {
     title: 'A gente organiza os meios',
-    text: 'Site no celular, Perfil da Empresa, caminho até o WhatsApp e o que faz sentido nas redes. O site continua em 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista. O que for além disso a gente monta junto no WhatsApp.',
+    text: 'Site no celular, Perfil da Empresa, caminho até o WhatsApp e o que faz sentido nas redes. 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista, com 10% de desconto nesta primeira contratação. Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem.',
   },
   {
     title: 'O contato continua no WhatsApp',
@@ -714,7 +714,7 @@ export function jsonLdFor(path: string): Record<string, unknown> {
             name: 'Renovação anual opcional',
             price: '180',
             priceCurrency: 'BRL',
-            description: 'R$ 180 por ano, só domínio e hospedagem, depois de 12 meses. Não inclui manutenção e não renova sozinha.',
+            description: 'R$ 180 por ano, só domínio e hospedagem, depois de 12 meses. Não inclui manutenção, e a renovação não é automática.',
           },
         ];
       }

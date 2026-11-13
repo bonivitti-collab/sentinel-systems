@@ -175,7 +175,7 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
               O Instagram mostra o trabalho para quem já acompanha. Quem pesquisa o serviço no Google e no Maps também precisa te achar, com lugar, horário e um jeito de chamar.
             </p>
             <p className="mt-3 text-slate-600 text-base leading-relaxed">
-              Nem todo mundo começa no mesmo lugar. Numa mesma decisão, ela pode abrir o Instagram e ele o Google. Alguns clientes descobrem pelo feed. Outros buscam o serviço no Google e no Maps, com a localização e as informações do perfil.
+              Nem todo mundo começa no mesmo lugar. Na mesma decisão, uma pessoa pode abrir o Instagram e outra, o Google. Alguns clientes descobrem pelo feed. Outros buscam o serviço no Google e no Maps, com a localização e as informações do perfil.
             </p>
             <p className="mt-3 text-slate-600 text-base leading-relaxed">
               Imagine alguém planejando comprar moda praia em Cabo Frio. A busca pode começar no Instagram, no Google ou no Maps. A loja precisa apresentar claramente o que vende, onde fica e como falar com você.
@@ -366,7 +366,7 @@ export function SitesLandingPage({ onNavigate }: SitesLandingPageProps) {
               Inclui um domínio .com.br, se o nome estiver disponível, e a hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome.
             </p>
             <p className="mt-3 text-xs sm:text-sm text-slate-500 leading-relaxed">
-              Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. Esse valor não tem o desconto de 10%. Não inclui manutenção e não renova sozinha. Sem esse combinado, a hospedagem não continua de graça. Você pode levar o site e o domínio.
+              Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. Esse valor não tem o desconto de 10%. Não inclui manutenção, e a renovação não é automática. Sem esse combinado, a hospedagem não continua de graça. Você pode levar o site e o domínio.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6">
               <a

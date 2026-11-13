@@ -56,10 +56,10 @@ function assertGuideSources(): void {
 }
 
 function writeSitemap(): void {
-  const today = '2026-11-11';
+  const today = '2026-11-13';
   const pages = indexablePages();
-  if (pages.length !== 14) {
-    throw new Error(`sitemap deveria listar 14 URLs e listou ${pages.length}`);
+  if (pages.length !== 10) {
+    throw new Error(`sitemap deveria listar 10 URLs e listou ${pages.length}: ${pages.map((page) => page.path).join(', ')}`);
   }
   const urls = pages.map((page) => ({
     loc: canonicalUrl(page.path),
@@ -113,7 +113,7 @@ function prerenderPages(): void {
       throw new Error(`Product em ${page.path}`);
     }
     const hasOffer = /"Offer"/.test(html);
-    const offerPages = page.path === '/videos' || page.path === '/ferramentas' || page.path === '/sites';
+    const offerPages = page.path === '/' || page.path === '/ferramentas' || page.path === '/valorhora' || page.path === '/cotacasa';
     if (offerPages && !hasOffer) {
       throw new Error(`Offer ausente em ${page.path}`);
     }
@@ -139,7 +139,7 @@ function prerenderPages(): void {
     path: '/404',
     label: 'Página não encontrada',
     title: 'Página não encontrada | Sentinel Systems',
-    description: 'Este endereço não faz parte do site da Sentinel Systems.',
+    description: 'Esse endereço não existe. Volte ao início ou chame no WhatsApp.',
   };
   const notFoundBody = renderToString(
     <StrictMode>

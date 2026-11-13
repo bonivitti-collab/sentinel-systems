@@ -1,4 +1,5 @@
 import { FERRAMENTAS, ferramentasResumo } from './ferramentas';
+import { VIDEO_PACKAGES } from './offers';
 import { GUIDES_INDEX, PUBLISHED_GUIDES, publishedGuideByPath } from './publishedGuides';
 
 export const SITE = {
@@ -47,7 +48,7 @@ export const EXAMPLE_VIDEOS = [
   },
 ] as const;
 
-export type PageKey = 'home' | 'sites' | 'videos' | 'ferramentas' | 'sobre' | 'servicos' | 'faq' | 'contato';
+export type PageKey = 'home' | 'ferramentas' | 'valorhora' | 'cotacasa';
 
 export interface PageMeta {
   key: string;
@@ -63,25 +64,9 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Ser encontrado no Google | Sentinel Systems',
+    title: 'Seu cliente te procura e não te acha | Sentinel Systems',
     description:
-      'Marketing para o pequeno negócio: site, Perfil da Empresa no Google, WhatsApp e redes. O site sai em 12 parcelas de R$ 50, total de R$ 600. Planilhas a R$ 9,90.',
-  },
-  sites: {
-    key: 'sites',
-    path: '/sites',
-    label: 'Sites e Google',
-    title: 'Criar site para empresa e aparecer no Google | Sentinel',
-    description:
-      'Site para pequeno negócio no celular e configuração do Perfil da Empresa no Google. 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista. Atendimento no Brasil.',
-  },
-  videos: {
-    key: 'videos',
-    path: '/videos',
-    label: 'Vídeos com IA',
-    title: 'Vídeo com IA para Instagram e Status | Sentinel',
-    description:
-      'Vídeo para restaurante, pousada ou loja: mande as fotos pelo WhatsApp e receba vídeos prontos para o Instagram e o Status, sem filmar e sem editar.',
+      'Seja encontrado no Google e receba mais ligações e mensagens no WhatsApp. Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista. Vídeos com IA a partir de R$ 397.',
   },
   ferramentas: {
     key: 'ferramentas',
@@ -90,37 +75,19 @@ export const PAGES: Record<PageKey, PageMeta> = {
     title: 'Ferramentas: Valor Hora Real e CotaCasa | Sentinel',
     description: `${ferramentasResumo()} Saiba quanto cobrar pela hora e quanto a obra deve custar.`,
   },
-  sobre: {
-    key: 'sobre',
-    path: '/sobre',
-    label: 'Sobre',
-    title: 'Sobre a Sentinel | Marketing para o pequeno negócio',
-    description:
-      'A Sentinel Systems faz o marketing do pequeno negócio no Brasil: site, Perfil da Empresa no Google, WhatsApp e redes, para o cliente aparecer e chamar.',
+  valorhora: {
+    key: 'valorhora',
+    path: '/valorhora',
+    label: 'Valor Hora Real',
+    title: 'Valor Hora Real | Planilha por R$ 9,90 | Sentinel',
+    description: 'Saiba quanto cobrar pela sua hora, como freelancer ou MEI. Planilha Valor Hora Real por R$ 9,90.',
   },
-  servicos: {
-    key: 'servicos',
-    path: '/servicos',
-    label: 'Serviços',
-    title: 'Serviços Sentinel para o pequeno negócio | Sentinel',
-    description:
-      'Site, Perfil da Empresa no Google, WhatsApp e redes para o cliente te achar, ligar e chamar. O site sai em 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
-  },
-  faq: {
-    key: 'faq',
-    path: '/faq',
-    label: 'FAQ',
-    title: 'Perguntas sobre criação de site e Google Meu Negócio',
-    description:
-      'Dúvidas sobre site, Perfil da Empresa no Google, WhatsApp, redes, prazo e contratação. Onde não há preço publicado, a resposta não inventa um.',
-  },
-  contato: {
-    key: 'contato',
-    path: '/contato',
-    label: 'Contato',
-    title: 'Contato | Criação de site e Perfil da Empresa | Sentinel',
-    description:
-      'Fale com a Sentinel Systems sobre criação de site e aparecer no Google. WhatsApp (22) 99843-4956 e e-mail sentinelsystemsai@gmail.com. Atendimento no Brasil.',
+  cotacasa: {
+    key: 'cotacasa',
+    path: '/cotacasa',
+    label: 'CotaCasa',
+    title: 'CotaCasa | Planilha por R$ 9,90 | Sentinel',
+    description: 'Saiba quanto a obra deve custar antes de fechar com alguém. Planilha CotaCasa por R$ 9,90.',
   },
 };
 
@@ -132,19 +99,16 @@ export const NAV_LINKS = (Object.values(PAGES) as PageMeta[]).map((page) => ({
 export const GUIAS_LINK = { href: '/guias', label: 'Guias' } as const;
 
 export const MENU_LINKS = [
-  { href: '/', label: 'Início' },
-  { href: '/servicos', label: 'Serviços' },
-  { href: '/sites', label: 'Sites e Google' },
-  { href: '/videos', label: 'Vídeos com IA' },
-  { href: '/ferramentas', label: 'Ferramentas' },
+  { href: '/#servicos', label: 'Serviços' },
+  { href: '/#exemplos', label: 'Exemplos' },
+  { href: '/#precos', label: 'Preços' },
+  { href: '/#contato', label: 'Contato' },
 ] as const;
 
 export const FOOTER_LINKS = [
   ...MENU_LINKS,
-  { href: '/sobre', label: 'Sobre' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/contato', label: 'Contato' },
-  GUIAS_LINK,
+  { href: '/guias', label: 'Guias' },
+  { href: '/ferramentas', label: 'Ferramentas' },
 ] as const;
 
 export const SITEMAP_LINKS = FOOTER_LINKS;
@@ -191,7 +155,7 @@ export const SERVICES: SentinelService[] = [
       label: 'Ver a oferta do site',
       headline: '12 parcelas de R$ 50',
       detail:
-        'Total de R$ 600, ou R$ 540 à vista, com 10% de desconto nesta primeira contratação do pacote. Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. O que entra em cada valor está na página do site.',
+        'Total de R$ 600, ou R$ 540 à vista, com 10% de desconto nesta primeira contratação. Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem.',
     },
     related: null,
     whatsappLabel: 'Quero esse site no WhatsApp',
@@ -219,14 +183,14 @@ export const SERVICES: SentinelService[] = [
     summary:
       'Perfil da Empresa no Google, Maps, avaliações, fotos, posts e o texto da busca local. É a ficha que aparece antes do clique no site.',
     why: 'Negócio local é escolhido na busca e no mapa. A pessoa olha o nome, a distância, as fotos, as avaliações e se dá para chamar agora. Se isso está vazio, desatualizado ou diferente do site, ela segue para o próximo resultado.',
-    card: 'A configuração básica entra no pacote do site. Não há preço separado.',
+    card: 'A configuração básica entra na criação do site.',
     price: null,
     related: {
       href: '/sites#oferta',
       label: 'Ver o pacote do site',
       headline: 'Entra na oferta do site',
       detail:
-        'A configuração básica do Perfil da Empresa entra no pacote do site, se o negócio for elegível. O perfil é gratuito. O valor do pacote paga esse trabalho. A verificação depende do Google. Não publicamos um preço só para o perfil.',
+        'A configuração básica do Perfil da Empresa entra na criação do site, quando o negócio pode ter perfil. O perfil é gratuito. O valor paga esse trabalho. A verificação depende do Google.',
     },
     whatsappLabel: 'Conversar sobre o perfil',
     whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre o Perfil da Empresa no Google.',
@@ -255,9 +219,9 @@ export const SERVICES: SentinelService[] = [
     eyebrow: 'O meio',
     result: 'Mais mensagens de quem já decidiu falar com o negócio.',
     summary:
-      'O número e o botão ficam visíveis no site e no perfil, no momento em que a pessoa quer chamar. Não há um preço publicado só para isso.',
+      'O número e o botão ficam visíveis no site e no perfil, no momento em que a pessoa quer chamar.',
     why: 'O cliente local muitas vezes não compra na página. Ele chama. Se o WhatsApp está escondido, a visita volta para a comparação.',
-    card: 'Sem preço publicado. A conversa é no WhatsApp.',
+    card: 'O botão entra no site. Um atendimento à parte: orçamento pelo WhatsApp.',
     price: null,
     related: null,
     whatsappLabel: 'Conversar no WhatsApp',
@@ -272,8 +236,8 @@ export const SERVICES: SentinelService[] = [
         text: 'Na configuração básica do Perfil da Empresa, o telefone e o WhatsApp entram na ficha que o Google mostra.',
       },
       {
-        title: 'Sem preço avulso',
-        text: 'Não há valor publicado para um trabalho só de WhatsApp. O que ficar fora do pacote do site se conversa por aqui, sem preço inventado.',
+        title: 'Atendimento à parte',
+        text: 'O botão entra no site. Para um atendimento feito do seu jeito, a conversa é no WhatsApp.',
       },
     ],
   },
@@ -283,16 +247,16 @@ export const SERVICES: SentinelService[] = [
     eyebrow: 'O meio',
     result: 'Quem ainda não pesquisou no Google também vê o trabalho e chama.',
     summary:
-      'Instagram e Status do WhatsApp mostram o negócio para quem acompanha. Cuidar das redes não tem preço nesta página.',
+      'Instagram e Status do WhatsApp mostram o negócio para quem acompanha. A gestão do perfil a gente combina no WhatsApp.',
     why: 'O feed alcança quem já acompanha. A busca alcança quem tem um problema agora. Os dois momentos são diferentes, e um não faz o trabalho do outro.',
-    card: 'Sem preço para cuidar das redes. Vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.',
+    card: 'Gestão do Instagram: orçamento pelo WhatsApp. Vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.',
     price: null,
     related: {
       href: '/videos',
       label: 'Ver os pacotes de vídeo',
       headline: 'Vídeos para o Instagram e o Status',
       detail:
-        'Avulso R$ 397. Mensal Básico R$ 997/mês. Mensal Completo R$ 1.797/mês. São os pacotes de vídeo já publicados. Não são um plano de gestão das redes.',
+        'Avulso R$ 397. Mensal Básico R$ 997/mês. Mensal Completo R$ 1.797/mês. A gestão do Instagram é outro trabalho, combinado no WhatsApp.',
     },
     whatsappLabel: 'Conversar sobre as redes',
     whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre as redes do meu negócio.',
@@ -306,8 +270,8 @@ export const SERVICES: SentinelService[] = [
         text: 'Quem já conversa com o negócio vê novidade sem precisar pesquisar. O Status não substitui o site nem o perfil no Google.',
       },
       {
-        title: 'Sem preço de gestão',
-        text: 'Cuidar do perfil no dia a dia não tem valor publicado. Os vídeos prontos são outra oferta, com os preços da página de vídeos.',
+        title: 'Gestão do perfil',
+        text: 'Cuidar do perfil no dia a dia a gente combina no WhatsApp. Os vídeos prontos custam R$ 397, R$ 997 por mês ou R$ 1.797 por mês.',
       },
     ],
   },
@@ -324,83 +288,27 @@ export const HOME_FAQ = [
 export const FAQ = [
   {
     q: 'O que entra nos R$ 600?',
-    a: 'Você recebe uma página do seu negócio, pronta para o celular, com até cinco seções. Nela ficam seus serviços, a localização e o botão de WhatsApp.\n\nOs textos saem do material que você enviar, e há uma rodada de ajustes. Também configuramos o básico do Perfil da Empresa no Google, se o seu negócio for elegível. O perfil é gratuito: o valor do pacote paga esse trabalho. Nas 12 parcelas, o total é R$ 600. À vista, são R$ 540 na contratação, com 10% de desconto. Esse desconto vale só nesta primeira contratação, não na renovação nem em outros serviços. A verificação depende do Google.\n\nO domínio .com.br entra se o nome estiver disponível, com hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome. Não prometemos posição no Google, nem que seus clientes encontrem você ou comprem.',
+    a: 'Uma página no celular, com até cinco seções: serviços, localização e botão de WhatsApp. Os textos saem do material que você enviar, com uma rodada de ajustes. Também entra a configuração básica do Perfil da Empresa no Google, quando o seu negócio pode ter perfil. O perfil é gratuito. O domínio .com.br entra se o nome estiver disponível, no seu nome, com hospedagem por 12 meses. Nas 12 parcelas, o total é R$ 600. À vista, são R$ 540, com 10% só nesta primeira contratação.',
   },
   {
     q: 'Isso é uma mensalidade?',
-    a: 'Não. A criação pode ser paga em 12 parcelas de R$ 50, no total de R$ 600, ou à vista por R$ 540 na contratação, com 10% de desconto. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. À vista, o valor integral é na contratação. O desconto vale só nesta primeira contratação do pacote, não na renovação nem em outros serviços.\n\nNão há mensalidade obrigatória de acompanhamento.',
+    a: 'Não. A criação pode ser paga em 12 parcelas de R$ 50, no total de R$ 600, ou à vista por R$ 540. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. Não há mensalidade obrigatória de acompanhamento.',
   },
   {
     q: 'E depois dos 12 meses?',
-    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. O desconto de 10% da primeira contratação não se aplica a esta renovação. Não inclui manutenção e não renova sozinha.\n\nSe você não renovar, a hospedagem não continua de graça. O domínio continua no seu nome. Se quiser levar o site, os acessos são entregues, sem taxa de resgate.',
-  },
-  {
-    q: 'Já tenho Instagram. Preciso do site mesmo assim?',
-    a: 'O Instagram pode continuar com o seu negócio. O site é a página com seus serviços, a localização e o WhatsApp, para quem chega pelo Google ou por um link que você divulga.\n\nOs dois se completam. Este pacote não substitui o seu Instagram.',
+    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção, e a renovação não é automática. O desconto de 10% não entra nessa renovação. O domínio continua no seu nome.',
   },
   {
     q: 'O site do meu negócio vai aparecer em primeiro no Google?',
-    a: 'Não. O site não cria o perfil no Google nem no Maps, e não garante a primeira posição nem que seus clientes vejam você ao lado no mapa.\n\nO perfil é gratuito e é outra página. A configuração básica entra se o seu negócio for elegível. A verificação depende do Google, e a posição muda com o tempo.',
+    a: 'Não. Ninguém garante a primeira posição, nem que o cliente veja você ao lado no mapa. A configuração básica do perfil entra quando o seu negócio pode ter perfil. A verificação depende do Google, e a posição muda com o tempo.',
   },
   {
-    q: 'Vale esperar o movimento melhorar?',
-    a: 'Planejar antes do movimento aumentar permite organizar serviços, informações e contato com calma. O primeiro passo é entender o que faz sentido para o momento e o orçamento do seu negócio. A proposta não empurra a execução se não couber agora.',
-  },
-  {
-    q: 'Como começamos?',
-    a: 'A conversa começa no WhatsApp. Para o site essencial, o valor publicado é de 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista na contratação, com 10% de desconto. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. À vista, o valor integral é na contratação. O desconto vale só nesta primeira contratação do pacote. O que ficar fora desse pacote é conversado à parte, sem preço avulso nesta página. Se não fizer sentido, nada começa.',
-  },
-  {
-    q: 'A Sentinel vende um site ou o resultado no Google?',
-    a: 'A Sentinel organiza o site, o Perfil da Empresa, o caminho até o WhatsApp e a presença nas redes. A intenção é a pessoa da região te encontrar, ligar e chamar. Isso não é garantia de primeira posição, nem de venda.',
-  },
-  {
-    q: 'O que a Sentinel Systems faz?',
-    a: 'Faz o marketing do pequeno negócio local: site, Perfil da Empresa no Google, WhatsApp e redes. O intuito é a pessoa te achar e ter um jeito simples de chamar. Também há planilhas prontas, à parte, por R$ 9,90 cada.',
-  },
-  {
-    q: 'O que entra na gestão do Google?',
-    a: 'Perfil da Empresa no Google, presença no Maps, avaliações, fotos e posts, SEO local e o site rápido que recebe quem clica e mostra como falar com o negócio.',
-  },
-  {
-    q: 'Por que o perfil, o mapa e as avaliações importam para um negócio local?',
-    a: 'Quem precisa de um comércio ou serviço por perto pode pesquisar no Google e abrir o mapa. Antes de ligar, a pessoa olha a distância, as fotos, o horário e o que outros clientes escreveram. Se isso não está cuidado, ela pode seguir para quem está mais fácil de entender.',
-  },
-  {
-    q: 'Para que serve o site, se o objetivo é ser encontrado?',
-    a: 'O site é a página que abre quando a pessoa quer saber mais. Ele precisa carregar rápido no celular e deixar claro o que a empresa faz, onde fica e como chamar. Sem isso, a visita que veio do Google se perde.',
-  },
-  {
-    q: 'Vocês cuidam do WhatsApp e das redes?',
-    a: 'O pacote do site deixa o botão de WhatsApp visível, junto com o serviço e o lugar. Não há um preço publicado só para o WhatsApp nem para cuidar das redes. Essa conversa é no WhatsApp da Sentinel. Os vídeos para o Instagram e o Status têm pacotes próprios: R$ 397, R$ 997 por mês e R$ 1.797 por mês.',
-  },
-  {
-    q: 'O domínio e o site ficam no meu nome?',
-    a: 'Sim. O domínio é registrado no nome do cliente. A hospedagem incluída no pacote vale por 12 meses a partir da publicação e não continua de graça depois disso. Se um dia você quiser levar o site para outro lugar ou encerrar o trabalho, os acessos são entregues, sem taxa de resgate.',
+    q: 'Já tenho Instagram. Preciso do site mesmo assim?',
+    a: 'O Instagram pode continuar. O site é a página com seus serviços, a localização e o WhatsApp, para quem chega pelo Google ou por um link. Os dois se completam.',
   },
   {
     q: 'Como eu contrato?',
-    a: 'A conversa começa pelo WhatsApp (22) 99843-4956 ou pelo e-mail sentinelsystemsai@gmail.com. Você conta como o cliente chega hoje. A Sentinel devolve o que faz sentido fazer, e o combinado segue por escrito antes de começar.',
-  },
-  {
-    q: 'Qual é o prazo?',
-    a: 'Não publicamos um prazo único, porque cada negócio pede um escopo diferente. O prazo é combinado por escrito na contratação, depois de entender o que precisa ser feito.',
-  },
-  {
-    q: 'Quanto custa?',
-    a: 'O site essencial com a configuração básica do Perfil da Empresa no Google custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista, com 10% de desconto. O desconto vale só nesta primeira contratação do pacote, não na renovação de R$ 180 nem em outros serviços. Outras soluções ficam sob consulta e não têm preço publicado aqui.',
-  },
-  {
-    q: 'Vocês atendem a minha cidade?',
-    a: 'Atendemos todo o Brasil. O atendimento é online, pelo WhatsApp e pelo e-mail deste site.',
-  },
-  {
-    q: 'Preciso entender de tecnologia?',
-    a: 'Não. A conversa é sobre como o cliente procura, liga, chama e chega. A parte técnica fica com a Sentinel.',
-  },
-  {
-    q: 'Este site pede login do Google?',
-    a: 'Não. Não há login do Google aqui. Se no serviço for preciso acessar o Perfil da Empresa ou outra conta, isso é combinado direto com você, fora deste site.',
+    a: 'A conversa começa no WhatsApp (22) 99843-4956. Você conta como o cliente chega hoje. O combinado segue por escrito antes de começar. Atendemos todo o Brasil.',
   },
 ] as const;
 
@@ -411,7 +319,7 @@ export const HOW_IT_WORKS = [
   },
   {
     title: 'A gente organiza os meios',
-    text: 'Site no celular, Perfil da Empresa, caminho até o WhatsApp e o que faz sentido nas redes. O que tem preço publicado continua o mesmo. O resto se conversa.',
+    text: 'Site no celular, Perfil da Empresa, caminho até o WhatsApp e o que faz sentido nas redes.',
   },
   {
     title: 'O contato continua no WhatsApp',
@@ -634,149 +542,117 @@ export function jsonLdFor(path: string): Record<string, unknown> {
     },
   ];
 
-  if (page.path === '/' || page.path === '/sites' || page.path === '/videos' || page.path === '/ferramentas') {
-    const offerings = [
-      {
-        key: 'sites',
-        name: 'Site e Perfil da Empresa no Google',
-        path: '/sites',
-        description:
-          'Criação de site para empresa e para pequeno negócio, com página no celular e configuração básica do Perfil da Empresa no Google. A criação custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista. A renovação opcional, só domínio e hospedagem, é R$ 180 por ano.',
-      },
-      {
-        key: 'videos',
-        name: 'Vídeos com IA para Instagram e Status',
-        path: '/videos',
-        description:
-          'Vídeo com IA para restaurante, pousada ou loja, feito a partir das fotos enviadas pelo WhatsApp, pronto para o Instagram e o Status.',
-      },
-      {
-        key: 'ferramentas',
-        name: 'Ferramentas Valor Hora Real e CotaCasa',
-        path: '/ferramentas',
-        description: ferramentasResumo(),
-      },
-    ];
-    const visible = page.path === '/' ? offerings : offerings.filter((item) => item.path === page.path);
-    for (const item of visible) {
-      const service: Record<string, unknown> = {
+  if (page.path === '/' || page.path === '/ferramentas' || page.path === '/valorhora' || page.path === '/cotacasa') {
+    const siteService: Record<string, unknown> = {
+      '@type': 'Service',
+      '@id': `${canonicalUrl('/')}#site`,
+      name: 'Site e Perfil da Empresa no Google',
+      description:
+        'Criação de site para empresa e para pequeno negócio, com página no celular e configuração básica do Perfil da Empresa no Google. A criação custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista. A renovação opcional, só domínio e hospedagem, é R$ 180 por ano.',
+      url: `${canonicalUrl('/')}#precos`,
+      areaServed: { '@type': 'Country', name: 'Brasil' },
+      provider: { '@id': ORGANIZATION_ID },
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Criação parcelada',
+          price: '600',
+          priceCurrency: 'BRL',
+          description: '12 parcelas de R$ 50. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais.',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Criação à vista',
+          price: '540',
+          priceCurrency: 'BRL',
+          description: 'R$ 540 à vista na contratação, com 10% de desconto nesta primeira contratação.',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Renovação anual opcional',
+          price: '180',
+          priceCurrency: 'BRL',
+          description: 'R$ 180 por ano, só domínio e hospedagem, depois de 12 meses. Não inclui manutenção e não renova sozinha.',
+        },
+      ],
+    };
+    const videoService: Record<string, unknown> = {
+      '@type': 'Service',
+      '@id': `${canonicalUrl('/')}#videos`,
+      name: 'Vídeos com IA para Instagram e Status',
+      description:
+        'Vídeo com IA para restaurante, pousada ou loja, feito a partir das fotos enviadas pelo WhatsApp, pronto para o Instagram e o Status.',
+      url: `${canonicalUrl('/')}#precos`,
+      areaServed: { '@type': 'Country', name: 'Brasil' },
+      provider: { '@id': ORGANIZATION_ID },
+      offers: VIDEO_PACKAGES.map((pack) => ({
+        '@type': 'Offer',
+        name: pack.name,
+        price: pack.priceAmount,
+        priceCurrency: 'BRL',
+        description: pack.detail,
+      })),
+    };
+    if (page.path === '/') {
+      graph.push(siteService, videoService);
+      for (const video of EXAMPLE_VIDEOS) {
+        graph.push({
+          '@type': 'VideoObject',
+          name: `Exemplo de vídeo para ${video.label.toLowerCase()}`,
+          description: video.description,
+          thumbnailUrl: `${SITE.url}${video.poster}`,
+          contentUrl: `${SITE.url}${video.src}`,
+          uploadDate: '2026-11-11',
+          duration: 'PT20S',
+        });
+      }
+      graph.push({
+        '@type': 'FAQPage',
+        mainEntity: FAQ.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      });
+      graph.push({
+        '@type': 'ItemList',
+        name: 'Serviços da Sentinel Systems',
+        itemListElement: SERVICES.map((service, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'Service',
+            name: service.title,
+            description: service.summary,
+            url: `${canonicalUrl('/')}#servicos`,
+            areaServed: { '@type': 'Country', name: 'Brasil' },
+            provider: { '@id': ORGANIZATION_ID },
+          },
+        })),
+      });
+    }
+    if (page.path === '/ferramentas' || page.path === '/valorhora' || page.path === '/cotacasa') {
+      const tools = page.path === '/ferramentas'
+        ? FERRAMENTAS
+        : FERRAMENTAS.filter((item) => (page.path === '/valorhora' ? item.id === 'valor-hora-real' : item.id === 'cotacasa'));
+      graph.push({
         '@type': 'Service',
-        '@id': `${canonicalUrl(item.path)}#servico`,
-        name: item.name,
-        description: item.description,
-        url: canonicalUrl(item.path),
+        '@id': `${url}#servico`,
+        name: page.path === '/ferramentas' ? 'Ferramentas Valor Hora Real e CotaCasa' : page.label,
+        description: page.description,
+        url,
         areaServed: { '@type': 'Country', name: 'Brasil' },
         provider: { '@id': ORGANIZATION_ID },
-      };
-      if (page.path === '/videos' && item.key === 'videos') {
-        service.offers = [
-          {
-            '@type': 'Offer',
-            name: 'Avulso',
-            price: '397',
-            priceCurrency: 'BRL',
-            description: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do briefing.',
-          },
-          {
-            '@type': 'Offer',
-            name: 'Mensal Básico',
-            price: '997',
-            priceCurrency: 'BRL',
-            description: '4 vídeos com 1 revisão cada.',
-          },
-          {
-            '@type': 'Offer',
-            name: 'Mensal Completo',
-            price: '1797',
-            priceCurrency: 'BRL',
-            description: '8 vídeos com 1 revisão cada.',
-          },
-        ];
-      }
-      if (page.path === '/sites' && item.key === 'sites') {
-        service.offers = [
-          {
-            '@type': 'Offer',
-            name: 'Criação parcelada',
-            price: '600',
-            priceCurrency: 'BRL',
-            description: '12 parcelas de R$ 50. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais.',
-          },
-          {
-            '@type': 'Offer',
-            name: 'Criação à vista',
-            price: '540',
-            priceCurrency: 'BRL',
-            description: 'R$ 540 à vista na contratação, com 10% de desconto nesta primeira contratação do pacote.',
-          },
-          {
-            '@type': 'Offer',
-            name: 'Renovação anual opcional',
-            price: '180',
-            priceCurrency: 'BRL',
-            description: 'R$ 180 por ano, só domínio e hospedagem, depois de 12 meses. Não inclui manutenção e não renova sozinha.',
-          },
-        ];
-      }
-      if (page.path === '/ferramentas' && item.key === 'ferramentas') {
-        service.offers = FERRAMENTAS.map((ferramenta) => ({
+        offers: tools.map((ferramenta) => ({
           '@type': 'Offer',
           name: ferramenta.name,
           price: ferramenta.priceAmount,
           priceCurrency: 'BRL',
           url: ferramenta.href,
           description: `${ferramenta.kind}. ${ferramenta.benefit}`,
-        }));
-      }
-      graph.push(service);
-    }
-  }
-
-  if (page.path === '/videos') {
-    for (const video of EXAMPLE_VIDEOS) {
-      graph.push({
-        '@type': 'VideoObject',
-        name: `Exemplo de vídeo para ${video.label.toLowerCase()}`,
-        description: video.description,
-        thumbnailUrl: `${SITE.url}${video.poster}`,
-        contentUrl: `${SITE.url}${video.src}`,
-        uploadDate: '2026-11-11',
-        duration: 'PT20S',
+        })),
       });
     }
-  }
-
-  if (page.path === '/servicos') {
-    graph.push({
-      '@type': 'ItemList',
-      name: 'Serviços da Sentinel Systems',
-      itemListElement: SERVICES.map((service, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        item: {
-          '@type': 'Service',
-          name: service.title,
-          description: service.summary,
-          url: `${canonicalUrl('/servicos')}#${service.id}`,
-          areaServed: { '@type': 'Country', name: 'Brasil' },
-          provider: { '@id': ORGANIZATION_ID },
-        },
-      })),
-    });
-  }
-
-  if (page.path === '/faq') {
-    graph.push({
-      '@type': 'FAQPage',
-      mainEntity: FAQ.map((item) => ({
-        '@type': 'Question',
-        name: item.q,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.a,
-        },
-      })),
-    });
   }
 
   return {

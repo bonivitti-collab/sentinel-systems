@@ -1,13 +1,6 @@
-import { useEffect, useState, type MouseEvent } from 'react';
-import { Menu, MessageCircle, Volume2, VolumeX, X } from 'lucide-react';
-import {
-  MENU_LINKS,
-  NEUTRAL_WHATSAPP_TEXT,
-  SERVICES_WHATSAPP_TEXT,
-  VIDEOS_WHATSAPP_TEXT,
-  whatsappHref,
-} from '../data/companySite';
-import { soundFx } from './SoundEffects';
+import { useSyncExternalStore, useState, type MouseEvent } from 'react';
+import { Menu, MessageCircle, X } from 'lucide-react';
+import { NEUTRAL_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
 import { SentinelLogo } from './SentinelLogo';
 
 interface NavbarProps {
@@ -15,156 +8,106 @@ interface NavbarProps {
   onNavigate: (path: string) => void;
 }
 
+const LINKS = [
+  { href: '/#servicos', label: 'Serviços' },
+  { href: '/#exemplos', label: 'Exemplos' },
+  { href: '/#precos', label: 'Preços' },
+] as const;
+
+function useHash() {
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      window.addEventListener('hashchange', onStoreChange);
+      window.addEventListener('popstate', onStoreChange);
+      return () => {
+        window.removeEventListener('hashchange', onStoreChange);
+        window.removeEventListener('popstate', onStoreChange);
+      };
+    },
+    () => window.location.hash,
+    () => '',
+  );
+}
+
 export function Navbar({ currentPath, onNavigate }: NavbarProps) {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 25);
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [currentPath]);
-
-  const links = MENU_LINKS;
-  const whatsappUrl =
-    currentPath === '/sites'
-      ? whatsappHref()
-      : currentPath === '/videos'
-        ? whatsappHref(VIDEOS_WHATSAPP_TEXT)
-        : currentPath === '/servicos' || currentPath === '/'
-          ? whatsappHref(SERVICES_WHATSAPP_TEXT)
-          : whatsappHref(NEUTRAL_WHATSAPP_TEXT);
-  const isActive = (href: string) =>
-    href === '/guias' ? currentPath === '/guias' || currentPath.startsWith('/guias/') : href === currentPath;
+  const [open, setOpen] = useState(false);
+  const hash = useHash();
 
   const go = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault();
-    soundFx.playUiClick();
-    setMobileMenuOpen(false);
+    setOpen(false);
     onNavigate(href);
   };
 
-  const toggleSound = () => {
-    const nextMuted = !isMuted;
-    soundFx.setMuted(nextMuted);
-    setIsMuted(nextMuted);
-    if (!nextMuted) soundFx.playUiClick();
-  };
+  const active = (href: string) => currentPath === '/' && hash === href.slice(1);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/90 shadow-xs'
-          : 'bg-white/80 backdrop-blur-md border-b border-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-3 min-h-16 py-2">
-          <a
-            href="/"
-            onClick={(event) => go(event, '/')}
-            className="flex items-center min-w-0 shrink"
-            aria-label="Sentinel Systems — início"
-          >
-            <SentinelLogo size="sm" variant="light" />
-          </a>
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+      <div className="mx-auto flex h-16 w-full max-w-[1120px] items-center justify-between gap-3 px-5 sm:px-8">
+        <a href="/" onClick={(event) => go(event, '/')} className="min-w-0 shrink" aria-label="Sentinel Systems, início">
+          <SentinelLogo size="sm" variant="light" />
+        </a>
 
-          <nav className="hidden lg:flex items-center gap-1 px-2 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90" aria-label="Principal">
-            {links.map((link) => {
-              const active = isActive(link.href);
-              return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  aria-current={active ? 'page' : undefined}
-                  onClick={(event) => go(event, link.href)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                    active ? 'bg-white text-cyan-800 shadow-xs' : 'text-slate-700 hover:text-cyan-700 hover:bg-white'
-                  }`}
-                >
-                  {link.label}
-                </a>
-              );
-            })}
-          </nav>
-
-          <div className="flex items-center gap-2 shrink-0">
-            <button
-              type="button"
-              onClick={toggleSound}
-              className="p-2 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-600 cursor-pointer"
-              aria-label={isMuted ? 'Ativar som' : 'Desativar som'}
-            >
-              {isMuted ? <VolumeX className="w-4 h-4 text-slate-400" /> : <Volume2 className="w-4 h-4 text-cyan-700" />}
-            </button>
-
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Principal">
+          {LINKS.map((link) => (
             <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => soundFx.playUiClick()}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wide"
+              key={link.href}
+              href={link.href}
+              aria-current={active(link.href) ? 'true' : undefined}
+              onClick={(event) => go(event, link.href)}
+              className={`inline-flex min-h-11 items-center rounded-xl px-3 text-sm font-bold ${
+                active(link.href) ? 'bg-slate-950 text-white' : 'text-slate-700 hover:bg-slate-100'
+              }`}
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp</span>
+              {link.label}
             </a>
+          ))}
+          <a
+            href={whatsappHref(NEUTRAL_WHATSAPP_TEXT)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#128C7E] px-4 text-sm font-bold text-white"
+          >
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            WhatsApp
+          </a>
+        </nav>
 
-            <button
-              type="button"
-              className="lg:hidden p-2 rounded-xl bg-slate-100 text-slate-700 cursor-pointer"
-              aria-expanded={mobileMenuOpen}
-              aria-controls="menu-mobile"
-              onClick={() => {
-                soundFx.playUiClick();
-                setMobileMenuOpen((open) => !open);
-              }}
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              <span className="sr-only">{mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}</span>
-            </button>
-          </div>
+        <div className="flex items-center gap-2 md:hidden">
+          <a
+            href={whatsappHref(NEUTRAL_WHATSAPP_TEXT)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#128C7E] text-white"
+            aria-label="Chamar no WhatsApp"
+          >
+            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+          </a>
+          <button
+            type="button"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-950"
+            aria-expanded={open}
+            aria-controls="menu-mobile"
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            <span className="sr-only">{open ? 'Fechar menu' : 'Abrir menu'}</span>
+          </button>
         </div>
       </div>
 
-      {mobileMenuOpen && (
-        <nav
-          id="menu-mobile"
-          className="lg:hidden max-h-[calc(100dvh-4.5rem)] overflow-y-auto bg-white border-b border-slate-200 px-4 pt-2 pb-4 shadow-xl"
-          aria-label="Menu móvel"
-        >
-          <div className="flex flex-col gap-2">
-            {links.map((link) => {
-              const active = isActive(link.href);
-              return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  aria-current={active ? 'page' : undefined}
-                  onClick={(event) => go(event, link.href)}
-                  className={`px-4 py-3 rounded-2xl text-sm font-semibold ${
-                    active ? 'bg-cyan-50 text-cyan-800' : 'text-slate-800 hover:bg-cyan-50 hover:text-cyan-700'
-                  }`}
-                >
-                  {link.label}
-                </a>
-              );
-            })}
+      {open && (
+        <nav id="menu-mobile" className="border-t border-slate-200 bg-white px-5 py-3 md:hidden" aria-label="Menu">
+          {LINKS.map((link) => (
             <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-1 px-4 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-xs uppercase tracking-wider text-center"
+              key={link.href}
+              href={link.href}
+              onClick={(event) => go(event, link.href)}
+              className="flex min-h-14 items-center text-lg font-bold text-slate-950"
             >
-              WhatsApp
+              {link.label}
             </a>
-          </div>
+          ))}
         </nav>
       )}
     </header>

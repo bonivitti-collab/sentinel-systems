@@ -15,22 +15,48 @@
       "destination": "https://sentinelsystems.com.br/:path*",
       "permanent": true
     },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "valorhora.sentinelsystems.com.br" }],
+      "destination": "https://sentinelsystems.com.br/valorhora",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "valorhora.sentinelsystems.com.br" }],
+      "destination": "https://sentinelsystems.com.br/valorhora",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "cotacasa.sentinelsystems.com.br" }],
+      "destination": "https://sentinelsystems.com.br/cotacasa",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "cotacasa.sentinelsystems.com.br" }],
+      "destination": "https://sentinelsystems.com.br/cotacasa",
+      "permanent": true
+    },
     { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/quem-somos", "destination": "/sobre", "permanent": true },
-    { "source": "/automacao", "destination": "/servicos", "permanent": true },
-    { "source": "/automacao/:slug", "destination": "/servicos", "permanent": true },
-    { "source": "/blog", "destination": "/faq", "permanent": true },
-    { "source": "/solucoes/:slug", "destination": "/servicos", "permanent": true },
-    { "source": "/cidades/:slug", "destination": "/", "permanent": true }
+    { "source": "/quem-somos", "destination": "/", "permanent": true },
+    { "source": "/sobre", "destination": "/", "permanent": true },
+    { "source": "/automacao", "destination": "/#servicos", "permanent": true },
+    { "source": "/automacao/:slug", "destination": "/#servicos", "permanent": true },
+    { "source": "/blog", "destination": "/#perguntas", "permanent": true },
+    { "source": "/solucoes/:slug", "destination": "/#servicos", "permanent": true },
+    { "source": "/cidades/:slug", "destination": "/", "permanent": true },
+    { "source": "/servicos", "destination": "/#servicos", "permanent": true },
+    { "source": "/sites", "destination": "/#precos", "permanent": true },
+    { "source": "/videos", "destination": "/#precos", "permanent": true },
+    { "source": "/faq", "destination": "/#perguntas", "permanent": true },
+    { "source": "/contato", "destination": "/#contato", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/sites", "destination": "/sites/index.html" },
-    { "source": "/videos", "destination": "/videos/index.html" },
     { "source": "/ferramentas", "destination": "/ferramentas/index.html" },
-    { "source": "/sobre", "destination": "/sobre/index.html" },
-    { "source": "/servicos", "destination": "/servicos/index.html" },
-    { "source": "/faq", "destination": "/faq/index.html" },
-    { "source": "/contato", "destination": "/contato/index.html" },
+    { "source": "/valorhora", "destination": "/valorhora/index.html" },
+    { "source": "/cotacasa", "destination": "/cotacasa/index.html" },
     { "source": "/guias", "destination": "/guias/index.html" },
     { "source": "/guias/como-colocar-meu-negocio-no-google", "destination": "/guias/como-colocar-meu-negocio-no-google/index.html" },
     { "source": "/guias/vale-a-pena-ter-site-pequeno-negocio", "destination": "/guias/vale-a-pena-ter-site-pequeno-negocio/index.html" },

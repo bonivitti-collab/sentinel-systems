@@ -1,24 +1,20 @@
 import { FERRAMENTAS } from '../data/ferramentas';
-import { soundFx } from './SoundEffects';
+import { NEUTRAL_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
 
 export function FerramentasSection() {
   return (
-    <section id="ferramentas" className="pb-16 scroll-mt-24" aria-labelledby="ferramentas-titulo">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-xl mb-4">
-          <h1 id="ferramentas-titulo" className="text-xl font-bold text-slate-700 tracking-tight">
-            Ferramentas
-          </h1>
-          <p className="mt-1 text-sm text-slate-500 leading-relaxed">
-            Planilhas prontas. O preço de cada uma está no card.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl items-start">
+    <section className="bg-[#f7f6f3] pb-20 pt-28" aria-labelledby="ferramentas-titulo">
+      <div className="mx-auto w-full max-w-[1120px] px-5 sm:px-8">
+        <p className="text-sm font-bold text-[#0e7490]">Planilhas</p>
+        <h1 id="ferramentas-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold tracking-tight text-slate-950">
+          Ferramentas para a conta do dia a dia
+        </h1>
+        <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
+          Valor Hora Real e CotaCasa, R$ 9,90 cada. Saiba quanto cobrar pela hora e quanto a obra deve custar.
+        </p>
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {FERRAMENTAS.map((item) => (
-            <article
-              key={item.id}
-              className="min-w-0 overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/70 flex flex-col"
-            >
+            <article key={item.id} id={item.id} className="overflow-hidden rounded-[20px] border border-slate-200 bg-white">
               <img
                 src={item.image}
                 alt={item.alt}
@@ -26,33 +22,32 @@ export function FerramentasSection() {
                 height={600}
                 loading="lazy"
                 decoding="async"
-                className="block w-full max-w-full aspect-square object-cover"
+                className="aspect-square w-full object-cover"
               />
-              <div className="p-4 flex flex-col flex-1">
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{item.kind}</p>
-                <h2 className="mt-1 text-base font-bold text-slate-900">{item.name}</h2>
-                <p className="mt-1 text-sm text-slate-600 leading-relaxed">{item.benefit}</p>
-                <p className="mt-3 text-sm font-semibold text-slate-800">{item.priceLabel}</p>
+              <div className="p-5">
+                <h2 className="text-xl font-extrabold text-slate-950">{item.name}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.benefit}</p>
+                <p className="mt-4 text-lg font-extrabold text-slate-950">{item.priceLabel}</p>
                 <a
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => soundFx.playUiClick()}
-                  className="mt-3 inline-flex max-w-full items-center justify-center self-start px-4 py-2 rounded-full border border-slate-300 bg-white text-xs font-semibold text-slate-700 hover:border-slate-400 hover:text-slate-900"
+                  className="mt-4 inline-flex min-h-12 items-center justify-center rounded-2xl bg-slate-950 px-5 text-sm font-bold text-white"
                 >
-                  Comprar
-                  <span className="sr-only"> {item.name}</span>
+                  Comprar {item.name}
                 </a>
               </div>
             </article>
           ))}
-          <article className="min-w-0 self-start rounded-2xl border border-dashed border-slate-300 bg-white p-4">
-            <h2 className="text-base font-bold text-slate-700">Em breve, novas ferramentas</h2>
-            <p className="mt-2 text-sm text-slate-500 leading-relaxed">
-              Quando uma planilha nova estiver pronta, ela entra nesta lista.
-            </p>
-          </article>
         </div>
+        <a
+          href={whatsappHref(NEUTRAL_WHATSAPP_TEXT)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-flex min-h-12 items-center text-sm font-bold text-[#0e7490]"
+        >
+          Prefere falar do seu negócio? Chame no WhatsApp
+        </a>
       </div>
     </section>
   );

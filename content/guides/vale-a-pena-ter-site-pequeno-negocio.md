@@ -9,7 +9,7 @@ perguntas_relacionadas:
   - "Autônomo precisa de site?"
   - "Como saber se o site vai se pagar?"
   - "O que um site simples precisa ter?"
-links_internos: ["/servicos", "/contato"]
+links_internos: ["/#servicos", "/#contato"]
 ---
 
 # Vale a pena ter site sendo pequeno negócio ou autônomo?
@@ -58,7 +58,7 @@ Nem sempre, mas costuma ajudar mais do que parece. Veja os sinais.
 ### Quando dá para esperar
 
 - **Sua agenda já está cheia** e você não quer ou não pode atender mais gente.
-- **Você ainda está testando o que vai vender**, sem preço ou serviço definido.
+- **Você ainda está testando o que vai vender**, ainda sem um serviço definido.
 - **Você ainda não fez o Perfil da Empresa no Google.** Ele é gratuito e é o primeiro passo para quem atende na região. Faça antes. (Veja o guia [Como colocar meu negócio no Google](/guias/como-colocar-meu-negocio-no-google).)
 
 ## Como saber se o site vai se pagar
@@ -85,7 +85,7 @@ Você não precisa de um site enorme. Para autônomo e pequeno negócio, **uma p
 2. **Serviços explicados**: o que cada um resolve, o que está incluído.
 3. **Região de atendimento e horário.**
 4. **Preço ou como funciona o orçamento.** Se o valor depende do caso, explique como pedir.
-5. **Prova real**: fotos do seu trabalho, sua formação, tempo de atuação. Nada inventado.
+5. **Prova real**: fotos do seu trabalho, sua formação, tempo de atuação. Só o que é seu de verdade.
 6. **Perguntas frequentes**: as dúvidas que você responde todo dia.
 7. **Botão de WhatsApp** visível no celular, de preferência com mensagem pronta. O próprio WhatsApp explica como criar esse link no recurso ["clique para conversa"](https://faq.whatsapp.com/5913398998672934/?locale=pt_BR).
 8. **Domínio no seu nome.** Antes de contratar, confirme que o domínio será registrado em seu nome, não no de quem fez o site.
@@ -120,8 +120,8 @@ Não é preciso CNPJ para ter um site. O Registro.br permite registrar domínio 
 
 ## Quer ver se faz sentido para o seu caso?
 
-A Sentinel Systems faz sites profissionais e rápidos para pequenos negócios e autônomos, com o foco que este guia descreve: uma página clara no celular, com seus serviços, onde você atende e o botão de WhatsApp. O valor é R$ 600 em 12x de R$ 50, ou R$ 540 à vista (10% de desconto na primeira contratação). A renovação depois de um ano é opcional, por R$ 180/ano.
+A Sentinel Systems faz sites profissionais e rápidos para pequenos negócios e autônomos: uma página clara no celular, com seus serviços, onde você atende e o botão de WhatsApp. O valor é R$ 600 em 12x de R$ 50, ou R$ 540 à vista (10% de desconto na primeira contratação). A renovação depois de um ano é opcional, por R$ 180/ano.
 
-Veja o que está incluído em [nossos serviços](/servicos) ou use a página de [contato](/contato). Atendemos todo o Brasil, online.
+Veja o que entra em [preços](/#precos) ou [chame no WhatsApp](/#contato). Atendemos todo o Brasil, online.
 
 👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522998434956)** — (22) 99843-4956

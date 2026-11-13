@@ -9,7 +9,7 @@ perguntas_relacionadas:
   - "Quanto custa um domínio .com.br?"
   - "Vale mais fazer sozinho, com freelancer ou com agência?"
   - "O que perguntar antes de contratar um site?"
-links_internos: ["/servicos", "/contato"]
+links_internos: ["/#servicos", "/#contato"]
 ---
 
 # Quanto custa fazer um site em 2026? Faixas reais e o que muda o preço
@@ -126,6 +126,6 @@ A Sentinel Systems faz site profissional para pequenos negócios e autônomos, c
 
 O parcelamento é da criação, não uma mensalidade sem fim. A renovação não é automática. Pelas faixas publicadas acima, o valor fica dentro da faixa de "site simples" do mercado.
 
-Os detalhes do que está incluído estão em [nossos serviços](/servicos). Se quiser tirar dúvidas antes, use a página de [contato](/contato). Atendimento online, para todo o Brasil.
+O que entra no site está em [preços](/#precos). Se quiser tirar dúvidas antes, [chame no WhatsApp](/#contato). Atendimento online, para todo o Brasil.
 
 👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522998434956)** — (22) 99843-4956

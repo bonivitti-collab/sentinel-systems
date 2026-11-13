@@ -9,7 +9,7 @@ perguntas_relacionadas:
   - "O que colocar na bio do Instagram para vender?"
   - "Como colocar o WhatsApp no Instagram?"
   - "Preciso pagar anúncio para o Instagram dar resultado?"
-links_internos: ["/servicos", "/contato"]
+links_internos: ["/#servicos", "/#contato"]
 ---
 
 # Meu Instagram não traz cliente: o que fazer?
@@ -146,6 +146,6 @@ Os ajustes de bio, destaques e WhatsApp são rápidos de fazer. O efeito nas con
 
 A Sentinel Systems faz sites profissionais e rápidos para pequenos negócios e autônomos: uma página clara no celular com seus serviços, onde você atende e o botão de WhatsApp, para você colocar no link da bio e no Google. O Instagram continua útil; o site completa.
 
-Veja [nossos serviços](/servicos) ou acesse a página de [contato](/contato). Atendimento online, para todo o Brasil.
+Veja [o que a gente faz](/#servicos) ou [chame no WhatsApp](/#contato). Atendimento online, para todo o Brasil.
 
 👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522998434956)** — (22) 99843-4956

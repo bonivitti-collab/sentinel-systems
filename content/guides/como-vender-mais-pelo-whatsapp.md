@@ -9,7 +9,7 @@ perguntas_relacionadas:
   - "Que mensagem de saudação colocar no WhatsApp Business?"
   - "Como fazer follow-up sem ser chato?"
   - "Posso mandar mensagem em massa para clientes?"
-links_internos: ["/servicos", "/contato"]
+links_internos: ["/#servicos", "/#contato"]
 ---
 
 # Como vender mais pelo WhatsApp: passo a passo para pequeno negócio
@@ -155,8 +155,8 @@ Para quem recebe muitas mensagens, automações e assistentes ajudam a não deix
 
 ## Quer que o cliente chegue no seu WhatsApp já sabendo o que quer?
 
-Um site claro, com seus serviços, região e botão de WhatsApp, faz o cliente chegar na conversa com menos dúvidas. É isso que a Sentinel Systems faz: site profissional para pequenos negócios e autônomos. Também temos, sob consulta, automação de WhatsApp, cardápio digital e soluções com IA.
+Um site claro, com seus serviços, região e botão de WhatsApp, faz o cliente chegar na conversa com menos dúvidas. A Sentinel Systems faz o site, o Perfil da Empresa no Google, o caminho até o WhatsApp, a gestão do Instagram e vídeos com IA para o pequeno negócio.
 
-Veja [nossos serviços](/servicos) ou acesse a página de [contato](/contato). Atendimento online, para todo o Brasil.
+Veja [o que a gente faz](/#servicos) ou [chame no WhatsApp](/#contato). Atendimento online, para todo o Brasil.
 
 👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522998434956)** — (22) 99843-4956

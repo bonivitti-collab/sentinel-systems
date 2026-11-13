@@ -113,10 +113,11 @@ function prerenderPages(): void {
       throw new Error(`Product em ${page.path}`);
     }
     const hasOffer = /"Offer"/.test(html);
-    if (page.path === '/videos' && !hasOffer) {
-      throw new Error('Offer ausente em /videos');
+    const offerPages = page.path === '/videos' || page.path === '/ferramentas';
+    if (offerPages && !hasOffer) {
+      throw new Error(`Offer ausente em ${page.path}`);
     }
-    if (page.path !== '/videos' && hasOffer) {
+    if (!offerPages && hasOffer) {
       throw new Error(`Offer em ${page.path}`);
     }
     if (page.path.startsWith('/guias')) {

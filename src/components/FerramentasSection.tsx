@@ -4,7 +4,7 @@ const FERRAMENTAS = [
   {
     name: 'Valor Hora Real',
     benefit: 'Saiba quanto cobrar pela sua hora, como freelancer ou MEI.',
-    price: 'R$ 37',
+    price: 'R$ 9,90',
     href: 'https://pay.kiwify.com.br/2ydXBfN',
     image: '/ferramentas/valor-hora-real.webp',
     alt: 'Capa da planilha Valor Hora Real, para calcular o preço da hora de freelancer e MEI',
@@ -12,7 +12,7 @@ const FERRAMENTAS = [
   {
     name: 'CotaCasa',
     benefit: 'O controle da sua obra na sua mão: saiba quanto ela deve custar antes de fechar com alguém.',
-    price: 'R$ 37',
+    price: 'R$ 9,90',
     href: 'https://pay.kiwify.com.br/1Nf3zMM',
     image: '/ferramentas/cotacasa.webp',
     alt: 'Capa do CotaCasa, planilha para estimar e acompanhar o custo da obra',
@@ -27,7 +27,7 @@ export function FerramentasSection() {
           <h1 id="ferramentas-titulo" className="text-xl font-bold text-slate-700 tracking-tight">
             Ferramentas
           </h1>
-          <p className="mt-1 text-sm text-slate-500 leading-relaxed">Duas planilhas prontas, por R$ 37 cada.</p>
+          <p className="mt-1 text-sm text-slate-500 leading-relaxed">Duas planilhas prontas, por R$ 9,90 cada.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
           {FERRAMENTAS.map((item) => (

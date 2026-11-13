@@ -155,7 +155,7 @@ Para quem recebe muitas mensagens, automações e assistentes ajudam a não deix
 
 ## Quer que o cliente chegue no seu WhatsApp já sabendo o que quer?
 
-Um site claro, com seus serviços, região e botão de WhatsApp, faz o cliente chegar na conversa com menos dúvidas. É isso que a Sentinel Systems faz: site profissional para pequenos negócios e autônomos. Também temos, sob consulta, automação de WhatsApp, cardápio digital e soluções com IA.
+Um site claro, com seus serviços, região e botão de WhatsApp, faz o cliente chegar na conversa com menos dúvidas. É isso que a Sentinel Systems faz: site profissional para pequenos negócios e autônomos, para mais gente te achar e chamar.
 
 Veja [nossos serviços](/servicos) ou acesse a página de [contato](/contato). Atendimento online, para todo o Brasil.
 

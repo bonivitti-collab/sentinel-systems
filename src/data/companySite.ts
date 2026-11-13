@@ -112,7 +112,7 @@ export const PAGES: Record<PageKey, PageMeta> = {
     label: 'FAQ',
     title: 'Perguntas sobre criação de site e Google Meu Negócio',
     description:
-      'Dúvidas sobre site, Perfil da Empresa no Google, WhatsApp, redes, prazo e contratação. Onde não há preço publicado, a resposta não inventa um.',
+      'Dúvidas sobre site, Perfil da Empresa no Google, WhatsApp, redes, prazo e contratação. O caminho para ser encontrado, receber ligação e chamar no WhatsApp.',
   },
   contato: {
     key: 'contato',
@@ -180,7 +180,7 @@ export const SERVICES: SentinelService[] = [
   {
     id: 'sites',
     title: 'Site',
-    eyebrow: 'O meio',
+    eyebrow: 'Sua página',
     result: 'Quem já te achou entende o que você faz e chama, em vez de voltar para a busca.',
     summary:
       'A página que abre no celular quando alguém já te achou e quer saber se liga, chama no WhatsApp ou vai até você.',
@@ -188,7 +188,7 @@ export const SERVICES: SentinelService[] = [
     card: '12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
     price: {
       href: '/sites#oferta',
-      label: 'Ver a oferta do site',
+      label: 'Ver o pacote do site',
       headline: '12 parcelas de R$ 50',
       detail:
         'Total de R$ 600, ou R$ 540 à vista, com 10% de desconto nesta primeira contratação do pacote. Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem. O que entra em cada valor está na página do site.',
@@ -214,19 +214,19 @@ export const SERVICES: SentinelService[] = [
   {
     id: 'google',
     title: 'Perfil da Empresa no Google',
-    eyebrow: 'O meio',
+    eyebrow: 'Na busca',
     result: 'Quem pesquisa o serviço na região vê o nome, o mapa, o horário e um jeito de ligar.',
     summary:
       'Perfil da Empresa no Google, Maps, avaliações, fotos, posts e o texto da busca local. É a ficha que aparece antes do clique no site.',
     why: 'Negócio local é escolhido na busca e no mapa. A pessoa olha o nome, a distância, as fotos, as avaliações e se dá para chamar agora. Se isso está vazio, desatualizado ou diferente do site, ela segue para o próximo resultado.',
-    card: 'A configuração básica entra no pacote do site. Não há preço separado.',
+    card: 'A configuração básica entra no pacote do site: nome, mapa, horário e um jeito de ligar.',
     price: null,
     related: {
       href: '/sites#oferta',
       label: 'Ver o pacote do site',
-      headline: 'Entra na oferta do site',
+      headline: 'Já entra no pacote do site',
       detail:
-        'A configuração básica do Perfil da Empresa entra no pacote do site, se o negócio for elegível. O perfil é gratuito. O valor do pacote paga esse trabalho. A verificação depende do Google. Não publicamos um preço só para o perfil.',
+        'A configuração básica do Perfil da Empresa entra no pacote do site, quando o Google permite. O perfil é gratuito. O valor do pacote paga o trabalho de deixar nome, mapa, horário e telefone prontos para quem pesquisa. A conferência final é do Google.',
     },
     whatsappLabel: 'Conversar sobre o perfil',
     whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre o Perfil da Empresa no Google.',
@@ -245,19 +245,19 @@ export const SERVICES: SentinelService[] = [
       },
       {
         title: 'Busca da região',
-        text: 'Nome, cidade e serviço organizados no perfil e no site, para a empresa aparecer quando alguém pesquisa o que ela faz por perto. Isso não é promessa de primeira posição.',
+        text: 'Nome, cidade e serviço organizados no perfil e no site, para quem pesquisa o que você faz por perto encontrar um jeito de ligar ou chamar.',
       },
     ],
   },
   {
     id: 'whatsapp',
     title: 'WhatsApp',
-    eyebrow: 'O meio',
+    eyebrow: 'A conversa',
     result: 'Mais mensagens de quem já decidiu falar com o negócio.',
     summary:
-      'O número e o botão ficam visíveis no site e no perfil, no momento em que a pessoa quer chamar. Não há um preço publicado só para isso.',
+      'O número e o botão ficam visíveis no site e no perfil, no momento em que a pessoa quer chamar. Quem já decidiu falar encontra o WhatsApp na hora.',
     why: 'O cliente local muitas vezes não compra na página. Ele chama. Se o WhatsApp está escondido, a visita volta para a comparação.',
-    card: 'Sem preço publicado. A conversa é no WhatsApp.',
+    card: 'Orçamento sob medida: conta no WhatsApp o que você precisa e a gente monta junto.',
     price: null,
     related: null,
     whatsappLabel: 'Conversar no WhatsApp',
@@ -272,27 +272,27 @@ export const SERVICES: SentinelService[] = [
         text: 'Na configuração básica do Perfil da Empresa, o telefone e o WhatsApp entram na ficha que o Google mostra.',
       },
       {
-        title: 'Sem preço avulso',
-        text: 'Não há valor publicado para um trabalho só de WhatsApp. O que ficar fora do pacote do site se conversa por aqui, sem preço inventado.',
+        title: 'Orçamento sob medida',
+        text: 'Conta no WhatsApp o que o seu negócio precisa além do pacote do site. A gente monta junto o caminho para mais mensagens e mais clientes.',
       },
     ],
   },
   {
     id: 'redes',
     title: 'Redes sociais',
-    eyebrow: 'O meio',
+    eyebrow: 'Quem acompanha',
     result: 'Quem ainda não pesquisou no Google também vê o trabalho e chama.',
     summary:
-      'Instagram e Status do WhatsApp mostram o negócio para quem acompanha. Cuidar das redes não tem preço nesta página.',
-    why: 'O feed alcança quem já acompanha. A busca alcança quem tem um problema agora. Os dois momentos são diferentes, e um não faz o trabalho do outro.',
-    card: 'Sem preço para cuidar das redes. Vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.',
+      'Instagram e Status do WhatsApp mostram o negócio para quem acompanha e deixam o caminho aberto para chamar.',
+    why: 'O feed alcança quem já acompanha. A busca alcança quem tem um problema agora. Os dois juntos colocam o negócio na frente de mais gente.',
+    card: 'Vídeos prontos para postar: R$ 397, R$ 997/mês e R$ 1.797/mês. O cuidado do dia a dia a gente combina no WhatsApp.',
     price: null,
     related: {
       href: '/videos',
       label: 'Ver os pacotes de vídeo',
       headline: 'Vídeos para o Instagram e o Status',
       detail:
-        'Avulso R$ 397. Mensal Básico R$ 997/mês. Mensal Completo R$ 1.797/mês. São os pacotes de vídeo já publicados. Não são um plano de gestão das redes.',
+        'Avulso R$ 397. Mensal Básico R$ 997/mês. Mensal Completo R$ 1.797/mês. Vídeos prontos para o Instagram e o Status, para o perfil não parar e o cliente chamar.',
     },
     whatsappLabel: 'Conversar sobre as redes',
     whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre as redes do meu negócio.',
@@ -306,8 +306,8 @@ export const SERVICES: SentinelService[] = [
         text: 'Quem já conversa com o negócio vê novidade sem precisar pesquisar. O Status não substitui o site nem o perfil no Google.',
       },
       {
-        title: 'Sem preço de gestão',
-        text: 'Cuidar do perfil no dia a dia não tem valor publicado. Os vídeos prontos são outra oferta, com os preços da página de vídeos.',
+        title: 'Orçamento sob medida',
+        text: 'Quer alguém cuidando do perfil no dia a dia? Conta no WhatsApp o que você precisa e a gente monta junto. Os vídeos prontos continuam na página de vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.',
       },
     ],
   },
@@ -324,7 +324,7 @@ export const HOME_FAQ = [
 export const FAQ = [
   {
     q: 'O que entra nos R$ 600?',
-    a: 'Você recebe uma página do seu negócio, pronta para o celular, com até cinco seções. Nela ficam seus serviços, a localização e o botão de WhatsApp.\n\nOs textos saem do material que você enviar, e há uma rodada de ajustes. Também configuramos o básico do Perfil da Empresa no Google, se o seu negócio for elegível. O perfil é gratuito: o valor do pacote paga esse trabalho. Nas 12 parcelas, o total é R$ 600. À vista, são R$ 540 na contratação, com 10% de desconto. Esse desconto vale só nesta primeira contratação, não na renovação nem em outros serviços. A verificação depende do Google.\n\nO domínio .com.br entra se o nome estiver disponível, com hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome. Não prometemos posição no Google, nem que seus clientes encontrem você ou comprem.',
+    a: 'Você recebe uma página do seu negócio, pronta para o celular, com até cinco seções. Nela ficam seus serviços, a localização e o botão de WhatsApp.\n\nOs textos saem do material que você enviar, e há uma rodada de ajustes. Também configuramos o básico do Perfil da Empresa no Google, quando o Google permite. O perfil é gratuito: o valor do pacote paga esse trabalho de deixar nome, horário e telefone prontos para quem pesquisa. Nas 12 parcelas, o total é R$ 600. À vista, são R$ 540 na contratação, com 10% de desconto. Esse desconto vale só nesta primeira contratação, não na renovação nem em outros serviços. A conferência final é do Google.\n\nO domínio .com.br entra se o nome estiver disponível, com hospedagem por 12 meses a partir da publicação. O domínio fica no seu nome. A página fica pronta para a pessoa ligar, chamar no WhatsApp e chegar até você.',
   },
   {
     q: 'Isso é uma mensalidade?',
@@ -340,15 +340,15 @@ export const FAQ = [
   },
   {
     q: 'O site do meu negócio vai aparecer em primeiro no Google?',
-    a: 'Não. O site não cria o perfil no Google nem no Maps, e não garante a primeira posição nem que seus clientes vejam você ao lado no mapa.\n\nO perfil é gratuito e é outra página. A configuração básica entra se o seu negócio for elegível. A verificação depende do Google, e a posição muda com o tempo.',
+    a: 'Não. A primeira posição depende do Google e muda com o tempo.\n\nO que a gente faz é deixar o site pronto e configurar o básico do perfil, quando o Google permite. O perfil é gratuito. A conferência final é do Google. O objetivo é a pessoa da região ver o que você faz, ligar e chamar.',
   },
   {
     q: 'Vale esperar o movimento melhorar?',
-    a: 'Planejar antes do movimento aumentar permite organizar serviços, informações e contato com calma. O primeiro passo é entender o que faz sentido para o momento e o orçamento do seu negócio. A proposta não empurra a execução se não couber agora.',
+    a: 'Planejar antes do movimento aumentar permite organizar serviços, informações e contato com calma. O primeiro passo é entender o que faz sentido para o momento e o orçamento do seu negócio. Se agora não for a hora, a conversa no WhatsApp serve para ver o caminho com calma.',
   },
   {
     q: 'Como começamos?',
-    a: 'A conversa começa no WhatsApp. Para o site essencial, o valor publicado é de 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista na contratação, com 10% de desconto. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. À vista, o valor integral é na contratação. O desconto vale só nesta primeira contratação do pacote. O que ficar fora desse pacote é conversado à parte, sem preço avulso nesta página. Se não fizer sentido, nada começa.',
+    a: 'A conversa começa no WhatsApp. Para o site essencial, o valor é de 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista na contratação, com 10% de desconto. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais. À vista, o valor integral é na contratação. O desconto vale só nesta primeira contratação do pacote. O que ficar fora desse pacote a gente monta junto no WhatsApp, do jeito que faz sentido para o seu negócio.',
   },
   {
     q: 'A Sentinel vende um site ou o resultado no Google?',
@@ -356,7 +356,7 @@ export const FAQ = [
   },
   {
     q: 'O que a Sentinel Systems faz?',
-    a: 'Faz o marketing do pequeno negócio local: site, Perfil da Empresa no Google, WhatsApp e redes. O intuito é a pessoa te achar e ter um jeito simples de chamar. Também há planilhas prontas, à parte, por R$ 9,90 cada.',
+    a: 'Faz o marketing do pequeno negócio local: site, Perfil da Empresa no Google, WhatsApp e redes. O intuito é a pessoa te achar e ter um jeito simples de chamar. Também há planilhas prontas por R$ 9,90 cada, para a conta do dia a dia.',
   },
   {
     q: 'O que entra na gestão do Google?',
@@ -372,7 +372,7 @@ export const FAQ = [
   },
   {
     q: 'Vocês cuidam do WhatsApp e das redes?',
-    a: 'O pacote do site deixa o botão de WhatsApp visível, junto com o serviço e o lugar. Não há um preço publicado só para o WhatsApp nem para cuidar das redes. Essa conversa é no WhatsApp da Sentinel. Os vídeos para o Instagram e o Status têm pacotes próprios: R$ 397, R$ 997 por mês e R$ 1.797 por mês.',
+    a: 'O pacote do site deixa o botão de WhatsApp visível, junto com o serviço e o lugar. WhatsApp e redes sob medida a gente combina na conversa, para mais gente te chamar. Os vídeos para o Instagram e o Status têm pacotes próprios: R$ 397, R$ 997 por mês e R$ 1.797 por mês.',
   },
   {
     q: 'O domínio e o site ficam no meu nome?',
@@ -384,11 +384,11 @@ export const FAQ = [
   },
   {
     q: 'Qual é o prazo?',
-    a: 'Não publicamos um prazo único, porque cada negócio pede um escopo diferente. O prazo é combinado por escrito na contratação, depois de entender o que precisa ser feito.',
+    a: 'O prazo acompanha o que o seu negócio precisa. A gente entende o serviço, combina por escrito e começa. Cada comércio tem o seu caminho para aparecer no Google e receber contato.',
   },
   {
     q: 'Quanto custa?',
-    a: 'O site essencial com a configuração básica do Perfil da Empresa no Google custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista, com 10% de desconto. O desconto vale só nesta primeira contratação do pacote, não na renovação de R$ 180 nem em outros serviços. Outras soluções ficam sob consulta e não têm preço publicado aqui.',
+    a: 'O site essencial com a configuração básica do Perfil da Empresa no Google custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista, com 10% de desconto. O desconto vale só nesta primeira contratação do pacote, não na renovação de R$ 180 nem em outros serviços. O que for além desse pacote a gente monta sob medida no WhatsApp.',
   },
   {
     q: 'Vocês atendem a minha cidade?',
@@ -399,23 +399,23 @@ export const FAQ = [
     a: 'Não. A conversa é sobre como o cliente procura, liga, chama e chega. A parte técnica fica com a Sentinel.',
   },
   {
-    q: 'Este site pede login do Google?',
-    a: 'Não. Não há login do Google aqui. Se no serviço for preciso acessar o Perfil da Empresa ou outra conta, isso é combinado direto com você, fora deste site.',
+    q: 'Preciso criar conta para falar com vocês?',
+    a: 'Não. A conversa começa no WhatsApp ou no e-mail. Se for preciso acessar o Perfil da Empresa no Google, a gente combina com você, com a sua autorização.',
   },
 ] as const;
 
 export const HOW_IT_WORKS = [
   {
     title: 'Você conta como o cliente chega hoje',
-    text: 'O que vende, em que cidade, se as pessoas ligam, chamam no WhatsApp ou aparecem na porta. Sem briefing técnico.',
+    text: 'O que vende, em que cidade, se as pessoas ligam, chamam no WhatsApp ou aparecem na porta. Você fala do jeito do balcão. A parte técnica fica com a gente.',
   },
   {
     title: 'A gente organiza os meios',
-    text: 'Site no celular, Perfil da Empresa, caminho até o WhatsApp e o que faz sentido nas redes. O que tem preço publicado continua o mesmo. O resto se conversa.',
+    text: 'Site no celular, Perfil da Empresa, caminho até o WhatsApp e o que faz sentido nas redes. O site continua em 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista. O que for além disso a gente monta junto no WhatsApp.',
   },
   {
     title: 'O contato continua no WhatsApp',
-    text: 'Dúvida, ajuste e acompanhamento seguem no mesmo WhatsApp da Sentinel. Você não precisa abrir chamado em outro sistema.',
+    text: 'Dúvida, ajuste e acompanhamento seguem no mesmo WhatsApp da Sentinel. Um número só, do começo até o cliente te chamar.',
   },
 ] as const;
 
@@ -675,7 +675,7 @@ export function jsonLdFor(path: string): Record<string, unknown> {
             name: 'Avulso',
             price: '397',
             priceCurrency: 'BRL',
-            description: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do briefing.',
+            description: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do que você contar sobre o negócio.',
           },
           {
             '@type': 'Offer',

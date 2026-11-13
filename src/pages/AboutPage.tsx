@@ -36,7 +36,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 A Sentinel existe para organizar essa presença. O site, o perfil no Google, o WhatsApp e as redes são o meio. No serviço para o comércio, o centro é o resultado: ser encontrado, receber ligação e ser chamado.
               </p>
               <p>
-                O trabalho é remoto, para negócios no Brasil, no WhatsApp e no e-mail que já estão neste site.
+                O atendimento é online, para negócios em todo o Brasil, pelo WhatsApp e pelo e-mail.
               </p>
             </div>
           </article>
@@ -55,7 +55,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight mb-3">Como funciona</h2>
           <p className="text-slate-600 mb-8 max-w-3xl">
-            Sem etapa escondida e sem prazo publicado de prateleira. O combinado é feito depois de entender o negócio.
+            Você conta como o cliente chega hoje. A gente organiza o site, o Google e o WhatsApp, e combina o caminho junto.
           </p>
           <ol className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {HOW_IT_WORKS.map((step, index) => (

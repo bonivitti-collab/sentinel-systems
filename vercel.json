@@ -15,6 +15,18 @@
       "destination": "https://sentinelsystems.com.br/:path*",
       "permanent": true
     },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "valorhora.sentinelsystems.com.br" }],
+      "destination": "/valorhora",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "cotacasa.sentinelsystems.com.br" }],
+      "destination": "/cotacasa",
+      "permanent": false
+    },
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/quem-somos", "destination": "/sobre", "permanent": true },
     { "source": "/automacao", "destination": "/servicos", "permanent": true },
@@ -24,16 +36,6 @@
     { "source": "/cidades/:slug", "destination": "/", "permanent": true }
   ],
   "rewrites": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "valorhora.sentinelsystems.com.br" }],
-      "destination": "/valorhora/index.html"
-    },
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "cotacasa.sentinelsystems.com.br" }],
-      "destination": "/cotacasa/index.html"
-    },
     { "source": "/valorhora", "destination": "/valorhora/index.html" },
     { "source": "/cotacasa", "destination": "/cotacasa/index.html" },
     { "source": "/sites", "destination": "/sites/index.html" },

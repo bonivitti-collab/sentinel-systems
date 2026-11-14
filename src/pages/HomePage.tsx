@@ -170,7 +170,7 @@ function ExampleVideo({ src, poster, label }: { src: string; poster: string; lab
           </button>
         )}
       </div>
-      <figcaption className="mt-3 text-sm leading-relaxed text-slate-600">
+      <figcaption className="mt-3 text-sm leading-relaxed text-slate-600 lg:text-center">
         <span className="block font-bold text-slate-950">{label}</span>
         Cena ilustrativa feita com IA
       </figcaption>
@@ -211,7 +211,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <aside className="hidden rounded-[28px] border border-slate-200 bg-[#f7f6f3] p-6 sm:p-8 lg:col-span-5 lg:block">
             <p className="text-sm font-bold text-[#0e7490]">O resultado</p>
             <ul className="mt-4 space-y-4">
-              {['Seu nome no Google, com mapa e horário', 'Uma página que abre no celular', 'WhatsApp visível na hora de chamar'].map((item) => (
+              {['Seu nome no Google, com mapa e horário', 'Um site que abre bem no celular', 'WhatsApp visível na hora de chamar'].map((item) => (
                 <li key={item} className="flex gap-3 text-base font-semibold leading-snug text-slate-950">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#128C7E]" aria-hidden="true" />
                   <span>{item}</span>
@@ -279,8 +279,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     className="aspect-[9/16] w-full rounded-[1.2rem] object-cover object-center"
                   />
                 </span>
-                <span className="mt-2 text-sm font-extrabold text-slate-950">{example.name}</span>
-                <span className="text-xs font-bold text-[#0e7490]">{example.kind}</span>
+                <span className="mt-2 text-center text-sm font-extrabold text-slate-950">{example.name}</span>
+                <span className="text-center text-xs font-bold text-[#0e7490]">{example.kind}</span>
               </a>
             ))}
           </div>
@@ -402,7 +402,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </article>
 
           <div className="mt-4 grid grid-cols-1 gap-4">
-            <article className="max-w-xl rounded-[20px] border border-slate-200 bg-white p-6">
+            <article className="rounded-[20px] border border-slate-200 bg-white p-6">
               <h3 className="text-lg font-extrabold">Cuidamos do seu Instagram</h3>
               <p className="mt-3 text-2xl font-extrabold tracking-tight">Orçamento pelo WhatsApp</p>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">

@@ -59,6 +59,7 @@ export function Footer({ onNavigate }: FooterProps) {
           </ul>
         </div>
 
+        <div className="flex flex-col gap-8 md:contents">
         <div className="md:col-span-3">
           <h2 className="text-xs font-extrabold uppercase tracking-wide text-slate-400">Guias</h2>
           <ul className="mt-3 space-y-1">
@@ -99,6 +100,7 @@ export function Footer({ onNavigate }: FooterProps) {
               );
             })}
           </ul>
+        </div>
         </div>
       </div>
       <div className="mx-auto mt-8 w-full max-w-[1120px] px-5 text-xs text-slate-400 sm:px-8">

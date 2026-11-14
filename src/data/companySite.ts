@@ -297,7 +297,7 @@ export const FAQ = [
   },
   {
     q: 'Como eu contrato?',
-    a: 'Antes de começar, a gente manda tudo combinado por escrito.',
+    a: 'Chame no WhatsApp (22) 99843-4956. Antes de começar, a gente manda tudo combinado por escrito.',
   },
 ] as const;
 

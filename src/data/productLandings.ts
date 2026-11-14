@@ -136,7 +136,7 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         q: 'O que dá para acompanhar?',
-        a: 'Orçamento da obra por etapas, cotação e orçado x realizado. Compare orçamentos lado a lado, acompanhe cada pagamento e veja preços SINAPI dos 27 estados.',
+        a: 'Orçamento da obra por etapas, comparação de orçamentos e o que foi orçado x o que você já pagou. Inclui a tabela oficial de preços da construção (SINAPI, da Caixa) dos 27 estados.',
       },
       {
         q: 'Funciona no celular?',

@@ -77,7 +77,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site de vocês, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],

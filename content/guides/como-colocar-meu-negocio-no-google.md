@@ -130,7 +130,7 @@ Pode ser distância, um perfil mais completo ou mais avaliações. Complete tudo
 
 ## Quer ajuda para organizar isso?
 
-Se você prefere não perder tempo com cadastro, telas e configurações, a Sentinel Systems faz um site profissional pensado para o celular, com seus serviços, onde você atende e o botão de WhatsApp. Se o Google aceitar o perfil do seu tipo de negócio, a gente faz essa configuração junto. O que a gente entrega é a presença clara: serviço, lugar e um jeito de chamar.
+Se você prefere não perder tempo com cadastro, telas e configurações, a Sentinel Systems faz um site profissional pensado para o celular, com seus serviços, onde você atende e o botão de WhatsApp. Se o Google aceitar o seu tipo de negócio, a gente também configura o seu Perfil da Empresa, junto com o site. O que a gente entrega é a presença clara: serviço, lugar e um jeito de chamar.
 
 Veja [o que a gente faz](/#servicos) ou [chame no WhatsApp](/#contato). O atendimento é online, para todo o Brasil.
 

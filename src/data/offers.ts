@@ -57,5 +57,5 @@ export const SITE_INCLUDED = [
 export const SITE_EXCLUDED = [
   'Manutenção depois da entrega',
   'A renovação não é automática: você decide se renova',
-  'Não tem mensalidade.',
+  'Não tem mensalidade',
 ] as const;

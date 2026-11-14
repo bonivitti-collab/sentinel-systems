@@ -70,7 +70,7 @@ function writeSitemap(): void {
   }
   const urls = pages.map((page) => ({
     loc: canonicalUrl(page.path),
-    lastmod: productByPath(page.path) ? '2026-11-13' : '2026-11-11',
+    lastmod: page.path === '/' || productByPath(page.path) ? '2026-11-13' : '2026-11-11',
     priority: page.path === '/' ? '1.0' : '0.8',
   }));
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

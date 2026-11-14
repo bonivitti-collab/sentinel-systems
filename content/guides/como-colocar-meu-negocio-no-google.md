@@ -9,7 +9,7 @@ perguntas_relacionadas:
   - "Atendo na casa do cliente: preciso mostrar meu endereço?"
   - "Quanto tempo demora para aparecer no Google?"
   - "Como fazer meu site aparecer na pesquisa do Google?"
-links_internos: ["/servicos", "/contato"]
+links_internos: ["/#servicos", "/#contato"]
 ---
 
 # Como colocar meu negócio no Google: passo a passo para aparecer na Busca e no Maps
@@ -120,7 +120,7 @@ O perfil coloca você no mapa. Para aparecer também na lista de resultados, voc
 Não. Criar e manter o Perfil da Empresa é gratuito. Você só paga se contratar alguém para fazer por você ou se quiser anunciar.
 
 **Preciso de CNPJ para ter Perfil da Empresa?**
-A Central de Ajuda do Google fala em ser proprietário ou administrador de uma empresa qualificada e em atender clientes pessoalmente; ela não cita CNPJ como requisito nas páginas que consultamos. Se o Google pedir algum documento na verificação, siga o que aparecer na tela.
+A Central de Ajuda do Google fala em ser proprietário ou administrador de uma empresa qualificada e em atender clientes pessoalmente. Ela não cita CNPJ como requisito. Se o Google pedir algum documento na verificação, siga o que aparecer na tela.
 
 **Posso ter perfil trabalhando em casa?**
 Pode, desde que você atenda clientes pessoalmente. Se não recebe ninguém em casa, oculte o endereço e use área de atendimento.
@@ -130,8 +130,8 @@ Pode ser distância, um perfil mais completo ou mais avaliações. Complete tudo
 
 ## Quer ajuda para organizar isso?
 
-Se você prefere não perder tempo com cadastro, telas e configurações, a Sentinel Systems faz um site profissional pensado para o celular, com seus serviços, onde você atende e o botão de WhatsApp, e ajuda na configuração básica do Perfil da Empresa quando o Google permite. A conferência final é do Google. O que a gente entrega é a presença clara: serviço, lugar e um jeito de chamar.
+Se você prefere não perder tempo com cadastro, telas e configurações, a Sentinel Systems faz um site profissional pensado para o celular, com seus serviços, onde você atende e o botão de WhatsApp. Se o Google aceitar o seu tipo de negócio, a gente também configura o seu Perfil da Empresa, junto com o site. O que a gente entrega é a presença clara: serviço, lugar e um jeito de chamar.
 
-Veja os detalhes em [nossos serviços](/servicos) ou fale com a gente pela página de [contato](/contato). O atendimento é online, para todo o Brasil.
+Veja [o que a gente faz](/#servicos) ou [chame no WhatsApp](/#contato). O atendimento é online, para todo o Brasil.
 
 👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522998434956)** — (22) 99843-4956

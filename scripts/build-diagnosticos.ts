@@ -454,7 +454,7 @@ function assertPage(diag: Diagnostico, html: string): void {
     throw new Error(`noindex ausente em ${diag.slug}`);
   }
   if (html.includes('Exemplo para aprovação') || html.includes('ainda não publicado')) {
-    throw new Error(`kicker de exemplo ainda em ${diag.slug}`);
+    throw new Error(`kicker antigo ainda em ${diag.slug}`);
   }
   if (!html.includes(`Diagnóstico ${escapeHtml(artigo(diag))} <span>${escapeHtml(diag.nome)}</span>`)) {
     throw new Error(`título ausente em ${diag.slug}`);

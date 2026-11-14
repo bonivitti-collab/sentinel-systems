@@ -1,7 +1,7 @@
 {
   "name": "Sentinel Systems",
   "short_name": "Sentinel",
-  "description": "Criação de site e Google Meu Negócio para aparecer no Google",
+  "description": "Site, Google Meu Negócio e WhatsApp para o cliente te achar e chamar",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",

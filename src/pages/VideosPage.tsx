@@ -41,18 +41,18 @@ const BENEFITS = [
 const INCLUDED_ITEMS = [
   'criação a partir das fotos enviadas pelo WhatsApp',
   'edição com música e texto',
-  'pessoas ilustrativas',
-  'aviso de cena feita com IA',
-  'arquivo pronto pra postar',
+  'pessoas feitas com IA',
+  'o vídeo leva um aviso de que foi feito com IA',
+  'arquivo pronto para postar',
 ] as const;
 
 const EXCLUDED_ITEMS = [
   'filmagem no local',
   'locução',
   'anúncios pagos',
-  'publicação no perfil do cliente',
+  'a gente não publica no seu Instagram',
   'revisões ilimitadas',
-  'promessa de vendas',
+  'não prometemos que o vídeo vai trazer vendas',
 ] as const;
 
 function ExampleVideoPlayer({
@@ -122,7 +122,7 @@ const VIDEO_PACKAGES = [
   {
     id: 'avulso',
     name: 'Avulso',
-    price: 'R$ 397',
+    price: 'R$ 397',
     detail: '1 vídeo com 1 revisão, entrega em 5 dias úteis depois das fotos e do que você contar sobre o negócio.',
     message: 'Olá! Vim pelo site da Sentinel e quero o pacote Avulso de vídeos.',
     highlight: false,
@@ -130,7 +130,7 @@ const VIDEO_PACKAGES = [
   {
     id: 'mensal-basico',
     name: 'Mensal Básico',
-    price: 'R$ 997/mês',
+    price: 'R$ 997/mês',
     detail: '4 vídeos com 1 revisão cada.',
     message: 'Olá! Vim pelo site da Sentinel e quero o pacote Mensal Básico de vídeos.',
     highlight: true,
@@ -138,7 +138,7 @@ const VIDEO_PACKAGES = [
   {
     id: 'mensal-completo',
     name: 'Mensal Completo',
-    price: 'R$ 1.797/mês',
+    price: 'R$ 1.797/mês',
     detail: '8 vídeos com 1 revisão cada.',
     message: 'Olá! Vim pelo site da Sentinel e quero o pacote Mensal Completo de vídeos.',
     highlight: false,
@@ -265,7 +265,7 @@ export function VideosPage() {
               Exemplos de vídeos
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              Três exemplos no formato do celular, para o Instagram e o Status. São cenas ilustrativas feitas com IA. O som começa desligado.
+              Toque para ver. O vídeo começa sem som.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -296,7 +296,7 @@ export function VideosPage() {
               >
                 {pack.highlight && (
                   <p className="self-start max-w-full text-xs font-bold text-cyan-900 bg-cyan-50 border border-cyan-200 rounded-full px-3 py-1 leading-snug">
-                    Mensalidade a partir de R$ 997
+                    Mensalidade a partir de R$ 997
                   </p>
                 )}
                 <h3 className={`text-lg font-extrabold text-slate-900 ${pack.highlight ? 'mt-4' : ''}`}>{pack.name}</h3>

@@ -14,7 +14,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({ onSelectPlan }) => {
       badge: 'IDEAL PARA COMÉRCIO LOCAL',
       target: 'Pequenas lojas, oficinas, gráficas, prestadores e serviços de bairro',
       monthlyPrice: '164',
-      setupPrice: 'R$ 429',
+      setupPrice: 'R$ 429',
       description: 'Tenha seu site profissional rápido e apareça na 1ª página quando alguém pesquisar seu serviço.',
       features: [
         'Site moderno ultra-rápido no celular',
@@ -34,7 +34,7 @@ export const PricingPlans: React.FC<PricingPlansProps> = ({ onSelectPlan }) => {
       badge: 'O MAIS CONTRATADO',
       target: 'Pousadas, clínicas, restaurantes, delivery e lojas com fluxo diário',
       monthlyPrice: '327',
-      setupPrice: 'R$ 759',
+      setupPrice: 'R$ 759',
       description: 'O ecossistema completo para transformar o Google e o seu WhatsApp em uma máquina automática de vendas.',
       features: [
         'Tudo do plano anterior incluso',

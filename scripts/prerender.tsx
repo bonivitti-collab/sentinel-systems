@@ -65,8 +65,8 @@ function assertGuideSources(): void {
 
 function writeSitemap(): void {
   const pages = indexablePages();
-  if (pages.length !== 16) {
-    throw new Error(`sitemap deveria listar 16 URLs e listou ${pages.length}`);
+  if (pages.length !== 10) {
+    throw new Error(`sitemap deveria listar 10 URLs e listou ${pages.length}: ${pages.map((page) => page.path).join(', ')}`);
   }
   const urls = pages.map((page) => ({
     loc: canonicalUrl(page.path),
@@ -124,7 +124,7 @@ function prerenderPages(): void {
       throw new Error(`Product em ${page.path}`);
     }
     const hasOffer = /"Offer"/.test(html);
-    const offerPages = page.path === '/videos' || page.path === '/ferramentas' || page.path === '/sites' || Boolean(product);
+    const offerPages = page.path === '/' || page.path === '/ferramentas' || Boolean(product);
     if (offerPages && !hasOffer) {
       throw new Error(`Offer ausente em ${page.path}`);
     }
@@ -150,7 +150,7 @@ function prerenderPages(): void {
     path: '/404',
     label: 'Página não encontrada',
     title: 'Página não encontrada | Sentinel Systems',
-    description: 'Não encontramos essa página. Veja como a Sentinel ajuda o seu negócio a ser encontrado no Google.',
+    description: 'Esse endereço não existe. Volte ao início ou chame no WhatsApp.',
   };
   const notFoundBody = renderToString(
     <StrictMode>

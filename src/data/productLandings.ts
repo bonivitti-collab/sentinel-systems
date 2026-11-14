@@ -27,7 +27,7 @@ export interface ProductLanding {
 }
 
 const RECEBE =
-  'O pagamento é na Kiwify, pelo botão Comprar por R$ 9,90. A entrega do arquivo é automática, pela Kiwify. A planilha abre no Google Planilhas e no Excel.';
+  'Você compra pelo botão e recebe a planilha na hora, no seu e-mail. Ela abre no Google Planilhas e no Excel. O pagamento é feito na Kiwify, plataforma segura de pagamento.';
 
 export const PRODUCT_LANDINGS: ProductLanding[] = [
   {
@@ -35,36 +35,36 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
     path: '/valorhora',
     host: 'valorhora.sentinelsystems.com.br',
     ferramentaId: 'valor-hora-real',
-    metaTitle: 'Valor Hora Real por R$ 9,90 | Sentinel',
+    metaTitle: 'Valor Hora Real por R$ 9,90 | Sentinel',
     metaDescription:
-      'Planilha para saber quanto cobrar pela hora, como freelancer ou MEI. Google Planilhas e Excel. R$ 9,90.',
+      'Planilha para saber quanto cobrar pela hora, como freelancer ou MEI. Google Planilhas e Excel. R$ 9,90.',
     ogFile: 'og-valorhora.png',
-    ogAlt: 'Planilha Valor Hora Real por R$ 9,90, da Sentinel Systems',
-    coverLine: 'Planilha de precificação para freelancer e MEI.',
+    ogAlt: 'Planilha Valor Hora Real por R$ 9,90, da Sentinel Systems',
+    coverLine: '',
     includes: [
       {
         title: 'Preço mínimo, ideal e premium',
-        text: 'A capa da planilha descreve esses três preços da hora.',
+        text: 'Você vê o preço mínimo, o ideal e o premium da sua hora.',
       },
       {
-        title: 'Orçamento pronto',
-        text: 'Também está na capa, junto com o simulador de desconto.',
+        title: 'Orçamento para o cliente',
+        text: 'Coloque as horas de cada etapa e a planilha calcula o valor do serviço, com a mensagem pronta para mandar ao cliente.',
       },
       {
         title: 'Simulador de desconto',
-        text: 'A capa cita o simulador para ver o preço com desconto.',
+        text: 'O cliente pediu desconto? Veja na hora se ainda vale a pena.',
       },
       {
         title: 'Fórmulas protegidas',
-        text: 'A capa informa que as fórmulas vêm protegidas.',
+        text: 'As contas já vêm prontas e travadas, para você não apagar sem querer.',
       },
       {
         title: 'Guia em PDF',
-        text: 'A capa inclui um guia em PDF junto com a planilha.',
+        text: 'Vem com um guia em PDF.',
       },
       {
         title: 'Google Planilhas e Excel',
-        text: 'A capa diz que a planilha é para Google Sheets e Excel, e que funciona no celular.',
+        text: 'Abre no Google Planilhas e no Excel, inclusive no celular.',
       },
     ],
     receive: RECEBE,
@@ -75,15 +75,15 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         q: 'Quanto custa?',
-        a: 'R$ 9,90. O pagamento é feito na Kiwify.',
+        a: 'R$ 9,90. O pagamento é feito na Kiwify, plataforma segura de pagamento.',
       },
       {
         q: 'O que vem na planilha?',
-        a: 'A capa descreve preço mínimo, ideal e premium, orçamento pronto, simulador de desconto, fórmulas protegidas e um guia em PDF.',
+        a: 'Você vê o preço mínimo, o ideal e o premium da sua hora. Tem orçamento para o cliente, um simulador para ver o preço com desconto, fórmulas protegidas e um guia em PDF.',
       },
       {
         q: 'Funciona no celular?',
-        a: 'Sim. A capa da planilha informa que funciona no celular.',
+        a: 'Sim, você pode usar no celular.',
       },
     ],
   },
@@ -92,11 +92,11 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
     path: '/cotacasa',
     host: 'cotacasa.sentinelsystems.com.br',
     ferramentaId: 'cotacasa',
-    metaTitle: 'CotaCasa por R$ 9,90 | Sentinel',
+    metaTitle: 'CotaCasa por R$ 9,90 | Sentinel',
     metaDescription:
-      'Planilha para orçamento de obra por etapas, cotação e orçado x realizado. Google Planilhas e Excel. R$ 9,90.',
+      'Planilha para orçamento de obra por etapas, cotação e orçado x realizado. Google Planilhas e Excel. R$ 9,90.',
     ogFile: 'og-cotacasa.png',
-    ogAlt: 'Planilha CotaCasa por R$ 9,90, da Sentinel Systems',
+    ogAlt: 'Planilha CotaCasa por R$ 9,90, da Sentinel Systems',
     coverLine: 'Planilha de orçamento e controle de reforma.',
     includes: [
       {
@@ -105,23 +105,23 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         title: 'Cotação',
-        text: 'A capa descreve comparar orçamentos.',
+        text: 'Compare orçamentos lado a lado.',
       },
       {
         title: 'Orçado e realizado',
-        text: 'A capa descreve acompanhar cada pagamento.',
+        text: 'Acompanhe cada pagamento, o que foi orçado e o que você já pagou.',
       },
       {
-        title: 'Preços SINAPI dos 27 estados',
-        text: 'Está escrito na capa da planilha.',
+        title: 'Preços de referência dos 27 estados',
+        text: 'Tabela oficial de preços da construção (SINAPI, da Caixa).',
       },
       {
         title: 'Guia em PDF',
-        text: 'A capa inclui um guia em PDF junto com a planilha.',
+        text: 'Vem com um guia em PDF.',
       },
       {
         title: 'Google Planilhas e Excel',
-        text: 'A capa diz que a planilha é para Google Planilhas e Excel, e que funciona no celular.',
+        text: 'Abre no Google Planilhas e no Excel, inclusive no celular.',
       },
     ],
     receive: RECEBE,
@@ -132,15 +132,15 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         q: 'Quanto custa?',
-        a: 'R$ 9,90. O pagamento é feito na Kiwify.',
+        a: 'R$ 9,90. O pagamento é feito na Kiwify, plataforma segura de pagamento.',
       },
       {
         q: 'O que dá para acompanhar?',
-        a: 'Orçamento da obra por etapas, cotação e orçado x realizado. A capa também cita a comparação de orçamentos, o acompanhamento de cada pagamento e preços SINAPI dos 27 estados.',
+        a: 'Orçamento da obra por etapas, comparação de orçamentos e o que foi orçado x o que você já pagou. Inclui a tabela oficial de preços da construção (SINAPI, da Caixa) dos 27 estados.',
       },
       {
         q: 'Funciona no celular?',
-        a: 'Sim. A capa da planilha informa que funciona no celular.',
+        a: 'Sim, você pode usar no celular.',
       },
     ],
   },

@@ -161,7 +161,7 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
               <div>
                 <div className="flex justify-between items-center text-xs sm:text-sm font-semibold mb-2">
                   <span className="text-slate-300">Ticket Médio por venda:</span>
-                  <span className="text-emerald-400 font-black text-sm sm:text-base">R$ {averageTicket}</span>
+                  <span className="text-emerald-400 font-black text-sm sm:text-base">R$ {averageTicket}</span>
                 </div>
                 <input
                   type="range"
@@ -173,8 +173,8 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
                   className="w-full accent-emerald-400 h-2 bg-slate-800 rounded-lg cursor-pointer"
                 />
                 <div className="flex justify-between text-[10px] text-slate-500 mt-1">
-                  <span>R$ 30</span>
-                  <span>R$ 600</span>
+                  <span>R$ 30</span>
+                  <span>R$ 600</span>
                 </div>
               </div>
             </div>
@@ -186,7 +186,7 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
                   Estimativa de Vendas Perdidas por Mês
                 </span>
                 <div className="text-3xl sm:text-5xl font-black text-rose-400 tracking-tight my-2 break-words">
-                  ~ R$ {estimatedLostMonthly.toLocaleString('pt-BR')}
+                  ~ R$ {estimatedLostMonthly.toLocaleString('pt-BR')}
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Sem um robô de WhatsApp 24h e um site rápido no Google, esses clientes procuram outro comércio na sua cidade.
@@ -195,7 +195,7 @@ export const WhyNotOnlyInstagram: React.FC<WhyNotOnlyInstagramProps> = ({ onOpen
 
               <div className="mt-6 pt-4 border-t border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="text-xs text-slate-300 font-medium text-center sm:text-left">
-                  Com a Sentinel Systems, o plano completo custa a partir de <strong className="text-emerald-400">R$ 327/mês</strong> e se paga na 1ª venda recuperada.
+                  Com a Sentinel Systems, o plano completo custa a partir de <strong className="text-emerald-400">R$ 327/mês</strong> e se paga na 1ª venda recuperada.
                 </div>
                 <button
                   onClick={() => {

@@ -9,7 +9,7 @@ perguntas_relacionadas:
   - "Quanto custa um domínio .com.br?"
   - "Vale mais fazer sozinho, com freelancer ou com agência?"
   - "O que perguntar antes de contratar um site?"
-links_internos: ["/servicos", "/contato"]
+links_internos: ["/#servicos", "/#contato"]
 ---
 
 # Quanto custa fazer um site em 2026? Faixas reais e o que muda o preço
@@ -24,20 +24,20 @@ Reunimos os valores de duas fontes que publicaram faixas de preço em 2026. Elas
 
 | Tipo de site | Cronoshare (jan/2026) | InfinitePay (ref. maio/2026) |
 |---|---|---|
-| Site simples / uma página | R$ 400 a R$ 2.000 | R$ 500 a R$ 3.000 |
-| Landing page | R$ 800 a R$ 2.000 | (incluída em "site simples") |
-| Site completo / institucional | R$ 2.500 a R$ 10.000 | R$ 3.000 a R$ 18.000 |
-| Loja virtual | A partir de R$ 1.000 | R$ 3.000 a mais de R$ 50.000 |
+| Site simples / uma página | R$ 400 a R$ 2.000 | R$ 500 a R$ 3.000 |
+| Landing page | R$ 800 a R$ 2.000 | (incluída em "site simples") |
+| Site completo / institucional | R$ 2.500 a R$ 10.000 | R$ 3.000 a R$ 18.000 |
+| Loja virtual | A partir de R$ 1.000 | R$ 3.000 a mais de R$ 50.000 |
 
 Fontes: [Cronoshare – Quanto custa criar um site](https://www.cronoshare.com.br/quanto-custa/criar-site) (publicado em 30/01/2026, valores indicativos a partir de orçamentos de profissionais da plataforma); [InfinitePay – Quanto custa criar um site em 2026](https://www.infinitepay.io/blog/quanto-custa-criar-um-site) (valores de referência de maio de 2026, freelancer ou agência de pequeno porte). Consultados em 09/11/2026.
 
-A Hostinger, que vende hospedagem e criador de sites, publica outra referência: de R$ 0 a R$ 500 no início para quem faz sozinho com criador de sites, e de R$ 1.000 a R$ 10.000 para um site simples com design profissional ([Hostinger](https://www.hostinger.com/br/tutoriais/quanto-custa-fazer-um-site/), consultado em 09/11/2026).
+A Hostinger, que vende hospedagem e criador de sites, publica outra referência: de R$ 0 a R$ 500 no início para quem faz sozinho com criador de sites, e de R$ 1.000 a R$ 10.000 para um site simples com design profissional ([Hostinger](https://www.hostinger.com/br/tutoriais/quanto-custa-fazer-um-site/), consultado em 09/11/2026).
 
 Note que **algumas dessas fontes vendem soluções próprias** (criador de site, hospedagem). Use os números como referência, não como regra.
 
 ## Quanto custa um site simples?
 
-Pelas faixas acima, um site simples ou de uma página fica, em geral, **entre R$ 400 e R$ 3.000** quando feito por um profissional. É o formato que a maioria dos autônomos e pequenos negócios precisa: uma página com o que você faz, onde atende, preços ou orçamento, e o botão de WhatsApp.
+Pelas faixas acima, um site simples ou de uma página fica, em geral, **entre R$ 400 e R$ 3.000** quando feito por um profissional. É o formato que a maioria dos autônomos e pequenos negócios precisa: uma página com o que você faz, onde atende, preços ou orçamento, e o botão de WhatsApp.
 
 ## O que faz o preço subir ou descer
 
@@ -47,7 +47,7 @@ Pelas faixas acima, um site simples ou de uma página fica, em geral, **entre R$
 - **Freelancer**: a qualidade varia muito. Peça exemplos de trabalhos anteriores.
 - **Agência**: processo mais estruturado e preço mais alto.
 
-A InfinitePay, por exemplo, publica faixas de R$ 500 a R$ 15.000 para freelancers e a partir de R$ 2.500 para agências.
+A InfinitePay, por exemplo, publica faixas de R$ 500 a R$ 15.000 para freelancers e a partir de R$ 2.500 para agências.
 
 ### 2. Quantas páginas
 
@@ -59,7 +59,7 @@ A Cronoshare explica que um design personalizado geralmente custa mais do que ad
 
 ### 4. Funções extras
 
-Loja com pagamento, agendamento online, área de login, vários idiomas, integração com sistemas. Cada uma aumenta o preço. A Cronoshare lista site multi-idioma a partir de R$ 4.000.
+Loja com pagamento, agendamento online, área de login, vários idiomas, integração com sistemas. Cada uma aumenta o preço. A Cronoshare lista site multi-idioma a partir de R$ 4.000.
 
 ### 5. Textos, fotos e SEO
 
@@ -71,10 +71,10 @@ O preço de criação é só parte da conta. Depois que o site fica pronto, vêm
 
 | Item | Valor de referência | Fonte |
 |---|---|---|
-| Domínio .com.br | R$ 40 por ano | [Registro.br](https://registro.br/dominio/) (oficial) |
-| Hospedagem compartilhada | R$ 10 a R$ 80 por mês | InfinitePay (ref. maio/2026) |
-| Manutenção técnica (se contratada) | R$ 100 a R$ 400 por mês no suporte básico | InfinitePay (ref. maio/2026) |
-| Plano de manutenção básico | R$ 150 a R$ 250 | Cronoshare (jan/2026) |
+| Domínio .com.br | R$ 40 por ano | [Registro.br](https://registro.br/dominio/) (oficial) |
+| Hospedagem compartilhada | R$ 10 a R$ 80 por mês | InfinitePay (ref. maio/2026) |
+| Manutenção técnica (se contratada) | R$ 100 a R$ 400 por mês no suporte básico | InfinitePay (ref. maio/2026) |
+| Plano de manutenção básico | R$ 150 a R$ 250 | Cronoshare (jan/2026) |
 
 O **certificado de segurança (https)** costuma vir grátis na hospedagem, segundo a InfinitePay.
 
@@ -105,7 +105,7 @@ Antes de fechar, pergunte e peça por escrito:
 ## Perguntas frequentes
 
 **Quanto custa um domínio .com.br?**
-No Registro.br, a entidade responsável pelo registro de domínios .br, o registro custa R$ 40 por ano, com opção de pagar por até 10 anos ([Registro.br](https://registro.br/dominio/)).
+No Registro.br, a entidade responsável pelo registro de domínios .br, o registro custa R$ 40 por ano, com opção de pagar por até 10 anos ([Registro.br](https://registro.br/dominio/)).
 
 **Dá para ter site de graça?**
 Dá, com criadores de site gratuitos ou planos grátis de plataformas. Em geral, há limitações de personalização, endereço ou propaganda da plataforma. Avalie se isso atende você.
@@ -120,12 +120,12 @@ Porque "site" pode ser uma página simples ou um sistema completo, e cada profis
 
 A Sentinel Systems faz site profissional para pequenos negócios e autônomos, com preço fechado:
 
-- **R$ 600 em 12x de R$ 50**, ou
-- **R$ 540 à vista** (10% de desconto, válido na primeira contratação).
-- **Renovação opcional: R$ 180 por ano**, depois do primeiro ano.
+- **R$ 600 em 12x de R$ 50**, ou
+- **R$ 540 à vista** (10% de desconto, válido na primeira contratação).
+- **Renovação opcional: R$ 180 por ano**, depois do primeiro ano.
 
 O parcelamento é da criação, não uma mensalidade sem fim. A renovação não é automática. Pelas faixas publicadas acima, o valor fica dentro da faixa de "site simples" do mercado.
 
-Os detalhes do que está incluído estão em [nossos serviços](/servicos). Se quiser tirar dúvidas antes, use a página de [contato](/contato). Atendimento online, para todo o Brasil.
+[Veja o que está incluído em Preços.](/#precos) Se quiser tirar dúvidas antes, [chame no WhatsApp](/#contato). Atendimento online, para todo o Brasil.
 
 👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522998434956)** — (22) 99843-4956

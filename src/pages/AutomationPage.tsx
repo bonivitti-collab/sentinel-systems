@@ -24,9 +24,9 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
       id: 'auto-essencial',
       name: 'Robô Atendimento & Triagem 24/7',
       badge: 'ENTRADA RÁPIDA',
-      daily: 'R$ 5,40/dia',
+      daily: 'R$ 5,40/dia',
       monthlyPrice: '164',
-      setupInfo: 'Taxa única de implantação: 12x de R$ 32 (ou R$ 319 à vista)',
+      setupInfo: 'Taxa única de implantação: 12x de R$ 32 (ou R$ 319 à vista)',
       target: 'Prestadores de serviços, escritórios, consultórios e comércio geral',
       description: 'Nunca mais deixe um cliente esperando. O robô dá boas-vindas, informa horários, tira dúvidas frequentes e direciona para a pessoa certa.',
       features: [
@@ -44,9 +44,9 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
       id: 'auto-vendas',
       name: 'Robô Comercial & Vendas Pro',
       badge: 'O MAIS CONTRATADO',
-      daily: 'R$ 9,10/dia',
+      daily: 'R$ 9,10/dia',
       monthlyPrice: '274',
-      setupInfo: 'Taxa única de implantação: 12x de R$ 54 (ou R$ 539 à vista)',
+      setupInfo: 'Taxa única de implantação: 12x de R$ 54 (ou R$ 539 à vista)',
       target: 'Restaurantes, pousadas, clínicas médicas, delivery e lojas',
       description: 'O robô fecha vendas pelo WhatsApp. Envia cardápios, faz cotação de diárias, agenda consultas ou monta orçamentos completos sem você mexer um dedo.',
       features: [
@@ -128,8 +128,8 @@ export const AutomationPage: React.FC<AutomationPageProps> = ({ onOpenContact, o
     },
     {
       metric: 'Custo Mensal',
-      without: 'R$ 1.600 a R$ 2.500 (salário + encargos de atendente)',
-      withSentinel: 'A partir de R$ 164/mês (menos de R$ 5,50/dia)'
+      without: 'R$ 1.600 a R$ 2.500 (salário + encargos de atendente)',
+      withSentinel: 'A partir de R$ 164/mês (menos de R$ 5,50/dia)'
     }
   ];
 

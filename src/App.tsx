@@ -1,56 +1,62 @@
 import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
-import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 import { Navbar } from './components/Navbar';
-import { pageByPath, SITEMAP_LINKS } from './data/companySite';
+import { pageByPath } from './data/companySite';
 import { applySeo } from './lib/seo';
 import { publishedGuideByPath } from './data/publishedGuides';
 import { productByPath, productPathForHost } from './data/productLandings';
-import { AboutPage } from './pages/AboutPage';
-import { ContactPage } from './pages/ContactPage';
-import { FaqPage } from './pages/FaqPage';
 import { FerramentasPage } from './pages/FerramentasPage';
 import { GuideArticlePage } from './pages/GuideArticlePage';
 import { GuidesIndexPage } from './pages/GuidesIndexPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ProductLandingPage } from './pages/ProductLandingPage';
-import { ServicesPage } from './pages/ServicesPage';
-import { SitesLandingPage } from './pages/SitesLandingPage';
-import { VideosPage } from './pages/VideosPage';
 
-const LEGACY: Record<string, string> = {
-  '/quem-somos': '/sobre',
-  '/automacao': '/servicos',
-  '/blog': '/faq',
+const REDIRECTS: Record<string, string> = {
+  '/quem-somos': '/',
+  '/sobre': '/',
+  '/automacao': '/#servicos',
+  '/blog': '/guias',
+  '/servicos': '/#servicos',
+  '/sites': '/#precos',
+  '/videos': '/#precos',
+  '/faq': '/#perguntas',
+  '/contato': '/#contato',
 };
 
-const HOME_ANCHORS: Record<string, string> = {
-  ferramentas: '/ferramentas',
-  oferta: '/sites#oferta',
-};
+function redirectTarget(pathname: string): string | null {
+  const clean = pathname.replace(/\/+$/, '') || '/';
+  if (REDIRECTS[clean]) return REDIRECTS[clean];
+  if (clean.startsWith('/solucoes/')) return '/#servicos';
+  if (clean.startsWith('/automacao/')) return '/#servicos';
+  if (clean.startsWith('/cidades/')) return '/';
+  return null;
+}
 
 export function normalizePath(pathname: string): string {
-  const clean = pathname.replace(/\/+$/, '') || '/';
-  if (LEGACY[clean]) return LEGACY[clean];
-  if (clean.startsWith('/solucoes/')) return '/servicos';
-  if (clean.startsWith('/automacao/')) return '/servicos';
-  if (clean.startsWith('/cidades/')) return '/';
-  return clean;
+  const target = redirectTarget(pathname);
+  if (target) return target.split('#')[0] || '/';
+  return pathname.replace(/\/+$/, '') || '/';
 }
 
 function resolveLocation(pathname: string, hash: string): { path: string; hash: string; url: string } {
-  const path = normalizePath(pathname);
-  const cleanHash = hash.replace(/^#/, '');
-  const moved = path === '/' ? HOME_ANCHORS[cleanHash] : undefined;
+  const moved = redirectTarget(pathname);
   if (moved) {
     const [movedPath, movedHash = ''] = moved.split('#');
-    const nextPath = normalizePath(movedPath || '/');
+    const nextPath = (movedPath || '/').replace(/\/+$/, '') || '/';
     return {
       path: nextPath,
       hash: movedHash,
       url: movedHash ? `${nextPath}#${movedHash}` : nextPath,
     };
+  }
+  const path = pathname.replace(/\/+$/, '') || '/';
+  const cleanHash = hash.replace(/^#/, '');
+  if (path === '/' && cleanHash === 'ferramentas') {
+    return { path: '/ferramentas', hash: '', url: '/ferramentas' };
+  }
+  if (path === '/' && cleanHash === 'oferta') {
+    return { path: '/', hash: 'precos', url: '/#precos' };
   }
   return {
     path,
@@ -113,48 +119,29 @@ export function App({ url }: { url?: string }) {
   };
 
   const product = productByPath(currentPath);
-  if (product) return <ProductLandingPage product={product} />;
+  if (product) {
+    return (
+      <div className="min-h-screen overflow-x-hidden bg-[#f7f6f3] font-sans text-slate-950">
+        <Navbar currentPath={currentPath} onNavigate={navigate} />
+        <div className="pt-16">
+          <ProductLandingPage product={product} />
+        </div>
+      </div>
+    );
+  }
 
   const guide = publishedGuideByPath(currentPath);
   let content = <NotFoundPage onNavigate={navigate} />;
   if (currentPath === '/') content = <HomePage onNavigate={navigate} />;
-  else if (currentPath === '/sites') content = <SitesLandingPage onNavigate={navigate} />;
-  else if (currentPath === '/videos') content = <VideosPage />;
   else if (currentPath === '/ferramentas') content = <FerramentasPage />;
-  else if (currentPath === '/sobre') content = <AboutPage onNavigate={navigate} />;
-  else if (currentPath === '/servicos') content = <ServicesPage onNavigate={navigate} />;
-  else if (currentPath === '/faq') content = <FaqPage />;
-  else if (currentPath === '/contato') content = <ContactPage />;
   else if (currentPath === '/guias') content = <GuidesIndexPage onNavigate={navigate} />;
   else if (guide) content = <GuideArticlePage guide={guide} onNavigate={navigate} />;
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-[#f7f6f3] font-sans text-slate-950">
       <Navbar currentPath={currentPath} onNavigate={navigate} />
       <main id="conteudo">{content}</main>
-      <nav aria-label="Outras páginas" className="border-t border-slate-200 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h2 className="text-sm font-extrabold text-slate-900 mb-3">Mapa do site</h2>
-          <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-2">
-            {SITEMAP_LINKS.filter((link) => link.href !== currentPath).map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    navigate(link.href);
-                  }}
-                  className="inline-flex px-4 py-2 rounded-full bg-white border border-slate-200 text-sm font-semibold text-slate-700 hover:text-cyan-800"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-      <Footer currentPath={currentPath} onNavigate={navigate} />
-      <FloatingWhatsAppButton currentPath={currentPath} />
+      <Footer onNavigate={navigate} />
     </div>
   );
 }

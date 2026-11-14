@@ -39,7 +39,10 @@
     { "source": "/sites", "destination": "/#precos", "permanent": true },
     { "source": "/videos", "destination": "/#precos", "permanent": true },
     { "source": "/faq", "destination": "/#perguntas", "permanent": true },
-    { "source": "/contato", "destination": "/#contato", "permanent": true }
+    { "source": "/contato", "destination": "/#contato", "permanent": true },
+    { "source": "/demos/brasa-folha", "destination": "/demos/brasa-folha/index.html", "permanent": true },
+    { "source": "/demos/casa-linho", "destination": "/demos/casa-linho/index.html", "permanent": true },
+    { "source": "/demos/salao-aurora", "destination": "/demos/salao-aurora/index.html", "permanent": true }
   ],
   "rewrites": [
     { "source": "/ferramentas", "destination": "/ferramentas/index.html" },

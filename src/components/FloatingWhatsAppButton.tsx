@@ -3,26 +3,40 @@ import { MessageCircle } from 'lucide-react';
 import { NEUTRAL_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
 
 export function FloatingWhatsAppButton() {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
-    const nodes = ['exemplos', 'precos', 'perguntas', 'contato']
+    const hero = document.getElementById('topo');
+    const cards = ['servicos', 'exemplos', 'precos', 'como-funciona', 'perguntas', 'contato']
       .map((id) => document.getElementById(id))
       .filter((node): node is HTMLElement => Boolean(node));
-    if (nodes.length === 0) return;
-    const visible = new Set<Element>();
-    const observer = new IntersectionObserver(
+    if (!hero) return;
+    let heroOnScreen = false;
+    const cardsOnScreen = new Set<Element>();
+    const update = () => setHidden(!heroOnScreen || cardsOnScreen.size > 0);
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => {
+        heroOnScreen = entry.isIntersecting;
+        update();
+      },
+      { threshold: 0.55 },
+    );
+    const cardObserver = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) visible.add(entry.target);
-          else visible.delete(entry.target);
+          if (entry.isIntersecting) cardsOnScreen.add(entry.target);
+          else cardsOnScreen.delete(entry.target);
         }
-        setHidden(visible.size > 0);
+        update();
       },
       { threshold: 0 },
     );
-    for (const node of nodes) observer.observe(node);
-    return () => observer.disconnect();
+    heroObserver.observe(hero);
+    for (const card of cards) cardObserver.observe(card);
+    return () => {
+      heroObserver.disconnect();
+      cardObserver.disconnect();
+    };
   }, []);
 
   if (hidden) return null;

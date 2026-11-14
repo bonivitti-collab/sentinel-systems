@@ -69,7 +69,7 @@ export const PAGES: Record<PageKey, PageMeta> = {
     label: 'Início',
     title: 'Seu cliente te procura e não te acha | Sentinel Systems',
     description:
-      'Seja encontrado no Google e receba mais ligações e mensagens no WhatsApp. Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista. Vídeos com IA a partir de R$ 397.',
+      'Um site que abre bem no celular, com o seu negócio no Google e o botão do WhatsApp. 12x de R$ 50, total de R$ 600, ou R$ 540 à vista.',
   },
   ferramentas: {
     key: 'ferramentas',
@@ -136,7 +136,7 @@ export const SERVICES: SentinelService[] = [
     eyebrow: 'O meio',
     result: 'Quem já te achou entende o que você faz e chama, em vez de voltar para a busca.',
     summary:
-      'A página que abre no celular quando alguém já te achou e quer saber se liga, chama no WhatsApp ou vai até você.',
+      'Um site que abre bem no celular, com o seu negócio no Google e o botão do WhatsApp. 12x de R$ 50, total de R$ 600, ou R$ 540 à vista.',
     why: 'Ser encontrado não basta se o clique seguinte se perde. No celular, a página precisa abrir e deixar óbvio o que a empresa faz, onde fica e como falar com ela. Um site confuso devolve a pessoa para a busca.',
     card: '12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
     price: {

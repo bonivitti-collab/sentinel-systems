@@ -183,7 +183,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   return (
     <div className="bg-[#f7f6f3] text-slate-950">
-      <section id="topo" className="border-b border-slate-200/80 bg-white">
+      <section className="border-b border-slate-200/80 bg-white">
         <div className={`${SHELL} grid items-end gap-8 pb-8 pt-24 sm:pb-16 sm:pt-32 lg:grid-cols-12`}>
           <div className="lg:col-span-7">
             <p className="text-sm font-bold text-[#0e7490]">Para o comércio da sua cidade</p>

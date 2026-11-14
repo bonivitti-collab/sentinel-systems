@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
-import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 import { Navbar } from './components/Navbar';
 import { pageByPath } from './data/companySite';
 import { applySeo } from './lib/seo';
@@ -143,7 +142,6 @@ export function App({ url }: { url?: string }) {
       <Navbar currentPath={currentPath} onNavigate={navigate} />
       <main id="conteudo">{content}</main>
       <Footer onNavigate={navigate} />
-      <FloatingWhatsAppButton />
     </div>
   );
 }

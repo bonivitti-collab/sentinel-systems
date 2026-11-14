@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
-import { Check, Globe, MapPin, MessageCircle, Minus, Video } from 'lucide-react';
+import { Check, ChevronDown, Globe, MapPin, MessageCircle, Minus, Video } from 'lucide-react';
 import {
   EXAMPLE_VIDEOS,
   FAQ,
@@ -30,8 +30,8 @@ function InstagramMark({ className }: { className?: string }) {
 const SERVICES = [
   {
     title: 'Site profissional',
-    text: 'Uma página no celular com o que você faz, onde atende e o botão para chamar. Quem te acha entende e liga.',
-    price: '12x de R$ 50',
+    text: 'Um site do seu negócio, feito para abrir bem no celular, com o que você faz, onde atende e o botão para chamar. Quem te acha entende e liga.',
+    price: '12x de R$ 50',
     icon: Globe,
   },
   {
@@ -55,7 +55,7 @@ const SERVICES = [
   {
     title: 'Vídeos com IA',
     text: 'Você manda as fotos pelo WhatsApp e recebe vídeos prontos para o Instagram e o Status, sem filmar e sem editar.',
-    price: 'A partir de R$ 397',
+    price: 'A partir de R$ 397',
     icon: Video,
   },
 ] as const;
@@ -65,21 +65,21 @@ const SITE_EXAMPLES = [
     name: 'Brasa & Folha',
     kind: 'Restaurante',
     href: '/demos/brasa-folha/index.html',
-    src: '/modelos/brasa-folha-t461.webp',
+    src: '/modelos/brasa-folha-phone.webp',
     alt: 'Exemplo de site para restaurante, com pratos e reserva',
   },
   {
     name: 'Casa Linho',
     kind: 'Loja',
     href: '/demos/casa-linho/index.html',
-    src: '/modelos/casa-linho-t461.webp',
+    src: '/modelos/casa-linho-phone.webp',
     alt: 'Exemplo de site para loja, com catálogo de peças',
   },
   {
     name: 'Salão Aurora',
     kind: 'Salão',
     href: '/demos/salao-aurora/index.html',
-    src: '/modelos/salao-aurora-t461.webp',
+    src: '/modelos/salao-aurora-phone.webp',
     alt: 'Exemplo de site para salão, com serviços e horário',
   },
 ] as const;
@@ -90,12 +90,12 @@ const STEPS = [
     text: 'O que vende, em que cidade, e se as pessoas ligam, chamam no WhatsApp ou aparecem na porta.',
   },
   {
-    title: 'A gente monta o caminho',
+    title: 'A gente monta tudo',
     text: 'Site, Perfil da Empresa no Google, WhatsApp, Instagram ou vídeo, do jeito que o seu cliente procura.',
   },
   {
     title: 'O cliente te acha e chama',
-    text: 'A página abre no celular, o contato fica visível e a conversa segue no mesmo WhatsApp.',
+    text: 'Seu cliente abre no celular, vê como falar com você e chama no seu WhatsApp.',
   },
 ] as const;
 
@@ -205,7 +205,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
             <p className="mt-5 text-sm font-semibold text-slate-500">{SITE.phoneDisplay}</p>
             <p className="mt-3 max-w-md text-base font-bold leading-snug text-slate-800">
-              Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista
+              Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista
             </p>
           </div>
           <aside className="hidden rounded-[28px] border border-slate-200 bg-[#f7f6f3] p-6 sm:p-8 lg:col-span-5 lg:block">
@@ -219,7 +219,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               ))}
             </ul>
             <p className="mt-6 text-base font-bold leading-snug text-slate-800">
-              Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista
+              Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista
             </p>
           </aside>
         </div>
@@ -231,15 +231,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <h2 id="servicos-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em]">
             Cinco jeitos de o cliente te encontrar e chamar
           </h2>
-          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-6">
-            {SERVICES.map((service, index) => {
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((service) => {
               const Icon = service.icon;
-              const span = index < 3 ? 'xl:col-span-2' : 'xl:col-span-3';
-              const wide = index === 4 ? 'sm:col-span-2 xl:col-span-3' : '';
               return (
                 <article
                   key={service.title}
-                  className={`flex min-w-0 flex-col rounded-[20px] border border-slate-200 bg-white p-4 sm:p-5 ${span} ${wide}`}
+                  className="flex min-w-0 flex-col rounded-[20px] border border-slate-200 bg-white p-4 sm:p-5"
                 >
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ecfeff] text-[#0e7490]">
                     <Icon className="h-5 w-5" aria-hidden="true" />
@@ -260,14 +258,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <h2 id="exemplos-titulo" className="mt-2 max-w-2xl text-[clamp(1.6rem,4vw,2.4rem)] font-extrabold leading-tight tracking-[-0.035em]">
             Veja o site no celular e o vídeo pronto para postar
           </h2>
-          <div className="mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2">
+          <div className="mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 lg:justify-center">
             {SITE_EXAMPLES.map((example) => (
               <a
                 key={example.href}
                 href={example.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-[148px] shrink-0 snap-start flex-col"
+                className="flex w-[168px] shrink-0 snap-start flex-col lg:w-[240px]"
               >
                 <span className="relative block rounded-[1.7rem] border-[7px] border-slate-950 bg-slate-950">
                   <span className="absolute left-1/2 top-1.5 z-10 h-1.5 w-10 -translate-x-1/2 rounded-full bg-slate-700" aria-hidden="true" />
@@ -289,9 +287,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <h3 className="mt-6 text-lg font-extrabold tracking-tight">Vídeos que a gente já fez com IA</h3>
           <p className="mt-1 text-sm leading-relaxed text-slate-600">Toque para ver. O vídeo começa sem som.</p>
-          <div className="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1">
+          <div className="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1 lg:justify-center">
             {EXAMPLE_VIDEOS.map((video) => (
-                <div key={video.id} className="w-[42%] max-w-[170px] shrink-0 snap-start">
+                <div key={video.id} className="w-[42%] max-w-[170px] shrink-0 snap-start lg:w-[220px] lg:max-w-none">
                 <ExampleVideo src={video.src} poster={video.poster} label={video.label === 'Loja' ? 'Loja' : video.label} />
               </div>
             ))}
@@ -314,16 +312,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className="bg-slate-950 px-6 py-8 text-white sm:px-8 lg:col-span-5">
                 <p className="text-sm font-bold text-[#67e8f9]">Site</p>
                 <p className="mt-4 text-sm font-semibold text-slate-300">12x de</p>
-                <p className="text-6xl font-extrabold tracking-[-0.04em]">R$ 50</p>
-                <p className="mt-2 text-lg font-bold">Total de R$ 600</p>
+                <p className="text-6xl font-extrabold tracking-[-0.04em]">R$ 50</p>
+                <p className="mt-2 text-lg font-bold">Total de R$ 600</p>
                 <p className="mt-3 text-base leading-relaxed text-slate-200">
-                  ou R$ 540 à vista, com 10% de desconto nesta primeira contratação.
+                  ou R$ 540 à vista, com 10% de desconto nesta primeira contratação.
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-slate-300">
-                  Renovação opcional de R$ 180 por ano, só domínio e hospedagem.
+                  Renovação opcional de R$ 180 por ano, só domínio e hospedagem.
                 </p>
                 <div className="mt-8">
-                  <WaLink href={whatsappHref('Quero o site em 12x de R$ 50 (total de R$ 600) ou R$ 540 à vista.')} tone="light">
+                  <WaLink href={whatsappHref('Olá! Vim pelo site da Sentinel e quero o site em 12x de R$ 50 (total de R$ 600) ou R$ 540 à vista.')} tone="light">
                     Quero esse site
                   </WaLink>
                 </div>
@@ -375,7 +373,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               ))}
             </div>
             <p className="mt-6 max-w-2xl text-sm leading-relaxed text-slate-600">
-              Nos planos mensais, no máximo metade dos vídeos pode mostrar pessoas (2 no Básico e 4 no Completo).
+              Nos planos mensais, até 2 vídeos (Básico) ou 4 (Completo) podem ter pessoas, criadas com IA.
             </p>
             <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>
@@ -403,50 +401,20 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
           </article>
 
-          <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
-            <article className="rounded-[20px] border border-slate-200 bg-white p-6">
+          <div className="mt-4 grid grid-cols-1 gap-4">
+            <article className="max-w-xl rounded-[20px] border border-slate-200 bg-white p-6">
               <h3 className="text-lg font-extrabold">Cuidamos do seu Instagram</h3>
               <p className="mt-3 text-2xl font-extrabold tracking-tight">Orçamento pelo WhatsApp</p>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 Conta o que você precisa e a gente monta junto um plano que cabe no seu bolso.
               </p>
               <a
-                href={whatsappHref('Olá! Vim pelo site da Sentinel. Quero conversar sobre as redes do meu negócio.')}
+                href={whatsappHref('Olá! Vim pelo site da Sentinel. Quero conversar sobre o Instagram do meu negócio.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#128C7E] px-4 text-sm font-bold text-white"
               >
                 Montar o plano
-              </a>
-            </article>
-            <article className="rounded-[20px] border border-slate-200 bg-white p-6">
-              <h3 className="text-lg font-extrabold">Google Meu Negócio</h3>
-              <p className="mt-3 text-2xl font-extrabold tracking-tight">Vem junto com o site</p>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                A gente configura o Perfil da Empresa no Google junto com o seu site: nome, mapa, horário e fotos. O perfil no Google é gratuito.
-              </p>
-              <a
-                href={whatsappHref('Olá! Vim pelo site da Sentinel. Quero conversar sobre o Perfil da Empresa no Google.')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl bg-slate-950 px-4 text-sm font-bold text-white"
-              >
-                Conversar sobre o perfil
-              </a>
-            </article>
-            <article className="rounded-[20px] border border-slate-200 bg-white p-6">
-              <h3 className="text-lg font-extrabold">WhatsApp</h3>
-              <p className="mt-3 text-2xl font-extrabold tracking-tight">Vem junto com o site</p>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                O botão de WhatsApp vai no site e no perfil do Google, para o cliente chamar na hora. Se você quiser um atendimento mais completo, a gente combina o valor na conversa.
-              </p>
-              <a
-                href={whatsappHref('Olá! Vim pelo site da Sentinel. Quero conversar sobre o WhatsApp do meu negócio.')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl bg-slate-950 px-4 text-sm font-bold text-white"
-              >
-                Orçamento pelo WhatsApp
               </a>
             </article>
           </div>
@@ -482,12 +450,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <details key={item.q} className="group">
                 <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-bold [&::-webkit-details-marker]:hidden">
                   {item.q}
-                  <span className="text-xl font-normal text-slate-400 group-open:hidden" aria-hidden="true">
-                    +
-                  </span>
-                  <span className="hidden text-xl font-normal text-slate-400 group-open:inline" aria-hidden="true">
-                    –
-                  </span>
+                  <ChevronDown className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180" aria-hidden="true" />
                 </summary>
                 <p className="pb-5 text-sm leading-relaxed text-slate-600">{item.a}</p>
               </details>
@@ -501,11 +464,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="rounded-[28px] bg-slate-950 px-6 py-12 text-white sm:px-12 sm:py-16">
             <p className="text-sm font-bold text-[#67e8f9]">Contato</p>
             <h2 id="contato-titulo" className="mt-3 max-w-xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em]">
-              Chama no WhatsApp e conta como o cliente chega hoje
+              Chama no WhatsApp e conta do seu negócio
             </h2>
             <p className="mt-4 text-lg font-semibold">{SITE.phoneDisplay}</p>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-300">
-              Atendimento em todo o Brasil. Segunda a sexta, das 8h às 19h. Sábado, das 9h às 14h.
+              Atendimento em todo o Brasil, pelo WhatsApp.
             </p>
             <div className="mt-8">
               <WaLink href={whatsappHref(NEUTRAL_WHATSAPP_TEXT)} tone="light">

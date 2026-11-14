@@ -65,7 +65,7 @@ const FLOWS: AutomationFlow[] = [
       { sender: 'user', text: '1️⃣ Suíte Master Hidro', time: '23:43' },
       {
         sender: 'bot',
-        text: 'Excelente escolha! A Suíte Master tem cama King, varanda panorâmica e hidromassagem dupla.\n\nPara o feriado temos as últimas 2 unidades com 15% OFF reservando direto aqui: R$ 580/diária com café artesanal incluso.\n\nDeseja pré-reservar suas datas agora?',
+        text: 'Excelente escolha! A Suíte Master tem cama King, varanda panorâmica e hidromassagem dupla.\n\nPara o feriado temos as últimas 2 unidades com 15% OFF reservando direto aqui: R$ 580/diária com café artesanal incluso.\n\nDeseja pré-reservar suas datas agora?',
         time: '23:43'
       }
     ]

@@ -57,7 +57,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
         titulo: 'Aparecer com clareza na busca “pizzaria em Cabo Frio”',
         paragrafos: [
           'Com a temporada de verão chegando, muita gente que está na cidade, inclusive turista, pesquisa no Google antes de escolher onde jantar. O Instagram de vocês está forte, mas ele não é o site que o Google mostra, e nem toda busca termina no feed.',
-          'Uma página sua ajuda a apresentar o rodízio, o horário e um jeito de chamar quando a pessoa está comparando opções. Assim, quem já está procurando encontra a informação e um jeito de chamar.',
+          'Uma página sua ajuda a apresentar o rodízio, o horário e um jeito de chamar quando a pessoa está comparando opções. Assim, quem já está procurando acha tudo e chama na hora.',
         ],
       },
       {
@@ -77,7 +77,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -129,7 +129,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a pousada, onde fica, o que está incluso e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a pousada, onde fica, o que está incluso e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -182,7 +182,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página nova resolve',
     paginaResolveTitulo: 'As casas continuam as mesmas. A página acompanha a temporada de agora.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando as casas, a localização, o que está incluso e um botão para chamar no WhatsApp, com informações da temporada atual.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando as casas, a localização, o que está incluso e um botão para chamar no WhatsApp, com informações da temporada atual.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -231,7 +231,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O movimento de vocês continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -281,7 +281,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -339,7 +339,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página nova resolve',
     paginaResolveTitulo: 'O cuidado de vocês continua. O caminho até a agenda fica mais claro.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando os tratamentos, as três unidades, o horário e um botão de WhatsApp que já abre a conversa certa.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando os tratamentos, as três unidades, o horário e um botão de WhatsApp que já abre a conversa certa.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -391,7 +391,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a loja, as marcas, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a loja, as marcas, onde fica, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -445,7 +445,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -497,7 +497,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página nova resolve',
     paginaResolveTitulo: 'O cuidado com os pets continua. O caminho até a agenda fica mais claro.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando os serviços, onde fica, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -550,7 +550,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página nova resolve',
     paginaResolveTitulo: 'O bom atendimento continua. O link do Google volta a levar a algum lugar.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês vendem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês vendem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -598,7 +598,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'A loja continua a mesma. A página completa o caminho.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -652,7 +652,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página nova resolve',
     paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os pacotes da temporada, onde fica e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a pousada, os pacotes da temporada, onde fica e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -699,7 +699,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O atendimento de vocês continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando os quartos, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando os quartos, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -747,7 +747,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O cuidado de vocês continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -797,7 +797,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O acolhimento de vocês continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a pousada, o que está incluso, onde fica e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -849,7 +849,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -901,7 +901,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -953,7 +953,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram nem a página de pedido. É ter uma página no celular, com até cinco seções, mostrando a casa, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram nem a página de pedido. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a casa, onde fica, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -1005,7 +1005,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -1057,7 +1057,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -1105,7 +1105,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'A loja continua a mesma. A página completa o caminho.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando o que vocês oferecem, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -1154,7 +1154,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -1203,7 +1203,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'A pousada continua a mesma. O caminho até a reserva fica mais curto.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a pousada, os quartos, onde fica e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -1251,7 +1251,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O cardápio continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando a casa, os lanches, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a casa, os lanches, onde fica, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -1299,7 +1299,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'A lanchonete continua a mesma. O pedido fica mais perto.',
     paginaResolve: [
-      'A ideia é uma página no celular, com até cinco seções, mostrando os lanches, onde ficam, o horário e um botão para chamar no WhatsApp.',
+      'A ideia é um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando os lanches, onde ficam, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -1350,7 +1350,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],
@@ -1401,7 +1401,7 @@ export const DIAGNOSTICOS: Diagnostico[] = [
     paginaResolveKicker: 'O que uma página resolve',
     paginaResolveTitulo: 'O Instagram continua. A página completa o caminho.',
     paginaResolve: [
-      'A ideia não é trocar o Instagram. É ter uma página no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
+      'A ideia não é trocar o Instagram. É ter um site do seu negócio, feito para abrir bem no celular, com até cinco seções, mostrando a casa, o cardápio, onde fica, o horário e um botão para chamar no WhatsApp.',
       'Também entra a configuração do perfil no Google, para o site e o telefone ficarem alinhados com a página.',
       'Os textos saem do material que vocês enviarem, e há uma rodada de ajustes para fechar do jeito combinado.',
     ],

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { soundFx } from '../components/SoundEffects';
+import { whatsappHref } from '../data/companySite';
 import { ferramentaOf, type ProductLanding } from '../data/productLandings';
 
 function buyClass(extra = ''): string {
@@ -24,7 +25,7 @@ export function ProductLandingPage({ product }: { product: ProductLanding }) {
   }, []);
 
   return (
-    <div className="bg-[#f7f6f3] pb-28 text-slate-950">
+    <div className="bg-white text-slate-950">
       <main id="conteudo-produto">
         <section className="bg-white" aria-labelledby="produto-titulo">
           <div className="mx-auto flex max-w-[1120px] flex-col gap-6 px-5 py-8 sm:px-8 sm:py-12 lg:grid lg:grid-cols-2 lg:items-center lg:gap-14">
@@ -95,6 +96,20 @@ export function ProductLandingPage({ product }: { product: ProductLanding }) {
 
         <section className="border-t border-slate-200" aria-labelledby="faq-produto">
           <div className="mx-auto max-w-[1120px] px-5 py-10 sm:px-8 sm:py-14">
+            <p className="mb-6 text-sm text-slate-600">
+              <a
+                href={whatsappHref(
+                  product.id === 'valorhora'
+                    ? 'Olá! Tenho uma dúvida sobre a planilha Valor Hora Real.'
+                    : 'Olá! Tenho uma dúvida sobre a planilha CotaCasa.',
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#0e7490] underline underline-offset-4"
+              >
+                Dúvida antes de comprar? Chama no WhatsApp.
+              </a>
+            </p>
             <h2 id="faq-produto" className="text-2xl font-extrabold tracking-tight sm:text-3xl">
               Perguntas frequentes
             </h2>
@@ -113,9 +128,35 @@ export function ProductLandingPage({ product }: { product: ProductLanding }) {
         </section>
       </main>
 
-      <footer className="border-t border-slate-200 bg-white">
+      <footer className="border-t border-slate-200 bg-white pb-28">
         <div className="mx-auto max-w-[1120px] px-5 py-8 sm:px-8">
-          <p className="text-sm font-semibold text-slate-700">Duas planilhas prontas, R$ 9,90 cada.</p>
+          <p className="text-sm font-semibold text-slate-800">
+            <a
+              href={
+                product.id === 'valorhora'
+                  ? 'https://cotacasa.sentinelsystems.com.br'
+                  : 'https://valorhora.sentinelsystems.com.br'
+              }
+              className="underline underline-offset-4"
+            >
+              {product.id === 'valorhora'
+                ? 'Conheça também: CotaCasa, a planilha da obra · R$\u00a09,90 →'
+                : 'Conheça também: Valor Hora Real, saiba quanto cobrar pela sua hora · R$\u00a09,90 →'}
+            </a>
+          </p>
+          <p className="mt-4 text-sm text-slate-600">
+            <a href="https://sentinelsystems.com.br/" className="font-semibold text-slate-800">
+              Sentinel Systems
+            </a>
+            {' · '}
+            <a href="https://sentinelsystems.com.br/ferramentas" className="font-semibold text-slate-800">
+              Planilhas
+            </a>
+            {' · '}
+            <a href="https://sentinelsystems.com.br/guias" className="font-semibold text-slate-800">
+              Guias
+            </a>
+          </p>
         </div>
       </footer>
 

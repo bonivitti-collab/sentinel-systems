@@ -51,7 +51,7 @@ export const PortfolioShowcase: React.FC<PortfolioShowcaseProps> = ({ onOpenCont
       category: 'web',
       title: 'Prime Estate - Portal Imobiliário Imersivo 3D',
       subtitle: 'Portal de alto padrão para venda de mansões e coberturas de alto padrão no Brasil com tours 360° fluidos.',
-      metric: 'R$ 48M transacionados no ecossistema',
+      metric: 'R$ 48M transacionados no ecossistema',
       tags: ['Next.js 15', 'Three.js / WebGL', 'PostgreSQL', 'Cloudflare Edge'],
       color: 'from-teal-500/20 via-cyan-500/10 to-transparent',
       borderColor: 'border-teal-500/40',

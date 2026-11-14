@@ -10,7 +10,7 @@ export const SITE = {
   phoneWa: '5522998434956',
   email: 'sentinelsystemsai@gmail.com',
   whatsappText:
-    'Olá! Vim pelo site da Sentinel Systems. Quero o site essencial com a configuração básica do Perfil da Empresa no Google. Vi as 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
+    'Olá! Vim pelo site da Sentinel Systems. Quero o site essencial com a configuração básica do Perfil da Empresa no Google. Vi as 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
 } as const;
 
 export function whatsappHref(text: string = SITE.whatsappText): string {
@@ -69,7 +69,7 @@ export const PAGES: Record<PageKey, PageMeta> = {
     label: 'Início',
     title: 'Seu cliente te procura e não te acha | Sentinel Systems',
     description:
-      'Seja encontrado no Google e receba mais ligações e mensagens no WhatsApp. Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista. Vídeos com IA a partir de R$ 397.',
+      'Seja encontrado no Google e receba mais ligações e mensagens no WhatsApp. Site em 12x de R$ 50, total de R$ 600, ou R$ 540 à vista. Vídeos com IA a partir de R$ 397.',
   },
   ferramentas: {
     key: 'ferramentas',
@@ -138,13 +138,13 @@ export const SERVICES: SentinelService[] = [
     summary:
       'A página que abre no celular quando alguém já te achou e quer saber se liga, chama no WhatsApp ou vai até você.',
     why: 'Ser encontrado não basta se o clique seguinte se perde. No celular, a página precisa abrir e deixar óbvio o que a empresa faz, onde fica e como falar com ela. Um site confuso devolve a pessoa para a busca.',
-    card: '12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
+    card: '12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
     price: {
       href: '/sites#oferta',
       label: 'Ver a oferta do site',
-      headline: '12 parcelas de R$ 50',
+      headline: '12 parcelas de R$ 50',
       detail:
-        'Total de R$ 600, ou R$ 540 à vista, com 10% de desconto nesta primeira contratação. Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem.',
+        'Total de R$ 600, ou R$ 540 à vista, com 10% de desconto nesta primeira contratação. Depois de 12 meses, renovar é opcional: R$ 180 por ano, só domínio e hospedagem.',
     },
     related: null,
     whatsappLabel: 'Quero esse site no WhatsApp',
@@ -179,7 +179,7 @@ export const SERVICES: SentinelService[] = [
       label: 'Ver o pacote do site',
       headline: 'Entra na oferta do site',
       detail:
-        'Se o Google aceitar o perfil do seu tipo de negócio, a gente faz essa configuração junto. O perfil é gratuito. O valor paga esse trabalho. A verificação depende do Google.',
+        'Perfil da Empresa no Google configurado junto (quando o Google aceita o seu tipo de negócio). O perfil é gratuito. O valor paga esse trabalho. A verificação depende do Google.',
     },
     whatsappLabel: 'Conversar sobre o perfil',
     whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre o Perfil da Empresa no Google.',
@@ -238,14 +238,14 @@ export const SERVICES: SentinelService[] = [
     summary:
       'Instagram e Status do WhatsApp mostram o negócio para quem acompanha. A gestão do perfil a gente combina no WhatsApp.',
     why: 'O feed alcança quem já acompanha. A busca alcança quem tem um problema agora. Os dois momentos são diferentes, e um não faz o trabalho do outro.',
-    card: 'Gestão do Instagram: orçamento pelo WhatsApp. Vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.',
+    card: 'Gestão do Instagram: orçamento pelo WhatsApp. Vídeos: R$ 397, R$ 997/mês e R$ 1.797/mês.',
     price: null,
     related: {
       href: '/videos',
       label: 'Ver os pacotes de vídeo',
       headline: 'Vídeos para o Instagram e o Status',
       detail:
-        'Avulso R$ 397. Mensal Básico R$ 997/mês. Mensal Completo R$ 1.797/mês. A gestão do Instagram é outro trabalho, combinado no WhatsApp.',
+        'Avulso R$ 397. Mensal Básico R$ 997/mês. Mensal Completo R$ 1.797/mês. A gestão do Instagram é outro trabalho, combinado no WhatsApp.',
     },
     whatsappLabel: 'Conversar sobre as redes',
     whatsappMessage: 'Olá! Vim pelo site da Sentinel. Quero conversar sobre as redes do meu negócio.',
@@ -260,14 +260,14 @@ export const SERVICES: SentinelService[] = [
       },
       {
         title: 'Gestão do perfil',
-        text: 'Cuidar do perfil no dia a dia a gente combina no WhatsApp. Os vídeos prontos custam R$ 397, R$ 997 por mês ou R$ 1.797 por mês.',
+        text: 'Cuidar do perfil no dia a dia a gente combina no WhatsApp. Os vídeos prontos custam R$ 397, R$ 997 por mês ou R$ 1.797 por mês.',
       },
     ],
   },
 ];
 
 export const HOME_FAQ = [
-  'O que entra nos R$ 600?',
+  'O que entra nos R$ 600?',
   'Isso é uma mensalidade?',
   'E depois dos 12 meses?',
   'O site do meu negócio vai aparecer em primeiro no Google?',
@@ -276,20 +276,20 @@ export const HOME_FAQ = [
 
 export const FAQ = [
   {
-    q: 'O que entra nos R$ 600?',
-    a: 'Uma página no celular, com serviços, localização e WhatsApp. Se o Google aceitar o perfil do seu tipo de negócio, a gente faz essa configuração junto.',
+    q: 'O que entra nos R$ 600?',
+    a: 'Um site do seu negócio que abre bem no celular, com até cinco seções, domínio .com.br e hospedagem por 12 meses. Se o Google aceitar o seu tipo de negócio, a gente também configura o Perfil da Empresa.',
   },
   {
     q: 'Isso é uma mensalidade?',
-    a: 'Não. São 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista.',
+    a: 'Não. São 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista.',
   },
   {
     q: 'E depois dos 12 meses?',
-    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção, e a renovação não é automática.',
+    a: 'A renovação é opcional: R$ 180 por ano, só domínio e hospedagem. Não inclui manutenção, e a renovação não é automática.',
   },
   {
     q: 'O site do meu negócio vai aparecer em primeiro no Google?',
-    a: 'Não. Ninguém garante a primeira posição. Se o Google aceitar o perfil do seu tipo de negócio, a gente faz essa configuração junto.',
+    a: 'Não. Ninguém pode garantir a primeira posição. O que a gente faz é deixar seu negócio fácil de achar e de chamar.',
   },
   {
     q: 'Já tenho Instagram. Preciso do site mesmo assim?',
@@ -297,7 +297,7 @@ export const FAQ = [
   },
   {
     q: 'Como eu contrato?',
-    a: 'Chame no WhatsApp (22) 99843-4956. O combinado segue por escrito antes de começar.',
+    a: 'Antes de começar, a gente manda tudo combinado por escrito.',
   },
 ] as const;
 
@@ -551,7 +551,7 @@ export function jsonLdFor(path: string): Record<string, unknown> {
       '@id': `${canonicalUrl('/')}#site`,
       name: 'Site e Perfil da Empresa no Google',
       description:
-        'Criação de site para empresa e para pequeno negócio, com página no celular e configuração básica do Perfil da Empresa no Google. A criação custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista. A renovação opcional, só domínio e hospedagem, é R$ 180 por ano.',
+        'Criação de site para empresa e para pequeno negócio, com página no celular e configuração básica do Perfil da Empresa no Google. A criação custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista. A renovação opcional, só domínio e hospedagem, é R$ 180 por ano.',
       url: `${canonicalUrl('/')}#precos`,
       areaServed: { '@type': 'Country', name: 'Brasil' },
       provider: { '@id': ORGANIZATION_ID },
@@ -561,21 +561,21 @@ export function jsonLdFor(path: string): Record<string, unknown> {
           name: 'Criação parcelada',
           price: '600',
           priceCurrency: 'BRL',
-          description: '12 parcelas de R$ 50. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais.',
+          description: '12 parcelas de R$ 50. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais.',
         },
         {
           '@type': 'Offer',
           name: 'Criação à vista',
           price: '540',
           priceCurrency: 'BRL',
-          description: 'R$ 540 à vista na contratação, com 10% de desconto nesta primeira contratação.',
+          description: 'R$ 540 à vista na contratação, com 10% de desconto nesta primeira contratação.',
         },
         {
           '@type': 'Offer',
           name: 'Renovação anual opcional',
           price: '180',
           priceCurrency: 'BRL',
-          description: 'R$ 180 por ano, só domínio e hospedagem, depois de 12 meses. Não inclui manutenção e não renova sozinha.',
+          description: 'R$ 180 por ano, só domínio e hospedagem, depois de 12 meses. Não inclui manutenção e não renova sozinha.',
         },
       ],
     };

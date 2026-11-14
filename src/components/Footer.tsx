@@ -27,8 +27,8 @@ export function Footer({ onNavigate }: FooterProps) {
 
   return (
     <footer className="border-t border-slate-200 bg-white pb-24 pt-12 text-slate-600">
-      <div className="mx-auto grid w-full max-w-[1120px] grid-cols-1 gap-10 px-5 sm:px-8 md:grid-cols-12">
-        <div className="md:col-span-4">
+      <div className="mx-auto grid w-full max-w-[1120px] grid-cols-2 gap-x-6 gap-y-8 px-5 sm:px-8 md:grid-cols-12 md:gap-10">
+        <div className="col-span-2 md:col-span-4">
           <p className="text-base font-extrabold text-slate-950">Sentinel Systems</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed">
             Site, Google Meu Negócio, WhatsApp, Instagram e vídeos para o pequeno negócio ser encontrado e receber mais chamados.
@@ -68,7 +68,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </a>
             </li>
             {PUBLISHED_GUIDES.map((guide) => (
-              <li key={guide.slug}>
+              <li key={guide.slug} className="hidden md:block">
                 <a href={guide.slug} onClick={(event) => go(event, guide.slug)} className="inline-flex min-h-10 items-center text-sm text-slate-700">
                   {guide.title}
                 </a>

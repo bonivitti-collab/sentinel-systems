@@ -6,7 +6,7 @@ export function FloatingWhatsAppButton() {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const nodes = ['exemplos', 'precos', 'contato']
+    const nodes = ['exemplos', 'precos', 'perguntas', 'contato']
       .map((id) => document.getElementById(id))
       .filter((node): node is HTMLElement => Boolean(node));
     if (nodes.length === 0) return;

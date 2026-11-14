@@ -93,7 +93,7 @@ export const DedicatedGuidePage: React.FC<DedicatedGuidePageProps> = ({ guide, o
                 Quer aplicar isso no seu comércio sem complicação?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600">
-                A Sentinel Systems cuida do seu site no Google e robô no WhatsApp com mensalidades a partir de R$ 149/mês.
+                A Sentinel Systems cuida do seu site no Google e robô no WhatsApp com mensalidades a partir de R$ 149/mês.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">

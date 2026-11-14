@@ -55,13 +55,13 @@ export const GUIDES_LIST: GuideItem[] = [
     slug: 'quanto-custa-criar-e-manter-um-site-profissional',
     title: 'Quanto custa criar e manter um site profissional sem pegadinhas?',
     headline: 'Valores reais de mercado, custos de hospedagem e por que pacotes mensais são mais vantajosos.',
-    excerpt: 'Entenda a diferença entre pagar R$ 5.000 para um programador avulso que depois some vs contratar uma assinatura mensal com manutenção e suporte contínuo.',
+    excerpt: 'Entenda a diferença entre pagar R$ 5.000 para um programador avulso que depois some vs contratar uma assinatura mensal com manutenção e suporte contínuo.',
     readTime: '4 min de leitura',
     publishedDate: '2026-10-22',
     content: [
       'Muitos empresários já passaram pelo trauma de pagar caro para uma agência ou sobrinho criar um site, para poucos meses depois o site quebrar, sair do ar ou ninguém conseguir trocar uma foto de promoção.',
-      'Um site profissional tem custos fixos: registro do domínio no Registro.br (cerca de R$ 40/ano), servidor de hospedagem rápida com certificado SSL e manutenção técnica periódica para segurança contra invasões.',
-      'O modelo de assinatura mensal da Sentinel Systems (com planos de R$ 164 a R$ 649/mês) resolve esse problema: a taxa de entrada é simbólica e acessível, e você conta com suporte contínuo todo mês para trocar fotos, cardápios e manter o robô de WhatsApp ativo.',
+      'Um site profissional tem custos fixos: registro do domínio no Registro.br (cerca de R$ 40/ano), servidor de hospedagem rápida com certificado SSL e manutenção técnica periódica para segurança contra invasões.',
+      'O modelo de assinatura mensal da Sentinel Systems (com planos de R$ 164 a R$ 649/mês) resolve esse problema: a taxa de entrada é simbólica e acessível, e você conta com suporte contínuo todo mês para trocar fotos, cardápios e manter o robô de WhatsApp ativo.',
       'Você tem a tranquilidade de saber que tem uma equipe de plantão cuidando de tudo, sem contratos de fidelidade forçada.'
     ]
   },
@@ -129,7 +129,7 @@ export const GUIDES_LIST: GuideItem[] = [
     content: [
       'O Registro.br é o departamento do NIC.br responsável pela administração de todos os domínios terminados em .br na internet brasileira.',
       'Ter um domínio `.com.br` confere credibilidade instantânea aos olhos do cliente brasileiro, além de ser o formato prioritário nas buscas locais do Google Brasil.',
-      'A anuidade oficial do Registro.br custa R$ 40 por ano e garante que nenhuma outra pessoa ou empresa possa usar o seu nome na internet dentro do Brasil.',
+      'A anuidade oficial do Registro.br custa R$ 40 por ano e garante que nenhuma outra pessoa ou empresa possa usar o seu nome na internet dentro do Brasil.',
       'Ao contratar a Sentinel Systems, nós auxiliamos na configuração das zonas de DNS e apontamento de servidores para que você não precise se preocupar com aspectos técnicos.'
     ]
   },

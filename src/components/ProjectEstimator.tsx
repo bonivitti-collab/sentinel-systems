@@ -57,7 +57,7 @@ export const ProjectEstimator: React.FC = () => {
       .filter(Boolean)
       .join(', ');
 
-    const text = `Olá, time da Sentinel Systems! 🌊\n\nEstive na calculadora do site oficial (sentinelsystems.com.br) e configurei uma proposta preliminar para minha empresa:\n\n*Tipo de Projeto:* ${currentType.name}\n*Cronograma:* ${timelineModifiers[timeline]?.label}\n*Recursos Selecionados:* ${selectedFeatNames || 'Nenhum'}\n*Estimativa da Calculadora:* ~R$ ${total.toLocaleString('pt-BR')}\n\nGostaria de agendar uma reunião de diagnóstico e refinar o escopo com a equipe de engenharia.`;
+    const text = `Olá, time da Sentinel Systems! 🌊\n\nEstive na calculadora do site oficial (sentinelsystems.com.br) e configurei uma proposta preliminar para minha empresa:\n\n*Tipo de Projeto:* ${currentType.name}\n*Cronograma:* ${timelineModifiers[timeline]?.label}\n*Recursos Selecionados:* ${selectedFeatNames || 'Nenhum'}\n*Estimativa da Calculadora:* ~R$ ${total.toLocaleString('pt-BR')}\n\nGostaria de agendar uma reunião de diagnóstico e refinar o escopo com a equipe de engenharia.`;
 
     // WhatsApp link (Sentinel Systems contact)
     window.open(`https://wa.me/5522998434956?text=${encodeURIComponent(text)}`, '_blank');
@@ -142,7 +142,7 @@ export const ProjectEstimator: React.FC = () => {
                         <span className="text-xs font-medium text-slate-200">{f.name}</span>
                       </div>
                       <span className="text-[11px] font-mono text-cyan-400">
-                        + R$ {f.cost.toLocaleString('pt-BR')}
+                        + R$ {f.cost.toLocaleString('pt-BR')}
                       </span>
                     </button>
                   );
@@ -190,7 +190,7 @@ export const ProjectEstimator: React.FC = () => {
               <div className="mb-6">
                 <div className="text-xs font-mono text-slate-400 uppercase mb-1">Investimento Aproximado</div>
                 <div className="text-4xl sm:text-5xl font-black text-white tracking-tight flex items-baseline gap-2">
-                  <span>R$ {total.toLocaleString('pt-BR')}</span>
+                  <span>R$ {total.toLocaleString('pt-BR')}</span>
                   <span className="text-xs font-normal text-slate-400 font-mono">/ projeto</span>
                 </div>
                 <div className="text-xs text-slate-400 mt-2 flex items-center gap-1.5">
@@ -203,11 +203,11 @@ export const ProjectEstimator: React.FC = () => {
               <div className="p-4 rounded-xl bg-slate-950/80 border border-white/5 space-y-2 mb-8 text-xs font-mono">
                 <div className="text-slate-300 flex justify-between">
                   <span>Base do Projeto:</span>
-                  <span className="text-white">R$ {currentType.base.toLocaleString('pt-BR')}</span>
+                  <span className="text-white">R$ {currentType.base.toLocaleString('pt-BR')}</span>
                 </div>
                 <div className="text-slate-300 flex justify-between">
                   <span>Recursos Extras ({features.length}):</span>
-                  <span className="text-white">R$ {featureCost.toLocaleString('pt-BR')}</span>
+                  <span className="text-white">R$ {featureCost.toLocaleString('pt-BR')}</span>
                 </div>
                 <div className="text-slate-300 flex justify-between">
                   <span>Ajuste Cronograma:</span>

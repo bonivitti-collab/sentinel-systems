@@ -49,7 +49,7 @@ export const SITE_MODELS: SiteModel[] = [
     mockBadge: 'Alta Conversão para Delivery & Reservas',
     stats: [
       { label: 'Aumento de Pedidos Diretos', value: '+320%' },
-      { label: 'Economia em Taxas de Apps', value: 'R$ 2.400/mês' },
+      { label: 'Economia em Taxas de Apps', value: 'R$ 2.400/mês' },
       { label: 'Tempo de Carregamento', value: '0.4s' }
     ]
   },
@@ -143,7 +143,7 @@ export const SITE_MODELS: SiteModel[] = [
     stats: [
       { label: 'Páginas Indexadas no Google', value: '39 Páginas' },
       { label: 'Orçamentos Mensais Recebidos', value: '4x Mais' },
-      { label: 'Ticket Médio Fechado', value: 'R$ 85.000' }
+      { label: 'Ticket Médio Fechado', value: 'R$ 85.000' }
     ]
   },
   {

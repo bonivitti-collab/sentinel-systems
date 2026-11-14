@@ -83,7 +83,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenContact, onNavig
               </h2>
               <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
                 <p>
-                  Durante anos, acompanhamos o mesmo drama em dezenas de comércios e empresas por todo o Brasil: donos de negócios investiam R$ 3.000 a R$ 6.000 na criação de um site com agências locais, apenas para receber um portal pesado, cheio de bugs, que demorava 8 segundos para abrir no celular e nunca trouxe um único cliente pelo Google.
+                  Durante anos, acompanhamos o mesmo drama em dezenas de comércios e empresas por todo o Brasil: donos de negócios investiam R$ 3.000 a R$ 6.000 na criação de um site com agências locais, apenas para receber um portal pesado, cheio de bugs, que demorava 8 segundos para abrir no celular e nunca trouxe um único cliente pelo Google.
                 </p>
                 <p>
                   Para piorar, os criadores sumiam, não prestavam suporte ou cobravam fortunas para mudar um simples telefone ou preço.

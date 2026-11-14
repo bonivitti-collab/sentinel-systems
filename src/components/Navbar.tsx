@@ -8,10 +8,19 @@ interface NavbarProps {
   onNavigate: (path: string) => void;
 }
 
+const SITE_ORIGIN = 'https://sentinelsystems.com.br';
+
 const LINKS = [
-  { href: '/#servicos', label: 'Serviços' },
-  { href: '/#exemplos', label: 'Exemplos' },
-  { href: '/#precos', label: 'Preços' },
+  { href: `${SITE_ORIGIN}/#servicos`, label: 'Serviços' },
+  { href: `${SITE_ORIGIN}/#exemplos`, label: 'Exemplos' },
+  { href: `${SITE_ORIGIN}/#precos`, label: 'Preços' },
+] as const;
+
+const MOBILE_LINKS = [
+  ...LINKS,
+  { href: `${SITE_ORIGIN}/ferramentas`, label: 'Planilhas' },
+  { href: `${SITE_ORIGIN}/guias`, label: 'Guias' },
+  { href: `${SITE_ORIGIN}/#contato`, label: 'Contato' },
 ] as const;
 
 function useHash() {
@@ -34,17 +43,23 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const hash = useHash();
 
   const go = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    const url = new URL(href);
+    if (typeof window !== 'undefined' && url.hostname !== window.location.hostname) {
+      setOpen(false);
+      return;
+    }
     event.preventDefault();
     setOpen(false);
-    onNavigate(href);
+    const path = url.pathname.replace(/\/+$/, '') || '/';
+    onNavigate(url.hash ? `${path}${url.hash}` : path);
   };
 
-  const active = (href: string) => currentPath === '/' && hash === href.slice(1);
+  const active = (href: string) => currentPath === '/' && hash === new URL(href).hash;
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-[1120px] items-center justify-between gap-3 px-5 sm:px-8">
-        <a href="/" onClick={(event) => go(event, '/')} className="min-w-0 shrink" aria-label="Sentinel Systems, início">
+        <a href={`${SITE_ORIGIN}/`} onClick={(event) => go(event, `${SITE_ORIGIN}/`)} className="min-w-0 shrink" aria-label="Sentinel Systems, início">
           <SentinelLogo size="sm" variant="light" />
         </a>
 
@@ -98,7 +113,7 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
 
       {open && (
         <nav id="menu-mobile" className="border-t border-slate-200 bg-white px-5 py-3 md:hidden" aria-label="Menu">
-          {LINKS.map((link) => (
+          {MOBILE_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}

@@ -1,13 +1,13 @@
 ---
 seo_title: "Como vender mais pelo WhatsApp Business: passo a passo"
-meta_description: "Perfil, catálogo, mensagem de saudação, etiquetas e follow-up: passo a passo para vender mais pelo WhatsApp Business sem virar spam."
+meta_description: "Perfil, catálogo, mensagem de saudação, etiquetas e mensagem de retorno educada: passo a passo para vender mais pelo WhatsApp Business sem virar spam."
 slug: /guias/como-vender-mais-pelo-whatsapp
 palavra_chave_principal: "como vender mais pelo whatsapp business"
 perguntas_relacionadas:
   - "Como vender pelo WhatsApp Business passo a passo?"
   - "Como fazer o catálogo no WhatsApp Business?"
   - "Que mensagem de saudação colocar no WhatsApp Business?"
-  - "Como fazer follow-up sem ser chato?"
+  - "Como mandar uma mensagem de retorno educada sem ser chato?"
   - "Posso mandar mensagem em massa para clientes?"
 links_internos: ["/#servicos", "/#contato"]
 ---
@@ -111,7 +111,7 @@ O erro mais comum é terminar com "qualquer coisa, me chama". Isso deixa o clien
 
 Quanto menos esforço, melhor. Tenha a chave Pix pronta numa resposta rápida, envie QR Code ou link de pagamento, e confirme quando o pagamento cair.
 
-## Passo 8: faça follow-up sem ser chato
+## Passo 8: mande uma mensagem de retorno educada sem ser chato
 
 Muita venda não acontece no primeiro contato. O cliente pediu preço e sumiu? Mande **uma** mensagem de retorno, útil e educada, um ou dois dias depois:
 

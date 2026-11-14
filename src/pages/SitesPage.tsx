@@ -14,9 +14,9 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
       id: 'site-essencial',
       name: 'Site Presença Essencial',
       badge: 'IDEAL PARA PEQUENOS COMÉRCIOS',
-      daily: 'R$ 5,40/dia',
+      daily: 'R$ 5,40/dia',
       monthlyPrice: '164',
-      setupInfo: 'Setup facilitado em até 12x de R$ 43 (ou R$ 429 à vista)',
+      setupInfo: 'Setup facilitado em até 12x de R$ 43 (ou R$ 429 à vista)',
       target: 'Prestadores de serviços, autônomos, pequenos comércios e negócios locais',
       description: 'Tenha um site moderno, bonito e rápido para aparecer quando alguém pesquisar pelo seu serviço na sua cidade.',
       features: [
@@ -34,9 +34,9 @@ export const SitesPage: React.FC<SitesPageProps> = ({ onOpenContact, onNavigate 
       id: 'site-pro',
       name: 'Site Comercial Pro & Google',
       badge: 'O MAIS ESCOLHIDO',
-      daily: 'R$ 9,10/dia',
+      daily: 'R$ 9,10/dia',
       monthlyPrice: '274',
-      setupInfo: 'Setup facilitado em até 12x de R$ 65 (ou R$ 649 à vista)',
+      setupInfo: 'Setup facilitado em até 12x de R$ 65 (ou R$ 649 à vista)',
       target: 'Clínicas, pousadas, restaurantes, imobiliárias e empresas de médio porte',
       description: 'Estrutura completa com múltiplas páginas, catálogo ou cardápio interativo e otimização avançada de SEO para dominar o Google.',
       features: [

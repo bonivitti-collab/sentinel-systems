@@ -71,7 +71,7 @@ Ninguém pode prometer quantos clientes um site vai trazer. Mas dá para fazer a
 2. **Veja quanto sobra de um cliente novo** (o que ele paga menos seus custos).
 3. **Divida o passo 1 pelo passo 2.** O resultado é quantos clientes novos por ano o site precisa trazer para empatar.
 
-**Exemplo ilustrativo** (troque pelos seus números): se o site custou R$ 600 no primeiro ano e sobra R$ 150 de cada cliente novo, ele precisa trazer 4 clientes no ano para se pagar. Um a cada três meses. Se sobra R$ 600 de cada cliente, basta 1.
+**Exemplo ilustrativo** (troque pelos seus números): se o site custou R$ 600 no primeiro ano e sobra R$ 150 de cada cliente novo, ele precisa trazer 4 clientes no ano para se pagar. Um a cada três meses. Se sobra R$ 600 de cada cliente, basta 1.
 
 Se o número que aparecer for pequeno perto do movimento do seu negócio, o site tende a valer a pena. Se for muito grande, comece com algo mais enxuto.
 
@@ -120,7 +120,7 @@ Não é preciso CNPJ para ter um site. O Registro.br permite registrar domínio 
 
 ## Quer ver se faz sentido para o seu caso?
 
-A Sentinel Systems faz sites profissionais e rápidos para pequenos negócios e autônomos: uma página clara no celular, com seus serviços, onde você atende e o botão de WhatsApp. O valor é R$ 600 em 12x de R$ 50, ou R$ 540 à vista (10% de desconto na primeira contratação). A renovação depois de um ano é opcional, por R$ 180/ano.
+A Sentinel Systems faz sites profissionais e rápidos para pequenos negócios e autônomos: uma página clara no celular, com seus serviços, onde você atende e o botão de WhatsApp. O valor é R$ 600 em 12x de R$ 50, ou R$ 540 à vista (10% de desconto na primeira contratação). A renovação depois de um ano é opcional, por R$ 180/ano.
 
 [Veja o que está incluído em Preços.](/#precos) ou [chame no WhatsApp](/#contato). Atendemos todo o Brasil, online.
 

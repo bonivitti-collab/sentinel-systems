@@ -27,7 +27,7 @@ export interface ProductLanding {
 }
 
 const RECEBE =
-  'Você compra pelo botão e recebe a planilha na hora, no seu e-mail. Ela abre no Google Planilhas e no Excel.';
+  'Você compra pelo botão e recebe a planilha na hora, no seu e-mail. Ela abre no Google Planilhas e no Excel. O pagamento é feito na Kiwify, plataforma segura de pagamento.';
 
 export const PRODUCT_LANDINGS: ProductLanding[] = [
   {
@@ -35,11 +35,11 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
     path: '/valorhora',
     host: 'valorhora.sentinelsystems.com.br',
     ferramentaId: 'valor-hora-real',
-    metaTitle: 'Valor Hora Real por R$ 9,90 | Sentinel',
+    metaTitle: 'Valor Hora Real por R$ 9,90 | Sentinel',
     metaDescription:
-      'Planilha para saber quanto cobrar pela hora, como freelancer ou MEI. Google Planilhas e Excel. R$ 9,90.',
+      'Planilha para saber quanto cobrar pela hora, como freelancer ou MEI. Google Planilhas e Excel. R$ 9,90.',
     ogFile: 'og-valorhora.png',
-    ogAlt: 'Planilha Valor Hora Real por R$ 9,90, da Sentinel Systems',
+    ogAlt: 'Planilha Valor Hora Real por R$ 9,90, da Sentinel Systems',
     coverLine: '',
     includes: [
       {
@@ -47,16 +47,16 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
         text: 'Você vê o preço mínimo, o ideal e o premium da sua hora.',
       },
       {
-        title: 'Orçamento pronto',
-        text: 'Tem um orçamento pronto na planilha.',
+        title: 'Orçamento para o cliente',
+        text: 'Coloque as horas de cada etapa e a planilha calcula o valor do serviço, com a mensagem pronta para mandar ao cliente.',
       },
       {
         title: 'Simulador de desconto',
-        text: 'Tem um simulador para ver o preço com desconto.',
+        text: 'O cliente pediu desconto? Veja na hora se ainda vale a pena.',
       },
       {
         title: 'Fórmulas protegidas',
-        text: 'As fórmulas vêm protegidas.',
+        text: 'As contas já vêm prontas e travadas, para você não apagar sem querer.',
       },
       {
         title: 'Guia em PDF',
@@ -75,11 +75,11 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         q: 'Quanto custa?',
-        a: 'R$ 9,90. O pagamento é feito na Kiwify.',
+        a: 'R$ 9,90. O pagamento é feito na Kiwify, plataforma segura de pagamento.',
       },
       {
         q: 'O que vem na planilha?',
-        a: 'Você vê o preço mínimo, o ideal e o premium da sua hora. Tem orçamento pronto, um simulador para ver o preço com desconto, fórmulas protegidas e um guia em PDF.',
+        a: 'Você vê o preço mínimo, o ideal e o premium da sua hora. Tem orçamento para o cliente, um simulador para ver o preço com desconto, fórmulas protegidas e um guia em PDF.',
       },
       {
         q: 'Funciona no celular?',
@@ -92,11 +92,11 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
     path: '/cotacasa',
     host: 'cotacasa.sentinelsystems.com.br',
     ferramentaId: 'cotacasa',
-    metaTitle: 'CotaCasa por R$ 9,90 | Sentinel',
+    metaTitle: 'CotaCasa por R$ 9,90 | Sentinel',
     metaDescription:
-      'Planilha para orçamento de obra por etapas, cotação e orçado x realizado. Google Planilhas e Excel. R$ 9,90.',
+      'Planilha para orçamento de obra por etapas, cotação e orçado x realizado. Google Planilhas e Excel. R$ 9,90.',
     ogFile: 'og-cotacasa.png',
-    ogAlt: 'Planilha CotaCasa por R$ 9,90, da Sentinel Systems',
+    ogAlt: 'Planilha CotaCasa por R$ 9,90, da Sentinel Systems',
     coverLine: 'Planilha de orçamento e controle de reforma.',
     includes: [
       {
@@ -109,11 +109,11 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         title: 'Orçado e realizado',
-        text: 'Acompanhe cada pagamento, o que foi orçado e o que foi feito.',
+        text: 'Acompanhe cada pagamento, o que foi orçado e o que você já pagou.',
       },
       {
-        title: 'Preços SINAPI dos 27 estados',
-        text: 'Inclui preços SINAPI dos 27 estados.',
+        title: 'Preços de referência dos 27 estados',
+        text: 'Tabela oficial de preços da construção (SINAPI, da Caixa).',
       },
       {
         title: 'Guia em PDF',
@@ -132,7 +132,7 @@ export const PRODUCT_LANDINGS: ProductLanding[] = [
       },
       {
         q: 'Quanto custa?',
-        a: 'R$ 9,90. O pagamento é feito na Kiwify.',
+        a: 'R$ 9,90. O pagamento é feito na Kiwify, plataforma segura de pagamento.',
       },
       {
         q: 'O que dá para acompanhar?',

@@ -14,7 +14,7 @@ export function FerramentasSection() {
           Ferramentas para a conta do dia a dia
         </h1>
         <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
-          Valor Hora Real e CotaCasa, R$ 9,90 cada. Saiba quanto cobrar pela hora e quanto a obra deve custar.
+          Valor Hora Real e CotaCasa, R$ 9,90 cada. Saiba quanto cobrar pela hora e quanto a obra deve custar.
         </p>
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {FERRAMENTAS.map((item) => (

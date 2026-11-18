@@ -462,7 +462,7 @@ function assertPage(diag: Diagnostico, html: string): void {
   if (!html.includes(`wa.me/${SITE.phoneWa}`)) {
     throw new Error(`WhatsApp da Sentinel ausente em ${diag.slug}`);
   }
-  if (html.includes('99972-6069') || html.includes('5522999726069')) {
+  if (html.includes('99843-4956') || html.includes('5522998434956')) {
     throw new Error(`número antigo do WhatsApp em ${diag.slug}`);
   }
 }

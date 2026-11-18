@@ -1,6 +1,6 @@
 import { useSyncExternalStore, useState, type MouseEvent } from 'react';
 import { Menu, MessageCircle, X } from 'lucide-react';
-import { NEUTRAL_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
+import { ORCAMENTO_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
 import { SentinelLogo } from './SentinelLogo';
 
 interface NavbarProps {
@@ -12,14 +12,12 @@ const SITE_ORIGIN = 'https://sentinelsystems.com.br';
 
 const LINKS = [
   { href: `${SITE_ORIGIN}/#servicos`, label: 'Serviços' },
-  { href: `${SITE_ORIGIN}/#exemplos`, label: 'Exemplos' },
-  { href: `${SITE_ORIGIN}/#precos`, label: 'Preços' },
+  { href: `${SITE_ORIGIN}/#como-trabalhamos`, label: 'Como trabalhamos' },
+  { href: `${SITE_ORIGIN}/#sobre`, label: 'Sobre' },
 ] as const;
 
 const MOBILE_LINKS = [
   ...LINKS,
-  { href: `${SITE_ORIGIN}/ferramentas`, label: 'Planilhas' },
-  { href: `${SITE_ORIGIN}/guias`, label: 'Guias' },
   { href: `${SITE_ORIGIN}/#contato`, label: 'Contato' },
 ] as const;
 
@@ -78,23 +76,23 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
             </a>
           ))}
           <a
-            href={whatsappHref(NEUTRAL_WHATSAPP_TEXT)}
+            href={whatsappHref(ORCAMENTO_WHATSAPP_TEXT)}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-1 inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#128C7E] px-4 text-sm font-bold text-white"
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
-            WhatsApp
+            Orçar projeto
           </a>
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
           <a
-            href={whatsappHref(NEUTRAL_WHATSAPP_TEXT)}
+            href={whatsappHref(ORCAMENTO_WHATSAPP_TEXT)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#128C7E] text-white"
-            aria-label="Chamar no WhatsApp"
+            aria-label="Orçar projeto"
           >
             <MessageCircle className="h-5 w-5" aria-hidden="true" />
           </a>

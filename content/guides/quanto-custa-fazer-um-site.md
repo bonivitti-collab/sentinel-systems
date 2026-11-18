@@ -128,4 +128,4 @@ O parcelamento é da criação, não uma mensalidade sem fim. A renovação não
 
 [Veja o que está incluído em Preços.](/#precos) Se quiser tirar dúvidas antes, [chame no WhatsApp](/#contato). Atendimento online, para todo o Brasil.
 
-👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522998434956)** — (22) 99843-4956
+👉 **[Agendar uma conversa pelo WhatsApp](https://wa.me/5522999726069)** — (22) 99972-6069

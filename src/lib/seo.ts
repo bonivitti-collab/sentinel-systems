@@ -1,7 +1,7 @@
 import { canonicalUrl, jsonLdFor, pageByPath, SITE, type PageMeta } from '../data/companySite';
 
 const DEFAULT_OG_IMAGE = `${SITE.url}/og-image.jpg`;
-const DEFAULT_OG_ALT = 'Sentinel Systems, criação de site e presença no Google para pequenos negócios';
+const DEFAULT_OG_ALT = 'Sentinel Systems, empresa de soluções digitais';
 
 function setMeta(selector: string, attr: string, value: string) {
   const element = document.head.querySelector(selector);

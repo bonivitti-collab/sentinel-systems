@@ -1,17 +1,17 @@
-import { FERRAMENTAS, ferramentasResumo } from './ferramentas';
-import { VIDEO_PACKAGES } from './offers';
 import { productByPath, productCanonical, productJsonLd, productOgImageUrl, PRODUCT_LANDINGS } from './productLandings';
 import { GUIDES_INDEX, PUBLISHED_GUIDES, publishedGuideByPath } from './publishedGuides';
 
 export const SITE = {
   name: 'Sentinel Systems',
   url: 'https://sentinelsystems.com.br',
-  phoneDisplay: '(22) 99843-4956',
-  phoneWa: '5522998434956',
+  phoneDisplay: '(22) 99972-6069',
+  phoneWa: '5522999726069',
   email: 'sentinelsystemsai@gmail.com',
-  whatsappText:
-    'Olá! Vim pelo site da Sentinel Systems. Quero o site essencial com a configuração básica do Perfil da Empresa no Google. Vi as 12 parcelas de R$ 50, total de R$ 600, ou R$ 540 à vista.',
+  whatsappText: 'Olá! Quero orçar um projeto com a Sentinel Systems.',
 } as const;
+
+export const ORCAMENTO_WHATSAPP_TEXT = SITE.whatsappText;
+export const CONTATO_WHATSAPP_TEXT = 'Olá! Gostaria de falar com a Sentinel Systems.';
 
 export function whatsappHref(text: string = SITE.whatsappText): string {
   return `https://wa.me/${SITE.phoneWa}?text=${encodeURIComponent(text)}`;
@@ -23,7 +23,7 @@ export const VIDEOS_WHATSAPP_TEXT =
 export const SERVICES_WHATSAPP_TEXT =
   'Olá! Vim pelo site da Sentinel. Quero conversar sobre site, Google, WhatsApp e redes para o meu negócio.';
 
-export const NEUTRAL_WHATSAPP_TEXT = 'Olá! Vim pelo site da Sentinel e quero conversar.';
+export const NEUTRAL_WHATSAPP_TEXT = CONTATO_WHATSAPP_TEXT;
 
 export const EXAMPLE_VIDEOS = [
   {
@@ -49,7 +49,7 @@ export const EXAMPLE_VIDEOS = [
   },
 ] as const;
 
-export type PageKey = 'home' | 'ferramentas';
+export type PageKey = 'home';
 
 export interface PageMeta {
   key: string;
@@ -67,16 +67,9 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Seu cliente te procura e não te acha | Sentinel Systems',
+    title: 'Sentinel Systems | Soluções digitais',
     description:
-      'Um site que abre bem no celular, com o seu negócio no Google e o botão do WhatsApp. 12x de R$ 50, total de R$ 600, ou R$ 540 à vista.',
-  },
-  ferramentas: {
-    key: 'ferramentas',
-    path: '/ferramentas',
-    label: 'Ferramentas',
-    title: 'Ferramentas: Valor Hora Real e CotaCasa | Sentinel',
-    description: `${ferramentasResumo()} Saiba quanto cobrar pela hora e quanto a obra deve custar.`,
+      'A Sentinel Systems é uma empresa de soluções digitais. Desenvolvemos sites, sistemas web, automações, integrações e inteligência artificial aplicada a negócios.',
   },
 };
 
@@ -89,16 +82,12 @@ export const GUIAS_LINK = { href: '/guias', label: 'Guias' } as const;
 
 export const MENU_LINKS = [
   { href: '/#servicos', label: 'Serviços' },
-  { href: '/#exemplos', label: 'Exemplos' },
-  { href: '/#precos', label: 'Preços' },
+  { href: '/#como-trabalhamos', label: 'Como trabalhamos' },
+  { href: '/#sobre', label: 'Sobre' },
   { href: '/#contato', label: 'Contato' },
 ] as const;
 
-export const FOOTER_LINKS = [
-  ...MENU_LINKS,
-  { href: '/guias', label: 'Guias' },
-  { href: '/ferramentas', label: 'Ferramentas' },
-] as const;
+export const FOOTER_LINKS = [...MENU_LINKS] as const;
 
 export const SITEMAP_LINKS = FOOTER_LINKS;
 
@@ -297,7 +286,7 @@ export const FAQ = [
   },
   {
     q: 'Como eu contrato?',
-    a: 'Chame no WhatsApp (22) 99843-4956. Antes de começar, a gente manda tudo combinado por escrito.',
+    a: 'Chame no WhatsApp (22) 99972-6069. Antes de começar, a gente manda tudo combinado por escrito.',
   },
 ] as const;
 
@@ -326,22 +315,6 @@ export function canonicalUrl(path: string): string {
 export function indexablePages(): PageMeta[] {
   return [
     ...(Object.values(PAGES) as PageMeta[]),
-    {
-      key: 'guias',
-      path: GUIDES_INDEX.path,
-      label: GUIDES_INDEX.label,
-      title: GUIDES_INDEX.title,
-      description: GUIDES_INDEX.description,
-      ogType: 'website',
-    },
-    ...PUBLISHED_GUIDES.map((guide) => ({
-      key: guide.slug,
-      path: guide.slug,
-      label: GUIDES_INDEX.label,
-      title: guide.title,
-      description: guide.description,
-      ogType: 'article' as const,
-    })),
     ...PRODUCT_LANDINGS.map((product) => ({
       key: product.id,
       path: product.path,
@@ -363,14 +336,14 @@ const ORGANIZATION_ID = `${SITE.url}/#organization`;
 
 function organizationNode() {
   return {
-    '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
+    '@type': ['Organization', 'ProfessionalService'],
     '@id': ORGANIZATION_ID,
     name: SITE.name,
     url: SITE.url,
     logo: `${SITE.url}/icon-512.png`,
     image: `${SITE.url}/og-image.jpg`,
     email: SITE.email,
-    telephone: '+55-22-99843-4956',
+    telephone: '+55-22-99972-6069',
     areaServed: {
       '@type': 'Country',
       name: 'Brasil',
@@ -379,20 +352,13 @@ function organizationNode() {
       '@type': 'PostalAddress',
       addressCountry: 'BR',
     },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '19:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '09:00',
-        closes: '14:00',
-      },
-    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      telephone: '+55-22-99972-6069',
+      email: SITE.email,
+      availableLanguage: 'Portuguese',
+    },
   };
 }
 
@@ -545,117 +511,41 @@ export function jsonLdFor(path: string): Record<string, unknown> {
     },
   ];
 
-  if (page.path === '/' || page.path === '/ferramentas') {
-    const siteService: Record<string, unknown> = {
-      '@type': 'Service',
-      '@id': `${canonicalUrl('/')}#site`,
-      name: 'Site e Perfil da Empresa no Google',
-      description:
-        'Criação de site para empresa e para pequeno negócio, com página no celular e configuração básica do Perfil da Empresa no Google. A criação custa 12 parcelas de R$ 50, no total de R$ 600, ou R$ 540 à vista. A renovação opcional, só domínio e hospedagem, é R$ 180 por ano.',
-      url: `${canonicalUrl('/')}#precos`,
-      areaServed: { '@type': 'Country', name: 'Brasil' },
-      provider: { '@id': ORGANIZATION_ID },
-      offers: [
-        {
-          '@type': 'Offer',
-          name: 'Criação parcelada',
-          price: '600',
-          priceCurrency: 'BRL',
-          description: '12 parcelas de R$ 50. No parcelado, o primeiro pagamento é na contratação e os outros 11 são mensais.',
+  if (page.path === '/') {
+    const institutionalServices = [
+      {
+        name: 'Sites',
+        description: 'Sites institucionais e páginas do negócio, feitos para abrir bem no celular e apresentar o que a empresa faz com clareza.',
+      },
+      {
+        name: 'Sistemas web',
+        description: 'Sistemas no navegador para organizar processos, dados e o trabalho do time, no ritmo da operação.',
+      },
+      {
+        name: 'Automações e integrações',
+        description: 'Ligamos ferramentas e tarefas repetitivas para o trabalho fluir com menos retrabalho manual.',
+      },
+      {
+        name: 'IA aplicada a negócios',
+        description: 'Usamos inteligência artificial de forma prática, no que realmente ajuda a rotina e a decisão do negócio.',
+      },
+    ];
+    graph.push({
+      '@type': 'ItemList',
+      name: 'Serviços da Sentinel Systems',
+      itemListElement: institutionalServices.map((service, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Service',
+          name: service.name,
+          description: service.description,
+          url: `${canonicalUrl('/')}#servicos`,
+          areaServed: { '@type': 'Country', name: 'Brasil' },
+          provider: { '@id': ORGANIZATION_ID },
         },
-        {
-          '@type': 'Offer',
-          name: 'Criação à vista',
-          price: '540',
-          priceCurrency: 'BRL',
-          description: 'R$ 540 à vista na contratação, com 10% de desconto nesta primeira contratação.',
-        },
-        {
-          '@type': 'Offer',
-          name: 'Renovação anual opcional',
-          price: '180',
-          priceCurrency: 'BRL',
-          description: 'R$ 180 por ano, só domínio e hospedagem, depois de 12 meses. Não inclui manutenção e não renova sozinha.',
-        },
-      ],
-    };
-    const videoService: Record<string, unknown> = {
-      '@type': 'Service',
-      '@id': `${canonicalUrl('/')}#videos`,
-      name: 'Vídeos com IA para Instagram e Status',
-      description:
-        'Vídeo com IA para restaurante, pousada ou loja, feito a partir das fotos enviadas pelo WhatsApp, pronto para o Instagram e o Status.',
-      url: `${canonicalUrl('/')}#precos`,
-      areaServed: { '@type': 'Country', name: 'Brasil' },
-      provider: { '@id': ORGANIZATION_ID },
-      offers: VIDEO_PACKAGES.map((pack) => ({
-        '@type': 'Offer',
-        name: pack.name,
-        price: pack.priceAmount,
-        priceCurrency: 'BRL',
-        description: pack.detail,
       })),
-    };
-    if (page.path === '/') {
-      graph.push(siteService, videoService);
-      for (const video of EXAMPLE_VIDEOS) {
-        graph.push({
-          '@type': 'VideoObject',
-          name: `Exemplo de vídeo para ${video.label.toLowerCase()}`,
-          description: video.description,
-          thumbnailUrl: `${SITE.url}${video.poster}`,
-          contentUrl: `${SITE.url}${video.src}`,
-          uploadDate: '2026-11-11',
-          duration: 'PT20S',
-        });
-      }
-      graph.push({
-        '@type': 'FAQPage',
-        mainEntity: FAQ.map((item) => ({
-          '@type': 'Question',
-          name: item.q,
-          acceptedAnswer: { '@type': 'Answer', text: item.a },
-        })),
-      });
-      graph.push({
-        '@type': 'ItemList',
-        name: 'Serviços da Sentinel Systems',
-        itemListElement: SERVICES.map((service, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          item: {
-            '@type': 'Service',
-            name: service.title,
-            description: service.summary,
-            url: `${canonicalUrl('/')}#servicos`,
-            areaServed: { '@type': 'Country', name: 'Brasil' },
-            provider: { '@id': ORGANIZATION_ID },
-          },
-        })),
-      });
-    }
-    if (page.path === '/ferramentas') {
-      graph.push({
-        '@type': 'Service',
-        '@id': `${url}#servico`,
-        name: 'Ferramentas Valor Hora Real e CotaCasa',
-        description: page.description,
-        url,
-        areaServed: { '@type': 'Country', name: 'Brasil' },
-        provider: { '@id': ORGANIZATION_ID },
-        offers: FERRAMENTAS.map((ferramenta) => ({
-          '@type': 'Offer',
-          name: ferramenta.name,
-          price: ferramenta.priceAmount,
-          priceCurrency: 'BRL',
-          url:
-            ferramenta.id === 'valor-hora-real'
-              ? 'https://valorhora.sentinelsystems.com.br'
-              : 'https://cotacasa.sentinelsystems.com.br',
-          description: `${ferramenta.kind}. ${ferramenta.benefit}`,
-        })),
-      });
-    }
+    });
   }
 
   return {

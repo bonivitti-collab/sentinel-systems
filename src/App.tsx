@@ -3,25 +3,23 @@ import { Footer } from './components/Footer';
 import { Navbar } from './components/Navbar';
 import { pageByPath } from './data/companySite';
 import { applySeo } from './lib/seo';
-import { publishedGuideByPath } from './data/publishedGuides';
 import { productByPath, productPathForHost } from './data/productLandings';
-import { FerramentasPage } from './pages/FerramentasPage';
-import { GuideArticlePage } from './pages/GuideArticlePage';
-import { GuidesIndexPage } from './pages/GuidesIndexPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ProductLandingPage } from './pages/ProductLandingPage';
 
 const REDIRECTS: Record<string, string> = {
-  '/quem-somos': '/',
-  '/sobre': '/',
+  '/quem-somos': '/#sobre',
+  '/sobre': '/#sobre',
   '/automacao': '/#servicos',
-  '/blog': '/guias',
+  '/blog': '/',
   '/servicos': '/#servicos',
-  '/sites': '/#precos',
-  '/videos': '/#precos',
-  '/faq': '/#perguntas',
+  '/sites': '/#servicos',
+  '/videos': '/#servicos',
+  '/faq': '/#contato',
   '/contato': '/#contato',
+  '/ferramentas': '/',
+  '/guias': '/',
 };
 
 function redirectTarget(pathname: string): string | null {
@@ -30,6 +28,7 @@ function redirectTarget(pathname: string): string | null {
   if (clean.startsWith('/solucoes/')) return '/#servicos';
   if (clean.startsWith('/automacao/')) return '/#servicos';
   if (clean.startsWith('/cidades/')) return '/';
+  if (clean.startsWith('/guias/')) return '/';
   return null;
 }
 
@@ -52,11 +51,8 @@ function resolveLocation(pathname: string, hash: string): { path: string; hash: 
   }
   const path = pathname.replace(/\/+$/, '') || '/';
   const cleanHash = hash.replace(/^#/, '');
-  if (path === '/' && cleanHash === 'ferramentas') {
-    return { path: '/ferramentas', hash: '', url: '/ferramentas' };
-  }
-  if (path === '/' && cleanHash === 'oferta') {
-    return { path: '/', hash: 'precos', url: '/#precos' };
+  if (path === '/' && (cleanHash === 'ferramentas' || cleanHash === 'exemplos' || cleanHash === 'precos' || cleanHash === 'oferta' || cleanHash === 'perguntas' || cleanHash === 'como-funciona')) {
+    return { path: '/', hash: '', url: '/' };
   }
   return {
     path,
@@ -130,12 +126,7 @@ export function App({ url }: { url?: string }) {
     );
   }
 
-  const guide = publishedGuideByPath(currentPath);
-  let content = <NotFoundPage onNavigate={navigate} />;
-  if (currentPath === '/') content = <HomePage onNavigate={navigate} />;
-  else if (currentPath === '/ferramentas') content = <FerramentasPage />;
-  else if (currentPath === '/guias') content = <GuidesIndexPage onNavigate={navigate} />;
-  else if (guide) content = <GuideArticlePage guide={guide} onNavigate={navigate} />;
+  const content = currentPath === '/' ? <HomePage onNavigate={navigate} /> : <NotFoundPage onNavigate={navigate} />;
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f6f3] font-sans text-slate-950">

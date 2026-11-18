@@ -20,17 +20,17 @@ export function NotFoundPage({ onNavigate }: NotFoundPageProps) {
   };
 
   return (
-    <section className="bg-[#f7f6f3] pb-20 pt-32">
+    <section className="bg-[#F4F7FB] pb-20 pt-32">
       <div className="mx-auto w-full max-w-[720px] px-5 sm:px-8">
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-950">Esse endereço não existe</h1>
-        <p className="mt-4 text-lg leading-relaxed text-slate-600">
+        <h1 className="text-4xl font-extrabold tracking-tight text-[#343444]">Esse endereço não existe</h1>
+        <p className="mt-4 text-lg leading-relaxed text-[#3A4158]">
           Volte ao início ou chame no WhatsApp. A gente conversa sobre o seu projeto.
         </p>
         <a
           href={whatsappHref(CONTATO_WHATSAPP_TEXT)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-flex min-h-14 w-full items-center justify-center rounded-2xl bg-[#128C7E] px-6 text-base font-bold text-white sm:w-auto"
+          className="mt-8 inline-flex min-h-14 w-full items-center justify-center rounded-2xl btn-brand px-6 text-base font-bold text-white sm:w-auto"
         >
           Entrar em contato
         </a>
@@ -40,7 +40,7 @@ export function NotFoundPage({ onNavigate }: NotFoundPageProps) {
               <a
                 href={link.href}
                 onClick={(event) => go(event, link.href)}
-                className="flex min-h-12 items-center rounded-2xl border border-slate-200 bg-white px-4 text-sm font-bold text-slate-900"
+                className="flex min-h-12 items-center rounded-2xl border border-[#D7E4F4] bg-white px-4 text-sm font-bold text-[#343444]"
               >
                 {link.label}
               </a>

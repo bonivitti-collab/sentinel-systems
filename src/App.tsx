@@ -117,7 +117,7 @@ export function App({ url }: { url?: string }) {
   const product = productByPath(currentPath);
   if (product) {
     return (
-      <div className="min-h-screen overflow-x-hidden bg-[#f7f6f3] font-sans text-slate-950">
+      <div className="min-h-screen overflow-x-hidden bg-[#F4F7FB] font-sans text-[#343444]">
         <Navbar currentPath={currentPath} onNavigate={navigate} />
         <div className="pt-16">
           <ProductLandingPage product={product} />
@@ -129,7 +129,7 @@ export function App({ url }: { url?: string }) {
   const content = currentPath === '/' ? <HomePage onNavigate={navigate} /> : <NotFoundPage onNavigate={navigate} />;
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#f7f6f3] font-sans text-slate-950">
+    <div className="min-h-screen overflow-x-hidden bg-[#F4F7FB] font-sans text-[#343444]">
       <Navbar currentPath={currentPath} onNavigate={navigate} />
       <main id="conteudo">{content}</main>
       <Footer onNavigate={navigate} />

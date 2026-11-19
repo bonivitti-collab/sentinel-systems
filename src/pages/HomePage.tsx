@@ -6,7 +6,6 @@ import {
   MessageCircle,
   Scale,
 } from 'lucide-react';
-import { HexMotif } from '../components/HexMotif';
 import { SentinelLogo } from '../components/SentinelLogo';
 import {
   CONTATO_WHATSAPP_TEXT,
@@ -42,11 +41,6 @@ export function HomePage(_props: HomePageProps) {
     <div className="bg-[#F4F7FB] text-[#343444]">
       <section className="relative overflow-hidden border-b border-[#D7E4F4] bg-white">
         <div className="brand-glow pointer-events-none absolute inset-0" aria-hidden="true" />
-        <HexMotif
-          gid="hex-hero"
-          opacity={0.18}
-          className="pointer-events-none absolute -right-16 top-8 hidden h-[28rem] w-[28rem] lg:block"
-        />
         <div className={`${SHELL} relative grid items-center gap-10 pb-14 pt-28 sm:pb-20 sm:pt-36 lg:grid-cols-12 lg:gap-12`}>
           <div className="animate-fade-slide-up lg:col-span-7">
             <p className="inline-flex items-center rounded-full border border-[#D7E4F4] bg-[#F4F7FB] px-3.5 py-1.5 text-xs font-bold tracking-wide text-[#1652AC] sm:text-sm">
@@ -78,41 +72,8 @@ export function HomePage(_props: HomePageProps) {
             </div>
           </div>
 
-          <aside className="animate-fade-slide-up lg:col-span-5">
-            <div className="relative flex flex-col items-center">
-              <div
-                className="pointer-events-none absolute inset-x-6 top-4 h-48 rounded-full bg-[radial-gradient(circle,rgba(4,212,228,0.24),rgba(22,82,172,0.12)_55%,transparent_72%)] blur-2xl"
-                aria-hidden="true"
-              />
-              <SentinelLogo mark size="hero" className="relative" />
-              <div className="relative mt-6 grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
-                {HOME_PRODUCTS.map((product) => {
-                  const Icon = PRODUCT_ICON[product.id];
-                  return (
-                    <a
-                      key={product.id}
-                      href={product.href}
-                      className="group flex flex-col justify-between rounded-2xl border border-[#D7E4F4] bg-white/95 p-4 shadow-[0_12px_30px_-14px_rgba(22,82,172,0.18)] transition-transform duration-200 hover:-translate-y-0.5 hover:border-[#1087BF]"
-                    >
-                      <div className="flex items-center justify-between gap-2">
-                        <span className={`inline-flex h-9 w-9 items-center justify-center rounded-xl ${PRODUCT_TINT[product.id]}`}>
-                          <Icon className="h-4 w-4" aria-hidden="true" />
-                        </span>
-                        {product.priceLabel ? (
-                          <span className="rounded-full bg-[#E8EEF8] px-2.5 py-0.5 text-xs font-extrabold text-[#192B99]">
-                            {product.priceLabel}
-                          </span>
-                        ) : null}
-                      </div>
-                      <p className="mt-3 text-sm font-extrabold tracking-tight text-[#343444] group-hover:text-[#1652AC]">
-                        {product.name}
-                      </p>
-                      <p className="mt-0.5 text-xs text-[#3A4158]">{product.kindLabel}</p>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
+          <aside className="animate-fade-slide-up flex items-center justify-center lg:col-span-5">
+            <SentinelLogo mark size="hero" />
           </aside>
         </div>
       </section>

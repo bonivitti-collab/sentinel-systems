@@ -99,6 +99,7 @@ export interface HomeProduct {
   priceAmount: string | null;
   priceSuffix?: string;
   href: string;
+  offerUrl?: string;
   ctaLabel: string;
   image?: string;
   imageAlt?: string;
@@ -111,10 +112,11 @@ export const HOME_PRODUCTS: HomeProduct[] = [
     kindLabel: 'Aplicativo · SaaS',
     schemaType: 'SoftwareApplication',
     description: 'Acompanhar obra: estimativa, gastos reais e orçado x realizado.',
-    priceLabel: 'R$\u00a012,90/mês',
-    priceAmount: '12.90',
+    priceLabel: 'R$\u00a039,90/mês',
+    priceAmount: '39.90',
     priceSuffix: 'Plano único',
     href: 'https://cotacasa.com.br/',
+    offerUrl: 'https://pay.kiwify.com.br/3GCP09y',
     ctaLabel: 'Acessar CotaCasa',
   },
   {
@@ -168,7 +170,7 @@ export const HOME_FAQS = [
   },
   {
     q: 'Quanto custam os produtos?',
-    a: 'O aplicativo CotaCasa custa R$ 12,90 por mês (plano único). A Planilha Valor Hora Real e a Planilha CotaCasa custam R$ 9,90 cada. O JurisSigilo apresenta suas condições diretamente na própria página oficial.',
+    a: 'O aplicativo CotaCasa custa R$ 39,90 por mês (plano único). A Planilha Valor Hora Real e a Planilha CotaCasa custam R$ 9,90 cada. O JurisSigilo apresenta suas condições diretamente na própria página oficial.',
   },
   {
     q: 'A Sentinel atende todo o Brasil?',
@@ -637,7 +639,7 @@ export function jsonLdFor(path: string): Record<string, unknown> {
             '@type': 'Offer',
             price: item.priceAmount,
             priceCurrency: 'BRL',
-            url: item.href,
+            url: item.offerUrl ?? item.href,
           };
         }
         return {

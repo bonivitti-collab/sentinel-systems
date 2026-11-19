@@ -125,9 +125,10 @@ export const HOME_PRODUCTS: HomeProduct[] = [
     kindLabel: 'SaaS jurídico',
     schemaType: 'SoftwareApplication',
     description: 'Software jurídico da Sentinel Systems.',
-    priceLabel: null,
-    priceAmount: null,
+    priceLabel: 'R$\u00a0197/mês',
+    priceAmount: '197.00',
     href: 'https://jurissigilo.sentinelsystems.com.br/',
+    offerUrl: 'https://pay.kiwify.com.br/YZTzfXz',
     ctaLabel: 'Acessar JurisSigilo',
   },
   {

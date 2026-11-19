@@ -1,25 +1,20 @@
-import type { ReactNode } from 'react';
 import {
-  BotMessageSquare,
-  Check,
+  ArrowRight,
+  Building2,
   ChevronDown,
   FileSpreadsheet,
-  Globe,
-  Link2,
   MessageCircle,
-  Sparkles,
-  SquareTerminal,
-  UtensilsCrossed,
+  Scale,
 } from 'lucide-react';
 import { HexMotif } from '../components/HexMotif';
 import { SentinelLogo } from '../components/SentinelLogo';
 import {
   CONTATO_WHATSAPP_TEXT,
   HOME_FAQS,
-  HOME_SERVICES,
-  ORCAMENTO_WHATSAPP_TEXT,
+  HOME_PRODUCTS,
   SITE,
   whatsappHref,
+  type HomeProduct,
 } from '../data/companySite';
 
 interface HomePageProps {
@@ -28,155 +23,172 @@ interface HomePageProps {
 
 const SHELL = 'mx-auto w-full max-w-[1120px] px-5 sm:px-8';
 
-const SERVICE_STYLE: Record<
-  (typeof HOME_SERVICES)[number]['id'],
-  { icon: typeof Globe; tint: string }
-> = {
-  sites: { icon: Globe, tint: 'bg-[#E7F9FB] text-[#1652AC]' },
-  sistemas: { icon: SquareTerminal, tint: 'bg-[#E8EEF8] text-[#192B99]' },
-  'cardapio-digital': { icon: UtensilsCrossed, tint: 'bg-[#E7F9FB] text-[#1652AC]' },
-  'automacao-whatsapp': { icon: BotMessageSquare, tint: 'bg-[#E8EEF8] text-[#192B99]' },
-  automacoes: { icon: Link2, tint: 'bg-[#EEEAF8] text-[#4A33B1]' },
-  ia: { icon: Sparkles, tint: 'bg-[#F3EAF8] text-[#4A33B1]' },
+const PRODUCT_ICON: Record<HomeProduct['id'], typeof Building2> = {
+  'cotacasa-app': Building2,
+  jurissigilo: Scale,
+  valorhora: FileSpreadsheet,
+  'cotacasa-planilha': FileSpreadsheet,
 };
 
-const BUDGET_STEPS = [
-  {
-    title: 'Conversa no WhatsApp',
-    text: 'Você explica o que o seu negócio precisa, o objetivo e o contexto da operação, sem compromisso.',
-  },
-  {
-    title: 'Proposta e prazo',
-    text: 'Avaliamos o pedido e enviamos uma proposta objetiva com o escopo do projeto e o prazo combinado.',
-  },
-  {
-    title: 'Desenvolvimento e entrega',
-    text: 'Com a proposta aprovada, desenvolvemos a solução com acompanhamento direto pelo WhatsApp até a entrega.',
-  },
-] as const;
-
-const HIGHLIGHTS = [
-  'Sites, cardápio digital e sistemas web',
-  'Automação de atendimento no WhatsApp',
-  'Integrações e IA aplicada ao negócio',
-] as const;
-
-const SPREADSHEETS = [
-  {
-    name: 'Valor Hora Real',
-    price: 'R$\u00a09,90',
-    description: 'Planilha para saber quanto cobrar pela sua hora, como freelancer ou MEI. Abre no Google Planilhas e no Excel.',
-    href: 'https://valorhora.sentinelsystems.com.br/valorhora',
-  },
-  {
-    name: 'CotaCasa',
-    price: 'R$\u00a09,90',
-    description: 'Planilha para orçamento de obra por etapas, cotação e controle de orçado x realizado. Google Planilhas e Excel.',
-    href: 'https://cotacasa.sentinelsystems.com.br/cotacasa',
-  },
-] as const;
-
-function WaLink({
-  href,
-  children,
-  tone = 'brand',
-}: {
-  href: string;
-  children: ReactNode;
-  tone?: 'brand' | 'light';
-}) {
-  const toneClass =
-    tone === 'light'
-      ? 'bg-white text-[#192B99] hover:bg-[#E7F9FB]'
-      : 'btn-brand hover:brightness-110';
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex min-h-14 w-full items-center justify-center gap-2.5 rounded-2xl px-6 text-base font-bold shadow-sm sm:w-auto ${toneClass}`}
-    >
-      <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
-      {children}
-    </a>
-  );
-}
+const PRODUCT_TINT: Record<HomeProduct['id'], string> = {
+  'cotacasa-app': 'bg-[#E7F9FB] text-[#1652AC]',
+  jurissigilo: 'bg-[#E8EEF8] text-[#192B99]',
+  valorhora: 'bg-[#E7F9FB] text-[#1652AC]',
+  'cotacasa-planilha': 'bg-[#EEEAF8] text-[#4A33B1]',
+};
 
 export function HomePage(_props: HomePageProps) {
   return (
     <div className="bg-[#F4F7FB] text-[#343444]">
-      <section className="relative overflow-hidden border-b border-slate-200/80 bg-white">
+      <section className="relative overflow-hidden border-b border-[#D7E4F4] bg-white">
         <div className="brand-glow pointer-events-none absolute inset-0" aria-hidden="true" />
         <HexMotif
           gid="hex-hero"
-          opacity={0.22}
+          opacity={0.18}
           className="pointer-events-none absolute -right-16 top-8 hidden h-[28rem] w-[28rem] lg:block"
         />
-        <div className={`${SHELL} relative grid items-center gap-10 pb-10 pt-28 sm:pb-16 sm:pt-36 lg:grid-cols-12`}>
-          <div className="lg:col-span-7">
-            <p className="text-sm font-bold text-[#1652AC]">
-              Empresa de soluções digitais · Atendemos todo o Brasil
+        <div className={`${SHELL} relative grid items-center gap-10 pb-14 pt-28 sm:pb-20 sm:pt-36 lg:grid-cols-12 lg:gap-12`}>
+          <div className="animate-fade-slide-up lg:col-span-7">
+            <p className="inline-flex items-center rounded-full border border-[#D7E4F4] bg-[#F4F7FB] px-3.5 py-1.5 text-xs font-bold tracking-wide text-[#1652AC] sm:text-sm">
+              Soluções digitais e tecnologia · Atendimento em todo o Brasil
             </p>
-            <h1 className="mt-4 max-w-4xl text-[clamp(2.3rem,6.5vw,4.3rem)] font-extrabold leading-[1.03] tracking-[-0.045em] text-[#343444]">
-              Sites, sistemas e automação com IA para o seu negócio
+            <h1 className="mt-5 max-w-4xl text-[clamp(2.2rem,5.8vw,4.1rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#343444]">
+              SaaS, planilhas e infoprodutos feitos para resolver problemas reais.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3A4158] sm:text-xl">
-              A Sentinel Systems desenvolve sites, sistemas web, cardápio digital, automação de atendimento no WhatsApp e inteligência artificial aplicada a negócios, com atendimento em todo o Brasil.
+              A Sentinel Systems pesquisa, desenvolve e reúne produtos digitais próprios, para quem quer resolver o trabalho do dia a dia com tecnologia simples. Atendemos todo o Brasil.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <WaLink href={whatsappHref(ORCAMENTO_WHATSAPP_TEXT)}>Orçar projeto</WaLink>
+              <a
+                href="#produtos"
+                className="btn-brand inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl px-6 text-base font-bold shadow-sm sm:w-auto"
+              >
+                Ver produtos
+                <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+              </a>
               <a
                 href={whatsappHref(CONTATO_WHATSAPP_TEXT)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-14 items-center justify-center rounded-2xl px-2 text-base font-bold text-[#1652AC] underline decoration-[#04D4E4] underline-offset-4"
+                className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl border border-[#D7E4F4] bg-white px-6 text-base font-bold text-[#1652AC] transition-colors hover:bg-[#F4F7FB] sm:w-auto"
               >
-                Entrar em contato
+                <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                Falar com a equipe
               </a>
             </div>
           </div>
-          <aside className="lg:col-span-5">
+
+          <aside className="animate-fade-slide-up lg:col-span-5">
             <div className="relative flex flex-col items-center">
               <div
-                className="pointer-events-none absolute inset-x-8 top-6 h-44 rounded-full bg-[radial-gradient(circle,rgba(4,212,228,0.28),rgba(74,51,177,0.12)_55%,transparent_70%)] blur-2xl"
+                className="pointer-events-none absolute inset-x-6 top-4 h-48 rounded-full bg-[radial-gradient(circle,rgba(4,212,228,0.24),rgba(22,82,172,0.12)_55%,transparent_72%)] blur-2xl"
                 aria-hidden="true"
               />
               <SentinelLogo mark size="hero" className="relative" />
-              <div className="relative mt-6 w-full rounded-[28px] border border-[#D7E4F4] bg-white/90 p-6 shadow-sm sm:p-8">
-                <p className="text-sm font-bold text-[#1652AC]">O que fazemos</p>
-                <ul className="mt-4 space-y-4">
-                  {HIGHLIGHTS.map((item) => (
-                    <li key={item} className="flex gap-3 text-base font-semibold leading-snug text-[#343444]">
-                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#1652AC]" aria-hidden="true" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="relative mt-6 grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
+                {HOME_PRODUCTS.map((product) => {
+                  const Icon = PRODUCT_ICON[product.id];
+                  return (
+                    <a
+                      key={product.id}
+                      href={product.href}
+                      className="group flex flex-col justify-between rounded-2xl border border-[#D7E4F4] bg-white/95 p-4 shadow-[0_12px_30px_-14px_rgba(22,82,172,0.18)] transition-transform duration-200 hover:-translate-y-0.5 hover:border-[#1087BF]"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className={`inline-flex h-9 w-9 items-center justify-center rounded-xl ${PRODUCT_TINT[product.id]}`}>
+                          <Icon className="h-4 w-4" aria-hidden="true" />
+                        </span>
+                        {product.priceLabel ? (
+                          <span className="rounded-full bg-[#E8EEF8] px-2.5 py-0.5 text-xs font-extrabold text-[#192B99]">
+                            {product.priceLabel}
+                          </span>
+                        ) : null}
+                      </div>
+                      <p className="mt-3 text-sm font-extrabold tracking-tight text-[#343444] group-hover:text-[#1652AC]">
+                        {product.name}
+                      </p>
+                      <p className="mt-0.5 text-xs text-[#3A4158]">{product.kindLabel}</p>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </aside>
         </div>
       </section>
 
-      <section id="servicos" className="scroll-mt-24 py-12 sm:py-20" aria-labelledby="servicos-titulo">
+      <section id="produtos" className="scroll-mt-24 py-14 sm:py-20" aria-labelledby="produtos-titulo">
         <div className={SHELL}>
-          <p className="text-sm font-bold text-[#1652AC]">O que fazemos</p>
-          <h2 id="servicos-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
-            Soluções para resolver o que o seu negócio precisa
+          <p className="text-sm font-bold text-[#1652AC]">Produtos</p>
+          <h2 id="produtos-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
+            Nossos produtos no ar
           </h2>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {HOME_SERVICES.map((service) => {
-              const { icon: Icon, tint } = SERVICE_STYLE[service.id];
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#3A4158]">
+            Softwares e planilhas desenvolvidos pela Sentinel Systems para uso direto, com acesso pelo endereço oficial de cada produto.
+          </p>
+
+          <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
+            {HOME_PRODUCTS.map((product) => {
+              const Icon = PRODUCT_ICON[product.id];
               return (
                 <article
-                  key={service.id}
-                  className="flex min-w-0 flex-col rounded-[20px] border border-[#D7E4F4] bg-white p-5 sm:p-6"
+                  key={product.id}
+                  className="flex h-full flex-col justify-between rounded-[24px] border border-[#D7E4F4] bg-white p-6 shadow-sm"
                 >
-                  <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${tint}`}>
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-4 text-lg font-extrabold tracking-tight text-[#343444]">{service.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[#3A4158]">{service.text}</p>
+                  <div>
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        {product.image ? (
+                          <img
+                            src={product.image}
+                            alt={product.imageAlt ?? product.name}
+                            width={56}
+                            height={56}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-14 w-14 shrink-0 rounded-2xl border border-[#D7E4F4] object-cover"
+                          />
+                        ) : (
+                          <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${PRODUCT_TINT[product.id]}`}>
+                            <Icon className="h-6 w-6" aria-hidden="true" />
+                          </span>
+                        )}
+                        <div>
+                          <p className="text-xs font-bold uppercase tracking-wide text-[#1652AC]">
+                            {product.kindLabel}
+                          </p>
+                          <h3 className="mt-0.5 text-xl font-extrabold tracking-tight text-[#343444]">
+                            {product.name}
+                          </h3>
+                        </div>
+                      </div>
+
+                      {product.priceLabel ? (
+                        <div className="shrink-0 text-right">
+                          <span className="inline-flex rounded-full bg-[#E8EEF8] px-3 py-1 text-sm font-extrabold text-[#192B99]">
+                            {product.priceLabel}
+                          </span>
+                          {product.priceSuffix ? (
+                            <p className="mt-1 text-xs font-semibold text-[#3A4158]">{product.priceSuffix}</p>
+                          ) : null}
+                        </div>
+                      ) : null}
+                    </div>
+
+                    <p className="mt-4 text-sm leading-relaxed text-[#3A4158] sm:text-base">
+                      {product.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 pt-2">
+                    <a
+                      href={product.href}
+                      className="btn-brand inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl px-5 text-sm font-bold sm:w-auto"
+                    >
+                      {product.ctaLabel}
+                      <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    </a>
+                  </div>
                 </article>
               );
             })}
@@ -184,82 +196,23 @@ export function HomePage(_props: HomePageProps) {
         </div>
       </section>
 
-      <section id="como-trabalhamos" className="scroll-mt-24 border-y border-[#D7E4F4] bg-white py-16 sm:py-24" aria-labelledby="como-titulo">
-        <div className={SHELL}>
-          <p className="text-sm font-bold text-[#1652AC]">Orçamento sob medida</p>
-          <h2 id="como-titulo" className="mt-3 text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
-            Como funciona o orçamento
-          </h2>
-          <ol className="mt-10 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-3">
-            {BUDGET_STEPS.map((step, index) => (
-              <li key={step.title} className="min-w-0 rounded-[20px] border border-[#D7E4F4] bg-[#F4F7FB] p-6">
-                <p className="text-sm font-extrabold text-[#1652AC]">0{index + 1}</p>
-                <h3 className="mt-3 text-xl font-extrabold tracking-tight text-[#343444]">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#3A4158]">{step.text}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section id="planilhas" className="scroll-mt-24 py-16 sm:py-20" aria-labelledby="planilhas-titulo">
-        <div className={SHELL}>
-          <p className="text-sm font-bold text-[#1652AC]">Planilhas prontas</p>
-          <h2 id="planilhas-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
-            Ferramentas digitais por R$&nbsp;9,90
-          </h2>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#3A4158]">
-            Planilhas práticas da Sentinel Systems para uso imediato no Google Planilhas e no Excel.
-          </p>
-          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-            {SPREADSHEETS.map((sheet) => (
-              <article
-                key={sheet.name}
-                className="flex flex-col justify-between rounded-[24px] border border-[#D7E4F4] bg-white p-6"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E7F9FB] text-[#1652AC]">
-                      <FileSpreadsheet className="h-5 w-5" aria-hidden="true" />
-                    </span>
-                    <span className="rounded-full bg-[#E8EEF8] px-3 py-1 text-sm font-extrabold text-[#192B99]">
-                      {sheet.price}
-                    </span>
-                  </div>
-                  <h3 className="mt-4 text-xl font-extrabold tracking-tight text-[#343444]">{sheet.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#3A4158]">{sheet.description}</p>
-                </div>
-                <div className="mt-6">
-                  <a
-                    href={sheet.href}
-                    className="inline-flex min-h-11 items-center text-sm font-bold text-[#1652AC] underline decoration-[#04D4E4] underline-offset-4 hover:text-[#192B99]"
-                  >
-                    Conhecer a planilha {sheet.name} →
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="sobre" className="scroll-mt-24 border-t border-[#D7E4F4] bg-white py-16 sm:py-24" aria-labelledby="sobre-titulo">
+      <section id="sobre" className="scroll-mt-24 border-y border-[#D7E4F4] bg-white py-16 sm:py-20" aria-labelledby="sobre-titulo">
         <div className={`${SHELL} max-w-3xl`}>
           <p className="text-sm font-bold text-[#1652AC]">Sobre</p>
           <h2 id="sobre-titulo" className="mt-3 text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
-            Atendemos todo o Brasil
+            Empresa de soluções digitais e tecnologia
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-[#3A4158] sm:text-lg">
-            A Sentinel Systems desenvolve sites, sistemas web, cardápios digitais, automações de atendimento no WhatsApp e projetos de inteligência artificial aplicada a negócios. Atendemos todo o Brasil de forma online, com proposta e prazo definidos antes do trabalho começar.
+          <p className="mt-5 text-base leading-relaxed text-[#3A4158] sm:text-lg">
+            A Sentinel Systems desenvolve produtos digitais próprios — entre aplicativos SaaS, planilhas e infoprodutos — pensados para simplificar rotinas reais com tecnologia direta. Atendemos todo o Brasil de forma remota.
           </p>
         </div>
       </section>
 
       <section id="faq" className="scroll-mt-24 py-16 sm:py-20" aria-labelledby="faq-titulo">
         <div className={`${SHELL} max-w-3xl`}>
-          <p className="text-sm font-bold text-[#1652AC]">Dúvidas frequentes</p>
+          <p className="text-sm font-bold text-[#1652AC]">Perguntas frequentes</p>
           <h2 id="faq-titulo" className="mt-3 text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
-            Perguntas frequentes
+            Dúvidas sobre a Sentinel e os produtos
           </h2>
           <div className="mt-8 divide-y divide-[#D7E4F4] rounded-[24px] border border-[#D7E4F4] bg-white px-6">
             {HOME_FAQS.map((item) => (
@@ -277,35 +230,28 @@ export function HomePage(_props: HomePageProps) {
 
       <section id="contato" className="scroll-mt-24 pb-16 sm:pb-24" aria-labelledby="contato-titulo">
         <div className={SHELL}>
-          <div className="brand-night-glow relative overflow-hidden rounded-[28px] px-6 py-12 text-white sm:px-12 sm:py-16">
-            <HexMotif
-              gid="hex-contato"
-              opacity={0.35}
-              className="pointer-events-none absolute -right-10 -top-8 h-72 w-72 sm:h-96 sm:w-96"
-            />
-            <div className="relative">
-              <p className="text-sm font-bold text-[#04D4E4]">Contato · Atendimento em todo o Brasil</p>
-              <h2 id="contato-titulo" className="mt-3 max-w-xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em]">
-                Vamos conversar sobre o seu projeto
-              </h2>
-              <p className="mt-4 text-lg font-semibold">{SITE.phoneDisplay}</p>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/80">
-                Chame no WhatsApp para orçar um projeto ou tirar uma dúvida.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <WaLink href={whatsappHref(ORCAMENTO_WHATSAPP_TEXT)} tone="light">
-                  Orçar projeto
-                </WaLink>
-                <a
-                  href={whatsappHref(CONTATO_WHATSAPP_TEXT)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-14 items-center justify-center rounded-2xl px-2 text-base font-bold text-white underline decoration-[#04D4E4] underline-offset-4"
-                >
-                  Entrar em contato
-                </a>
-              </div>
-              <a href={`mailto:${SITE.email}`} className="mt-5 inline-flex text-sm font-semibold text-[#04D4E4] underline underline-offset-4">
+          <div className="rounded-[28px] border border-[#D7E4F4] bg-white px-6 py-10 shadow-sm sm:px-12 sm:py-14">
+            <p className="text-sm font-bold text-[#1652AC]">Contato · Atendimento em todo o Brasil</p>
+            <h2 id="contato-titulo" className="mt-3 max-w-xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
+              Fale com a equipe Sentinel Systems
+            </h2>
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-[#3A4158]">
+              Tem alguma dúvida sobre o CotaCasa, o JurisSigilo ou uma de nossas planilhas? Chame no WhatsApp ou envie um e-mail.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href={whatsappHref(CONTATO_WHATSAPP_TEXT)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-brand inline-flex min-h-14 w-full items-center justify-center gap-2.5 rounded-2xl px-6 text-base font-bold shadow-sm sm:w-auto"
+              >
+                <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
+                Falar no WhatsApp · {SITE.phoneDisplay}
+              </a>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-[#D7E4F4] bg-[#F4F7FB] px-6 text-base font-bold text-[#1652AC] hover:bg-[#E7F9FB]"
+              >
                 {SITE.email}
               </a>
             </div>

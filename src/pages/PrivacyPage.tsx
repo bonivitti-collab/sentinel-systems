@@ -32,28 +32,28 @@ export function PrivacyPage({ onNavigate }: PrivacyPageProps) {
           <div>
             <h2 className="text-xl font-extrabold text-[#343444]">1. Quem somos</h2>
             <p className="mt-2">
-              A Sentinel Systems desenvolve sites, sistemas web, cardápios digitais, automações e soluções com inteligência artificial aplicada a negócios, com atendimento em todo o Brasil.
+              A Sentinel Systems é uma empresa de soluções digitais e tecnologia que desenvolve e reúne SaaS, planilhas e infoprodutos próprios, com atendimento em todo o Brasil.
             </p>
           </div>
 
           <div>
             <h2 className="text-xl font-extrabold text-[#343444]">2. Dados que tratamos</h2>
             <p className="mt-2">
-              Este site institucional não possui formulário de cadastro nem exige criação de conta para navegação. Quando você entra em contato voluntariamente pelo WhatsApp ou por e-mail, tratamos apenas as informações que você envia (como nome, telefone, e-mail e detalhes do projeto) para responder à sua solicitação e elaborar um orçamento.
+              Este site institucional não possui formulário de cadastro nem exige criação de conta para navegação. Quando você entra em contato voluntariamente pelo WhatsApp ou por e-mail, tratamos apenas as informações que você envia (como nome, telefone, e-mail e sua dúvida) para responder à sua solicitação sobre nossos produtos digitais.
             </p>
           </div>
 
           <div>
-            <h2 className="text-xl font-extrabold text-[#343444]">3. Planilhas e pagamentos</h2>
+            <h2 className="text-xl font-extrabold text-[#343444]">3. Aplicativos SaaS e planilhas</h2>
             <p className="mt-2">
-              A aquisição das planilhas Valor Hora Real e CotaCasa ocorre em ambiente externo da plataforma Kiwify, que possui sua própria política de privacidade e processa os dados de pagamento com segurança.
+              Os aplicativos SaaS (como o CotaCasa e o JurisSigilo) possuem ambientes próprios de acesso e uso. A aquisição das planilhas Valor Hora Real e CotaCasa ocorre em ambiente externo da plataforma Kiwify, que possui sua própria política de privacidade e processa os dados de pagamento com segurança.
             </p>
           </div>
 
           <div>
             <h2 className="text-xl font-extrabold text-[#343444]">4. Compartilhamento e retenção</h2>
             <p className="mt-2">
-              Não vendemos nem compartilhamos seus dados de contato com terceiros para fins publicitários. As mensagens trocadas são mantidas apenas pelo tempo necessário para o atendimento comercial ou execução do projeto contratado.
+              Não vendemos nem compartilhamos seus dados de contato com terceiros para fins publicitários. As mensagens trocadas são mantidas apenas pelo tempo necessário para o atendimento e suporte aos produtos.
             </p>
           </div>
 

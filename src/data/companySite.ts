@@ -67,9 +67,9 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Sentinel Systems | Sites, sistemas e automação com IA',
+    title: 'Sentinel Systems | Produtos digitais, SaaS e planilhas',
     description:
-      'A Sentinel Systems desenvolve sites, sistemas e automação com IA para empresas e negócios locais, com atendimento em todo o Brasil.',
+      'Sentinel Systems desenvolve produtos digitais próprios: SaaS, planilhas e infoprodutos para o trabalho do dia a dia, com atendimento em todo o Brasil.',
   },
   privacidade: {
     key: 'privacidade',
@@ -85,63 +85,98 @@ export const PAGES: Record<PageKey, PageMeta> = {
     label: 'Termos de Uso',
     title: 'Termos de Uso | Sentinel Systems',
     description:
-      'Condições de uso do site da Sentinel Systems, contratação de projetos sob medida e acesso às planilhas.',
+      'Condições de uso do site da Sentinel Systems, dos aplicativos SaaS e das planilhas.',
   },
 };
 
-export const HOME_SERVICES = [
+export interface HomeProduct {
+  id: 'cotacasa-app' | 'jurissigilo' | 'valorhora' | 'cotacasa-planilha';
+  name: string;
+  kindLabel: string;
+  schemaType: 'SoftwareApplication' | 'Product';
+  description: string;
+  priceLabel: string | null;
+  priceAmount: string | null;
+  priceSuffix?: string;
+  href: string;
+  ctaLabel: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+export const HOME_PRODUCTS: HomeProduct[] = [
   {
-    id: 'sites',
-    title: 'Sites',
-    text: 'Sites institucionais e páginas do negócio, feitos para abrir bem no celular e apresentar o que a empresa faz com clareza.',
+    id: 'cotacasa-app',
+    name: 'CotaCasa',
+    kindLabel: 'Aplicativo · SaaS',
+    schemaType: 'SoftwareApplication',
+    description: 'Acompanhar obra: estimativa, gastos reais e orçado x realizado.',
+    priceLabel: 'R$\u00a012,90/mês',
+    priceAmount: '12.90',
+    priceSuffix: 'Plano único',
+    href: 'https://cotacasa.com.br/',
+    ctaLabel: 'Acessar CotaCasa',
   },
   {
-    id: 'sistemas',
-    title: 'Sistemas web',
-    text: 'Sistemas no navegador para organizar processos, dados e o trabalho do time, no ritmo da operação.',
+    id: 'jurissigilo',
+    name: 'JurisSigilo',
+    kindLabel: 'SaaS jurídico',
+    schemaType: 'SoftwareApplication',
+    description: 'Software jurídico da Sentinel Systems.',
+    priceLabel: null,
+    priceAmount: null,
+    href: 'https://jurissigilo.sentinelsystems.com.br/',
+    ctaLabel: 'Acessar JurisSigilo',
   },
   {
-    id: 'cardapio-digital',
-    title: 'Cardápio digital',
-    text: 'Cardápio online pensado para abrir rápido no celular, com categorias organizadas e pedido direto no WhatsApp.',
+    id: 'valorhora',
+    name: 'Planilha Valor Hora Real',
+    kindLabel: 'Planilha · Google Planilhas e Excel',
+    schemaType: 'Product',
+    description: 'Para saber quanto cobrar pela hora, como freelancer ou MEI. Google Planilhas e Excel.',
+    priceLabel: 'R$\u00a09,90',
+    priceAmount: '9.90',
+    href: 'https://valorhora.sentinelsystems.com.br/valorhora',
+    ctaLabel: 'Ver Planilha Valor Hora Real',
+    image: '/ferramentas/valor-hora-real.webp',
+    imageAlt: 'Capa da planilha Valor Hora Real',
   },
   {
-    id: 'automacao-whatsapp',
-    title: 'Automação de atendimento no WhatsApp',
-    text: 'Fluxos automatizados e atendimento com IA no WhatsApp para responder dúvidas frequentes, qualificar contatos e encaminhar pedidos.',
+    id: 'cotacasa-planilha',
+    name: 'Planilha CotaCasa',
+    kindLabel: 'Planilha · Distinta do aplicativo CotaCasa',
+    schemaType: 'Product',
+    description:
+      'Planilha de orçamento de obra por etapas, cotação e orçado x realizado. Google Planilhas e Excel. Versão em planilha, distinta do aplicativo CotaCasa.',
+    priceLabel: 'R$\u00a09,90',
+    priceAmount: '9.90',
+    href: 'https://cotacasa.sentinelsystems.com.br/cotacasa',
+    ctaLabel: 'Ver Planilha CotaCasa',
+    image: '/ferramentas/cotacasa.webp',
+    imageAlt: 'Capa da planilha CotaCasa',
   },
-  {
-    id: 'automacoes',
-    title: 'Automações e integrações',
-    text: 'Ligamos ferramentas e tarefas repetitivas para o trabalho fluir com menos retrabalho manual.',
-  },
-  {
-    id: 'ia',
-    title: 'IA aplicada a negócios',
-    text: 'Usamos inteligência artificial de forma prática, no que realmente ajuda a rotina e a decisão do negócio.',
-  },
-] as const;
+];
 
 export const HOME_FAQS = [
   {
-    q: 'Como funciona o atendimento e o orçamento?',
-    a: 'O primeiro contato é pelo WhatsApp (22) 99972-6069. Você explica o que o seu negócio precisa e nós enviamos uma proposta com escopo e prazo definidos antes de começar.',
+    q: 'O que é a Sentinel Systems?',
+    a: 'A Sentinel Systems é uma empresa de soluções digitais e tecnologia que pesquisa, desenvolve e reúne seus próprios SaaS, planilhas e infoprodutos.',
   },
   {
-    q: 'A Sentinel Systems atende apenas uma cidade ou todo o Brasil?',
-    a: 'Atendemos todo o Brasil de forma remota, com reuniões e acompanhamento direto pelo WhatsApp e por e-mail.',
+    q: 'Quais produtos estão no ar?',
+    a: 'Estão no ar o aplicativo CotaCasa (para acompanhar obra), o SaaS jurídico JurisSigilo, a Planilha Valor Hora Real e a Planilha CotaCasa.',
   },
   {
-    q: 'Quais soluções vocês desenvolvem?',
-    a: 'Desenvolvemos sites, sistemas web, cardápio digital, automação de atendimento no WhatsApp, integrações entre ferramentas e inteligência artificial aplicada a negócios.',
+    q: 'Quanto custam os produtos?',
+    a: 'O aplicativo CotaCasa custa R$ 12,90 por mês (plano único). A Planilha Valor Hora Real e a Planilha CotaCasa custam R$ 9,90 cada. O JurisSigilo apresenta suas condições diretamente na própria página oficial.',
   },
   {
-    q: 'O que são as planilhas Valor Hora Real e CotaCasa?',
-    a: 'São planilhas prontas para Google Planilhas e Excel, vendidas por R$ 9,90 cada uma nas páginas dedicadas valorhora.sentinelsystems.com.br/valorhora e cotacasa.sentinelsystems.com.br/cotacasa.',
+    q: 'A Sentinel atende todo o Brasil?',
+    a: 'Sim. A Sentinel Systems atende todo o Brasil de forma remota, com suporte pelo WhatsApp e por e-mail.',
   },
   {
-    q: 'Como entro em contato com a equipe?',
-    a: 'Você pode falar diretamente pelo WhatsApp (22) 99972-6069 ou enviar um e-mail para sentinelsystemsai@gmail.com.',
+    q: 'Como falar com a equipe?',
+    a: 'Você pode falar com a equipe pelo WhatsApp (22) 99972-6069 ou pelo e-mail sentinelsystemsai@gmail.com.',
   },
 ] as const;
 
@@ -150,12 +185,10 @@ export const NAV_LINKS = (Object.values(PAGES) as PageMeta[]).map((page) => ({
   label: page.label,
 }));
 
-export const GUIAS_LINK = { href: '/guias', label: 'Guias' } as const;
-
 export const MENU_LINKS = [
-  { href: '/#servicos', label: 'Serviços' },
-  { href: '/#como-trabalhamos', label: 'Como trabalhamos' },
+  { href: '/#produtos', label: 'Produtos' },
   { href: '/#sobre', label: 'Sobre' },
+  { href: '/#faq', label: 'Perguntas frequentes' },
   { href: '/#contato', label: 'Contato' },
 ] as const;
 
@@ -400,36 +433,15 @@ export function indexablePages(): PageMeta[] {
   ];
 }
 
-export function guidePages(): PageMeta[] {
-  return [
-    {
-      key: 'guias',
-      path: GUIDES_INDEX.path,
-      label: GUIDES_INDEX.label,
-      title: GUIDES_INDEX.title,
-      description: GUIDES_INDEX.description,
-      ogType: 'website',
-    },
-    ...PUBLISHED_GUIDES.map((guide) => ({
-      key: guide.slug,
-      path: guide.slug,
-      label: guide.title,
-      title: `${guide.title} | Sentinel Systems`,
-      description: guide.description,
-      ogType: 'article' as const,
-    })),
-  ];
-}
-
 export function pageByPath(path: string): PageMeta | undefined {
-  return indexablePages().find((page) => page.path === path) ?? guidePages().find((page) => page.path === path);
+  return indexablePages().find((page) => page.path === path);
 }
 
 const ORGANIZATION_ID = `${SITE.url}/#organization`;
 
 function organizationNode() {
   return {
-    '@type': ['Organization', 'ProfessionalService'],
+    '@type': 'Organization',
     '@id': ORGANIZATION_ID,
     name: SITE.name,
     url: SITE.url,
@@ -607,19 +619,33 @@ export function jsonLdFor(path: string): Record<string, unknown> {
   if (page.path === '/') {
     graph.push({
       '@type': 'ItemList',
-      name: 'Serviços da Sentinel Systems',
-      itemListElement: HOME_SERVICES.map((service, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        item: {
-          '@type': 'Service',
-          name: service.title,
-          description: service.text,
-          url: `${canonicalUrl('/')}#servicos`,
-          areaServed: { '@type': 'Country', name: 'Brasil' },
+      name: 'Produtos digitais da Sentinel Systems',
+      itemListElement: HOME_PRODUCTS.map((item, index) => {
+        const entry: Record<string, unknown> = {
+          '@type': item.schemaType,
+          name: item.name,
+          description: item.description,
+          url: item.href,
           provider: { '@id': ORGANIZATION_ID },
-        },
-      })),
+        };
+        if (item.schemaType === 'SoftwareApplication') {
+          entry.applicationCategory = 'BusinessApplication';
+          entry.operatingSystem = 'Web';
+        }
+        if (item.priceAmount) {
+          entry.offers = {
+            '@type': 'Offer',
+            price: item.priceAmount,
+            priceCurrency: 'BRL',
+            url: item.href,
+          };
+        }
+        return {
+          '@type': 'ListItem',
+          position: index + 1,
+          item: entry,
+        };
+      }),
     });
     graph.push({
       '@type': 'FAQPage',

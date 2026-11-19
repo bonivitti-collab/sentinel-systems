@@ -7,11 +7,9 @@ interface FooterProps {
 }
 
 const SECTIONS = [
-  { href: '/#servicos', label: 'Serviços' },
-  { href: '/#planilhas', label: 'Planilhas' },
-  { href: '/#como-trabalhamos', label: 'Como funciona o orçamento' },
-  { href: '/#faq', label: 'Perguntas frequentes' },
+  { href: '/#produtos', label: 'Produtos' },
   { href: '/#sobre', label: 'Sobre' },
+  { href: '/#faq', label: 'Perguntas frequentes' },
   { href: '/#contato', label: 'Contato' },
   { href: '/privacidade', label: 'Privacidade' },
   { href: '/termos', label: 'Termos' },
@@ -32,7 +30,7 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="col-span-2 md:col-span-7">
           <SentinelLogo size="sm" variant="light" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed">
-            Empresa de soluções digitais: sites, sistemas web, automações, integrações e inteligência artificial aplicada a negócios.
+            Empresa de soluções digitais e tecnologia: desenvolve e reúne SaaS, planilhas e infoprodutos próprios, com atendimento em todo o Brasil.
           </p>
           <a
             href={whatsappHref(CONTATO_WHATSAPP_TEXT)}

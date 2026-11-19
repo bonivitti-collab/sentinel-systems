@@ -32,19 +32,19 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
           <div>
             <h2 className="text-xl font-extrabold text-[#343444]">1. Objeto</h2>
             <p className="mt-2">
-              Estes Termos de Uso regulam o acesso ao site institucional da Sentinel Systems ({SITE.url}) e às páginas das planilhas Valor Hora Real e CotaCasa.
+              Estes Termos de Uso regulam o acesso ao site institucional da Sentinel Systems ({SITE.url}), que reúne informações e links oficiais dos aplicativos SaaS, planilhas e infoprodutos da empresa.
             </p>
           </div>
 
           <div>
-            <h2 className="text-xl font-extrabold text-[#343444]">2. Projetos e orçamentos sob medida</h2>
+            <h2 className="text-xl font-extrabold text-[#343444]">2. Aplicativos SaaS</h2>
             <p className="mt-2">
-              Sites, sistemas web, cardápios digitais, automações e projetos de IA são desenvolvidos sob medida. Valores, prazos e entregas são definidos em proposta enviada após conversa pelo WhatsApp ou e-mail, sem compromisso até a aprovação formal.
+              Cada aplicativo SaaS (como o CotaCasa e o JurisSigilo) é acessado em seu próprio endereço oficial, onde constam as condições vigentes de uso e contratação.
             </p>
           </div>
 
           <div>
-            <h2 className="text-xl font-extrabold text-[#343444]">3. Planilhas prontas</h2>
+            <h2 className="text-xl font-extrabold text-[#343444]">3. Planilhas e infoprodutos</h2>
             <p className="mt-2">
               As planilhas Valor Hora Real e CotaCasa são produtos digitais entregues para uso pessoal ou do negócio do comprador, no Google Planilhas e no Excel. É vedada a revenda ou redistribuição comercial dos arquivos sem autorização.
             </p>
@@ -53,7 +53,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
           <div>
             <h2 className="text-xl font-extrabold text-[#343444]">4. Propriedade intelectual</h2>
             <p className="mt-2">
-              A marca, o logotipo, os textos e os códigos deste site pertencem à Sentinel Systems. Conteúdos e sistemas desenvolvidos sob encomenda seguem o que for estabelecido na proposta de cada projeto.
+              A marca, o logotipo, os textos, os códigos e os produtos digitais apresentados neste site pertencem à Sentinel Systems.
             </p>
           </div>
 

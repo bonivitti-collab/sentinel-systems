@@ -1,6 +1,6 @@
 import { useSyncExternalStore, useState, type MouseEvent } from 'react';
 import { Menu, MessageCircle, X } from 'lucide-react';
-import { ORCAMENTO_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
+import { CONTATO_WHATSAPP_TEXT, whatsappHref } from '../data/companySite';
 import { SentinelLogo } from './SentinelLogo';
 
 interface NavbarProps {
@@ -11,15 +11,13 @@ interface NavbarProps {
 const SITE_ORIGIN = 'https://sentinelsystems.com.br';
 
 const LINKS = [
-  { href: `${SITE_ORIGIN}/#servicos`, label: 'Serviços' },
-  { href: `${SITE_ORIGIN}/#como-trabalhamos`, label: 'Como trabalhamos' },
+  { href: `${SITE_ORIGIN}/#produtos`, label: 'Produtos' },
   { href: `${SITE_ORIGIN}/#sobre`, label: 'Sobre' },
-] as const;
-
-const MOBILE_LINKS = [
-  ...LINKS,
+  { href: `${SITE_ORIGIN}/#faq`, label: 'Perguntas frequentes' },
   { href: `${SITE_ORIGIN}/#contato`, label: 'Contato' },
 ] as const;
+
+const MOBILE_LINKS = [...LINKS] as const;
 
 function useHash() {
   return useSyncExternalStore(
@@ -76,23 +74,23 @@ export function Navbar({ currentPath, onNavigate }: NavbarProps) {
             </a>
           ))}
           <a
-            href={whatsappHref(ORCAMENTO_WHATSAPP_TEXT)}
+            href={whatsappHref(CONTATO_WHATSAPP_TEXT)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-brand ml-1 inline-flex min-h-11 items-center gap-2 rounded-xl px-4 text-sm font-bold text-white"
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
-            Orçar projeto
+            Falar com a equipe
           </a>
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
           <a
-            href={whatsappHref(ORCAMENTO_WHATSAPP_TEXT)}
+            href={whatsappHref(CONTATO_WHATSAPP_TEXT)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-brand inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white"
-            aria-label="Orçar projeto"
+            aria-label="Falar com a equipe"
           >
             <MessageCircle className="h-5 w-5" aria-hidden="true" />
           </a>

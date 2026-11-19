@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import React, { StrictMode } from 'react';
 import { renderToString } from 'react-dom/server';
 import { App } from '../src/App.tsx';
-import { canonicalUrl, guidePages, indexablePages, jsonLdFor, SITE, type PageMeta } from '../src/data/companySite.ts';
+import { canonicalUrl, indexablePages, jsonLdFor, SITE, type PageMeta } from '../src/data/companySite.ts';
 import { PUBLISHED_GUIDES } from '../src/data/publishedGuides.ts';
 import { ferramentaOf, productByPath, productCanonical, productOgImageUrl } from '../src/data/productLandings.ts';
 
@@ -100,8 +100,7 @@ function prerenderPages(): void {
   }
   const freshTemplate = template.replace(/<div id="root">[\s\S]*?<\/div>\s*<script type="module"/, '<div id="root"></div>\n    <script type="module"');
 
-  const pagesToPrerender = [...indexablePages(), ...guidePages()];
-  for (const page of pagesToPrerender) {
+  for (const page of indexablePages()) {
     const body = renderToString(
       <StrictMode>
         <App url={page.path} />
@@ -113,8 +112,11 @@ function prerenderPages(): void {
     }
     const html = applyTemplate(freshTemplate, page, body, 'index, follow, max-image-preview:large');
     if (page.path === '/') {
-      if (!html.includes('"FAQPage"') || !html.includes('"Organization"')) {
-        throw new Error('Home sem FAQPage ou Organization no JSON-LD');
+      if (!html.includes('"FAQPage"') || !html.includes('"Organization"') || !html.includes('"SoftwareApplication"')) {
+        throw new Error('Home sem FAQPage, Organization ou SoftwareApplication no JSON-LD');
+      }
+      if (/bonilead|engenheir/i.test(html)) {
+        throw new Error('Home contém termo proibido');
       }
       fs.writeFileSync(templatePath, html, 'utf8');
     } else {
@@ -125,16 +127,13 @@ function prerenderPages(): void {
     const product = productByPath(page.path);
     if (product) {
       assertProductPage(html, product);
-    } else if (/"Product"|itemtype=["'][^"']*Product/.test(html)) {
-      throw new Error(`Product em ${page.path}`);
-    }
-    const hasOffer = /"Offer"/.test(html);
-    const offerPages = Boolean(product);
-    if (offerPages && !hasOffer) {
-      throw new Error(`Offer ausente em ${page.path}`);
-    }
-    if (!offerPages && hasOffer) {
-      throw new Error(`Offer em ${page.path}`);
+    } else if (page.path !== '/') {
+      if (/"Product"|itemtype=["'][^"']*Product/.test(html)) {
+        throw new Error(`Product em ${page.path}`);
+      }
+      if (/"Offer"/.test(html)) {
+        throw new Error(`Offer em ${page.path}`);
+      }
     }
     if (page.path.startsWith('/guias')) {
       if (!html.includes(`<title>${page.title}</title>`)) throw new Error(`title em ${page.path}`);

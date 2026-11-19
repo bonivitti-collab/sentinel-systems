@@ -4,9 +4,6 @@ import { Navbar } from './components/Navbar';
 import { pageByPath } from './data/companySite';
 import { applySeo } from './lib/seo';
 import { productByPath, productPathForHost } from './data/productLandings';
-import { publishedGuideByPath } from './data/publishedGuides';
-import { GuideArticlePage } from './pages/GuideArticlePage';
-import { GuidesIndexPage } from './pages/GuidesIndexPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PrivacyPage } from './pages/PrivacyPage';
@@ -16,22 +13,24 @@ import { TermsPage } from './pages/TermsPage';
 const REDIRECTS: Record<string, string> = {
   '/quem-somos': '/#sobre',
   '/sobre': '/#sobre',
-  '/automacao': '/#servicos',
+  '/automacao': '/#produtos',
   '/blog': '/',
-  '/servicos': '/#servicos',
-  '/sites': '/#servicos',
-  '/videos': '/#servicos',
+  '/servicos': '/#produtos',
+  '/sites': '/#produtos',
+  '/videos': '/#produtos',
   '/faq': '/#faq',
   '/contato': '/#contato',
-  '/ferramentas': '/#planilhas',
+  '/ferramentas': '/#produtos',
+  '/guias': '/',
 };
 
 function redirectTarget(pathname: string): string | null {
   const clean = pathname.replace(/\/+$/, '') || '/';
   if (REDIRECTS[clean]) return REDIRECTS[clean];
-  if (clean.startsWith('/solucoes/')) return '/#servicos';
-  if (clean.startsWith('/automacao/')) return '/#servicos';
+  if (clean.startsWith('/solucoes/')) return '/#produtos';
+  if (clean.startsWith('/automacao/')) return '/#produtos';
   if (clean.startsWith('/cidades/')) return '/';
+  if (clean.startsWith('/guias/')) return '/';
   return null;
 }
 
@@ -129,7 +128,6 @@ export function App({ url }: { url?: string }) {
     );
   }
 
-  const publishedGuide = publishedGuideByPath(currentPath);
   const content =
     currentPath === '/' ? (
       <HomePage onNavigate={navigate} />
@@ -137,10 +135,6 @@ export function App({ url }: { url?: string }) {
       <PrivacyPage onNavigate={navigate} />
     ) : currentPath === '/termos' ? (
       <TermsPage onNavigate={navigate} />
-    ) : currentPath === '/guias' ? (
-      <GuidesIndexPage onNavigate={navigate} />
-    ) : publishedGuide ? (
-      <GuideArticlePage guide={publishedGuide} onNavigate={navigate} />
     ) : (
       <NotFoundPage onNavigate={navigate} />
     );

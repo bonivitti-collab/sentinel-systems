@@ -104,7 +104,7 @@
     },
     {
       "source": "/faq",
-      "destination": "/#contato",
+      "destination": "/#faq",
       "permanent": true
     },
     {
@@ -129,7 +129,17 @@
     },
     {
       "source": "/ferramentas",
-      "destination": "/#planilhas",
+      "destination": "/#produtos",
+      "permanent": true
+    },
+    {
+      "source": "/guias",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/guias/:slug",
+      "destination": "/",
       "permanent": true
     }
   ],
@@ -149,14 +159,6 @@
     {
       "source": "/termos",
       "destination": "/termos/index.html"
-    },
-    {
-      "source": "/guias",
-      "destination": "/guias/index.html"
-    },
-    {
-      "source": "/guias/:slug",
-      "destination": "/guias/:slug/index.html"
     },
     {
       "source": "/d/:slug",

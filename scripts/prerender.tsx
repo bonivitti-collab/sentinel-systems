@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import React, { StrictMode } from 'react';
 import { renderToString } from 'react-dom/server';
 import { App } from '../src/App.tsx';
-import { canonicalUrl, indexablePages, jsonLdFor, SITE, type PageMeta } from '../src/data/companySite.ts';
+import { canonicalUrl, guidePages, indexablePages, jsonLdFor, SITE, type PageMeta } from '../src/data/companySite.ts';
 import { PUBLISHED_GUIDES } from '../src/data/publishedGuides.ts';
 import { ferramentaOf, productByPath, productCanonical, productOgImageUrl } from '../src/data/productLandings.ts';
 
@@ -55,7 +55,7 @@ function applyTemplate(template: string, page: PageMeta, body: string, robots: s
 
 function assertGuideSources(): void {
   for (const guide of PUBLISHED_GUIDES) {
-    const raw = fs.readFileSync(path.join(rootDir, 'content/guides', guide.file), 'utf8');
+    const raw = fs.readFileSync(path.join(rootDir, 'content/guides', guide.file), 'utf8').replace(/\r\n/g, '\n');
     const body = raw.replace(/^---\n[\s\S]*?\n---\n\n?/, '');
     if (body !== guide.markdown) {
       throw new Error(`Texto do guia divergiu de content/guides/${guide.file}`);
@@ -65,13 +65,13 @@ function assertGuideSources(): void {
 
 function writeSitemap(): void {
   const pages = indexablePages();
-  if (pages.length !== 3) {
-    throw new Error(`sitemap deveria listar 3 URLs e listou ${pages.length}: ${pages.map((page) => page.path).join(', ')}`);
+  if (pages.length !== 5) {
+    throw new Error(`sitemap deveria listar 5 URLs e listou ${pages.length}: ${pages.map((page) => page.path).join(', ')}`);
   }
   const urls = pages.map((page) => ({
     loc: canonicalUrl(page.path),
-    lastmod: productByPath(page.path) ? '2026-11-13' : '2026-11-18',
-    priority: page.path === '/' ? '1.0' : '0.8',
+    lastmod: productByPath(page.path) ? '2026-11-13' : '2026-11-19',
+    priority: page.path === '/' ? '1.0' : page.path === '/privacidade' || page.path === '/termos' ? '0.5' : '0.8',
   }));
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -100,17 +100,22 @@ function prerenderPages(): void {
   }
   const freshTemplate = template.replace(/<div id="root">[\s\S]*?<\/div>\s*<script type="module"/, '<div id="root"></div>\n    <script type="module"');
 
-  for (const page of indexablePages()) {
+  const pagesToPrerender = [...indexablePages(), ...guidePages()];
+  for (const page of pagesToPrerender) {
     const body = renderToString(
       <StrictMode>
         <App url={page.path} />
       </StrictMode>,
     );
-    if (!body.includes('<h1')) {
-      throw new Error(`Prerender sem H1 em ${page.path}`);
+    const h1Count = (body.match(/<h1\b/g) ?? []).length;
+    if (h1Count !== 1) {
+      throw new Error(`Prerender esperava exatamente 1 H1 em ${page.path}, encontrou ${h1Count}`);
     }
     const html = applyTemplate(freshTemplate, page, body, 'index, follow, max-image-preview:large');
     if (page.path === '/') {
+      if (!html.includes('"FAQPage"') || !html.includes('"Organization"')) {
+        throw new Error('Home sem FAQPage ou Organization no JSON-LD');
+      }
       fs.writeFileSync(templatePath, html, 'utf8');
     } else {
       const dir = path.join(distDir, page.path.replace(/^\//, ''));

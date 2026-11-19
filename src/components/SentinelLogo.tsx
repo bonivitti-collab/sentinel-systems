@@ -20,24 +20,35 @@ export function SentinelLogo({
   };
 
   const currentHeight = sizeMap[size];
-  const logoSrc = mark
-    ? '/emblema-sentinel-novo.png'
-    : variant === 'dark'
-      ? '/logo-dark.webp'
-      : '/logo-light.webp';
+  const logoSrc = variant === 'dark' ? '/logo-dark.webp' : '/logo-light.webp';
   const width = mark ? 570 : 220;
   const height = mark ? 668 : 106;
+  const imgClass = `${currentHeight} w-auto max-w-[70vw] sm:max-w-none object-contain`;
 
   return (
     <div className={`inline-flex items-center select-none ${className}`}>
-      <img
-        src={logoSrc}
-        alt={mark ? 'Emblema da Sentinel Systems' : 'Logotipo da Sentinel Systems'}
-        width={width}
-        height={height}
-        decoding="async"
-        className={`${currentHeight} w-auto max-w-[70vw] sm:max-w-none object-contain`}
-      />
+      {mark ? (
+        <picture>
+          <source srcSet="/emblema-sentinel-novo.webp" type="image/webp" />
+          <img
+            src="/emblema-sentinel-novo.png"
+            alt="Emblema da Sentinel Systems"
+            width={width}
+            height={height}
+            decoding="async"
+            className={imgClass}
+          />
+        </picture>
+      ) : (
+        <img
+          src={logoSrc}
+          alt="Logotipo da Sentinel Systems"
+          width={width}
+          height={height}
+          decoding="async"
+          className={imgClass}
+        />
+      )}
     </div>
   );
 }

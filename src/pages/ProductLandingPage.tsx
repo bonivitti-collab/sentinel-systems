@@ -149,7 +149,7 @@ export function ProductLandingPage({ product }: { product: ProductLanding }) {
               Sentinel Systems
             </a>
             {' · '}
-            <a href="https://sentinelsystems.com.br/ferramentas" className="font-semibold text-slate-800">
+            <a href="https://sentinelsystems.com.br/#planilhas" className="font-semibold text-slate-800">
               Planilhas
             </a>
             {' · '}

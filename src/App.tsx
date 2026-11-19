@@ -4,9 +4,14 @@ import { Navbar } from './components/Navbar';
 import { pageByPath } from './data/companySite';
 import { applySeo } from './lib/seo';
 import { productByPath, productPathForHost } from './data/productLandings';
+import { publishedGuideByPath } from './data/publishedGuides';
+import { GuideArticlePage } from './pages/GuideArticlePage';
+import { GuidesIndexPage } from './pages/GuidesIndexPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { PrivacyPage } from './pages/PrivacyPage';
 import { ProductLandingPage } from './pages/ProductLandingPage';
+import { TermsPage } from './pages/TermsPage';
 
 const REDIRECTS: Record<string, string> = {
   '/quem-somos': '/#sobre',
@@ -16,10 +21,9 @@ const REDIRECTS: Record<string, string> = {
   '/servicos': '/#servicos',
   '/sites': '/#servicos',
   '/videos': '/#servicos',
-  '/faq': '/#contato',
+  '/faq': '/#faq',
   '/contato': '/#contato',
-  '/ferramentas': '/',
-  '/guias': '/',
+  '/ferramentas': '/#planilhas',
 };
 
 function redirectTarget(pathname: string): string | null {
@@ -28,7 +32,6 @@ function redirectTarget(pathname: string): string | null {
   if (clean.startsWith('/solucoes/')) return '/#servicos';
   if (clean.startsWith('/automacao/')) return '/#servicos';
   if (clean.startsWith('/cidades/')) return '/';
-  if (clean.startsWith('/guias/')) return '/';
   return null;
 }
 
@@ -126,7 +129,21 @@ export function App({ url }: { url?: string }) {
     );
   }
 
-  const content = currentPath === '/' ? <HomePage onNavigate={navigate} /> : <NotFoundPage onNavigate={navigate} />;
+  const publishedGuide = publishedGuideByPath(currentPath);
+  const content =
+    currentPath === '/' ? (
+      <HomePage onNavigate={navigate} />
+    ) : currentPath === '/privacidade' ? (
+      <PrivacyPage onNavigate={navigate} />
+    ) : currentPath === '/termos' ? (
+      <TermsPage onNavigate={navigate} />
+    ) : currentPath === '/guias' ? (
+      <GuidesIndexPage onNavigate={navigate} />
+    ) : publishedGuide ? (
+      <GuideArticlePage guide={publishedGuide} onNavigate={navigate} />
+    ) : (
+      <NotFoundPage onNavigate={navigate} />
+    );
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F4F7FB] font-sans text-[#343444]">

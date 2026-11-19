@@ -1,9 +1,22 @@
 import type { ReactNode } from 'react';
-import { Check, Globe, Link2, MessageCircle, Sparkles, SquareTerminal } from 'lucide-react';
+import {
+  BotMessageSquare,
+  Check,
+  ChevronDown,
+  FileSpreadsheet,
+  Globe,
+  Link2,
+  MessageCircle,
+  Sparkles,
+  SquareTerminal,
+  UtensilsCrossed,
+} from 'lucide-react';
 import { HexMotif } from '../components/HexMotif';
 import { SentinelLogo } from '../components/SentinelLogo';
 import {
   CONTATO_WHATSAPP_TEXT,
+  HOME_FAQS,
+  HOME_SERVICES,
   ORCAMENTO_WHATSAPP_TEXT,
   SITE,
   whatsappHref,
@@ -15,52 +28,52 @@ interface HomePageProps {
 
 const SHELL = 'mx-auto w-full max-w-[1120px] px-5 sm:px-8';
 
-const SERVICES = [
-  {
-    title: 'Sites',
-    text: 'Sites institucionais e páginas do negócio, feitos para abrir bem no celular e apresentar o que a empresa faz com clareza.',
-    icon: Globe,
-    tint: 'bg-[#E7F9FB] text-[#1652AC]',
-  },
-  {
-    title: 'Sistemas web',
-    text: 'Sistemas no navegador para organizar processos, dados e o trabalho do time, no ritmo da operação.',
-    icon: SquareTerminal,
-    tint: 'bg-[#E8EEF8] text-[#192B99]',
-  },
-  {
-    title: 'Automações e integrações',
-    text: 'Ligamos ferramentas e tarefas repetitivas para o trabalho fluir com menos retrabalho manual.',
-    icon: Link2,
-    tint: 'bg-[#EEEAF8] text-[#4A33B1]',
-  },
-  {
-    title: 'IA aplicada a negócios',
-    text: 'Usamos inteligência artificial de forma prática, no que realmente ajuda a rotina e a decisão do negócio.',
-    icon: Sparkles,
-    tint: 'bg-[#F3EAF8] text-[#4A33B1]',
-  },
-] as const;
+const SERVICE_STYLE: Record<
+  (typeof HOME_SERVICES)[number]['id'],
+  { icon: typeof Globe; tint: string }
+> = {
+  sites: { icon: Globe, tint: 'bg-[#E7F9FB] text-[#1652AC]' },
+  sistemas: { icon: SquareTerminal, tint: 'bg-[#E8EEF8] text-[#192B99]' },
+  'cardapio-digital': { icon: UtensilsCrossed, tint: 'bg-[#E7F9FB] text-[#1652AC]' },
+  'automacao-whatsapp': { icon: BotMessageSquare, tint: 'bg-[#E8EEF8] text-[#192B99]' },
+  automacoes: { icon: Link2, tint: 'bg-[#EEEAF8] text-[#4A33B1]' },
+  ia: { icon: Sparkles, tint: 'bg-[#F3EAF8] text-[#4A33B1]' },
+};
 
-const STEPS = [
+const BUDGET_STEPS = [
   {
-    title: 'Você conta o que precisa',
-    text: 'O objetivo, o contexto e o prazo, do jeito que já estiver claro.',
+    title: 'Conversa no WhatsApp',
+    text: 'Você explica o que o seu negócio precisa, o objetivo e o contexto da operação, sem compromisso.',
   },
   {
-    title: 'A gente propõe o caminho',
-    text: 'Analisamos o pedido e devolvemos um escopo objetivo para orçar o projeto.',
+    title: 'Proposta e prazo',
+    text: 'Avaliamos o pedido e enviamos uma proposta objetiva com o escopo do projeto e o prazo combinado.',
   },
   {
-    title: 'Desenvolvemos e entregamos',
-    text: 'Seguimos o combinado, com acompanhamento até a entrega.',
+    title: 'Desenvolvimento e entrega',
+    text: 'Com a proposta aprovada, desenvolvemos a solução com acompanhamento direto pelo WhatsApp até a entrega.',
   },
 ] as const;
 
 const HIGHLIGHTS = [
-  'Sites e sistemas web sob medida',
-  'Automações e integrações entre ferramentas',
-  'Inteligência artificial aplicada ao negócio',
+  'Sites, cardápio digital e sistemas web',
+  'Automação de atendimento no WhatsApp',
+  'Integrações e IA aplicada ao negócio',
+] as const;
+
+const SPREADSHEETS = [
+  {
+    name: 'Valor Hora Real',
+    price: 'R$\u00a09,90',
+    description: 'Planilha para saber quanto cobrar pela sua hora, como freelancer ou MEI. Abre no Google Planilhas e no Excel.',
+    href: 'https://valorhora.sentinelsystems.com.br/valorhora',
+  },
+  {
+    name: 'CotaCasa',
+    price: 'R$\u00a09,90',
+    description: 'Planilha para orçamento de obra por etapas, cotação e controle de orçado x realizado. Google Planilhas e Excel.',
+    href: 'https://cotacasa.sentinelsystems.com.br/cotacasa',
+  },
 ] as const;
 
 function WaLink({
@@ -101,12 +114,14 @@ export function HomePage(_props: HomePageProps) {
         />
         <div className={`${SHELL} relative grid items-center gap-10 pb-10 pt-28 sm:pb-16 sm:pt-36 lg:grid-cols-12`}>
           <div className="lg:col-span-7">
-            <p className="text-sm font-bold text-[#1652AC]">Empresa de soluções digitais</p>
-            <h1 className="mt-4 max-w-4xl text-[clamp(2.4rem,7vw,4.6rem)] font-extrabold leading-[1.02] tracking-[-0.045em] text-[#343444]">
-              Soluções digitais para o seu negócio
+            <p className="text-sm font-bold text-[#1652AC]">
+              Empresa de soluções digitais · Atendemos todo o Brasil
+            </p>
+            <h1 className="mt-4 max-w-4xl text-[clamp(2.3rem,6.5vw,4.3rem)] font-extrabold leading-[1.03] tracking-[-0.045em] text-[#343444]">
+              Sites, sistemas e automação com IA para o seu negócio
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3A4158] sm:text-xl">
-              A Sentinel Systems desenvolve sites, sistemas web, automações, integrações e inteligência artificial aplicada a negócios.
+              A Sentinel Systems desenvolve sites, sistemas web, cardápio digital, automação de atendimento no WhatsApp e inteligência artificial aplicada a negócios, com atendimento em todo o Brasil.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <WaLink href={whatsappHref(ORCAMENTO_WHATSAPP_TEXT)}>Orçar projeto</WaLink>
@@ -143,21 +158,21 @@ export function HomePage(_props: HomePageProps) {
         </div>
       </section>
 
-      <section id="servicos" className="scroll-mt-24 py-8 sm:py-20" aria-labelledby="servicos-titulo">
+      <section id="servicos" className="scroll-mt-24 py-12 sm:py-20" aria-labelledby="servicos-titulo">
         <div className={SHELL}>
           <p className="text-sm font-bold text-[#1652AC]">O que fazemos</p>
           <h2 id="servicos-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
-            Quatro frentes para resolver o que o seu negócio precisa
+            Soluções para resolver o que o seu negócio precisa
           </h2>
-          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {SERVICES.map((service) => {
-              const Icon = service.icon;
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {HOME_SERVICES.map((service) => {
+              const { icon: Icon, tint } = SERVICE_STYLE[service.id];
               return (
                 <article
-                  key={service.title}
-                  className="flex min-w-0 flex-col rounded-[20px] border border-[#D7E4F4] bg-white p-4 sm:p-5"
+                  key={service.id}
+                  className="flex min-w-0 flex-col rounded-[20px] border border-[#D7E4F4] bg-white p-5 sm:p-6"
                 >
-                  <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${service.tint}`}>
+                  <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${tint}`}>
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <h3 className="mt-4 text-lg font-extrabold tracking-tight text-[#343444]">{service.title}</h3>
@@ -171,12 +186,12 @@ export function HomePage(_props: HomePageProps) {
 
       <section id="como-trabalhamos" className="scroll-mt-24 border-y border-[#D7E4F4] bg-white py-16 sm:py-24" aria-labelledby="como-titulo">
         <div className={SHELL}>
-          <p className="text-sm font-bold text-[#1652AC]">Como trabalhamos</p>
+          <p className="text-sm font-bold text-[#1652AC]">Orçamento sob medida</p>
           <h2 id="como-titulo" className="mt-3 text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
-            Três passos
+            Como funciona o orçamento
           </h2>
           <ol className="mt-10 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-3">
-            {STEPS.map((step, index) => (
+            {BUDGET_STEPS.map((step, index) => (
               <li key={step.title} className="min-w-0 rounded-[20px] border border-[#D7E4F4] bg-[#F4F7FB] p-6">
                 <p className="text-sm font-extrabold text-[#1652AC]">0{index + 1}</p>
                 <h3 className="mt-3 text-xl font-extrabold tracking-tight text-[#343444]">{step.title}</h3>
@@ -187,15 +202,76 @@ export function HomePage(_props: HomePageProps) {
         </div>
       </section>
 
-      <section id="sobre" className="scroll-mt-24 py-16 sm:py-24" aria-labelledby="sobre-titulo">
+      <section id="planilhas" className="scroll-mt-24 py-16 sm:py-20" aria-labelledby="planilhas-titulo">
+        <div className={SHELL}>
+          <p className="text-sm font-bold text-[#1652AC]">Planilhas prontas</p>
+          <h2 id="planilhas-titulo" className="mt-3 max-w-2xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
+            Ferramentas digitais por R$&nbsp;9,90
+          </h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#3A4158]">
+            Planilhas práticas da Sentinel Systems para uso imediato no Google Planilhas e no Excel.
+          </p>
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {SPREADSHEETS.map((sheet) => (
+              <article
+                key={sheet.name}
+                className="flex flex-col justify-between rounded-[24px] border border-[#D7E4F4] bg-white p-6"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E7F9FB] text-[#1652AC]">
+                      <FileSpreadsheet className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <span className="rounded-full bg-[#E8EEF8] px-3 py-1 text-sm font-extrabold text-[#192B99]">
+                      {sheet.price}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-xl font-extrabold tracking-tight text-[#343444]">{sheet.name}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#3A4158]">{sheet.description}</p>
+                </div>
+                <div className="mt-6">
+                  <a
+                    href={sheet.href}
+                    className="inline-flex min-h-11 items-center text-sm font-bold text-[#1652AC] underline decoration-[#04D4E4] underline-offset-4 hover:text-[#192B99]"
+                  >
+                    Conhecer a planilha {sheet.name} →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" className="scroll-mt-24 border-t border-[#D7E4F4] bg-white py-16 sm:py-24" aria-labelledby="sobre-titulo">
         <div className={`${SHELL} max-w-3xl`}>
           <p className="text-sm font-bold text-[#1652AC]">Sobre</p>
           <h2 id="sobre-titulo" className="mt-3 text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
-            Uma empresa de soluções digitais
+            Atendemos todo o Brasil
           </h2>
           <p className="mt-6 text-base leading-relaxed text-[#3A4158] sm:text-lg">
-            A Sentinel Systems desenvolve sites, sistemas web, automações, integrações e projetos de inteligência artificial aplicada a negócios. Cada projeto começa pelo que você precisa resolver, com um orçamento combinado antes do trabalho começar.
+            A Sentinel Systems desenvolve sites, sistemas web, cardápios digitais, automações de atendimento no WhatsApp e projetos de inteligência artificial aplicada a negócios. Atendemos todo o Brasil de forma online, com proposta e prazo definidos antes do trabalho começar.
           </p>
+        </div>
+      </section>
+
+      <section id="faq" className="scroll-mt-24 py-16 sm:py-20" aria-labelledby="faq-titulo">
+        <div className={`${SHELL} max-w-3xl`}>
+          <p className="text-sm font-bold text-[#1652AC]">Dúvidas frequentes</p>
+          <h2 id="faq-titulo" className="mt-3 text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em] text-[#343444]">
+            Perguntas frequentes
+          </h2>
+          <div className="mt-8 divide-y divide-[#D7E4F4] rounded-[24px] border border-[#D7E4F4] bg-white px-6">
+            {HOME_FAQS.map((item) => (
+              <details key={item.q} className="group">
+                <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-bold text-[#343444] [&::-webkit-details-marker]:hidden">
+                  {item.q}
+                  <ChevronDown className="h-5 w-5 shrink-0 text-[#1652AC] transition-transform group-open:rotate-180" aria-hidden="true" />
+                </summary>
+                <p className="pb-5 text-sm leading-relaxed text-[#3A4158]">{item.a}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -208,7 +284,7 @@ export function HomePage(_props: HomePageProps) {
               className="pointer-events-none absolute -right-10 -top-8 h-72 w-72 sm:h-96 sm:w-96"
             />
             <div className="relative">
-              <p className="text-sm font-bold text-[#04D4E4]">Contato</p>
+              <p className="text-sm font-bold text-[#04D4E4]">Contato · Atendimento em todo o Brasil</p>
               <h2 id="contato-titulo" className="mt-3 max-w-xl text-[clamp(1.8rem,4vw,2.7rem)] font-extrabold leading-tight tracking-[-0.035em]">
                 Vamos conversar sobre o seu projeto
               </h2>

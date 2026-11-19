@@ -49,7 +49,7 @@ export const EXAMPLE_VIDEOS = [
   },
 ] as const;
 
-export type PageKey = 'home';
+export type PageKey = 'home' | 'privacidade' | 'termos';
 
 export interface PageMeta {
   key: string;
@@ -67,11 +67,83 @@ export const PAGES: Record<PageKey, PageMeta> = {
     key: 'home',
     path: '/',
     label: 'Início',
-    title: 'Sentinel Systems | Soluções digitais',
+    title: 'Sentinel Systems | Sites, sistemas e automação com IA',
     description:
-      'A Sentinel Systems é uma empresa de soluções digitais. Desenvolvemos sites, sistemas web, automações, integrações e inteligência artificial aplicada a negócios.',
+      'A Sentinel Systems desenvolve sites, sistemas e automação com IA para empresas e negócios locais, com atendimento em todo o Brasil.',
+  },
+  privacidade: {
+    key: 'privacidade',
+    path: '/privacidade',
+    label: 'Política de Privacidade',
+    title: 'Política de Privacidade | Sentinel Systems',
+    description:
+      'Como a Sentinel Systems trata informações de contato enviadas por WhatsApp e e-mail, em conformidade com a LGPD.',
+  },
+  termos: {
+    key: 'termos',
+    path: '/termos',
+    label: 'Termos de Uso',
+    title: 'Termos de Uso | Sentinel Systems',
+    description:
+      'Condições de uso do site da Sentinel Systems, contratação de projetos sob medida e acesso às planilhas.',
   },
 };
+
+export const HOME_SERVICES = [
+  {
+    id: 'sites',
+    title: 'Sites',
+    text: 'Sites institucionais e páginas do negócio, feitos para abrir bem no celular e apresentar o que a empresa faz com clareza.',
+  },
+  {
+    id: 'sistemas',
+    title: 'Sistemas web',
+    text: 'Sistemas no navegador para organizar processos, dados e o trabalho do time, no ritmo da operação.',
+  },
+  {
+    id: 'cardapio-digital',
+    title: 'Cardápio digital',
+    text: 'Cardápio online pensado para abrir rápido no celular, com categorias organizadas e pedido direto no WhatsApp.',
+  },
+  {
+    id: 'automacao-whatsapp',
+    title: 'Automação de atendimento no WhatsApp',
+    text: 'Fluxos automatizados e atendimento com IA no WhatsApp para responder dúvidas frequentes, qualificar contatos e encaminhar pedidos.',
+  },
+  {
+    id: 'automacoes',
+    title: 'Automações e integrações',
+    text: 'Ligamos ferramentas e tarefas repetitivas para o trabalho fluir com menos retrabalho manual.',
+  },
+  {
+    id: 'ia',
+    title: 'IA aplicada a negócios',
+    text: 'Usamos inteligência artificial de forma prática, no que realmente ajuda a rotina e a decisão do negócio.',
+  },
+] as const;
+
+export const HOME_FAQS = [
+  {
+    q: 'Como funciona o atendimento e o orçamento?',
+    a: 'O primeiro contato é pelo WhatsApp (22) 99972-6069. Você explica o que o seu negócio precisa e nós enviamos uma proposta com escopo e prazo definidos antes de começar.',
+  },
+  {
+    q: 'A Sentinel Systems atende apenas uma cidade ou todo o Brasil?',
+    a: 'Atendemos todo o Brasil de forma remota, com reuniões e acompanhamento direto pelo WhatsApp e por e-mail.',
+  },
+  {
+    q: 'Quais soluções vocês desenvolvem?',
+    a: 'Desenvolvemos sites, sistemas web, cardápio digital, automação de atendimento no WhatsApp, integrações entre ferramentas e inteligência artificial aplicada a negócios.',
+  },
+  {
+    q: 'O que são as planilhas Valor Hora Real e CotaCasa?',
+    a: 'São planilhas prontas para Google Planilhas e Excel, vendidas por R$ 9,90 cada uma nas páginas dedicadas valorhora.sentinelsystems.com.br/valorhora e cotacasa.sentinelsystems.com.br/cotacasa.',
+  },
+  {
+    q: 'Como entro em contato com a equipe?',
+    a: 'Você pode falar diretamente pelo WhatsApp (22) 99972-6069 ou enviar um e-mail para sentinelsystemsai@gmail.com.',
+  },
+] as const;
 
 export const NAV_LINKS = (Object.values(PAGES) as PageMeta[]).map((page) => ({
   href: page.path,
@@ -328,8 +400,29 @@ export function indexablePages(): PageMeta[] {
   ];
 }
 
+export function guidePages(): PageMeta[] {
+  return [
+    {
+      key: 'guias',
+      path: GUIDES_INDEX.path,
+      label: GUIDES_INDEX.label,
+      title: GUIDES_INDEX.title,
+      description: GUIDES_INDEX.description,
+      ogType: 'website',
+    },
+    ...PUBLISHED_GUIDES.map((guide) => ({
+      key: guide.slug,
+      path: guide.slug,
+      label: guide.title,
+      title: `${guide.title} | Sentinel Systems`,
+      description: guide.description,
+      ogType: 'article' as const,
+    })),
+  ];
+}
+
 export function pageByPath(path: string): PageMeta | undefined {
-  return indexablePages().find((page) => page.path === path);
+  return indexablePages().find((page) => page.path === path) ?? guidePages().find((page) => page.path === path);
 }
 
 const ORGANIZATION_ID = `${SITE.url}/#organization`;
@@ -512,37 +605,30 @@ export function jsonLdFor(path: string): Record<string, unknown> {
   ];
 
   if (page.path === '/') {
-    const institutionalServices = [
-      {
-        name: 'Sites',
-        description: 'Sites institucionais e páginas do negócio, feitos para abrir bem no celular e apresentar o que a empresa faz com clareza.',
-      },
-      {
-        name: 'Sistemas web',
-        description: 'Sistemas no navegador para organizar processos, dados e o trabalho do time, no ritmo da operação.',
-      },
-      {
-        name: 'Automações e integrações',
-        description: 'Ligamos ferramentas e tarefas repetitivas para o trabalho fluir com menos retrabalho manual.',
-      },
-      {
-        name: 'IA aplicada a negócios',
-        description: 'Usamos inteligência artificial de forma prática, no que realmente ajuda a rotina e a decisão do negócio.',
-      },
-    ];
     graph.push({
       '@type': 'ItemList',
       name: 'Serviços da Sentinel Systems',
-      itemListElement: institutionalServices.map((service, index) => ({
+      itemListElement: HOME_SERVICES.map((service, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         item: {
           '@type': 'Service',
-          name: service.name,
-          description: service.description,
+          name: service.title,
+          description: service.text,
           url: `${canonicalUrl('/')}#servicos`,
           areaServed: { '@type': 'Country', name: 'Brasil' },
           provider: { '@id': ORGANIZATION_ID },
+        },
+      })),
+    });
+    graph.push({
+      '@type': 'FAQPage',
+      mainEntity: HOME_FAQS.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a,
         },
       })),
     });

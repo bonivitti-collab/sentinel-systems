@@ -129,17 +129,7 @@
     },
     {
       "source": "/ferramentas",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/guias",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/guias/:slug",
-      "destination": "/",
+      "destination": "/#planilhas",
       "permanent": true
     }
   ],
@@ -151,6 +141,22 @@
     {
       "source": "/cotacasa",
       "destination": "/cotacasa/index.html"
+    },
+    {
+      "source": "/privacidade",
+      "destination": "/privacidade/index.html"
+    },
+    {
+      "source": "/termos",
+      "destination": "/termos/index.html"
+    },
+    {
+      "source": "/guias",
+      "destination": "/guias/index.html"
+    },
+    {
+      "source": "/guias/:slug",
+      "destination": "/guias/:slug/index.html"
     },
     {
       "source": "/d/:slug",

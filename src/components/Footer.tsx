@@ -8,9 +8,13 @@ interface FooterProps {
 
 const SECTIONS = [
   { href: '/#servicos', label: 'Serviços' },
-  { href: '/#como-trabalhamos', label: 'Como trabalhamos' },
+  { href: '/#planilhas', label: 'Planilhas' },
+  { href: '/#como-trabalhamos', label: 'Como funciona o orçamento' },
+  { href: '/#faq', label: 'Perguntas frequentes' },
   { href: '/#sobre', label: 'Sobre' },
   { href: '/#contato', label: 'Contato' },
+  { href: '/privacidade', label: 'Privacidade' },
+  { href: '/termos', label: 'Termos' },
 ] as const;
 
 const YEAR = 2026;
@@ -56,8 +60,16 @@ export function Footer({ onNavigate }: FooterProps) {
           </ul>
         </div>
       </div>
-      <div className="mx-auto mt-8 w-full max-w-[1120px] px-5 text-xs text-[#3A4158]/70 sm:px-8">
-        © {YEAR} Sentinel Systems
+      <div className="mx-auto mt-8 flex w-full max-w-[1120px] flex-wrap items-center justify-between gap-4 px-5 text-xs text-[#3A4158] sm:px-8">
+        <span>© {YEAR} Sentinel Systems</span>
+        <div className="flex items-center gap-4">
+          <a href="/privacidade" onClick={(event) => go(event, '/privacidade')} className="font-semibold text-[#3A4158] underline-offset-4 hover:text-[#1652AC] hover:underline">
+            Privacidade
+          </a>
+          <a href="/termos" onClick={(event) => go(event, '/termos')} className="font-semibold text-[#3A4158] underline-offset-4 hover:text-[#1652AC] hover:underline">
+            Termos de Uso
+          </a>
+        </div>
       </div>
     </footer>
   );

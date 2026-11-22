@@ -108,7 +108,7 @@ export function HomePage(_props: HomePageProps) {
                             loading="lazy"
                             decoding="async"
                             className={
-                              product.id === 'jurissigilo' || product.id === 'cotacasa-app'
+                              product.id === 'jurissigilo'
                                 ? 'h-14 w-14 shrink-0 rounded-2xl border border-[#D7E4F4] bg-white object-contain p-1'
                                 : 'h-14 w-14 shrink-0 rounded-2xl border border-[#D7E4F4] object-cover'
                             }

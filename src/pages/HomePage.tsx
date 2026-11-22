@@ -2,6 +2,7 @@ import {
   ArrowRight,
   Building2,
   ChevronDown,
+  Church,
   FileSpreadsheet,
   MessageCircle,
   Scale,
@@ -25,6 +26,7 @@ const SHELL = 'mx-auto w-full max-w-[1120px] px-5 sm:px-8';
 const PRODUCT_ICON: Record<HomeProduct['id'], typeof Building2> = {
   'cotacasa-app': Building2,
   jurissigilo: Scale,
+  'igreja-em-caminhada': Church,
   valorhora: FileSpreadsheet,
   'cotacasa-planilha': FileSpreadsheet,
 };
@@ -32,6 +34,7 @@ const PRODUCT_ICON: Record<HomeProduct['id'], typeof Building2> = {
 const PRODUCT_TINT: Record<HomeProduct['id'], string> = {
   'cotacasa-app': 'bg-[#E7F9FB] text-[#1652AC]',
   jurissigilo: 'bg-[#E8EEF8] text-[#192B99]',
+  'igreja-em-caminhada': 'bg-[#E8F2EE] text-[#2F6F5E]',
   valorhora: 'bg-[#E7F9FB] text-[#1652AC]',
   'cotacasa-planilha': 'bg-[#EEEAF8] text-[#4A33B1]',
 };
@@ -201,7 +204,7 @@ export function HomePage(_props: HomePageProps) {
               Fale com a equipe Sentinel Systems
             </h2>
             <p className="mt-3 max-w-xl text-base leading-relaxed text-[#3A4158]">
-              Tem alguma dúvida sobre o CotaCasa, o JurisSigilo ou uma de nossas planilhas? Chame no WhatsApp ou envie um e-mail.
+              Tem alguma dúvida sobre o CotaCasa, o JurisSigilo, o Igreja em Caminhada ou uma de nossas planilhas? Chame no WhatsApp ou envie um e-mail.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a

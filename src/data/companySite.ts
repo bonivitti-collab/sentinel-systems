@@ -90,7 +90,7 @@ export const PAGES: Record<PageKey, PageMeta> = {
 };
 
 export interface HomeProduct {
-  id: 'cotacasa-app' | 'jurissigilo' | 'valorhora' | 'cotacasa-planilha';
+  id: 'cotacasa-app' | 'jurissigilo' | 'igreja-em-caminhada' | 'valorhora' | 'cotacasa-planilha';
   name: string;
   kindLabel: string;
   schemaType: 'SoftwareApplication' | 'Product';
@@ -138,6 +138,22 @@ export const HOME_PRODUCTS: HomeProduct[] = [
     imageAlt: 'Logotipo do JurisSigilo, uma balança dentro de um escudo',
   },
   {
+    id: 'igreja-em-caminhada',
+    name: 'Igreja em Caminhada',
+    kindLabel: 'Aplicativo · SaaS',
+    schemaType: 'SoftwareApplication',
+    description:
+      'O pastor escolhe a semana e o tema. A igreja inteira lê o mesmo devocional do dia e chega junta no culto de domingo.',
+    priceLabel: 'R$ 127/mês por igreja',
+    priceAmount: '127.00',
+    priceSuffix: 'Plano único',
+    href: 'https://igrejaemcaminhada.com.br',
+    offerUrl: 'https://pay.kiwify.com.br/DAXpJQL',
+    ctaLabel: 'Acessar Igreja em Caminhada',
+    image: '/produtos/igreja-em-caminhada-logo.webp',
+    imageAlt: 'Logotipo do Igreja em Caminhada, uma cruz e um caminho',
+  },
+  {
     id: 'valorhora',
     name: 'Planilha Valor Hora Real',
     kindLabel: 'Planilha · Google Planilhas e Excel',
@@ -173,11 +189,11 @@ export const HOME_FAQS = [
   },
   {
     q: 'Quais produtos estão no ar?',
-    a: 'Estão no ar o aplicativo CotaCasa (para acompanhar obra), o SaaS jurídico JurisSigilo, a Planilha Valor Hora Real e a Planilha CotaCasa.',
+    a: 'Estão no ar o aplicativo CotaCasa (para acompanhar obra), o SaaS jurídico JurisSigilo, o Igreja em Caminhada, a Planilha Valor Hora Real e a Planilha CotaCasa.',
   },
   {
     q: 'Quanto custam os produtos?',
-    a: 'O aplicativo CotaCasa custa R$ 39,90 por mês (plano único). O JurisSigilo custa R$ 197 por mês, com 300 análises por mês. A Planilha Valor Hora Real e a Planilha CotaCasa custam R$ 9,90 cada.',
+    a: 'O aplicativo CotaCasa custa R$ 39,90 por mês (plano único). O JurisSigilo custa R$ 197 por mês, com 300 análises por mês. O Igreja em Caminhada custa R$ 127 por mês por igreja. A Planilha Valor Hora Real e a Planilha CotaCasa custam R$ 9,90 cada.',
   },
   {
     q: 'A Sentinel atende todo o Brasil?',

@@ -107,7 +107,11 @@ export function HomePage(_props: HomePageProps) {
                             height={56}
                             loading="lazy"
                             decoding="async"
-                            className="h-14 w-14 shrink-0 rounded-2xl border border-[#D7E4F4] object-cover"
+                            className={
+                              product.id === 'jurissigilo'
+                                ? 'h-14 w-14 shrink-0 rounded-2xl border border-[#D7E4F4] bg-white object-contain p-1'
+                                : 'h-14 w-14 shrink-0 rounded-2xl border border-[#D7E4F4] object-cover'
+                            }
                           />
                         ) : (
                           <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${PRODUCT_TINT[product.id]}`}>

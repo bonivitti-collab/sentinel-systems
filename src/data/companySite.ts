@@ -124,12 +124,16 @@ export const HOME_PRODUCTS: HomeProduct[] = [
     name: 'JurisSigilo',
     kindLabel: 'SaaS jurídico',
     schemaType: 'SoftwareApplication',
-    description: 'Software jurídico da Sentinel Systems.',
+    description:
+      'Você anexa o documento e a inteligência artificial analisa. Os dados pessoais do cliente são trocados por etiquetas no próprio navegador e não saem do computador. Depois, é só exportar a análise em Word ou PDF.',
     priceLabel: 'R$\u00a0197/mês',
     priceAmount: '197.00',
+    priceSuffix: '300 análises/mês',
     href: 'https://jurissigilo.sentinelsystems.com.br/',
     offerUrl: 'https://pay.kiwify.com.br/YZTzfXz',
     ctaLabel: 'Acessar JurisSigilo',
+    image: '/produtos/jurissigilo-logo.webp',
+    imageAlt: 'Logotipo do JurisSigilo, uma balança dentro de um escudo',
   },
   {
     id: 'valorhora',
@@ -171,7 +175,7 @@ export const HOME_FAQS = [
   },
   {
     q: 'Quanto custam os produtos?',
-    a: 'O aplicativo CotaCasa custa R$ 39,90 por mês (plano único). A Planilha Valor Hora Real e a Planilha CotaCasa custam R$ 9,90 cada. O JurisSigilo apresenta suas condições diretamente na própria página oficial.',
+    a: 'O aplicativo CotaCasa custa R$ 39,90 por mês (plano único). O JurisSigilo custa R$ 197 por mês, com 300 análises por mês. A Planilha Valor Hora Real e a Planilha CotaCasa custam R$ 9,90 cada.',
   },
   {
     q: 'A Sentinel atende todo o Brasil?',

@@ -118,6 +118,8 @@ export const HOME_PRODUCTS: HomeProduct[] = [
     href: 'https://cotacasa.com.br/',
     offerUrl: 'https://pay.kiwify.com.br/3GCP09y',
     ctaLabel: 'Acessar CotaCasa',
+    image: '/produtos/cotacasa-logo.webp',
+    imageAlt: 'Logotipo do CotaCasa, uma casa com capacete de obra',
   },
   {
     id: 'jurissigilo',

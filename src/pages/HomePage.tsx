@@ -100,7 +100,7 @@ export function HomePage(_props: HomePageProps) {
                   className="flex h-full flex-col justify-between rounded-[24px] border border-[#D7E4F4] bg-white p-6 shadow-sm"
                 >
                   <div>
-                    <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
+                    <div className="flex items-start justify-between gap-4">
                       <div className="flex min-w-0 items-center gap-3">
                         {product.image ? (
                           <img

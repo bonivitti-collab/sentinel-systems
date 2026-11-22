@@ -100,7 +100,13 @@ export function HomePage(_props: HomePageProps) {
                   className="flex h-full flex-col justify-between rounded-[24px] border border-[#D7E4F4] bg-white p-6 shadow-sm"
                 >
                   <div>
-                    <div className="flex items-start justify-between gap-4">
+                    <div
+                      className={
+                        product.id === 'igreja-em-caminhada'
+                          ? 'flex flex-col items-start gap-3'
+                          : 'flex items-start justify-between gap-4'
+                      }
+                    >
                       <div className="flex min-w-0 items-center gap-3">
                         {product.image ? (
                           <img
@@ -132,8 +138,14 @@ export function HomePage(_props: HomePageProps) {
                       </div>
 
                       {product.priceLabel ? (
-                        <div className="max-w-[11.5rem] shrink-0 text-right">
-                          <span className="inline-flex rounded-full bg-[#E8EEF8] px-3 py-1 text-center text-sm font-extrabold leading-snug text-[#192B99]">
+                        <div
+                          className={
+                            product.id === 'igreja-em-caminhada'
+                              ? 'text-left'
+                              : 'shrink-0 text-right'
+                          }
+                        >
+                          <span className="inline-flex rounded-full bg-[#E8EEF8] px-3 py-1 text-sm font-extrabold text-[#192B99]">
                             {product.priceLabel}
                           </span>
                           {product.priceSuffix ? (

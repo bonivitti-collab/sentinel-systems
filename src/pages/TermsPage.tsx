@@ -39,7 +39,7 @@ export function TermsPage({ onNavigate }: TermsPageProps) {
           <div>
             <h2 className="text-xl font-extrabold text-[#343444]">2. Aplicativos SaaS</h2>
             <p className="mt-2">
-              Cada aplicativo SaaS (como o CotaCasa, o JurisSigilo e o Igreja em Caminhada) é acessado em seu próprio endereço oficial, onde constam as condições vigentes de uso e contratação.
+              Cada aplicativo SaaS (como o CotaCasa, o JurisSigilo, o Igreja em Caminhada e o Finança Fácil) é acessado em seu próprio endereço oficial, onde constam as condições vigentes de uso e contratação.
             </p>
           </div>
 

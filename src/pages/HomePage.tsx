@@ -6,6 +6,7 @@ import {
   FileSpreadsheet,
   MessageCircle,
   Scale,
+  Wallet,
 } from 'lucide-react';
 import { SentinelLogo } from '../components/SentinelLogo';
 import {
@@ -27,6 +28,7 @@ const PRODUCT_ICON: Record<HomeProduct['id'], typeof Building2> = {
   'cotacasa-app': Building2,
   jurissigilo: Scale,
   'igreja-em-caminhada': Church,
+  'financa-facil': Wallet,
   valorhora: FileSpreadsheet,
   'cotacasa-planilha': FileSpreadsheet,
 };
@@ -35,6 +37,7 @@ const PRODUCT_TINT: Record<HomeProduct['id'], string> = {
   'cotacasa-app': 'bg-[#E7F9FB] text-[#1652AC]',
   jurissigilo: 'bg-[#E8EEF8] text-[#192B99]',
   'igreja-em-caminhada': 'bg-[#E8F2EE] text-[#2F6F5E]',
+  'financa-facil': 'bg-[#E8F5EE] text-[#1F7A4D]',
   valorhora: 'bg-[#E7F9FB] text-[#1652AC]',
   'cotacasa-planilha': 'bg-[#EEEAF8] text-[#4A33B1]',
 };
@@ -216,7 +219,7 @@ export function HomePage(_props: HomePageProps) {
               Fale com a equipe Sentinel Systems
             </h2>
             <p className="mt-3 max-w-xl text-base leading-relaxed text-[#3A4158]">
-              Tem alguma dúvida sobre o CotaCasa, o JurisSigilo, o Igreja em Caminhada ou uma de nossas planilhas? Chame no WhatsApp ou envie um e-mail.
+              Tem alguma dúvida sobre o CotaCasa, o JurisSigilo, o Igreja em Caminhada, o Finança Fácil ou uma de nossas planilhas? Chame no WhatsApp ou envie um e-mail.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a

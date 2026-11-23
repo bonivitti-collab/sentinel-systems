@@ -46,7 +46,7 @@ export function PrivacyPage({ onNavigate }: PrivacyPageProps) {
           <div>
             <h2 className="text-xl font-extrabold text-[#343444]">3. Aplicativos SaaS e planilhas</h2>
             <p className="mt-2">
-              Os aplicativos SaaS (como o CotaCasa, o JurisSigilo e o Igreja em Caminhada) possuem ambientes próprios de acesso e uso. A aquisição das planilhas Valor Hora Real e CotaCasa ocorre em ambiente externo da plataforma Kiwify, que possui sua própria política de privacidade e processa os dados de pagamento com segurança.
+              Os aplicativos SaaS (como o CotaCasa, o JurisSigilo, o Igreja em Caminhada e o Finança Fácil) possuem ambientes próprios de acesso e uso. A aquisição das planilhas Valor Hora Real e CotaCasa ocorre em ambiente externo da plataforma Kiwify, que possui sua própria política de privacidade e processa os dados de pagamento com segurança.
             </p>
           </div>
 

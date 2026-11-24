@@ -59,7 +59,10 @@ export function Footer({ onNavigate }: FooterProps) {
         </div>
       </div>
       <div className="mx-auto mt-8 flex w-full max-w-[1120px] flex-wrap items-center justify-between gap-4 px-5 text-xs text-[#3A4158] sm:px-8">
-        <span>© {YEAR} Sentinel Systems</span>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span>© {YEAR} Sentinel Systems</span>
+          <span>CNPJ 70.280.738/0001-35</span>
+        </div>
         <div className="flex items-center gap-4">
           <a href="/privacidade" onClick={(event) => go(event, '/privacidade')} className="font-semibold text-[#3A4158] underline-offset-4 hover:text-[#1652AC] hover:underline">
             Privacidade

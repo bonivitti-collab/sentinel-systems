@@ -153,6 +153,7 @@ export function ProductLandingPage({ product }: { product: ProductLanding }) {
               Produtos
             </a>
           </p>
+          <p className="mt-2 text-xs text-slate-600">CNPJ 70.280.738/0001-35</p>
         </div>
       </footer>
 

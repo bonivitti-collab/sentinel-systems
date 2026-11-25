@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pauta da Semana · Lully Artes | BoniLead</title>
+  <meta name="description" content="Amostra da Pauta da Semana para a Lully Artes: cinco roteiros, de segunda a sexta, para gravar no celular e postar.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2F5BFF">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://bonilead.com.br/amostra/lullyarte/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Pauta da Semana · Lully Artes | BoniLead">
+  <meta property="og:description" content="Amostra da Pauta da Semana para a Lully Artes: cinco roteiros, de segunda a sexta, para gravar no celular e postar.">
+  <meta property="og:url" content="https://bonilead.com.br/amostra/lullyarte/">
+  <meta property="og:image" content="https://bonilead.com.br/pauta/og-pauta.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face{font-family:"Manrope";src:url("/fonts/manrope.woff2") format("woff2");font-weight:200 800;font-display:swap}
+    @font-face{font-family:"Inter";src:url("/fonts/inter.woff2") format("woff2");font-weight:100 900;font-display:swap}
+    :root{
+      --azul:#2F5BFF;--azul-esc:#1B3FE0;--azul-noite:#0F1E6E;--azul-claro:#E8EEFF;
+      --grafite:#2B2B2E;--grafite-2:#5A5B63;--areia:#F6F3EE;--areia-2:#EDE7DD;
+      --coral:#F2553D;--branco:#fff;--linha:rgba(43,43,46,.12);
+      --titulo:"Manrope",system-ui,sans-serif;--texto:"Inter",system-ui,sans-serif;
+      --sombra:0 14px 32px -20px rgba(15,30,110,.28);
+      --pad:16px;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--areia)}
+    body{
+      margin:0;min-height:100dvh;color:var(--grafite);background:var(--areia);
+      font-family:var(--texto);font-size:16px;line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+    }
+    button,a{font-family:inherit}
+    button{cursor:pointer}
+    [hidden]{display:none!important}
+    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    .app{width:100%;max-width:480px;min-height:100dvh;margin:0 auto;display:flex;flex-direction:column;background:var(--areia)}
+    .hero{
+      position:relative;color:var(--grafite);
+      padding:calc(env(safe-area-inset-top,0px) + 16px) var(--pad) 28px;
+      background:
+        radial-gradient(420px 260px at 92% -10%, rgba(255,255,255,.9), transparent 62%),
+        radial-gradient(380px 300px at -10% 110%, rgba(47,91,255,.16), transparent 60%),
+        linear-gradient(135deg, #EEF2FF 0%, #F6F3EE 55%, #E8EEFF 100%);
+      border-radius:0 0 28px 28px;
+      box-shadow:0 22px 44px -30px rgba(15,30,110,.45);
+      overflow:hidden;isolation:isolate;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+      background-image:radial-gradient(rgba(15,30,110,.07) 1px, transparent 1px);
+      background-size:14px 14px;
+      -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);
+      mask-image:linear-gradient(180deg,#000,transparent 85%);
+    }
+    .hero-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .voltar{
+      display:inline-flex;align-items:center;gap:4px;background:#fff;border:1px solid var(--linha);
+      border-radius:999px;padding:7px 14px 7px 10px;font:600 14px var(--titulo);
+      text-decoration:none;color:var(--grafite);
+    }
+    .voltar svg{width:16px;height:16px}
+    .voltar:hover{background:var(--azul-claro);color:var(--azul-esc)}
+    .logo{display:block;height:28px;width:auto}
+    .chip-marca{
+      display:inline-block;margin:0 0 10px;padding:5px 10px;border-radius:999px;
+      background:rgba(47,91,255,.1);color:var(--azul-esc);font:600 12px var(--titulo);letter-spacing:.02em;
+    }
+    .hello{margin:0 0 6px;font:800 28px/1.15 var(--titulo);letter-spacing:-.03em}
+    .hello-sub{margin:0 0 8px;font-size:15px;color:var(--grafite-2)}
+    .hello-note{margin:0;font-size:14px;color:var(--grafite-2)}
+    .topbar{
+      position:sticky;top:0;z-index:5;
+      padding:calc(env(safe-area-inset-top,0px) + 10px) var(--pad) 12px;
+      background:
+        radial-gradient(420px 260px at 92% -10%, rgba(255,255,255,.9), transparent 62%),
+        linear-gradient(135deg, #EEF2FF 0%, #F6F3EE 70%);
+      border-bottom:1px solid var(--linha);
+    }
+    .nav{display:flex;align-items:center;gap:10px}
+    .nav-title{flex:1;margin:0;font:700 16px/1.2 var(--titulo);letter-spacing:-.02em}
+    .nav-right{font:600 13px var(--titulo);color:var(--grafite-2)}
+    .body{flex:1;padding:0 var(--pad) 28px}
+    .body--home{padding-top:0}
+    .meta{
+      display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;
+      margin:-22px 0 18px;position:relative;z-index:1;
+    }
+    .meta-item{
+      background:#fff;border:1px solid var(--linha);border-radius:16px;
+      padding:12px 8px;text-align:center;box-shadow:var(--sombra);
+    }
+    .meta-item b{display:block;font:800 22px var(--titulo);color:var(--azul-noite)}
+    .meta-item span{font-size:12px;color:var(--grafite-2)}
+    .days{display:flex;flex-direction:column;gap:10px}
+    .day{
+      display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+      background:#fff;border:1px solid var(--linha);border-radius:18px;
+      padding:12px 12px 12px 10px;box-shadow:var(--sombra);color:inherit;
+    }
+    .day:hover{border-color:color-mix(in srgb,var(--azul) 35%,var(--linha))}
+    .day-date{flex:0 0 48px;text-align:center}
+    .day-dow{display:block;font:700 11px var(--titulo);text-transform:uppercase;letter-spacing:.06em;color:var(--azul-esc)}
+    .day-num{display:block;font:800 20px/1.1 var(--titulo);letter-spacing:-.03em}
+    .day-main{flex:1;min-width:0}
+    .day-tema{display:block;font:700 15px/1.25 var(--titulo);letter-spacing:-.02em}
+    .day-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:6px}
+    .pill{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:var(--azul-claro);color:var(--azul-esc);font:600 11px var(--titulo)}
+    .pill-soft{background:var(--areia-2);color:var(--grafite-2)}
+    .chev{width:18px;height:18px;flex:0 0 18px;color:var(--grafite-2)}
+    .panel{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:16px;margin:14px 0 0;box-shadow:var(--sombra)}
+    .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+    .post-title{margin:0 0 8px;font:800 22px/1.2 var(--titulo);letter-spacing:-.03em}
+    .ideia{margin:0;color:var(--grafite-2);font-size:15px}
+    .hora-box{display:flex;flex-direction:column;gap:2px}
+    .hora-box b{font:800 22px var(--titulo);color:var(--azul-noite)}
+    .hora-box span{font-size:13px;color:var(--grafite-2)}
+    .panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+    .label{margin:0;font:700 13px var(--titulo);text-transform:uppercase;letter-spacing:.06em;color:var(--azul-esc)}
+    .copy{
+      height:32px;padding:0 10px;display:inline-flex;align-items:center;gap:6px;
+      border:1px solid var(--linha);border-radius:999px;background:#fff;
+      font:600 12px var(--titulo);color:var(--grafite);
+    }
+    .copy:active,.copy.is-ok{background:var(--azul-claro);color:var(--azul-esc);border-color:transparent}
+    .hook-time{margin:0 0 10px;font:600 13px var(--titulo);color:var(--coral)}
+    .field{margin:0 0 12px}
+    .field:last-child{margin-bottom:0}
+    .field-lab{margin:0 0 4px;font:600 12px var(--titulo);color:var(--grafite-2)}
+    .fala,.slide-txt,.legenda,.tela,.filmar{
+      margin:0;white-space:pre-wrap;font-size:.9375rem;line-height:1.55;
+      padding:12px 14px;border-radius:14px;background:var(--areia);
+    }
+    .fala{font-weight:600}
+    .legenda{font-size:.875rem}
+    .scene{margin-top:14px;padding-top:14px;border-top:1px solid var(--linha)}
+    .scene:first-child{margin-top:0;padding-top:0;border-top:0}
+    .scene-top{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+    .scene-n,.slide-n{
+      flex:0 0 22px;height:22px;border-radius:999px;background:var(--azul);color:#fff;
+      font:700 11px/22px var(--titulo);text-align:center;
+    }
+    .scene-name{margin:0;font:700 14px var(--titulo)}
+    .slide{margin-top:12px;padding-top:12px;border-top:1px solid var(--linha)}
+    .slide:first-child{margin-top:0;padding-top:0;border-top:0}
+    .stories{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+    .stories li{background:var(--areia);border-radius:14px;padding:12px 14px}
+    .stories b{display:block;font:700 13px var(--titulo);margin-bottom:4px}
+    .cta{
+      margin:22px 0 8px;padding:20px 16px;border-radius:20px;color:#fff;text-align:center;
+      background:linear-gradient(160deg,var(--azul) 0%,var(--azul-noite) 100%);
+      box-shadow:0 18px 40px -20px rgba(15,30,110,.7);
+    }
+    .cta h2{margin:0 0 8px;font:800 20px/1.25 var(--titulo);letter-spacing:-.02em}
+    .cta p{margin:0 0 14px;font-size:14px;line-height:1.5;color:rgba(255,255,255,.9)}
+    .cta-preco{display:block;font:800 18px var(--titulo);margin-bottom:4px}
+    .bt-wa{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      background:#fff;color:var(--azul-esc);text-decoration:none;
+      font:700 15px var(--titulo);padding:12px 18px;border-radius:999px;
+    }
+    .rod{padding:8px var(--pad) calc(16px + env(safe-area-inset-bottom,0px));text-align:center}
+    .rod p{margin:0;font-size:12px;color:var(--grafite-2)}
+    .status{
+      position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));
+      transform:translateX(-50%);background:var(--grafite);color:#fff;
+      font:600 13px var(--titulo);padding:8px 14px;border-radius:999px;z-index:10;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="hero" id="top-home">
+      <div class="hero-top">
+        <a class="voltar" href="/pauta/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          Voltar
+        </a>
+        <a href="/" aria-label="BoniLead, página inicial"><img class="logo" src="/img/logo.png" width="160" height="60" alt="BoniLead"></a>
+      </div>
+      <p class="chip-marca">Amostra · Pauta da Semana</p>
+      <h1 class="hello">Lully Artes</h1>
+      <p class="hello-sub">Olá, Luzia. Esta é uma amostra da sua pauta: 30 de novembro a 4 de dezembro.</p>
+      <p class="hello-note">Cinco roteiros para gravar no celular. Você só grava e posta.</p>
+    </header>
+
+    <header class="topbar" id="top-nav" hidden>
+      <div class="nav">
+        <button class="voltar" id="btn-back" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          Voltar
+        </button>
+        <h1 class="nav-title" id="nav-title"></h1>
+        <span class="nav-right" id="nav-right"></span>
+      </div>
+    </header>
+
+    <main class="body body--home" id="view-home">
+      <div class="meta">
+        <div class="meta-item"><b>4</b><span>Reels</span></div>
+        <div class="meta-item"><b>1</b><span>Carrossel</span></div>
+        <div class="meta-item"><b>5</b><span>Dias</span></div>
+      </div>
+      <div class="days" id="days"></div>
+      <section class="cta" id="cta">
+        <h2>Uma semana assim, toda segunda.</h2>
+        <p><span class="cta-preco">R$ 47/mês</span>Toda segunda você recebe no WhatsApp os roteiros dos seus posts da semana, feitos para o seu negócio. É só gravar e postar.</p>
+        <a class="bt-wa" href="https://wa.me/5522998434956?text=Oi!%20Vi%20a%20amostra%20da%20Pauta%20da%20Semana%20da%20Lully%20Artes%20e%20quero%20come%C3%A7ar.">WhatsApp (22) 99843-4956</a>
+      </section>
+    </main>
+
+    <main class="body" id="view-post" hidden></main>
+    <div class="status" id="status" hidden></div>
+    <footer class="rod">
+      <p>CNPJ 70.280.738/0001-35</p>
+    </footer>
+  </div>
+  <script>
+    const WA_CTA = "https://wa.me/5522998434956?text=Oi!%20Vi%20a%20amostra%20da%20Pauta%20da%20Semana%20da%20Lully%20Artes%20e%20quero%20come%C3%A7ar.";
+    const POSTS = [
+      {
+        id: "segunda",
+        data: "2026-11-30",
+        weekday: "segunda",
+        weekdayCurto: "Seg",
+        diaNum: "30",
+        diaRotulo: "segunda, 30 de novembro",
+        hora: "19h",
+        formato: "Reels",
+        formatoLabel: "Bastidor",
+        duracao: "25s",
+        tema: "A sacolinha de Natal, do começo ao laço",
+        ideia: "Filme na mesa, com o celular apoiado ou na mão, montando uma sacolinha de Natal com vinho e chocolates. Sem equipe, sem corte difícil: um plano de perto e a sacolinha pronta no final.",
+        gancho: {
+          tempo: "0–3s",
+          filmar: "Close na sacolinha quase pronta. Sua mão ajusta o laço, sem olhar para a câmera ainda. Um único plano, sem corte.",
+          fala: "Essa sacolinha aqui não é improviso de última hora.",
+          textoTela: "Sacolinha de Natal"
+        },
+        roteiro: [
+          {
+            cena: "Cena 1",
+            tempo: "0–3s",
+            filmar: "Close na sacolinha quase pronta. A mão ajusta o laço.",
+            fala: "Essa sacolinha aqui não é improviso de última hora.",
+            textoTela: "Sacolinha de Natal"
+          },
+          {
+            cena: "Cena 2",
+            tempo: "3–15s",
+            filmar: "Abre um pouco o enquadramento e mostra a mesa: o vinho e os chocolates entrando na sacolinha, um de cada vez. A câmera pode ficar parada.",
+            fala: "Vinho, chocolates e o cuidado de quem monta pensando em quem vai receber. É assim que a sacolinha de Natal da Lully Artes sai daqui.",
+            textoTela: "Vinho e chocolates"
+          },
+          {
+            cena: "Cena 3",
+            tempo: "15–25s",
+            filmar: "Segura a sacolinha já fechada na frente da câmera, olha para a lente e sorri.",
+            fala: "Se você quer presentear sem correria, me chama no WhatsApp. Eu monto e envio para onde você estiver.",
+            textoTela: "Peça no WhatsApp"
+          }
+        ],
+        legenda: "Sacolinha de Natal da Lully Artes: vinho, chocolates e o capricho de quem monta à mão.\\n\\nSe você quer presentear sem deixar para a última hora, me chama no WhatsApp. Eu monto o seu pedido e envio para onde você estiver.\\n\\n#LullyArtes #lullyarte #sacolinhadenatal #presentedenatal #natal2026 #feitoamao",
+        stories: [
+          { tipo: "Bastidor", texto: "A mesa de hoje, antes de fechar a sacolinha.", como: "Foto ou vídeo curto, de cima, com o vinho, os chocolates e a sacolinha aberta. Sem fala. Cinco segundos e sai." },
+          { tipo: "Enquete", texto: "Você já escolheu o presente de Natal?", opcoes: ["Já escolhi", "Ainda não"] },
+          { tipo: "Caixinha", texto: "Para quem você quer uma sacolinha dessas? Me conta." }
+        ]
+      },
+      {
+        id: "terca",
+        data: "2026-12-01",
+        weekday: "terça",
+        weekdayCurto: "Ter",
+        diaNum: "1",
+        diaRotulo: "terça, 1º de dezembro",
+        hora: "12h30",
+        formato: "Reels",
+        formatoLabel: "Presente",
+        duracao: "22s",
+        tema: "Kit masculino infantil: presente de Natal que já sai pronto",
+        ideia: "Mostre o kit masculino infantil exatamente como ele é, na sacolinha de presente. Não precisa inventar cenário: a sacolinha na mão, o que vai dentro, e um convite curto no final.",
+        gancho: {
+          tempo: "0–3s",
+          filmar: "Segura a sacolinha do kit fechada, bem no centro do quadro, e olha para a câmera. Um único plano.",
+          fala: "Presente de Natal para menino — e não é brinquedo.",
+          textoTela: "Kit masculino infantil"
+        },
+        roteiro: [
+          {
+            cena: "Cena 1",
+            tempo: "0–3s",
+            filmar: "Sacolinha do kit fechada, no centro do quadro. Olha para a câmera.",
+            fala: "Presente de Natal para menino — e não é brinquedo.",
+            textoTela: "Kit masculino infantil"
+          },
+          {
+            cena: "Cena 2",
+            tempo: "3–14s",
+            filmar: "Abre a sacolinha e mostra o kit com calma, item a item, do jeito que ele realmente é. Se preferir, deixe a câmera apoiada e só mova as mãos.",
+            fala: "Esse é o kit masculino infantil da Lully Artes. Já vem na sacolinha de presente, pronto para entregar — uma opção prática para os meninos da família.",
+            textoTela: "Pronto para presentear"
+          },
+          {
+            cena: "Cena 3",
+            tempo: "14–22s",
+            filmar: "Fecha a sacolinha, segura na altura do peito e fala olhando para a lente.",
+            fala: "Se é para um menino da sua casa, me chama no WhatsApp. Eu te mostro o kit e cuido do envio.",
+            textoTela: "Peça no WhatsApp"
+          }
+        ],
+        legenda: "Kit masculino infantil da Lully Artes, na sacolinha de presente. Uma ideia de Natal prática, pensada para os meninos da família.\\n\\nMe chama no WhatsApp para ver o kit e fazer o seu pedido. Envio para onde você estiver.\\n\\n#LullyArtes #lullyarte #kitinfantil #presentedenatal #natal2026 #sacolinhadepresente",
+        stories: [
+          { tipo: "Bastidor", texto: "O kit masculino infantil, pronto na sacolinha.", como: "Foto da sacolinha fechada em uma superfície clara. Sem fala. Deixa 4 segundos." },
+          { tipo: "Enquete", texto: "Presente para menino no Natal: o que você prefere?", opcoes: ["Kit pronto", "Ainda vou pensar"] },
+          { tipo: "Caixinha", texto: "Tem um menino na lista de Natal? Me chama que eu te mostro o kit." }
+        ]
+      },
+      {
+        id: "quarta",
+        data: "2026-12-02",
+        weekday: "quarta",
+        weekdayCurto: "Qua",
+        diaNum: "2",
+        diaRotulo: "quarta, 2 de dezembro",
+        hora: "19h",
+        formato: "Reels",
+        formatoLabel: "Acessório",
+        duracao: "22s",
+        tema: "O charm de pérolas que não é só um chaveiro",
+        ideia: "Filme o acessório de pérolas de perto e depois pendurado na alça da bolsa — ou no chaveiro, se for assim que você mostra. Luz natural, celular na mão, movimentos lentos.",
+        gancho: {
+          tempo: "0–3s",
+          filmar: "Close no charm de pérolas na palma da mão, girando devagar contra a luz. Sem corte.",
+          fala: "Isso aqui não é só um chaveiro.",
+          textoTela: "Charm de pérolas"
+        },
+        roteiro: [
+          {
+            cena: "Cena 1",
+            tempo: "0–3s",
+            filmar: "Close no charm de pérolas na palma da mão, girando devagar contra a luz.",
+            fala: "Isso aqui não é só um chaveiro.",
+            textoTela: "Charm de pérolas"
+          },
+          {
+            cena: "Cena 2",
+            tempo: "3–14s",
+            filmar: "Pendura o charm na alça da bolsa (ou no chaveiro) e mostra de dois ângulos, bem devagar. Se puder, um plano da bolsa em movimento.",
+            fala: "É um acessório de pérolas para pendurar na bolsa — ou no chaveiro. Feito à mão, com muito amor e carinho, do jeito de tudo que sai da Lully Artes.",
+            textoTela: "Para a bolsa ou o chaveiro"
+          },
+          {
+            cena: "Cena 3",
+            tempo: "14–22s",
+            filmar: "Volta o acessório para perto da câmera e olha para a lente.",
+            fala: "Se quiser um para usar ou para presentear, me chama no WhatsApp. Eu envio para onde você estiver.",
+            textoTela: "Peça no WhatsApp"
+          }
+        ],
+        legenda: "Charm de pérolas da Lully Artes: um acessório para a bolsa ou para o chaveiro, feito à mão com muito amor e carinho.\\n\\nPara usar no dia a dia ou presentear. Me chama no WhatsApp e eu envio o seu pedido.\\n\\n#LullyArtes #lullyarte #acessorios #charmdeperolas #chaveiro #presentedenatal #feitoamao",
+        stories: [
+          { tipo: "Bastidor", texto: "O brilho das pérolas, de pertinho.", como: "Vídeo curto, só o acessório girando na mão, junto à janela. Sem fala. Três a cinco segundos." },
+          { tipo: "Enquete", texto: "Você usaria na bolsa ou no chaveiro?", opcoes: ["Na bolsa", "No chaveiro"] },
+          { tipo: "Caixinha", texto: "Quer esse acessório para você ou para presentear?" }
+        ]
+      },
+      {
+        id: "quinta",
+        data: "2026-12-03",
+        weekday: "quinta",
+        weekdayCurto: "Qui",
+        diaNum: "3",
+        diaRotulo: "quinta, 3 de dezembro",
+        hora: "12h30",
+        formato: "Reels",
+        formatoLabel: "Encomenda",
+        duracao: "20s",
+        tema: "O presente sai daqui e chega até você",
+        ideia: "Um Reels direto, olhando para a câmera, com uma sacolinha ou um kit ao lado do celular. O recado é simples: a encomenda é pelo WhatsApp e o pedido é enviado para onde a pessoa estiver.",
+        gancho: {
+          tempo: "0–3s",
+          filmar: "Olha para a câmera, com a sacolinha de Natal ao lado. Um plano só, do peito para cima.",
+          fala: "Mora longe e quer presentear no Natal?",
+          textoTela: "A gente envia o seu pedido"
+        },
+        roteiro: [
+          {
+            cena: "Cena 1",
+            tempo: "0–3s",
+            filmar: "Plano do peito para cima, sacolinha visível ao lado. Olha para a câmera.",
+            fala: "Mora longe e quer presentear no Natal?",
+            textoTela: "A gente envia o seu pedido"
+          },
+          {
+            cena: "Cena 2",
+            tempo: "3–12s",
+            filmar: "Mostra o WhatsApp aberto no celular (a tela de conversa, sem exibir dados de cliente) e a sacolinha na outra mão.",
+            fala: "Você me chama no WhatsApp, escolhe a sacolinha ou o kit, e eu cuido do envio para onde você estiver.",
+            textoTela: "Pedido pelo WhatsApp"
+          },
+          {
+            cena: "Cena 3",
+            tempo: "12–20s",
+            filmar: "Deixa o celular de lado, segura a sacolinha com as duas mãos e termina olhando para a lente.",
+            fala: "Não precisa estar perto para dar um presente feito com carinho. Me chama, e a gente organiza o seu pedido.",
+            textoTela: "Me chama no WhatsApp"
+          }
+        ],
+        legenda: "A Lully Artes envia o seu pedido para onde você estiver.\\n\\nSacolinha de Natal, kit masculino infantil ou acessórios: você escolhe no WhatsApp, e eu cuido do resto.\\n\\nMe chama e a gente organiza o seu presente.\\n\\n#LullyArtes #lullyarte #presentedenatal #sacolinhadenatal #encomenda #natal2026",
+        stories: [
+          { tipo: "Bastidor", texto: "Pedidos de quem está longe também saem daqui.", como: "Foto da sacolinha ao lado do celular. Sem fala. Quatro segundos." },
+          { tipo: "Enquete", texto: "Neste Natal você vai presentear alguém de outra cidade?", opcoes: ["Sim", "Ainda não sei"] },
+          { tipo: "Caixinha", texto: "Para onde você quer receber o seu pedido? Me chama no WhatsApp." }
+        ]
+      },
+      {
+        id: "sexta",
+        data: "2026-12-04",
+        weekday: "sexta",
+        weekdayCurto: "Sex",
+        diaNum: "4",
+        diaRotulo: "sexta, 4 de dezembro",
+        hora: "18h",
+        formato: "Carrossel",
+        formatoLabel: "Guia",
+        tema: "Três presentes da Lully Artes para o Natal",
+        ideia: "Carrossel com foto de cada opção que você já faz: a sacolinha de Natal com vinho e chocolates, o kit masculino infantil e o charm de pérolas. Fundo claro, uma peça por foto, texto curto em cada slide.",
+        slides: [
+          "Três presentes da Lully Artes para o Natal.\\nJá prontos para presentear.",
+          "1. Sacolinha de Natal com vinho e chocolates.\\nPara quem você quer celebrar.",
+          "2. Kit masculino infantil, na sacolinha de presente.\\nUma opção prática para os meninos da família.",
+          "3. Charm de pérolas para a bolsa ou o chaveiro.\\nUm acessório feito à mão, para usar ou presentear.",
+          "Peça pelo WhatsApp.\\nA Lully Artes envia o seu pedido para onde você estiver.",
+          "Qual desses combina com quem você vai presentear?\\nMe chama, e eu te ajudo a escolher.\\n@lullyarte"
+        ],
+        legenda: "Três presentes da Lully Artes para o Natal:\\n\\n• Sacolinha com vinho e chocolates\\n• Kit masculino infantil, na sacolinha de presente\\n• Charm de pérolas para a bolsa ou o chaveiro\\n\\nMe chama no WhatsApp, e eu te ajudo a escolher. Envio o pedido para onde você estiver.\\n\\n#LullyArtes #lullyarte #presentedenatal #sacolinhadenatal #kitinfantil #acessorios #natal2026",
+        stories: [
+          { tipo: "Bastidor", texto: "Os três presentes desta sexta, lado a lado.", como: "Uma foto das três opções em uma superfície clara. Sem fala. Deixa 4 segundos." },
+          { tipo: "Enquete", texto: "Qual desses você escolheria primeiro?", opcoes: ["Sacolinha", "Kit infantil", "Charm"] },
+          { tipo: "Caixinha", texto: "Me conta para quem é o presente, que eu te ajudo a escolher." }
+        ]
+      }
+    ];
+
+    const $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&":"&","<":"<",">":">","\"":""","'":"&#39;" }[c]));
+
+    function copyText(label, text) {
+      const done = () => {
+        const el = $("status");
+        el.textContent = label + " copiado";
+        el.hidden = false;
+        clearTimeout(copyText._t);
+        copyText._t = setTimeout(() => { el.hidden = true; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => fallback());
+      } else fallback();
+      function fallback() {
+        const ta = document.createElement("textarea");
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); } catch (e) {}
+        ta.remove(); done();
+      }
+    }
+
+    function btnCopy(label, text) {
+      const id = Math.random().toString(36).slice(2);
+      queueMicrotask(() => {
+        const b = document.querySelector('[data-cid="' + id + '"]');
+        if (b) b.addEventListener("click", () => {
+          copyText(label, text);
+          b.classList.add("is-ok");
+          b.querySelector("span").textContent = "Copiado";
+          setTimeout(() => { b.classList.remove("is-ok"); b.querySelector("span").textContent = "Copiar"; }, 1600);
+        });
+      });
+      return '<button class="copy" type="button" data-cid="' + id + '" aria-label="Copiar ' + esc(label) + '"><span>Copiar</span></button>';
+    }
+
+    function campo(lab, html) {
+      return '<div class="field"><p class="field-lab">' + lab + '</p>' + html + '</div>';
+    }
+
+    function blocoCena(c) {
+      let h = "";
+      if (c.filmar) h += campo("Filmar", '<p class="filmar">' + esc(c.filmar) + '</p>');
+      if (c.fala) h += campo("Falar", '<p class="fala">“' + esc(c.fala) + '”</p>');
+      if (c.textoTela) h += campo("Texto na tela", '<p class="tela">' + esc(c.textoTela) + '</p>');
+      return h;
+    }
+
+    function textoGancho(p) {
+      const g = p.gancho;
+      return [g.fala, g.textoTela ? "Texto na tela: " + g.textoTela : "", g.filmar ? "Filmar: " + g.filmar : ""].filter(Boolean).join("\\n");
+    }
+
+    function textoRoteiro(p) {
+      if (p.slides) return p.slides.map((s, i) => "Slide " + (i + 1) + "\\n" + s).join("\\n\\n");
+      return (p.roteiro || []).map((c) => {
+        const bits = [c.cena + (c.tempo ? " · " + c.tempo : "")];
+        if (c.filmar) bits.push("Filmar: " + c.filmar);
+        if (c.fala) bits.push("Falar: " + c.fala);
+        if (c.textoTela) bits.push("Texto na tela: " + c.textoTela);
+        return bits.join("\\n");
+      }).join("\\n\\n");
+    }
+
+    function renderHome() {
+      $("top-home").hidden = false;
+      $("top-nav").hidden = true;
+      $("view-home").hidden = false;
+      $("view-post").hidden = true;
+      $("days").innerHTML = POSTS.map((p) => {
+        return '<button class="day" type="button" data-id="' + esc(p.id) + '">' +
+          '<span class="day-date"><span class="day-dow">' + esc(p.weekdayCurto) + '</span><span class="day-num">' + esc(p.diaNum) + '</span></span>' +
+          '<span class="day-main"><span class="day-tema">' + esc(p.tema) + '</span>' +
+            '<span class="day-meta"><span class="pill">' + esc(p.formato) + '</span>' +
+            '<span class="pill pill-soft">' + esc(p.hora) + (p.duracao ? " · " + esc(p.duracao) : "") + '</span></span></span>' +
+          '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>';
+      }).join("");
+      $("days").querySelectorAll(".day").forEach((b) => b.addEventListener("click", () => abrir(b.dataset.id)));
+      document.title = "Pauta da Semana · Lully Artes | BoniLead";
+    }
+
+    function renderPost(p) {
+      $("top-home").hidden = true;
+      $("top-nav").hidden = false;
+      $("view-home").hidden = true;
+      $("view-post").hidden = false;
+      $("nav-title").textContent = p.weekday.charAt(0).toUpperCase() + p.weekday.slice(1);
+      $("nav-right").textContent = p.hora;
+      const chips = [
+        '<span class="pill">' + esc(p.formato) + '</span>',
+        p.formatoLabel ? '<span class="pill pill-soft">' + esc(p.formatoLabel) + '</span>' : "",
+        p.duracao ? '<span class="pill pill-soft">' + esc(p.duracao) + '</span>' : "",
+        '<span class="pill pill-soft">' + esc(p.hora) + '</span>'
+      ].join("");
+
+      let miolo = "";
+      if (p.slides) {
+        miolo = '<div class="panel-head"><p class="label">Slides</p>' + btnCopy("roteiro", textoRoteiro(p)) + '</div>' +
+          p.slides.map((tx, i) =>
+            '<div class="slide"><div class="scene-top"><span class="slide-n">' + (i + 1) + '</span><p class="scene-name">Slide ' + (i + 1) + '</p></div><p class="slide-txt">' + esc(tx) + '</p></div>'
+          ).join("");
+      } else {
+        const cenas = p.roteiro || [];
+        const resto = p.gancho ? cenas.slice(1) : cenas;
+        miolo = '<div class="panel-head"><p class="label">Roteiro, cena a cena</p>' + btnCopy("roteiro", textoRoteiro(p)) + '</div>' +
+          resto.map((c, i) =>
+            '<div class="scene"><div class="scene-top"><span class="scene-n">' + (p.gancho ? i + 2 : i + 1) + '</span><p class="scene-name">' + esc(c.cena) + (c.tempo ? " · " + esc(c.tempo) : "") + '</p></div>' + blocoCena(c) + '</div>'
+          ).join("");
+      }
+
+      const stories = (p.stories || []).map((s) => {
+        let t = "<b>" + esc(s.tipo) + "</b>" + esc(s.texto);
+        if (s.opcoes) t += " (" + s.opcoes.join(" / ") + ")";
+        if (s.como) t += "<br>" + esc(s.como);
+        return "<li>" + t + "</li>";
+      }).join("");
+
+      $("view-post").innerHTML =
+        '<section class="panel"><div class="chips">' + chips + '</div>' +
+          '<h2 class="post-title">' + esc(p.tema) + '</h2>' +
+          (p.ideia ? '<p class="ideia">' + esc(p.ideia) + '</p>' : "") +
+        '</section>' +
+        '<section class="panel"><div class="hora-box"><b>' + esc(p.hora) + '</b><span>Melhor horário para postar · ' + esc(p.diaRotulo) + '</span></div></section>' +
+        (p.gancho
+          ? '<section class="panel"><div class="panel-head"><p class="label">Gancho</p>' + btnCopy("gancho", textoGancho(p)) + '</div>' +
+            '<div class="hook"><p class="hook-time">Primeiros 3 segundos</p>' + blocoCena(p.gancho) + '</div></section>'
+          : "") +
+        '<section class="panel">' + miolo + '</section>' +
+        '<section class="panel"><div class="panel-head"><p class="label">Legenda</p>' + btnCopy("legenda", p.legenda) + '</div><p class="legenda">' + esc(p.legenda) + '</p></section>' +
+        (stories ? '<section class="panel"><p class="label">Stories do dia</p><ul class="stories">' + stories + '</ul></section>' : "") +
+        '<section class="cta"><h2>Uma semana assim, toda segunda.</h2><p><span class="cta-preco">R$ 47/mês</span>Toda segunda você recebe no WhatsApp os roteiros dos seus posts da semana, feitos para o seu negócio. É só gravar e postar.</p><a class="bt-wa" href="' + WA_CTA + '">WhatsApp (22) 99843-4956</a></section>';
+
+      document.title = p.tema + " · Lully Artes | BoniLead";
+      $("view-post").scrollTop = 0;
+      window.scrollTo(0, 0);
+    }
+
+    function abrir(id) {
+      const p = POSTS.find((x) => x.id === id);
+      if (!p) return;
+      history.pushState({ id: p.id }, "", "#/" + p.id);
+      renderPost(p);
+    }
+
+    function irHome() {
+      if (location.hash && location.hash !== "#/" && location.hash !== "#") {
+        history.pushState({}, "", location.pathname + location.search);
+      }
+      renderHome();
+      window.scrollTo(0, 0);
+    }
+
+    $("btn-back").addEventListener("click", () => irHome());
+    window.addEventListener("popstate", () => {
+      const id = (location.hash || "").replace(/^#\/?/, "");
+      const p = POSTS.find((x) => x.id === id);
+      if (p) renderPost(p); else renderHome();
+    });
+
+    const inicial = (location.hash || "").replace(/^#\/?/, "");
+    const postInicial = POSTS.find((x) => x.id === inicial);
+    if (postInicial) renderPost(postInicial); else renderHome();
+  </script>
+</body>
+</html>

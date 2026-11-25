@@ -6,7 +6,7 @@
   <title>Prospecta · Troppy Gourmet | BoniLead</title>
   <meta name="description" content="Amostra do Prospecta para a Troppy Gourmet: perfis de festas e eventos da região, cada um com uma mensagem pronta para enviar.">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#2F5BFF">
+  <meta name="theme-color" content="#f6efe8">
   <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://bonilead.com.br/amostra/troppygourmet/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
@@ -18,184 +18,483 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preload" href="/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <style>
-    @font-face{font-family:"Manrope";src:url("/fonts/manrope.woff2") format("woff2");font-weight:200 800;font-display:swap}
-    @font-face{font-family:"Inter";src:url("/fonts/inter.woff2") format("woff2");font-weight:100 900;font-display:swap}
-    :root{
-      --azul:#2F5BFF;--azul-esc:#1B3FE0;--azul-noite:#0F1E6E;--azul-claro:#E8EEFF;
-      --grafite:#2B2B2E;--grafite-2:#5A5B63;--areia:#F6F3EE;--areia-2:#EDE7DD;
-      --coral:#F2553D;--branco:#fff;--linha:rgba(43,43,46,.12);
-      --titulo:"Manrope",system-ui,sans-serif;--texto:"Inter",system-ui,sans-serif;
-      --sombra:0 14px 32px -20px rgba(15,30,110,.28);
-      --pad:16px;
+    :root {
+      --bg: #f6efe8;
+      --surface: #fffaf6;
+      --surface-soft: #efe5dc;
+      --ink: #2f2622;
+      --muted: #7b6d65;
+      --line: #eadfd6;
+      --blue: #2a66c6;
+      --blue-active: #2153a5;
+      --shadow: 0 2px 8px rgba(47, 38, 34, 0.04);
+      --radius-card: 16px;
+      --radius-btn: 12px;
     }
-    *{box-sizing:border-box}
-    html{background:var(--areia)}
-    body{
-      margin:0;min-height:100dvh;color:var(--grafite);background:var(--areia);
-      font-family:var(--texto);font-size:16px;line-height:1.5;
-      -webkit-font-smoothing:antialiased;
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      background-color: var(--bg);
+      color: var(--ink);
     }
-    button,a{font-family:inherit}
-    button{cursor:pointer}
-    [hidden]{display:none!important}
-    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-    .app{width:100%;max-width:480px;min-height:100dvh;margin:0 auto;display:flex;flex-direction:column;background:var(--areia)}
-    .hero{
-      position:relative;color:var(--grafite);
-      padding:calc(env(safe-area-inset-top,0px) + 16px) var(--pad) 28px;
-      background:
-        radial-gradient(420px 260px at 92% -10%, rgba(255,255,255,.9), transparent 62%),
-        radial-gradient(380px 300px at -10% 110%, rgba(47,91,255,.16), transparent 60%),
-        linear-gradient(135deg, #EEF2FF 0%, #F6F3EE 55%, #E8EEFF 100%);
-      border-radius:0 0 28px 28px;
-      box-shadow:0 22px 44px -30px rgba(15,30,110,.45);
-      overflow:hidden;isolation:isolate;
+
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
     }
-    .hero::after{
-      content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-      background-image:radial-gradient(rgba(15,30,110,.07) 1px, transparent 1px);
-      background-size:14px 14px;
-      -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);
-      mask-image:linear-gradient(180deg,#000,transparent 85%);
+
+    .app-shell {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100dvh;
+      height: 100dvh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg);
+      overflow: hidden;
     }
-    .hero-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-    .voltar{
-      display:inline-flex;align-items:center;gap:4px;background:#fff;border:1px solid var(--linha);
-      border-radius:999px;padding:7px 14px 7px 10px;font:600 14px var(--titulo);
-      text-decoration:none;color:var(--grafite);
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: var(--bg);
+      padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px 12px;
+      border-bottom: 1px solid var(--line);
     }
-    .voltar svg{width:16px;height:16px}
-    .voltar:hover{background:var(--azul-claro);color:var(--azul-esc)}
-    .logo{display:block;height:28px;width:auto}
-    .chip-marca{
-      display:inline-block;margin:0 0 10px;padding:5px 10px;border-radius:999px;
-      background:rgba(47,91,255,.1);color:var(--azul-esc);font:600 12px var(--titulo);letter-spacing:.02em;
+
+    .nav-header-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      min-height: 48px;
     }
-    .hello{margin:0 0 6px;font:800 28px/1.15 var(--titulo);letter-spacing:-.03em}
-    .hello-sub{margin:0 0 8px;font-size:15px;color:var(--grafite-2)}
-    .hello-note{margin:0;font-size:14px;color:var(--grafite-2)}
-    .body{flex:1;padding:0 var(--pad) 28px}
-    .body--home{padding-top:0}
-    .meta{
-      display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;
-      margin:-22px 0 18px;position:relative;z-index:1;
+
+    .back-btn {
+      justify-self: start;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      min-height: 48px;
+      min-width: 48px;
+      padding: 0 4px 0 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      text-decoration: none;
     }
-    .meta-item{
-      background:#fff;border:1px solid var(--linha);border-radius:16px;
-      padding:12px 8px;text-align:center;box-shadow:var(--sombra);
+
+    .nav-title {
+      margin: 0;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--ink);
+      white-space: nowrap;
     }
-    .meta-item b{display:block;font:800 22px var(--titulo);color:var(--azul-noite)}
-    .meta-item span{font-size:12px;color:var(--grafite-2)}
-    .panel{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:16px;margin:0 0 18px;box-shadow:var(--sombra)}
-    .label{margin:0 0 10px;font:700 13px var(--titulo);text-transform:uppercase;letter-spacing:.06em;color:var(--azul-esc)}
-    .como{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
-    .como li{display:flex;gap:10px;align-items:flex-start}
-    .como-n{
-      flex:0 0 22px;height:22px;border-radius:999px;background:var(--azul);color:#fff;
-      font:700 11px/22px var(--titulo);text-align:center;margin-top:1px;
+
+    .nav-right {
+      justify-self: end;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
     }
-    .como p{margin:0;font-size:15px;line-height:1.45}
-    .lista-titulo{margin:0 0 10px;font:800 18px/1.25 var(--titulo);letter-spacing:-.02em}
-    .cards{display:flex;flex-direction:column;gap:12px}
-    .card{
-      background:#fff;border:1px solid var(--linha);border-radius:18px;
-      padding:14px;box-shadow:var(--sombra);
+
+    .screen-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 16px calc(20px + env(safe-area-inset-bottom, 0px));
+      min-height: 0;
     }
-    .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}
-    .card-nome{margin:0;font:800 17px/1.25 var(--titulo);letter-spacing:-.02em}
-    .handle{
-      display:inline-block;margin:2px 0 0;font:700 14px var(--titulo);
-      color:var(--azul-esc);text-decoration:none;word-break:break-all;
+
+    .view {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
     }
-    .handle:hover{text-decoration:underline}
-    .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
-    .pill{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:var(--azul-claro);color:var(--azul-esc);font:600 11px var(--titulo)}
-    .pill-soft{background:var(--areia-2);color:var(--grafite-2)}
-    .motivo{margin:0 0 12px;font-size:14px;color:var(--grafite-2)}
-    .panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
-    .field-lab{margin:0;font:600 12px var(--titulo);color:var(--grafite-2)}
-    .copy{
-      height:32px;padding:0 10px;display:inline-flex;align-items:center;gap:6px;
-      border:1px solid var(--linha);border-radius:999px;background:#fff;
-      font:600 12px var(--titulo);color:var(--grafite);
+
+    .home-kicker {
+      margin: 0 0 2px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
-    .copy:active,.copy.is-ok{background:var(--azul-claro);color:var(--azul-esc);border-color:transparent}
-    .msg{
-      margin:0;white-space:pre-wrap;font-size:.9375rem;line-height:1.55;
-      padding:12px 14px;border-radius:14px;background:var(--areia);
+
+    .hello {
+      margin: 0 0 6px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
     }
-    .cta{
-      margin:22px 0 8px;padding:20px 16px;border-radius:20px;color:#fff;text-align:center;
-      background:linear-gradient(160deg,var(--azul) 0%,var(--azul-noite) 100%);
-      box-shadow:0 18px 40px -20px rgba(15,30,110,.7);
+
+    .hello-sub {
+      margin: 0 0 16px;
+      font-size: 0.9375rem;
+      color: var(--muted);
     }
-    .cta h2{margin:0 0 8px;font:800 20px/1.25 var(--titulo);letter-spacing:-.02em}
-    .cta p{margin:0 0 14px;font-size:14px;line-height:1.5;color:rgba(255,255,255,.9)}
-    .cta-preco{display:block;font:800 18px var(--titulo);margin-bottom:4px}
-    .bt-wa{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      background:#fff;color:var(--azul-esc);text-decoration:none;
-      font:700 15px var(--titulo);padding:12px 18px;border-radius:999px;
+
+    .steps-card {
+      padding: 16px;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
     }
-    .rod{padding:8px var(--pad) calc(16px + env(safe-area-inset-bottom,0px));text-align:center}
-    .rod p{margin:0;font-size:12px;color:var(--grafite-2)}
-    .status{
-      position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));
-      transform:translateX(-50%);background:var(--grafite);color:#fff;
-      font:600 13px var(--titulo);padding:8px 14px;border-radius:999px;z-index:10;
+
+    .steps-card ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
+
+    .steps-card li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .step-n {
+      flex: 0 0 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 22px;
+      text-align: center;
+      margin-top: 1px;
+    }
+
+    .steps-card p {
+      margin: 0;
+      font-size: 0.9375rem;
+      color: var(--ink);
+    }
+
+    .view-footer {
+      margin-top: auto;
+      padding-top: 24px;
+    }
+
+    .detail-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+      padding-bottom: 8px;
+    }
+
+    .detail-name {
+      margin: 0;
+      font-size: 1.375rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .detail-handle {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .detail-handle:hover { text-decoration: underline; }
+
+    .detail-city {
+      margin: 6px 0 0;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .detail-why {
+      margin: 12px 0 16px;
+      font-size: 0.9375rem;
+      color: var(--ink);
+    }
+
+    .dm-card {
+      padding: 16px;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+    }
+
+    .dm-label {
+      margin: 0 0 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .dm-text {
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      color: var(--ink);
+      white-space: pre-wrap;
+    }
+
+    .manual-copy-box {
+      margin-top: 12px;
+      padding: 12px;
+      background-color: var(--surface);
+      border: 1px solid var(--blue);
+      border-radius: var(--radius-btn);
+    }
+
+    .manual-copy-label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .manual-copy-textarea {
+      width: 100%;
+      min-height: 96px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.875rem;
+      line-height: 1.45;
+      resize: vertical;
+    }
+
+    .detail-footer {
+      margin-top: auto;
+      padding-top: 20px;
+      flex-shrink: 0;
+    }
+
+    .detail-actions, .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 16px;
+      border-radius: var(--radius-btn);
+      font-family: inherit;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-align: center;
+      color: inherit;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: default;
+    }
+
+    .btn-primary {
+      background-color: var(--blue);
+      color: #ffffff;
+    }
+
+    .btn-primary:active:not(:disabled) {
+      background-color: var(--blue-active);
+    }
+
+    .btn-secondary {
+      background-color: var(--surface);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:active:not(:disabled) {
+      background-color: var(--surface-soft);
+    }
+
+    .btn-ghost {
+      background-color: var(--surface-soft);
+      color: var(--muted);
+      border-color: var(--line);
+    }
+
+    .btn-ghost--sent {
+      background-color: var(--surface);
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .pager {
+      margin-top: 16px;
+    }
+
+    .pager-count {
+      margin: 0 0 10px;
+      text-align: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .pager-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .cta-title {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .cta-price {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .cta-text {
+      margin: 0 0 16px;
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
+    .rod {
+      margin: 16px 0 0;
+      text-align: center;
+    }
+
+    .rod p {
+      margin: 0;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    [hidden] { display: none !important; }
   </style>
 </head>
 <body>
-  <div class="app">
-    <header class="hero">
-      <div class="hero-top">
-        <a class="voltar" href="/prospecta/">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-          Voltar
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="nav-header-row">
+        <a id="btn-voltar-link" class="back-btn" href="/prospecta/">
+          <span aria-hidden="true">←</span>
+          <span>Voltar</span>
         </a>
-        <a href="/" aria-label="BoniLead, página inicial"><img class="logo" src="/img/logo.png" width="160" height="60" alt="BoniLead"></a>
+        <button id="btn-voltar" type="button" class="back-btn" hidden>
+          <span aria-hidden="true">←</span>
+          <span>Voltar</span>
+        </button>
+        <h1 id="nav-title" class="nav-title">Prospecta</h1>
+        <span id="nav-right" class="nav-right"></span>
       </div>
-      <p class="chip-marca">Amostra · Prospecta</p>
-      <h1 class="hello">Troppy Gourmet</h1>
-      <p class="hello-sub">Churros e crepes franceses em Vilas do Atlântico, Lauro de Freitas.</p>
-      <p class="hello-note">Esta é uma amostra do Prospecta: 20 perfis de festas e eventos da sua região, cada um com uma mensagem pronta para você mandar no Instagram.</p>
     </header>
 
-    <main class="body body--home">
-      <div class="meta">
-        <div class="meta-item"><b>20</b><span>Perfis</span></div>
-        <div class="meta-item"><b>1</b><span>Região</span></div>
-        <div class="meta-item"><b>20</b><span>Mensagens</span></div>
-      </div>
-
-      <section class="panel" aria-labelledby="como-titulo">
-        <h2 class="label" id="como-titulo">Como usar</h2>
-        <ol class="como">
-          <li><span class="como-n">1</span><p>Toque em <strong>Copiar</strong> na mensagem pronta.</p></li>
-          <li><span class="como-n">2</span><p>Abra o perfil no Instagram, pelo nome de usuário.</p></li>
-          <li><span class="como-n">3</span><p>Cole e envie a mensagem no direct.</p></li>
-          <li><span class="como-n">4</span><p>Se a pessoa não responder, mande de novo em 2 ou 3 dias.</p></li>
-        </ol>
+    <main class="screen-body">
+      <section id="view-intro" class="view" aria-label="Como usar">
+        <p class="home-kicker">Amostra</p>
+        <h2 class="hello">Troppy Gourmet</h2>
+        <p class="hello-sub">Churros e crepes franceses em Vilas do Atlântico, Lauro de Freitas. Aqui vão 20 perfis de festas e eventos da sua região, cada um com uma mensagem pronta.</p>
+        <div class="steps-card">
+          <ol>
+            <li><span class="step-n">1</span><p>Toque em <strong>Copiar mensagem</strong>.</p></li>
+            <li><span class="step-n">2</span><p>Toque em <strong>Abrir perfil</strong> para ir ao Instagram.</p></li>
+            <li><span class="step-n">3</span><p>Cole no direct e envie. Se a pessoa não responder, mande de novo em 2 ou 3 dias.</p></li>
+          </ol>
+        </div>
+        <div class="view-footer">
+          <button id="btn-comecar" type="button" class="btn btn-primary">Começar</button>
+          <footer class="rod"><p>CNPJ 70.280.738/0001-35</p></footer>
+        </div>
       </section>
 
-      <h2 class="lista-titulo">Os 20 perfis da sua amostra</h2>
-      <div class="cards" id="cards"></div>
+      <section id="view-perfil" class="view" aria-label="Perfil" hidden>
+        <div class="detail-body">
+          <h2 id="detail-name" class="detail-name"></h2>
+          <a id="detail-handle" class="detail-handle" target="_blank" rel="noopener noreferrer"></a>
+          <p id="detail-city" class="detail-city"></p>
+          <p id="detail-why" class="detail-why"></p>
+          <div class="dm-card">
+            <p class="dm-label">Mensagem pronta</p>
+            <p id="detail-dm" class="dm-text"></p>
+          </div>
+          <div id="manual-copy-box" class="manual-copy-box" hidden>
+            <label class="manual-copy-label" for="manual-copy-textarea">Cópia automática indisponível. Copie o texto abaixo:</label>
+            <textarea id="manual-copy-textarea" class="manual-copy-textarea" readonly></textarea>
+          </div>
+        </div>
+        <div class="detail-footer">
+          <div class="detail-actions">
+            <button id="btn-copiar" type="button" class="btn btn-primary">Copiar mensagem</button>
+            <a id="btn-abrir-perfil" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Abrir perfil</a>
+            <button id="btn-enviado" type="button" class="btn btn-ghost">Marcar como enviado</button>
+          </div>
+          <div class="pager">
+            <p id="pager-count" class="pager-count"></p>
+            <div class="pager-row">
+              <button id="btn-anterior" type="button" class="btn btn-secondary">Anterior</button>
+              <button id="btn-proximo" type="button" class="btn btn-secondary">Próximo</button>
+            </div>
+          </div>
+          <footer class="rod"><p>CNPJ 70.280.738/0001-35</p></footer>
+        </div>
+      </section>
 
-      <section class="cta" id="cta">
-        <h2>Prospecta: perfis novos da sua região todo dia no seu WhatsApp, mais de 400 por mês, R$87 por mês</h2>
-        <p><span class="cta-preco">R$ 87/mês</span>Todo dia chegam no seu WhatsApp perfis do Instagram de gente da sua região, cada um com uma mensagem pronta para você mandar.</p>
-        <a class="bt-wa" href="https://wa.me/5522998434956?text=Oi!%20Vi%20a%20amostra%20do%20Prospecta%20da%20Troppy%20Gourmet%20e%20quero%20come%C3%A7ar.">WhatsApp (22) 99843-4956</a>
+      <section id="view-cta" class="view" aria-label="Prospecta" hidden>
+        <h2 class="cta-title">Prospecta: perfis novos da sua região todo dia no seu WhatsApp, mais de 400 por mês, R$87 por mês</h2>
+        <p class="cta-price">R$ 87/mês</p>
+        <p class="cta-text">Todo dia chegam no seu WhatsApp perfis do Instagram de gente da sua região, cada um com uma mensagem pronta para você mandar.</p>
+        <div class="view-footer">
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://wa.me/5522998434956?text=Oi!%20Vi%20a%20amostra%20do%20Prospecta%20da%20Troppy%20Gourmet%20e%20quero%20come%C3%A7ar.">WhatsApp (22) 99843-4956</a>
+          </div>
+          <footer class="rod"><p>CNPJ 70.280.738/0001-35</p></footer>
+        </div>
       </section>
     </main>
-
-    <div class="status" id="status" hidden></div>
-    <footer class="rod">
-      <p>CNPJ 70.280.738/0001-35</p>
-    </footer>
   </div>
   <script>
     const PROFILES = [
@@ -204,7 +503,7 @@
     "nome": "Celebre Vilas",
     "categoria": "Espaço para eventos",
     "onde": "Vilas do Atlântico, Lauro de Freitas",
-    "motivo": "Espaço de festas no mesmo bairro da Troppy Gourmet. A bio confirma casamento, aniversário, formatura e evento corporativo em Vilas do Atlântico.",
+    "motivo": "Espaço de festas no mesmo bairro da Troppy Gourmet, com casamento, aniversário, formatura e evento corporativo.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: fazemos churros e crepes franceses na hora. Vi que o Celebre Vilas recebe casamento, aniversário, formatura e evento corporativo aqui no bairro. Se fizer sentido, a gente monta uma estação de churros e crepe na festa, para o convidado sair com algo quentinho na mão. Posso te contar como funciona?"
   },
   {
@@ -212,7 +511,7 @@
     "nome": "Casa na Árvore — Festas e Parque",
     "categoria": "Casa de festas infantis",
     "onde": "Shopping Costa do Joanes, Buraquinho",
-    "motivo": "Casa de festas e parque infantil em Lauro de Freitas, no Shopping Costa do Joanes, em Buraquinho. Bom encaixe para estação de churros e crepe em aniversário.",
+    "motivo": "Casa de festas e parque infantil no Shopping Costa do Joanes, em Buraquinho.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico. Fazemos churros e crepes na hora e vi que a Casa na Árvore é casa de festas e parque infantil no Shopping Costa do Joanes, em Buraquinho. Uma estação de churros e crepe no aniversário costuma fazer sucesso com as crianças e com os adultos. Se quiser, te mando as opções para incluir nas festas."
   },
   {
@@ -220,7 +519,7 @@
     "nome": "Ohana Espaço",
     "categoria": "Espaço para eventos",
     "onde": "Vida Nova, Lauro de Freitas",
-    "motivo": "Aluga espaço para eventos em Vida Nova, Lauro de Freitas, com mesas e cadeiras. Clientes do salão podem querer uma estação de churros e crepe.",
+    "motivo": "Aluga espaço para eventos em Vida Nova, Lauro de Freitas, com mesas e cadeiras.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: churros e crepes feitos na hora. Vi que o Ohana Espaço aluga o salão em Vida Nova, em Lauro de Freitas, com mesas e cadeiras. Muita gente gosta de completar a festa com uma estação de churros e crepe. Se seus clientes pedirem uma opção diferente, posso combinar de atender aí no espaço."
   },
   {
@@ -228,7 +527,7 @@
     "nome": "Casa Rio — Espaço de Eventos",
     "categoria": "Espaço para eventos",
     "onde": "Buraquinho, Lauro de Freitas",
-    "motivo": "Espaço em Buraquinho, Lauro de Freitas, com casamento e aniversário na bio. Perto de Vilas do Atlântico.",
+    "motivo": "Espaço de casamento e aniversário em Buraquinho, perto de Vilas do Atlântico.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico. Fazemos churros e crepes na hora e vi que a Casa Rio, em Buraquinho, recebe casamento e aniversário. Uma estação quentinha na festa fica bonita e agrada convidado de todas as idades. Se quiser, te envio as opções para oferecer junto com o espaço."
   },
   {
@@ -236,7 +535,7 @@
     "nome": "Cerimonial Mar de Ipitanga",
     "categoria": "Espaço para casamento",
     "onde": "Ipitanga, Lauro de Freitas",
-    "motivo": "Espaço de casamento de frente para o mar em Ipitanga, em Lauro de Freitas, com mais de 20 anos de atuação. Boa para estação na recepção.",
+    "motivo": "Espaço de casamento de frente para o mar em Ipitanga, em Lauro de Freitas.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: churros e crepes franceses feitos na hora. Vi que o Cerimonial Mar de Ipitanga realiza casamento de frente para o mar, aqui perto. Uma estação de churros e crepe no coquetel ou na festa agrada muito os convidados. Posso te mandar as opções para incluir nos eventos?"
   },
   {
@@ -244,7 +543,7 @@
     "nome": "Villas Fest",
     "categoria": "Espaço para eventos",
     "onde": "Pitangueiras, Lauro de Freitas",
-    "motivo": "Espaço para casamento, formatura, bodas e confraternização em Pitangueiras, Lauro de Freitas, confirmado no site villasfest.com.br e no perfil público.",
+    "motivo": "Espaço para casamento, formatura e confraternização em Pitangueiras, Lauro de Freitas.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico. Fazemos churros e crepes na hora e vi que o Villas Fest, em Pitangueiras, recebe casamento, formatura, bodas e confraternização. Uma estação de churros e crepe combina bem com esse tipo de festa. Se quiser, te conto como a gente atende aí no espaço."
   },
   {
@@ -252,7 +551,7 @@
     "nome": "Espaço São Jorge",
     "categoria": "Espaço para eventos",
     "onde": "Centro de Lauro de Freitas",
-    "motivo": "A bio do perfil confirma espaço para eventos e festas no centro de Lauro de Freitas.",
+    "motivo": "Espaço para festas e eventos no centro de Lauro de Freitas.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: fazemos churros e crepes na hora. Vi que o Espaço São Jorge fica no centro de Lauro de Freitas e recebe festas e eventos. Se seus clientes tiverem interesse, a gente pode montar uma estação de churros e crepe no salão. Posso te passar as opções?"
   },
   {
@@ -260,7 +559,7 @@
     "nome": "Espaço Bond Festa",
     "categoria": "Espaço para eventos",
     "onde": "Lauro de Freitas",
-    "motivo": "Espaço de eventos sociais e corporativos desde 2012. Endereço público na Av. Brigadeiro Alberto C. Matos, 998, Lauro de Freitas.",
+    "motivo": "Espaço de eventos sociais e corporativos em Lauro de Freitas, desde 2012.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico. Fazemos churros e crepes na hora e vi que o Espaço Bond Festa, em Lauro de Freitas, recebe eventos sociais e corporativos desde 2012. Uma estação de churros e crepe funciona bem tanto em aniversário quanto em confraternização de empresa. Se fizer sentido, te mando as opções."
   },
   {
@@ -268,7 +567,7 @@
     "nome": "Luzia Bolos",
     "categoria": "Buffet, locação e decoração",
     "onde": "Lauro de Freitas",
-    "motivo": "Buffet, decoração e locação em Lauro de Freitas, com casamento, aniversário e evento corporativo. Uma estação de churros pode entrar como atração a mais.",
+    "motivo": "Buffet, decoração e locação em Lauro de Freitas, para casamento, aniversário e evento corporativo.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: churros e crepes feitos na hora. Vi que a Luzia Bolos já cuida de buffet, decoração e locação em Lauro de Freitas, em casamento, aniversário e evento corporativo. Uma estação de churros e crepe pode entrar como atração a mais, sem substituir o que vocês já fazem. Se quiser, combinamos de atender no mesmo evento."
   },
   {
@@ -276,7 +575,7 @@
     "nome": "Mundo Caramelo Festas",
     "categoria": "Festas infantis",
     "onde": "Lauro de Freitas e Salvador",
-    "motivo": "Festas infantis premium, com unidade em Buraquinho, Lauro de Freitas, além de Pituba e Ondina, em Salvador, conforme o site mundocaramelo.com.br.",
+    "motivo": "Festas infantis premium, com unidade em Lauro de Freitas além de Salvador.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico. Fazemos churros e crepes na hora e vi que a Mundo Caramelo tem unidade em Lauro de Freitas, além das de Salvador. Nas festas infantis, uma estação de churros e crepe costuma ser a parte que as crianças mais comentam. Se quiser incluir isso nas festas de vocês, te mando as opções."
   },
   {
@@ -284,7 +583,7 @@
     "nome": "Grande Sorriso Festas",
     "categoria": "Brinquedos e animação",
     "onde": "Lauro de Freitas, Salvador e Linha Verde",
-    "motivo": "Locação de brinquedos e animação infantil em Lauro de Freitas, Salvador e Linha Verde. Parceiro natural para ir no mesmo evento com uma estação de comida.",
+    "motivo": "Leva brinquedos e animação para festas em Lauro de Freitas, Salvador e Linha Verde.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: fazemos churros e crepes na hora. Vi que a Grande Sorriso leva brinquedos e animação para festas em Lauro de Freitas, Salvador e Linha Verde. Muita festa que já tem brinquedo pede também uma estação de comida quentinha. Se quiser indicar a gente ou atendermos no mesmo evento, posso te contar como funciona."
   },
   {
@@ -292,7 +591,7 @@
     "nome": "Kidsland Vilas",
     "categoria": "Creche e escola",
     "onde": "Vilas do Atlântico",
-    "motivo": "Creche-escola no mesmo bairro da Troppy Gourmet. Festas da escola, formatura e confraternização com as famílias pedem comida no local.",
+    "motivo": "Creche e escola no mesmo bairro da Troppy Gourmet.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, aqui de Vilas do Atlântico. Fazemos churros e crepes franceses na hora e vi a Kidsland Vilas, que é escola da região. Se a escola fizer festa junina, dia das crianças, formatura ou confraternização, a gente pode montar uma estação de churros e crepe para as famílias. Posso te passar as opções?"
   },
   {
@@ -300,7 +599,7 @@
     "nome": "Happy Festas",
     "categoria": "Decoração pegue e monte",
     "onde": "Buraquinho, Lauro de Freitas",
-    "motivo": "Aluga kits de decoração pegue e monte em Buraquinho, Lauro de Freitas. Quem monta a festa em casa muitas vezes procura também uma estação de comida.",
+    "motivo": "Aluga kits de decoração pegue e monte em Buraquinho, Lauro de Freitas.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico. Fazemos churros e crepes na hora e vi que a Happy Festas aluga kits pegue e monte em Buraquinho, em Lauro de Freitas. Quem monta a decoração em casa muitas vezes procura também uma estação de churros e crepe. Se quiser indicar a gente para as suas clientes, te mando as opções e o contato."
   },
   {
@@ -308,7 +607,7 @@
     "nome": "Furdunço de Vilas",
     "categoria": "Bloco e festival",
     "onde": "Vilas do Atlântico, em frente ao Vilas Tênis Clube",
-    "motivo": "Organiza o Furdunço de Vilas, bloco com trio elétrico em frente ao Vilas Tênis Clube, no mesmo bairro. Bom para estação de comida no circuito.",
+    "motivo": "Organiza o bloco Furdunço de Vilas, em frente ao Vilas Tênis Clube.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: fazemos churros e crepes na hora. Vi o Furdunço de Vilas, aí na frente do Vilas Tênis Clube. Uma estação de churros e crepe combina muito com bloco e circuito de rua, e a gente já está aqui no bairro. Se tiverem espaço para comida no evento, posso conversar sobre a participação."
   },
   {
@@ -316,7 +615,7 @@
     "nome": "Carla Souza Produções",
     "categoria": "Assessoria e decoração",
     "onde": "Lauro de Freitas e região",
-    "motivo": "Assessoria e decoração de eventos, com mais de 20 anos. Empresa com sede em Lauro de Freitas e atendimento na região.",
+    "motivo": "Assessoria e decoração de eventos em Lauro de Freitas e na região.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico. Fazemos churros e crepes na hora e vi que a Carla Souza Produções organiza e decora eventos aqui em Lauro de Freitas e na região. Uma estação de churros e crepe é um detalhe que os convidados lembram depois da festa. Se quiser ter a gente como opção de fornecedor, te mando as opções."
   },
   {
@@ -324,7 +623,7 @@
     "nome": "AE Festas",
     "categoria": "Decoração e organização",
     "onde": "Lauro de Freitas, Camaçari e Salvador",
-    "motivo": "Decoração e organização completa de eventos, com mais de 10 anos. Empresa de Lauro de Freitas que atende também Camaçari e Salvador.",
+    "motivo": "Decoração e organização de eventos em Lauro de Freitas, Camaçari e Salvador.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: churros e crepes feitos na hora. Vi que a AE Festas faz decoração e organização de eventos em Lauro de Freitas, Camaçari e Salvador. Quando a festa já está sendo montada, uma estação de churros e crepe entra fácil como atração a mais. Se quiser indicar ou incluir a gente, posso te passar as opções."
   },
   {
@@ -332,7 +631,7 @@
     "nome": "Villa Kaboom Buffet",
     "categoria": "Buffet infantil",
     "onde": "Imbuí, Salvador",
-    "motivo": "Buffet de festas infantis no Imbuí, em Salvador, bairro vizinho da região de Lauro de Freitas. Estação de churros e crepe entra como atração extra.",
+    "motivo": "Buffet de festas infantis no Imbuí, em Salvador, perto de Lauro de Freitas.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico, aqui pertinho do Imbuí. Fazemos churros e crepes na hora e vi que a Villa Kaboom faz festas infantis completas. Uma estação de churros e crepe pode entrar como atração extra, sem atrapalhar o buffet de vocês. Se fizer sentido, te conto como a gente atende."
   },
   {
@@ -340,7 +639,7 @@
     "nome": "Assessorar Eventos",
     "categoria": "Assessoria de casamento",
     "onde": "Salvador",
-    "motivo": "Assessoria de casamentos em Salvador, com 18 anos de atuação. Costuma montar lista de fornecedores para recepção e festa.",
+    "motivo": "Assessoria de casamentos em Salvador, com 18 anos de atuação.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: fazemos churros e crepes franceses na hora. Vi que a Assessorar Eventos organiza casamentos em Salvador e na região. Uma estação de churros e crepe no coquetel ou na festa agrada muito os convidados. Se quiser ter a gente como fornecedor, te mando as opções."
   },
   {
@@ -348,7 +647,7 @@
     "nome": "Chris Mell Assessoria",
     "categoria": "Assessoria e cerimonial",
     "onde": "Salvador",
-    "motivo": "Assessoria e cerimonial de casamentos em Salvador, com atuação desde 2010, inclusive destination wedding.",
+    "motivo": "Assessoria e cerimonial de casamentos em Salvador, desde 2010.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico. Fazemos churros e crepes na hora e vi que a Chris Mell Assessoria cuida de casamentos em Salvador. Para a recepção, uma estação de churros e crepe fica especial e diferente. Se quiser incluir nas opções de fornecedor, posso te passar os detalhes."
   },
   {
@@ -356,73 +655,199 @@
     "nome": "LC Cerimonialistas",
     "categoria": "Assessoria e cerimonial",
     "onde": "Salvador",
-    "motivo": "Assessoria de eventos em Salvador há 13 anos. Perfil público com atuação na capital, boa para indicar estação de churros em casamento ou 15 anos.",
+    "motivo": "Assessoria de eventos em Salvador há 13 anos.",
     "mensagem": "Oi, tudo bem?\nSou da Troppy Gourmet, de Vilas do Atlântico: churros e crepes feitos na hora. Vi que a LC Cerimonialistas organiza eventos em Salvador há 13 anos. Uma estação de churros e crepe é uma opção gostosa para recepção, 15 anos ou festa de casamento. Se quiser conhecer o nosso trabalho, te mando as opções."
   }
 ];
+    const SENT_KEY = "prospecta-amostra-troppygourmet-enviados-v1";
+    const TOTAL = PROFILES.length;
 
-    const WA_CTA = "https://wa.me/5522998434956?text=Oi!%20Vi%20a%20amostra%20do%20Prospecta%20da%20Troppy%20Gourmet%20e%20quero%20come%C3%A7ar.";
-    const $ = (id) => document.getElementById(id);
-    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+    const viewIntro = document.getElementById("view-intro");
+    const viewPerfil = document.getElementById("view-perfil");
+    const viewCta = document.getElementById("view-cta");
+    const btnVoltarLink = document.getElementById("btn-voltar-link");
+    const btnVoltar = document.getElementById("btn-voltar");
+    const navTitle = document.getElementById("nav-title");
+    const navRight = document.getElementById("nav-right");
+    const detailName = document.getElementById("detail-name");
+    const detailHandle = document.getElementById("detail-handle");
+    const detailCity = document.getElementById("detail-city");
+    const detailWhy = document.getElementById("detail-why");
+    const detailDm = document.getElementById("detail-dm");
+    const manualCopyBox = document.getElementById("manual-copy-box");
+    const manualCopyTextarea = document.getElementById("manual-copy-textarea");
+    const btnCopiar = document.getElementById("btn-copiar");
+    const btnAbrir = document.getElementById("btn-abrir-perfil");
+    const btnEnviado = document.getElementById("btn-enviado");
+    const pagerCount = document.getElementById("pager-count");
+    const btnAnterior = document.getElementById("btn-anterior");
+    const btnProximo = document.getElementById("btn-proximo");
 
-    function copyText(label, text) {
-      const done = () => {
-        const el = $("status");
-        el.textContent = label + " copiada";
-        el.hidden = false;
-        clearTimeout(copyText._t);
-        copyText._t = setTimeout(() => { el.hidden = true; }, 1600);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done).catch(() => fallback());
-      } else fallback();
-      function fallback() {
-        const ta = document.createElement("textarea");
-        ta.value = text; document.body.appendChild(ta); ta.select();
-        try { document.execCommand("copy"); } catch (e) {}
-        ta.remove(); done();
+    let current = { view: "intro", index: 0 };
+    let copyTimer = null;
+
+    function loadSent() {
+      try {
+        const raw = localStorage.getItem(SENT_KEY);
+        const data = raw ? JSON.parse(raw) : {};
+        return (data && typeof data === "object") ? data : {};
+      } catch (e) {
+        return {};
       }
     }
 
-    function btnCopy(label, text) {
-      const id = Math.random().toString(36).slice(2);
-      queueMicrotask(() => {
-        const b = document.querySelector('[data-cid="' + id + '"]');
-        if (b) b.addEventListener("click", () => {
-          copyText(label, text);
-          b.classList.add("is-ok");
-          b.querySelector("span").textContent = "Copiado";
-          setTimeout(() => { b.classList.remove("is-ok"); b.querySelector("span").textContent = "Copiar"; }, 1600);
-        });
-      });
-      return '<button class="copy" type="button" data-cid="' + id + '" aria-label="Copiar mensagem para @' + esc(label) + '"><span>Copiar</span></button>';
+    function saveSent(map) {
+      localStorage.setItem(SENT_KEY, JSON.stringify(map));
     }
 
-    const root = $("cards");
-    root.innerHTML = PROFILES.map((p, i) => `
-      <article class="card" id="perfil-${i + 1}" data-handle="${esc(p.handle)}">
-        <div class="card-top">
-          <div>
-            <h3 class="card-nome">${esc(p.nome)}</h3>
-            <a class="handle" href="https://www.instagram.com/${encURI(p.handle)}/" target="_blank" rel="noopener noreferrer">@${esc(p.handle)}</a>
-          </div>
-        </div>
-        <div class="chips">
-          <span class="pill">${esc(p.categoria)}</span>
-          <span class="pill pill-soft">${esc(p.onde)}</span>
-        </div>
-        <p class="motivo">${esc(p.motivo)}</p>
-        <div class="panel-head">
-          <p class="field-lab">Mensagem pronta</p>
-          ${btnCopy(p.handle, p.mensagem)}
-        </div>
-        <p class="msg">${esc(p.mensagem).replace(/\n/g, "<br>")}</p>
-      </article>
-    `).join("");
-
-    function encURI(s) {
-      return encodeURIComponent(String(s ?? ""));
+    function instagramUrl(handle) {
+      return "https://www.instagram.com/" + encodeURIComponent(handle) + "/";
     }
+
+    function parseHash() {
+      const h = (location.hash || "").replace(/^#/, "");
+      if (h === "cta" || h === "/cta") return { view: "cta", index: TOTAL - 1 };
+      const m = h.match(/^\/?(\d+)$/);
+      if (m) {
+        const n = parseInt(m[1], 10);
+        if (n >= 1 && n <= TOTAL) return { view: "perfil", index: n - 1 };
+      }
+      return { view: "intro", index: 0 };
+    }
+
+    function stateToHash(state) {
+      if (state.view === "cta") return "#/cta";
+      if (state.view === "perfil") return "#/" + (state.index + 1);
+      return "#/";
+    }
+
+    function renderPerfil(index) {
+      const p = PROFILES[index];
+      const url = instagramUrl(p.handle);
+      detailName.textContent = p.nome;
+      detailHandle.textContent = "@" + p.handle;
+      detailHandle.href = url;
+      detailCity.textContent = p.onde;
+      detailWhy.textContent = p.motivo;
+      detailDm.textContent = p.mensagem;
+      btnAbrir.href = url;
+      manualCopyBox.hidden = true;
+      if (copyTimer) {
+        clearTimeout(copyTimer);
+        copyTimer = null;
+      }
+      btnCopiar.textContent = "Copiar mensagem";
+      const sent = Boolean(loadSent()[p.handle]);
+      btnEnviado.textContent = sent ? "Enviado (desmarcar)" : "Marcar como enviado";
+      btnEnviado.className = sent ? "btn btn-ghost btn-ghost--sent" : "btn btn-ghost";
+      btnEnviado.setAttribute("aria-pressed", String(sent));
+      pagerCount.textContent = "Perfil " + (index + 1) + " de " + TOTAL;
+      navRight.textContent = (index + 1) + "/" + TOTAL;
+    }
+
+    function applyState(state) {
+      current = state;
+      viewIntro.hidden = state.view !== "intro";
+      viewPerfil.hidden = state.view !== "perfil";
+      viewCta.hidden = state.view !== "cta";
+
+      if (state.view === "intro") {
+        navTitle.textContent = "Prospecta";
+        navRight.textContent = "";
+        btnVoltar.hidden = true;
+        btnVoltarLink.hidden = false;
+      } else {
+        btnVoltarLink.hidden = true;
+        btnVoltar.hidden = false;
+        if (state.view === "perfil") {
+          navTitle.textContent = "Prospecta";
+          renderPerfil(state.index);
+        } else {
+          navTitle.textContent = "Prospecta";
+          navRight.textContent = "";
+        }
+      }
+      window.scrollTo(0, 0);
+    }
+
+    function go(state, mode) {
+      const hash = stateToHash(state);
+      if (mode === "replace") history.replaceState(state, "", hash);
+      else history.pushState(state, "", hash);
+      applyState(state);
+    }
+
+    function goBack() {
+      if (current.view === "intro") {
+        window.location.href = "/prospecta/";
+        return;
+      }
+      const prev = current.view + ":" + current.index;
+      history.back();
+      setTimeout(function () {
+        if (current.view + ":" + current.index === prev) {
+          if (current.view === "cta") go({ view: "perfil", index: TOTAL - 1 }, "replace");
+          else if (current.view === "perfil" && current.index > 0) go({ view: "perfil", index: current.index - 1 }, "replace");
+          else go({ view: "intro", index: 0 }, "replace");
+        }
+      }, 150);
+    }
+
+    document.getElementById("btn-comecar").addEventListener("click", function () {
+      go({ view: "perfil", index: 0 });
+    });
+    btnVoltar.addEventListener("click", goBack);
+    btnAnterior.addEventListener("click", function () {
+      if (current.view !== "perfil") return;
+      if (current.index === 0) go({ view: "intro", index: 0 });
+      else go({ view: "perfil", index: current.index - 1 });
+    });
+    btnProximo.addEventListener("click", function () {
+      if (current.view !== "perfil") return;
+      if (current.index >= TOTAL - 1) go({ view: "cta", index: TOTAL - 1 });
+      else go({ view: "perfil", index: current.index + 1 });
+    });
+
+    btnCopiar.addEventListener("click", async function () {
+      if (current.view !== "perfil") return;
+      const texto = PROFILES[current.index].mensagem;
+      detailDm.textContent = texto;
+      try {
+        if (!navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
+          throw new Error("no clipboard");
+        }
+        await navigator.clipboard.writeText(texto);
+        manualCopyBox.hidden = true;
+        btnCopiar.textContent = "Copiado!";
+        if (copyTimer) clearTimeout(copyTimer);
+        copyTimer = setTimeout(function () {
+          btnCopiar.textContent = "Copiar mensagem";
+        }, 2000);
+      } catch (e) {
+        manualCopyTextarea.value = texto;
+        manualCopyBox.hidden = false;
+        manualCopyTextarea.focus();
+        manualCopyTextarea.select();
+      }
+    });
+
+    btnEnviado.addEventListener("click", function () {
+      if (current.view !== "perfil") return;
+      const handle = PROFILES[current.index].handle;
+      const map = loadSent();
+      if (map[handle]) delete map[handle];
+      else map[handle] = true;
+      saveSent(map);
+      renderPerfil(current.index);
+    });
+
+    window.addEventListener("popstate", function (event) {
+      applyState(event.state || parseHash());
+    });
+
+    const initial = parseHash();
+    history.replaceState(initial, "", stateToHash(initial));
+    applyState(initial);
   </script>
 </body>
 </html>

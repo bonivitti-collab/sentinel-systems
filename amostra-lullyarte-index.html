@@ -174,6 +174,35 @@
       transform:translateX(-50%);background:var(--grafite);color:#fff;
       font:600 13px var(--titulo);padding:8px 14px;border-radius:999px;z-index:10;
     }
+
+    .texto-quebrado{white-space:pre-line}
+    .receita{margin-top:14px}
+    .receita-intro{margin:0 0 12px;color:var(--grafite-2);font-size:15px}
+    .receita details{
+      background:#fff;border:1px solid var(--linha);border-radius:16px;
+      margin:0 0 8px;box-shadow:var(--sombra);
+    }
+    .receita summary{
+      list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:10px;
+      padding:14px 16px;font:700 15px/1.3 var(--titulo);
+    }
+    .receita summary::-webkit-details-marker{display:none}
+    .receita-n{
+      flex:0 0 22px;height:22px;border-radius:999px;background:var(--azul);color:#fff;
+      font:700 11px/22px var(--titulo);text-align:center;margin-top:1px;
+    }
+    .receita .corpo{padding:2px 16px 16px;color:var(--grafite)}
+    .receita .corpo p{margin:0 0 8px;font-size:15px;line-height:1.55}
+    .receita .corpo p:last-child{margin-bottom:0}
+    .receita ol,.receita ul{margin:8px 0 0;padding-left:1.2em}
+    .receita li{margin:0 0 8px;font-size:15px;line-height:1.55}
+    .receita li:last-child{margin-bottom:0}
+    .tomada{background:var(--areia);border-radius:14px;padding:12px 14px;margin:10px 0 0}
+    .tomada b{display:block;font:700 14px var(--titulo);margin-bottom:4px}
+    .checklist{list-style:none;padding:0;margin:8px 0 0}
+    .checklist li{display:flex;gap:8px;align-items:flex-start;margin:0 0 8px;padding:0}
+    .checklist li:last-child{margin-bottom:0}
+    .check{flex:0 0 auto;color:var(--azul-esc);font-weight:700;line-height:1.55}
   </style>
 </head>
 <body>
@@ -189,7 +218,7 @@
       <p class="chip-marca">Amostra · Pauta da Semana</p>
       <h1 class="hello">Lully Artes</h1>
       <p class="hello-sub">Olá, Luzia. Esta é uma amostra da sua pauta: 30 de novembro a 4 de dezembro.</p>
-      <p class="hello-note">Cinco roteiros para gravar no celular. Você só grava e posta.</p>
+      <p class="hello-note">Cinco roteiros para gravar no celular, com o passo a passo de cada dia, do começo ao fim. Você só grava e posta.</p>
     </header>
 
     <header class="topbar" id="top-nav" hidden>
@@ -224,235 +253,587 @@
     </footer>
   </div>
   <script>
-    const WA_CTA = "https://wa.me/5522998434956?text=Oi!%20Vi%20a%20amostra%20da%20Pauta%20da%20Semana%20da%20Lully%20Artes%20e%20quero%20come%C3%A7ar.";
     const POSTS = [
+  {
+    "id": "segunda",
+    "data": "2026-11-30",
+    "weekday": "segunda",
+    "weekdayCurto": "Seg",
+    "diaNum": "30",
+    "diaRotulo": "segunda, 30 de novembro",
+    "hora": "19h",
+    "formato": "Reels",
+    "formatoLabel": "Bastidor",
+    "duracao": "25s",
+    "tema": "A sacolinha de Natal, do começo ao laço",
+    "ideia": "Filme na mesa, com o celular apoiado ou na mão, montando uma sacolinha de Natal com vinho e chocolates. Sem equipe, sem corte difícil: um plano de perto e a sacolinha pronta no final.",
+    "gancho": {
+      "tempo": "0–3s",
+      "filmar": "Close na sacolinha quase pronta. Sua mão ajusta o laço, sem olhar para a câmera ainda. Um único plano, sem corte.",
+      "fala": "Essa sacolinha aqui não é improviso de última hora.",
+      "textoTela": "Sacolinha de Natal"
+    },
+    "roteiro": [
       {
-        id: "segunda",
-        data: "2026-11-30",
-        weekday: "segunda",
-        weekdayCurto: "Seg",
-        diaNum: "30",
-        diaRotulo: "segunda, 30 de novembro",
-        hora: "19h",
-        formato: "Reels",
-        formatoLabel: "Bastidor",
-        duracao: "25s",
-        tema: "A sacolinha de Natal, do começo ao laço",
-        ideia: "Filme na mesa, com o celular apoiado ou na mão, montando uma sacolinha de Natal com vinho e chocolates. Sem equipe, sem corte difícil: um plano de perto e a sacolinha pronta no final.",
-        gancho: {
-          tempo: "0–3s",
-          filmar: "Close na sacolinha quase pronta. Sua mão ajusta o laço, sem olhar para a câmera ainda. Um único plano, sem corte.",
-          fala: "Essa sacolinha aqui não é improviso de última hora.",
-          textoTela: "Sacolinha de Natal"
-        },
-        roteiro: [
-          {
-            cena: "Cena 1",
-            tempo: "0–3s",
-            filmar: "Close na sacolinha quase pronta. A mão ajusta o laço.",
-            fala: "Essa sacolinha aqui não é improviso de última hora.",
-            textoTela: "Sacolinha de Natal"
-          },
-          {
-            cena: "Cena 2",
-            tempo: "3–15s",
-            filmar: "Abre um pouco o enquadramento e mostra a mesa: o vinho e os chocolates entrando na sacolinha, um de cada vez. A câmera pode ficar parada.",
-            fala: "Vinho, chocolates e o cuidado de quem monta pensando em quem vai receber. É assim que a sacolinha de Natal da Lully Artes sai daqui.",
-            textoTela: "Vinho e chocolates"
-          },
-          {
-            cena: "Cena 3",
-            tempo: "15–25s",
-            filmar: "Segura a sacolinha já fechada na frente da câmera, olha para a lente e sorri.",
-            fala: "Se você quer presentear sem correria, me chama no WhatsApp. Eu monto e envio para onde você estiver.",
-            textoTela: "Peça no WhatsApp"
-          }
-        ],
-        legenda: "Sacolinha de Natal da Lully Artes: vinho, chocolates e o capricho de quem monta à mão.\\n\\nSe você quer presentear sem deixar para a última hora, me chama no WhatsApp. Eu monto o seu pedido e envio para onde você estiver.\\n\\n#LullyArtes #lullyarte #sacolinhadenatal #presentedenatal #natal2026 #feitoamao",
-        stories: [
-          { tipo: "Bastidor", texto: "A mesa de hoje, antes de fechar a sacolinha.", como: "Foto ou vídeo curto, de cima, com o vinho, os chocolates e a sacolinha aberta. Sem fala. Cinco segundos e sai." },
-          { tipo: "Enquete", texto: "Você já escolheu o presente de Natal?", opcoes: ["Já escolhi", "Ainda não"] },
-          { tipo: "Caixinha", texto: "Para quem você quer uma sacolinha dessas? Me conta." }
-        ]
+        "cena": "Cena 1",
+        "tempo": "0–3s",
+        "filmar": "Close na sacolinha quase pronta. A mão ajusta o laço.",
+        "fala": "Essa sacolinha aqui não é improviso de última hora.",
+        "textoTela": "Sacolinha de Natal"
       },
       {
-        id: "terca",
-        data: "2026-12-01",
-        weekday: "terça",
-        weekdayCurto: "Ter",
-        diaNum: "1",
-        diaRotulo: "terça, 1º de dezembro",
-        hora: "12h30",
-        formato: "Reels",
-        formatoLabel: "Presente",
-        duracao: "22s",
-        tema: "Kit masculino infantil: presente de Natal que já sai pronto",
-        ideia: "Mostre o kit masculino infantil exatamente como ele é, na sacolinha de presente. Não precisa inventar cenário: a sacolinha na mão, o que vai dentro, e um convite curto no final.",
-        gancho: {
-          tempo: "0–3s",
-          filmar: "Segura a sacolinha do kit fechada, bem no centro do quadro, e olha para a câmera. Um único plano.",
-          fala: "Presente de Natal para menino — e não é brinquedo.",
-          textoTela: "Kit masculino infantil"
-        },
-        roteiro: [
-          {
-            cena: "Cena 1",
-            tempo: "0–3s",
-            filmar: "Sacolinha do kit fechada, no centro do quadro. Olha para a câmera.",
-            fala: "Presente de Natal para menino — e não é brinquedo.",
-            textoTela: "Kit masculino infantil"
-          },
-          {
-            cena: "Cena 2",
-            tempo: "3–14s",
-            filmar: "Abre a sacolinha e mostra o kit com calma, item a item, do jeito que ele realmente é. Se preferir, deixe a câmera apoiada e só mova as mãos.",
-            fala: "Esse é o kit masculino infantil da Lully Artes. Já vem na sacolinha de presente, pronto para entregar — uma opção prática para os meninos da família.",
-            textoTela: "Pronto para presentear"
-          },
-          {
-            cena: "Cena 3",
-            tempo: "14–22s",
-            filmar: "Fecha a sacolinha, segura na altura do peito e fala olhando para a lente.",
-            fala: "Se é para um menino da sua casa, me chama no WhatsApp. Eu te mostro o kit e cuido do envio.",
-            textoTela: "Peça no WhatsApp"
-          }
-        ],
-        legenda: "Kit masculino infantil da Lully Artes, na sacolinha de presente. Uma ideia de Natal prática, pensada para os meninos da família.\\n\\nMe chama no WhatsApp para ver o kit e fazer o seu pedido. Envio para onde você estiver.\\n\\n#LullyArtes #lullyarte #kitinfantil #presentedenatal #natal2026 #sacolinhadepresente",
-        stories: [
-          { tipo: "Bastidor", texto: "O kit masculino infantil, pronto na sacolinha.", como: "Foto da sacolinha fechada em uma superfície clara. Sem fala. Deixa 4 segundos." },
-          { tipo: "Enquete", texto: "Presente para menino no Natal: o que você prefere?", opcoes: ["Kit pronto", "Ainda vou pensar"] },
-          { tipo: "Caixinha", texto: "Tem um menino na lista de Natal? Me chama que eu te mostro o kit." }
-        ]
+        "cena": "Cena 2",
+        "tempo": "3–15s",
+        "filmar": "Abre um pouco o enquadramento e mostra a mesa: o vinho e os chocolates entrando na sacolinha, um de cada vez. A câmera pode ficar parada.",
+        "fala": "Vinho, chocolates e o cuidado de quem monta pensando em quem vai receber. É assim que a sacolinha de Natal da Lully Artes sai daqui.",
+        "textoTela": "Vinho e chocolates"
       },
       {
-        id: "quarta",
-        data: "2026-12-02",
-        weekday: "quarta",
-        weekdayCurto: "Qua",
-        diaNum: "2",
-        diaRotulo: "quarta, 2 de dezembro",
-        hora: "19h",
-        formato: "Reels",
-        formatoLabel: "Acessório",
-        duracao: "22s",
-        tema: "O charm de pérolas que não é só um chaveiro",
-        ideia: "Filme o acessório de pérolas de perto e depois pendurado na alça da bolsa — ou no chaveiro, se for assim que você mostra. Luz natural, celular na mão, movimentos lentos.",
-        gancho: {
-          tempo: "0–3s",
-          filmar: "Close no charm de pérolas na palma da mão, girando devagar contra a luz. Sem corte.",
-          fala: "Isso aqui não é só um chaveiro.",
-          textoTela: "Charm de pérolas"
-        },
-        roteiro: [
-          {
-            cena: "Cena 1",
-            tempo: "0–3s",
-            filmar: "Close no charm de pérolas na palma da mão, girando devagar contra a luz.",
-            fala: "Isso aqui não é só um chaveiro.",
-            textoTela: "Charm de pérolas"
-          },
-          {
-            cena: "Cena 2",
-            tempo: "3–14s",
-            filmar: "Pendura o charm na alça da bolsa (ou no chaveiro) e mostra de dois ângulos, bem devagar. Se puder, um plano da bolsa em movimento.",
-            fala: "É um acessório de pérolas para pendurar na bolsa — ou no chaveiro. Feito à mão, com muito amor e carinho, do jeito de tudo que sai da Lully Artes.",
-            textoTela: "Para a bolsa ou o chaveiro"
-          },
-          {
-            cena: "Cena 3",
-            tempo: "14–22s",
-            filmar: "Volta o acessório para perto da câmera e olha para a lente.",
-            fala: "Se quiser um para usar ou para presentear, me chama no WhatsApp. Eu envio para onde você estiver.",
-            textoTela: "Peça no WhatsApp"
-          }
-        ],
-        legenda: "Charm de pérolas da Lully Artes: um acessório para a bolsa ou para o chaveiro, feito à mão com muito amor e carinho.\\n\\nPara usar no dia a dia ou presentear. Me chama no WhatsApp e eu envio o seu pedido.\\n\\n#LullyArtes #lullyarte #acessorios #charmdeperolas #chaveiro #presentedenatal #feitoamao",
-        stories: [
-          { tipo: "Bastidor", texto: "O brilho das pérolas, de pertinho.", como: "Vídeo curto, só o acessório girando na mão, junto à janela. Sem fala. Três a cinco segundos." },
-          { tipo: "Enquete", texto: "Você usaria na bolsa ou no chaveiro?", opcoes: ["Na bolsa", "No chaveiro"] },
-          { tipo: "Caixinha", texto: "Quer esse acessório para você ou para presentear?" }
-        ]
-      },
-      {
-        id: "quinta",
-        data: "2026-12-03",
-        weekday: "quinta",
-        weekdayCurto: "Qui",
-        diaNum: "3",
-        diaRotulo: "quinta, 3 de dezembro",
-        hora: "12h30",
-        formato: "Reels",
-        formatoLabel: "Encomenda",
-        duracao: "20s",
-        tema: "O presente sai daqui e chega até você",
-        ideia: "Um Reels direto, olhando para a câmera, com uma sacolinha ou um kit ao lado do celular. O recado é simples: a encomenda é pelo WhatsApp e o pedido é enviado para onde a pessoa estiver.",
-        gancho: {
-          tempo: "0–3s",
-          filmar: "Olha para a câmera, com a sacolinha de Natal ao lado. Um plano só, do peito para cima.",
-          fala: "Mora longe e quer presentear no Natal?",
-          textoTela: "A gente envia o seu pedido"
-        },
-        roteiro: [
-          {
-            cena: "Cena 1",
-            tempo: "0–3s",
-            filmar: "Plano do peito para cima, sacolinha visível ao lado. Olha para a câmera.",
-            fala: "Mora longe e quer presentear no Natal?",
-            textoTela: "A gente envia o seu pedido"
-          },
-          {
-            cena: "Cena 2",
-            tempo: "3–12s",
-            filmar: "Mostra o WhatsApp aberto no celular (a tela de conversa, sem exibir dados de cliente) e a sacolinha na outra mão.",
-            fala: "Você me chama no WhatsApp, escolhe a sacolinha ou o kit, e eu cuido do envio para onde você estiver.",
-            textoTela: "Pedido pelo WhatsApp"
-          },
-          {
-            cena: "Cena 3",
-            tempo: "12–20s",
-            filmar: "Deixa o celular de lado, segura a sacolinha com as duas mãos e termina olhando para a lente.",
-            fala: "Não precisa estar perto para dar um presente feito com carinho. Me chama, e a gente organiza o seu pedido.",
-            textoTela: "Me chama no WhatsApp"
-          }
-        ],
-        legenda: "A Lully Artes envia o seu pedido para onde você estiver.\\n\\nSacolinha de Natal, kit masculino infantil ou acessórios: você escolhe no WhatsApp, e eu cuido do resto.\\n\\nMe chama e a gente organiza o seu presente.\\n\\n#LullyArtes #lullyarte #presentedenatal #sacolinhadenatal #encomenda #natal2026",
-        stories: [
-          { tipo: "Bastidor", texto: "Pedidos de quem está longe também saem daqui.", como: "Foto da sacolinha ao lado do celular. Sem fala. Quatro segundos." },
-          { tipo: "Enquete", texto: "Neste Natal você vai presentear alguém de outra cidade?", opcoes: ["Sim", "Ainda não sei"] },
-          { tipo: "Caixinha", texto: "Para onde você quer receber o seu pedido? Me chama no WhatsApp." }
-        ]
-      },
-      {
-        id: "sexta",
-        data: "2026-12-04",
-        weekday: "sexta",
-        weekdayCurto: "Sex",
-        diaNum: "4",
-        diaRotulo: "sexta, 4 de dezembro",
-        hora: "18h",
-        formato: "Carrossel",
-        formatoLabel: "Guia",
-        tema: "Três presentes da Lully Artes para o Natal",
-        ideia: "Carrossel com foto de cada opção que você já faz: a sacolinha de Natal com vinho e chocolates, o kit masculino infantil e o charm de pérolas. Fundo claro, uma peça por foto, texto curto em cada slide.",
-        slides: [
-          "Três presentes da Lully Artes para o Natal.\\nJá prontos para presentear.",
-          "1. Sacolinha de Natal com vinho e chocolates.\\nPara quem você quer celebrar.",
-          "2. Kit masculino infantil, na sacolinha de presente.\\nUma opção prática para os meninos da família.",
-          "3. Charm de pérolas para a bolsa ou o chaveiro.\\nUm acessório feito à mão, para usar ou presentear.",
-          "Peça pelo WhatsApp.\\nA Lully Artes envia o seu pedido para onde você estiver.",
-          "Qual desses combina com quem você vai presentear?\\nMe chama, e eu te ajudo a escolher.\\n@lullyarte"
-        ],
-        legenda: "Três presentes da Lully Artes para o Natal:\\n\\n• Sacolinha com vinho e chocolates\\n• Kit masculino infantil, na sacolinha de presente\\n• Charm de pérolas para a bolsa ou o chaveiro\\n\\nMe chama no WhatsApp, e eu te ajudo a escolher. Envio o pedido para onde você estiver.\\n\\n#LullyArtes #lullyarte #presentedenatal #sacolinhadenatal #kitinfantil #acessorios #natal2026",
-        stories: [
-          { tipo: "Bastidor", texto: "Os três presentes desta sexta, lado a lado.", como: "Uma foto das três opções em uma superfície clara. Sem fala. Deixa 4 segundos." },
-          { tipo: "Enquete", texto: "Qual desses você escolheria primeiro?", opcoes: ["Sacolinha", "Kit infantil", "Charm"] },
-          { tipo: "Caixinha", texto: "Me conta para quem é o presente, que eu te ajudo a escolher." }
-        ]
+        "cena": "Cena 3",
+        "tempo": "15–25s",
+        "filmar": "Segura a sacolinha já fechada na frente da câmera, olha para a lente e sorri.",
+        "fala": "Se você quer presentear sem correria, me chama no WhatsApp. Eu monto e envio para onde você estiver.",
+        "textoTela": "Peça no WhatsApp"
       }
-    ];
+    ],
+    "legenda": "Sacolinha de Natal da Lully Artes: vinho, chocolates e o capricho de quem monta à mão.\n\nSe você quer presentear sem deixar para a última hora, me chama no WhatsApp. Eu monto o seu pedido e envio para onde você estiver.\n\n#LullyArtes #lullyarte #sacolinhadenatal #presentedenatal #natal2026 #feitoamao",
+    "stories": [
+      {
+        "tipo": "Bastidor",
+        "texto": "A mesa de hoje, antes de fechar a sacolinha.",
+        "como": "Foto ou vídeo curto, de cima, com o vinho, os chocolates e a sacolinha aberta. Sem fala. Cinco segundos e sai."
+      },
+      {
+        "tipo": "Enquete",
+        "texto": "Você já escolheu o presente de Natal?",
+        "opcoes": [
+          "Já escolhi",
+          "Ainda não"
+        ]
+      },
+      {
+        "tipo": "Caixinha",
+        "texto": "Para quem você quer uma sacolinha dessas? Me conta."
+      }
+    ],
+    "guia": {
+      "antes": [
+        "Separe a sacolinha, o vinho, os chocolates e o laço, se você usar.",
+        "Escolha uma mesa limpa e um fundo simples: parede clara ou toalha lisa. Tire do cenário o que não faz parte do presente.",
+        "Grave de dia, perto de uma janela. A luz deve vir de lado, não de trás de você.",
+        "Coloque o celular na vertical (em pé, não deitado). Se puder, apoie em um copo, numa pilha de livros ou num suporte, na altura da mesa.",
+        "Passe um paninho macio na lente do celular, na frente e atrás, antes de começar."
+      ],
+      "gravacao": [
+        {
+          "titulo": "Tomada 1 — o gancho (cerca de 3 segundos)",
+          "texto": "Ângulo bem perto, de cima e de lado, só a mão ajustando o laço. Você ainda não olha para a câmera. Fale: “Essa sacolinha aqui não é improviso de última hora.”"
+        },
+        {
+          "titulo": "Tomada 2 — a montagem (cerca de 12 segundos)",
+          "texto": "Afaste um pouco o celular para aparecer a mesa. Deixe a câmera parada. Coloque o vinho e os chocolates na sacolinha, um de cada vez, com calma. Fale: “Vinho, chocolates e o cuidado de quem monta pensando em quem vai receber. É assim que a sacolinha de Natal da Lully Artes sai daqui.”"
+        },
+        {
+          "titulo": "Tomada 3 — o convite (cerca de 10 segundos)",
+          "texto": "Ângulo de frente, na altura do peito. Segure a sacolinha já fechada, olhe para a câmera e sorria. Fale: “Se você quer presentear sem correria, me chama no WhatsApp. Eu monto e envio para onde você estiver.”"
+        }
+      ],
+      "edicao": [
+        "Você pode editar no próprio Instagram ou no CapCut. Os dois servem. O caminho mais simples é no Instagram.",
+        "Abra o Instagram e toque no + , embaixo da tela. Escolha Reels.",
+        "Toque no ícone da galeria (em geral no canto de baixo, à esquerda) e escolha as 3 tomadas, nesta ordem: a do laço, a da mesa e a da sacolinha pronta.",
+        "Corte cada pedaço arrastando as pontas da faixa do vídeo: a primeira com 3 segundos, a segunda com uns 12 segundos e a terceira com uns 10 segundos. O Reels todo fica com cerca de 25 segundos.",
+        "Texto na tela: toque em Aa. Use uma letra simples e reta, branca. Se o fundo for claro e a letra sumir, use letra preta ou um fundo escuro bem levinho atrás da escrita. Coloque o texto no centro ou um pouco abaixo do meio, sem tapar o produto. Cada frase aparece só no seu pedaço: “Sacolinha de Natal” (0 a 3s), “Vinho e chocolates” (3 a 15s) e “Peça no WhatsApp” (15 a 25s).",
+        "Transição: não precisa de efeito especial. Deixe um corte direto de uma tomada para a outra.",
+        "Se preferir o CapCut: abra um projeto novo, importe as 3 tomadas na mesma ordem, corte nos mesmos tempos, coloque os mesmos textos e exporte o vídeo. Depois é só publicar no Instagram."
+      ],
+      "musica": {
+        "clima": "Uma música instrumental de Natal, suave, sem alguém cantando alto por cima da sua fala.",
+        "como": "No Instagram, depois de montar o vídeo, toque em Áudio (ou Música). Na busca, experimente: natal instrumental, christmas instrumental, natal suave. Escolha uma faixa da biblioteca do Instagram. Abaixe o volume da música até a sua voz ficar nítida. Se a faixa tiver canto e atrapalhar a fala, troque."
+      },
+      "publicar": [
+        "Capa: toque em Editar capa e escolha o momento em que a sacolinha aparece inteira, nítida e bem iluminada. Evite um quadro tremido ou só com a sua mão.",
+        "Legenda: toque em “Escreva uma legenda”, volte nesta página, toque em Copiar na legenda e cole no Instagram.",
+        "Publique por volta das 19h, nesta segunda.",
+        "Depois, faça os Stories do dia, na ordem que está em “Stories do dia”, mais acima: um bastidor curto da mesa, uma enquete e uma caixinha de perguntas. Toque no + e escolha Story."
+      ],
+      "checklist": [
+        "Separei a sacolinha, o vinho e os chocolates.",
+        "A mesa está limpa e a lente do celular, limpa.",
+        "O vídeo está na vertical.",
+        "As 3 tomadas foram cortadas nos tempos certos.",
+        "Os 3 textos aparecem na hora certa e dá para ler.",
+        "A música está baixa e a minha fala se entende.",
+        "A capa ficou nítida.",
+        "A legenda foi colada.",
+        "Vou publicar por volta das 19h.",
+        "Vou fazer os 3 Stories do dia."
+      ]
+    }
+  },
+  {
+    "id": "terca",
+    "data": "2026-12-01",
+    "weekday": "terça",
+    "weekdayCurto": "Ter",
+    "diaNum": "1",
+    "diaRotulo": "terça, 1º de dezembro",
+    "hora": "12h30",
+    "formato": "Reels",
+    "formatoLabel": "Presente",
+    "duracao": "22s",
+    "tema": "Kit masculino infantil: presente de Natal que já sai pronto",
+    "ideia": "Mostre o kit masculino infantil exatamente como ele é, na sacolinha de presente. Não precisa inventar cenário: a sacolinha na mão, o que vai dentro, e um convite curto no final.",
+    "gancho": {
+      "tempo": "0–3s",
+      "filmar": "Segura a sacolinha do kit fechada, bem no centro do quadro, e olha para a câmera. Um único plano.",
+      "fala": "Presente de Natal para menino — e não é brinquedo.",
+      "textoTela": "Kit masculino infantil"
+    },
+    "roteiro": [
+      {
+        "cena": "Cena 1",
+        "tempo": "0–3s",
+        "filmar": "Sacolinha do kit fechada, no centro do quadro. Olha para a câmera.",
+        "fala": "Presente de Natal para menino — e não é brinquedo.",
+        "textoTela": "Kit masculino infantil"
+      },
+      {
+        "cena": "Cena 2",
+        "tempo": "3–14s",
+        "filmar": "Abre a sacolinha e mostra o kit com calma, item a item, do jeito que ele realmente é. Se preferir, deixe a câmera apoiada e só mova as mãos.",
+        "fala": "Esse é o kit masculino infantil da Lully Artes. Já vem na sacolinha de presente, pronto para entregar — uma opção prática para os meninos da família.",
+        "textoTela": "Pronto para presentear"
+      },
+      {
+        "cena": "Cena 3",
+        "tempo": "14–22s",
+        "filmar": "Fecha a sacolinha, segura na altura do peito e fala olhando para a lente.",
+        "fala": "Se é para um menino da sua casa, me chama no WhatsApp. Eu te mostro o kit e cuido do envio.",
+        "textoTela": "Peça no WhatsApp"
+      }
+    ],
+    "legenda": "Kit masculino infantil da Lully Artes, na sacolinha de presente. Uma ideia de Natal prática, pensada para os meninos da família.\n\nMe chama no WhatsApp para ver o kit e fazer o seu pedido. Envio para onde você estiver.\n\n#LullyArtes #lullyarte #kitinfantil #presentedenatal #natal2026 #sacolinhadepresente",
+    "stories": [
+      {
+        "tipo": "Bastidor",
+        "texto": "O kit masculino infantil, pronto na sacolinha.",
+        "como": "Foto da sacolinha fechada em uma superfície clara. Sem fala. Deixa 4 segundos."
+      },
+      {
+        "tipo": "Enquete",
+        "texto": "Presente para menino no Natal: o que você prefere?",
+        "opcoes": [
+          "Kit pronto",
+          "Ainda vou pensar"
+        ]
+      },
+      {
+        "tipo": "Caixinha",
+        "texto": "Tem um menino na lista de Natal? Me chama que eu te mostro o kit."
+      }
+    ],
+    "guia": {
+      "antes": [
+        "Separe o kit masculino infantil e a sacolinha de presente, do jeito que você entrega para a cliente.",
+        "Use uma mesa ou uma superfície clara e lisa. O fundo deve ser simples, para o kit aparecer bem.",
+        "Grave de dia, perto da janela, com a luz vindo de lado.",
+        "Celular na vertical. Se puder, apoie-o na altura do peito ou da mesa, para a imagem não tremer.",
+        "Limpe a lente do celular com um paninho macio, na frente e atrás."
+      ],
+      "gravacao": [
+        {
+          "titulo": "Tomada 1 — o gancho (cerca de 3 segundos)",
+          "texto": "Ângulo de frente, sacolinha fechada no centro do quadro. Olhe para a câmera. Fale: “Presente de Natal para menino — e não é brinquedo.”"
+        },
+        {
+          "titulo": "Tomada 2 — o kit (cerca de 11 segundos)",
+          "texto": "A câmera pode ficar parada, um pouco mais aberta. Abra a sacolinha e mostre o kit com calma, item a item, exatamente como ele é. Fale: “Esse é o kit masculino infantil da Lully Artes. Já vem na sacolinha de presente, pronto para entregar — uma opção prática para os meninos da família.”"
+        },
+        {
+          "titulo": "Tomada 3 — o convite (cerca de 8 segundos)",
+          "texto": "Feche a sacolinha, segure na altura do peito e olhe para a lente. Fale: “Se é para um menino da sua casa, me chama no WhatsApp. Eu te mostro o kit e cuido do envio.”"
+        }
+      ],
+      "edicao": [
+        "Edite no Instagram ou no CapCut. No Instagram é mais direto.",
+        "Abra o Instagram, toque no + e escolha Reels.",
+        "Importe as 3 tomadas nesta ordem: sacolinha fechada, kit aberto, convite final.",
+        "Corte assim: 3 segundos na primeira, uns 11 segundos na segunda e uns 8 segundos na terceira. O Reels todo fica com cerca de 22 segundos.",
+        "Texto na tela: toque em Aa. Letra simples, reta, branca (ou preta, se o fundo for claro). No centro ou um pouco abaixo, sem cobrir o kit. Textos: “Kit masculino infantil” (0 a 3s), “Pronto para presentear” (3 a 14s) e “Peça no WhatsApp” (14 a 22s).",
+        "Transição: corte direto, sem efeito.",
+        "No CapCut, o caminho é o mesmo: projeto novo, mesma ordem, mesmos tempos, mesmos textos, depois exportar e publicar no Instagram."
+      ],
+      "musica": {
+        "clima": "Uma música leve e alegre, no clima de Natal, de preferência instrumental, para não cobrir a sua fala.",
+        "como": "Toque em Áudio. Na busca, experimente: natal alegre, natal instrumental, christmas kids instrumental. Escolha uma faixa da biblioteca do Instagram e deixe o volume baixo, para a sua voz continuar clara. Se tiver canto demais, troque."
+      },
+      "publicar": [
+        "Capa: escolha o quadro em que a sacolinha ou o kit aparece inteiro e nítido.",
+        "Cole a legenda com o botão Copiar desta página.",
+        "Publique por volta das 12h30, nesta terça.",
+        "Depois, faça os Stories do dia: a foto da sacolinha, a enquete e a caixinha, como está em “Stories do dia”."
+      ],
+      "checklist": [
+        "Separei o kit e a sacolinha, do jeito que eu entrego.",
+        "O fundo está simples e a lente, limpa.",
+        "O vídeo está na vertical.",
+        "As 3 tomadas foram cortadas nos tempos certos.",
+        "Os textos estão legíveis e na hora certa.",
+        "A música está baixa e a fala se entende.",
+        "A capa ficou nítida.",
+        "A legenda foi colada.",
+        "Vou publicar por volta das 12h30.",
+        "Vou fazer os 3 Stories do dia."
+      ]
+    }
+  },
+  {
+    "id": "quarta",
+    "data": "2026-12-02",
+    "weekday": "quarta",
+    "weekdayCurto": "Qua",
+    "diaNum": "2",
+    "diaRotulo": "quarta, 2 de dezembro",
+    "hora": "19h",
+    "formato": "Reels",
+    "formatoLabel": "Acessório",
+    "duracao": "22s",
+    "tema": "O charm de pérolas que não é só um chaveiro",
+    "ideia": "Filme o acessório de pérolas de perto e depois pendurado na alça da bolsa — ou no chaveiro, se for assim que você mostra. Luz natural, celular na mão, movimentos lentos.",
+    "gancho": {
+      "tempo": "0–3s",
+      "filmar": "Close no charm de pérolas na palma da mão, girando devagar contra a luz. Sem corte.",
+      "fala": "Isso aqui não é só um chaveiro.",
+      "textoTela": "Charm de pérolas"
+    },
+    "roteiro": [
+      {
+        "cena": "Cena 1",
+        "tempo": "0–3s",
+        "filmar": "Close no charm de pérolas na palma da mão, girando devagar contra a luz.",
+        "fala": "Isso aqui não é só um chaveiro.",
+        "textoTela": "Charm de pérolas"
+      },
+      {
+        "cena": "Cena 2",
+        "tempo": "3–14s",
+        "filmar": "Pendura o charm na alça da bolsa (ou no chaveiro) e mostra de dois ângulos, bem devagar. Se puder, um plano da bolsa em movimento.",
+        "fala": "É um acessório de pérolas para pendurar na bolsa — ou no chaveiro. Feito à mão, com muito amor e carinho, do jeito de tudo que sai da Lully Artes.",
+        "textoTela": "Para a bolsa ou o chaveiro"
+      },
+      {
+        "cena": "Cena 3",
+        "tempo": "14–22s",
+        "filmar": "Volta o acessório para perto da câmera e olha para a lente.",
+        "fala": "Se quiser um para usar ou para presentear, me chama no WhatsApp. Eu envio para onde você estiver.",
+        "textoTela": "Peça no WhatsApp"
+      }
+    ],
+    "legenda": "Charm de pérolas da Lully Artes: um acessório para a bolsa ou para o chaveiro, feito à mão com muito amor e carinho.\n\nPara usar no dia a dia ou presentear. Me chama no WhatsApp e eu envio o seu pedido.\n\n#LullyArtes #lullyarte #acessorios #charmdeperolas #chaveiro #presentedenatal #feitoamao",
+    "stories": [
+      {
+        "tipo": "Bastidor",
+        "texto": "O brilho das pérolas, de pertinho.",
+        "como": "Vídeo curto, só o acessório girando na mão, junto à janela. Sem fala. Três a cinco segundos."
+      },
+      {
+        "tipo": "Enquete",
+        "texto": "Você usaria na bolsa ou no chaveiro?",
+        "opcoes": [
+          "Na bolsa",
+          "No chaveiro"
+        ]
+      },
+      {
+        "tipo": "Caixinha",
+        "texto": "Quer esse acessório para você ou para presentear?"
+      }
+    ],
+    "guia": {
+      "antes": [
+        "Separe o charm de pérolas e uma bolsa com alça (ou um chaveiro), para mostrar as duas formas de usar.",
+        "Escolha um fundo simples e claro. Uma mesa perto da janela funciona bem, porque as pérolas brilham na luz natural.",
+        "Grave de dia, com a luz vindo de lado. Evite o sol batendo direto e estourando o branco das pérolas.",
+        "Celular na vertical. Na primeira tomada, chegue bem perto. Nas outras, você pode filmar com o celular na mão, mas devagar.",
+        "Limpe a lente com um paninho macio. Em close, qualquer marca na lente aparece."
+      ],
+      "gravacao": [
+        {
+          "titulo": "Tomada 1 — o gancho (cerca de 3 segundos)",
+          "texto": "Ângulo bem perto, o charm na palma da mão, girando devagar contra a luz da janela. Sem corte. Fale: “Isso aqui não é só um chaveiro.”"
+        },
+        {
+          "titulo": "Tomada 2 — o uso (cerca de 11 segundos)",
+          "texto": "Pendure o charm na alça da bolsa (ou no chaveiro) e mostre de dois ângulos, bem devagar. Se puder, ande um pouco com a bolsa para o acessório se mexer. Fale: “É um acessório de pérolas para pendurar na bolsa — ou no chaveiro. Feito à mão, com muito amor e carinho, do jeito de tudo que sai da Lully Artes.”"
+        },
+        {
+          "titulo": "Tomada 3 — o convite (cerca de 8 segundos)",
+          "texto": "Volte o acessório para perto da câmera e olhe para a lente. Fale: “Se quiser um para usar ou para presentear, me chama no WhatsApp. Eu envio para onde você estiver.”"
+        }
+      ],
+      "edicao": [
+        "Edite no Instagram ou no CapCut.",
+        "Abra o Instagram, toque no + e escolha Reels.",
+        "Importe as 3 tomadas nesta ordem: close na mão, charm na bolsa, convite final.",
+        "Corte assim: 3 segundos, uns 11 segundos e uns 8 segundos. O Reels todo fica com cerca de 22 segundos.",
+        "Texto na tela: toque em Aa. Letra simples, reta, branca ou preta, no centro ou um pouco abaixo, sem cobrir as pérolas. Textos: “Charm de pérolas” (0 a 3s), “Para a bolsa ou o chaveiro” (3 a 14s) e “Peça no WhatsApp” (14 a 22s).",
+        "Transição: corte direto, sem efeito. Os movimentos já são lentos; um efeito demais atrapalha.",
+        "No CapCut, use a mesma ordem, os mesmos tempos e os mesmos textos. Exporte e publique no Instagram."
+      ],
+      "musica": {
+        "clima": "Uma música delicada e suave, de preferência instrumental — piano ou um Natal bem leve.",
+        "como": "Toque em Áudio. Na busca, experimente: piano suave, natal delicado, instrumental suave. Escolha uma faixa da biblioteca do Instagram, em volume baixo, para a sua fala continuar nítida."
+      },
+      "publicar": [
+        "Capa: escolha o quadro em que as pérolas aparecem nítidas e com brilho, sem estar tremido.",
+        "Cole a legenda com o botão Copiar desta página.",
+        "Publique por volta das 19h, nesta quarta.",
+        "Depois, faça os Stories do dia: o close sem fala, a enquete e a caixinha."
+      ],
+      "checklist": [
+        "Separei o charm e a bolsa (ou o chaveiro).",
+        "A luz está natural, de lado, e a lente está limpa.",
+        "O vídeo está na vertical e os movimentos, lentos.",
+        "As 3 tomadas foram cortadas nos tempos certos.",
+        "Os textos estão legíveis e não cobrem as pérolas.",
+        "A música está baixa e a fala se entende.",
+        "A capa ficou nítida, com as pérolas aparecendo.",
+        "A legenda foi colada.",
+        "Vou publicar por volta das 19h.",
+        "Vou fazer os 3 Stories do dia."
+      ]
+    }
+  },
+  {
+    "id": "quinta",
+    "data": "2026-12-03",
+    "weekday": "quinta",
+    "weekdayCurto": "Qui",
+    "diaNum": "3",
+    "diaRotulo": "quinta, 3 de dezembro",
+    "hora": "12h30",
+    "formato": "Reels",
+    "formatoLabel": "Encomenda",
+    "duracao": "20s",
+    "tema": "O presente sai daqui e chega até você",
+    "ideia": "Um Reels direto, olhando para a câmera, com uma sacolinha ou um kit ao lado do celular. O recado é simples: a encomenda é pelo WhatsApp e o pedido é enviado para onde a pessoa estiver.",
+    "gancho": {
+      "tempo": "0–3s",
+      "filmar": "Olha para a câmera, com a sacolinha de Natal ao lado. Um plano só, do peito para cima.",
+      "fala": "Mora longe e quer presentear no Natal?",
+      "textoTela": "A gente envia o seu pedido"
+    },
+    "roteiro": [
+      {
+        "cena": "Cena 1",
+        "tempo": "0–3s",
+        "filmar": "Plano do peito para cima, sacolinha visível ao lado. Olha para a câmera.",
+        "fala": "Mora longe e quer presentear no Natal?",
+        "textoTela": "A gente envia o seu pedido"
+      },
+      {
+        "cena": "Cena 2",
+        "tempo": "3–12s",
+        "filmar": "Mostra o WhatsApp aberto no celular (a tela de conversa, sem exibir dados de cliente) e a sacolinha na outra mão.",
+        "fala": "Você me chama no WhatsApp, escolhe a sacolinha ou o kit, e eu cuido do envio para onde você estiver.",
+        "textoTela": "Pedido pelo WhatsApp"
+      },
+      {
+        "cena": "Cena 3",
+        "tempo": "12–20s",
+        "filmar": "Deixa o celular de lado, segura a sacolinha com as duas mãos e termina olhando para a lente.",
+        "fala": "Não precisa estar perto para dar um presente feito com carinho. Me chama, e a gente organiza o seu pedido.",
+        "textoTela": "Me chama no WhatsApp"
+      }
+    ],
+    "legenda": "A Lully Artes envia o seu pedido para onde você estiver.\n\nSacolinha de Natal, kit masculino infantil ou acessórios: você escolhe no WhatsApp, e eu cuido do resto.\n\nMe chama e a gente organiza o seu presente.\n\n#LullyArtes #lullyarte #presentedenatal #sacolinhadenatal #encomenda #natal2026",
+    "stories": [
+      {
+        "tipo": "Bastidor",
+        "texto": "Pedidos de quem está longe também saem daqui.",
+        "como": "Foto da sacolinha ao lado do celular. Sem fala. Quatro segundos."
+      },
+      {
+        "tipo": "Enquete",
+        "texto": "Neste Natal você vai presentear alguém de outra cidade?",
+        "opcoes": [
+          "Sim",
+          "Ainda não sei"
+        ]
+      },
+      {
+        "tipo": "Caixinha",
+        "texto": "Para onde você quer receber o seu pedido? Me chama no WhatsApp."
+      }
+    ],
+    "guia": {
+      "antes": [
+        "Separe uma sacolinha de Natal (ou um kit) e o seu celular, com o WhatsApp aberto.",
+        "Abra uma conversa vazia ou a tela inicial do WhatsApp. Não deixe aparecer nome, foto ou número de cliente.",
+        "Fundo simples, mesa limpa. Grave de dia, com a luz vindo de lado.",
+        "Celular da filmagem na vertical, apoiado se puder, na altura do peito. O outro celular (o do WhatsApp) fica na sua mão.",
+        "Limpe a lente do celular que vai filmar."
+      ],
+      "gravacao": [
+        {
+          "titulo": "Tomada 1 — o gancho (cerca de 3 segundos)",
+          "texto": "Ângulo do peito para cima, sacolinha visível ao seu lado. Olhe para a câmera. Fale: “Mora longe e quer presentear no Natal?”"
+        },
+        {
+          "titulo": "Tomada 2 — o pedido (cerca de 9 segundos)",
+          "texto": "Mostre o WhatsApp na tela do celular (sem dados de cliente) e a sacolinha na outra mão. Fale: “Você me chama no WhatsApp, escolhe a sacolinha ou o kit, e eu cuido do envio para onde você estiver.”"
+        },
+        {
+          "titulo": "Tomada 3 — o convite (cerca de 8 segundos)",
+          "texto": "Deixe o celular de lado, segure a sacolinha com as duas mãos e olhe para a lente. Fale: “Não precisa estar perto para dar um presente feito com carinho. Me chama, e a gente organiza o seu pedido.”"
+        }
+      ],
+      "edicao": [
+        "Edite no Instagram ou no CapCut.",
+        "Abra o Instagram, toque no + e escolha Reels.",
+        "Importe as 3 tomadas nesta ordem: o gancho, o WhatsApp e o convite final.",
+        "Corte assim: 3 segundos, uns 9 segundos e uns 8 segundos. O Reels todo fica com cerca de 20 segundos.",
+        "Texto na tela: toque em Aa. Letra simples, reta, fácil de ler, no centro ou um pouco abaixo. Textos: “A gente envia o seu pedido” (0 a 3s), “Pedido pelo WhatsApp” (3 a 12s) e “Me chama no WhatsApp” (12 a 20s).",
+        "Transição: corte direto, sem efeito.",
+        "No CapCut, siga a mesma ordem, os mesmos tempos e os mesmos textos. Exporte e publique no Instagram."
+      ],
+      "musica": {
+        "clima": "Uma música leve, em clima de pop instrumental ou Natal suave, sem canto alto.",
+        "como": "Toque em Áudio. Na busca, experimente: pop leve instrumental, natal pop instrumental, natal suave. Escolha uma faixa da biblioteca do Instagram e deixe o volume baixo, para a sua fala ser o principal."
+      },
+      "publicar": [
+        "Capa: escolha um quadro em que a sacolinha aparece bem e o seu rosto está nítido, olhando para a câmera.",
+        "Cole a legenda com o botão Copiar desta página.",
+        "Publique por volta das 12h30, nesta quinta.",
+        "Depois, faça os Stories do dia: a foto da sacolinha com o celular, a enquete e a caixinha."
+      ],
+      "checklist": [
+        "Separei a sacolinha e o celular, sem dados de cliente na tela.",
+        "O fundo está simples e a lente, limpa.",
+        "O vídeo está na vertical.",
+        "As 3 tomadas foram cortadas nos tempos certos.",
+        "Os textos estão legíveis e na hora certa.",
+        "A música está baixa e a fala se entende.",
+        "A capa ficou nítida.",
+        "A legenda foi colada.",
+        "Vou publicar por volta das 12h30.",
+        "Vou fazer os 3 Stories do dia."
+      ]
+    }
+  },
+  {
+    "id": "sexta",
+    "data": "2026-12-04",
+    "weekday": "sexta",
+    "weekdayCurto": "Sex",
+    "diaNum": "4",
+    "diaRotulo": "sexta, 4 de dezembro",
+    "hora": "18h",
+    "formato": "Carrossel",
+    "formatoLabel": "Guia",
+    "tema": "Três presentes da Lully Artes para o Natal",
+    "ideia": "Carrossel com foto de cada opção que você já faz: a sacolinha de Natal com vinho e chocolates, o kit masculino infantil e o charm de pérolas. Fundo claro, uma peça por foto, texto curto em cada slide.",
+    "slides": [
+      "Três presentes da Lully Artes para o Natal.\nJá prontos para presentear.",
+      "1. Sacolinha de Natal com vinho e chocolates.\nPara quem você quer celebrar.",
+      "2. Kit masculino infantil, na sacolinha de presente.\nUma opção prática para os meninos da família.",
+      "3. Charm de pérolas para a bolsa ou o chaveiro.\nUm acessório feito à mão, para usar ou presentear.",
+      "Peça pelo WhatsApp.\nA Lully Artes envia o seu pedido para onde você estiver.",
+      "Qual desses combina com quem você vai presentear?\nMe chama, e eu te ajudo a escolher.\n@lullyarte"
+    ],
+    "legenda": "Três presentes da Lully Artes para o Natal:\n\n• Sacolinha com vinho e chocolates\n• Kit masculino infantil, na sacolinha de presente\n• Charm de pérolas para a bolsa ou o chaveiro\n\nMe chama no WhatsApp, e eu te ajudo a escolher. Envio o pedido para onde você estiver.\n\n#LullyArtes #lullyarte #presentedenatal #sacolinhadenatal #kitinfantil #acessorios #natal2026",
+    "stories": [
+      {
+        "tipo": "Bastidor",
+        "texto": "Os três presentes desta sexta, lado a lado.",
+        "como": "Uma foto das três opções em uma superfície clara. Sem fala. Deixa 4 segundos."
+      },
+      {
+        "tipo": "Enquete",
+        "texto": "Qual desses você escolheria primeiro?",
+        "opcoes": [
+          "Sacolinha",
+          "Kit infantil",
+          "Charm"
+        ]
+      },
+      {
+        "tipo": "Caixinha",
+        "texto": "Me conta para quem é o presente, que eu te ajudo a escolher."
+      }
+    ],
+    "guia": {
+      "antes": [
+        "Separe as três opções que você já faz: a sacolinha de Natal com vinho e chocolates, o kit masculino infantil e o charm de pérolas.",
+        "Escolha uma superfície clara e lisa, com fundo simples. As seis fotos devem parecer da mesma família: mesma luz, mesmo fundo.",
+        "Fotografe de dia, perto da janela, com a luz vindo de lado.",
+        "Celular na vertical, em todas as fotos. Se puder, apoie-o para não tremer.",
+        "Limpe a lente antes da primeira foto."
+      ],
+      "gravacao": [
+        {
+          "titulo": "Foto do slide 1 — a abertura",
+          "texto": "Uma foto de apresentação: as três opções juntas, ou a sacolinha bem no centro, em fundo claro. Depois você coloca o texto da abertura em cima."
+        },
+        {
+          "titulo": "Foto do slide 2 — a sacolinha",
+          "texto": "Só a sacolinha de Natal com vinho e chocolates, de cima ou de frente, nítida e no centro."
+        },
+        {
+          "titulo": "Foto do slide 3 — o kit",
+          "texto": "O kit masculino infantil na sacolinha de presente, sozinho no quadro."
+        },
+        {
+          "titulo": "Foto do slide 4 — o charm",
+          "texto": "O charm de pérolas de perto, na mão ou na alça da bolsa, com a luz aparecendo nas pérolas."
+        },
+        {
+          "titulo": "Foto do slide 5 — o envio",
+          "texto": "A sacolinha ao lado do celular, em fundo claro, para o recado do WhatsApp."
+        },
+        {
+          "titulo": "Foto do slide 6 — o convite",
+          "texto": "De novo as três opções juntas, ou um dos presentes bem visível, para o último recado e o @lullyarte."
+        }
+      ],
+      "edicao": [
+        "Este post é um carrossel de fotos, não um Reels. Você monta no próprio Instagram.",
+        "Abra o Instagram, toque no + e escolha Post (o quadrado de várias fotos, não o Reels).",
+        "Selecione as 6 fotos, nesta ordem: abertura, sacolinha, kit, charm, envio e convite. Se a ordem errar, arraste as miniaturas até ficar certa.",
+        "Em cada foto, toque em Aa e coloque o texto daquele slide, exatamente como está em “Slides”, mais acima. Letra simples e reta. Branca se o fundo for mais escuro; preta se o fundo for claro. Coloque o texto na parte de baixo ou no centro, sem tapar o produto.",
+        "Não precisa de transição entre as fotos: no carrossel, a pessoa é quem desliza o dedo.",
+        "Se quiser, dá para fazer os textos no CapCut (projeto de imagens) e exportar as 6 fotos já com a escrita. Depois, é só selecionar essas imagens no Instagram, na mesma ordem."
+      ],
+      "musica": {
+        "clima": "Uma música instrumental de Natal, suave, no mesmo clima da semana.",
+        "como": "No Instagram, na hora de revisar o post, veja se aparece a opção de Áudio ou Música. Se aparecer, busque: natal instrumental, christmas piano, natal suave. Escolha uma faixa da biblioteca do Instagram, em volume baixo. Se o áudio não aparecer no carrossel, não tem problema: publique só com as fotos e os textos."
+      },
+      "publicar": [
+        "Capa: no carrossel, a capa é o primeiro slide. Deixe a primeira foto nítida, com o texto da abertura fácil de ler.",
+        "Cole a legenda com o botão Copiar desta página.",
+        "Publique por volta das 18h, nesta sexta.",
+        "Depois, faça os Stories do dia: a foto das três opções juntas, a enquete e a caixinha."
+      ],
+      "checklist": [
+        "Separei a sacolinha, o kit e o charm.",
+        "As 6 fotos estão na vertical, com o mesmo fundo e a mesma luz.",
+        "A lente estava limpa.",
+        "As fotos estão na ordem certa: abertura, sacolinha, kit, charm, envio e convite.",
+        "O texto de cada slide está legível e não tapa o produto.",
+        "A primeira foto (a capa) está nítida.",
+        "A legenda foi colada.",
+        "Vou publicar por volta das 18h.",
+        "Vou fazer os 3 Stories do dia."
+      ]
+    }
+  }
+];
 
+    const WA_CTA = "https://wa.me/5522998434956?text=Oi!%20Vi%20a%20amostra%20da%20Pauta%20da%20Semana%20da%20Lully%20Artes%20e%20quero%20come%C3%A7ar.";
     const $ = (id) => document.getElementById(id);
     const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+    const comQuebras = (s) => esc(s).replace(/\n/g, "<br>");
 
     function copyText(label, text) {
       const done = () => {
@@ -484,7 +865,7 @@
           setTimeout(() => { b.classList.remove("is-ok"); b.querySelector("span").textContent = "Copiar"; }, 1600);
         });
       });
-      return '<button class="copy" type="button" data-cid="' + id + '" aria-label="Copiar ' + esc(label) + '"><span>Copiar</span></button>';
+      return '<button class="copy" type="button" data-cid="' + id + '" data-copy-label="' + esc(label) + '" aria-label="Copiar ' + esc(label) + '"><span>Copiar</span></button>';
     }
 
     function campo(lab, html) {
@@ -493,26 +874,58 @@
 
     function blocoCena(c) {
       let h = "";
-      if (c.filmar) h += campo("Filmar", '<p class="filmar">' + esc(c.filmar) + '</p>');
+      if (c.filmar) h += campo("Filmar", '<p class="filmar texto-quebrado">' + comQuebras(c.filmar) + '</p>');
       if (c.fala) h += campo("Falar", '<p class="fala">“' + esc(c.fala) + '”</p>');
       if (c.textoTela) h += campo("Texto na tela", '<p class="tela">' + esc(c.textoTela) + '</p>');
       return h;
     }
 
     function textoGancho(p) {
-      const g = p.gancho;
-      return [g.fala, g.textoTela ? "Texto na tela: " + g.textoTela : "", g.filmar ? "Filmar: " + g.filmar : ""].filter(Boolean).join("\\n");
+      const g = p.gancho; if (!g) return "";
+      return [g.fala, g.textoTela ? "Texto na tela: " + g.textoTela : "", g.filmar ? "Filmar: " + g.filmar : ""].filter(Boolean).join("\n");
     }
 
     function textoRoteiro(p) {
-      if (p.slides) return p.slides.map((s, i) => "Slide " + (i + 1) + "\\n" + s).join("\\n\\n");
+      if (p.slides) return p.slides.map((s, i) => "Slide " + (i + 1) + "\n" + s).join("\n\n");
       return (p.roteiro || []).map((c) => {
         const bits = [c.cena + (c.tempo ? " · " + c.tempo : "")];
         if (c.filmar) bits.push("Filmar: " + c.filmar);
         if (c.fala) bits.push("Falar: " + c.fala);
         if (c.textoTela) bits.push("Texto na tela: " + c.textoTela);
-        return bits.join("\\n");
-      }).join("\\n\\n");
+        return bits.join("\n");
+      }).join("\n\n");
+    }
+
+    function listaSimples(itens, tag) {
+      const t = tag || "ol";
+      return "<" + t + ">" + itens.map((x) => "<li>" + esc(x) + "</li>").join("") + "</" + t + ">";
+    }
+
+    function renderGuia(p) {
+      const g = p.guia; if (!g) return "";
+      const gravacao = (g.gravacao || []).map((t) =>
+        '<div class="tomada"><b>' + esc(t.titulo) + '</b>' + esc(t.texto) + '</div>'
+      ).join("");
+      const checklist = '<ul class="checklist">' + (g.checklist || []).map((x) =>
+        '<li><span class="check" aria-hidden="true">☐</span><span>' + esc(x) + '</span></li>'
+      ).join("") + "</ul>";
+      const passos = [
+        ["Antes de gravar", "antes", listaSimples(g.antes || [])],
+        ["Como gravar", "gravacao", gravacao],
+        ["Como editar no celular", "edicao", '<div id="edicao-' + esc(p.id) + '">' + (g.edicao || []).map((x) => "<p>" + esc(x) + "</p>").join("") + "</div>"],
+        ["A música", "musica", "<p>" + esc((g.musica || {}).clima || "") + "</p><p>" + esc((g.musica || {}).como || "") + "</p>"],
+        ["Capa e publicação", "publicar", listaSimples(g.publicar || [])],
+        ["Antes de publicar, confira", "checklist", checklist]
+      ];
+      return '<section class="receita" id="receita-' + esc(p.id) + '">' +
+        '<p class="receita-intro">Siga estes passos na ordem, como uma receita, do começo ao fim. Se quiser, feche um passo depois de fazer.</p>' +
+        passos.map((item, i) =>
+          '<details open id="passo-' + item[1] + '-' + esc(p.id) + '">' +
+            '<summary><span class="receita-n">' + (i + 1) + '</span><span>' + item[0] + '</span></summary>' +
+            '<div class="corpo">' + item[2] + '</div>' +
+          '</details>'
+        ).join("") +
+      '</section>';
     }
 
     function renderHome() {
@@ -550,7 +963,7 @@
       if (p.slides) {
         miolo = '<div class="panel-head"><p class="label">Slides</p>' + btnCopy("roteiro", textoRoteiro(p)) + '</div>' +
           p.slides.map((tx, i) =>
-            '<div class="slide"><div class="scene-top"><span class="slide-n">' + (i + 1) + '</span><p class="scene-name">Slide ' + (i + 1) + '</p></div><p class="slide-txt">' + esc(tx) + '</p></div>'
+            '<div class="slide"><div class="scene-top"><span class="slide-n">' + (i + 1) + '</span><p class="scene-name">Slide ' + (i + 1) + '</p></div><p class="slide-txt texto-quebrado">' + comQuebras(tx) + '</p></div>'
           ).join("");
       } else {
         const cenas = p.roteiro || [];
@@ -579,8 +992,9 @@
             '<div class="hook"><p class="hook-time">Primeiros 3 segundos</p>' + blocoCena(p.gancho) + '</div></section>'
           : "") +
         '<section class="panel">' + miolo + '</section>' +
-        '<section class="panel"><div class="panel-head"><p class="label">Legenda</p>' + btnCopy("legenda", p.legenda) + '</div><p class="legenda">' + esc(p.legenda) + '</p></section>' +
+        '<section class="panel"><div class="panel-head"><p class="label">Legenda</p>' + btnCopy("legenda", p.legenda) + '</div><p class="legenda texto-quebrado">' + comQuebras(p.legenda) + '</p></section>' +
         (stories ? '<section class="panel"><p class="label">Stories do dia</p><ul class="stories">' + stories + '</ul></section>' : "") +
+        renderGuia(p) +
         '<section class="cta"><h2>Uma semana assim, toda segunda.</h2><p><span class="cta-preco">R$ 47/mês</span>Toda segunda você recebe no WhatsApp os roteiros dos seus posts da semana, feitos para o seu negócio. É só gravar e postar.</p><a class="bt-wa" href="' + WA_CTA + '">WhatsApp (22) 99843-4956</a></section>';
 
       document.title = p.tema + " · Lully Artes | BoniLead";
@@ -613,6 +1027,7 @@
     const inicial = (location.hash || "").replace(/^#\/?/, "");
     const postInicial = POSTS.find((x) => x.id === inicial);
     if (postInicial) renderPost(postInicial); else renderHome();
+
   </script>
 </body>
 </html>
